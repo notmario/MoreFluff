@@ -279,7 +279,7 @@ if has(joker_list, "philosophical") then
       unlocked = true,
       loc_vars = function(self)
         local key
-        if self.get_current_deck_name() ~= "Gros Michel Deck" then
+        if self.get_current_deck_name() ~= "Philosophical Deck" then
           key = self.key
         else
           key = self.key .. "_alt"
