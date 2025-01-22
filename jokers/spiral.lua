@@ -46,7 +46,8 @@ if JokerDisplay then
       { ref_table = "card.joker_display_values", ref_value = "mult", retrigger_type = "mult", colour = G.C.MULT },
     },
     calc_function = function(card)
-      card.joker_display_values.mult = card.ability.extra.mult + math.floor(card.ability.extra.coeff * math.cos(math.pi/card.ability.extra.dilation * G.GAME.dollars or 0) + 0.5)
+      local cash = to_number(G.GAME.dollars) or 0
+      card.joker_display_values.mult = card.ability.extra.mult + math.floor(card.ability.extra.coeff * math.cos(math.pi/card.ability.extra.dilation * cash) + 0.5)
     end,
   }
 end
