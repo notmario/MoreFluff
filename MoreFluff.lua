@@ -131,6 +131,10 @@ local to_big = to_big or function(num)
   return num
 end
 
+local to_number = to_number or function(num)
+  return num
+end
+
 for _, v in ipairs(joker_list) do
   print(v)
   local joker = SMODS.load_file("jokers/"..v..".lua")()
