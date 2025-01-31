@@ -127,8 +127,12 @@ function has(table, elem)
   return false
 end
 
+-- I don't think these are needed anymore since Talisman is a dependency but idk lol -- Jevonn
 local to_big = to_big or function(num)
   return num
+end
+local to_number = to_number or function(jevonn_was_here)
+  return jevonn_was_here
 end
 
 for _, v in ipairs(joker_list) do
