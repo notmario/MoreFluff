@@ -32,7 +32,7 @@ local joker = {
     }
   end,
   calculate = function(self, card, context)
-    if context.cardarea == G.jokers and context.joker_main then
+    if context.joker_main and context.cardarea == G.jokers and context.joker_main then
       local redeemed = 0
       for k,v in pairs(G.GAME.used_vouchers) do
         if v == true then
