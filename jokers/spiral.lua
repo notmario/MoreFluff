@@ -20,7 +20,8 @@ local joker = {
     }
   },
   loc_vars = function(self, info_queue, center)
-    local val = center.ability.extra.mult + math.floor(center.ability.extra.coeff * math.cos(math.pi/center.ability.extra.dilation * G.GAME.dollars or 0) + 0.5)
+    local dollars = G.GAME.dollars[1] or 0
+    local val = center.ability.extra.mult + math.floor(center.ability.extra.coeff * math.cos(math.pi/center.ability.extra.dilation * dollars) + 0.5)
     return {
       vars = { center.ability.extra.mult, center.ability.extra.coeff, center.ability.extra.dilation, val }
     }
