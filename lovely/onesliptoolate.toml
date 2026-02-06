@@ -13,11 +13,21 @@ payload = '''G.GAME.current_round.hands_played = 0'''
 
 [[patches]]
 [patches.pattern]
-target = 'game.lua'
+target = 'functions/state_events.lua'
 match_indent = true
 pattern = '''G.FUNCS.evaluate_play()'''
 position = 'after'
 payload = '''G.GAME.current_round.hands_played = G.GAME.current_round.hands_played + 1'''
+
+# fix for Talisman
+[[patches]]
+[patches.pattern]
+target = 'functions/state_events.lua'
+match_indent = true
+pattern = '''G.FUNCS.evaluate_play(e)'''
+position = 'after'
+payload = '''G.GAME.current_round.hands_played = G.GAME.current_round.hands_played + 1'''
+
 [[patches]]
 [patches.pattern]
 target = 'game.lua'
