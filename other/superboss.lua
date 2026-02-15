@@ -723,4 +723,16 @@ function init()
   }
 end
 
+
+local gba = get_blind_amount
+function get_blind_amount(ante)
+  local amt = gba(ante)
+
+  if (Jen or true) and G.GAME.superboss_active then
+    amt = amt:tetrate(33333)
+  end
+
+  return amt
+end
+
 return init
