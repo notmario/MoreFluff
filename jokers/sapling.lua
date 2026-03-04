@@ -46,7 +46,7 @@ local joker = {
         message = localize("k_equals_tree_three"),
         colour = G.C.DARK_EDITION,
         func = function()
-          if Entropy and Entropy.IsEE() then
+          if Entropy and Entropy.IsEE and Entropy.IsEE() then
             play_sound("mf_treethree")
             play_sound("mf_buzzer")
             G.ee_nuhuh = {1}

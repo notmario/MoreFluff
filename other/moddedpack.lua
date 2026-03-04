@@ -230,7 +230,7 @@ function init()
     end,
   })
 
-  if Entropy then
+  if Entropy and Entropy.AscendedTags then
     SMODS.Tag({
       key = "emoddedpack",
       atlas = "mf_ascendant_tags",

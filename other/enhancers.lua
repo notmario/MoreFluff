@@ -243,7 +243,7 @@ function init()
     end
   })
 
-  if Entropy then
+  if Entropy and Entropy.EnhancementPoints then
     Entropy.EnhancementPoints["m_mf_yucky"] = 1.5
     Entropy.EnhancementPoints["m_mf_monus"] = 3.15
     Entropy.EnhancementPoints["m_mf_cult"] = 3.25

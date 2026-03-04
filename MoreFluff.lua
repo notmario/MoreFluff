@@ -581,7 +581,7 @@ if mf_config["Colour Cards"] then
   init_cols = SMODS.load_file("other/colours.lua")()
   init_cols()
 
-  if Entropy then
+  if next(SMODS.find_mod("Entropy")) then
     init_shapes = SMODS.load_file("other/shapes.lua")()
     init_shapes()
   end
@@ -646,7 +646,7 @@ if mf_config["Other Tags"] then
       end
     end,
   })
-  if Entropy then
+  if Entropy and Entropy.AscendedTags then
     SMODS.Tag({
       key = "eclutch",
       atlas = "mf_ascendant_tags",

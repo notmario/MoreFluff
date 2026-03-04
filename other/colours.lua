@@ -306,7 +306,7 @@ function init()
     end,
   })
 
-  if Entropy then
+  if Entropy and Entropy.AscendedTags then
     Entropy.AscendedTags["tag_mf_colour"] = "tag_entr_ascendant_twisted"
   end
 

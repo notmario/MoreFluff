@@ -152,7 +152,9 @@ function init()
     end,
   })
   
-  Entropy.AscendedTags["tag_mf_absolute"] = "tag_mf_eabsolute"
+  if Entropy.AscendedTags then
+    Entropy.AscendedTags["tag_mf_absolute"] = "tag_mf_eabsolute"
+  end
 
   SMODS.Consumable({
     object_type = "Consumable",
@@ -1088,7 +1090,9 @@ function init()
   }
 
   for k, v in pairs(inversions) do
-    Entropy.FlipsideInversions[k] = v
+    if Entropy.FlipsideInversions then
+      Entropy.FlipsideInversions[k] = v
+    end
 
     if Entropy.FlipsidePureInversions then
       Entropy.FlipsidePureInversions[k] = v
