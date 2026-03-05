@@ -1,0 +1,1 @@
+FLUFF = SMODS.current_mod
