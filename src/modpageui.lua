@@ -3,17 +3,15 @@
 -- lol ?
 
 -- originally from slimeutils
-function create_display_card(key, s)
+function create_display_card(key, s, no_ui)
     s = s or 1
 	local card = Card(G.ROOM.T.x,G.ROOM.T.y,G.CARD_W*.75*s,G.CARD_H*.75*s,nil,G.P_CENTERS[key], { bypass_discovery_center = true, bypass_discovery_ui = true })
-	card.no_ui = true
+	card.no_ui = no_ui
 	card.states.drag.can = false
 	return card
 end
 
-local card_pool = {
-    "j_mf_triangle",
-}
+local card_pool = FLUFF.joker_pool
 
 FLUFF.custom_ui = function(mod_nodes)
 	mod_nodes = EMPTY(mod_nodes)
@@ -61,14 +59,16 @@ FLUFF.custom_ui = function(mod_nodes)
 						}}
 				}}
 		}},
-        {n = G.UIT.R, config = {align = "cm"}, nodes = {{n = G.UIT.T, config = {text = "(Or: An Assortment of Balatro Cards of Dubious Excellence)", scale = .3, colour = G.C.WHITE}}}},
+        {n = G.UIT.R, config = {align = "cm"}, nodes = {{n = G.UIT.T, config = {text = "(Or: an Assortment of Balatro Cards of Dubious Excellence)", scale = .3, colour = G.C.WHITE}}}},
         {n = G.UIT.R, config = {align = "cm"}, nodes = {{n = G.UIT.T, config = {text = "(Brought to you by John Balatro)", scale = .3, colour = G.C.WHITE}}}},
         {n = G.UIT.R, config = {align = "cm"}, nodes = {
-            {n = G.UIT.C, config = {align = "cm"}, nodes = {{n = G.UIT.O, config = { object = create_display_card(random_card(), 0.8) }}}},
-            {n = G.UIT.C, config = {align = "cm"}, nodes = {{n = G.UIT.O, config = { object = create_display_card(random_card(), 0.9) }}}},
-            {n = G.UIT.C, config = {align = "cm"}, nodes = {{n = G.UIT.O, config = { object = create_display_card(random_card(), 1.0) }}}},
-            {n = G.UIT.C, config = {align = "cm"}, nodes = {{n = G.UIT.O, config = { object = create_display_card(random_card(), 0.9) }}}},
-            {n = G.UIT.C, config = {align = "cm"}, nodes = {{n = G.UIT.O, config = { object = create_display_card(random_card(), 0.8) }}}},
+            {n = G.UIT.C, config = {align = "cm"}, nodes = {{n = G.UIT.O, config = { object = create_display_card("j_mf_"..random_card(), 0.7, false) }}}},
+            {n = G.UIT.C, config = {align = "cm"}, nodes = {{n = G.UIT.O, config = { object = create_display_card("j_mf_"..random_card(), 0.9, false) }}}},
+            {n = G.UIT.C, config = {align = "cm"}, nodes = {{n = G.UIT.O, config = { object = create_display_card("j_mf_"..random_card(), 1.0, false) }}}},
+            {n = G.UIT.C, config = {align = "cm"}, nodes = {{n = G.UIT.O, config = { object = create_display_card("j_mf_"..random_card(), 1.1, false) }}}},
+            {n = G.UIT.C, config = {align = "cm"}, nodes = {{n = G.UIT.O, config = { object = create_display_card("j_mf_"..random_card(), 1.0, false) }}}},
+            {n = G.UIT.C, config = {align = "cm"}, nodes = {{n = G.UIT.O, config = { object = create_display_card("j_mf_"..random_card(), 0.9, false) }}}},
+            {n = G.UIT.C, config = {align = "cm"}, nodes = {{n = G.UIT.O, config = { object = create_display_card("j_mf_"..random_card(), 0.7, false) }}}},
         }},
         {n = G.UIT.R, config = {align = "cm"}, nodes = {
             {n = G.UIT.R,
@@ -81,7 +81,7 @@ FLUFF.custom_ui = function(mod_nodes)
                     padding = 0.1,
                     colour = G.C.L_BLACK
                 }, nodes = {
-                {n = G.UIT.C, nodes = {{n = G.UIT.O, config = { object = create_display_card('j_mf_triangle', 0.9) }}}},
+                {n = G.UIT.C, nodes = {{n = G.UIT.O, config = { object = create_display_card('j_mf_triangle', 1.0, true), juice_up = true } }}},
                 {n = G.UIT.C, config = {align = "cl", padding = 0.1, minw = 4}, nodes = {
                     {n = G.UIT.R, nodes = {
                         {n = G.UIT.T, config = {text = "by this ", scale = .4, colour = G.C.WHITE}},
