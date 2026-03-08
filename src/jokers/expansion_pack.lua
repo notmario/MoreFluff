@@ -36,7 +36,7 @@ SMODS.Joker {
                     G.GAME.banned_keys[key] = G.GAME.banned_keys[key] + 214389
                 end
             end
-            for i = 1, FLUFF.vanilla_jokers do
+            for i = 1, #FLUFF.vanilla_jokers do
                 temp_ban_joker(FLUFF.vanilla_jokers[i])
             end
             G.E_MANAGER:add_event(Event({

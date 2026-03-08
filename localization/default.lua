@@ -70,6 +70,15 @@ return {
                     "played hand is a {C:attention}Three of a Kind",
                 },
             },
+            j_mf_triangle_lame = {
+                name = "Triangle",
+                text = {
+                    "Other {C:attention}Scaling Jokers{} scale {X:purple,C:white}X#1#{}",
+                    "faster, increases by {X:purple,C:white}X#2#{} if",
+                    "played hand is a {C:attention}Three of a Kind",
+                    "{C:inactive,s:0.8}(Does not modify other copies of Triangle)"
+                },
+            },
         },
     },
     misc = {

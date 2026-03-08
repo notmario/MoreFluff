@@ -20,7 +20,9 @@ SMODS.Joker {
     pronouns = "she_they",
     demicoloncompat = false,
     loc_vars = function(self, info_queue, center)
+        local has_other_copy = #SMODS.find_card("j_mf_triangle") >= 2
         return {
+            key = has_other_copy and "j_mf_triangle_lame",
             vars = { center.ability.extra.scaling_mod, center.ability.extra.scaling_mod_mod }
         }
     end,
