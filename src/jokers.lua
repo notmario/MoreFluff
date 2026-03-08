@@ -8,6 +8,7 @@ FLUFF.joker_pool = {
     "hollow",
     "jackofalltrades",
     "jester",
+    "lollipop",
 
     "triangle",
 }

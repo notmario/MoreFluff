@@ -54,13 +54,20 @@ return {
                     "{C:chips,s:1.1}+#1#{} Chips"
                 }
             },
+            j_mf_lollipop = {
+                name = "Lollipop",
+                text = {
+                    "{X:mult,C:white} X#1# {} Mult",
+                    "{X:mult,C:white} -X#2# {} Mult per",
+                    "round played",
+                }
+            },
             j_mf_triangle = {
                 name = "Triangle",
                 text = {
-                    "Played cards each give",
-                    "{X:mult,C:white} X#1# {} Mult when scored",
-                    "if played hand is",
-                    "a {C:attention}Three of a Kind"
+                    "Other {C:attention}Scaling Jokers{} scale {X:purple,C:white}X#1#{}",
+                    "faster, increases by {X:purple,C:white}X#2#{} if",
+                    "played hand is a {C:attention}Three of a Kind",
                 },
             },
         },

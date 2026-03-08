@@ -4,7 +4,8 @@ SMODS.Joker {
     atlas = "mf_jokers",
     config = {
         extra = {
-            x_mult = 3,
+            scaling_mod = 1,
+            scaling_mod_mod = 0.2,
         }
     },
     pos = {x = 9, y = 4},
@@ -13,27 +14,34 @@ SMODS.Joker {
     cost = 20,
     unlocked = true,
     discovered = true,
-    blueprint_compat = true,
+    blueprint_compat = false,
     eternal_compat = true,
-    perishable_compat = true,
+    perishable_compat = false,
     pronouns = "she_they",
-    demicoloncompat = true,
+    demicoloncompat = false,
     loc_vars = function(self, info_queue, center)
         return {
-            vars = { center.ability.extra.x_mult }
+            vars = { center.ability.extra.scaling_mod, center.ability.extra.scaling_mod_mod }
         }
     end,
     calculate = function(self, card, context)
-        if context.individual and context.cardarea == G.play and context.scoring_name == "Three of a Kind" then
-            return {
-                x_mult = card.ability.extra.x_mult,
-                colour = G.C.RED,
-                card = card
-            }
+        if context.before and context.scoring_name == "Three of a Kind" and not context.blueprint then
+            SMODS.scale_card(card, {
+                ref_table = card.ability.extra,
+                ref_value = "scaling_mod",
+                scalar_value = "scaling_mod_mod"
+            })
         end
-        if context.forcetrigger then
+    end,
+    calc_scaling = function(_self, self, card, initial, scalar_value, args)
+        if self == card then return nil end
+        if args.operation == 'X' then
             return {
-                xmult = card.ability.extra.x_mult,
+                override_scalar_value = { value = scalar_value ^ self.ability.extra.scaling_mod }
+            }
+        else
+            return {
+                override_scalar_value = { value = scalar_value * self.ability.extra.scaling_mod }
             }
         end
     end,
