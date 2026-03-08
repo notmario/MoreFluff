@@ -61,8 +61,8 @@ FLUFF.custom_ui = function(mod_nodes)
 						}}
 				}}
 		}},
-        {n = G.UIT.R, config = {align = "cm"}, nodes = {{n = G.UIT.T, config = {text = "(Or: An Assortment of Additions of Dubious Quality)", scale = .3, colour = G.C.WHITE}}}},
-        {n = G.UIT.R, config = {align = "cm"}, nodes = {{n = G.UIT.T, config = {text = "Brought to you by John Balatro", scale = .3, colour = G.C.WHITE}}}},
+        {n = G.UIT.R, config = {align = "cm"}, nodes = {{n = G.UIT.T, config = {text = "(Or: An Assortment of Balatro Cards of Dubious Excellence)", scale = .3, colour = G.C.WHITE}}}},
+        {n = G.UIT.R, config = {align = "cm"}, nodes = {{n = G.UIT.T, config = {text = "(Brought to you by John Balatro)", scale = .3, colour = G.C.WHITE}}}},
         {n = G.UIT.R, config = {align = "cm"}, nodes = {
             {n = G.UIT.C, config = {align = "cm"}, nodes = {{n = G.UIT.O, config = { object = create_display_card(random_card(), 0.8) }}}},
             {n = G.UIT.C, config = {align = "cm"}, nodes = {{n = G.UIT.O, config = { object = create_display_card(random_card(), 0.9) }}}},
