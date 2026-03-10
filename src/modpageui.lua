@@ -13,10 +13,15 @@ end
 
 local card_pool = FLUFF.joker_pool
 
+SMODS.Shader {
+    key="triangle_badge_alt",
+    path="triangle_badge_alt.fs"
+}
+
 FLUFF.custom_ui = function(mod_nodes)
 	mod_nodes = EMPTY(mod_nodes)
 
-    local chosen_cards = {}
+    local chosen_cards = {"triangle"}
     local random_card = function()
         if #chosen_cards >= #card_pool then
             return card_pool[math.ceil(math.random() * #card_pool)]
@@ -53,7 +58,8 @@ FLUFF.custom_ui = function(mod_nodes)
 								r = 0.1,
 								align = "cm",
 								padding = 0.2,
-								colour = G.C.BLACK
+								colour = G.C.BLACK,
+                                shader = "mf_triangle_badge_alt",
 							}, nodes = {
 								{n = G.UIT.T, config = {text = "More Fluff", scale = .8, colour = G.C.WHITE}}
 						}}

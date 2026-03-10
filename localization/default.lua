@@ -62,19 +62,78 @@ return {
                     "round played",
                 }
             },
+            j_mf_luckycharm = {
+                name = "Lucky Charm",
+                text = {
+                    {
+                        "{C:green}#1# in #2#{} chance",
+                        "for {C:mult}+#3#{} Mult",
+                    },
+                    {
+                        "{C:green}#4# in #5#{} chance",
+                        "to win {C:money}$#6#",
+                        "at end of round"
+                    },
+                }
+            },
+            j_mf_mspaint = {
+                name = "MS Paint Joker",
+                text = {
+                    "{C:attention}+#1#{} hand size",
+                    "for the first hand",
+                    "of each blind"
+                },
+            },
+            j_mf_philosophical = {
+                name = "Philosophical Joker",
+                text = {
+                    "{C:dark_edition}+#1#{} Joker Slot"
+                },
+            },
+            j_mf_simplified = {
+                name = "Simplified Joker",
+                text = {
+                    "All {C:common}Common{} Jokers",
+                    "each give {C:mult}+#1#{} Mult",
+                }
+            },
+            j_mf_spiral = {
+                name = "Spiral Joker",
+                text = {
+                    "{C:mult}+(#1#+#2#cos(pi/#3# x {C:attention}$${C:mult})){} Mult",
+                    "{C:inactive}({C:attention}$${C:inactive} is your current money)",
+                    "{C:inactive}(Currently gives {C:mult}+#4#{C:inactive} Mult)"
+                }
+            },
+            j_mf_treasuremap = {
+                name = "Treasure Map",
+                text = {
+                    "After {C:attention}#2#{} rounds,",
+                    "sell this card to",
+                    "earn {C:money}$#3#{}",
+                    "{C:inactive}(Currently {C:attention}#1#{C:inactive}/#2#)"
+                },
+            },
+            j_mf_unregisteredhypercam = { 
+                name = "Unregistered Hypercam 2",
+                text = {
+                    "{X:mf_eemult,C:white,s:1.4} ^^#1# {s:1.4} Mult",
+                    "before scoring",
+                },
+            },
             j_mf_triangle = {
                 name = "Triangle",
                 text = {
-                    "Other {C:attention}Scaling Jokers{} scale {X:purple,C:white}X#1#{}",
-                    "faster, increases by {X:purple,C:white}X#2#{} if",
+                    "Other {C:attention}Scaling Jokers{} scale at a",
+                    "{X:purple,C:white}X#1#{} rate, increases by {X:purple,C:white}X#2#{} if",
                     "played hand is a {C:attention}Three of a Kind",
                 },
             },
             j_mf_triangle_lame = {
                 name = "Triangle",
                 text = {
-                    "Other {C:attention}Scaling Jokers{} scale {X:purple,C:white}X#1#{}",
-                    "faster, increases by {X:purple,C:white}X#2#{} if",
+                    "Other {C:attention}Scaling Jokers{} scale at a",
+                    "{X:purple,C:white}X#1#{} rate, increases by {X:purple,C:white}X#2#{} if",
                     "played hand is a {C:attention}Three of a Kind",
                     "{C:inactive,s:0.8}(Does not modify other copies of Triangle)"
                 },
