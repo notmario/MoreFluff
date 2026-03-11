@@ -20,7 +20,15 @@ SMODS.Joker {
     end,
     calculate = function(self, card, context)
         if context.end_of_round and not context.individual and not context.repetition and not context.blueprint and not context.retrigger_joker then
-            if card.ability.x_mult - card.ability.extra <= 1.01 then 
+            SMODS.scale_card(card, {
+                ref_table = card.ability,
+                ref_value = "x_mult",
+                scalar_value = "extra",
+                operation = "-",
+                message_key = 'a_xmult_minus',
+                message_colour = G.C.PURPLE
+            })
+            if card.ability.x_mult <= 1.01 then 
                 G.E_MANAGER:add_event(Event({
                     func = function()
                     play_sound('tarot1')
@@ -43,14 +51,6 @@ SMODS.Joker {
                 }
             else
                 -- card.ability.x_mult = card.ability.x_mult - card.ability.extra
-                SMODS.scale_card(card, {
-                    ref_table = card.ability,
-                    ref_value = "x_mult",
-                    scalar_value = "extra",
-                    operation = "-",
-                    message_key = 'a_xmult_minus',
-                    message_colour = G.C.PURPLE
-                })
             end
         elseif context.forcetrigger or (context.cardarea == G.jokers and context.joker_main) then
             return {

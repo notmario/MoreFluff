@@ -5,7 +5,7 @@ SMODS.Joker {
     config = {
         extra = {
             scaling_mod = 1,
-            scaling_mod_mod = 0.2,
+            scaling_mod_mod = 0.5,
         }
     },
     pos = {x = 9, y = 4},
@@ -36,7 +36,7 @@ SMODS.Joker {
         end
     end,
     calc_scaling = function(_self, self, card, initial, scalar_value, args)
-        if card.ability.extra.key == "j_mf_triangle" then return nil end
+        if card.config.center.key == "j_mf_triangle" then return nil end
         if args.operation == 'X' then
             return {
                 override_scalar_value = { value = scalar_value ^ self.ability.extra.scaling_mod }
