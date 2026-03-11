@@ -28,7 +28,7 @@ SMODS.Joker {
                 return {
                     message = "^^1.04 Mult",
                     pre_func = function ()
-                        mult = mod_mult(mult ^ (mult ^ (mult ^ 0.04 - 1)))
+                        mult = mod_mult(mult ^ (mult ^ 0.04))
                     end,
                     sound = "multhit2",
                     colour = G.C.DARK_EDITION
