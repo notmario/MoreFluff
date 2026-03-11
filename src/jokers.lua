@@ -32,3 +32,24 @@ FLUFF.joker_pool = {
 for _, path in ipairs(FLUFF.joker_pool) do
     assert(SMODS.load_file("src/jokers/"..path..".lua"))()
 end
+
+SMODS.Rarity {
+    key = "oldfluff",
+    loc_txt = {
+        name = "Old"
+    },
+    badge_colour = HEX "000000"
+}
+
+FLUFF.hidden_joker_pool = {
+    "brainrot",
+    "triangular",
+    "boxofhands",
+    "rosetinted",
+    "glitterbomb",
+    "moneyprinter",
+}
+
+for _, path in ipairs(FLUFF.hidden_joker_pool) do
+    assert(SMODS.load_file("src/jokers/"..path..".lua"))()
+end

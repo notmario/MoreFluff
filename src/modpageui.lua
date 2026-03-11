@@ -13,12 +13,23 @@ end
 
 local card_pool = FLUFF.joker_pool
 
+local times_spawned = 0
+
 SMODS.Shader {
     key="triangle_badge_alt",
     path="triangle_badge_alt.fs"
 }
 
 FLUFF.custom_ui = function(mod_nodes)
+    times_spawned = times_spawned + 1
+
+    if times_spawned >= 10 then
+        if times_spawned % 2 == 1 then
+            card_pool = FLUFF.hidden_joker_pool
+        else
+            card_pool = FLUFF.joker_pool
+        end
+    end
 	mod_nodes = EMPTY(mod_nodes)
 
     local chosen_cards = {"triangle"}

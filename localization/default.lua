@@ -178,6 +178,62 @@ return {
                     "{C:inactive,s:0.8}(Does not modify other copies of Triangle)"
                 },
             },
+
+            -- oldfluff
+            j_mf_brainrot = {
+                name = "Brainrot",
+                text = {
+                    "When {C:attention}Blind{} is selected,",
+                    "destroy the leftmost Joker",
+                    "and permanently add {C:attention}#2#x",
+                    "its sell value to these {C:blue}Chips",
+                    "{C:inactive}(Currently {C:chips}+#1#{C:inactive} Chips)"
+                }
+            },
+            j_mf_triangular = {
+                name = "Triangular Joker",
+                text = {
+                    "Gains {C:chips}+#2#{} Chips and",
+                    "increase {C:chips}Chips{} gained",
+                    "by {C:chips}#3#{} if played hand has",
+                    "exactly {C:attention}3{} cards",
+                    "{C:inactive}(Currently {C:chips}#1#{C:inactive} Chips)"
+                }
+            },
+            j_mf_boxofhands = {
+                name = "Box of Hands",
+                text = {
+                    "Sell this card to gain {C:blue}5{} hands",
+                    "only for the current round",
+                    "{C:inactive}(No effect outside of a round)"
+                }
+            },
+            j_mf_rosetinted = {
+                name = "Rose-Tinted Glasses",
+                text = {
+                    "If {C:attention}first hand{} of round is",
+                    "a single {C:attention}2{}, destroy it and",
+                    "create a free {C:attention}Double Tag{}",
+                }
+            },
+            j_mf_glitterbomb = {
+                name = "Glitter Bomb",
+                text = {
+                    "Sell this card to",
+                    "give all held cards",
+                    "a random {C:attention}Enhancement{}"
+                }
+            },
+            j_mf_moneyprinter = {
+                name = "Money Printer",
+                text = {
+                    "Earn {C:money}$2{} for each",
+                    "played numbered card",
+                    "that is a digit of",
+                    "your current money",
+                    "{C:inactive}(Ace = 1, 10 = 0)"
+                }
+            },
         },
     },
     misc = {
@@ -186,6 +242,7 @@ return {
         },
         v_dictionary = {
             a_plus_hand = { "+#1# Hand "},
+            a_plus_pluschips = { "++#1# Chips" },
         }
     },
 }
