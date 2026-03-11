@@ -20,6 +20,12 @@ FLUFF.joker_pool = {
     "treasuremap",
     "unregisteredhypercam",
 
+    "dropkick",
+    "bladedance",
+    "hyperbeam",
+    "blasphemy",
+    "dramaticentrance",
+
     "triangle",
 }
 

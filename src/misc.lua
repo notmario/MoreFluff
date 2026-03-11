@@ -1,0 +1,78 @@
+-- sts mana value
+SMODS.DrawStep({
+	key = "spire_mv",
+	order = 25,
+	func = function(self)
+        if not FLUFF.mv_spr then
+            FLUFF.mv_spr = Sprite(
+                0, 0, 71, 95, G.ASSET_ATLAS["mf_mv"], {x = 0, y = 0}
+            )
+        end
+        local my_key = self.config.center.key
+
+        if 
+            my_key ~= "j_mf_dramaticentrance" and
+            my_key ~= "j_mf_dropkick" and
+            my_key ~= "j_mf_bladedance" and
+            my_key ~= "j_mf_hyperbeam" and
+            my_key ~= "j_mf_blasphemy"
+        then
+            return nil
+        end
+
+        FLUFF.mv_spr.role.draw_major = self
+
+        local cost = math.floor(
+            self.cost +
+            (self.ability.extra_value or 0) * 2 +
+            0.5
+        )
+
+        local base_cost = ({
+            j_mf_dramaticentrance = 6,
+            j_mf_dropkick = 8,
+            j_mf_bladedance = 8,
+            j_mf_hyperbeam = 8,
+            j_mf_blasphemy = 5,
+        })[my_key]
+
+        local shader = "dissolve"
+
+        if cost > 99 then
+            FLUFF.mv_spr:set_sprite_pos({x=0, y=3})
+            FLUFF.mv_spr:draw_shader("dissolve", nil, nil, nil, self.children.center)
+        elseif cost <= 9 then
+            FLUFF.mv_spr:set_sprite_pos({x=cost, y=0})
+            FLUFF.mv_spr:draw_shader("dissolve", nil, nil, nil, self.children.center)
+        else
+            FLUFF.mv_spr:set_sprite_pos({x=math.floor(cost/10), y=1})
+            FLUFF.mv_spr:draw_shader("dissolve", nil, nil, nil, self.children.center)
+            FLUFF.mv_spr:set_sprite_pos({x=cost%10, y=2})
+            FLUFF.mv_spr:draw_shader("dissolve", nil, nil, nil, self.children.center)
+        end
+	end,
+	conditions = { vortex = false, facing = "front" },
+})
+
+-- temporary
+-- pulled from Entropy. thanks ruby!
+local e_round = end_round
+function end_round()
+    e_round()
+    local remove_temp = {}
+    for i, v in pairs({G.jokers, G.hand, G.consumeables, G.discard, G.deck}) do
+        for ind, card in pairs(v.cards) do
+            if card.ability then
+                if card.ability.mf_temporary then
+                    if card.area ~= G.hand and card.area ~= G.play and card.area ~= G.jokers and card.area ~= G.consumeables then card.states.visible = false end
+                    card:remove_from_deck()
+                    card:start_dissolve()
+                    if card.ability.mf_temporary then remove_temp[#remove_temp+1]=card end
+                end
+            end
+        end
+    end
+    if #remove_temp > 0 then
+        SMODS.calculate_context({remove_playing_cards = true, removed=remove_temp})
+    end
+end

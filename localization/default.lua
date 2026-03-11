@@ -121,6 +121,46 @@ return {
                     "before scoring",
                 },
             },
+            j_mf_dropkick = {
+                name = "Dropkick",
+                text = {
+                    "{C:blue}+#1#{} hand when hand",
+                    "contains a {C:attention}Straight",
+                },
+            },
+            j_mf_bladedance = {
+                name = "Blade Dance",
+                text = {
+                    "Adds {C:attention}#1#{} temporary",
+                    "{C:attention}Steel Cards{}",
+                    "to your deck when",
+                    "blind is selected",
+                },
+            },
+            j_mf_hyperbeam = {
+                name = "Hyper Beam",
+                text = {
+                    "{X:red,C:white} X#1# {} Mult",
+                    "{C:attention}Lose all discards",
+                    "when {C:attention}Blind{} is selected",
+                },
+            },
+            j_mf_blasphemy = {   
+                name = "Blasphemy",
+                text = {
+                    "{X:red,C:white} X#1# {} Mult",
+                    "{C:blue}-#2#{} hands",
+                    "when hand is played",
+                },
+            },
+            j_mf_dramaticentrance = {    
+                name = "Dramatic Entrance",
+                text = {
+                    "{C:chips}+#1#{} Chips",
+                    "for the first hand",
+                    "of each round",
+                },
+            },
             j_mf_triangle = {
                 name = "Triangle",
                 text = {
@@ -144,5 +184,8 @@ return {
         dictionary = {
             k_swap_ex = "Swap!",
         },
+        v_dictionary = {
+            a_plus_hand = { "+#1# Hand "},
+        }
     },
 }
