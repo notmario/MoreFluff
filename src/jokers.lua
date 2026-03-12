@@ -48,6 +48,10 @@ FLUFF.hidden_joker_pool = {
     "rosetinted",
     "glitterbomb",
     "moneyprinter",
+    "sealthedeal",
+    "particleaccelerator",
+    "balatromods",
+    "fived",
 }
 
 for _, path in ipairs(FLUFF.hidden_joker_pool) do

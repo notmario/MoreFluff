@@ -234,11 +234,48 @@ return {
                     "{C:inactive}(Ace = 1, 10 = 0)"
                 }
             },
+            j_mf_sealthedeal = {
+                name = "Seal the Deal",
+                text = {
+                    "After you play a winning hand,",
+                    "add a random {C:attention}Seal{} to",
+                    "one of the played cards",
+                }
+            },
+            j_mf_particleaccelerator = {
+                name = "Particle Accelerator",
+                text = {
+                    "Gains {X:mult,C:white} X#2# {} Mult if played",
+                    "hand has only {C:attention}1{} card,",
+                    "otherwise gives {X:mult,C:white} X#1# {} Mult",
+                    "and resets to {X:mult,C:white} X1 {} Mult"
+                }
+            },
+            j_mf_balatromods = {
+                name = "Balatro Mods (Working 2024)",
+                text = {
+                    "If {C:attention}first hand{} of round",
+                    "has only {C:attention}1{} card, spend",
+                    "{C:attention}$#1#{} to give it a",
+                    "random {C:attention}Enhancement{}",
+                }
+            },
+            j_mf_fived = {
+                name = "5D Joker with Multiverse Time Travel",
+                text = {
+                    "{C:attention}-#1#{} Ante and is destroyed if",
+                    "you defeat the {C:attention}Blind",
+                    "by {X:purple,C:white}X#2#{} or more"
+                },
+            },
         },
     },
     misc = {
         dictionary = {
             k_swap_ex = "Swap!",
+            k_sealed_ex = "Sealed!",
+            k_reset_ex = "Sealed!",
+            k_timetravel_ex = "Time travel!",
         },
         v_dictionary = {
             a_plus_hand = { "+#1# Hand "},

@@ -12,7 +12,7 @@ SMODS.Joker {
     discovered = true,
     blueprint_compat = true,
     eternal_compat = true,
-    perishable_compat = false,
+    perishable_compat = true,
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.dollars_per } }
     end,
