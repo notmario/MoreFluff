@@ -4,6 +4,7 @@ SMODS.Joker {
 
     atlas = "mf_oldfluff",
     rarity = "mf_oldfluff",
+    no_collection = true,
     no_shader_on_modbadge = true,
     pos = { x = 5, y = 0 },
     cost = 5,

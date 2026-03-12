@@ -36,7 +36,7 @@ end
 SMODS.Rarity {
     key = "oldfluff",
     loc_txt = {
-        name = "Old"
+        name = "Scrap"
     },
     badge_colour = HEX "000000"
 }
@@ -47,11 +47,24 @@ FLUFF.hidden_joker_pool = {
     "boxofhands",
     "rosetinted",
     "glitterbomb",
+
     "moneyprinter",
     "sealthedeal",
     "particleaccelerator",
     "balatromods",
     "fived",
+
+    "whiteboard",
+    "miner",
+    "blackmarket",
+    "thejester",
+    "aceupthesleeve",
+
+    "burnerphone",
+    "bigshot",
+    "mrloans",
+    "monochrome",
+    "wilddrawfour",
 }
 
 for _, path in ipairs(FLUFF.hidden_joker_pool) do

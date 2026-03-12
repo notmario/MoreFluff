@@ -5,6 +5,8 @@ SMODS.Joker {
     pos = {x = 3, y = 0},
     atlas = "mf_oldfluff",
     rarity = "mf_oldfluff",
+    no_collection = true,
+    no_shader_on_modbadge = true,
     cost = 5,
     unlocked = true,
     discovered = true,

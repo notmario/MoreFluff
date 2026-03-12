@@ -2,7 +2,7 @@ SMODS.Joker {
     key = "lollipop",
     name = "Lollipop",
     atlas = "mf_jokers",
-    config = { Xmult = 1.75, extra = 0.15 },
+    config = { extra = { xmult = 1.75, xmult_per = 0.15 } },
     pos = {x = 7, y = 1},
     rarity = 1,
     cost = 6,
@@ -15,20 +15,20 @@ SMODS.Joker {
     pools = { ["Food"] = true },
     loc_vars = function(self, info_queue, center)
         return {
-            vars = { center.ability.x_mult, center.ability.extra }
+            vars = { center.ability.extra.xmult, center.ability.extra.xmult_per }
         }
     end,
     calculate = function(self, card, context)
         if context.end_of_round and not context.individual and not context.repetition and not context.blueprint and not context.retrigger_joker then
             SMODS.scale_card(card, {
-                ref_table = card.ability,
-                ref_value = "x_mult",
-                scalar_value = "extra",
+                ref_table = card.ability.extra,
+                ref_value = "xmult",
+                scalar_value = "xmult_per",
                 operation = "-",
                 message_key = 'a_xmult_minus',
                 message_colour = G.C.PURPLE
             })
-            if card.ability.x_mult <= 1.01 then 
+            if card.ability.extra.xmult <= 1.01 then 
                 G.E_MANAGER:add_event(Event({
                     func = function()
                     play_sound('tarot1')
@@ -54,7 +54,7 @@ SMODS.Joker {
             end
         elseif context.forcetrigger or (context.cardarea == G.jokers and context.joker_main) then
             return {
-                xmult = card.ability.x_mult,
+                xmult = card.ability.extra.xmult,
             }
         end
     end

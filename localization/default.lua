@@ -268,6 +268,91 @@ return {
                     "by {X:purple,C:white}X#2#{} or more"
                 },
             },
+            j_mf_whiteboard = {
+                name = "Whiteboard",
+                text = {
+                    "{X:red,C:white} X#1# {} Mult for each",
+                    "empty hand space",
+                    "after {C:attention}#2#{} cards"
+                },
+            },
+            j_mf_miner = {
+                name = "Miner",
+                text = {
+                    "Gain a {C:green}D6 Tag{}",
+                    "when {C:attention}Boss Blind",
+                    "is selected",
+                },
+            },
+            j_mf_blackmarket = {
+                name = "Black Market",
+                text = {
+                    "When {C:attention}Boss Blind{}",
+                    "is selected, spend {C:attention}$10",
+                    "to summon an {C:spectral}Ankh{} card"
+                },
+            },
+            j_mf_thejester = {
+                name = "The Jester",
+                text = {
+                    "{X:mult,C:white} X#1# {} Mult for",
+                    "each unique played pair"
+                }
+            },
+            j_mf_aceupthesleeve = {
+                name = "Ace Up The Sleeve",
+                text = {
+                    "Add a random {C:attention}Enhanced",
+                    "{C:attention}Ace{} to your hand",
+                    "when you have {C:blue}1{}",
+                    "hand left"
+                }
+            },
+            j_mf_burnerphone = {
+                name = "Burner Phone",
+                text = {
+                    "Shows the rank and suit",
+                    "of the top two cards",
+                    "of the deck",
+                    "{C:inactive}(Currently {V:1}#1#{V:2}#2#{V:3}#3#{C:inactive}",
+                    "{C:inactive}and {V:4}#4#{V:5}#5#{V:6}#6#{C:inactive})"
+                },
+            },
+            j_mf_bigshot = {
+                name = "[[BIG SHOT]]",
+                text = {
+                    "Played {C:attention}Aces{},",
+                    "{C:attention}9s{}, and {C:attention}7s{} earn",
+                    "{C:money}$#1#{} when scored",
+                    "Retrigger all played {C:attention}9s{}",
+                },
+            },
+            j_mf_mrloans = {
+                name = "Mr. Loans",
+                text = {
+                    "Prevents death if",
+                    "not in debt, but you",
+                    "lose {C:money}${} equal to remaining",
+                    "required chips"
+                },
+            },
+            j_mf_monochrome = {
+                name = "Monochrome Joker",
+                text = {
+                    "{C:mult}+#1#{} Mult per round",
+                    "without a {C:attention}Colour Card",
+                    "{C:inactive}(Currently {C:mult}+#2#{C:inactive})",
+                }
+            },
+            j_mf_wilddrawfour = { 
+                name = "Wild Draw Four",
+                text = {
+                    "{C:attention}+#2#{} hand size for",
+                    "each {C:attention}Wild Card{} scored",
+                    "in the current round",
+                    "{C:inactive}(Currently {C:attention}+#1#{C:inactive} cards)"
+                },
+            },
         },
     },
     misc = {
@@ -276,6 +361,10 @@ return {
             k_sealed_ex = "Sealed!",
             k_reset_ex = "Sealed!",
             k_timetravel_ex = "Time travel!",
+            k_plus_ankh = "+Ankh",
+            k_rankless = "rankless",
+            k_suitless = "suitless",
+            k_saved_mrloans = "Saved by Mr. Loans"
         },
         v_dictionary = {
             a_plus_hand = { "+#1# Hand "},
