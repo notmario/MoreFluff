@@ -67,6 +67,14 @@ FLUFF.hidden_joker_pool = {
     "mrloans",
     "monochrome",
     "wilddrawfour",
+
+    "fleshprison",
+    "mashupalbum",
+    "badlegaldefence",
+    "flintandsteel",
+    "sudoku",
+
+    "talljoker",
 }
 
 for _, path in ipairs(FLUFF.hidden_joker_pool) do

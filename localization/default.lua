@@ -360,6 +360,57 @@ return {
                     "{C:inactive}(Currently {C:attention}+#1#{C:inactive} cards)"
                 },
             },
+            j_mf_fleshprison = {
+                name = "Flesh Prison",
+                text = {
+                    "{X:purple,C:white}X#1#{} {C:attention}Boss Blind{} size",
+                    "When {C:attention}Boss Blind{} is defeated,",
+                    "{C:red}self destructs{}, and creates",
+                    "a {C:dark_edition}Negative{} {C:spectral}The Soul{} card",
+                }
+            },
+            j_mf_mashupalbum = {
+                name = "Mashup Album",
+                text = {
+                    "Gains {C:mult}+#3#{} Mult if played",
+                    "hand contains a {C:hearts}red{} flush",
+                    "Gains {C:chips}+#4#{} Chips if played",
+                    "hand contains a {C:spades}black{} flush",
+                    "{C:inactive}(Currently {C:mult}+#1#{C:inactive} and {C:chips}+#2#{C:inactive})"
+                },
+            },
+            j_mf_badlegaldefence = {
+                name = "Bad Legal Defence",
+                text = {
+                    "Create a {C:attention}Death{} {C:tarot}Tarot{}",
+                    "when {C:attention}Boss Blind{}",
+                    "is selected",
+                    "{C:inactive}(Must have room)"
+                },
+            },
+            j_mf_flintandsteel = {
+                name = "Flint and Steel",
+                text = {
+                    "Upgrade the level of each",
+                    "{C:attention}played hand{} if scored hand contains",
+                    "a {C:attention}Stone Card{} and {C:attention}Steel Card{}",
+                }
+            },
+            j_mf_sudoku = {
+                name = "Sudoku Joker",
+                text = {
+                    "{X:mult,C:white} X#1# {} Mult if each rank from {C:attention}A-9{}",
+                    "has been {C:attention}scored{}, resets when",
+                    "a {C:attention}Boss Blind{} is {C:red}defeated",
+                    "{C:inactive}(Currently {V:1}A{C:inactive}, {V:2}2{C:inactive}, {V:3}3{C:inactive}, {V:4}4{C:inactive}, {V:5}5{C:inactive}, {V:6}6{C:inactive}, {V:7}7{C:inactive}, {V:8}8{C:inactive}, {V:9}9{C:inactive})"
+                },
+            },
+            j_mf_talljoker = {
+                name = "Tall Joker",
+                text = {
+                    "{C:mult,s:1.1}+#1#{} Mult",
+                },
+            },
         },
     },
     misc = {
@@ -373,6 +424,8 @@ return {
             k_suitless = "suitless",
             k_saved_mrloans = "Saved by Mr. Loans",
             k_added_ex = "Added!",
+            k_death_caps = "DEATH",
+            k_noted_ex = "Noted!",
         },
         v_dictionary = {
             a_plus_hand = { "+#1# Hand "},

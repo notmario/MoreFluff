@@ -25,6 +25,8 @@ vec4 effect( vec4 colour, Image texture, vec2 texture_coords, vec2 screen_coords
         outcol = vec4(0.621, 0.113, 0.154, 1.0);
     }
 
+    outcol.rgb *= tex.r * 2;
+
     // outcol = vec4(uv.y, 0., triangle_badge.y / 100000., 1.);
 
     return outcol;

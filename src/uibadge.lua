@@ -6,7 +6,7 @@ SMODS.Shader {
 local smcmb = SMODS.create_mod_badges
 function SMODS.create_mod_badges(obj, badges)
 	smcmb(obj, badges)
-    if obj and obj.config and obj.config.no_shader_on_modbadge then
+    if obj and not obj.no_shader_on_modbadge then
         for i = 1, #badges do
             if badges[i].nodes[1].nodes[2].config.object.string == FLUFF.display_name then
                 -- badges[i].nodes[1].config.minw = 2
