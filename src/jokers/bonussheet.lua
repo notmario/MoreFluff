@@ -34,6 +34,10 @@ SMODS.Joker {
                         return true
                     end
                 }))
+                return {
+                    message = localize "k_added_ex",
+                    colour = HEX "000000",
+                }
             end
         end
     end,

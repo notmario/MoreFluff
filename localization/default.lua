@@ -371,7 +371,8 @@ return {
             k_plus_ankh = "+Ankh",
             k_rankless = "rankless",
             k_suitless = "suitless",
-            k_saved_mrloans = "Saved by Mr. Loans"
+            k_saved_mrloans = "Saved by Mr. Loans",
+            k_added_ex = "Added!",
         },
         v_dictionary = {
             a_plus_hand = { "+#1# Hand "},
