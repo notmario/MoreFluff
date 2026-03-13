@@ -1,4 +1,4 @@
-to_big = to_big or function(n) return num end
+to_big = to_big or function(n) return n end
 to_number = to_number or function(n) return n end
 
 local function update_exp_colour(self, _)

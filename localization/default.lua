@@ -411,6 +411,51 @@ return {
                     "{C:mult,s:1.1}+#1#{} Mult",
                 },
             },
+            j_mf_tonersoup = {
+                name = "I Sip Toner Soup",
+                text = {
+                    "Create a {C:tarot}Tarot{} card",
+                    "when a hand is played",
+                    "Destroyed when blind",
+                    "is defeated",
+                    "{C:inactive}(Must have room)"
+                },
+            },
+            j_mf_hallofmirrors = {
+                name = "Hall of Mirrors",
+                text = {
+                    "{C:attention}+#2#{} hand size for",
+                    "each {C:attention}6{} scored in",
+                    "the current round",
+                    "{C:inactive}(Currently {C:attention}+#1#{C:inactive} cards)"
+                }
+            },
+            j_mf_virtual = { 
+                name = "Virtual Joker",
+                text = {
+                    "{X:red,C:white} X#1# {} Mult",
+                    "Flips and shuffles all",
+                    "Joker cards when",
+                    "blind is selected"
+                },
+            },
+            j_mf_impostor = {
+                name = "Impostor",
+                text = {
+                    "{X:mult,C:white} X#1# {} Mult if the",
+                    "played hand has",
+                    "exactly one {C:red}red{} card"
+                }
+            },
+            j_mf_coupon_catalogue = {
+                name = "Coupon Catalogue",
+                text = {
+                    "{C:mult}+#1#{} Mult for each",
+                    "{C:attention}Voucher{} purchased",
+                    "this run",
+                    "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)",
+                }
+            },
         },
     },
     misc = {
