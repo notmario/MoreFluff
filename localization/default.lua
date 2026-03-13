@@ -456,6 +456,53 @@ return {
                     "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)",
                 }
             },
+
+            -- lettergem
+            j_mf_lettergem_a = {
+                name = "A",
+                text = {
+                    "Played {C:attention}Aces{}",
+                    "give {C:mult}+#1#{} Mult",
+                    "and get {C:attention}retriggered",
+                },
+            },
+            j_mf_lettergem_b = {
+                name = "B",
+                text = {
+                    "Shops contain an",
+                    "additional {C:money}$#1#",
+                    "{C:attention}Buffoon Pack"
+                },
+            },
+            j_mf_lettergem_c = {
+                name = "C",
+                text = {
+                    "{X:mult,C:white}X#1#{} Mult for every",
+                    "{C:chips}100{} chips worth",
+                    "of cards scored",
+                    "{C:inactive}(Currently #2#/100)"
+                },
+            },
+            j_mf_lettergem_d = {
+                name = "D",
+                text = {
+                    "{C:red,E:1}Destroy"
+                },
+            },
+            j_mf_lettergem_e = {
+                name = "E",
+                text = {
+                    "{X:mf_eemult,C:white}^#1#{} Mult"
+                },
+            },
+            j_mf_lettergem_f = {
+                name = "F",
+                text = {
+                    "Creates a {V:1}Letter {C:attention}Joker{}",
+                    "when blind is selected",
+                    "{C:inactive}(must have room)"
+                },
+            },
         },
     },
     misc = {

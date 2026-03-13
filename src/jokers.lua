@@ -43,6 +43,10 @@ SMODS.Rarity {
     badge_colour = HEX "000000"
 }
 
+SMODS.ObjectType {
+    key = "letterjoker"
+}
+
 FLUFF.hidden_joker_pool = {
     "brainrot",
     "triangular",
@@ -80,6 +84,15 @@ FLUFF.hidden_joker_pool = {
     "virtual",
     "impostor",
     "coupon_catalogue",
+
+    -- lettergem mentioned
+    "lettergem_a",
+    "lettergem_b",
+    "lettergem_c",
+    "lettergem_d",
+    "lettergem_e",
+    "lettergem_f",
+    "lettergem_g",
 }
 
 for _, path in ipairs(FLUFF.hidden_joker_pool) do
