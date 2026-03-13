@@ -161,6 +161,13 @@ return {
                     "of each round",
                 },
             },
+            j_mf_bonussheet = {    
+                name = "Bonus Sheet",
+                text = {
+                    "{C:attention}Buffoon Packs{} contain an",
+                    "additional {V:1}Scrapped{} {C:attention}Joker{}"
+                },
+            },
             j_mf_triangle = {
                 name = "Triangle",
                 text = {

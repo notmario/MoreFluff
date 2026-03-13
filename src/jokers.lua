@@ -26,6 +26,8 @@ FLUFF.joker_pool = {
     "blasphemy",
     "dramaticentrance",
 
+    "bonussheet",
+
     "triangle",
 }
 
@@ -36,7 +38,7 @@ end
 SMODS.Rarity {
     key = "oldfluff",
     loc_txt = {
-        name = "Scrap"
+        name = "Scrapped"
     },
     badge_colour = HEX "000000"
 }
