@@ -211,6 +211,16 @@ return {
                 },
             },
 
+            -- tokens
+            j_mf_oopsallfives = {
+                name = "Oops! All 5s",
+                text = {
+                    "Reduces all {C:attention}listed",
+                    "{C:green,E:1,S:1.1}denominators{} by {C:green}1",
+                    "{C:inactive}(ex: {C:green}1 in 5{C:inactive} -> {C:green}1 in 4{C:inactive})"
+                },
+            },
+
             -- oldfluff
             j_mf_brainrot = {
                 name = "Brainrot",
@@ -699,9 +709,231 @@ return {
                 }
             },
         },
+        Colour = {
+            c_mf_black = {
+                name = "Black",
+                text = {
+                    "Add {C:dark_edition}Negative{} to a",
+                    "random {C:attention}Joker{} for every",
+                    "{C:attention}#4#{} rounds this has been held",
+                    "{C:inactive}(Currently {C:attention}#1#{C:inactive}, {}[{C:attention,f:mf_emoji}#2#{C:inactive,f:mf_emoji}#3#{}]{C:inactive})"
+                },
+            },
+            c_mf_deepblue = {
+                name = "Deep Blue",
+                text = {
+                    "Converts a random card in",
+                    "hand to {C:spades}Spades{} for every",
+                    "{C:attention}#4#{} round this has been held",
+                    "{C:inactive}(Currently {C:attention}#1#{C:inactive}, {}[{C:attention,f:mf_emoji}#2#{C:inactive,f:mf_emoji}#3#{}]{C:inactive})"
+                },
+            },
+            c_mf_crimson = {
+                name = "Crimson",
+                text = {
+                    "Create a {C:red}Rare Tag{} for",
+                    "every {C:attention}#4#{} rounds",
+                    "this has been held",
+                    "{C:inactive}(Currently {C:attention}#1#{C:inactive}, {}[{C:attention,f:mf_emoji}#2#{C:inactive,f:mf_emoji}#3#{}]{C:inactive})"
+                },
+            },
+            c_mf_seaweed = {
+                name = "Seaweed",
+                text = {
+                    "Converts a random card in",
+                    "hand to {C:clubs}Clubs{} for every",
+                    "{C:attention}#4#{} round this has been held",
+                    "{C:inactive}(Currently {C:attention}#1#{C:inactive}, {}[{C:attention,f:mf_emoji}#2#{C:inactive,f:mf_emoji}#3#{}]{C:inactive})"
+                },
+            },
+            c_mf_brown = {
+                name = "Brown",
+                text = {
+                    "Destroys a random card in",
+                    "hand and gives {C:attention}$#5#{} for every",
+                    "{C:attention}#4#{} round this has been held",
+                    "{C:inactive}(Currently {C:attention}#1#{C:inactive}, {}[{C:attention,f:mf_emoji}#2#{C:inactive,f:mf_emoji}#3#{}]{C:inactive})"
+                },
+            },
+            c_mf_grey = {
+                name = "Grey",
+                text = {
+                    "Create a {C:attention}Double Tag{} for",
+                    "every {C:attention}#4#{} rounds",
+                    "this has been held",
+                    "{C:inactive}(Currently {C:attention}#1#{C:inactive}, {}[{C:attention,f:mf_emoji}#2#{C:inactive,f:mf_emoji}#3#{}]{C:inactive})"
+                },
+            },
+            c_mf_silver = {
+                name = "Silver",
+                text = {
+                    "Create a {C:dark_edition}Polychrome Tag{} for",
+                    "every {C:attention}#4#{} rounds",
+                    "this has been held",
+                    "{C:inactive}(Currently {C:attention}#1#{C:inactive}, {}[{C:attention,f:mf_emoji}#2#{C:inactive,f:mf_emoji}#3#{}]{C:inactive})"
+                },
+            },
+            c_mf_white = {
+                name = "White",
+                text = {
+                    "Create a random {C:dark_edition}Negative{}",
+                    "{C:colourcard}Colour{} card for every",
+                    "{C:attention}#4#{} rounds this has been held",
+                    "{C:inactive}(Currently {C:attention}#1#{C:inactive}, {}[{C:attention,f:mf_emoji}#2#{C:inactive,f:mf_emoji}#3#{}]{C:inactive})"
+                },
+            },
+            c_mf_red = {
+                name = "Red",
+                text = {
+                    "Converts a random card in",
+                    "hand to {C:hearts}Hearts{} for every",
+                    "{C:attention}#4#{} round this has been held",
+                    "{C:inactive}(Currently {C:attention}#1#{C:inactive}, {}[{C:attention,f:mf_emoji}#2#{C:inactive,f:mf_emoji}#3#{}]{C:inactive})"
+                },
+            },
+            c_mf_orange = {
+                name = "Orange",
+                text = {
+                    "Converts a random card in",
+                    "hand to {C:diamonds}Diamonds{} for every",
+                    "{C:attention}#4#{} round this has been held",
+                    "{C:inactive}(Currently {C:attention}#1#{C:inactive}, {}[{C:attention,f:mf_emoji}#2#{C:inactive,f:mf_emoji}#3#{}]{C:inactive})"
+                },
+            },
+            c_mf_yellow = {
+                name = "Yellow",
+                text = {
+                    "Gains {C:money}$#5#{} of",
+                    "{C:attention}sell value{}",
+                    "every {C:attention}#4# rounds",
+                    "{C:inactive}(Currently {C:attention}#1#{C:inactive}, {}[{C:attention,f:mf_emoji}#2#{C:inactive,f:mf_emoji}#3#{}]{C:inactive})"
+                },
+            },
+            c_mf_green = {
+                name = "Green",
+                text = {
+                    "Create a {C:dark_edition}Negative{}",
+                    "{C:green}Oops! All 5s{} for every {C:attention}#4#{}",
+                    "rounds this has been held",
+                    "{C:inactive}(Currently {C:attention}#1#{C:inactive}, {}[{C:attention,f:mf_emoji}#2#{C:inactive,f:mf_emoji}#3#{}]{C:inactive})"
+                },
+            },
+            c_mf_blue = {
+                name = "Blue",
+                text = {
+                    "Create a random {C:dark_edition}Negative{}",
+                    "{C:planet}Planet{} card for every",
+                    "{C:attention}#4#{} rounds this has been held",
+                    "{C:inactive}(Currently {C:attention}#1#{C:inactive}, {}[{C:attention,f:mf_emoji}#2#{C:inactive,f:mf_emoji}#3#{}]{C:inactive})"
+                },
+            },
+            c_mf_lilac = {
+                name = "Lilac",
+                text = {
+                    "Create a random {C:dark_edition}Negative{}",
+                    "{C:tarot}Tarot{} card for every",
+                    "{C:attention}#4#{} rounds this has been held",
+                    "{C:inactive}(Currently {C:attention}#1#{C:inactive}, {}[{C:attention,f:mf_emoji}#2#{C:inactive,f:mf_emoji}#3#{}]{C:inactive})"
+                },
+            },
+            c_mf_pink = {
+                name = "Pink",
+                text = {
+                    "Add {C:attention}1{} round to a random",
+                    "{C:colourcard}Colour{} card. Triggers once for",
+                    "{C:attention}#4#{} rounds this has been held",
+                    "{C:inactive}(Currently {C:attention}#1#{C:inactive}, {}[{C:attention,f:mf_emoji}#2#{C:inactive,f:mf_emoji}#3#{}]{C:inactive})"
+                },
+            },
+            c_mf_peach = {
+                name = "Peach",
+                text = {
+                    "Create a random {C:dark_edition}Negative{}",
+                    "{C:rotarot}45 Degree Rotated Tarot{} card for",
+                    "every {C:attention}#4#{} rounds this has been held",
+                    "{C:inactive}(Currently {C:attention}#1#{C:inactive}, {}[{C:attention,f:mf_emoji}#2#{C:inactive,f:mf_emoji}#3#{}]{C:inactive})"
+                },
+            },
+            c_mf_new_gold = {
+                name = "Gold",
+                text = {
+                    "Create a {C:dark_edition}Negative{} {C:spectral}Soul{}",
+                    "card for every {C:attention}#4#{} rounds",
+                    "this has been held",
+                    "{C:inactive}(Currently {C:attention}#1#{C:inactive}, {}[{C:attention,f:mf_emoji}#2#{C:inactive,f:mf_emoji}#3#{}]{C:inactive})"
+                },
+            },
+        },
+        Other = {
+            p_mf_colour_normal_1 = {
+                name = "Colour Pack",
+                text = {
+                    "Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2#{C:colourcard} Colour{} cards to",
+                    "add to your consumeables"
+                }
+            },
+            p_mf_colour_normal_2 = {
+                name = "Colour Pack",
+                text = {
+                    "Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2#{C:colourcard} Colour{} cards to",
+                    "add to your consumeables"
+                }
+            },
+            p_mf_colour_jumbo_1 = {
+                name = "Jumbo Colour Pack",
+                text = {
+                    "Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2#{C:colourcard} Colour{} cards to",
+                    "add to your consumeables"
+                }
+            },
+            p_mf_colour_mega_1 = {
+                name = "Mega Colour Pack",
+                text = {
+                    "Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2#{C:colourcard} Colour{} cards to",
+                    "add to your consumeables"
+                }
+            },
+        },
+        Voucher = {
+            v_mf_paintroller = {
+                name = "Paint Roller",
+                text = {
+                    "{C:green}#1# in #2#{} chance to add",
+                    "{C:attention}1{} round to {C:colourcard}Colour Cards{}",
+                    "when they gain a round"
+                },
+            },
+            v_mf_colourtheory = {
+                name = "Colour Theory",
+                text = {
+                    "Some {C:colourcard}Colour{} cards in",
+                    "packs are {C:dark_edition}Polychrome{}",
+                },
+            },
+        },
+        Tag = {
+            tag_mf_colour = {
+                name = "Painter's Tag",
+                text = {
+                    "Gives a free",
+                    "{C:colourcard}Jumbo Colour Pack"
+                }
+            },
+        },
     },
     misc = {
+        labels = {
+            colour = "Colour",
+        },
         dictionary = {
+            k_colour = "Colour",
+            b_colour_cards = "Colour Cards",
+            k_colour_pack = "Colour Pack",
+            k_plus_colour = "+1 Colour",
             k_swap_ex = "Swap!",
             k_sealed_ex = "Sealed!",
             k_reset_ex = "Sealed!",

@@ -83,3 +83,29 @@ function end_round()
         SMODS.calculate_context({remove_playing_cards = true, removed=remove_temp})
     end
 end
+
+
+local mf_art_credit_thingy = G.UIDEF.card_h_popup
+function G.UIDEF.card_h_popup(card)
+    local ret_val = mf_art_credit_thingy(card)
+    local obj = card.config.center
+    local target = ret_val.nodes[1].nodes[1].nodes[1].nodes
+    if obj and obj.mf_art_credit then
+        local str =
+        {n=G.UIT.R, config={align = 'cm'}, nodes={
+            {n=G.UIT.R, config={align='cm'}, nodes={
+                {n=G.UIT.T, config={text = "art by ", shadow = true, colour = G.C.UI.BACKGROUND_WHITE, scale = 0.27}},
+                {n=G.UIT.O, config = {object = DynaText({
+                    string = obj.mf_art_credit,
+                    colours = { dev and dev.colour or G.C.UI.BACKGROUND_WHITE }, scale = 0.27,
+                    silent = true, shadow = true,
+                })}}
+            }},
+            
+        }}
+        if str then
+            table.insert(target, str)
+        end
+    end
+    return ret_val
+end

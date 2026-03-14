@@ -50,7 +50,19 @@ SMODS.ObjectType {
     key = "letterjoker"
 }
 
+SMODS.Rarity {
+    key = "token",
+    badge_colour = HEX("474747"),
+    loc_txt = {
+        name = "Token"
+    }
+}
+
 FLUFF.hidden_joker_pool = {
+    -- tokens
+    "oopsallfives",
+
+    -- scrapped
     "brainrot",
     "triangular",
     "boxofhands",

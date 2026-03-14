@@ -19,6 +19,34 @@ SMODS.Atlas {
     py = 95,
 }
 
+SMODS.Atlas { 
+	key = "mf_colours", 
+	path = "mf_colours.png", 
+	px = 71, 
+	py = 95 
+}
+
+SMODS.Atlas {
+	key = "mf_tags",
+	path = "mf_tags.png",
+	px = 34,
+	py = 34
+}
+
+SMODS.Atlas { 
+	key = "mf_packs",
+	path = "mf_packs.png", 
+	px = 71, 
+	py = 95 
+}
+
+SMODS.Atlas { 
+	key = "mf_vouchers",
+	path = "mf_vouchers.png", 
+	px = 71, 
+	py = 95 
+}
+
 SMODS.Atlas {
 	key = "lettergem_destroy",
 	path = "lettergem_destroy.png",
