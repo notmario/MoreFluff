@@ -503,6 +503,176 @@ return {
                     "{C:inactive}(must have room)"
                 },
             },
+            -- g doesnt need one because funny idk
+            j_mf_lettergem_h = {
+                name = "H",
+                text = {
+                    "{C:attention}Retrigger{} all scoring",
+                    "cards except {C:attention}the first"
+                },
+            },
+            j_mf_lettergem_i = {
+                name = "I",
+                text = {
+                    {
+                        "{C:attention}Straights{} can be formed",
+                        "with {C:attention}two{} fewer cards",
+                    }, 
+                    {
+                        "{X:mult,C:white}X#1#{} Mult if played hand",
+                        "contains a {C:attention}five card straight"
+                    },
+                },
+            },
+            j_mf_lettergem_j = {
+                name = "J",
+                text = {
+                    {
+                        "Retriggers the {C:attention}two{}",
+                        "{C:attention}Jokers{} to the right"
+                    },
+                    {
+                        "Lose {C:money}$#1#{} when",
+                        "they trigger"
+                    }
+                },
+            },
+            j_mf_lettergem_k = {
+                name = "K",
+                text = {
+                    "Creates a {C:dark_edition}Negative {C:attention}Cavendish",
+                    "when {C:attention}Blind{} is selected, it has a",
+                    "{X:green,C:white}X#1#{} chance to be destroyed"
+                },
+            },
+            j_mf_lettergem_l = {
+                name = "L",
+                text = {
+                    "The {C:attention}first scoring card{}",
+                    "each hand is considered {C:attention}Lucky",
+                    "with a {X:green,C:white}X#1#{} chance to trigger",
+                },
+            },
+            j_mf_lettergem_m = {
+                name = "M",
+                text = {
+                    "Creates a {C:blue}Jolly Joker",
+                    "with {C:money}+$#1#{} sell value",
+                    "when blind is selected",
+                    "{C:inactive}(must have room)"
+                }
+            },
+            j_mf_lettergem_n = {
+                name = "N",
+                text = {
+                    "Creates a {C:dark_edition}Negative {C:attention}j_vremade_joker{}*",
+                    "when {C:attention}Boss Blind{} is selected",
+                }
+            },
+            j_mf_lettergem_vremade_joker = {
+                name = "j_vremade_joker",
+                text = {
+                    "{C:red,s:1.1}+#1#{} Mult",
+                },
+            },
+            j_mf_lettergem_o = {
+                name = "O",
+                text = {
+                    "All probabilities are {C:green}1 in 2",
+                }
+            },
+            j_mf_lettergem_p = {
+                name = "P",
+                text = {
+                    "When blind is selected,",
+                    "reduce {C:attention}blind size{} by {X:purple,C:white}X#1#",
+                    "for each {C:attention}Ante{}",
+                    "{C:inactive}(Currently {X:purple,C:white}X#2#{C:inactive})"
+                }
+            },
+            j_mf_lettergem_q = {
+                name = "Q",
+                text = {
+                    "Cards adjacent to",
+                    "{C:attention}Queens{} held in hand",
+                    "give {X:mult,C:white} X#1# {} Mult",
+                },
+            },
+            j_mf_lettergem_r = {
+                name = "R",
+                text = {
+                    {
+                        "{C:attention}+#1#{} Round when",
+                        "blind is selected"
+                    }, 
+                    {
+                        "{C:mult}+#2#{} Mult for each Round",
+                        "{C:inactive}(Currently {C:mult}+#3#{C:inactive} Mult)"
+                    }
+                },
+            },
+            j_mf_lettergem_s = {
+                name = "S",
+                text = {
+                    "Scored and held {C:attention}6s{} and {C:attention}7s",
+                    "give {C:chips}+#1#{} Chips and {C:mult}+#2#{} Mult",
+                },
+            },
+            j_mf_lettergem_t = {
+                name = "T",
+                text = {
+                    "{E:1,C:attention}Draw another card",
+                    "when you draw a",
+                    "{C:attention}Wild Card"
+                }
+            },
+            j_mf_lettergem_u = {
+                name = "U",
+                text = {
+                    "Cards do not score",
+                    "{C:mult}+#1#{} Mult for each played card"
+                }
+            },
+            j_mf_lettergem_v = {
+                name = "V",
+                text = {
+                    "Creates a {C:attention}Voucher Tag",
+                    "whenever a card is bought"
+                }
+            },
+            j_mf_lettergem_w = {
+                name = "W",
+                text = {
+                    "Creates a {C:attention}Wheel of Fortune",
+                    "when {C:attention}Blind{} is selected, it has",
+                    "a {X:green,C:white}X#1#{} chance to trigger",
+                    "{C:inactive}(must have room)"
+                }
+            },
+            j_mf_lettergem_x = {
+                name = "X",
+                text = {
+                    "Increases {X:mult,C:white}XMult{} triggers",
+                    "by {X:mult,C:white}X#1#{} Mult, increases",
+                    "by {X:mult,C:white}X#2#{} Mult per trigger"
+                }
+            },
+            j_mf_lettergem_y = {
+                name = "Y",
+                text = {
+                    "Earn {C:gold}$#1#{} for every",
+                    "{C:attention}#2#{} cards scored",
+                    "{C:inactive}(Currently #3#/#2#)"
+                }
+            },
+            j_mf_lettergem_z = {
+                name = "Z",
+                text = {
+                    "Prevents Death however it will",
+                    "{C:red}destroy{} ",
+                    "{C:attention}13{} playing cards"
+                }
+            },
         },
     },
     misc = {
@@ -518,10 +688,13 @@ return {
             k_added_ex = "Added!",
             k_death_caps = "DEATH",
             k_noted_ex = "Noted!",
+            k_reduced_ex = "Reduced!",
+            k_zenith = "Saved by Z",
         },
         v_dictionary = {
             a_plus_hand = { "+#1# Hand "},
             a_plus_pluschips = { "++#1# Chips" },
+            a_plus_rounds = { "+#1# Rounds" },
         }
     },
 }

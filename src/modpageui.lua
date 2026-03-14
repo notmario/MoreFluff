@@ -25,6 +25,9 @@ FLUFF.custom_ui = function(mod_nodes)
 
     if times_spawned >= 10 then
         if times_spawned % 2 == 1 then
+            for _, card in pairs(FLUFF.hidden_joker_pool) do
+                G.P_CENTERS["j_mf_"..card].no_collection = false
+            end
             card_pool = FLUFF.hidden_joker_pool
         else
             card_pool = FLUFF.joker_pool

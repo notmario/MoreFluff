@@ -1,3 +1,10 @@
+-- quantum enhancements and post triggers are for lettergem ... 
+FLUFF.optional_features = {
+    retrigger_joker = true,
+    post_trigger = true,
+    quantum_enhancements = true,
+}
+
 -- sts mana value
 SMODS.DrawStep({
 	key = "spire_mv",
