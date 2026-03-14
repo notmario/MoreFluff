@@ -27,6 +27,9 @@ FLUFF.joker_pool = {
     "dramaticentrance",
 
     "bonussheet",
+    "blunder",
+    "brilliant",
+    "broomcloset",
 
     "triangle",
 }
