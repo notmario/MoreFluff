@@ -404,22 +404,6 @@ function trigger_colour_end_of_round(_card)
     end
 end
 
-local update_blind_selectref = Game.update_blind_select
-function Game:update_blind_select(dt)
-    update_blind_selectref(self, dt)
-    G.do_colour_end_of_round_stuff = true
-end
-
-local update_round_evalref = Game.update_round_eval
-function Game:update_round_eval(dt)
-  update_round_evalref(self, dt)
-    if G.do_colour_end_of_round_stuff then
-        colour_end_of_round_effects()
-
-        G.do_colour_end_of_round_stuff = false
-    end
-end
-
 SMODS.Voucher {
     object_type = "Voucher",
     key = "paintroller",

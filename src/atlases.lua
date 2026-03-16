@@ -47,6 +47,14 @@ SMODS.Atlas {
 	py = 95 
 }
 
+
+SMODS.Atlas { 
+	key = "mf_enhancers",
+	path = "mf_enhancers.png", 
+	px = 71, 
+	py = 95 
+}
+
 SMODS.Atlas {
 	key = "lettergem_destroy",
 	path = "lettergem_destroy.png",

@@ -864,6 +864,16 @@ return {
                 },
             },
         },
+        Back = {
+            b_mf_oldfluff = {
+                name = "Old Deck",
+                text = {
+                    "Buffoon Packs contain an",
+                    "additional {V:1}Scrapped{} Joker",
+                    "Booster Packs cost {C:gold}$1{} more"
+                }
+            },
+        },
         Other = {
             p_mf_colour_normal_1 = {
                 name = "Colour Pack",
