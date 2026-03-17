@@ -729,18 +729,18 @@ FLUFF.Colour {
     end
 }
   
--- FLUFF.Colour {
---     key = "peach",
---     name = "col_Peach",
---     atlas = "mf_colours",
---     pos = { x = 3, y = 4 },
---     config = {
---         upgrade_rounds = 2,
---         create_set = "Rotarot"
---     },
+FLUFF.Colour {
+    key = "peach",
+    name = "col_Peach",
+    atlas = "mf_colours",
+    pos = { x = 3, y = 4 },
+    config = {
+        upgrade_rounds = 2,
+        create_set = "Rotarot"
+    },
 
---     mf_art_credit = "Multi"
--- }
+    mf_art_credit = "Multi"
+}
 
   
 FLUFF.Colour {

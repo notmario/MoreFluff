@@ -864,6 +864,180 @@ return {
                 },
             },
         },
+        Rotarot = {
+            c_mf_rot_fool = {
+                name = "The Fool!",
+                text = {
+                "Creates the last",
+                "{C:rotarot}45 Degree Rotated Tarot{} or {C:colourcard}Colour{} ",
+                "card used during this run",
+                "{s:0.8,C:rotarot}The Fool!{s:0.8} excluded"
+                }
+            },
+            c_mf_rot_magician = {
+                name = "The Magician!",
+                text = {
+                "Enhances {C:attention}#1#{}",
+                "selected cards to",
+                "{C:attention}#2#s"
+                }
+            },
+            c_mf_rot_high_priestess = {
+                name = "The High Priestess!",
+                text = {
+                "Creates up to {C:attention}#1#",
+                "random {C:colourcard}Colour{} cards",
+                "{C:inactive}(Must have room)"
+                }
+            },
+            c_mf_rot_empress = {
+                name = "The Empress!",
+                text = {
+                "Enhances {C:attention}#1#",
+                "selected cards to",
+                "{C:attention}#2#s"
+                }
+            },
+            c_mf_rot_emperor = {
+                name = "The Emperor!",
+                text = {
+                "Creates up to {C:attention}#1#{} random",
+                "{C:rotarot}45 Degree Rotated Tarot{} cards",
+                "{C:inactive}(Must have room)"
+                },
+            },
+            c_mf_rot_heirophant = {
+                name = "The Hierophant!",
+                text = {
+                "Enhances {C:attention}#1#",
+                "selected cards to",
+                "{C:attention}#2#s"
+                }
+            },
+            c_mf_rot_lovers = {
+                name = "The Lovers!",
+                text = {
+                "Enhances {C:attention}#1#{}",
+                "selected cards to",
+                "{C:attention}#2#s"
+                }
+            },
+            c_mf_rot_chariot = {
+                name = "The Chariot!",
+                text = {
+                "Enhances {C:attention}#1#{} selected",
+                "card into a",
+                "{C:attention}#2#"
+                }
+            },
+            c_mf_rot_justice = {
+                name = "Justice!",
+                text = {
+                "Enhances {C:attention}#1#{} selected",
+                "card into a",
+                "{C:attention}#2#"
+                }
+            },
+            c_mf_rot_hermit = {
+                name = "The Hermit!",
+                text = {
+                "Sets money to next",
+                "multiple of {C:money}$#1#",
+                "{C:inactive}(No effect on multiples of {C:money}$#1#{C:inactive})"
+                },
+            },
+            c_mf_rot_wheel = {
+                name = "The Wheel of Fortune!",
+                text = {
+                "{C:green}#1# in #2#{} chance to add",
+                "a random {C:negative}edition",
+                "to a random {C:attention}Joker",
+                "{C:inactive}All editions are weighted equally...{}"
+                }
+            },
+            c_mf_rot_strength = {
+                name = "Strength!",
+                text = {
+                "Randomises rank of up to",
+                "{C:attention}#1#{} selected cards",
+                },
+            },
+            c_mf_rot_hanged_man = {
+                name = "The Hanged Man!",
+                text = {
+                "Destroys {C:attention}#1#{} random",
+                "cards in hand",
+                },
+            },
+            c_mf_rot_death = {
+                name = "Death!",
+                text = {
+                "Select {C:attention}#1#{} cards,",
+                "convert {C:attention}all{} selected cards",
+                "into a {C:attention}random{} selected card"
+                }
+            },
+            c_mf_rot_temperance = {
+                name = "Temperance!",
+                text = {
+                "Add {C:money}$#1#{} of {C:attention}sell value",
+                "to every {C:attention}Joker{} and",
+                "{C:attention}Consumable{} card",
+                },
+            },
+            c_mf_rot_devil = {
+                name = "The Devil!",
+                text = {
+                "Enhances {C:attention}#1#{}",
+                "selected cards to",
+                "{C:attention}#2#s"
+                }
+            },
+            c_mf_rot_tower = {
+                name = "The Tower!",
+                text = {
+                "Enhances {C:attention}#1#{} selected",
+                "card into a",
+                "{C:attention}#2#"
+                }
+            },
+            c_mf_rot_star = {
+                name = "The Star!",
+                text = {
+                "Add {C:attention}#1#{} random {C:attention}Enhanced",
+                "{C:diamonds}Diamonds{} to your hand"
+                }
+            },
+            c_mf_rot_moon = {
+                name = "The Moon!",
+                text = {
+                "Add {C:attention}#1#{} random {C:attention}Enhanced",
+                "{C:clubs}Clubs{} to your hand"
+                }
+            },
+            c_mf_rot_sun = {
+                name = "The Sun!",
+                text = {
+                "Add {C:attention}#1#{} random {C:attention}Enhanced",
+                "{C:hearts}Hearts{} to your hand"
+                }
+            },
+            c_mf_rot_judgement = {
+                name = "Judgement!",
+                text = {
+                "Creates a random",
+                "{C:dark_edition}modded{C:attention} Joker",
+                "{C:inactive}(Must have room)"
+                },
+            },
+            c_mf_rot_world = {
+                name = "The World!",
+                text = {
+                "Add {C:attention}#1#{} random {C:attention}Enhanced",
+                "{C:spades}Spades{} to your hand"
+                }
+            },
+        },
         Back = {
             b_mf_oldfluff = {
                 name = "Old Deck",
@@ -907,6 +1081,70 @@ return {
                     "add to your consumeables"
                 }
             },
+            p_mf_rotarot_normal_1 = {
+                name = "45 Degree Rotated Arcana Pack",
+                text = {
+                    "Choose {C:attention}#1#{} of up to {C:attention}#2#",
+                    "{C:rotarot}45 Degree Rotated Tarot{}",
+                    "cards to be used immediately"
+                }
+            },
+            p_mf_rotarot_normal_2 = {
+                name = "45 Degree Rotated Arcana Pack",
+                text = {
+                    "Choose {C:attention}#1#{} of up to {C:attention}#2#",
+                    "{C:rotarot}45 Degree Rotated Tarot{}",
+                    "cards to be used immediately"
+                }
+            },
+            p_mf_rotarot_normal_3 = {
+                name = "45 Degree Rotated Arcana Pack",
+                text = {
+                    "Choose {C:attention}#1#{} of up to {C:attention}#2#",
+                    "{C:rotarot}45 Degree Rotated Tarot{}",
+                    "cards to be used immediately"
+                }
+            },
+            p_mf_rotarot_normal_4 = {
+                name = "45 Degree Rotated Arcana Pack",
+                text = {
+                    "Choose {C:attention}#1#{} of up to {C:attention}#2#",
+                    "{C:rotarot}45 Degree Rotated Tarot{}",
+                    "cards to be used immediately"
+                }
+            },
+            p_mf_rotarot_jumbo_1 = {
+                name = "45 Degree Rotated Jumbo Arcana Pack",
+                text = {
+                    "Choose {C:attention}#1#{} of up to {C:attention}#2#",
+                    "{C:rotarot}45 Degree Rotated Tarot{}",
+                    "cards to be used immediately"
+                }
+            },
+            p_mf_rotarot_jumbo_2 = {
+                name = "45 Degree Rotated Jumbo Arcana Pack",
+                text = {
+                "Choose {C:attention}#1#{} of up to {C:attention}#2#",
+                "{C:rotarot}45 Degree Rotated Tarot{}",
+                "cards to be used immediately"
+                }
+            },
+            p_mf_rotarot_mega_1 = {
+                name = "45 Degree Rotated Mega Arcana Pack",
+                text = {
+                    "Choose {C:attention}#1#{} of up to {C:attention}#2#",
+                    "{C:rotarot}45 Degree Rotated Tarot{}",
+                    "cards to be used immediately"
+                }
+            },
+            p_mf_rotarot_mega_2 = {
+                name = "45 Degree Rotated Mega Arcana Pack",
+                text = {
+                    "Choose {C:attention}#1#{} of up to {C:attention}#2#",
+                    "{C:rotarot}45 Degree Rotated Tarot{}",
+                    "cards to be used immediately"
+                }
+            },
         },
         Voucher = {
             v_mf_paintroller = {
@@ -933,6 +1171,13 @@ return {
                     "{C:colourcard}Jumbo Colour Pack"
                 }
             },
+            tag_mf_rotarot = {
+                name = "Rotarot Tag",
+                text = {
+                    "Gives a free",
+                    "{C:rotarot}45 Degree Rotated Mega Arcana Pack"
+                }
+            },
         },
     },
     misc = {
@@ -943,7 +1188,11 @@ return {
             k_colour = "Colour",
             b_colour_cards = "Colour Cards",
             k_colour_pack = "Colour Pack",
+            k_rotarot = "45 Degree Rotated Tarot",
+            b_rotarot_cards = "45 Degree Rotated Tarot Cards",
+            k_rotarot_pack = "45 Degree Rotated Arcana Pack",
             k_plus_colour = "+1 Colour",
+            k_plus_rotarot = "+1 45 Degree Rotated Tarot Card",
             k_swap_ex = "Swap!",
             k_sealed_ex = "Sealed!",
             k_reset_ex = "Sealed!",

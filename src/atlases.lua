@@ -47,6 +47,12 @@ SMODS.Atlas {
 	py = 95 
 }
 
+SMODS.Atlas { 
+	key = "mf_rotarots",
+	path = "mf_rotarots.png", 
+	px = 71, 
+	py = 95 
+}
 
 SMODS.Atlas { 
 	key = "mf_enhancers",
