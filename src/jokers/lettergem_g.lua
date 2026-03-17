@@ -1,9 +1,3 @@
-SMODS.Sound {
-    key = "g_riff",
-    path = "g.ogg",
-    pitch = 1.0
-}
-
 SMODS.Joker {
     key = "lettergem_g",
     atlas = "mf_oldfluff",

@@ -55,221 +55,40 @@ SMODS.UndiscoveredSprite({
 
 G.C.SECONDARY_SET.Rotarot = HEX("8e73d9")
 
-SMODS.Booster({
-    key = "rotarot_normal_1",
-    kind = "Rotarot",
-    atlas = "mf_packs",
-    mf_rotate_by = math.pi/4,
-    -- pixel_size = { w = 106, h = 106 },
-    pos = { x = 0, y = 2 },
-    config = { extra = 3, choose = 1 },
-    draw_hand = true,
-    cost = 4,
-    weight = 0.96,
-    unlocked = true,
-    discovered = true,
-    create_card = function(self, card)
-      local n_card = create_card("Rotarot", G.pack_cards, nil, nil, true, true, nil, "mf_rotarot")
-      return n_card
-    end,
-    ease_background_colour = function(self)
-      ease_colour(G.C.DYN_UI.MAIN, G.C.SECONDARY_SET.Rotarot)
-      ease_background_colour({ new_colour = G.C.SECONDARY_SET.Rotarot, special_colour = G.C.BLACK, contrast = 2 })
-    end,
-    loc_vars = function(self, info_queue, card)
-      return { vars = { card.config.center.config.choose, card.ability.extra } }
-    end,
-    group_key = "k_rotarot_pack",
-})
-
-SMODS.Booster({
-    key = "rotarot_normal_2",
-    kind = "Rotarot",
-    atlas = "mf_packs",
-    mf_rotate_by = math.pi/4,
-    -- pixel_size = { w = 106, h = 106 },
-    pos = { x = 1, y = 2 },
-    config = { extra = 3, choose = 1 },
-    draw_hand = true,
-    cost = 4,
-    weight = 0.96,
-    unlocked = true,
-    discovered = true,
-    create_card = function(self, card)
-      local n_card = create_card("Rotarot", G.pack_cards, nil, nil, true, true, nil, "mf_rotarot")
-      return n_card
-    end,
-    ease_background_colour = function(self)
-      ease_colour(G.C.DYN_UI.MAIN, G.C.SECONDARY_SET.Rotarot)
-      ease_background_colour({ new_colour = G.C.SECONDARY_SET.Rotarot, special_colour = G.C.BLACK, contrast = 2 })
-    end,
-    loc_vars = function(self, info_queue, card)
-      return { vars = { card.config.center.config.choose, card.ability.extra } }
-    end,
-    group_key = "k_rotarot_pack",
-})
-
-SMODS.Booster({
-    key = "rotarot_normal_3",
-    kind = "Rotarot",
-    atlas = "mf_packs",
-    mf_rotate_by = math.pi/4,
-    -- pixel_size = { w = 106, h = 106 },
-    pos = { x = 2, y = 2 },
-    config = { extra = 3, choose = 1 },
-    draw_hand = true,
-    cost = 4,
-    weight = 0.96,
-    unlocked = true,
-    discovered = true,
-    create_card = function(self, card)
-      local n_card = create_card("Rotarot", G.pack_cards, nil, nil, true, true, nil, "mf_rotarot")
-      return n_card
-    end,
-    ease_background_colour = function(self)
-      ease_colour(G.C.DYN_UI.MAIN, G.C.SECONDARY_SET.Rotarot)
-      ease_background_colour({ new_colour = G.C.SECONDARY_SET.Rotarot, special_colour = G.C.BLACK, contrast = 2 })
-    end,
-    loc_vars = function(self, info_queue, card)
-      return { vars = { card.config.center.config.choose, card.ability.extra } }
-    end,
-    group_key = "k_rotarot_pack",
-})
-
-SMODS.Booster({
-    key = "rotarot_normal_4",
-    kind = "Rotarot",
-    atlas = "mf_packs",
-    mf_rotate_by = math.pi/4,
-    -- pixel_size = { w = 106, h = 106 },
-    pos = { x = 3, y = 2 },
-    config = { extra = 3, choose = 1 },
-    draw_hand = true,
-    cost = 4,
-    weight = 0.96,
-    unlocked = true,
-    discovered = true,
-    create_card = function(self, card)
-      local n_card = create_card("Rotarot", G.pack_cards, nil, nil, true, true, nil, "mf_rotarot")
-      return n_card
-    end,
-    ease_background_colour = function(self)
-      ease_colour(G.C.DYN_UI.MAIN, G.C.SECONDARY_SET.Rotarot)
-      ease_background_colour({ new_colour = G.C.SECONDARY_SET.Rotarot, special_colour = G.C.BLACK, contrast = 2 })
-    end,
-    loc_vars = function(self, info_queue, card)
-      return { vars = { card.config.center.config.choose, card.ability.extra } }
-    end,
-    group_key = "k_rotarot_pack",
-})
-
-SMODS.Booster({
-    key = "rotarot_jumbo_1",
-    kind = "Rotarot",
-    atlas = "mf_packs",
-    mf_rotate_by = math.pi/4,
-    -- pixel_size = { w = 106, h = 106 },
-    pos = { x = 0, y = 3 },
-    config = { extra = 5, choose = 1 },
-    draw_hand = true,
-    cost = 6,
-    weight = 0.96,
-    unlocked = true,
-    discovered = true,
-    create_card = function(self, card)
-      local n_card = create_card("Rotarot", G.pack_cards, nil, nil, true, true, nil, "mf_rotarot")
-      return n_card
-    end,
-    ease_background_colour = function(self)
-      ease_colour(G.C.DYN_UI.MAIN, G.C.SECONDARY_SET.Rotarot)
-      ease_background_colour({ new_colour = G.C.SECONDARY_SET.Rotarot, special_colour = G.C.BLACK, contrast = 2 })
-    end,
-    loc_vars = function(self, info_queue, card)
-      return { vars = { card.config.center.config.choose, card.ability.extra } }
-    end,
-    group_key = "k_rotarot_pack",
-})
-
-SMODS.Booster({
-    key = "rotarot_jumbo_2",
-    kind = "Rotarot",
-    atlas = "mf_packs",
-    mf_rotate_by = math.pi/4,
-    -- pixel_size = { w = 106, h = 106 },
-    pos = { x = 1, y = 3 },
-    config = { extra = 5, choose = 1 },
-    draw_hand = true,
-    cost = 6,
-    weight = 0.96,
-    unlocked = true,
-    discovered = true,
-    create_card = function(self, card)
-      local n_card = create_card("Rotarot", G.pack_cards, nil, nil, true, true, nil, "mf_rotarot")
-      return n_card
-    end,
-    ease_background_colour = function(self)
-      ease_colour(G.C.DYN_UI.MAIN, G.C.SECONDARY_SET.Rotarot)
-      ease_background_colour({ new_colour = G.C.SECONDARY_SET.Rotarot, special_colour = G.C.BLACK, contrast = 2 })
-    end,
-    loc_vars = function(self, info_queue, card)
-      return { vars = { card.config.center.config.choose, card.ability.extra } }
-    end,
-    group_key = "k_rotarot_pack",
-})
-
-SMODS.Booster({
-    key = "rotarot_mega_1",
-    kind = "Rotarot",
-    atlas = "mf_packs",
-    mf_rotate_by = math.pi/4,
-    -- pixel_size = { w = 106, h = 106 },
-    pos = { x = 2, y = 3 },
-    config = { extra = 5, choose = 2 },
-    draw_hand = true,
-    cost = 8,
-    weight = 0.48,
-    unlocked = true,
-    discovered = true,
-    create_card = function(self, card)
-      local n_card = create_card("Rotarot", G.pack_cards, nil, nil, true, true, nil, "mf_rotarot")
-      return n_card
-    end,
-    ease_background_colour = function(self)
-      ease_colour(G.C.DYN_UI.MAIN, G.C.SECONDARY_SET.Rotarot)
-      ease_background_colour({ new_colour = G.C.SECONDARY_SET.Rotarot, special_colour = G.C.BLACK, contrast = 2 })
-    end,
-    loc_vars = function(self, info_queue, card)
-      return { vars = { card.config.center.config.choose, card.ability.extra } }
-    end,
-    group_key = "k_rotarot_pack",
-})
-
-SMODS.Booster({
-    key = "rotarot_mega_2",
-    kind = "Rotarot",
-    atlas = "mf_packs",
-    mf_rotate_by = math.pi/4,
-    -- pixel_size = { w = 106, h = 106 },
-    pos = { x = 3, y = 3 },
-    config = { extra = 5, choose = 2 },
-    draw_hand = true,
-    cost = 8,
-    weight = 0.48,
-    unlocked = true,
-    discovered = true,
-    create_card = function(self, card)
-      local n_card = create_card("Rotarot", G.pack_cards, nil, nil, true, true, nil, "mf_rotarot")
-      return n_card
-    end,
-    ease_background_colour = function(self)
-      ease_colour(G.C.DYN_UI.MAIN, G.C.SECONDARY_SET.Rotarot)
-      ease_background_colour({ new_colour = G.C.SECONDARY_SET.Rotarot, special_colour = G.C.BLACK, contrast = 2 })
-    end,
-    loc_vars = function(self, info_queue, card)
-      return { vars = { card.config.center.config.choose, card.ability.extra } }
-    end,
-    group_key = "k_rotarot_pack",
-})
+-- type, cost, count, x pos, y pos, choose, size, weight
+for _, booster_type in ipairs {
+    { "normal", 4, 4, 0, 2, 1, 3, 0.96 },
+    { "jumbo" , 6, 2, 0, 3, 1, 5, 0.96 },
+    { "mega"  , 8, 2, 2, 3, 2, 5, 0.48 },
+} do
+    for i = 1, booster_type[3] do
+        SMODS.Booster {
+            key = "rotarot_"..booster_type[1].."_"..i,
+            kind = "Rotarot",
+            atlas = "mf_packs",
+            mf_rotate_by = math.pi/4,
+            pos = { x = booster_type[4] + (i - 1), y = booster_type[5] },
+            config = { choose = booster_type[6], extra = booster_type[7], rotarot_pack = true },
+            draw_hand = true,
+            cost = booster_type[2],
+            weight = booster_type[8],
+            unlocked = true,
+            discovered = true,
+            create_card = function(self, card)
+                local n_card = create_card("Rotarot", G.pack_cards, nil, nil, true, true, nil, "mf_rotarot")
+                return n_card
+            end,
+            ease_background_colour = function(self)
+                ease_colour(G.C.DYN_UI.MAIN, G.C.SECONDARY_SET.Rotarot)
+                ease_background_colour({ new_colour = G.C.SECONDARY_SET.Rotarot, special_colour = G.C.BLACK, contrast = 2 })
+            end,
+            loc_vars = function(self, info_queue, card)
+                return { vars = { card.config.center.config.choose, card.ability.extra } }
+            end,
+            group_key = "k_rotarot_pack",
+        }
+    end
+end
 
 SMODS.Tag({
     key = "rotarot",

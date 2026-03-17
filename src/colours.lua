@@ -150,122 +150,44 @@ SMODS.UndiscoveredSprite {
     py = 95,
 }
 
-SMODS.Booster {
-    key = "colour_normal_1",
-    kind = "Colour",
-    atlas = "mf_packs",
-    pos = { x = 0, y = 0 },
-    config = { extra = 2, choose = 1 },
-    cost = 4,
-    weight = 0.96,
-    unlocked = true,
-    discovered = true,
-    create_card = function(self, card)
-      local n_card = create_card("Colour", G.pack_cards, nil, nil, true, true, nil, "mf_colour")
-      local ed_roll = pseudorandom('colour_editionroll')
-      if ed_roll < 0.4 and G.GAME.used_vouchers.v_mf_colourtheory then
-        n_card:set_edition({polychrome = true}, true)
-      elseif ed_roll >= 0.4 and ed_roll < 0.766666 and G.GAME.used_vouchers.v_mf_artprogram then
-        n_card:set_edition({negative = true}, true)
-      end
-      return n_card
-    end,
-    ease_background_colour = function(self)
-      ease_colour(G.C.DYN_UI.MAIN, G.C.SECONDARY_SET.Colour)
-      ease_background_colour({ new_colour = G.C.SECONDARY_SET.Colour, special_colour = G.C.BLACK, contrast = 2 })
-    end,
-    loc_vars = function(self, info_queue, card)
-      return { vars = { card.config and card.config.center.config.choose or 1, card.ability and card.ability.extra or 2} }
-    end,
-    group_key = "k_colour_pack",
-}
-SMODS.Booster {
-    key = "colour_normal_2",
-    kind = "Colour",
-    atlas = "mf_packs",
-    pos = { x = 1, y = 0 },
-    config = { extra = 2, choose = 1 },
-    cost = 4,
-    weight = 0.96,
-    unlocked = true,
-    discovered = true,
-    create_card = function(self, card)
-      local n_card = create_card("Colour", G.pack_cards, nil, nil, true, true, nil, "mf_colour")
-      local ed_roll = pseudorandom('colour_editionroll')
-      if ed_roll < 0.4 and G.GAME.used_vouchers.v_mf_colourtheory then
-        n_card:set_edition({polychrome = true}, true)
-      elseif ed_roll >= 0.4 and ed_roll < 0.766666 and G.GAME.used_vouchers.v_mf_artprogram then
-        n_card:set_edition({negative = true}, true)
-      end
-      return n_card
-    end,
-    ease_background_colour = function(self)
-      ease_colour(G.C.DYN_UI.MAIN, G.C.SECONDARY_SET.Colour)
-      ease_background_colour({ new_colour = G.C.SECONDARY_SET.Colour, special_colour = G.C.BLACK, contrast = 2 })
-    end,
-    loc_vars = function(self, info_queue, card)
-      return { vars = { card.config.center.config.choose, card.ability.extra } }
-    end,
-    group_key = "k_colour_pack",
-}
-SMODS.Booster {
-    key = "colour_jumbo_1",
-    kind = "Colour",
-    atlas = "mf_packs",
-    pos = { x = 2, y = 0 },
-    config = { extra = 4, choose = 1 },
-    cost = 6,
-    weight = 0.48,
-    unlocked = true,
-    discovered = true,
-    create_card = function(self, card)
-      local n_card = create_card("Colour", G.pack_cards, nil, nil, true, true, nil, "mf_colour")
-      local ed_roll = pseudorandom('colour_editionroll')
-      if ed_roll < 0.4 and G.GAME.used_vouchers.v_mf_colourtheory then
-        n_card:set_edition({polychrome = true}, true)
-      elseif ed_roll >= 0.4 and ed_roll < 0.766666 and G.GAME.used_vouchers.v_mf_artprogram then
-        n_card:set_edition({negative = true}, true)
-      end
-      return n_card
-    end,
-    ease_background_colour = function(self)
-      ease_colour(G.C.DYN_UI.MAIN, G.C.SECONDARY_SET.Colour)
-      ease_background_colour({ new_colour = G.C.SECONDARY_SET.Colour, special_colour = G.C.BLACK, contrast = 2 })
-    end,
-    loc_vars = function(self, info_queue, card)
-      return { vars = { card.config.center.config.choose, card.ability.extra } }
-    end,
-    group_key = "k_colour_pack",
-}
-SMODS.Booster {
-    key = "colour_mega_1",
-    kind = "Colour",
-    atlas = "mf_packs",
-    pos = { x = 3, y = 0 },
-    config = { extra = 4, choose = 2 },
-    cost = 8,
-    weight = 0.12,
-    unlocked = true,
-    discovered = true,
-    create_card = function(self, card)
-      local n_card = create_card("Colour", G.pack_cards, nil, nil, true, true, nil, "mf_colour")
-      local ed_roll = pseudorandom('colour_editionroll')
-      if ed_roll < 0.4 and G.GAME.used_vouchers.v_mf_colourtheory then
-        n_card:set_edition({polychrome = true}, true)
-      elseif ed_roll >= 0.4 and ed_roll < 0.766666 and G.GAME.used_vouchers.v_mf_artprogram then
-        n_card:set_edition({negative = true}, true)
-      end
-      return n_card
-    end,
-    ease_background_colour = function(self)
-      ease_colour(G.C.DYN_UI.MAIN, G.C.SECONDARY_SET.Colour)
-      ease_background_colour({ new_colour = G.C.SECONDARY_SET.Colour, special_colour = G.C.BLACK, contrast = 2 })
-    end,
-    loc_vars = function(self, info_queue, card)
-      return { vars = { card.config.center.config.choose, card.ability.extra } }
-    end,
-    group_key = "k_colour_pack",
-}
+-- type, cost, count, x pos, y pos, choose, size, weight
+for _, booster_type in ipairs {
+    { "normal", 4, 2, 0, 0, 1, 2, 0.96 },
+    { "jumbo" , 6, 1, 2, 0, 1, 4, 0.96 },
+    { "mega"  , 8, 1, 3, 0, 2, 4, 0.48 },
+} do
+    for i = 1, booster_type[3] do
+        SMODS.Booster {
+            key = "colour_"..booster_type[1].."_"..i,
+            kind = "Colour",
+            atlas = "mf_packs",
+            pos = { x = booster_type[4] + (i - 1), y = booster_type[5] },
+            config = { choose = booster_type[6], extra = booster_type[7], colour_pack = true },
+            cost = booster_type[2],
+            weight = booster_type[8],
+            unlocked = true,
+            discovered = true,
+            create_card = function(self, card)
+                local n_card = create_card("Colour", G.pack_cards, nil, nil, true, true, nil, "mf_colour")
+                local ed_roll = pseudorandom('colour_editionroll')
+                if ed_roll < 0.4 and G.GAME.used_vouchers.v_mf_colourtheory then
+                    n_card:set_edition({polychrome = true}, true)
+                elseif ed_roll >= 0.4 and ed_roll < 0.766666 and G.GAME.used_vouchers.v_mf_artprogram then
+                    n_card:set_edition({negative = true}, true)
+                end
+                return n_card
+            end,
+            ease_background_colour = function(self)
+                ease_colour(G.C.DYN_UI.MAIN, G.C.SECONDARY_SET.Colour)
+                ease_background_colour({ new_colour = G.C.SECONDARY_SET.Colour, special_colour = G.C.BLACK, contrast = 2 })
+            end,
+            loc_vars = function(self, info_queue, card)
+                return { vars = { card.config and card.config.center.config.choose or booster_type[6], card.ability and card.ability.extra or booster_type[7]} }
+            end,
+            group_key = "k_colour_pack",
+        }
+    end
+end
 
 SMODS.Tag {
     key = "colour",
