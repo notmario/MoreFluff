@@ -1038,6 +1038,70 @@ return {
                 }
             },
         },
+        Enhanced = {
+            m_mf_yucky = {
+                name = "Yucky Card",
+                text = {
+                    "{C:green}#1# in #2#{} chance to",
+                    "be {C:red}destroyed{}",
+                    "after being scored",
+                },
+            },
+            m_mf_teal = {
+                name = "Teal Card",
+                text = {
+                    "{X:chips,C:white} X#1# {} Chips",
+                    "while this card",
+                    "stays in hand"
+                }
+            },
+            m_mf_styled = {
+                name = "Styled Card",
+                text = {
+                    "Gains a random {C:attention}Seal{}",
+                    "when drawn to hand"
+                }
+            },
+            m_mf_monus = {
+                name = "Monus Card",
+                text = {
+                    "{C:chips}+#1#{} Chips",
+                    "per hand level"
+                }
+            },
+            m_mf_cult = {
+                name = "Cult Card",
+                text = {
+                    "{C:mult}+#1#{} Mult",
+                    "per hand level"
+                }
+            },
+            m_mf_marigold = {
+                name = "Marigold Card",
+                text = {
+                    "Earn {C:money}$#1#{} at",
+                    "end of round, plus",
+                    "{C:money}$#1#{} for each other",
+                    "{C:attention}Marigold Card{} in hand",
+                }
+            },
+            m_mf_brass = {
+                name = "Brass Card",
+                text = {
+                    "{C:attention}Retriggers{} #1# additional",
+                    "times when scored",
+                    "{C:green}#2# in #3#{} chance to be",
+                    "{C:red}destroyed{} after being scored",
+                }
+            },
+            m_mf_gemstone = {
+                name = "Gemstone Card",
+                text = {
+                    "{C:attention}+$#1#{} when scored",
+                    "no rank or suit"
+                }
+            },
+        },
         Back = {
             b_mf_oldfluff = {
                 name = "Old Deck",

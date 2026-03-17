@@ -5,6 +5,7 @@ assert(SMODS.load_file("src/atlases.lua"))()
 
 assert(SMODS.load_file("src/jokers.lua"))()
 assert(SMODS.load_file("src/colours.lua"))()
+assert(SMODS.load_file("src/modifiers.lua"))()
 assert(SMODS.load_file("src/rotarots.lua"))()
 assert(SMODS.load_file("src/decks.lua"))()
 
