@@ -126,7 +126,7 @@ function progressbar(val, max)
     if max > 10 then
         return val, "/"..max
     end
-    return string.rep("⬜", val), string.rep("⬜", max - val)
+    return string.rep("🟩", val), string.rep("🟩", max - val)
 end
 
 SMODS.ConsumableType {
