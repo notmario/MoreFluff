@@ -89,7 +89,8 @@ for _, booster_type in ipairs {
                 ease_background_colour({ new_colour = G.C.SECONDARY_SET.Rotarot, special_colour = G.C.BLACK, contrast = 2 })
             end,
             loc_vars = function(self, info_queue, card)
-                return { vars = { card.config.center.config.choose, card.ability.extra } }
+                local cfg = (card and card.ability) or self.config
+                return { vars = { cfg.choose, cfg.extra }, key = self.key:sub(1, -3) }
             end,
             group_key = "k_rotarot_pack",
         }

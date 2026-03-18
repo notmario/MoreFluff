@@ -1113,96 +1113,48 @@ return {
             },
         },
         Other = {
-            p_mf_colour_normal_1 = {
-                name = "Colour Pack",
+            p_mf_colour_normal = {
+                name = "{E:mf_colour_title}Colour Pack",
                 text = {
                     "Choose {C:attention}#1#{} of up to",
                     "{C:attention}#2#{C:colourcard} Colour{} cards to",
                     "add to your consumeables"
                 }
             },
-            p_mf_colour_normal_2 = {
-                name = "Colour Pack",
+            p_mf_colour_jumbo = {
+                name = "{E:mf_colour_title}Jumbo Colour Pack",
                 text = {
                     "Choose {C:attention}#1#{} of up to",
                     "{C:attention}#2#{C:colourcard} Colour{} cards to",
                     "add to your consumeables"
                 }
             },
-            p_mf_colour_jumbo_1 = {
-                name = "Jumbo Colour Pack",
+            p_mf_colour_mega = {
+                name = "{E:mf_colour_title}Mega Colour Pack",
                 text = {
                     "Choose {C:attention}#1#{} of up to",
                     "{C:attention}#2#{C:colourcard} Colour{} cards to",
                     "add to your consumeables"
                 }
             },
-            p_mf_colour_mega_1 = {
-                name = "Mega Colour Pack",
-                text = {
-                    "Choose {C:attention}#1#{} of up to",
-                    "{C:attention}#2#{C:colourcard} Colour{} cards to",
-                    "add to your consumeables"
-                }
-            },
-            p_mf_rotarot_normal_1 = {
-                name = "45 Degree Rotated Arcana Pack",
+            p_mf_rotarot_normal = {
+                name = "{E:mf_rotarot_title}Arcana Pack!",
                 text = {
                     "Choose {C:attention}#1#{} of up to {C:attention}#2#",
                     "{C:rotarot}45 Degree Rotated Tarot{}",
                     "cards to be used immediately"
                 }
             },
-            p_mf_rotarot_normal_2 = {
-                name = "45 Degree Rotated Arcana Pack",
+            p_mf_rotarot_jumbo = {
+                name = "{E:mf_rotarot_title}Jumbo Arcana Pack!",
                 text = {
                     "Choose {C:attention}#1#{} of up to {C:attention}#2#",
                     "{C:rotarot}45 Degree Rotated Tarot{}",
                     "cards to be used immediately"
                 }
             },
-            p_mf_rotarot_normal_3 = {
-                name = "45 Degree Rotated Arcana Pack",
-                text = {
-                    "Choose {C:attention}#1#{} of up to {C:attention}#2#",
-                    "{C:rotarot}45 Degree Rotated Tarot{}",
-                    "cards to be used immediately"
-                }
-            },
-            p_mf_rotarot_normal_4 = {
-                name = "45 Degree Rotated Arcana Pack",
-                text = {
-                    "Choose {C:attention}#1#{} of up to {C:attention}#2#",
-                    "{C:rotarot}45 Degree Rotated Tarot{}",
-                    "cards to be used immediately"
-                }
-            },
-            p_mf_rotarot_jumbo_1 = {
-                name = "45 Degree Rotated Jumbo Arcana Pack",
-                text = {
-                    "Choose {C:attention}#1#{} of up to {C:attention}#2#",
-                    "{C:rotarot}45 Degree Rotated Tarot{}",
-                    "cards to be used immediately"
-                }
-            },
-            p_mf_rotarot_jumbo_2 = {
-                name = "45 Degree Rotated Jumbo Arcana Pack",
-                text = {
-                "Choose {C:attention}#1#{} of up to {C:attention}#2#",
-                "{C:rotarot}45 Degree Rotated Tarot{}",
-                "cards to be used immediately"
-                }
-            },
-            p_mf_rotarot_mega_1 = {
-                name = "45 Degree Rotated Mega Arcana Pack",
-                text = {
-                    "Choose {C:attention}#1#{} of up to {C:attention}#2#",
-                    "{C:rotarot}45 Degree Rotated Tarot{}",
-                    "cards to be used immediately"
-                }
-            },
-            p_mf_rotarot_mega_2 = {
-                name = "45 Degree Rotated Mega Arcana Pack",
+            p_mf_rotarot_mega = {
+                name = "{E:mf_rotarot_title}Mega Arcana Pack!",
                 text = {
                     "Choose {C:attention}#1#{} of up to {C:attention}#2#",
                     "{C:rotarot}45 Degree Rotated Tarot{}",

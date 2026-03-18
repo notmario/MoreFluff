@@ -197,7 +197,8 @@ for _, booster_type in ipairs {
                 ease_background_colour({ new_colour = G.C.SECONDARY_SET.Colour, special_colour = G.C.BLACK, contrast = 2 })
             end,
             loc_vars = function(self, info_queue, card)
-                return { vars = { card.config and card.config.center.config.choose or booster_type[6], card.ability and card.ability.extra or booster_type[7]} }
+                local cfg = (card and card.ability) or self.config
+                return { vars = { cfg.choose, cfg.extra }, key = self.key:sub(1, -3) }
             end,
             group_key = "k_colour_pack",
         }
