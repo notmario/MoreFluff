@@ -711,7 +711,7 @@ return {
         },
         Colour = {
             c_mf_black = {
-                name = "Black",
+                name = "{E:mf_colour_title}Black",
                 text = {
                     "Add {C:dark_edition}Negative{} to a",
                     "random {C:attention}Joker{} for every",
@@ -720,7 +720,7 @@ return {
                 },
             },
             c_mf_deepblue = {
-                name = "Deep Blue",
+                name = "{E:mf_colour_title}Deep Blue",
                 text = {
                     "Converts a random card in",
                     "hand to {C:spades}Spades{} for every",
@@ -729,7 +729,7 @@ return {
                 },
             },
             c_mf_crimson = {
-                name = "Crimson",
+                name = "{E:mf_colour_title}Crimson",
                 text = {
                     "Create a {C:red}Rare Tag{} for",
                     "every {C:attention}#4#{} rounds",
@@ -738,7 +738,7 @@ return {
                 },
             },
             c_mf_seaweed = {
-                name = "Seaweed",
+                name = "{E:mf_colour_title}Seaweed",
                 text = {
                     "Converts a random card in",
                     "hand to {C:clubs}Clubs{} for every",
@@ -747,7 +747,7 @@ return {
                 },
             },
             c_mf_brown = {
-                name = "Brown",
+                name = "{E:mf_colour_title}Brown",
                 text = {
                     "Destroys a random card in",
                     "hand and gives {C:attention}$#5#{} for every",
@@ -756,7 +756,7 @@ return {
                 },
             },
             c_mf_grey = {
-                name = "Grey",
+                name = "{E:mf_colour_title}Grey",
                 text = {
                     "Create a {C:attention}Double Tag{} for",
                     "every {C:attention}#4#{} rounds",
@@ -765,7 +765,7 @@ return {
                 },
             },
             c_mf_silver = {
-                name = "Silver",
+                name = "{E:mf_colour_title}Silver",
                 text = {
                     "Create a {C:dark_edition}Polychrome Tag{} for",
                     "every {C:attention}#4#{} rounds",
@@ -774,7 +774,7 @@ return {
                 },
             },
             c_mf_white = {
-                name = "White",
+                name = "{E:mf_colour_title}White",
                 text = {
                     "Create a random {C:dark_edition}Negative{}",
                     "{C:colourcard}Colour{} card for every",
@@ -783,7 +783,7 @@ return {
                 },
             },
             c_mf_red = {
-                name = "Red",
+                name = "{E:mf_colour_title}Red",
                 text = {
                     "Converts a random card in",
                     "hand to {C:hearts}Hearts{} for every",
@@ -792,7 +792,7 @@ return {
                 },
             },
             c_mf_orange = {
-                name = "Orange",
+                name = "{E:mf_colour_title}Orange",
                 text = {
                     "Converts a random card in",
                     "hand to {C:diamonds}Diamonds{} for every",
@@ -801,7 +801,7 @@ return {
                 },
             },
             c_mf_yellow = {
-                name = "Yellow",
+                name = "{E:mf_colour_title}Yellow",
                 text = {
                     "Gains {C:money}$#5#{} of",
                     "{C:attention}sell value{}",
@@ -810,7 +810,7 @@ return {
                 },
             },
             c_mf_green = {
-                name = "Green",
+                name = "{E:mf_colour_title}Green",
                 text = {
                     "Create a {C:dark_edition}Negative{}",
                     "{C:green}Oops! All 5s{} for every {C:attention}#4#{}",
@@ -819,7 +819,7 @@ return {
                 },
             },
             c_mf_blue = {
-                name = "Blue",
+                name = "{E:mf_colour_title}Blue",
                 text = {
                     "Create a random {C:dark_edition}Negative{}",
                     "{C:planet}Planet{} card for every",
@@ -828,7 +828,7 @@ return {
                 },
             },
             c_mf_lilac = {
-                name = "Lilac",
+                name = "{E:mf_colour_title}Lilac",
                 text = {
                     "Create a random {C:dark_edition}Negative{}",
                     "{C:tarot}Tarot{} card for every",
@@ -837,7 +837,7 @@ return {
                 },
             },
             c_mf_pink = {
-                name = "Pink",
+                name = "{E:mf_colour_title}Pink",
                 text = {
                     "Add {C:attention}1{} round to a random",
                     "{C:colourcard}Colour{} card. Triggers once for",
@@ -846,7 +846,7 @@ return {
                 },
             },
             c_mf_peach = {
-                name = "Peach",
+                name = "{E:mf_colour_title}Peach",
                 text = {
                     "Create a random {C:dark_edition}Negative{}",
                     "{C:rotarot}45 Degree Rotated Tarot{} card for",
@@ -855,7 +855,7 @@ return {
                 },
             },
             c_mf_new_gold = {
-                name = "Gold",
+                name = "{E:mf_colour_title}Gold",
                 text = {
                     "Create a {C:dark_edition}Negative{} {C:spectral}Soul{}",
                     "card for every {C:attention}#4#{} rounds",
@@ -866,7 +866,7 @@ return {
         },
         Rotarot = {
             c_mf_rot_fool = {
-                name = "The Fool!",
+                name = "{E:mf_rotarot_title}The Fool!",
                 text = {
                 "Creates the last",
                 "{C:rotarot}45 Degree Rotated Tarot{} or {C:colourcard}Colour{} ",
@@ -875,7 +875,7 @@ return {
                 }
             },
             c_mf_rot_magician = {
-                name = "The Magician!",
+                name = "{E:mf_rotarot_title}The Magician!",
                 text = {
                 "Enhances {C:attention}#1#{}",
                 "selected cards to",
@@ -883,7 +883,7 @@ return {
                 }
             },
             c_mf_rot_high_priestess = {
-                name = "The High Priestess!",
+                name = "{E:mf_rotarot_title}The High Priestess!",
                 text = {
                 "Creates up to {C:attention}#1#",
                 "random {C:colourcard}Colour{} cards",
@@ -891,7 +891,7 @@ return {
                 }
             },
             c_mf_rot_empress = {
-                name = "The Empress!",
+                name = "{E:mf_rotarot_title}The Empress!",
                 text = {
                 "Enhances {C:attention}#1#",
                 "selected cards to",
@@ -899,7 +899,7 @@ return {
                 }
             },
             c_mf_rot_emperor = {
-                name = "The Emperor!",
+                name = "{E:mf_rotarot_title}The Emperor!",
                 text = {
                 "Creates up to {C:attention}#1#{} random",
                 "{C:rotarot}45 Degree Rotated Tarot{} cards",
@@ -907,7 +907,7 @@ return {
                 },
             },
             c_mf_rot_heirophant = {
-                name = "The Hierophant!",
+                name = "{E:mf_rotarot_title}The Hierophant!",
                 text = {
                 "Enhances {C:attention}#1#",
                 "selected cards to",
@@ -915,7 +915,7 @@ return {
                 }
             },
             c_mf_rot_lovers = {
-                name = "The Lovers!",
+                name = "{E:mf_rotarot_title}The Lovers!",
                 text = {
                 "Enhances {C:attention}#1#{}",
                 "selected cards to",
@@ -923,7 +923,7 @@ return {
                 }
             },
             c_mf_rot_chariot = {
-                name = "The Chariot!",
+                name = "{E:mf_rotarot_title}The Chariot!",
                 text = {
                 "Enhances {C:attention}#1#{} selected",
                 "card into a",
@@ -931,7 +931,7 @@ return {
                 }
             },
             c_mf_rot_justice = {
-                name = "Justice!",
+                name = "{E:mf_rotarot_title}Justice!",
                 text = {
                 "Enhances {C:attention}#1#{} selected",
                 "card into a",
@@ -939,7 +939,7 @@ return {
                 }
             },
             c_mf_rot_hermit = {
-                name = "The Hermit!",
+                name = "{E:mf_rotarot_title}The Hermit!",
                 text = {
                 "Sets money to next",
                 "multiple of {C:money}$#1#",
@@ -947,7 +947,7 @@ return {
                 },
             },
             c_mf_rot_wheel = {
-                name = "The Wheel of Fortune!",
+                name = "{E:mf_rotarot_title}The Wheel of Fortune!",
                 text = {
                 "{C:green}#1# in #2#{} chance to add",
                 "a random {C:negative}edition",
@@ -956,21 +956,21 @@ return {
                 }
             },
             c_mf_rot_strength = {
-                name = "Strength!",
+                name = "{E:mf_rotarot_title}Strength!",
                 text = {
                 "Randomises rank of up to",
                 "{C:attention}#1#{} selected cards",
                 },
             },
             c_mf_rot_hanged_man = {
-                name = "The Hanged Man!",
+                name = "{E:mf_rotarot_title}The Hanged Man!",
                 text = {
                 "Destroys {C:attention}#1#{} random",
                 "cards in hand",
                 },
             },
             c_mf_rot_death = {
-                name = "Death!",
+                name = "{E:mf_rotarot_title}Death!",
                 text = {
                 "Select {C:attention}#1#{} cards,",
                 "convert {C:attention}all{} selected cards",
@@ -978,7 +978,7 @@ return {
                 }
             },
             c_mf_rot_temperance = {
-                name = "Temperance!",
+                name = "{E:mf_rotarot_title}Temperance!",
                 text = {
                 "Add {C:money}$#1#{} of {C:attention}sell value",
                 "to every {C:attention}Joker{} and",
@@ -986,7 +986,7 @@ return {
                 },
             },
             c_mf_rot_devil = {
-                name = "The Devil!",
+                name = "{E:mf_rotarot_title}The Devil!",
                 text = {
                 "Enhances {C:attention}#1#{}",
                 "selected cards to",
@@ -994,7 +994,7 @@ return {
                 }
             },
             c_mf_rot_tower = {
-                name = "The Tower!",
+                name = "{E:mf_rotarot_title}The Tower!",
                 text = {
                 "Enhances {C:attention}#1#{} selected",
                 "card into a",
@@ -1002,28 +1002,28 @@ return {
                 }
             },
             c_mf_rot_star = {
-                name = "The Star!",
+                name = "{E:mf_rotarot_title}The Star!",
                 text = {
                 "Add {C:attention}#1#{} random {C:attention}Enhanced",
                 "{C:diamonds}Diamonds{} to your hand"
                 }
             },
             c_mf_rot_moon = {
-                name = "The Moon!",
+                name = "{E:mf_rotarot_title}The Moon!",
                 text = {
                 "Add {C:attention}#1#{} random {C:attention}Enhanced",
                 "{C:clubs}Clubs{} to your hand"
                 }
             },
             c_mf_rot_sun = {
-                name = "The Sun!",
+                name = "{E:mf_rotarot_title}The Sun!",
                 text = {
                 "Add {C:attention}#1#{} random {C:attention}Enhanced",
                 "{C:hearts}Hearts{} to your hand"
                 }
             },
             c_mf_rot_judgement = {
-                name = "Judgement!",
+                name = "{E:mf_rotarot_title}Judgement!",
                 text = {
                 "Creates a random",
                 "{C:dark_edition}modded{C:attention} Joker",
@@ -1031,7 +1031,7 @@ return {
                 },
             },
             c_mf_rot_world = {
-                name = "The World!",
+                name = "{E:mf_rotarot_title}The World!",
                 text = {
                 "Add {C:attention}#1#{} random {C:attention}Enhanced",
                 "{C:spades}Spades{} to your hand"

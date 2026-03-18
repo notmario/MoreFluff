@@ -33,6 +33,12 @@ function Node:collides_with_point(point, ...)
     return res
 end
 
+SMODS.DynaTextEffect {
+    key = "rotarot_title",
+    func = function (dynatext, index, letter)
+        letter.r = math.pi/12
+    end
+}
 
 SMODS.ConsumableType({
     key = "Rotarot",

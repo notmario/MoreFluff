@@ -114,9 +114,24 @@ FLUFF.Colour = SMODS.Consumable:extend {
     end
 }
 
+-- yoinked from aikoshen
+-- https://stackoverflow.com/questions/2353211/hsl-to-rgb-color-conversion
+local function hsl2rgb(h,s,l,al) 
+    local a=s*math.min(l,1-l);
+    local f = function(n, k) k = math.fmod((n+h/30),12); return l - a*math.max(math.min(k-3,9-k,1),-1) end
+    return {f(0),f(8),f(4),al};
+end
+
+SMODS.DynaTextEffect {
+    key = "colour_title",
+    func = function (dynatext, index, letter)
+        letter.colour = hsl2rgb(math.fmod((G.TIMERS.REAL + index) * 50, 360), 1.0, 0.95)
+    end
+}
+
 SMODS.Font {
-  key = "emoji",
-  path = "NotoEmoji-Bold.ttf"
+    key = "emoji",
+    path = "NotoEmoji-Bold.ttf"
 }
 
   -- for the funny progress bar.
