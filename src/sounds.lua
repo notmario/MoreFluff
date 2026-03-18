@@ -1,27 +1,29 @@
-SMODS.Sound {
-    key = "g_riff",
-    path = "g.ogg",
-    pitch = 1.0
-}
+SMODS.Sound({
+	key = "g_riff",
+	path = "g.ogg",
+	pitch = 1.0,
+})
 
-SMODS.Sound {
+SMODS.Sound({
 	key = "music_colourpack",
 	path = "music_colourpack.ogg",
 	select_music_track = function()
 		return (
-            ((SMODS.OPENED_BOOSTER or {}).ability or {}).colour_pack 
-            and G.booster_pack and not G.booster_pack.REMOVED
-        )
+			((SMODS.OPENED_BOOSTER or {}).ability or {}).colour_pack
+			and G.booster_pack
+			and not G.booster_pack.REMOVED
+		)
 	end,
-}
+})
 
-SMODS.Sound {
+SMODS.Sound({
 	key = "music_rotarot",
 	path = "music_rotarot.ogg",
 	select_music_track = function()
 		return (
-            ((SMODS.OPENED_BOOSTER or {}).ability or {}).rotarot_pack 
-            and G.booster_pack and not G.booster_pack.REMOVED
-        )
+			((SMODS.OPENED_BOOSTER or {}).ability or {}).rotarot_pack
+			and G.booster_pack
+			and not G.booster_pack.REMOVED
+		)
 	end,
-}
+})
