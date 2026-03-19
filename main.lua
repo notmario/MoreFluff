@@ -1,4 +1,5 @@
 FLUFF = SMODS.current_mod
+FLUFF.is_rewrite = true
 
 assert(SMODS.load_file("src/tetr_stuff.lua"))()
 assert(SMODS.load_file("src/atlases.lua"))()
