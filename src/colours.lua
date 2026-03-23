@@ -489,9 +489,33 @@ FLUFF.Colour({
 	atlas = "mf_colours",
 	pos = { x = 1, y = 1 },
 	config = {
-		upgrade_rounds = 1,
-		suit = "Spades",
+		upgrade_rounds = 2,
+		chips_per = 20,
 	},
+
+	colour_effect = function(self, card, area)
+		local eligible_card = pseudorandom_element(G.hand.cards, rng_seed)
+        eligible_card.ability.perma_bonus = (eligible_card.ability.perma_bonus or 0) + card.ability.chips_per
+        G.E_MANAGER:add_event(Event({
+			trigger = 'after',
+			delay = 0.15,
+			func = function()
+				play_sound('chips1', 1.0, 0.6); 
+				eligible_card:juice_up(
+					0.3, 0.3); return true
+			end
+        }))
+	end,
+
+	loc_vars = function(self, info_queue, card)
+		local tbl = FLUFF.Colour.loc_vars(self, info_queue, card)
+		table.insert(tbl.vars, card.ability.chips_per)
+		return tbl
+	end,
+
+	can_use = function(self, card)
+		return #G.hand.cards > 1
+	end,
 
 	mf_art_credit = "Multi",
 })
@@ -515,9 +539,54 @@ FLUFF.Colour({
 	atlas = "mf_colours",
 	pos = { x = 3, y = 1 },
 	config = {
-		upgrade_rounds = 1,
-		suit = "Clubs",
+		upgrade_rounds = 2,
 	},
+
+	can_use = function(self, card)
+		return #G.hand.cards > 1
+	end,
+
+	use = function(self, card, area)
+		local rng_seed = self.key
+		local blacklist = {}
+		for i = 1, card.ability.val do
+			local temp_pool = {}
+			for k, v in pairs(G.hand.cards) do
+				if not blacklist[v] then
+					table.insert(temp_pool, v)
+				end
+			end
+			local over = false
+			if #temp_pool == 0 then
+				break
+			end
+			local eligible_card = pseudorandom_element(temp_pool, rng_seed)
+			blacklist[eligible_card] = true
+			local enh = SMODS.poll_enhancement{ key = "mf_seaweed", guaranteed = true, no_replace = true }
+			G.E_MANAGER:add_event(Event({
+				trigger = "after",
+				delay = 0.15,
+				func = function()
+					eligible_card:flip()
+					play_sound("card1", 1)
+					eligible_card:juice_up(0.3, 0.3)
+					return true
+				end,
+			}))
+			G.E_MANAGER:add_event(Event({
+				trigger = "after",
+				delay = 0.4,
+				func = function()
+					eligible_card:set_ability(enh)
+					play_sound("tarot2", percent)
+					eligible_card:flip()
+					return true
+				end,
+			}))
+			card:juice_up(0.3, 0.5)
+		end
+		delay(0.6)
+	end,
 
 	mf_art_credit = "Multi",
 })
@@ -630,9 +699,33 @@ FLUFF.Colour({
 	atlas = "mf_colours",
 	pos = { x = 0, y = 3 },
 	config = {
-		upgrade_rounds = 1,
-		suit = "Hearts",
+		upgrade_rounds = 2,
+		mult_per = 4,
 	},
+
+	colour_effect = function(self, card, area)
+		local eligible_card = pseudorandom_element(G.hand.cards, rng_seed)
+        eligible_card.ability.perma_mult = (eligible_card.ability.perma_mult or 0) + card.ability.mult_per
+        G.E_MANAGER:add_event(Event({
+			trigger = 'after',
+			delay = 0.15,
+			func = function()
+				play_sound('multhit1', 1.0, 0.6); 
+				eligible_card:juice_up(
+					0.3, 0.3); return true
+			end
+        }))
+	end,
+
+	loc_vars = function(self, info_queue, card)
+		local tbl = FLUFF.Colour.loc_vars(self, info_queue, card)
+		table.insert(tbl.vars, card.ability.mult_per)
+		return tbl
+	end,
+
+	can_use = function(self, card)
+		return #G.hand.cards > 1
+	end,
 
 	mf_art_credit = "Multi",
 })
@@ -643,9 +736,26 @@ FLUFF.Colour({
 	atlas = "mf_colours",
 	pos = { x = 1, y = 3 },
 	config = {
-		upgrade_rounds = 1,
-		suit = "Diamonds",
+		upgrade_rounds = 4,
 	},
+
+	colour_effect = function(self, card, area)
+		local eligible_card = pseudorandom_element(G.hand.cards, rng_seed)
+        eligible_card.ability.perma_repetitions = (eligible_card.ability.perma_repetitions or 0) + 1
+        G.E_MANAGER:add_event(Event({
+			trigger = 'after',
+			delay = 0.15,
+			func = function()
+				play_sound('tarot2', 1.0, 0.6); 
+				eligible_card:juice_up(
+					0.3, 0.3); return true
+			end
+        }))
+	end,
+
+	can_use = function(self, card)
+		return #G.hand.cards > 1
+	end,
 
 	mf_art_credit = "Multi",
 })
@@ -751,6 +861,9 @@ FLUFF.Colour({
 	name = "col_Gold",
 	atlas = "mf_colours",
 	pos = { x = 1, y = 6 },
+	set = "Spectral",
+	soul_set = "Colour",
+	disable_shine = true,
 	hidden = true,
 	config = {
 		upgrade_rounds = 4,

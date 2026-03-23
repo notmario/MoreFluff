@@ -722,9 +722,9 @@ return {
 			c_mf_deepblue = {
 				name = "{E:mf_colour_title}Deep Blue",
 				text = {
-					"Converts a random card in",
-					"hand to {C:spades}Spades{} for every",
-					"{C:attention}#4#{} round this has been held",
+					"A random card in hand",
+					"gets {C:chips}+#5#{} Chips for every",
+					"{C:attention}#4#{} rounds this has been held",
 					"{C:inactive}(Currently {C:attention}#1#{C:inactive}, {}[{C:attention,f:mf_emoji}#2#{C:inactive,f:mf_emoji}#3#{}]{C:inactive})",
 				},
 			},
@@ -740,9 +740,9 @@ return {
 			c_mf_seaweed = {
 				name = "{E:mf_colour_title}Seaweed",
 				text = {
-					"Converts a random card in",
-					"hand to {C:clubs}Clubs{} for every",
-					"{C:attention}#4#{} round this has been held",
+					"A random card in hand get",
+					"{C:attention}a random enhancement{} for every",
+					"{C:attention}#4#{} rounds this has been held",
 					"{C:inactive}(Currently {C:attention}#1#{C:inactive}, {}[{C:attention,f:mf_emoji}#2#{C:inactive,f:mf_emoji}#3#{}]{C:inactive})",
 				},
 			},
@@ -785,18 +785,18 @@ return {
 			c_mf_red = {
 				name = "{E:mf_colour_title}Red",
 				text = {
-					"Converts a random card in",
-					"hand to {C:hearts}Hearts{} for every",
-					"{C:attention}#4#{} round this has been held",
+					"A random card in hand",
+					"gets {C:mult}+#5#{} Mult for every",
+					"{C:attention}#4#{} rounds this has been held",
 					"{C:inactive}(Currently {C:attention}#1#{C:inactive}, {}[{C:attention,f:mf_emoji}#2#{C:inactive,f:mf_emoji}#3#{}]{C:inactive})",
 				},
 			},
 			c_mf_orange = {
 				name = "{E:mf_colour_title}Orange",
 				text = {
-					"Converts a random card in",
-					"hand to {C:diamonds}Diamonds{} for every",
-					"{C:attention}#4#{} round this has been held",
+					"A random card in hand",
+					"gets {C:attention}a retrigger{} for every",
+					"{C:attention}#4#{} rounds this has been held",
 					"{C:inactive}(Currently {C:attention}#1#{C:inactive}, {}[{C:attention,f:mf_emoji}#2#{C:inactive,f:mf_emoji}#3#{}]{C:inactive})",
 				},
 			},
@@ -851,15 +851,6 @@ return {
 					"Create a random {C:dark_edition}Negative{}",
 					"{C:rotarot}45 Degree Rotated Tarot{} card for",
 					"every {C:attention}#4#{} rounds this has been held",
-					"{C:inactive}(Currently {C:attention}#1#{C:inactive}, {}[{C:attention,f:mf_emoji}#2#{C:inactive,f:mf_emoji}#3#{}]{C:inactive})",
-				},
-			},
-			c_mf_new_gold = {
-				name = "{E:mf_colour_title}Gold",
-				text = {
-					"Create a {C:dark_edition}Negative{} {C:spectral}Soul{}",
-					"card for every {C:attention}#4#{} rounds",
-					"this has been held",
 					"{C:inactive}(Currently {C:attention}#1#{C:inactive}, {}[{C:attention,f:mf_emoji}#2#{C:inactive,f:mf_emoji}#3#{}]{C:inactive})",
 				},
 			},
@@ -1035,6 +1026,17 @@ return {
 				text = {
 					"Add {C:attention}#1#{} random {C:attention}Enhanced",
 					"{C:spades}Spades{} to your hand",
+				},
+			},
+		},
+		Spectral = {
+			c_mf_new_gold = {
+				name = "{E:mf_colour_title}Gold",
+				text = {
+					"Create a {C:dark_edition}Negative{} {C:spectral}Soul{}",
+					"card for every {C:attention}#4#{} rounds",
+					"this has been held",
+					"{C:inactive}(Currently {C:attention}#1#{C:inactive}, {}[{C:attention,f:mf_emoji}#2#{C:inactive,f:mf_emoji}#3#{}]{C:inactive})",
 				},
 			},
 		},
