@@ -25,7 +25,7 @@ FLUFF.Colour = SMODS.Consumable:extend({
 	end,
 
 	can_use = function(self, card)
-		if card.ability.suit then
+		if card.ability.suit or card.ability.enhancement then
 			return #G.hand.cards > 1
 		end
 		if card.ability.tag or card.ability.create_set or card.ability.create_key then
@@ -67,6 +67,47 @@ FLUFF.Colour = SMODS.Consumable:extend({
 						eligible_card:flip()
 						play_sound("tarot2", percent)
 						eligible_card:change_suit(card.ability.suit)
+						return true
+					end,
+				}))
+				card:juice_up(0.3, 0.5)
+			end
+			delay(0.6)
+		end
+
+		if card.ability.enhancement then
+			local rng_seed = self.key
+			local blacklist = {}
+			for i = 1, card.ability.val do
+				local temp_pool = {}
+				for k, v in pairs(G.hand.cards) do
+					if v.config.center.key ~= card.ability.enhancement and not blacklist[v] then
+						table.insert(temp_pool, v)
+					end
+				end
+				local over = false
+				if #temp_pool == 0 then
+					break
+				end
+				local eligible_card = pseudorandom_element(temp_pool, rng_seed)
+				blacklist[eligible_card] = true
+				G.E_MANAGER:add_event(Event({
+					trigger = "after",
+					delay = 0.15,
+					func = function()
+						eligible_card:flip()
+						play_sound("card1", 1)
+						eligible_card:juice_up(0.3, 0.3)
+						return true
+					end,
+				}))
+				G.E_MANAGER:add_event(Event({
+					trigger = "after",
+					delay = 0.4,
+					func = function()
+						eligible_card:set_ability(card.ability.enhancement)
+						play_sound("tarot2", percent)
+						eligible_card:flip()
 						return true
 					end,
 				}))
