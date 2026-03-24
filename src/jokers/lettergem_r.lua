@@ -1,4 +1,4 @@
-SMODS.Joker {
+SMODS.Joker({
 	key = "lettergem_r",
 	atlas = "mf_oldfluff",
 	unlocked = true,
@@ -25,18 +25,18 @@ SMODS.Joker {
 	end,
 	calculate = function(self, card, context)
 		if context.setting_blind then
-			G.E_MANAGER:add_event(Event {
+			G.E_MANAGER:add_event(Event({
 				func = function()
 					ease_round(card.ability.extra.rounds_per)
 					return true
 				end,
-			})
+			}))
 			return {
-				message = localize {
+				message = localize({
 					type = "variable",
 					key = "a_plus_rounds",
 					vars = { card.ability.extra.rounds_per },
-				},
+				}),
 			}
 		end
 		if context.joker_main then
@@ -45,4 +45,4 @@ SMODS.Joker {
 			}
 		end
 	end,
-}
+})

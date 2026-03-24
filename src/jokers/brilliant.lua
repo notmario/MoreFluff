@@ -1,4 +1,4 @@
-SMODS.Joker {
+SMODS.Joker({
 	key = "brilliant",
 	name = "Brilliant",
 	atlas = "mf_jokers",
@@ -26,7 +26,7 @@ SMODS.Joker {
 				and #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit
 			then
 				G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
-				G.E_MANAGER:add_event(Event {
+				G.E_MANAGER:add_event(Event({
 					trigger = "before",
 					delay = 0.0,
 					func = function()
@@ -36,9 +36,9 @@ SMODS.Joker {
 						G.GAME.consumeable_buffer = 0
 						return true
 					end,
-				})
+				}))
 				return {
-					message = localize "k_plus_spectral",
+					message = localize("k_plus_spectral"),
 					colour = G.C.SECONDARY_SET.Spectral,
 					card = card,
 				}
@@ -47,7 +47,7 @@ SMODS.Joker {
 		if context.forcetrigger then
 			if #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
 				G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
-				G.E_MANAGER:add_event(Event {
+				G.E_MANAGER:add_event(Event({
 					trigger = "before",
 					delay = 0.0,
 					func = function()
@@ -57,13 +57,13 @@ SMODS.Joker {
 						G.GAME.consumeable_buffer = 0
 						return true
 					end,
-				})
+				}))
 				return {
-					message = localize "k_plus_spectral",
+					message = localize("k_plus_spectral"),
 					colour = G.C.SECONDARY_SET.Spectral,
 					card = card,
 				}
 			end
 		end
 	end,
-}
+})

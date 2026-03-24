@@ -1,4 +1,4 @@
-SMODS.Joker {
+SMODS.Joker({
 	key = "lettergem_c",
 	atlas = "mf_oldfluff",
 	unlocked = true,
@@ -33,4 +33,4 @@ SMODS.Joker {
 			return SMODS.merge_effects(effects)
 		end
 	end,
-}
+})

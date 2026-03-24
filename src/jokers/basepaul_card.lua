@@ -1,4 +1,4 @@
-SMODS.Joker {
+SMODS.Joker({
 	key = "basepaul_card",
 	name = "Basepaul Card",
 	atlas = "mf_jokers",
@@ -60,13 +60,13 @@ SMODS.Joker {
 				if string.find(string.lower(G.PROFILES[G.SETTINGS.profile].name), "paul") then
 					card.joker_display_values.x_mult = card.ability.extra.x_mult * 10
 					card.joker_display_values.inactive_text = ""
-					card.joker_display_values.active_text = localize "k_display_for_paul_ex"
+					card.joker_display_values.active_text = localize("k_display_for_paul_ex")
 				else
 					card.joker_display_values.x_mult = card.ability.extra.x_mult
-					card.joker_display_values.inactive_text = localize "k_display_for_paul"
+					card.joker_display_values.inactive_text = localize("k_display_for_paul")
 					card.joker_display_values.active_text = ""
 				end
 			end,
 		}
 	end,
-}
+})

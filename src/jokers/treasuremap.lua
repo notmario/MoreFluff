@@ -1,4 +1,4 @@
-SMODS.Joker {
+SMODS.Joker({
 	key = "treasuremap",
 	name = "Treasure Map",
 	atlas = "mf_jokers",
@@ -36,7 +36,7 @@ SMODS.Joker {
 			return {
 				message = (card.ability.extra.c_rounds < card.ability.extra.rounds)
 						and (card.ability.extra.c_rounds .. "/" .. card.ability.extra.rounds)
-					or localize "k_active_ex",
+					or localize("k_active_ex"),
 			}
 		end
 		if
@@ -50,4 +50,4 @@ SMODS.Joker {
 			}
 		end
 	end,
-}
+})

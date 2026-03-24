@@ -1,4 +1,4 @@
-SMODS.Joker {
+SMODS.Joker({
 	key = "rot_cartomancer",
 	name = "Cartomancer!",
 	atlas = "mf_jokers",
@@ -22,7 +22,7 @@ SMODS.Joker {
 		if (context.setting_blind or context.forcetrigger) and not (context.blueprint_card or self).getting_sliced then
 			if #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
 				G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
-				G.E_MANAGER:add_event(Event {
+				G.E_MANAGER:add_event(Event({
 					trigger = "before",
 					delay = 0.0,
 					func = function()
@@ -32,16 +32,16 @@ SMODS.Joker {
 						G.GAME.consumeable_buffer = 0
 						return true
 					end,
-				})
+				}))
 				card_eval_status_text(
 					card,
 					"extra",
 					nil,
 					nil,
 					nil,
-					{ message = localize "k_plus_rotarot", colour = G.C.PURPLE }
+					{ message = localize("k_plus_rotarot"), colour = G.C.PURPLE }
 				)
 			end
 		end
 	end,
-}
+})

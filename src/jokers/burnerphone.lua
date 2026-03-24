@@ -1,4 +1,4 @@
-SMODS.Joker {
+SMODS.Joker({
 	key = "burnerphone",
 	name = "Burner Phone",
 
@@ -35,7 +35,7 @@ SMODS.Joker {
 				},
 			}
 		end
-		if not next(SMODS.find_card "j_mf_burnerphone") then
+		if not next(SMODS.find_card("j_mf_burnerphone")) then
 			return {
 				vars = {
 					"is ",
@@ -62,13 +62,13 @@ SMODS.Joker {
 			local rank = localize(card.base.value, "ranks") .. " "
 			local rank_col = G.C.FILTER
 			if SMODS.has_no_rank(card) then
-				rank = localize "k_rankless"
+				rank = localize("k_rankless")
 				rank_col = G.C.UI.TEXT_INACTIVE
 			end
 			local suit = localize(card.base.suit, "suits_plural")
 			local suit_col = G.C.SUITS[card.base.suit]
 			if SMODS.has_no_suit(card) then
-				suit = localize "k_suitless"
+				suit = localize("k_suitless")
 				rank_col = G.C.UI.TEXT_INACTIVE
 			end
 			return {
@@ -98,13 +98,13 @@ SMODS.Joker {
 			local rank = localize(card.base.value, "ranks") .. " "
 			local rank_col = G.C.FILTER
 			if SMODS.has_no_rank(card) then
-				rank = localize "k_rankless"
+				rank = localize("k_rankless")
 				rank_col = G.C.UI.TEXT_INACTIVE
 			end
 			local suit = localize(card.base.suit, "suits_plural")
 			local suit_col = G.C.SUITS[card.base.suit]
 			if SMODS.has_no_suit(card) then
-				suit = localize "k_suitless"
+				suit = localize("k_suitless")
 				rank_col = G.C.UI.TEXT_INACTIVE
 			end
 			table.insert(texts, rank)
@@ -117,4 +117,4 @@ SMODS.Joker {
 		texts.colours = colours
 		return { vars = texts }
 	end,
-}
+})

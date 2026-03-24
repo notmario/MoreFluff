@@ -1,4 +1,4 @@
-SMODS.Back {
+SMODS.Back({
 	key = "oldfluff",
 
 	atlas = "mf_enhancers",
@@ -14,10 +14,10 @@ SMODS.Back {
 
 	loc_vars = function(self, info_queue, card)
 		return {
-			vars = { colours = { HEX "000000" } },
+			vars = { colours = { HEX("000000") } },
 		}
 	end,
-}
+})
 
 local csc = Card.set_cost
 

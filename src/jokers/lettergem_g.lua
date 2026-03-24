@@ -1,4 +1,4 @@
-SMODS.Joker {
+SMODS.Joker({
 	key = "lettergem_g",
 	atlas = "mf_oldfluff",
 	unlocked = true,
@@ -53,4 +53,4 @@ SMODS.Joker {
 
 		full_UI_table.main[1] = destroy
 	end,
-}
+})

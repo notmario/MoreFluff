@@ -14,25 +14,25 @@ local function update_exp_colour(self, _)
 end
 
 -- from spectralib but whatever
-FLUFF.eechips = SMODS.Gradient {
+FLUFF.eechips = SMODS.Gradient({
 	key = "eechips",
 	colours = {
-		HEX "41bed9",
-		HEX "5674e9",
+		HEX("41bed9"),
+		HEX("5674e9"),
 	},
 	cycle = 4,
 	update = update_exp_colour,
-}
+})
 
-FLUFF.eemult = SMODS.Gradient {
+FLUFF.eemult = SMODS.Gradient({
 	key = "eemult",
 	colours = {
-		HEX "ff73ad",
-		HEX "db005f",
+		HEX("ff73ad"),
+		HEX("db005f"),
 	},
 	cycle = 4,
 	update = update_exp_colour,
-}
+})
 
 local lc = loc_colour
 function loc_colour(_c, _default, ...)

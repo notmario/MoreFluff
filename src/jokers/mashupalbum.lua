@@ -1,4 +1,4 @@
-SMODS.Joker {
+SMODS.Joker({
 	key = "mashupalbum",
 	name = "Mashup Album",
 	config = {
@@ -41,7 +41,7 @@ SMODS.Joker {
 			local _, cards = next(context.poker_hands["Flush"])
 			local h_card = cards[1]
 
-			if h_card:is_suit "Hearts" or h_card:is_suit "Diamonds" then
+			if h_card:is_suit("Hearts") or h_card:is_suit("Diamonds") then
 				-- card.ability.extra.mult = card.ability.extra.mult + 4
 				SMODS.scale_card(card, {
 					ref_table = card.ability.extra,
@@ -64,4 +64,4 @@ SMODS.Joker {
 			}
 		end
 	end,
-}
+})

@@ -1,10 +1,10 @@
-SMODS.Sound {
+SMODS.Sound({
 	key = "g_riff",
 	path = "g.ogg",
 	pitch = 1.0,
-}
+})
 
-SMODS.Sound {
+SMODS.Sound({
 	key = "music_colourpack",
 	path = "music_colourpack.ogg",
 	select_music_track = function()
@@ -14,9 +14,9 @@ SMODS.Sound {
 			and not G.booster_pack.REMOVED
 		)
 	end,
-}
+})
 
-SMODS.Sound {
+SMODS.Sound({
 	key = "music_rotarot",
 	path = "music_rotarot.ogg",
 	select_music_track = function()
@@ -26,4 +26,4 @@ SMODS.Sound {
 			and not G.booster_pack.REMOVED
 		)
 	end,
-}
+})

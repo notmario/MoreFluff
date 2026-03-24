@@ -1,4 +1,4 @@
-SMODS.Joker {
+SMODS.Joker({
 	key = "dropkick",
 	name = "Dropkick",
 	atlas = "mf_jokers",
@@ -31,16 +31,16 @@ SMODS.Joker {
 		then
 			ease_hands_played(card.ability.extra.hands)
 			return {
-				message = localize { type = "variable", key = "a_plus_hand", vars = { card.ability.extra.hands } },
+				message = localize({ type = "variable", key = "a_plus_hand", vars = { card.ability.extra.hands } }),
 				colour = G.C.BLUE,
 			}
 		end
 		if context.forcetrigger then
 			ease_hands_played(card.ability.extra.hands)
 			return {
-				message = localize { type = "variable", key = "a_plus_hand", vars = { card.ability.extra.hands } },
+				message = localize({ type = "variable", key = "a_plus_hand", vars = { card.ability.extra.hands } }),
 				colour = G.C.BLUE,
 			}
 		end
 	end,
-}
+})

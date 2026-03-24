@@ -1,4 +1,4 @@
-SMODS.Joker {
+SMODS.Joker({
 	key = "simplified",
 	name = "Simplified Joker",
 	atlas = "mf_jokers",
@@ -25,12 +25,12 @@ SMODS.Joker {
 			and context.other_joker.config.center.rarity == 1
 			and context.other_joker.ability.set == "Joker"
 		then
-			G.E_MANAGER:add_event(Event {
+			G.E_MANAGER:add_event(Event({
 				func = function()
 					context.other_joker:juice_up(0.5, 0.5)
 					return true
 				end,
-			})
+			}))
 			return {
 				mult = card.ability.extra.mult,
 			}
@@ -39,4 +39,4 @@ SMODS.Joker {
 			return { mult = card.ability.extra.mult }
 		end
 	end,
-}
+})

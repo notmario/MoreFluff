@@ -1,4 +1,4 @@
-SMODS.Joker {
+SMODS.Joker({
 	key = "blunder",
 	name = "Blunder",
 	atlas = "mf_jokers",
@@ -33,7 +33,7 @@ SMODS.Joker {
 					cb_dx_pool[#cb_dx_pool + 1] = card
 				end
 				if #cb_dx_pool ~= 0 then
-					local forced_card = pseudorandom_element(cb_dx_pool, pseudoseed "blunder")
+					local forced_card = pseudorandom_element(cb_dx_pool, pseudoseed("blunder"))
 
 					forced_card.ability.forced_selection = true
 					G.hand:add_to_highlighted(forced_card)
@@ -52,4 +52,4 @@ SMODS.Joker {
 			}
 		end
 	end,
-}
+})

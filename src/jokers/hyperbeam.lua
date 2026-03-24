@@ -1,4 +1,4 @@
-SMODS.Joker {
+SMODS.Joker({
 	key = "hyperbeam",
 	name = "Hyper Beam",
 	atlas = "mf_jokers",
@@ -21,12 +21,12 @@ SMODS.Joker {
 	end,
 	calculate = function(self, card, context)
 		if context.setting_blind and not (context.blueprint_card or card).getting_sliced then
-			G.E_MANAGER:add_event(Event {
+			G.E_MANAGER:add_event(Event({
 				func = function()
 					ease_discard(-G.GAME.current_round.discards_left, nil, true)
 					return true
 				end,
-			})
+			}))
 		end
 		if context.forcetrigger or (context.cardarea == G.jokers and context.joker_main) then
 			return {
@@ -34,4 +34,4 @@ SMODS.Joker {
 			}
 		end
 	end,
-}
+})

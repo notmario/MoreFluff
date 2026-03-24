@@ -23,10 +23,10 @@ local card_pool = FLUFF.joker_pool
 
 local times_spawned = 0
 
-SMODS.Shader {
+SMODS.Shader({
 	key = "triangle_badge_alt",
 	path = "triangle_badge_alt.fs",
-}
+})
 
 FLUFF.custom_ui = function(mod_nodes)
 	times_spawned = times_spawned + 1
@@ -81,7 +81,7 @@ FLUFF.custom_ui = function(mod_nodes)
 							r = 0.1,
 							align = "cm",
 							padding = 0.1,
-							colour = HEX "ff6868",
+							colour = HEX("ff6868"),
 						},
 						nodes = {
 							{
@@ -242,7 +242,7 @@ FLUFF.custom_ui = function(mod_nodes)
 											},
 											{
 												n = G.UIT.T,
-												config = { text = "mf", scale = 0.4, colour = HEX "ff6868" },
+												config = { text = "mf", scale = 0.4, colour = HEX("ff6868") },
 											},
 										},
 									},

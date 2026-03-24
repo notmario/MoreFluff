@@ -1,4 +1,4 @@
-SMODS.Joker {
+SMODS.Joker({
 	key = "brainrot",
 	name = "Brainrot",
 
@@ -27,7 +27,7 @@ SMODS.Joker {
 				local sliced_card = G.jokers.cards[1]
 				sliced_card.getting_sliced = true
 				G.GAME.joker_buffer = G.GAME.joker_buffer - 1
-				G.E_MANAGER:add_event(Event {
+				G.E_MANAGER:add_event(Event({
 					func = function()
 						G.GAME.joker_buffer = 0
 						-- See note about SMODS Scaling Manipulation on the wiki
@@ -40,11 +40,11 @@ SMODS.Joker {
 							message_colour = G.C.CHIPS,
 						})
 						card:juice_up(0.8, 0.8)
-						sliced_card:start_dissolve({ HEX "57ecab" }, nil, 1.6)
+						sliced_card:start_dissolve({ HEX("57ecab") }, nil, 1.6)
 						play_sound("slice1", 0.96 + math.random() * 0.08)
 						return true
 					end,
-				})
+				}))
 			end
 		end
 		if context.joker_main then
@@ -53,4 +53,4 @@ SMODS.Joker {
 			}
 		end
 	end,
-}
+})

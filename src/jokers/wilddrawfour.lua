@@ -1,4 +1,4 @@
-SMODS.Joker {
+SMODS.Joker({
 	key = "wilddrawfour",
 	name = "Wild Draw Four",
 	atlas = "mf_oldfluff",
@@ -37,7 +37,7 @@ SMODS.Joker {
 			G.hand:change_size(card.ability.extra)
 
 			return {
-				message = localize "k_upgrade_ex",
+				message = localize("k_upgrade_ex"),
 				colour = G.C.MONEY,
 			}
 		end
@@ -46,4 +46,4 @@ SMODS.Joker {
 			card.ability.h_size = 0
 		end
 	end,
-}
+})

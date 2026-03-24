@@ -1,7 +1,7 @@
-SMODS.Shader {
+SMODS.Shader({
 	key = "triangle_badge",
 	path = "triangle_badge.fs",
-}
+})
 
 local smcmb = SMODS.create_mod_badges
 function SMODS.create_mod_badges(obj, badges)
@@ -43,7 +43,7 @@ function SMODS.create_mod_badges(obj, badges)
 						n = G.UIT.R,
 						config = {
 							align = "cm",
-							colour = HEX "a9683b",
+							colour = HEX("a9683b"),
 							r = 0.1,
 							minw = 2,
 							minh = 0.36,
@@ -55,7 +55,7 @@ function SMODS.create_mod_badges(obj, badges)
 							{
 								n = G.UIT.O,
 								config = {
-									object = DynaText {
+									object = DynaText({
 										string = "Lettergem",
 										colours = { G.C.WHITE },
 										float = true,
@@ -66,7 +66,7 @@ function SMODS.create_mod_badges(obj, badges)
 										scale = 0.33 * size * scale_fac,
 										marquee = false,
 										maxw = max_text_width,
-									},
+									}),
 								},
 							},
 							{ n = G.UIT.B, config = { h = 0.1, w = 0.03 } },

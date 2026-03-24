@@ -1,4 +1,4 @@
-FLUFF.Colour = SMODS.Consumable:extend {
+FLUFF.Colour = SMODS.Consumable:extend({
 	object_type = "Consumable",
 	set = "Colour",
 	cost = 4,
@@ -50,7 +50,7 @@ FLUFF.Colour = SMODS.Consumable:extend {
 				end
 				local eligible_card = pseudorandom_element(temp_pool, rng_seed)
 				blacklist[eligible_card] = true
-				G.E_MANAGER:add_event(Event {
+				G.E_MANAGER:add_event(Event({
 					trigger = "after",
 					delay = 0.15,
 					func = function()
@@ -59,8 +59,8 @@ FLUFF.Colour = SMODS.Consumable:extend {
 						eligible_card:juice_up(0.3, 0.3)
 						return true
 					end,
-				})
-				G.E_MANAGER:add_event(Event {
+				}))
+				G.E_MANAGER:add_event(Event({
 					trigger = "after",
 					delay = 0.4,
 					func = function()
@@ -69,7 +69,7 @@ FLUFF.Colour = SMODS.Consumable:extend {
 						eligible_card:change_suit(card.ability.suit)
 						return true
 					end,
-				})
+				}))
 				card:juice_up(0.3, 0.5)
 			end
 			delay(0.6)
@@ -91,7 +91,7 @@ FLUFF.Colour = SMODS.Consumable:extend {
 				end
 				local eligible_card = pseudorandom_element(temp_pool, rng_seed)
 				blacklist[eligible_card] = true
-				G.E_MANAGER:add_event(Event {
+				G.E_MANAGER:add_event(Event({
 					trigger = "after",
 					delay = 0.15,
 					func = function()
@@ -100,8 +100,8 @@ FLUFF.Colour = SMODS.Consumable:extend {
 						eligible_card:juice_up(0.3, 0.3)
 						return true
 					end,
-				})
-				G.E_MANAGER:add_event(Event {
+				}))
+				G.E_MANAGER:add_event(Event({
 					trigger = "after",
 					delay = 0.4,
 					func = function()
@@ -110,7 +110,7 @@ FLUFF.Colour = SMODS.Consumable:extend {
 						eligible_card:flip()
 						return true
 					end,
-				})
+				}))
 				card:juice_up(0.3, 0.5)
 			end
 			delay(0.6)
@@ -118,14 +118,14 @@ FLUFF.Colour = SMODS.Consumable:extend {
 
 		if card.ability.tag then
 			for i = 1, card.ability.val do
-				G.E_MANAGER:add_event(Event {
+				G.E_MANAGER:add_event(Event({
 					func = function()
 						add_tag(Tag(card.ability.tag))
 						play_sound("generic1", 0.9 + math.random() * 0.1, 0.8)
 						play_sound("holo1", 1.2 + math.random() * 0.1, 0.4)
 						return true
 					end,
-				})
+				}))
 				delay(0.2)
 			end
 			delay(0.6)
@@ -140,16 +140,16 @@ FLUFF.Colour = SMODS.Consumable:extend {
 				tbl.key = card.ability.create_key
 			end
 			for i = 1, card.ability.val do
-				G.E_MANAGER:add_event(Event {
+				G.E_MANAGER:add_event(Event({
 					trigger = "after",
 					delay = 0.4,
 					func = function()
-						play_sound "timpani"
+						play_sound("timpani")
 						SMODS.add_card(tbl)
 						card:juice_up(0.3, 0.5)
 						return true
 					end,
-				})
+				}))
 			end
 			delay(0.6)
 		end
@@ -161,7 +161,7 @@ FLUFF.Colour = SMODS.Consumable:extend {
 			delay(0.6)
 		end
 	end,
-}
+})
 
 -- yoinked from aikoshen
 -- https://stackoverflow.com/questions/2353211/hsl-to-rgb-color-conversion
@@ -174,17 +174,17 @@ local function hsl2rgb(h, s, l, al)
 	return { f(0), f(8), f(4), al }
 end
 
-SMODS.DynaTextEffect {
+SMODS.DynaTextEffect({
 	key = "colour_title",
 	func = function(dynatext, index, letter)
 		letter.colour = hsl2rgb(math.fmod((G.TIMERS.REAL + index) * 50, 360), 1.0, 0.95)
 	end,
-}
+})
 
-SMODS.Font {
+SMODS.Font({
 	key = "emoji",
 	path = "NotoEmoji-Bold.ttf",
-}
+})
 
 -- for the funny progress bar.
 function progressbar(val, max)
@@ -196,10 +196,10 @@ function progressbar(val, max)
 	return string.rep("🟩", val), string.rep("🟩", max - val)
 end
 
-SMODS.ConsumableType {
+SMODS.ConsumableType({
 	key = "Colour",
-	primary_colour = HEX "4f6367",
-	secondary_colour = HEX "4f6367",
+	primary_colour = HEX("4f6367"),
+	secondary_colour = HEX("4f6367"),
 	collection_rows = { 4, 4 },
 	shop_rate = 1.0,
 	loc_txt = {},
@@ -207,24 +207,24 @@ SMODS.ConsumableType {
 	can_stack = false,
 	can_divide = false,
 	select_card = "consumeables",
-}
+})
 
-SMODS.UndiscoveredSprite {
+SMODS.UndiscoveredSprite({
 	key = "Colour",
 	atlas = "mf_colours",
 	pos = { x = 0, y = 0 },
 	px = 71,
 	py = 95,
-}
+})
 
 -- type, cost, count, x pos, y pos, choose, size, weight
-for _, booster_type in ipairs {
+for _, booster_type in ipairs({
 	{ "normal", 4, 2, 0, 0, 1, 2, 0.96 },
 	{ "jumbo", 6, 1, 2, 0, 1, 4, 0.96 },
 	{ "mega", 8, 1, 3, 0, 2, 4, 0.48 },
-} do
+}) do
 	for i = 1, booster_type[3] do
-		SMODS.Booster {
+		SMODS.Booster({
 			key = "colour_" .. booster_type[1] .. "_" .. i,
 			kind = "Colour",
 			atlas = "mf_packs",
@@ -236,7 +236,7 @@ for _, booster_type in ipairs {
 			discovered = true,
 			create_card = function(self, card)
 				local n_card = create_card("Colour", G.pack_cards, nil, nil, true, true, nil, "mf_colour")
-				local ed_roll = pseudorandom "colour_editionroll"
+				local ed_roll = pseudorandom("colour_editionroll")
 				if ed_roll < 0.4 and G.GAME.used_vouchers.v_mf_colourtheory then
 					n_card:set_edition({ polychrome = true }, true)
 				elseif ed_roll >= 0.4 and ed_roll < 0.766666 and G.GAME.used_vouchers.v_mf_artprogram then
@@ -246,22 +246,22 @@ for _, booster_type in ipairs {
 			end,
 			ease_background_colour = function(self)
 				ease_colour(G.C.DYN_UI.MAIN, G.C.SECONDARY_SET.Colour)
-				ease_background_colour {
+				ease_background_colour({
 					new_colour = G.C.SECONDARY_SET.Colour,
 					special_colour = G.C.BLACK,
 					contrast = 2,
-				}
+				})
 			end,
 			loc_vars = function(self, info_queue, card)
 				local cfg = (card and card.ability) or self.config
 				return { vars = { cfg.choose, cfg.extra }, key = self.key:sub(1, -3) }
 			end,
 			group_key = "k_colour_pack",
-		}
+		})
 	end
 end
 
-SMODS.Tag {
+SMODS.Tag({
 	key = "colour",
 	atlas = "mf_tags",
 	pos = { x = 0, y = 0 },
@@ -286,7 +286,7 @@ SMODS.Tag {
 				)
 				card.cost = 0
 				card.from_tag = true
-				G.FUNCS.use_card { config = { ref_table = card } }
+				G.FUNCS.use_card({ config = { ref_table = card } })
 				-- uh. should this be here??
 				if G.GAME.modifiers.cry_force_edition and not G.GAME.modifiers.cry_force_random_edition then
 					card:set_edition(nil, true, true)
@@ -301,7 +301,7 @@ SMODS.Tag {
 			return true
 		end
 	end,
-}
+})
 
 local game_updateref = Game.update
 function Game:update(dt)
@@ -352,13 +352,13 @@ function trigger_colour_end_of_round(_card)
 		end
 
 		-- it's back !!
-		for _, jkr in pairs(SMODS.find_card "j_mf_paintcan") do
+		for _, jkr in pairs(SMODS.find_card("j_mf_paintcan")) do
 			if SMODS.pseudorandom_probability(jkr, "paintcan", 1, jkr.ability.extra.odds, "paintcan") then
 				base_count = base_count + 1
 			end
 		end
 
-		base_count = base_count + #SMODS.find_card "j_akyrs_aikoyori"
+		base_count = base_count + #SMODS.find_card("j_akyrs_aikoyori")
 
 		for j = 1, base_count do
 			-- all of them that go up over time
@@ -369,7 +369,7 @@ function trigger_colour_end_of_round(_card)
 					upgraded = true
 					_card.ability.val = _card.ability.val + 1
 					if _card.ability.val >= 10 then
-						check_for_unlock { type = "mf_ten_colour_rounds" }
+						check_for_unlock({ type = "mf_ten_colour_rounds" })
 					end
 					_card.ability.partial_rounds = _card.ability.partial_rounds - _card.ability.upgrade_rounds
 
@@ -377,13 +377,13 @@ function trigger_colour_end_of_round(_card)
 						_card.ability.extra_value = _card.ability.extra_value + _card.ability.value_per
 						_card:set_cost()
 						card_eval_status_text(_card, "extra", nil, nil, nil, {
-							message = localize "k_val_up",
+							message = localize("k_val_up"),
 							colour = G.C.MONEY,
 							card = _card,
 						})
 					else
 						card_eval_status_text(_card, "extra", nil, nil, nil, {
-							message = localize "k_upgrade_ex",
+							message = localize("k_upgrade_ex"),
 							colour = G.C.SECONDARY_SET.ColourCard,
 							card = _card,
 						})
@@ -402,7 +402,7 @@ function trigger_colour_end_of_round(_card)
 	end
 end
 
-SMODS.Voucher {
+SMODS.Voucher({
 	object_type = "Voucher",
 	key = "paintroller",
 	atlas = "mf_vouchers",
@@ -413,8 +413,8 @@ SMODS.Voucher {
 		local new_numerator, new_denominator = SMODS.get_probability_vars(card, 1, 2, "paintroller")
 		return { vars = { new_numerator, new_denominator } }
 	end,
-}
-SMODS.Voucher {
+})
+SMODS.Voucher({
 	object_type = "Voucher",
 	key = "colourtheory",
 	atlas = "mf_vouchers",
@@ -425,9 +425,9 @@ SMODS.Voucher {
 		return { vars = {} }
 	end,
 	requires = { "v_mf_paintroller" },
-}
+})
 
-FLUFF.Colour {
+FLUFF.Colour({
 	key = "black",
 	name = "col_Black",
 	atlas = "mf_colours",
@@ -448,7 +448,7 @@ FLUFF.Colour {
 	end,
 
 	colour_effect = function(self, card, area)
-		G.E_MANAGER:add_event(Event {
+		G.E_MANAGER:add_event(Event({
 			trigger = "after",
 			delay = 0.4,
 			func = function()
@@ -464,26 +464,26 @@ FLUFF.Colour {
 				end
 				if #temp_pool > 0 then
 					local over = false
-					local eligible_card = pseudorandom_element(temp_pool, pseudoseed "black")
+					local eligible_card = pseudorandom_element(temp_pool, pseudoseed("black"))
 					local edition = { negative = true }
 					eligible_card:set_edition(edition, true)
-					check_for_unlock { type = "have_edition" }
+					check_for_unlock({ type = "have_edition" })
 					card:juice_up(0.3, 0.5)
 				elseif #backup_pool > 0 then
 					local over = false
-					local eligible_card = pseudorandom_element(backup_pool, pseudoseed "black")
+					local eligible_card = pseudorandom_element(backup_pool, pseudoseed("black"))
 					local edition = { negative = true }
 					eligible_card:set_edition(edition, true)
-					check_for_unlock { type = "have_edition" }
+					check_for_unlock({ type = "have_edition" })
 					card:juice_up(0.3, 0.5)
 				end
 				return true
 			end,
-		})
+		}))
 	end,
-}
+})
 
-FLUFF.Colour {
+FLUFF.Colour({
 	key = "deepblue",
 	name = "col_Deep Blue",
 	atlas = "mf_colours",
@@ -496,7 +496,7 @@ FLUFF.Colour {
 	colour_effect = function(self, card, area)
 		local eligible_card = pseudorandom_element(G.hand.cards, rng_seed)
 		eligible_card.ability.perma_bonus = (eligible_card.ability.perma_bonus or 0) + card.ability.chips_per
-		G.E_MANAGER:add_event(Event {
+		G.E_MANAGER:add_event(Event({
 			trigger = "after",
 			delay = 0.15,
 			func = function()
@@ -504,7 +504,7 @@ FLUFF.Colour {
 				eligible_card:juice_up(0.3, 0.3)
 				return true
 			end,
-		})
+		}))
 	end,
 
 	loc_vars = function(self, info_queue, card)
@@ -518,9 +518,9 @@ FLUFF.Colour {
 	end,
 
 	mf_art_credit = "Multi",
-}
+})
 
-FLUFF.Colour {
+FLUFF.Colour({
 	key = "crimson",
 	name = "col_Crimson",
 	atlas = "mf_colours",
@@ -531,9 +531,9 @@ FLUFF.Colour {
 	},
 
 	mf_art_credit = "Multi",
-}
+})
 
-FLUFF.Colour {
+FLUFF.Colour({
 	key = "seaweed",
 	name = "col_Seaweed",
 	atlas = "mf_colours",
@@ -562,8 +562,8 @@ FLUFF.Colour {
 			end
 			local eligible_card = pseudorandom_element(temp_pool, rng_seed)
 			blacklist[eligible_card] = true
-			local enh = SMODS.poll_enhancement { key = "mf_seaweed", guaranteed = true, no_replace = true }
-			G.E_MANAGER:add_event(Event {
+			local enh = SMODS.poll_enhancement({ key = "mf_seaweed", guaranteed = true, no_replace = true })
+			G.E_MANAGER:add_event(Event({
 				trigger = "after",
 				delay = 0.15,
 				func = function()
@@ -572,8 +572,8 @@ FLUFF.Colour {
 					eligible_card:juice_up(0.3, 0.3)
 					return true
 				end,
-			})
-			G.E_MANAGER:add_event(Event {
+			}))
+			G.E_MANAGER:add_event(Event({
 				trigger = "after",
 				delay = 0.4,
 				func = function()
@@ -582,16 +582,16 @@ FLUFF.Colour {
 					eligible_card:flip()
 					return true
 				end,
-			})
+			}))
 			card:juice_up(0.3, 0.5)
 		end
 		delay(0.6)
 	end,
 
 	mf_art_credit = "Multi",
-}
+})
 
-FLUFF.Colour {
+FLUFF.Colour({
 	key = "brown",
 	name = "col_Brown",
 	atlas = "mf_colours",
@@ -622,39 +622,39 @@ FLUFF.Colour {
 		table.sort(temp_hand, function(a, b)
 			return not a.playing_card or not b.playing_card or a.playing_card < b.playing_card
 		end)
-		pseudoshuffle(temp_hand, pseudoseed "brown")
+		pseudoshuffle(temp_hand, pseudoseed("brown"))
 
 		for i = 1, math.min(#temp_hand, card.ability.val) do
 			destroyed_cards[#destroyed_cards + 1] = temp_hand[i]
 		end
 
-		G.E_MANAGER:add_event(Event {
+		G.E_MANAGER:add_event(Event({
 			trigger = "after",
 			delay = 0.4,
 			func = function()
-				play_sound "tarot1"
+				play_sound("tarot1")
 				card:juice_up(0.3, 0.5)
 				return true
 			end,
-		})
-		G.E_MANAGER:add_event(Event {
+		}))
+		G.E_MANAGER:add_event(Event({
 			trigger = "after",
 			delay = 0.1,
 			func = function()
 				for i = #destroyed_cards, 1, -1 do
 					local card = destroyed_cards[i]
-					SMODS.destroy_cards { card }
+					SMODS.destroy_cards({ card })
 				end
 				return true
 			end,
-		})
+		}))
 		delay(0.5)
 		ease_dollars(card.ability.cash_per * card.ability.val)
 		delay(0.6)
 	end,
-}
+})
 
-FLUFF.Colour {
+FLUFF.Colour({
 	key = "grey",
 	name = "col_Grey",
 	atlas = "mf_colours",
@@ -665,9 +665,9 @@ FLUFF.Colour {
 	},
 
 	mf_art_credit = "Multi",
-}
+})
 
-FLUFF.Colour {
+FLUFF.Colour({
 	key = "silver",
 	name = "col_Silver",
 	atlas = "mf_colours",
@@ -678,9 +678,9 @@ FLUFF.Colour {
 	},
 
 	mf_art_credit = "Multi",
-}
+})
 
-FLUFF.Colour {
+FLUFF.Colour({
 	key = "white",
 	name = "col_White",
 	atlas = "mf_colours",
@@ -691,9 +691,9 @@ FLUFF.Colour {
 	},
 
 	mf_art_credit = "Multi",
-}
+})
 
-FLUFF.Colour {
+FLUFF.Colour({
 	key = "red",
 	name = "col_Red",
 	atlas = "mf_colours",
@@ -706,7 +706,7 @@ FLUFF.Colour {
 	colour_effect = function(self, card, area)
 		local eligible_card = pseudorandom_element(G.hand.cards, rng_seed)
 		eligible_card.ability.perma_mult = (eligible_card.ability.perma_mult or 0) + card.ability.mult_per
-		G.E_MANAGER:add_event(Event {
+		G.E_MANAGER:add_event(Event({
 			trigger = "after",
 			delay = 0.15,
 			func = function()
@@ -714,7 +714,7 @@ FLUFF.Colour {
 				eligible_card:juice_up(0.3, 0.3)
 				return true
 			end,
-		})
+		}))
 	end,
 
 	loc_vars = function(self, info_queue, card)
@@ -728,9 +728,9 @@ FLUFF.Colour {
 	end,
 
 	mf_art_credit = "Multi",
-}
+})
 
-FLUFF.Colour {
+FLUFF.Colour({
 	key = "orange",
 	name = "col_Orange",
 	atlas = "mf_colours",
@@ -742,7 +742,7 @@ FLUFF.Colour {
 	colour_effect = function(self, card, area)
 		local eligible_card = pseudorandom_element(G.hand.cards, rng_seed)
 		eligible_card.ability.perma_repetitions = (eligible_card.ability.perma_repetitions or 0) + 1
-		G.E_MANAGER:add_event(Event {
+		G.E_MANAGER:add_event(Event({
 			trigger = "after",
 			delay = 0.15,
 			func = function()
@@ -750,7 +750,7 @@ FLUFF.Colour {
 				eligible_card:juice_up(0.3, 0.3)
 				return true
 			end,
-		})
+		}))
 	end,
 
 	can_use = function(self, card)
@@ -758,9 +758,9 @@ FLUFF.Colour {
 	end,
 
 	mf_art_credit = "Multi",
-}
+})
 
-FLUFF.Colour {
+FLUFF.Colour({
 	key = "yellow",
 	name = "col_Yellow",
 	atlas = "mf_colours",
@@ -777,9 +777,9 @@ FLUFF.Colour {
 		table.insert(tbl.vars, card.ability.value_per)
 		return tbl
 	end,
-}
+})
 
-FLUFF.Colour {
+FLUFF.Colour({
 	key = "green",
 	name = "col_Green",
 	atlas = "mf_colours",
@@ -795,9 +795,9 @@ FLUFF.Colour {
 		info_queue[#info_queue + 1] = G.P_CENTERS["j_mf_oopsallfives"]
 		return FLUFF.Colour.loc_vars(self, info_queue, card)
 	end,
-}
+})
 
-FLUFF.Colour {
+FLUFF.Colour({
 	key = "blue",
 	name = "col_Blue",
 	atlas = "mf_colours",
@@ -808,9 +808,9 @@ FLUFF.Colour {
 	},
 
 	mf_art_credit = "Multi",
-}
+})
 
-FLUFF.Colour {
+FLUFF.Colour({
 	key = "lilac",
 	name = "col_Lilac",
 	atlas = "mf_colours",
@@ -821,9 +821,9 @@ FLUFF.Colour {
 	},
 
 	mf_art_credit = "Multi",
-}
+})
 
-FLUFF.Colour {
+FLUFF.Colour({
 	key = "pink",
 	name = "col_Pink",
 	atlas = "mf_colours",
@@ -841,9 +841,9 @@ FLUFF.Colour {
 	use = function(self, card, area)
 		n_random_colour_rounds(card.ability.val)
 	end,
-}
+})
 
-FLUFF.Colour {
+FLUFF.Colour({
 	key = "peach",
 	name = "col_Peach",
 	atlas = "mf_colours",
@@ -854,9 +854,9 @@ FLUFF.Colour {
 	},
 
 	mf_art_credit = "Multi",
-}
+})
 
-FLUFF.Colour {
+FLUFF.Colour({
 	key = "new_gold",
 	name = "col_Gold",
 	atlas = "mf_colours",
@@ -871,4 +871,4 @@ FLUFF.Colour {
 	},
 
 	mf_art_credit = "Multi",
-}
+})

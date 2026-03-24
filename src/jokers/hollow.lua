@@ -1,4 +1,4 @@
-SMODS.Joker {
+SMODS.Joker({
 	key = "hollow",
 	name = "Hollow Joker",
 	atlas = "mf_jokers",
@@ -31,4 +31,4 @@ SMODS.Joker {
 			}
 		end
 	end,
-}
+})

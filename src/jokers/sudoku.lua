@@ -1,4 +1,4 @@
-SMODS.Joker {
+SMODS.Joker({
 	key = "sudoku",
 	name = "Sudoku",
 	config = {
@@ -57,7 +57,7 @@ SMODS.Joker {
 		then
 			card.ability.extra = { 0, 0, 0, 0, 0, 0, 0, 0, 0 }
 			return {
-				message = localize "k_reset",
+				message = localize("k_reset"),
 				colour = G.C.RED,
 				card = card,
 			}
@@ -72,7 +72,7 @@ SMODS.Joker {
 				if card.ability.extra[rank] == 0 then
 					card.ability.extra[rank] = 1
 					return {
-						message = localize "k_noted_ex",
+						message = localize("k_noted_ex"),
 					}
 				end
 			end
@@ -92,4 +92,4 @@ SMODS.Joker {
 			end
 		end
 	end,
-}
+})

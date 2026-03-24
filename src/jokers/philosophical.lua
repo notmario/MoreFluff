@@ -1,4 +1,4 @@
-SMODS.Joker {
+SMODS.Joker({
 	key = "philosophical",
 	name = "Philosophical Joker",
 	atlas = "mf_jokers",
@@ -18,6 +18,6 @@ SMODS.Joker {
 			vars = { center.ability.card_limit },
 		}
 	end,
-}
+})
 
 return joker

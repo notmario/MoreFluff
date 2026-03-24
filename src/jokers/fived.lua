@@ -1,4 +1,4 @@
-SMODS.Joker {
+SMODS.Joker({
 	key = "fived",
 	name = "5D Joker with Multiverse Time Travel",
 
@@ -26,11 +26,11 @@ SMODS.Joker {
 			ease_ante(-card.ability.extra.ante_mod)
 			G.GAME.round_resets.blind_ante = G.GAME.round_resets.blind_ante or G.GAME.round_resets.ante
 			G.GAME.round_resets.blind_ante = G.GAME.round_resets.blind_ante - card.ability.extra.ante_mod
-			SMODS.destroy_cards { card }
+			SMODS.destroy_cards({ card })
 			return {
-				message = localize "k_timetravel_ex",
+				message = localize("k_timetravel_ex"),
 				colour = G.C.PURPLE,
 			}
 		end
 	end,
-}
+})
