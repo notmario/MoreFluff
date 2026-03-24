@@ -201,6 +201,49 @@ return {
 					"{C:inactive}(Must have room)",
 				},
 			},
+			j_mf_clipart = {
+				name = "Clipart Joker",
+				text = {
+					"Create a {C:colourcard}Colour{} card",
+					"when {C:attention}Blind{} is selected",
+					"{C:inactive}(Must have room)"
+				},
+			},
+			j_mf_css = {
+				name = "CSS",
+				text = {
+					"Create a random {C:colourcard}Colour",
+					"card when played hand",
+					"contains a {C:attention}Flush",
+					"{C:inactive}(Must have room)"
+				},
+			},
+			j_mf_cueball = {
+				name = "Cue Ball",
+				text = {
+					"{C:green}#1# in #2#{} chance for each played",
+					"{C:attention}rankless card{} to create a",
+					"{C:rotarot}45 Degree Rotated Tarot{} card when scored",
+					"{C:inactive}(Must have room)"
+				},
+			},
+			j_mf_dinner = {
+				name = "DINNER!",
+				text = {
+					"Retrigger the {C:attention}Joker",
+					"to the right for",
+					"the next {C:attention}#1#{} rounds"
+				}
+			},
+			j_mf_forge = {
+				name = "Joker Forge",
+				text = {
+					"Creates a random {C:attention}Joker{}",
+					"card once for every",
+					"{C:attention}#3# Jokers{} sold",
+					"{C:inactive}(Currently {}[{C:attention,f:mf_emoji}#1#{C:inactive,f:mf_emoji}#2#{}]{C:inactive})",
+				}
+			},
 			j_mf_triangle = {
 				name = "Triangle",
 				text = {
@@ -227,6 +270,13 @@ return {
 					"{C:green,E:1,S:1.1}denominators{} by {C:green}1",
 					"{C:inactive}(ex: {C:green}1 in 5{C:inactive} -> {C:green}1 in 4{C:inactive})",
 				},
+			},
+			j_mf_forgeslop = {
+				name = "Forge Residue",
+				text = {
+					"Does not trigger {C:attention}Joker{}",
+					"{C:attention}Forge{} when sold"
+				}
 			},
 
 			-- oldfluff

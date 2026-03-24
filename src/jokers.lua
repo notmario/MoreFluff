@@ -33,6 +33,12 @@ FLUFF.joker_pool = {
 	"broomcloset",
 	"rot_cartomancer",
 
+  	"clipart",
+	"css",
+  	"cueball",
+  	"dinner",
+  	"forge",
+
 	-- powerful
 	"triangle",
 }
@@ -64,6 +70,7 @@ SMODS.Rarity({
 FLUFF.hidden_joker_pool = {
 	-- tokens
 	"oopsallfives",
+	"forgeslop",
 
 	-- scrapped
 	"brainrot",
