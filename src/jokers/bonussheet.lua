@@ -1,4 +1,4 @@
-SMODS.Joker({
+SMODS.Joker {
 	key = "bonussheet",
 	name = "Bonus Sheet",
 	atlas = "mf_jokers",
@@ -14,30 +14,30 @@ SMODS.Joker({
 	demicoloncompat = false,
 	loc_vars = function(self, info_queue, center)
 		return {
-			vars = { colours = { HEX("000000") } },
+			vars = { colours = { HEX "000000" } },
 		}
 	end,
 	calculate = function(self, card, context)
 		if context.open_booster then
 			if context.booster and context.booster.kind == "Buffoon" then
-				G.E_MANAGER:add_event(Event({
+				G.E_MANAGER:add_event(Event {
 					trigger = "after",
 					delay = 0.7,
 					func = function()
 						card:juice_up(0.5, 0.5)
-						SMODS.add_card({
+						SMODS.add_card {
 							set = "Joker",
 							area = G.pack_cards,
 							rarity = "mf_oldfluff",
-						})
+						}
 						return true
 					end,
-				}))
+				})
 				return {
-					message = localize("k_added_ex"),
-					colour = HEX("000000"),
+					message = localize "k_added_ex",
+					colour = HEX "000000",
 				}
 			end
 		end
 	end,
-})
+}

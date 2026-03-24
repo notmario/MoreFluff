@@ -193,6 +193,14 @@ return {
 					"{C:inactive}(Currently #2#)",
 				},
 			},
+			j_mf_rot_cartomancer = {
+				name = "{E:mf_rotarot_title}Cartomancer!",
+				text = {
+					"Create a {C:rotarot}45 Degree Rotated Tarot{} card",
+					"when {C:attention}Blind{} is selected",
+					"{C:inactive}(Must have room)",
+				},
+			},
 			j_mf_triangle = {
 				name = "Triangle",
 				text = {

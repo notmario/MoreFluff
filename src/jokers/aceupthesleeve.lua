@@ -1,4 +1,4 @@
-SMODS.Joker({
+SMODS.Joker {
 	key = "aceupthesleeve",
 	name = "Ace Up the Sleeve",
 
@@ -21,19 +21,19 @@ SMODS.Joker({
 	end,
 	calculate = function(self, card, context)
 		if context.after and G.GAME.current_round.hands_left == 1 and context.cardarea == G.jokers then
-			G.E_MANAGER:add_event(Event({
+			G.E_MANAGER:add_event(Event {
 				trigger = "after",
 				delay = 0.1,
 				func = function()
-					local cen = SMODS.poll_enhancement({ guaranteed = true, no_replace = true })
-					SMODS.add_card({
+					local cen = SMODS.poll_enhancement { guaranteed = true, no_replace = true }
+					SMODS.add_card {
 						set = "Base",
 						rank = "Ace",
 						enhancement = cen,
-					})
+					}
 					return true
 				end,
-			}))
+			})
 		end
 	end,
-})
+}

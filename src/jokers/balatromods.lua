@@ -1,4 +1,4 @@
-SMODS.Joker({
+SMODS.Joker {
 	key = "balatromods",
 	name = "Balatro Mods (Working 2024)",
 
@@ -32,7 +32,7 @@ SMODS.Joker({
 					ease_dollars(-card.ability.extra.cost)
 					for i, v in ipairs(context.full_hand) do
 						local percent = 1.15 - (i - 0.999) / (#context.full_hand - 0.998) * 0.3
-						G.E_MANAGER:add_event(Event({
+						G.E_MANAGER:add_event(Event {
 							trigger = "after",
 							delay = 0.15,
 							func = function()
@@ -41,12 +41,12 @@ SMODS.Joker({
 								context.full_hand[i]:flip()
 								return true
 							end,
-						}))
+						})
 					end
 					for i, v in ipairs(context.full_hand) do
-						local cen = SMODS.poll_enhancement({ guaranteed = true, no_replace = true })
+						local cen = SMODS.poll_enhancement { guaranteed = true, no_replace = true }
 						local percent = 0.85 + (i - 0.999) / (#context.full_hand - 0.998) * 0.3
-						G.E_MANAGER:add_event(Event({
+						G.E_MANAGER:add_event(Event {
 							trigger = "after",
 							delay = 0.15,
 							func = function()
@@ -55,7 +55,7 @@ SMODS.Joker({
 								context.full_hand[i]:flip()
 								return true
 							end,
-						}))
+						})
 					end
 					return {
 						message = "Enhanced!",
@@ -66,4 +66,4 @@ SMODS.Joker({
 			end
 		end
 	end,
-})
+}

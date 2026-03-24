@@ -1,4 +1,4 @@
-SMODS.Joker({
+SMODS.Joker {
 	key = "blahaj",
 	name = "Blahaj",
 	atlas = "mf_jokers",
@@ -16,8 +16,8 @@ SMODS.Joker({
 		if context.forcetrigger or (context.cardarea == G.jokers and context.joker_main) then
 			return {
 				swap = true,
-				message = localize("k_swap_ex"),
+				message = localize "k_swap_ex",
 			}
 		end
 	end,
-})
+}

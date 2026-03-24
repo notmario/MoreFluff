@@ -1,4 +1,4 @@
-SMODS.Joker({
+SMODS.Joker {
 	key = "unregisteredhypercam",
 	name = "Unregistered Hypercam 2",
 	atlas = "mf_jokers",
@@ -36,4 +36,4 @@ SMODS.Joker({
 			end
 		end
 	end,
-})
+}

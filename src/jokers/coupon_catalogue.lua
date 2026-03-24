@@ -1,4 +1,4 @@
-SMODS.Joker({
+SMODS.Joker {
 	key = "coupon_catalogue",
 	name = "Coupon Catalogue",
 	config = {
@@ -42,4 +42,4 @@ SMODS.Joker({
 			end
 		end
 	end,
-})
+}

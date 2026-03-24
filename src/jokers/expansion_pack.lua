@@ -151,7 +151,7 @@ FLUFF.vanilla_jokers = {
 	"j_perkeo",
 }
 
-SMODS.Joker({
+SMODS.Joker {
 	key = "expansion_pack",
 	name = "Expansion Pack",
 	atlas = "mf_jokers",
@@ -196,7 +196,7 @@ SMODS.Joker({
 			for i = 1, #FLUFF.vanilla_jokers do
 				temp_ban_joker(FLUFF.vanilla_jokers[i])
 			end
-			G.E_MANAGER:add_event(Event({
+			G.E_MANAGER:add_event(Event {
 				func = function()
 					for i = 1, jokers_to_create do
 						local n_card = create_card("Joker", G.jokers, nil, nil, nil, nil, nil, "exp")
@@ -217,8 +217,8 @@ SMODS.Joker({
 					end
 					return true
 				end,
-			}))
-			return { message = localize("k_plus_joker"), colour = G.C.BLUE }
+			})
+			return { message = localize "k_plus_joker", colour = G.C.BLUE }
 		end
 	end,
-})
+}

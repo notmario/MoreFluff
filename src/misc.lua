@@ -6,7 +6,7 @@ FLUFF.optional_features = {
 }
 
 -- sts mana value
-SMODS.DrawStep({
+SMODS.DrawStep {
 	key = "spire_mv",
 	order = 25,
 	func = function(self)
@@ -40,20 +40,20 @@ SMODS.DrawStep({
 		local shader = "dissolve"
 
 		if cost > 99 then
-			FLUFF.mv_spr:set_sprite_pos({ x = 0, y = 3 })
+			FLUFF.mv_spr:set_sprite_pos { x = 0, y = 3 }
 			FLUFF.mv_spr:draw_shader("dissolve", nil, nil, nil, self.children.center)
 		elseif cost <= 9 then
-			FLUFF.mv_spr:set_sprite_pos({ x = cost, y = 0 })
+			FLUFF.mv_spr:set_sprite_pos { x = cost, y = 0 }
 			FLUFF.mv_spr:draw_shader("dissolve", nil, nil, nil, self.children.center)
 		else
-			FLUFF.mv_spr:set_sprite_pos({ x = math.floor(cost / 10), y = 1 })
+			FLUFF.mv_spr:set_sprite_pos { x = math.floor(cost / 10), y = 1 }
 			FLUFF.mv_spr:draw_shader("dissolve", nil, nil, nil, self.children.center)
-			FLUFF.mv_spr:set_sprite_pos({ x = cost % 10, y = 2 })
+			FLUFF.mv_spr:set_sprite_pos { x = cost % 10, y = 2 }
 			FLUFF.mv_spr:draw_shader("dissolve", nil, nil, nil, self.children.center)
 		end
 	end,
 	conditions = { vortex = false, facing = "front" },
-})
+}
 
 -- temporary
 -- pulled from Entropy. thanks ruby!
@@ -61,7 +61,7 @@ local e_round = end_round
 function end_round()
 	e_round()
 	local remove_temp = {}
-	for i, v in pairs({ G.jokers, G.hand, G.consumeables, G.discard, G.deck }) do
+	for i, v in pairs { G.jokers, G.hand, G.consumeables, G.discard, G.deck } do
 		for ind, card in pairs(v.cards) do
 			if card.ability then
 				if card.ability.mf_temporary then
@@ -83,7 +83,7 @@ function end_round()
 		end
 	end
 	if #remove_temp > 0 then
-		SMODS.calculate_context({ remove_playing_cards = true, removed = remove_temp })
+		SMODS.calculate_context { remove_playing_cards = true, removed = remove_temp }
 	end
 end
 
@@ -108,13 +108,13 @@ function G.UIDEF.card_h_popup(card)
 						{
 							n = G.UIT.O,
 							config = {
-								object = DynaText({
+								object = DynaText {
 									string = obj.mf_art_credit,
 									colours = { dev and dev.colour or G.C.UI.BACKGROUND_WHITE },
 									scale = 0.27,
 									silent = true,
 									shadow = true,
-								}),
+								},
 							},
 						},
 					},

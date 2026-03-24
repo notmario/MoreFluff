@@ -1,4 +1,4 @@
-SMODS.Joker({
+SMODS.Joker {
 	key = "lettergem_z",
 	atlas = "mf_oldfluff",
 	unlocked = true,
@@ -19,14 +19,14 @@ SMODS.Joker({
 	end,
 	calculate = function(self, card, context)
 		if context.end_of_round and context.game_over and context.main_eval and #G.playing_cards >= 13 then
-			G.E_MANAGER:add_event(Event({
+			G.E_MANAGER:add_event(Event {
 				func = function()
 					G.hand_text_area.blind_chips:juice_up()
 					G.hand_text_area.game_chips:juice_up()
-					play_sound("tarot1")
+					play_sound "tarot1"
 					return true
 				end,
-			}))
+			})
 			local cards = {}
 			for i, v in pairs(G.playing_cards) do
 				if not SMODS.is_eternal(v) then
@@ -41,7 +41,7 @@ SMODS.Joker({
 				SMODS.destroy_cards(card)
 			end
 			return {
-				message = localize("k_saved_ex"),
+				message = localize "k_saved_ex",
 				saved = "k_zenith",
 				colour = G.C.RED,
 			}
@@ -63,4 +63,4 @@ SMODS.Joker({
 
 		full_UI_table.main[2] = destroy
 	end,
-})
+}

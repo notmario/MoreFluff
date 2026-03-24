@@ -1,4 +1,4 @@
-SMODS.Joker({
+SMODS.Joker {
 	key = "particleaccelerator",
 	name = "particleaccelerator",
 
@@ -30,7 +30,7 @@ SMODS.Joker({
 			else
 				card.ability.extra.x_mult = 1
 				return {
-					message = localize("k_reset_ex"),
+					message = localize "k_reset_ex",
 				}
 			end
 		end
@@ -42,4 +42,4 @@ SMODS.Joker({
 			end
 		end
 	end,
-})
+}

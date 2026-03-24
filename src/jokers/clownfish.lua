@@ -1,4 +1,4 @@
-SMODS.Joker({
+SMODS.Joker {
 	key = "clownfish",
 	name = "Clownfish",
 	atlas = "mf_jokers",
@@ -35,4 +35,4 @@ SMODS.Joker({
 			}
 		end
 	end,
-})
+}

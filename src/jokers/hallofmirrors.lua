@@ -1,4 +1,4 @@
-SMODS.Joker({
+SMODS.Joker {
 	key = "hallofmirrors",
 	name = "Hall of Mirrors",
 	config = {
@@ -36,7 +36,7 @@ SMODS.Joker({
 			G.hand:change_size(card.ability.extra)
 
 			return {
-				message = localize("k_upgrade_ex"),
+				message = localize "k_upgrade_ex",
 				card = card,
 			}
 		end
@@ -45,4 +45,4 @@ SMODS.Joker({
 			card.ability.h_size = 0
 		end
 	end,
-})
+}

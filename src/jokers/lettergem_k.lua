@@ -1,4 +1,4 @@
-SMODS.Joker({
+SMODS.Joker {
 	key = "lettergem_k",
 	atlas = "mf_oldfluff",
 	unlocked = true,
@@ -19,16 +19,16 @@ SMODS.Joker({
 	end,
 	calculate = function(self, card, context)
 		if context.setting_blind then
-			local other_card = SMODS.add_card({
+			local other_card = SMODS.add_card {
 				set = "Joker",
 				key = "j_cavendish",
 				edition = "e_negative",
-			})
+			}
 			other_card.ability.extra.odds = math.floor(other_card.ability.extra.odds / card.ability.extra.odds)
 			return {
-				message = localize("k_plus_joker"),
+				message = localize "k_plus_joker",
 				colour = G.C.BLUE,
 			}
 		end
 	end,
-})
+}

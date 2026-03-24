@@ -1,4 +1,4 @@
-SMODS.Joker({
+SMODS.Joker {
 	key = "tonersoup",
 	name = "I Sip Toner Soup",
 	config = {},
@@ -19,23 +19,23 @@ SMODS.Joker({
 		if context.forcetrigger or (context.cardarea == G.jokers and context.before) then
 			if #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
 				G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
-				G.E_MANAGER:add_event(Event({
+				G.E_MANAGER:add_event(Event {
 					trigger = "before",
 					delay = 0.0,
 					func = function()
-						SMODS.add_card({ set = "Tarot" })
+						SMODS.add_card { set = "Tarot" }
 						G.GAME.consumeable_buffer = 0
 						return true
 					end,
-				}))
+				})
 			end
 		end
 		if context.end_of_round and not context.individual and not context.repetition and not context.blueprint then
-			SMODS.destroy_cards({ card })
+			SMODS.destroy_cards { card }
 			return {
-				message = localize("k_drank_ex"),
+				message = localize "k_drank_ex",
 				colour = G.C.FILTER,
 			}
 		end
 	end,
-})
+}

@@ -1,4 +1,4 @@
-SMODS.Joker({
+SMODS.Joker {
 	key = "broomcloset",
 	name = "The Broom Closet",
 	atlas = "mf_jokers",
@@ -24,14 +24,14 @@ SMODS.Joker({
 		if ((context.buying_card and context.card ~= card) or context.open_booster) and card.ability.active then
 			card.ability.active = false
 			return {
-				message = localize("k_disabled_ex"),
+				message = localize "k_disabled_ex",
 				colour = G.C.RED,
 			}
 		end
 		if context.end_of_round and context.cardarea == G.jokers and not context.blueprint then
 			card.ability.active = true
 			return {
-				message = localize("k_reset"),
+				message = localize "k_reset",
 			}
 		end
 		if context.cardarea == G.jokers and context.joker_main and card.ability.active then
@@ -45,4 +45,4 @@ SMODS.Joker({
 			}
 		end
 	end,
-})
+}

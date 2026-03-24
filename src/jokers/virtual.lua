@@ -1,4 +1,4 @@
-SMODS.Joker({
+SMODS.Joker {
 	key = "virtual",
 	name = "Virtual Joker",
 	config = {
@@ -32,37 +32,37 @@ SMODS.Joker({
 			for k, v in ipairs(G.jokers.cards) do
 				v:flip()
 			end
-			G.E_MANAGER:add_event(Event({
+			G.E_MANAGER:add_event(Event {
 				trigger = "after",
 				delay = 0.2,
 				func = function()
-					G.E_MANAGER:add_event(Event({
+					G.E_MANAGER:add_event(Event {
 						func = function()
-							G.jokers:shuffle("aajk")
+							G.jokers:shuffle "aajk"
 							play_sound("cardSlide1", 0.85)
 							return true
 						end,
-					}))
+					})
 					delay(0.15)
-					G.E_MANAGER:add_event(Event({
+					G.E_MANAGER:add_event(Event {
 						func = function()
-							G.jokers:shuffle("aajk")
+							G.jokers:shuffle "aajk"
 							play_sound("cardSlide1", 1.15)
 							return true
 						end,
-					}))
+					})
 					delay(0.15)
-					G.E_MANAGER:add_event(Event({
+					G.E_MANAGER:add_event(Event {
 						func = function()
-							G.jokers:shuffle("aajk")
+							G.jokers:shuffle "aajk"
 							play_sound("cardSlide1", 1)
 							return true
 						end,
-					}))
+					})
 					delay(0.5)
 					return true
 				end,
-			}))
+			})
 		end
 		if context.forcetrigger or (context.cardarea == G.jokers and context.joker_main) then
 			return {
@@ -70,4 +70,4 @@ SMODS.Joker({
 			}
 		end
 	end,
-})
+}

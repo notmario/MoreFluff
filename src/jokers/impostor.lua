@@ -1,4 +1,4 @@
-SMODS.Joker({
+SMODS.Joker {
 	key = "impostor",
 	name = "Impostor",
 	config = {
@@ -45,4 +45,4 @@ SMODS.Joker({
 			}
 		end
 	end,
-})
+}

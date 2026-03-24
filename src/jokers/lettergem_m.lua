@@ -1,4 +1,4 @@
-SMODS.Joker({
+SMODS.Joker {
 	key = "lettergem_m",
 	atlas = "mf_oldfluff",
 	unlocked = true,
@@ -21,13 +21,13 @@ SMODS.Joker({
 		if context.setting_blind and #G.jokers.cards + G.GAME.joker_buffer < G.jokers.config.card_limit then
 			local jokers_to_create = math.min(1, G.jokers.config.card_limit - (#G.jokers.cards + G.GAME.joker_buffer))
 			G.GAME.joker_buffer = G.GAME.joker_buffer + jokers_to_create
-			G.E_MANAGER:add_event(Event({
+			G.E_MANAGER:add_event(Event {
 				func = function()
 					for _ = 1, jokers_to_create do
-						local other_card = SMODS.add_card({
+						local other_card = SMODS.add_card {
 							set = "Joker",
 							key = "j_jolly",
-						})
+						}
 						other_card.ability.extra_value = (other_card.ability.extra_value or 0)
 							+ card.ability.extra.price
 						other_card:set_cost()
@@ -35,11 +35,11 @@ SMODS.Joker({
 					end
 					return true
 				end,
-			}))
+			})
 			return {
-				message = localize("k_plus_joker"),
+				message = localize "k_plus_joker",
 				colour = G.C.BLUE,
 			}
 		end
 	end,
-})
+}

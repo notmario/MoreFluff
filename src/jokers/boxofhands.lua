@@ -1,4 +1,4 @@
-SMODS.Joker({
+SMODS.Joker {
 	key = "boxofhands",
 	name = "Box of Hands",
 
@@ -23,10 +23,10 @@ SMODS.Joker({
 				ease_hands_played(5, false)
 			else
 				return {
-					message = localize("k_nope_ex"),
+					message = localize "k_nope_ex",
 					colour = G.C.PURPLE,
 				}
 			end
 		end
 	end,
-})
+}

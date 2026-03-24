@@ -1,4 +1,4 @@
-SMODS.Enhancement({
+SMODS.Enhancement {
 	key = "monus",
 	atlas = "mf_enhancers",
 	pos = { x = 3, y = 1 },
@@ -23,9 +23,9 @@ SMODS.Enhancement({
 			card and card.ability.per_level or self.config.per_level,
 		} }
 	end,
-})
+}
 
-SMODS.Enhancement({
+SMODS.Enhancement {
 	key = "cult",
 	atlas = "mf_enhancers",
 	pos = { x = 4, y = 1 },
@@ -50,9 +50,9 @@ SMODS.Enhancement({
 			card and card.ability.per_level or self.config.per_level,
 		} }
 	end,
-})
+}
 
-SMODS.Enhancement({
+SMODS.Enhancement {
 	key = "styled",
 	atlas = "mf_enhancers",
 	pos = { x = 2, y = 1 },
@@ -68,22 +68,22 @@ SMODS.Enhancement({
 			end
 			::continue::
 			if doit then
-				G.E_MANAGER:add_event(Event({
+				G.E_MANAGER:add_event(Event {
 					trigger = "before",
 					delay = 0.25,
 					func = function()
-						card:set_seal(SMODS.poll_seal({ guaranteed = true, type_key = "styledcard" }), true, false)
+						card:set_seal(SMODS.poll_seal { guaranteed = true, type_key = "styledcard" }, true, false)
 						card:juice_up()
 						play_sound("gold_seal", 1.2, 0.4)
 						return true
 					end,
-				}))
+				})
 			end
 		end
 	end,
-})
+}
 
-SMODS.Enhancement({
+SMODS.Enhancement {
 	key = "brass",
 	atlas = "mf_enhancers",
 	pos = { x = 1, y = 2 },
@@ -94,7 +94,7 @@ SMODS.Enhancement({
 	calculate = function(self, card, context)
 		if context.repetition and context.cardarea == G.play then
 			return {
-				message = localize("k_again_ex"),
+				message = localize "k_again_ex",
 				repetitions = card.ability.retriggers,
 				card = card,
 			}
@@ -123,9 +123,9 @@ SMODS.Enhancement({
 			},
 		}
 	end,
-})
+}
 
-SMODS.Enhancement({
+SMODS.Enhancement {
 	key = "teal",
 	atlas = "mf_enhancers",
 	pos = { x = 1, y = 1 },
@@ -137,9 +137,9 @@ SMODS.Enhancement({
 			card and card.ability.h_x_chips or self.config.h_x_chips,
 		} }
 	end,
-})
+}
 
-SMODS.Enhancement({
+SMODS.Enhancement {
 	key = "gemstone",
 	atlas = "mf_enhancers",
 	pos = { x = 2, y = 2 },
@@ -170,9 +170,9 @@ SMODS.Enhancement({
 		-- )
 		card.children.center:draw_shader("voucher", nil, card.ARGS.send_to_shader, notilt, card.children.center)
 	end,
-})
+}
 
-SMODS.Enhancement({
+SMODS.Enhancement {
 	key = "marigold",
 	atlas = "mf_enhancers",
 	pos = { x = 0, y = 2 },
@@ -185,7 +185,7 @@ SMODS.Enhancement({
 			for _, other_card in pairs(G.hand.cards) do
 				if other_card ~= card and other_card.config.center_key == card.config.center_key then
 					c = c + 1
-					G.E_MANAGER:add_event(Event({
+					G.E_MANAGER:add_event(Event {
 						trigger = "before",
 						delay = 0.25,
 						func = function()
@@ -195,7 +195,7 @@ SMODS.Enhancement({
 							-- ease_dollars(card.ability.cash)
 							return true
 						end,
-					}))
+					})
 				end
 			end
 			-- ease_dollars(card.ability.cash)
@@ -211,9 +211,9 @@ SMODS.Enhancement({
 			card and card.ability.cash or self.config.cash,
 		} }
 	end,
-})
+}
 
-SMODS.Enhancement({
+SMODS.Enhancement {
 	key = "yucky",
 	atlas = "mf_enhancers",
 	pos = { x = 0, y = 1 },
@@ -242,4 +242,4 @@ SMODS.Enhancement({
 			new_denominator,
 		} }
 	end,
-})
+}

@@ -1,4 +1,4 @@
-SMODS.Joker({
+SMODS.Joker {
 	key = "mspaint",
 	name = "MS Paint Joker",
 	atlas = "mf_jokers",
@@ -25,13 +25,13 @@ SMODS.Joker({
 			G.hand:change_size(card.ability.extra)
 		end
 		if context.after and not context.blueprint and card.ability.h_size ~= 0 and context.cardarea == G.jokers then
-			G.E_MANAGER:add_event(Event({
+			G.E_MANAGER:add_event(Event {
 				func = function()
 					G.hand:change_size(-card.ability.extra)
 					card.ability.h_size = 0
 					return true
 				end,
-			}))
+			})
 		end
 	end,
-})
+}

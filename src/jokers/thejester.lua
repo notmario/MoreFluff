@@ -1,4 +1,4 @@
-SMODS.Joker({
+SMODS.Joker {
 	key = "thejester",
 	name = "The Jester",
 
@@ -38,4 +38,4 @@ SMODS.Joker({
 			return SMODS.merge_effects(triggers)
 		end
 	end,
-})
+}

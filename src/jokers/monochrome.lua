@@ -1,4 +1,4 @@
-SMODS.Joker({
+SMODS.Joker {
 	key = "monochrome",
 	name = "Monochrome Joker",
 	atlas = "mf_oldfluff",
@@ -46,7 +46,7 @@ SMODS.Joker({
 				})
 			elseif card.ability.extra.mult > card.ability.extra.mult_per then
 				card.ability.extra.mult = card.ability.extra.mult_per
-				return { message = localize("k_reset"), colour = G.C.PURPLE }
+				return { message = localize "k_reset", colour = G.C.PURPLE }
 			end
 		end
 		if context.cardarea == G.jokers and context.joker_main then
@@ -55,4 +55,4 @@ SMODS.Joker({
 			}
 		end
 	end,
-})
+}

@@ -1,4 +1,4 @@
-SMODS.Joker({
+SMODS.Joker {
 	key = "whiteboard",
 	name = "Whiteboard",
 
@@ -29,4 +29,4 @@ SMODS.Joker({
 			end
 		end
 	end,
-})
+}

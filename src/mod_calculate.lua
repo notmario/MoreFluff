@@ -7,21 +7,21 @@ FLUFF.calculate = function(self, context)
 
 	if context.open_booster and G.GAME.modifiers.mf_bonus_scrapped then
 		if context.booster and context.booster.kind == "Buffoon" then
-			G.E_MANAGER:add_event(Event({
+			G.E_MANAGER:add_event(Event {
 				trigger = "after",
 				delay = 0.7,
 				func = function()
-					SMODS.add_card({
+					SMODS.add_card {
 						set = "Joker",
 						area = G.pack_cards,
 						rarity = "mf_oldfluff",
-					})
+					}
 					return true
 				end,
-			}))
+			})
 			res = SMODS.merge_effects({
-				message = localize("k_added_ex"),
-				colour = HEX("000000"),
+				message = localize "k_added_ex",
+				colour = HEX "000000",
 			}, res)
 		end
 	end

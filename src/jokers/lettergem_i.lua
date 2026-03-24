@@ -1,4 +1,4 @@
-SMODS.Joker({
+SMODS.Joker {
 	key = "lettergem_i",
 	atlas = "mf_oldfluff",
 	unlocked = true,
@@ -28,12 +28,12 @@ SMODS.Joker({
 			end
 		end
 	end,
-})
+}
 
 local smods_four_fingers_ref = SMODS.four_fingers
 function SMODS.four_fingers(hand_type)
 	local val = smods_four_fingers_ref(hand_type)
-	if next(SMODS.find_card("j_mf_lettergem_i")) and hand_type == "straight" then
+	if next(SMODS.find_card "j_mf_lettergem_i") and hand_type == "straight" then
 		return math.max(1, val - 2)
 	end
 	return val

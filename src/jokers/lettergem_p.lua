@@ -1,4 +1,4 @@
-SMODS.Joker({
+SMODS.Joker {
 	key = "lettergem_p",
 	atlas = "mf_oldfluff",
 	unlocked = true,
@@ -24,9 +24,9 @@ SMODS.Joker({
 			G.GAME.blind.chips = amount
 			G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
 			return {
-				message = localize("k_reduced_ex"),
+				message = localize "k_reduced_ex",
 				colour = G.C.PURPLE,
 			}
 		end
 	end,
-})
+}

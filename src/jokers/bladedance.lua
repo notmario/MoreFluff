@@ -1,4 +1,4 @@
-SMODS.Joker({
+SMODS.Joker {
 	key = "bladedance",
 	name = "Blade Dance",
 	atlas = "mf_jokers",
@@ -26,7 +26,7 @@ SMODS.Joker({
 			(context.forcetrigger or (context.first_hand_drawn and not card.getting_sliced))
 			and not (context.blueprint_card or card).getting_sliced
 		then
-			G.E_MANAGER:add_event(Event({
+			G.E_MANAGER:add_event(Event {
 				trigger = "before",
 				delay = 0.7,
 				func = function()
@@ -34,8 +34,8 @@ SMODS.Joker({
 					for i = 1, card.ability.extra do
 						cards[i] = true
 						local _suit, _rank = nil, nil
-						_rank = pseudorandom_element(SMODS.Ranks, pseudoseed("bladedance_create")).card_key
-						_suit = pseudorandom_element(SMODS.Suits, pseudoseed("bladedance_create")).card_key
+						_rank = pseudorandom_element(SMODS.Ranks, pseudoseed "bladedance_create").card_key
+						_suit = pseudorandom_element(SMODS.Suits, pseudoseed "bladedance_create").card_key
 						local card = create_playing_card(
 							{ front = G.P_CARDS[_suit .. "_" .. _rank], center = G.P_CENTERS.m_steel },
 							G.hand,
@@ -48,7 +48,7 @@ SMODS.Joker({
 					playing_card_joker_effects(cards)
 					return true
 				end,
-			}))
+			})
 		end
 	end,
-})
+}

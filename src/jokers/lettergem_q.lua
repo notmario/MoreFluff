@@ -1,4 +1,4 @@
-SMODS.Joker({
+SMODS.Joker {
 	key = "lettergem_q",
 	atlas = "mf_oldfluff",
 	unlocked = true,
@@ -21,7 +21,7 @@ SMODS.Joker({
 		if context.individual and context.cardarea == G.hand and not context.end_of_round then
 			if context.other_card.debuff then
 				return {
-					message = localize("k_debuffed"),
+					message = localize "k_debuffed",
 					colour = G.C.RED,
 				}
 			else
@@ -39,4 +39,4 @@ SMODS.Joker({
 			end
 		end
 	end,
-})
+}

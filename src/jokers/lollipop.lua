@@ -1,4 +1,4 @@
-SMODS.Joker({
+SMODS.Joker {
 	key = "lollipop",
 	name = "Lollipop",
 	atlas = "mf_jokers",
@@ -35,14 +35,14 @@ SMODS.Joker({
 				message_colour = G.C.PURPLE,
 			})
 			if card.ability.extra.xmult <= 1.01 then
-				G.E_MANAGER:add_event(Event({
+				G.E_MANAGER:add_event(Event {
 					func = function()
-						play_sound("tarot1")
+						play_sound "tarot1"
 						card.T.r = -0.2
 						card:juice_up(0.3, 0.4)
 						card.states.drag.is = true
 						card.children.center.pinch.x = true
-						G.E_MANAGER:add_event(Event({
+						G.E_MANAGER:add_event(Event {
 							trigger = "after",
 							delay = 0.3,
 							blockable = false,
@@ -52,12 +52,12 @@ SMODS.Joker({
 								card = nil
 								return true
 							end,
-						}))
+						})
 						return true
 					end,
-				}))
+				})
 				return {
-					message = localize("k_eaten_ex"),
+					message = localize "k_eaten_ex",
 					colour = G.C.FILTER,
 				}
 			else
@@ -69,4 +69,4 @@ SMODS.Joker({
 			}
 		end
 	end,
-})
+}

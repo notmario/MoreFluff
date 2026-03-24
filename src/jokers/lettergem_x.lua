@@ -1,4 +1,4 @@
-SMODS.Joker({
+SMODS.Joker {
 	key = "lettergem_x",
 	atlas = "mf_oldfluff",
 	unlocked = true,
@@ -18,13 +18,13 @@ SMODS.Joker({
 		return { vars = { card.ability.extra.current_increase, card.ability.extra.scale_increase } }
 	end,
 	calculate = function(self, card, context) end,
-})
+}
 
 local scalcieff = SMODS.calculate_individual_effect
 SMODS.calculate_individual_effect = function(effect, scored_card, key, amount, from_edition)
 	if key == "x_mult" or key == "xmult" or key == "Xmult" or key == "x_mult_mod" or key == "Xmult_mod" then
 		local bonus = 0
-		for _, card in ipairs(SMODS.find_card("j_mf_lettergem_x")) do
+		for _, card in ipairs(SMODS.find_card "j_mf_lettergem_x") do
 			SMODS.scale_card(card, {
 				ref_table = card.ability.extra,
 				ref_value = "current_increase",

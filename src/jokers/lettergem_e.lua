@@ -1,4 +1,4 @@
-SMODS.Joker({
+SMODS.Joker {
 	key = "lettergem_e",
 	atlas = "mf_oldfluff",
 	unlocked = true,
@@ -34,4 +34,4 @@ SMODS.Joker({
 			end
 		end
 	end,
-})
+}

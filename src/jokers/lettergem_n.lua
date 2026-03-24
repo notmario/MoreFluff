@@ -1,4 +1,4 @@
-SMODS.Joker({
+SMODS.Joker {
 	key = "lettergem_n",
 	atlas = "mf_oldfluff",
 	unlocked = true,
@@ -19,15 +19,15 @@ SMODS.Joker({
 	end,
 	calculate = function(self, card, context)
 		if context.setting_blind and context.blind.boss then
-			local card = SMODS.add_card({
+			local card = SMODS.add_card {
 				set = "Joker",
 				key = "j_joker",
 				edition = "e_negative",
-			})
+			}
 			return {
-				message = localize("k_plus_joker"),
+				message = localize "k_plus_joker",
 				colour = G.C.BLUE,
 			}
 		end
 	end,
-})
+}

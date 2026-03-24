@@ -1,4 +1,4 @@
-SMODS.Joker({
+SMODS.Joker {
 	key = "glitterbomb",
 	name = "Glitter Bomb",
 
@@ -22,7 +22,7 @@ SMODS.Joker({
 			if #G.hand.cards >= 1 then
 				for i, v in ipairs(G.hand.cards) do
 					local percent = 1.15 - (i - 0.999) / (#G.hand.cards - 0.998) * 0.3
-					G.E_MANAGER:add_event(Event({
+					G.E_MANAGER:add_event(Event {
 						trigger = "after",
 						delay = 0.15,
 						func = function()
@@ -31,12 +31,12 @@ SMODS.Joker({
 							G.hand.cards[i]:flip()
 							return true
 						end,
-					}))
+					})
 				end
 				for i, v in ipairs(G.hand.cards) do
-					local cen = SMODS.poll_enhancement({ guaranteed = true, no_replace = true })
+					local cen = SMODS.poll_enhancement { guaranteed = true, no_replace = true }
 					local percent = 0.85 + (i - 0.999) / (#G.hand.cards - 0.998) * 0.3
-					G.E_MANAGER:add_event(Event({
+					G.E_MANAGER:add_event(Event {
 						trigger = "after",
 						delay = 0.15,
 						func = function()
@@ -45,14 +45,14 @@ SMODS.Joker({
 							G.hand.cards[i]:flip()
 							return true
 						end,
-					}))
+					})
 				end
 			else
 				return {
-					message = localize("k_nope_ex"),
+					message = localize "k_nope_ex",
 					colour = G.C.PURPLE,
 				}
 			end
 		end
 	end,
-})
+}

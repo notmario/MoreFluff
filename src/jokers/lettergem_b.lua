@@ -1,4 +1,4 @@
-SMODS.Joker({
+SMODS.Joker {
 	key = "lettergem_b",
 	atlas = "mf_oldfluff",
 	unlocked = true,
@@ -20,7 +20,7 @@ SMODS.Joker({
 	calculate = function(self, card, context)
 		if context.starting_shop and not card.ability.triggered then
 			card.ability.triggered = true
-			local other_card = SMODS.add_booster_to_shop("p_buffoon_normal_1")
+			local other_card = SMODS.add_booster_to_shop "p_buffoon_normal_1"
 			other_card.base_cost = card.ability.extra.cost
 			other_card:set_cost()
 			return nil, true
@@ -29,4 +29,4 @@ SMODS.Joker({
 			card.ability.triggered = nil
 		end
 	end,
-})
+}

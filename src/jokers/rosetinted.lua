@@ -1,4 +1,4 @@
-SMODS.Joker({
+SMODS.Joker {
 	key = "rosetinted",
 	name = "Rose-Tinted Glasses",
 	config = {},
@@ -22,25 +22,25 @@ SMODS.Joker({
 			and context.full_hand[1]:get_id() == 2
 			and G.GAME.current_round.hands_played == 0
 		then
-			G.E_MANAGER:add_event(Event({
+			G.E_MANAGER:add_event(Event {
 				func = function()
-					add_tag(Tag("tag_double"))
+					add_tag(Tag "tag_double")
 					play_sound("generic1", 0.9 + math.random() * 0.1, 0.8)
 					play_sound("holo1", 1.2 + math.random() * 0.1, 0.4)
 					return true
 				end,
-			}))
+			})
 			return true
 		end
 		if context.forcetrigger then
-			G.E_MANAGER:add_event(Event({
+			G.E_MANAGER:add_event(Event {
 				func = function()
-					add_tag(Tag("tag_double"))
+					add_tag(Tag "tag_double")
 					play_sound("generic1", 0.9 + math.random() * 0.1, 0.8)
 					play_sound("holo1", 1.2 + math.random() * 0.1, 0.4)
 					return true
 				end,
-			}))
+			})
 		end
 	end,
-})
+}

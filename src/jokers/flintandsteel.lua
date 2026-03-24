@@ -1,4 +1,4 @@
-SMODS.Joker({
+SMODS.Joker {
 	key = "flintandsteel",
 	name = "Flint and Steel",
 	config = {},
@@ -39,12 +39,12 @@ SMODS.Joker({
 
 				if flint and steel then -- PEAK CINEMA
 					local text, disp_text = G.FUNCS.get_poker_hand_info(context.full_hand)
-					SMODS.upgrade_poker_hands({
+					SMODS.upgrade_poker_hands {
 						hands = { text },
 						from = card,
-					})
+					}
 				end
 			end
 		end
 	end,
-})
+}
