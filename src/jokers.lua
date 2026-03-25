@@ -39,6 +39,25 @@ FLUFF.joker_pool = {
   	"dinner",
   	"forge",
 
+	-- uncommon page 2
+	"gemstonejoker",
+	"globe",
+	"goldencarrot",
+	"farmmerge",
+	"friendinsideme",
+
+	-- "junkmail",
+	-- "onesliptoolate",
+	-- "unpleasantcard",
+	-- "loadeddisk",
+  	-- "missingjoker",
+
+	-- "paintcan",
+	-- "passando",
+	-- "sapling",
+	-- "snake",
+	-- "slotmachine",
+
 	-- powerful
 	"triangle",
 }

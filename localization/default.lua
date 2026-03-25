@@ -244,6 +244,132 @@ return {
 					"{C:inactive}(Currently {}[{C:attention,f:mf_emoji}#1#{C:inactive,f:mf_emoji}#2#{}]{C:inactive})",
 				}
 			},
+			j_mf_gemstonejoker = {
+				name = "Gemstone Joker",
+				text = {
+					"Earn {C:money}$#1#{} at end of round",
+					"for each {C:attention}Gemstone Card{}",
+					"in your {C:attention}full deck{}",
+					"{C:inactive}(Currently {C:money}$#2#{C:inactive})"
+				}
+			},
+			j_mf_globe = {
+				name = "Globe",
+				text = {
+					"Create #1# {C:planet}Planet{} card",
+					"when you {C:attention}reroll{} in the shop",
+				}
+			},
+			j_mf_goldencarrot = {
+				name = "Golden Carrot",
+				text = {
+					"Earn {C:money}$#1#{} at",
+					"end of round",
+					"{C:money}-$#2#{} given",
+					"per hand played",
+				}
+			},
+			j_mf_farmmerge = {
+				name = "Joke Merge Valley",
+				text = {
+					"Discarding exactly {C:attention}3 cards",
+					"with the same rank {C:dark_edition}Merges",
+					"them all with the {C:attention}rightmost",
+					"discarded card"
+				},
+			},
+			j_mf_friendinsideme = {
+				name = "Friend Inside Me",
+				text = {
+					"Once per {C:attention}ante{}, selling a {C:common}Common{}",
+					"or {C:uncommon}Uncommon{} joker creates",
+					"a joker of the next rarity",
+					"{C:inactive}(Currently #1#)"
+				}
+			},
+			j_mf_junkmail = {
+				name = "Junk Mail",
+				text = {
+					"Creates a {C:attention}Voucher{} which",
+					"costs {C:money}#1#x{} as much at",
+					"the start of each Shop",
+				}
+			},
+			j_mf_onesliptoolate = {
+				name = "One Slip Too Late",
+				text = {
+					"{X:mult,C:white} xN {} Mult if {C:attention}poker hand{} contains",
+					"exactly {C:attention}N{} cards, where {C:attention}N{} is the",
+					"number of hands played this round",
+					"{C:inactive}(N currently equals {C:attention}#1#{C:inactive})",
+				}
+			},
+			j_mf_unpleasantcard = { 
+				name = "Unpleasant Card",
+				text = {
+					"{X:chips,C:white} X#1# {} Chips",
+					"{C:attention}Booster Packs{} contain",
+					"only {C:attention}1{} card"
+				},
+			},
+			j_mf_loadeddisk = {
+				name = "Loaded Disk",
+				text = {
+					"Creates a {C:colourcard}Pink{} and",
+					"a {C:colourcard}Yellow{} {C:colourcard}Colour{} card",
+					"when sold",
+					"{C:inactive}(Must have room)"
+				},
+			},
+			j_mf_missingjoker = {
+				name = "Missing Texture",
+				text = {
+					"Transforms into a",
+					"{C:dark_edition}random joker{} for",
+					"the duration of the blind",
+					"when blind is selected"
+				}
+			},
+			j_mf_paintcan = {
+				name = "Paint Can",
+				text = {
+					"{C:green}#1# in #2#{} chance to add",
+					"a round to {C:colourcard}Colour Cards{}",
+					"when they gain a round",
+				},
+			},
+			j_mf_passando = {
+				name = "Passing Balatro in 5 Minutes",
+				text = {
+					"{X:attention,C:white}X2{} Speed",
+					"Creates a {C:dark_edition}Negative{} {C:attention}Diet Cola",
+					"for every {C:attention}2{} Blinds skipped",
+					"{C:inactive}(Currently #1#/#2#)"
+				},
+			},
+			j_mf_sapling = {
+				name = "Fast-Growing Sapling",
+				text = {
+					"After {C:attention}#3#{} rounds,",
+					"sell this card to set",
+					"{C:attention}round score{} to {s:1.1,C:spectral}TREE(3){}",
+					"{C:inactive}(Currently #4#, {}[{C:attention}#1#{C:inactive}#2#{}]{C:inactive})",
+				}
+			},
+			j_mf_snake = {
+				name = "Snake",
+				text = {
+					"After {C:attention}play{} or {C:attention}discard{},",
+					"always draw {C:attention}#1#{} cards"
+				}
+			},
+			j_mf_slotmachine = { 
+				name = "Slot Machine",
+				text = {
+					"{C:green}#1# in #2#{} chance to retrigger",
+					"scored {C:attention}7{} cards {C:attention}#3#{} times",
+				},
+			},
 			j_mf_triangle = {
 				name = "Triangle",
 				text = {
@@ -1271,7 +1397,8 @@ return {
 			k_plus_rotarot = "+1 45 Degree Rotated Tarot Card",
 			k_swap_ex = "Swap!",
 			k_sealed_ex = "Sealed!",
-			k_reset_ex = "Sealed!",
+			k_merged_ex = "Merged!",
+			k_friend_ex = "Friend!",
 			k_timetravel_ex = "Time travel!",
 			k_plus_ankh = "+Ankh",
 			k_rankless = "rankless",
@@ -1287,6 +1414,7 @@ return {
 			a_plus_hand = { "+#1# Hand " },
 			a_plus_pluschips = { "++#1# Chips" },
 			a_plus_rounds = { "+#1# Rounds" },
+			a_minus_dollars = { "-$#1#" },
 		},
 	},
 }
