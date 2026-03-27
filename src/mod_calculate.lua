@@ -34,6 +34,16 @@ FLUFF.calculate = function(self, context)
 		end
 	end
 
+	if not RudeBuster then
+		if context.setting_blind then
+			for _, joker in pairs(G.jokers.cards) do
+				if is_planeswalker(joker) and joker.config.center.default_loyalty_effects then
+					joker.ability.extra.uses = 1
+				end
+			end
+		end
+	end
+
 	if res then
 		return res
 	end

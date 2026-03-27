@@ -21,45 +21,86 @@ FLUFF.joker_pool = {
 	"unregisteredhypercam",
 
 	-- uncommon page 1
+	"badlegaldefence",
 	"dropkick",
 	"bladedance",
 	"hyperbeam",
 	"blasphemy",
-	"dramaticentrance",
 
+	"dramaticentrance",
 	"bonussheet",
 	"blunder",
 	"brilliant",
 	"broomcloset",
-	"rot_cartomancer",
 
+	"rot_cartomancer",
   	"clipart",
 	"css",
   	"cueball",
   	"dinner",
-  	"forge",
 
 	-- uncommon page 2
+  	"forge",
 	"gemstonejoker",
 	"globe",
 	"goldencarrot",
 	"farmmerge",
-	"friendinsideme",
 
+	"friendinsideme",
 	"junkmail",
 	"onesliptoolate",
 	"unpleasantcard",
 	"loadeddisk",
-  	"missingjoker",
 
+  	"missingjoker",
 	"paintcan",
 	"passando",
 	"sapling",
 	"snake",
+
+	-- uncommon page 3
 	"slotmachine",
+	"stylemeter",
+	"stonejokerjoker",
+	"teacup",
+	"tealjoker",
+
+	"thewayhome",
+  	"recycling",
+  	"yuckyrat",
+	-- rares
+	"allicantdo",
+	"bloodpact",
+
+	"bookmove",
+	"brass",
+	"bowlingball",
+	"cba",
+	"doubledscale",
+
+	-- rares page 2
+	"grep",
+	"hugejoker",
+	"hyperjimbo",
+	"jankman",
+	"pixeljoker",
+
+	"rainbowjoker",
+	"the_solo",
+	"top10",
+	"widejoker",
 
 	-- powerful
 	"triangle",
+  	"marigold",
+
+	-- walkers
+	"mindsculptor",
+	"johnbalatro",
+	"trianglewalker",
+
+	-- rare, but it goes last
+	"lessfluff",
 }
 
 for _, path in ipairs(FLUFF.joker_pool) do
@@ -86,7 +127,17 @@ SMODS.Rarity({
 	},
 })
 
+SMODS.Rarity {
+	key = "superlegendary",
+	loc_txt = {
+		name = "Superlegendary"
+	},
+	badge_colour = HEX("2852FF")
+}
+
 FLUFF.hidden_joker_pool = {
+	"johnbalatrotrue",
+
 	-- tokens
 	"oopsallfives",
 	"forgeslop",
@@ -118,11 +169,10 @@ FLUFF.hidden_joker_pool = {
 
 	"fleshprison",
 	"mashupalbum",
-	"badlegaldefence",
 	"flintandsteel",
 	"sudoku",
-
 	"talljoker",
+
 	"tonersoup",
 	"hallofmirrors",
 	"virtual",
