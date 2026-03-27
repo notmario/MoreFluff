@@ -3,6 +3,14 @@ FLUFF.calculate = function(self, context)
 
 	if context.end_of_round and context.main_eval then
 		colour_end_of_round_effects()
+
+		if G.mf_missingjoker_revert then
+			for _, joker in pairs(G.mf_missingjoker_revert) do
+				joker:set_ability(G.P_CENTERS["j_mf_missingjoker"])
+				joker:juice_up()
+			end
+			G.mf_missingjoker_revert = {}
+		end
 	end
 
 	if context.open_booster and G.GAME.modifiers.mf_bonus_scrapped then

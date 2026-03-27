@@ -16,7 +16,6 @@ SMODS.Joker({
 	blueprint_compat = true,
 	eternal_compat = true,
 	perishable_compat = true,
-	demicoloncompat = true,
 	loc_vars = function(self, info_queue, center)
 		return {
 			vars = { center.ability.extra.hands },
@@ -29,13 +28,6 @@ SMODS.Joker({
 			and context.poker_hands
 			and next(context.poker_hands["Straight"])
 		then
-			ease_hands_played(card.ability.extra.hands)
-			return {
-				message = localize({ type = "variable", key = "a_plus_hand", vars = { card.ability.extra.hands } }),
-				colour = G.C.BLUE,
-			}
-		end
-		if context.forcetrigger then
 			ease_hands_played(card.ability.extra.hands)
 			return {
 				message = localize({ type = "variable", key = "a_plus_hand", vars = { card.ability.extra.hands } }),

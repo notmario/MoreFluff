@@ -15,7 +15,6 @@ SMODS.Joker({
 	blueprint_compat = true,
 	eternal_compat = true,
 	perishable_compat = false,
-	demicoloncompat = true,
 	loc_vars = function(self, info_queue, center)
 		return {
 			vars = { center.ability.extra },
@@ -64,7 +63,7 @@ SMODS.Joker({
 				end,
 			}))
 		end
-		if context.forcetrigger or (context.cardarea == G.jokers and context.joker_main) then
+		if context.cardarea == G.jokers and context.joker_main then
 			return {
 				xmult = card.ability.extra,
 			}

@@ -15,7 +15,6 @@ SMODS.Joker({
 	blueprint_compat = true,
 	eternal_compat = true,
 	perishable_compat = true,
-	demicoloncompat = true,
 	loc_vars = function(self, info_queue, center)
 		local redeemed = 0
 		for k, v in pairs(G.GAME.used_vouchers) do
@@ -28,7 +27,7 @@ SMODS.Joker({
 		}
 	end,
 	calculate = function(self, card, context)
-		if context.forcetrigger or (context.cardarea == G.jokers and context.joker_main) then
+		if context.cardarea == G.jokers and context.joker_main then
 			local redeemed = 0
 			for k, v in pairs(G.GAME.used_vouchers) do
 				if v == true then

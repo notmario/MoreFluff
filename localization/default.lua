@@ -353,7 +353,7 @@ return {
 					"After {C:attention}#3#{} rounds,",
 					"sell this card to set",
 					"{C:attention}round score{} to {s:1.1,C:spectral}TREE(3){}",
-					"{C:inactive}(Currently #4#, {}[{C:attention}#1#{C:inactive}#2#{}]{C:inactive})",
+					"{C:inactive}(Currently {C:attention}#4#{C:inactive}, {}[{C:attention,f:mf_emoji}#1#{C:inactive,f:mf_emoji}#2#{}]{C:inactive})",
 				}
 			},
 			j_mf_snake = {
@@ -924,7 +924,7 @@ return {
 			c_mf_seaweed = {
 				name = "{E:mf_colour_title}Seaweed",
 				text = {
-					"A random card in hand get",
+					"A random card in hand gets",
 					"{C:attention}a random enhancement{} for every",
 					"{C:attention}#4#{} rounds this has been held",
 					"{C:inactive}(Currently {C:attention}#1#{C:inactive}, {}[{C:attention,f:mf_emoji}#2#{C:inactive,f:mf_emoji}#3#{}]{C:inactive})",
@@ -1399,6 +1399,10 @@ return {
 			k_sealed_ex = "Sealed!",
 			k_merged_ex = "Merged!",
 			k_friend_ex = "Friend!",
+			k_plus_voucher = "+1 Voucher",
+			k_transformed_ex = "Transformed!",
+			k_equals_tree_three = "=TREE(3)",
+			k_again_ex_ex = "Again!!",
 			k_timetravel_ex = "Time travel!",
 			k_plus_ankh = "+Ankh",
 			k_rankless = "rankless",

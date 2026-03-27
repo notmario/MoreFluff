@@ -17,7 +17,6 @@ SMODS.Joker({
 	blueprint_compat = false,
 	eternal_compat = false,
 	perishable_compat = true,
-	demicoloncompat = true,
 	loc_vars = function(self, info_queue, center)
 		return { vars = { center.ability.extra.c_rounds, center.ability.extra.rounds, center.ability.extra.money } }
 	end,
@@ -41,8 +40,7 @@ SMODS.Joker({
 		end
 		if
 			(
-				context.forcetrigger
-				or (context.selling_self and (card.ability.extra.c_rounds >= card.ability.extra.rounds))
+				context.selling_self and (card.ability.extra.c_rounds >= card.ability.extra.rounds)
 			) and not context.blueprint
 		then
 			return {

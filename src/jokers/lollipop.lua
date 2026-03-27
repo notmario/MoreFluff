@@ -11,7 +11,6 @@ SMODS.Joker({
 	blueprint_compat = true,
 	eternal_compat = false,
 	perishable_compat = true,
-	demicoloncompat = true,
 	pools = { ["Food"] = true },
 	loc_vars = function(self, info_queue, center)
 		return {
@@ -63,7 +62,7 @@ SMODS.Joker({
 			else
 				-- card.ability.x_mult = card.ability.x_mult - card.ability.extra
 			end
-		elseif context.forcetrigger or (context.cardarea == G.jokers and context.joker_main) then
+		elseif context.cardarea == G.jokers and context.joker_main then
 			return {
 				xmult = card.ability.extra.xmult,
 			}

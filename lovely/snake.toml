@@ -1,0 +1,22 @@
+[manifest]
+version = "1.0.0"
+dump_lua = true
+priority = -1
+
+[[patches]]
+[patches.pattern]
+target = 'functions/state_events.lua'
+match_indent = true
+pattern = '''if G.GAME.blind.name == 'The Serpent' and'''
+position = 'before'
+payload = '''
+if G.STATE == G.STATES.DRAW_TO_HAND and (G.GAME.current_round.hands_played > 0 or
+        G.GAME.current_round.discards_used > 0) then
+  snake_count = 0
+  for _, jkr in pairs(SMODS.find_card("j_mf_snake")) do
+    snake_count = snake_count + jkr.ability.extra
+  end
+  if snake_count ~= 0 then
+    hand_space = math.min(#G.deck.cards, snake_count)
+  end
+end'''

@@ -1,0 +1,17 @@
+[manifest]
+version = "1.0.0"
+dump_lua = true
+priority = -1
+
+[[patches]]
+[patches.pattern]
+target = '''card.lua'''
+pattern = """if self.cost > 0 then """
+position = "before"
+payload = """
+if next(SMODS.find_card("j_mf_unpleasantcard")) then
+  self.ability.extra = 1
+  G.GAME.pack_choices = 1
+end"""
+overwrite = true
+match_indent = true

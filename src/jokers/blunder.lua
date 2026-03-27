@@ -46,7 +46,7 @@ SMODS.Joker({
 			end
 			G.hand:unhighlight_all()
 		end
-		if context.forcetrigger or (context.cardarea == G.jokers and context.joker_main) then
+		if context.cardarea == G.jokers and context.joker_main then
 			return {
 				xmult = card.ability.extra,
 			}

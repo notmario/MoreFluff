@@ -13,7 +13,6 @@ SMODS.Joker({
 	blueprint_compat = true,
 	eternal_compat = true,
 	perishable_compat = true,
-	demicoloncompat = true,
 	loc_vars = function(self, info_queue, center)
 		info_queue[#info_queue + 1] = G.P_CENTERS.c_death
 		return {
@@ -22,7 +21,7 @@ SMODS.Joker({
 	end,
 	calculate = function(self, card, context)
 		if
-			(context.forcetrigger or (context.setting_blind and context.blind.boss))
+			(context.setting_blind and context.blind.boss)
 			and not (context.blueprint_card or self).getting_sliced
 		then
 			if #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then

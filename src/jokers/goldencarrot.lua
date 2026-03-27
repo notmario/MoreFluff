@@ -13,7 +13,6 @@ SMODS.Joker {
     blueprint_compat = false,
     eternal_compat = false,
     perishable_compat = true,
-    demicoloncompat = true,
     pools = { ["Food"] = true },
     loc_vars = function(self, info_queue, center)
         return {
@@ -21,9 +20,6 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        if context.forcetrigger then
-            return { dollars = card.ability.extra.gain }
-        end
         if context.cardarea == G.jokers and context.after and not context.blueprint and not card.gone then
             SMODS.scale_card(card, {
                 ref_table = card.ability.extra,

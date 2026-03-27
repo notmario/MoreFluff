@@ -13,7 +13,6 @@ SMODS.Joker({
 	blueprint_compat = true,
 	eternal_compat = true,
 	perishable_compat = true,
-	demicoloncompat = true,
 	loc_vars = function(self, info_queue, center)
 		return {
 			vars = { center.ability.extra.chips, center.ability.extra.mult },
@@ -21,13 +20,6 @@ SMODS.Joker({
 	end,
 	calculate = function(self, card, context)
 		if context.individual and context.cardarea == G.play and context.other_card.ability.name ~= "Default Base" then
-			return {
-				chips = card.ability.extra.chips,
-				mult = card.ability.extra.mult,
-				card = card,
-			}
-		end
-		if context.forcetrigger then
 			return {
 				chips = card.ability.extra.chips,
 				mult = card.ability.extra.mult,

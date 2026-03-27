@@ -13,13 +13,12 @@ SMODS.Joker({
 	blueprint_compat = true,
 	eternal_compat = true,
 	perishable_compat = true,
-	demicoloncompat = true,
 	immutable = true,
 	loc_vars = function(self, info_queue, center)
 		return { vars = { center.ability.val } }
 	end,
 	calculate = function(self, card, context)
-		if context.forcetrigger or context.initial_scoring_step then
+		if context.initial_scoring_step then
 			if Talisman and Big and Big.arrow then
 				return {
 					eemult = card.ability.val,

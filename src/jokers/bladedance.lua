@@ -14,7 +14,6 @@ SMODS.Joker({
 	blueprint_compat = true,
 	eternal_compat = true,
 	perishable_compat = true,
-	demicoloncompat = true,
 	loc_vars = function(self, info_queue, center)
 		info_queue[#info_queue + 1] = G.P_CENTERS.m_steel
 		return {
@@ -23,7 +22,7 @@ SMODS.Joker({
 	end,
 	calculate = function(self, card, context)
 		if
-			(context.forcetrigger or (context.first_hand_drawn and not card.getting_sliced))
+			(context.first_hand_drawn and not card.getting_sliced)
 			and not (context.blueprint_card or card).getting_sliced
 		then
 			G.E_MANAGER:add_event(Event({

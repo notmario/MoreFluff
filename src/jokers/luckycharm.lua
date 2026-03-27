@@ -13,7 +13,6 @@ SMODS.Joker({
 	blueprint_compat = true,
 	eternal_compat = true,
 	perishable_compat = true,
-	demicoloncompat = true,
 	loc_vars = function(self, info_queue, center)
 		local new_numerator, new_denominator =
 			SMODS.get_probability_vars(center, 1, center.ability.extra.mult_chance, "luckycharm_mult")
@@ -31,12 +30,6 @@ SMODS.Joker({
 		}
 	end,
 	calculate = function(self, card, context)
-		if context.forcetrigger then
-			return {
-				dollars = card.ability.extra.money,
-				mult = card.ability.extra.mult,
-			}
-		end
 		if context.end_of_round and not context.individual and not context.repetition and not context.blueprint then
 			if
 				SMODS.pseudorandom_probability(

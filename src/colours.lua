@@ -1,6 +1,7 @@
 FLUFF.Colour = SMODS.Consumable:extend({
 	object_type = "Consumable",
 	set = "Colour",
+	is_colour = true, -- for Gold
 	cost = 4,
 	unlocked = true,
 	discovered = true,
@@ -322,11 +323,15 @@ function colour_end_of_round_effects()
 	end
 end
 
+FLUFF.is_colour = function (card)
+	return card.config.center.is_colour or card.ability.set == "Colour"
+end
+
 function n_random_colour_rounds(n, seed)
 	for i = 1, n do
 		local temp_pool = {}
 		for k, v in pairs(G.consumeables.cards) do
-			if v.ability.set == "Colour" or v.ability.set == "Shape" then
+			if FLUFF.is_colour(v) then
 				table.insert(temp_pool, v)
 			end
 		end
@@ -342,7 +347,7 @@ function trigger_colour_end_of_round(_card)
 	if _card.ability.mf_halted then
 		return false
 	end
-	if _card.ability.set == "Colour" or _card.ability.set == "Shape" then
+	if FLUFF.is_colour(_card) then
 		local base_count = 1
 		if
 			G.GAME.used_vouchers.v_mf_paintroller

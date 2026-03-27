@@ -11,7 +11,6 @@ SMODS.Joker({
 	blueprint_compat = true,
 	eternal_compat = true,
 	perishable_compat = true,
-	demicoloncompat = true,
 	mf_rotate_by = math.pi / 4,
 	loc_vars = function(self, info_queue, center)
 		return {
@@ -19,7 +18,7 @@ SMODS.Joker({
 		}
 	end,
 	calculate = function(self, card, context)
-		if (context.setting_blind or context.forcetrigger) and not (context.blueprint_card or self).getting_sliced then
+		if context.setting_blind and not (context.blueprint_card or self).getting_sliced then
 			if #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
 				G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
 				G.E_MANAGER:add_event(Event({

@@ -1,0 +1,38 @@
+[manifest]
+version = "1.0.0"
+dump_lua = true
+priority = -1
+
+[[patches]]
+[patches.pattern]
+target = 'functions/button_callbacks.lua'
+match_indent = true
+pattern = '''
+  G.GAME.chips_text = new_chips_text
+end'''
+position = 'after'
+payload = '''
+if G.GAME.mf_tree_three then
+  G.GAME.chips_text = "TREE(3)"
+end
+'''
+
+[[patches]]
+[patches.pattern]
+target = 'functions/state_events.lua'
+match_indent = true
+pattern = '''function new_round()'''
+position = 'after'
+payload = '''
+G.GAME.mf_tree_three = false
+'''
+
+[[patches]]
+[patches.pattern]
+target = 'functions/button_callbacks.lua'
+match_indent = true
+pattern = '''ease_chips(0)'''
+position = 'before'
+payload = '''
+G.GAME.mf_tree_three = false
+'''

@@ -16,7 +16,6 @@ SMODS.Joker({
 	blueprint_compat = false,
 	eternal_compat = true,
 	perishable_compat = false,
-	demicoloncompat = true,
 	loc_vars = function(self, info_queue, center)
 		return {
 			vars = { center.ability.h_size, center.ability.extra },
@@ -24,13 +23,10 @@ SMODS.Joker({
 	end,
 	calculate = function(self, card, context)
 		if
-			context.forcetrigger
-			or (
-				context.individual
-				and context.cardarea == G.play
-				and context.other_card:get_id() == 6
-				and not context.blueprint
-			)
+			context.individual
+			and context.cardarea == G.play
+			and context.other_card:get_id() == 6
+			and not context.blueprint
 		then
 			card.ability.h_size = card.ability.h_size + card.ability.extra
 			G.hand:change_size(card.ability.extra)

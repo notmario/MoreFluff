@@ -27,3 +27,15 @@ SMODS.Sound({
 		)
 	end,
 })
+
+SMODS.Sound({
+	key = "treethree",
+	path = "treethree.ogg",
+	pitch = 1.0,
+})
+
+SMODS.Sound({
+	key = "buzzer",
+	path = "buzzer.ogg",
+	pitch = 1.0,
+})

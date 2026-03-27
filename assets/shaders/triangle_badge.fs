@@ -5,16 +5,24 @@
 #endif
 
 extern MY_HIGHP_OR_MEDIUMP vec2 triangle_badge;
-extern MY_HIGHP_OR_MEDIUMP vec2 uibox_pos;
-extern MY_HIGHP_OR_MEDIUMP vec2 uibox_size;
+extern MY_HIGHP_OR_MEDIUMP vec4 uie_details;
+extern MY_HIGHP_OR_MEDIUMP number uie_scale;
+extern MY_HIGHP_OR_MEDIUMP number uie_rot;
 
 vec4 effect( vec4 colour, Image texture, vec2 texture_coords, vec2 screen_coords )
 {
     vec4 tex = colour;
 
-    vec2 uv = (screen_coords - uibox_pos) / uibox_size.xy;
+    vec2 uv = (screen_coords - uie_details.xy) / uie_details.ga;
 
-    uv.x = mod(uv.x + triangle_badge.x, 0.3) * 6.66666666; // EVIL...
+    if (uie_scale < 0.00001) {
+        uv.x = uv.x + 0.0001;
+    }
+    if (uie_rot < 0.00001) {
+        uv.x = uv.x + 0.0001;
+    }
+    
+    uv.x = mod(uv.x * 2.5 + triangle_badge.x, 0.3) * 6.66666666; // EVIL...
     uv.y = (uv.y - 1.5) / (1.8);
     if (uv.x > 1) {
         uv.x = 2 - uv.x;

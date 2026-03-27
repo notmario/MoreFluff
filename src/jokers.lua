@@ -46,17 +46,17 @@ FLUFF.joker_pool = {
 	"farmmerge",
 	"friendinsideme",
 
-	-- "junkmail",
-	-- "onesliptoolate",
-	-- "unpleasantcard",
-	-- "loadeddisk",
-  	-- "missingjoker",
+	"junkmail",
+	"onesliptoolate",
+	"unpleasantcard",
+	"loadeddisk",
+  	"missingjoker",
 
-	-- "paintcan",
-	-- "passando",
-	-- "sapling",
-	-- "snake",
-	-- "slotmachine",
+	"paintcan",
+	"passando",
+	"sapling",
+	"snake",
+	"slotmachine",
 
 	-- powerful
 	"triangle",

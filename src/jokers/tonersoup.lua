@@ -13,10 +13,9 @@ SMODS.Joker({
 	blueprint_compat = true,
 	eternal_compat = false,
 	perishable_compat = true,
-	demicoloncompat = true,
 	pools = { ["Food"] = true },
 	calculate = function(self, card, context)
-		if context.forcetrigger or (context.cardarea == G.jokers and context.before) then
+		if context.cardarea == G.jokers and context.before then
 			if #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
 				G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
 				G.E_MANAGER:add_event(Event({

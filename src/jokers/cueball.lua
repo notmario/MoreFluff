@@ -13,7 +13,6 @@ SMODS.Joker {
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
-    demicoloncompat = true,
     loc_vars = function(self, info_queue, center)
         local new_numerator, new_denominator = SMODS.get_probability_vars(center, 1, center.ability.odds, 'cueball')
         return {

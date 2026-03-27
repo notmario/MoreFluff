@@ -15,7 +15,6 @@ SMODS.Joker({
 	blueprint_compat = true,
 	eternal_compat = true,
 	perishable_compat = true,
-	demicoloncompat = true,
 	pools = { ["Meme"] = true },
 	loc_vars = function(self, info_queue, center)
 		return {
@@ -38,11 +37,6 @@ SMODS.Joker({
 					xmult = card.ability.extra.x_mult,
 				}
 			end
-		end
-		if context.forcetrigger then
-			return {
-				xmult = card.ability.extra.x_mult,
-			}
 		end
 	end,
 })

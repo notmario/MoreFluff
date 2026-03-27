@@ -17,7 +17,6 @@ SMODS.Joker({
 	blueprint_compat = true,
 	eternal_compat = true,
 	perishable_compat = true,
-	demicoloncompat = true,
 	loc_vars = function(self, info_queue, center)
 		return {
 			vars = {
@@ -37,13 +36,6 @@ SMODS.Joker({
 					dollars = card.ability.extra.dollars,
 				}
 			end
-		end
-		if context.forcetrigger then
-			return {
-				mult = card.ability.extra.mult,
-				chips = card.ability.extra.chips,
-				dollars = card.ability.extra.dollars,
-			}
 		end
 	end,
 })

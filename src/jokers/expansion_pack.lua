@@ -166,7 +166,6 @@ SMODS.Joker({
 	blueprint_compat = true,
 	eternal_compat = true,
 	perishable_compat = true,
-	demicoloncompat = true,
 	loc_vars = function(self, info_queue, center)
 		return {
 			vars = { center.ability.extra },
@@ -174,7 +173,7 @@ SMODS.Joker({
 	end,
 	calculate = function(self, card, context)
 		if
-			(context.forcetrigger or (context.setting_blind and not card.getting_sliced))
+			(context.setting_blind and not card.getting_sliced)
 			and not (context.blueprint_card or card).getting_sliced
 			and #G.jokers.cards + G.GAME.joker_buffer < G.jokers.config.card_limit
 		then

@@ -14,7 +14,6 @@ SMODS.Joker {
     eternal_compat = true,
     perishable_compat = false,
     enhancement_gate = "m_mf_gemstone",
-    demicoloncompat = true,
     update = function(self, card, dt)
         if G.STAGE == G.STAGES.RUN then
             card.ability.extra.gemstone_tally = 0
@@ -31,13 +30,6 @@ SMODS.Joker {
         return {
             vars = { center.ability.extra.dollars_per, center.ability.extra.dollars_per * center.ability.extra.gemstone_tally }
         }
-    end,
-    calculate = function(self, card, context)
-        if context.forcetrigger then
-            return {
-                dollars = card.ability.extra.dollars_per * card.ability.extra.gemstone_tally
-            }
-        end
     end,
     calc_dollar_bonus = function(self, card)
         if card.ability.extra.gemstone_tally > 0 then return card.ability.extra.dollars_per * card.ability.extra.gemstone_tally end

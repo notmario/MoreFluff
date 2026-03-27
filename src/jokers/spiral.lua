@@ -13,7 +13,6 @@ SMODS.Joker({
 	blueprint_compat = true,
 	eternal_compat = true,
 	perishable_compat = true,
-	demicoloncompat = true,
 	loc_vars = function(self, info_queue, center)
 		local val = center.ability.extra.mult
 			+ math.floor(
@@ -27,7 +26,7 @@ SMODS.Joker({
 	end,
 
 	calculate = function(self, card, context)
-		if context.joker_main or context.forcetrigger then
+		if context.joker_main then
 			return {
 				mult = card.ability.extra.mult + math.floor(
 					card.ability.extra.coeff
