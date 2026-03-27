@@ -15,7 +15,7 @@ SMODS.Joker {
     perishable_compat = true,
     loc_vars = function(self, info_queue, center)
         return {
-            vars = { center.ability.val_mult }
+            vars = { center.ability.extra.val_mult }
         }
     end,
     calculate = function(self, card, context)
