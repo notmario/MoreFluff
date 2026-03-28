@@ -3,7 +3,7 @@ SMODS.Joker({
 	name = "Philosophical Joker",
 	atlas = "mf_jokers",
 	config = {
-		card_limit = 1,
+		extra = { slots = 1 },
 	},
 	pos = { x = 4, y = 0 },
 	rarity = 1,
@@ -15,9 +15,15 @@ SMODS.Joker({
 	perishable_compat = false,
 	loc_vars = function(self, info_queue, center)
 		return {
-			vars = { center.ability.card_limit },
+			vars = { center.ability.extra.slots },
 		}
 	end,
+	add_to_deck = function(self, card, from_debuff)
+		G.jokers.config.card_limit = G.jokers.config.card_limit + card.ability.extra.slots
+	end,
+	remove_from_deck = function(self, card, from_debuff)
+		G.jokers.config.card_limit = G.jokers.config.card_limit - card.ability.extra.slots
+	end
 })
 
 return joker
