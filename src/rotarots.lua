@@ -145,7 +145,6 @@ SMODS.Tag({
 
 -- fool
 SMODS.Consumable({
-	object_type = "Consumable",
 	set = "Rotarot",
 	name = "rot_Fool",
 	key = "rot_fool",
@@ -233,7 +232,6 @@ SMODS.Consumable({
 
 -- magician
 SMODS.Consumable({
-	object_type = "Consumable",
 	set = "Rotarot",
 	name = "rot_Magician",
 	key = "rot_magician",
@@ -263,7 +261,6 @@ SMODS.Consumable({
 })
 
 SMODS.Consumable({
-	object_type = "Consumable",
 	set = "Rotarot",
 	name = "rot_HighPriestess",
 	key = "rot_high_priestess",
@@ -306,7 +303,6 @@ SMODS.Consumable({
 
 -- empress
 SMODS.Consumable({
-	object_type = "Consumable",
 	set = "Rotarot",
 	name = "rot_Empress",
 	key = "rot_empress",
@@ -337,7 +333,6 @@ SMODS.Consumable({
 
 -- emperor
 SMODS.Consumable({
-	object_type = "Consumable",
 	set = "Rotarot",
 	name = "rot_Emperor",
 	key = "rot_emperor",
@@ -380,7 +375,6 @@ SMODS.Consumable({
 
 -- hierophant
 SMODS.Consumable({
-	object_type = "Consumable",
 	set = "Rotarot",
 	name = "rot_Heirophant",
 	key = "rot_heirophant",
@@ -411,7 +405,6 @@ SMODS.Consumable({
 
 -- lovers
 SMODS.Consumable({
-	object_type = "Consumable",
 	set = "Rotarot",
 	name = "rot_Lovers",
 	key = "rot_lovers",
@@ -442,7 +435,6 @@ SMODS.Consumable({
 
 -- chariot
 SMODS.Consumable({
-	object_type = "Consumable",
 	set = "Rotarot",
 	name = "rot_Chariot",
 	key = "rot_chariot",
@@ -473,7 +465,6 @@ SMODS.Consumable({
 
 -- justice
 SMODS.Consumable({
-	object_type = "Consumable",
 	set = "Rotarot",
 	name = "rot_Justice",
 	key = "rot_justice",
@@ -504,7 +495,6 @@ SMODS.Consumable({
 
 -- hermit
 SMODS.Consumable({
-	object_type = "Consumable",
 	set = "Rotarot",
 	name = "rot_Hermit",
 	key = "rot_hermit",
@@ -545,7 +535,6 @@ FLUFF.blacklisted_editions = {
 
 -- wheel of fortune
 SMODS.Consumable({
-	object_type = "Consumable",
 	set = "Rotarot",
 	name = "rot_Wheel",
 	key = "rot_wheel",
@@ -655,7 +644,6 @@ SMODS.Consumable({
 
 -- strength
 SMODS.Consumable({
-	object_type = "Consumable",
 	set = "Rotarot",
 	name = "rot_Strength",
 	key = "rot_strength",
@@ -738,7 +726,6 @@ SMODS.Consumable({
 
 -- hanged man
 SMODS.Consumable({
-	object_type = "Consumable",
 	set = "Rotarot",
 	name = "rot_Hanged",
 	key = "rot_hanged_man",
@@ -795,7 +782,6 @@ SMODS.Consumable({
 
 -- death
 SMODS.Consumable({
-	object_type = "Consumable",
 	set = "Rotarot",
 	name = "rot_Death",
 	key = "rot_death",
@@ -880,7 +866,6 @@ SMODS.Consumable({
 
 -- temperance
 SMODS.Consumable({
-	object_type = "Consumable",
 	set = "Rotarot",
 	name = "rot_Temperance",
 	key = "rot_temperance",
@@ -938,7 +923,6 @@ SMODS.Consumable({
 
 -- devil
 SMODS.Consumable({
-	object_type = "Consumable",
 	set = "Rotarot",
 	name = "rot_Devil",
 	key = "rot_devil",
@@ -969,7 +953,6 @@ SMODS.Consumable({
 
 -- tower
 SMODS.Consumable({
-	object_type = "Consumable",
 	set = "Rotarot",
 	name = "rot_Tower",
 	key = "rot_tower",
@@ -1038,7 +1021,6 @@ end
 
 -- star
 SMODS.Consumable({
-	object_type = "Consumable",
 	set = "Rotarot",
 	name = "rot_Star",
 	key = "rot_star",
@@ -1065,7 +1047,6 @@ SMODS.Consumable({
 
 -- moon
 SMODS.Consumable({
-	object_type = "Consumable",
 	set = "Rotarot",
 	name = "rot_Moon",
 	key = "rot_moon",
@@ -1092,7 +1073,6 @@ SMODS.Consumable({
 
 -- sun
 SMODS.Consumable({
-	object_type = "Consumable",
 	set = "Rotarot",
 	name = "rot_Sun",
 	key = "rot_sun",
@@ -1119,7 +1099,6 @@ SMODS.Consumable({
 
 -- judgement
 SMODS.Consumable({
-	object_type = "Consumable",
 	set = "Rotarot",
 	name = "rot_Judgement",
 	key = "rot_judgement",
@@ -1184,7 +1163,6 @@ SMODS.Consumable({
 
 -- world
 SMODS.Consumable({
-	object_type = "Consumable",
 	set = "Rotarot",
 	name = "rot_World",
 	key = "rot_world",
