@@ -1485,6 +1485,14 @@ return {
 			},
 		},
 		Spectral = {
+			c_mf_rot_soul = {
+				name = "{E:mf_rotarot_title}The Soul!",
+				text = {
+					"Creates a",
+					"{C:legendary,E:mf_rotarot_title}45 Degree Rotated Legendary{} Joker",
+					"{C:inactive}(Must have room)"
+				},
+			},
 			c_mf_new_gold = {
 				name = "{E:mf_colour_title}Gold",
 				text = {
@@ -1665,8 +1673,16 @@ return {
 	misc = {
 		labels = {
 			colour = "Colour",
+			mf_token = "Token",
+			mf_oldfluff = "Scrapped",
+			mf_superlegendary = "Superlegendary",
+			mf_rot_legendary = "45 Degree Rotated Legendary",
 		},
 		dictionary = {
+			k_mf_token = "Token",
+			k_mf_oldfluff = "Scrapped",
+			k_mf_superlegendary = "Superlegendary",
+			k_mf_rot_legendary = "45 Degree Rotated Legendary",
 			k_colour = "Colour",
 			b_colour_cards = "Colour Cards",
 			k_colour_pack = "Colour Pack",
