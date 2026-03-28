@@ -34,6 +34,7 @@ SMODS.Joker {
 						mult = mod_mult(mult ^ card.ability.extra.powmult)
 					end,
                     message = "^"..card.ability.extra.powmult.." Mult",
+					sound = "multhit2",
                     colour = G.C.DARK_EDITION
                 }
             end
