@@ -30,6 +30,9 @@ SMODS.Joker({
 			G.GAME.joker_buffer = G.GAME.joker_buffer + jokers_to_create
 			-- ah shit.
 			function temp_ban_joker(key)
+				if type(G.GAME.banned_keys[key]) ~= "number" and G.GAME.banned_keys[key] ~= nil then
+					return nil
+				end
 				if G.GAME.banned_keys[key] == true then
 					G.GAME.banned_keys[key] = 214389
 				end
@@ -52,6 +55,9 @@ SMODS.Joker({
 						G.GAME.joker_buffer = 0
 					end
 					function temp_unban_joker(key)
+						if type(G.GAME.banned_keys[key]) ~= "number" and G.GAME.banned_keys[key] ~= nil then
+							return nil
+						end
 						if G.GAME.banned_keys[key] == 214389 then
 							G.GAME.banned_keys[key] = nil
 						elseif G.GAME.banned_keys[key] % 214389 == 0 then
