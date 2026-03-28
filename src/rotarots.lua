@@ -108,7 +108,7 @@ SMODS.Tag({
 	unlocked = true,
 	discovered = true,
 	loc_vars = function(self, info_queue)
-		info_queue[#info_queue + 1] = { set = "Other", key = "p_mf_rotarot_mega_1", specific_vars = { 2, 5 } }
+		info_queue[#info_queue + 1] = { set = "Other", key = "p_mf_rotarot_mega", specific_vars = { 2, 5 } }
 		return { vars = {} }
 	end,
 	apply = function(self, tag, context)
