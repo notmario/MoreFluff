@@ -5,6 +5,7 @@ SMODS.Joker {
     config = {
         extra = 1.5
     },
+    mf_art_credit = "footlongdingledong",
     pos = {x = 5, y = 3},
     rarity = 3,
     cost = 6,

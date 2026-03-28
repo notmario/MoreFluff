@@ -89,6 +89,7 @@ FLUFF.joker_pool = {
 	"the_solo",
 	"top10",
 	"widejoker",
+	"lessfluff",
 
 	-- powerful
 	"triangle",
@@ -98,9 +99,6 @@ FLUFF.joker_pool = {
 	"mindsculptor",
 	"johnbalatro",
 	"trianglewalker",
-
-	-- rare, but it goes last
-	"lessfluff",
 }
 
 for _, path in ipairs(FLUFF.joker_pool) do
