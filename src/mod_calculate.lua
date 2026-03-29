@@ -13,6 +13,13 @@ FLUFF.calculate = function(self, context)
 		end
 	end
 
+	if context.starting_shop and G.GAME.round_resets.ante == G.GAME.win_ante and not G.GAME.mf_missed_superboss then
+		G.GAME.mf_missed_superboss = true
+		local other_card = SMODS.add_voucher_to_shop("v_mf_superboss_ticket")
+		other_card.base_cost = 0
+		other_card:set_cost()
+	end
+
 	if context.open_booster and G.GAME.modifiers.mf_bonus_scrapped then
 		if context.booster and context.booster.kind == "Buffoon" then
 			G.E_MANAGER:add_event(Event({

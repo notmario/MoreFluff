@@ -104,3 +104,12 @@ SMODS.Atlas({
 	px = 71, 
 	py = 95 
 })
+
+SMODS.Atlas({
+	key = "mf_blinds",
+	atlas_table = "ANIMATION_ATLAS",
+	path = "mf_blinds.png",
+	px = 34,
+	py = 34,
+	frames = 21,
+})

@@ -12,6 +12,7 @@ assert(SMODS.load_file("src/colours.lua"))()
 assert(SMODS.load_file("src/modifiers.lua"))()
 assert(SMODS.load_file("src/rotarots.lua"))()
 assert(SMODS.load_file("src/decks.lua"))()
+assert(SMODS.load_file("src/superboss.lua"))()
 
 assert(SMODS.load_file("src/uibadge.lua"))()
 assert(SMODS.load_file("src/modpageui.lua"))()

@@ -29,6 +29,18 @@ SMODS.Sound({
 })
 
 SMODS.Sound({
+	key = "music_duelzone",
+	path = "music_duelzone.ogg",
+	sync = false,
+	volume = 1.0,
+	pitch = 2 ^ (-1/12),
+	select_music_track = function()
+		return
+			G.GAME.mf_superboss_active and 6 -- notably lower than jimball (Funny)
+	end,
+})
+
+SMODS.Sound({
 	key = "treethree",
 	path = "treethree.ogg",
 	pitch = 1.0,

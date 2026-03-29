@@ -1577,6 +1577,113 @@ return {
 				},
 			},
 		},
+		Blind = {
+			bl_mf_bigger_blind = {
+				name = "Bigger Blind",
+			},
+			bl_mf_violet_vessel_dx = {
+				name = "Violet Vessel DX",
+				text = {
+					"EXTREMELY large blind"
+				}
+			},
+			bl_mf_cerulean_bell_dx = {
+				name = "Cerulean Bell DX",
+				text = {
+					"Forces 3 cards to",
+					"always be selected"
+				}
+			},
+			bl_mf_needle_dx = {
+				name = "The Needle DX",
+				text = {
+					"Play only 1 hand,",
+					"start with 1 discard"
+				}
+			},
+			bl_mf_manacle_dx = {
+				name = "The Manacle DX",
+				text = {
+					"-3 Hand Size"
+				}
+			},
+			bl_mf_pillar_dx = {
+				name = "The Pillar DX",
+				text = {
+					"Half of all cards played",
+					"this run are debuffed"
+				}
+			},
+			bl_mf_serpent_dx = {
+				name = "The Serpent DX",
+				text = {
+					"Only redraw cards when",
+					"hand is empty"
+				}
+			},
+			bl_mf_club_dx = {
+				name = "The Club DX",
+				text = {
+					"All non-Club cards",
+					"are debuffed"
+				}
+			},
+			bl_mf_goad_dx = {
+				name = "The Goad DX",
+				text = {
+					"All non-Spades cards",
+					"are debuffed"
+				}
+			},
+			bl_mf_window_dx = {
+				name = "The Window DX",
+				text = {
+					"All non-Diamonds cards",
+					"are debuffed"
+				}
+			},
+			bl_mf_head_dx = {
+				name = "The Head DX",
+				text = {
+					"All non-Hearts cards",
+					"are debuffed"
+				}
+			},
+			bl_mf_arm_dx = {
+				name = "The Arm DX",
+				text = {
+					"Set level of played",
+					"poker hand to 0"
+				}
+			},
+			bl_mf_wheel_dx = {
+				name = "The Wheel DX",
+				text = {
+					"Only one card is",
+					"drawn face up"
+				}
+			},
+			bl_mf_house_dx = {
+				name = "The House DX",
+				text = {
+					"First drawn hand",
+					"is discarded"
+				}
+			},
+			bl_mf_psychic_dx = {
+				name = "The Psychic DX",
+				text = {
+					"Must not play 5 cards"
+				}
+			},
+			bl_mf_hook_dx = {
+				name = "The Hook DX",
+				text = {
+					"After hand is played,",
+					"discard hand after draw"
+				}
+			},
+		},
 		Other = {
 			p_mf_colour_normal = {
 				name = "{E:mf_colour_title}Colour Pack",
@@ -1650,6 +1757,21 @@ return {
 				text = {
 					"Some {C:colourcard}Colour{} cards in",
 					"packs are {C:dark_edition}Polychrome{}",
+				},
+			},
+			v_mf_superboss_ticket = {
+				name = "The Ticket",
+				text = {
+					{
+						"Upgrades {C:attention}Ante #1#{}",
+						"{C:inactive,s:0.8}Good luck!{}"
+					},
+					{
+						"Sets ante to {C:attention}#1#{},",
+						"{C:red}prevents{} ante change,",
+						"boss blind reroll, and",
+						"skipping until ante end"
+					}
 				},
 			},
 		},

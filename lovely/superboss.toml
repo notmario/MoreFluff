@@ -1,0 +1,95 @@
+[manifest]
+version = "1.0.0"
+dump_lua = true
+priority = -1
+
+[[patches]]
+[patches.pattern]
+target = "functions/UI_definitions.lua"
+pattern = "extras = create_UIBox_blind_tag(type, run_info)"
+position = "at"
+payload = '''
+if not G.GAME.mf_superboss_active then
+  extras = create_UIBox_blind_tag(type, run_info)
+end'''
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = "functions/common_events.lua"
+pattern = '''elseif blindname == 'Small Blind' or blindname == 'Big Blind' or blindname == '' then
+  ease_background_colour{new_colour = G.C.BLIND['Small'], contrast = 1}'''
+position = "after"
+payload = '''
+elseif blindname == 'Bigger Blind' then
+  ease_background_colour{new_colour = G.C.BLIND['Small'], contrast = 1}'''
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = "functions/common_events.lua"
+pattern = '''if state == G.STATES.TAROT_PACK then
+        ease_background_colour{new_colour = G.C.PURPLE, special_colour = darken(G.C.BLACK, 0.2), contrast = 1.5}'''
+position = "before"
+payload = '''if G.GAME.mf_superboss_active then
+  ease_background_colour{new_colour = G.C.RED, special_colour = darken(G.C.BLACK, 0.2), contrast = 1.5}
+  return
+end'''
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = "blind.lua"
+pattern = '''elseif self.name and self.name ~= '' then'''
+position = "before"
+payload = '''
+elseif self.name == "Bigger Blind" then 
+  return 'Small' '''
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = '''if G.GAME.round_resets.blind == G.P_BLINDS.bl_small then
+  G.GAME.round_resets.blind_states.Small = 'Defeated' '''
+position = "after"
+payload = '''
+elseif G.GAME.round_resets.blind == G.P_BLINDS.bl_mf_bigger_blind then 
+  G.GAME.round_resets.blind_states.Small = 'Defeated'
+elseif G.GAME.mf_superboss_active and 
+  (G.GAME.blind:get_type() == 'Boss' and not G.GAME.blind.debuff.superboss) then
+    G.GAME.round_resets.blind_states.Big = 'Defeated'
+'''
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = '''
+if not G.GAME.won and G.GAME.round_resets.ante >= G.GAME.win_ante and G.GAME.blind_on_deck == 'Boss' then
+  game_won = true
+  G.GAME.won = true
+end'''
+position = "after"
+payload = '''
+if G.GAME.round_resets.ante == G.GAME.win_ante and (
+  G.GAME.blind.debuff.superboss
+) and G.GAME.mf_superboss_active and not G.GAME.no_superboss_reset then
+  G.GAME.mf_superboss_active = false
+  G.GAME.modifiers.scaling = math.max((G.GAME.modifiers.scaling - G.GAME.modifiers.bonus_scaling), 1)
+  G.GAME.modifiers.bonus_scaling = 0
+
+  G.GAME.round_resets.blind_choices.Small = "bl_small"
+  G.GAME.round_resets.blind_choices.Big = "bl_big"
+end'''
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = '''G.FUNCS.draw_from_hand_to_discard()
+if G.GAME.blind:get_type() == 'Boss' then'''
+position = "at"
+payload = '''G.FUNCS.draw_from_hand_to_discard()
+if G.GAME.blind:get_type() == 'Boss' and ((not G.GAME.mf_superboss_active) or G.GAME.blind.debuff.superboss) then'''
+match_indent = true
