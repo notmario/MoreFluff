@@ -113,3 +113,8 @@ SMODS.Atlas({
 	py = 34,
 	frames = 21,
 })
+
+SMODS.Font({
+	key = "emoji",
+	path = "NotoEmoji-Bold.ttf",
+})

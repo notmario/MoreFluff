@@ -182,11 +182,6 @@ SMODS.DynaTextEffect({
 	end,
 })
 
-SMODS.Font({
-	key = "emoji",
-	path = "NotoEmoji-Bold.ttf",
-})
-
 -- for the funny progress bar.
 function progressbar(val, max)
 	local val = val or 0
