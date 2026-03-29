@@ -36,6 +36,7 @@ SMODS.Voucher {
             ease_ante((G.GAME.win_ante or 8) - G.GAME.round_resets.ante)
         end
         G.GAME.mf_superboss_active = true
+        G.GAME.mf_superboss_shader_timer = G.TIMERS.REAL
 
         -- Increase ante scaling
         G.GAME.modifiers.scaling = G.GAME.modifiers.scaling or 1
@@ -731,4 +732,17 @@ SMODS.Blind {
     in_pool = function(self) 
       return G.GAME.round_resets.ante > G.GAME.win_ante
     end
+}
+
+SMODS.ScreenShader {
+	key = "superboss",
+	path = "superboss.fs",
+	send_vars = function(self)
+		return {
+			iTime = G.TIMERS.REAL - (G.GAME.mf_superboss_shader_timer or 0)
+		}
+	end,
+    should_apply = function(self)
+        return G.GAME.mf_superboss_active
+    end,
 }
