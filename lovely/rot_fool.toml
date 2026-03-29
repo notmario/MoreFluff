@@ -1,0 +1,35 @@
+[manifest]
+version = "1.0.0"
+dump_lua = true
+priority = -1
+
+[[patches]]
+[patches.pattern]
+target = "functions/button_callbacks.lua"
+pattern = "G.TAROT_INTERRUPT = G.STATE"
+position = "after"
+payload = """
+if card.config.center.set == 'Rotarot' or card.config.center.set == 'Colour' then 
+	G.E_MANAGER:add_event(Event({
+		trigger = 'immediate',
+		func = function()
+			G.E_MANAGER:add_event(Event({
+				trigger = 'immediate',
+				func = function()
+					G.GAME.last_rot_tarot_colour = card.config.center_key
+						return true
+				end
+			}))
+				return true
+		end
+	}))
+end"""
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+pattern = "last_tarot_planet = nil,"
+position = "after"
+payload = "last_rot_tarot_colour = nil,"
+match_indent = true

@@ -35,8 +35,14 @@ SMODS.Voucher {
         if G.GAME.round_resets.ante ~= (G.GAME.win_ante or 8) then
             ease_ante((G.GAME.win_ante or 8) - G.GAME.round_resets.ante)
         end
-        G.GAME.mf_superboss_active = true
-        G.GAME.mf_superboss_shader_timer = G.TIMERS.REAL
+        G.E_MANAGER:add_event(Event({
+            trigger = "after",
+            func = function() 
+              G.GAME.mf_superboss_active = true
+              G.GAME.mf_superboss_shader_timer = G.TIMERS.REAL
+              ease_background_colour_blind(G.STATE, 'Small Blind')
+            return true
+            end}))
 
         -- Increase ante scaling
         G.GAME.modifiers.scaling = G.GAME.modifiers.scaling or 1
@@ -48,7 +54,6 @@ SMODS.Voucher {
         G.GAME.round_resets.blind_choices.Big = get_new_boss()
         G.GAME.round_resets.blind_choices.Boss = G.get_new_superboss()
 
-        ease_background_colour_blind(G.STATE, 'Small Blind')
     end,
 
     requires = {"v_mf_impossiblevoucher"},

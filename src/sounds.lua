@@ -32,6 +32,7 @@ SMODS.Sound({
 	key = "music_duelzone",
 	path = "music_duelzone.ogg",
 	sync = false,
+	pitch = 1.0,
 	volume = 1.0,
 	select_music_track = function()
 		return
