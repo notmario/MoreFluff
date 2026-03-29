@@ -54,7 +54,7 @@ vec4 effect( vec4 colour, Image texture, vec2 texture_coords, vec2 screen_coords
 	hsl.z *= max(0.9, hsl.z);
 
     float center_dist = (texture_coords.x - 0.5) * (texture_coords.x - 0.5) * 16. / 9. + (texture_coords.y - 0.5) * (texture_coords.y - 0.5);
-    hsl.z *= 1. - center_dist * 2.5;
+    hsl.z *= 1. - center_dist * 1.5;
 
     vec4 tex2 = RGB(hsl);
 
