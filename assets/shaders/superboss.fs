@@ -50,16 +50,16 @@ vec4 effect( vec4 colour, Image texture, vec2 texture_coords, vec2 screen_coords
     // add colour-modifying effects here
     vec4 hsl = HSL(tex);
     hsl.x = 0.01;
-    hsl.y *= 0.9;
-    hsl.z *= 0.9;
+    hsl.y *= 0.4;
+	hsl.z *= max(0.9, hsl.z);
 
-    float center_dist = (texture_coords.x - 0.5) * (texture_coords.x - 0.5) + (texture_coords.y - 0.5) * (texture_coords.y - 0.5);
-    hsl.z *= 1. - center_dist * 3.;
+    float center_dist = (texture_coords.x - 0.5) * (texture_coords.x - 0.5) * 16. / 9. + (texture_coords.y - 0.5) * (texture_coords.y - 0.5);
+    hsl.z *= 1. - center_dist * 2.5;
 
     vec4 tex2 = RGB(hsl);
 
 
-    float mix_fac = (1.-(1./(iTime+1.))) / 3.;
+    float mix_fac = (1.-(1./(iTime+1.))) / 2.;
     tex = tex * (1-mix_fac) + tex2 * mix_fac;
     
     return tex;
