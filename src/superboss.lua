@@ -114,6 +114,9 @@ SMODS.Blind {
     
     debuff = {
         superboss = true,
+
+        akyrs_blind_difficulty = "dx",
+        akyrs_cannot_be_disabled = true,
     },
 
     boss = {
