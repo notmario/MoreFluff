@@ -41,7 +41,7 @@ local game_drawref = Game.draw
 function Game:draw()
 	game_drawref(self)
 
-	love.graphics.setColor(1,1,1,1)
+	love.graphics.setColor(1, 1, 1, 1)
 
 	if next(SMODS.find_card("j_mf_unregisteredhypercam")) then
 		love.graphics.draw(G.ASSET_ATLAS["mf_watermark"].image, 0, 0)

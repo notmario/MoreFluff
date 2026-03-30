@@ -12,12 +12,12 @@ SMODS.Rarity({
 	badge_colour = HEX("474747"),
 })
 
-SMODS.Rarity {
+SMODS.Rarity({
 	key = "superlegendary",
-	badge_colour = HEX("2852FF")
-}
+	badge_colour = HEX("2852FF"),
+})
 
-SMODS.Rarity {
+SMODS.Rarity({
 	key = "rot_legendary",
-	badge_colour = HEX("2852FF")
-}
+	badge_colour = HEX("2852FF"),
+})

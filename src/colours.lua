@@ -318,7 +318,7 @@ function colour_end_of_round_effects()
 	end
 end
 
-FLUFF.is_colour = function (card)
+FLUFF.is_colour = function(card)
 	return card.config.center.is_colour or card.ability.set == "Colour"
 end
 

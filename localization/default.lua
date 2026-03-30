@@ -206,7 +206,7 @@ return {
 				text = {
 					"Create a {C:colourcard}Colour{} card",
 					"when {C:attention}Blind{} is selected",
-					"{C:inactive}(Must have room)"
+					"{C:inactive}(Must have room)",
 				},
 			},
 			j_mf_css = {
@@ -215,7 +215,7 @@ return {
 					"Create a random {C:colourcard}Colour",
 					"card when played hand",
 					"contains a {C:attention}Flush",
-					"{C:inactive}(Must have room)"
+					"{C:inactive}(Must have room)",
 				},
 			},
 			j_mf_cueball = {
@@ -224,7 +224,7 @@ return {
 					"{C:green}#1# in #2#{} chance for each played",
 					"{C:attention}rankless card{} to create a",
 					"{C:rotarot}45 Degree Rotated Tarot{} card when scored",
-					"{C:inactive}(Must have room)"
+					"{C:inactive}(Must have room)",
 				},
 			},
 			j_mf_dinner = {
@@ -232,8 +232,8 @@ return {
 				text = {
 					"Retrigger the {C:attention}Joker",
 					"to the right for",
-					"the next {C:attention}#1#{} rounds"
-				}
+					"the next {C:attention}#1#{} rounds",
+				},
 			},
 			j_mf_forge = {
 				name = "Joker Forge",
@@ -242,7 +242,7 @@ return {
 					"card once for every",
 					"{C:attention}#3# Jokers{} sold",
 					"{C:inactive}(Currently {}[{C:attention,f:mf_emoji}#1#{C:inactive,f:mf_emoji}#2#{}]{C:inactive})",
-				}
+				},
 			},
 			j_mf_gemstonejoker = {
 				name = "Gemstone Joker",
@@ -250,15 +250,15 @@ return {
 					"Earn {C:money}$#1#{} at end of round",
 					"for each {C:attention}Gemstone Card{}",
 					"in your {C:attention}full deck{}",
-					"{C:inactive}(Currently {C:money}$#2#{C:inactive})"
-				}
+					"{C:inactive}(Currently {C:money}$#2#{C:inactive})",
+				},
 			},
 			j_mf_globe = {
 				name = "Globe",
 				text = {
 					"Create #1# {C:planet}Planet{} card",
 					"when you {C:attention}reroll{} in the shop",
-				}
+				},
 			},
 			j_mf_goldencarrot = {
 				name = "Golden Carrot",
@@ -267,7 +267,7 @@ return {
 					"end of round",
 					"{C:money}-$#2#{} given",
 					"per hand played",
-				}
+				},
 			},
 			j_mf_farmmerge = {
 				name = "Joke Merge Valley",
@@ -275,7 +275,7 @@ return {
 					"Discarding exactly {C:attention}3 cards",
 					"with the same rank {C:dark_edition}Merges",
 					"them all with the {C:attention}rightmost",
-					"discarded card"
+					"discarded card",
 				},
 			},
 			j_mf_friendinsideme = {
@@ -284,8 +284,8 @@ return {
 					"Once per {C:attention}ante{}, selling a {C:common}Common{}",
 					"or {C:uncommon}Uncommon{} joker creates",
 					"a joker of the next rarity",
-					"{C:inactive}(Currently #1#)"
-				}
+					"{C:inactive}(Currently #1#)",
+				},
 			},
 			j_mf_junkmail = {
 				name = "Junk Mail",
@@ -293,7 +293,7 @@ return {
 					"Creates a {C:attention}Voucher{} which",
 					"costs {C:money}#1#x{} as much at",
 					"the start of each Shop",
-				}
+				},
 			},
 			j_mf_onesliptoolate = {
 				name = "One Slip Too Late",
@@ -302,14 +302,14 @@ return {
 					"exactly {C:attention}N{} cards, where {C:attention}N{} is the",
 					"number of hands played this round",
 					"{C:inactive}(N currently equals {C:attention}#1#{C:inactive})",
-				}
+				},
 			},
-			j_mf_unpleasantcard = { 
+			j_mf_unpleasantcard = {
 				name = "Unpleasant Card",
 				text = {
 					"{X:chips,C:white} X#1# {} Chips",
 					"{C:attention}Booster Packs{} contain",
-					"only {C:attention}1{} card"
+					"only {C:attention}1{} card",
 				},
 			},
 			j_mf_loadeddisk = {
@@ -318,7 +318,7 @@ return {
 					"Creates a {C:colourcard}Pink{} and",
 					"a {C:colourcard}Yellow{} {C:colourcard}Colour{} card",
 					"when sold",
-					"{C:inactive}(Must have room)"
+					"{C:inactive}(Must have room)",
 				},
 			},
 			j_mf_missingjoker = {
@@ -327,8 +327,8 @@ return {
 					"Transforms into a",
 					"{C:dark_edition}random joker{} for",
 					"the duration of the blind",
-					"when blind is selected"
-				}
+					"when blind is selected",
+				},
 			},
 			j_mf_paintcan = {
 				name = "Paint Can",
@@ -344,7 +344,7 @@ return {
 					"{X:attention,C:white}X2{} Speed",
 					"Creates a {C:dark_edition}Negative{} {C:attention}Diet Cola",
 					"for every {C:attention}2{} Blinds skipped",
-					"{C:inactive}(Currently #1#/#2#)"
+					"{C:inactive}(Currently #1#/#2#)",
 				},
 			},
 			j_mf_sapling = {
@@ -354,16 +354,16 @@ return {
 					"sell this card to set",
 					"{C:attention}round score{} to {s:1.1,C:spectral}TREE(3){}",
 					"{C:inactive}(Currently {C:attention}#4#{C:inactive}, {}[{C:attention,f:mf_emoji}#1#{C:inactive,f:mf_emoji}#2#{}]{C:inactive})",
-				}
+				},
 			},
 			j_mf_snake = {
 				name = "Snake",
 				text = {
 					"After {C:attention}play{} or {C:attention}discard{},",
-					"always draw {C:attention}#1#{} cards"
-				}
+					"always draw {C:attention}#1#{} cards",
+				},
 			},
-			j_mf_slotmachine = { 
+			j_mf_slotmachine = {
 				name = "Slot Machine",
 				text = {
 					"{C:green}#1# in #2#{} chance to retrigger",
@@ -376,8 +376,8 @@ return {
 					"Earn {C:money}$#1#{} at end",
 					"of round for each",
 					"{C:attention}Blind{} skipped this run",
-					"{C:inactive}(Currently {C:money}$#2#{C:inactive})"
-				}
+					"{C:inactive}(Currently {C:money}$#2#{C:inactive})",
+				},
 			},
 			j_mf_stonejokerjoker = {
 				name = "StoneJoker Joker",
@@ -385,7 +385,7 @@ return {
 					"Creates a {C:dark_edition}Negative{}",
 					"{C:spectral}Eternal{} {C:attention}Marble Joker{}",
 					"at the end of each Shop",
-				}
+				},
 			},
 			j_mf_teacup = {
 				name = "Teacup",
@@ -402,15 +402,15 @@ return {
 					"for each {C:attention}Teal Card",
 					"in your {C:attention}full deck",
 					"{C:inactive}(Currently {X:chips,C:white} X#2# {C:inactive} Chips)",
-				}
+				},
 			},
 			j_mf_thewayhome = {
 				name = "the way home",
 				text = {
 					"When {C:attention}blind{} is {C:attention}selected{};",
 					"{C:green}#1# in #2#{} chance to",
-					"gain {C:blue}#3#{} hands"
-				}
+					"gain {C:blue}#3#{} hands",
+				},
 			},
 			j_mf_recycling = {
 				name = "Recycling",
@@ -419,17 +419,17 @@ return {
 					"or {C:tarot}Tarot{} card",
 					"when any {C:attention}Booster{}",
 					"{C:attention}Pack{} is skipped",
-					"{C:inactive}(Must have room)"
+					"{C:inactive}(Must have room)",
 				},
 			},
-			j_mf_yuckyrat = { 
+			j_mf_yuckyrat = {
 				name = "Yucky Rat",
 				text = {
 					"Played {C:attention}unenhanced{} cards",
 					"are converted to {C:attention}Yucky Cards{}.",
 					"Gains {X:red,C:white} X#1# {} Mult for",
 					"each card converted",
-					"{C:inactive}(Currently {X:red,C:white} X#2# {C:inactive} Mult)"
+					"{C:inactive}(Currently {X:red,C:white} X#2# {C:inactive} Mult)",
 				},
 			},
 			j_mf_allicantdo = {
@@ -438,8 +438,8 @@ return {
 					"{C:red}Debuffs{} first drawn hand",
 					"Gains {X:red,C:white} X#1# {} Mult for",
 					"each played {C:red}debuffed{} card",
-					"{C:inactive}(Currently {X:red,C:white} X#2# {C:inactive})"
-				}
+					"{C:inactive}(Currently {X:red,C:white} X#2# {C:inactive})",
+				},
 			},
 			j_mf_bloodpact = {
 				name = "Blood Pact",
@@ -447,7 +447,7 @@ return {
 					"{X:mult,C:white} X#1# {} Mult",
 					"{C:red}Self destructs{} if you play",
 					"a non-{C:hearts}Hearts{} card",
-				}
+				},
 			},
 			j_mf_bookmove = {
 				name = "Book Move",
@@ -455,7 +455,7 @@ return {
 					"After {C:attention}#2#{} rounds,",
 					"sell this card to create",
 					"{C:attention}Hanging Chad{} and {C:attention}Photograph",
-					"{C:inactive}(Currently {C:attention}#1#{C:inactive}/#2#, must have room)"
+					"{C:inactive}(Currently {C:attention}#1#{C:inactive}/#2#, must have room)",
 				},
 			},
 			j_mf_brass = {
@@ -464,8 +464,8 @@ return {
 					"{C:attention}Retrigger{} the joker",
 					"to the right once for every",
 					"{C:attention}#4# Brass Cards{} destroyed",
-					"{C:inactive}(Currently {C:attention}#1#{C:inactive}, {}[{C:attention,f:mf_emoji}#2#{C:inactive,f:mf_emoji}#3#{}]{C:inactive})"
-				}
+					"{C:inactive}(Currently {C:attention}#1#{C:inactive}, {}[{C:attention,f:mf_emoji}#2#{C:inactive,f:mf_emoji}#3#{}]{C:inactive})",
+				},
 			},
 			j_mf_bowlingball = {
 				name = "Bowling Ball",
@@ -474,22 +474,22 @@ return {
 					"give {C:chips}+#1#{} Chips",
 					"and {C:mult}+#2#{} Mult",
 					"when scored",
-				}
+				},
 			},
 			j_mf_cba = {
 				name = "Card Buffer Advanced",
 				text = {
 					"{C:attention}Retrigger{} your first",
 					"{C:dark_edition}Editioned{} Joker",
-					"{C:inactive}(CBA excluded){}"
-				}
+					"{C:inactive}(CBA excluded){}",
+				},
 			},
 			j_mf_doubledscale = {
 				name = "Doubled Scale",
 				text = {
 					"{C:attention}Scaling Jokers{} {C:green,E:1}scale",
 					"{C:attention}twice{} as fast",
-				}
+				},
 			},
 			j_mf_grep = {
 				name = "grep",
@@ -498,22 +498,22 @@ return {
 					"has only {C:attention}1{} card, shuffle",
 					"all cards with {C:attention}matching",
 					"{C:attention}rank or suit{} to",
-					"the top of the {C:dark_edition}deck"
-				}
+					"the top of the {C:dark_edition}deck",
+				},
 			},
 			j_mf_hugejoker = {
 				name = "Huge Joker",
 				text = {
 					"{X:red,C:white} X#1# {} Mult",
-					"{C:attention}#2#{} hand size"
+					"{C:attention}#2#{} hand size",
 				},
 			},
-			j_mf_hyperjimbo = { 
+			j_mf_hyperjimbo = {
 				name = "Hyperjimbo",
 				text = {
 					"{X:mf_eechips,C:white,s:1.4} ^^#1# {s:1.4} Chips",
 					"before scoring if {C:attention}played hand",
-					"contains exactly {C:attention}4{} cards"
+					"contains exactly {C:attention}4{} cards",
 				},
 			},
 			j_mf_jankman = {
@@ -522,14 +522,14 @@ return {
 					"{E:1}All {C:dark_edition,E:1}modded{E:1} Jokers",
 					"{C:inactive,E:1}(and also Jolly Joker){}",
 					"{E:1}each give {X:chips,C:white} X#1# {E:1} Chips",
-				}
+				},
 			},
 			j_mf_pixeljoker = {
 				name = "Pixel Joker",
 				text = {
 					"Played {C:attention}Aces{},",
 					"{C:attention}4s{} and {C:attention}9s{} each give",
-					"{X:mult,C:white} X#1# {} Mult when scored"
+					"{X:mult,C:white} X#1# {} Mult when scored",
 				},
 			},
 			j_mf_rainbowjoker = {
@@ -545,7 +545,7 @@ return {
 					"Gains {X:mult,C:white} X#2# {} Mult if played",
 					"hand has only {C:attention}1{} card",
 					"{C:inactive}(Currently {X:mult,C:white} X#1# {C:inactive} Mult)",
-				}
+				},
 			},
 			j_mf_top10 = {
 				name = "Top 10 Jokers from One through Ten",
@@ -554,7 +554,7 @@ return {
 					"for each {C:green}unique digit{} displayed",
 					"in {C:attention}current money{}",
 					"{C:inactive}(They are 0, 1, 2, 3, 4, 5, 6, 7, 8, and 9.)",
-				}
+				},
 			},
 			j_mf_widejoker = {
 				name = "Wide Joker",
@@ -602,19 +602,19 @@ return {
 					{
 						"{X:black,C:white} -12 {}: {C:red}Destroy{} all cards remaining in your deck",
 					},
-				}
+				},
 			},
 			j_mf_johnbalatro = {
 				name = "John Balatro..?",
 				text = {
 					{
 						"{X:black,C:white} +1 {}: Exactly {C:attention}five{} selected {C:attention}playing cards",
-						"without {C:mult}Mult{} bonuses get {C:mult}+4{} Mult"
+						"without {C:mult}Mult{} bonuses get {C:mult}+4{} Mult",
 					},
 					{
 						"{X:black,C:white} -11 {}: {C:attention,E:1}Unleash{} John Balatro",
 					},
-				}
+				},
 			},
 			j_mf_trianglewalker = {
 				name = "Triangle, Planeswalker",
@@ -628,27 +628,27 @@ return {
 					{
 						"{X:black,C:white} -11 {}: Make up to {C:attention}three{} selected",
 						"{C:attention}playing cards{} {C:dark_edition}Polychrome{}",
-					}
-				}
+					},
+				},
 			},
 			j_mf_lessfluff = {
 				name = "Less Fluff",
 				text = {
 					"Destroys all other {C:dark_edition}Modded{} {C:attention}Jokers{}",
-					"at the start of each {C:attention}Blind{}", 
+					"at the start of each {C:attention}Blind{}",
 					"and gains {X:mult,C:white} X#2# {} Mult for each",
 					"{C:attention}Joker{} that was destroyed",
-					"{C:inactive}(Currently {X:red,C:white} X#1# {C:inactive})"
+					"{C:inactive}(Currently {X:red,C:white} X#1# {C:inactive})",
 				},
 			},
-			
+
 			-- john
 			j_mf_johnbalatrotrue = {
 				name = "John Balatro",
 				text = {
 					"{X:dark_edition,C:white,s:1.5}^2{} Mult",
-					"before scoring"
-				}
+					"before scoring",
+				},
 			},
 			j_mf_johnbalatro_super_ultra_mega_upgraded_deluxe = {
 				name = "John Balatro.",
@@ -656,7 +656,7 @@ return {
 					"{X:spectral,C:white,s:1.5}#4##1##5##2#{} Mult",
 					"{X:spectral,C:white,s:1.5}X#4##3##5#{} at end of round",
 					"{X:spectral,C:white,s:2}X#4#X#4##6##5##5#{} at end of round",
-				}
+				},
 			},
 
 			-- tokens
@@ -672,8 +672,8 @@ return {
 				name = "Forge Residue",
 				text = {
 					"Does not trigger {C:attention}Joker{}",
-					"{C:attention}Forge{} when sold"
-				}
+					"{C:attention}Forge{} when sold",
+				},
 			},
 
 			-- oldfluff
@@ -1490,7 +1490,7 @@ return {
 				text = {
 					"Creates a",
 					"{C:legendary,E:mf_rotarot_title}45 Degree Rotated Legendary{} Joker",
-					"{C:inactive}(Must have room)"
+					"{C:inactive}(Must have room)",
 				},
 			},
 			c_mf_new_gold = {
@@ -1584,104 +1584,104 @@ return {
 			bl_mf_violet_vessel_dx = {
 				name = "Violet Vessel DX",
 				text = {
-					"EXTREMELY large blind"
-				}
+					"EXTREMELY large blind",
+				},
 			},
 			bl_mf_cerulean_bell_dx = {
 				name = "Cerulean Bell DX",
 				text = {
 					"Forces 3 cards to",
-					"always be selected"
-				}
+					"always be selected",
+				},
 			},
 			bl_mf_needle_dx = {
 				name = "The Needle DX",
 				text = {
 					"Play only 1 hand,",
-					"start with 1 discard"
-				}
+					"start with 1 discard",
+				},
 			},
 			bl_mf_manacle_dx = {
 				name = "The Manacle DX",
 				text = {
-					"-3 Hand Size"
-				}
+					"-3 Hand Size",
+				},
 			},
 			bl_mf_pillar_dx = {
 				name = "The Pillar DX",
 				text = {
 					"Half of all cards played",
-					"this run are debuffed"
-				}
+					"this run are debuffed",
+				},
 			},
 			bl_mf_serpent_dx = {
 				name = "The Serpent DX",
 				text = {
 					"Only redraw cards when",
-					"hand is empty"
-				}
+					"hand is empty",
+				},
 			},
 			bl_mf_club_dx = {
 				name = "The Club DX",
 				text = {
 					"All non-Club cards",
-					"are debuffed"
-				}
+					"are debuffed",
+				},
 			},
 			bl_mf_goad_dx = {
 				name = "The Goad DX",
 				text = {
 					"All non-Spades cards",
-					"are debuffed"
-				}
+					"are debuffed",
+				},
 			},
 			bl_mf_window_dx = {
 				name = "The Window DX",
 				text = {
 					"All non-Diamonds cards",
-					"are debuffed"
-				}
+					"are debuffed",
+				},
 			},
 			bl_mf_head_dx = {
 				name = "The Head DX",
 				text = {
 					"All non-Hearts cards",
-					"are debuffed"
-				}
+					"are debuffed",
+				},
 			},
 			bl_mf_arm_dx = {
 				name = "The Arm DX",
 				text = {
 					"Set level of played",
-					"poker hand to 0"
-				}
+					"poker hand to 0",
+				},
 			},
 			bl_mf_wheel_dx = {
 				name = "The Wheel DX",
 				text = {
 					"Only one card is",
-					"drawn face up"
-				}
+					"drawn face up",
+				},
 			},
 			bl_mf_house_dx = {
 				name = "The House DX",
 				text = {
 					"First drawn hand",
-					"is discarded"
-				}
+					"is discarded",
+				},
 			},
 			bl_mf_psychic_dx = {
 				name = "The Psychic DX",
 				text = {
-					"Must not play 5 cards"
-				}
+					"Must not play 5 cards",
+				},
 			},
 			bl_mf_hook_dx = {
 				name = "The Hook DX",
 				text = {
 					"After hand is played,",
-					"discard hand after draw"
-				}
+					"discard hand after draw",
+				},
 			},
 		},
 		Other = {
@@ -1740,7 +1740,7 @@ return {
 					"Once per round, you can {C:attention}activate{} an",
 					"{C:dark_edition}ability{} by adjusting {C:dark_edition}Loyalty{}.",
 					"{C:dark_edition}Loyalty{} cannot go below 0.",
-				}
+				},
 			},
 		},
 		Voucher = {
@@ -1764,14 +1764,14 @@ return {
 				text = {
 					{
 						"Upgrades {C:attention}Ante #1#{}",
-						"{C:inactive,s:0.8}Good luck!{}"
+						"{C:inactive,s:0.8}Good luck!{}",
 					},
 					{
 						"Sets ante to {C:attention}#1#{},",
 						"{C:red}prevents{} ante change,",
 						"boss blind reroll, and",
-						"skipping until ante end"
-					}
+						"skipping until ante end",
+					},
 				},
 			},
 		},

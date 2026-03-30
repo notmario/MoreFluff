@@ -39,9 +39,8 @@ SMODS.Joker({
 			}
 		end
 		if
-			(
-				context.selling_self and (card.ability.extra.c_rounds >= card.ability.extra.rounds)
-			) and not context.blueprint
+			(context.selling_self and (card.ability.extra.c_rounds >= card.ability.extra.rounds))
+			and not context.blueprint
 		then
 			return {
 				dollars = card.ability.extra.money,

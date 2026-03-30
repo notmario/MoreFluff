@@ -35,8 +35,7 @@ SMODS.Sound({
 	pitch = 1.0,
 	volume = 1.0,
 	select_music_track = function()
-		return
-			G.GAME.mf_superboss_active and 6 -- notably lower than jimball (Funny)
+		return G.GAME.mf_superboss_active and 6 -- notably lower than jimball (Funny)
 	end,
 })
 

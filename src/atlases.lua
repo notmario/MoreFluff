@@ -81,28 +81,28 @@ SMODS.Atlas({
 	fps = 20,
 })
 
-SMODS.Atlas({ 
-	key = "mf_hyperjimbo", 
-	atlas_table = "ASSET_ATLAS", 
-	path = "mf_hyperjimbo.png", 
-	px = 95, 
-	py = 95 
+SMODS.Atlas({
+	key = "mf_hyperjimbo",
+	atlas_table = "ASSET_ATLAS",
+	path = "mf_hyperjimbo.png",
+	px = 95,
+	py = 95,
 })
 
-SMODS.Atlas({ 
-	key = "mf_watermark", 
-	atlas_table = "ASSET_ATLAS", 
-	path = "watermark.png", 
-	px = 336, 
-	py = 32 
+SMODS.Atlas({
+	key = "mf_watermark",
+	atlas_table = "ASSET_ATLAS",
+	path = "watermark.png",
+	px = 336,
+	py = 32,
 })
 
-SMODS.Atlas({ 
-	key = "mf_loyalty", 
-	atlas_table = "ASSET_ATLAS", 
-	path = "mf_loyalty.png", 
-	px = 71, 
-	py = 95 
+SMODS.Atlas({
+	key = "mf_loyalty",
+	atlas_table = "ASSET_ATLAS",
+	path = "mf_loyalty.png",
+	px = 71,
+	py = 95,
 })
 
 SMODS.Atlas({

@@ -23,11 +23,8 @@ SMODS.Joker({
 	end,
 	calculate = function(self, card, context)
 		if
-			(
-				context.individual
-				and context.cardarea == G.play
-				and SMODS.has_enhancement(context.other_card, "m_wild")
-			) and not context.blueprint
+			(context.individual and context.cardarea == G.play and SMODS.has_enhancement(context.other_card, "m_wild"))
+			and not context.blueprint
 		then
 			card.ability.h_size = card.ability.h_size + card.ability.extra
 			G.hand:change_size(card.ability.extra)

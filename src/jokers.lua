@@ -34,13 +34,13 @@ FLUFF.joker_pool = {
 	"broomcloset",
 
 	"rot_cartomancer",
-  	"clipart",
+	"clipart",
 	"css",
-  	"cueball",
-  	"dinner",
+	"cueball",
+	"dinner",
 
 	-- uncommon page 2
-  	"forge",
+	"forge",
 	"gemstonejoker",
 	"globe",
 	"goldencarrot",
@@ -52,7 +52,7 @@ FLUFF.joker_pool = {
 	"unpleasantcard",
 	"loadeddisk",
 
-  	"missingjoker",
+	"missingjoker",
 	"paintcan",
 	"passando",
 	"sapling",
@@ -66,8 +66,8 @@ FLUFF.joker_pool = {
 	"tealjoker",
 
 	"thewayhome",
-  	"recycling",
-  	"yuckyrat",
+	"recycling",
+	"yuckyrat",
 	-- rares
 	"allicantdo",
 	"bloodpact",
@@ -93,7 +93,7 @@ FLUFF.joker_pool = {
 
 	-- powerful
 	"triangle",
-  	"marigold",
+	"marigold",
 
 	-- walkers
 	"mindsculptor",

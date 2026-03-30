@@ -18,10 +18,7 @@ SMODS.Joker({
 		}
 	end,
 	calculate = function(self, card, context)
-		if
-			(context.setting_blind and context.blind.boss)
-			and not (context.blueprint_card or self).getting_sliced
-		then
+		if (context.setting_blind and context.blind.boss) and not (context.blueprint_card or self).getting_sliced then
 			if #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
 				G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
 				G.E_MANAGER:add_event(Event({
