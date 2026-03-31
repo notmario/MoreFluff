@@ -22,7 +22,7 @@ SMODS.Joker({
 	end,
 	calculate = function(self, card, context)
 		if context.initial_scoring_step and #G.play.cards == 4 then
-			if Talisman and Big and Big.arrow then
+			if FLUFF.should_talisman_key("eechips") then
 				return {
 					eechips = card.ability.val,
 				}

@@ -22,8 +22,8 @@ SMODS.Joker({
 	loc_txt = {},
 	loc_vars = function(self, info_queue, center) end,
 	calculate = function(self, card, context)
-		if context.forcetrigger or context.initial_scoring_step then
-			if Talisman then
+		if context.initial_scoring_step then
+			if FLUFF.should_talisman_key("emult") then
 				return {
 					emult = card.ability.extra.powmult,
 				}

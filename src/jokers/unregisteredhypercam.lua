@@ -19,7 +19,7 @@ SMODS.Joker({
 	end,
 	calculate = function(self, card, context)
 		if context.initial_scoring_step then
-			if Talisman and Big and Big.arrow then
+			if FLUFF.should_talisman_key("eemult") then
 				return {
 					eemult = card.ability.val,
 				}

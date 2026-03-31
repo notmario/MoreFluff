@@ -24,7 +24,7 @@ SMODS.Joker({
 	end,
 	calculate = function(self, card, context)
 		if context.cardarea == G.jokers and context.joker_main then
-			if Talisman then
+			if FLUFF.should_talisman_key("emult") then
 				return {
 					emult = card.ability.extra.powmult,
 				}

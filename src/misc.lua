@@ -280,3 +280,15 @@ FLUFF.vanilla_jokers = {
 	"j_chicot",
 	"j_perkeo",
 }
+
+-- for talisman check
+FLUFF.has_calc_key = function(key)
+	for _, k in pairs(SMODS.scoring_parameter_keys) do
+		if k == key then return true end
+	end
+	return false
+end
+
+FLUFF.should_talisman_key = function(key)
+	return FLUFF.has_calc_key(key) and not not (SMODS.Mods.Talisman or SMODS.Mods.cdataman or {}).can_load
+end
