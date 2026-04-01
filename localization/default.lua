@@ -642,6 +642,35 @@ return {
 				},
 			},
 
+			-- new update
+			j_mf_aheartofcold = {
+				name = "A Heart of Cold",
+				text = {
+					{
+						"{C:dark_edition}Polychrome{} {C:attention}Jokers are {X:spectral,C:white}X#1#{}",
+						"more likely to appear"
+					},
+					{
+						"{C:attention}Transforms{} after {C:attention}#2#{}",
+						"{C:attention}Boss Blinds{} defeated"
+					}
+				},
+			},
+			j_mf_deadheatpulse = {
+				name = "THIS HEAT, AN EVIL HEAT",
+				text = {
+					{
+						"{C:attention}Retrigger{} all {C:dark_edition}Polychrome{}",
+						"playing cards and {C:attention}Jokers"
+					},
+					{
+						"You cannot draw more than {C:attention}#1#{}",
+						"cards during each Blind",
+						"{C:inactive}(#2# cards remaining)"
+					}
+				},
+			},
+
 			-- john
 			j_mf_johnbalatrotrue = {
 				name = "John Balatro",

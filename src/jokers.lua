@@ -100,6 +100,9 @@ FLUFF.joker_pool = {
 	"johnbalatro",
 	"trianglewalker",
 
+	-- new update jokers
+	"aheartofcold",
+
 	-- rot legendary
 }
 
@@ -109,6 +112,7 @@ end
 
 FLUFF.hidden_joker_pool = {
 	"johnbalatrotrue",
+	"deadheatpulse",
 
 	-- tokens
 	"oopsallfives",
