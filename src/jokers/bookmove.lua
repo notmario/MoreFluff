@@ -16,6 +16,7 @@ SMODS.Joker({
 	blueprint_compat = false,
 	eternal_compat = false,
 	perishable_compat = true,
+	attributes = { "generation", "joker", "on_sell", },
 	loc_vars = function(self, info_queue, center)
 		info_queue[#info_queue + 1] = G.P_CENTERS.j_hanging_chad
 		info_queue[#info_queue + 1] = G.P_CENTERS.j_photograph

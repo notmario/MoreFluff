@@ -14,6 +14,7 @@ SMODS.Joker({
 	blueprint_compat = true,
 	eternal_compat = true,
 	perishable_compat = true,
+	attributes = { "passive", "full_deck", },
 	loc_vars = function(self, info_queue, center)
 		if not G.deck or not G.deck.cards or #G.deck.cards == 0 then
 			return {

@@ -14,6 +14,7 @@ SMODS.Joker({
 	eternal_compat = true,
 	perishable_compat = false,
 	pools = { ["Meme"] = true },
+	attributes = { "retrigger", "joker", },
 	loc_vars = function(self, info_queue, center)
 		return {
 			vars = {},

@@ -15,6 +15,7 @@ SMODS.Joker({
 	blueprint_compat = true,
 	eternal_compat = true,
 	perishable_compat = true,
+	attributes = { "mult", },
 	loc_vars = function(self, info_queue, center)
 		local redeemed = 0
 		for k, v in pairs(G.GAME.used_vouchers) do

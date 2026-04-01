@@ -14,6 +14,7 @@ SMODS.Joker({
 	blueprint_compat = true,
 	eternal_compat = true,
 	perishable_compat = true,
+	attributes = { "generation", "rank", "ace", "hands", "enhancements", },
 	loc_vars = function(self, info_queue, center)
 		return {
 			vars = {},

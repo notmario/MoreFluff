@@ -17,6 +17,7 @@ SMODS.Joker({
 	blueprint_compat = true,
 	eternal_compat = true,
 	perishable_compat = true,
+	attributes = { "xmult", "hands", },
 	loc_vars = function(self, info_queue, center)
 		return {
 			vars = { center.ability.extra.xmult, center.ability.extra.hands_lost },

@@ -12,6 +12,7 @@ SMODS.Joker({
 	eternal_compat = true,
 	perishable_compat = true,
 	demicoloncompat = false,
+	attributes = { "joker" },
 	loc_vars = function(self, info_queue, center)
 		return {
 			vars = { colours = { HEX("000000") } },

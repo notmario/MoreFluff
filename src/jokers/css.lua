@@ -11,6 +11,7 @@ SMODS.Joker({
 	blueprint_compat = true,
 	eternal_compat = true,
 	perishable_compat = true,
+	attributes = { "hand_type", "generation", "colour", },
 	calculate = function(self, card, context)
 		if
 			context.cardarea == G.jokers
