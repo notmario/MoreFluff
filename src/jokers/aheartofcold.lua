@@ -39,5 +39,12 @@ SMODS.Joker({
 				message = ""..card.ability.extra.bosses_left
 			}
 		end
+		if context.modify_weights and context.pool_types.Edition then
+			for _, edition in pairs(context.pool) do
+				if edition.key == "e_polychrome" then
+					edition.weight = edition.weight * card.ability.extra.polychrome_mod
+				end
+			end
+		end
 	end,
 })

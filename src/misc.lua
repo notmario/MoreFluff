@@ -3,7 +3,7 @@ FLUFF.optional_features = {
 	retrigger_joker = true,
 	post_trigger = true,
 	quantum_enhancements = true,
-	-- object_weights = true,
+	object_weights = true,
 }
 
 -- sts mana value
