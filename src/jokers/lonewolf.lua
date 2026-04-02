@@ -2,7 +2,7 @@ SMODS.Joker {
     key = "lonewolf",
     name = "tempname001",
     atlas = "mf_jokers",
-    pos = { x = 0, y = 0, },
+    pos = { x = 9, y = 10, },
 	config = { extra = { mult = 15, chips = 100 } },
 	rarity = 1,
 	cost = 6,
