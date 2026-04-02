@@ -295,9 +295,11 @@ FLUFF.should_talisman_key = function(key)
 end
 
 FLUFF.has_attribute = function (card, key)
-	if not card.config or not card.config.center or not card.config.center.attributes then return false end
-	for _, attr in pairs(card.config.center.attributes or {}) do
-		if attr == key then return true end
+	local card_key = card
+	if Object.is(card, Card) then card_key = card.config.center.key end
+	local pool = SMODS.get_attribute_pool(key)
+	for _, c in pairs(pool) do
+		if c == card_key then return true end
 	end
 	return false
 end
