@@ -15,6 +15,7 @@ SMODS.Joker({
 	perishable_compat = true,
 	demicoloncompat = false,
 	no_collection = true,
+	attributes = { "mod_chance", },
 	loc_vars = function(self, info_queue, center)
 		return {
 			vars = { center.ability.extra },

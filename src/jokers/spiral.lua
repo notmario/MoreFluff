@@ -13,6 +13,7 @@ SMODS.Joker({
 	blueprint_compat = true,
 	eternal_compat = true,
 	perishable_compat = true,
+	attributes = { "mult", },
 	loc_vars = function(self, info_queue, center)
 		local val = center.ability.extra.mult
 			+ math.floor(

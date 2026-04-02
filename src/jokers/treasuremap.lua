@@ -17,6 +17,7 @@ SMODS.Joker({
 	blueprint_compat = false,
 	eternal_compat = false,
 	perishable_compat = true,
+	attributes = { "on_sell", "economy", },
 	loc_vars = function(self, info_queue, center)
 		return { vars = { center.ability.extra.c_rounds, center.ability.extra.rounds, center.ability.extra.money } }
 	end,

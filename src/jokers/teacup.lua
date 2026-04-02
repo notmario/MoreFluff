@@ -13,7 +13,7 @@ SMODS.Joker({
 	blueprint_compat = true,
 	eternal_compat = false,
 	perishable_compat = true,
-	pools = { ["Food"] = true },
+	attributes = { "food", "hand_type", },
 	loc_vars = function(self, info_queue, center)
 		return {
 			vars = { center.ability.extra },

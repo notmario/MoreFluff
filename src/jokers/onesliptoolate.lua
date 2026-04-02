@@ -14,6 +14,7 @@ SMODS.Joker({
 	eternal_compat = true,
 	perishable_compat = false,
 	demicoloncompat = true,
+	attributes = { "xmult", "hands", },
 	loc_vars = function(self, info_queue, center)
 		return {
 			vars = { (G.GAME.current_round.hands_played or 0) + 1 },

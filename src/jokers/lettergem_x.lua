@@ -14,6 +14,7 @@ SMODS.Joker({
 	cost = 8 * 2,
 	pos = { x = 4, y = 5 },
 	config = { extra = { current_increase = 0, scale_increase = 0.02 } },
+	attributes = { "scaling", },
 	loc_vars = function(self, info_queue, card)
 		return { vars = { card.ability.extra.current_increase, card.ability.extra.scale_increase } }
 	end,

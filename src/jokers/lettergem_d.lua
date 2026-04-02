@@ -14,6 +14,7 @@ SMODS.Joker({
 	cost = 2 * 2,
 	pos = { x = 4, y = 3 },
 	config = { extra = { cards_per_round = 2 } },
+	attributes = { "destroy_card", },
 	loc_vars = function(self, info_queue, card)
 		return { vars = {} }
 	end,

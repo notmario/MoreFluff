@@ -15,7 +15,7 @@ SMODS.Joker({
 	blueprint_compat = true,
 	eternal_compat = true,
 	perishable_compat = true,
-	pools = { ["Meme"] = true },
+	attributes = { "xchips", },
 	loc_vars = function(self, info_queue, center)
 		return {
 			vars = { center.ability.extra.x_chips },

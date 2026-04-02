@@ -11,7 +11,7 @@ SMODS.Joker({
 	blueprint_compat = true,
 	eternal_compat = false,
 	perishable_compat = true,
-	pools = { ["Food"] = true },
+	attributes = { "food", "xmult", "scaling", },
 	loc_vars = function(self, info_queue, center)
 		return {
 			vars = { center.ability.extra.xmult, center.ability.extra.xmult_per },

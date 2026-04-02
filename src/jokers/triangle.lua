@@ -19,6 +19,7 @@ SMODS.Joker({
 	perishable_compat = false,
 	pronouns = "she_they",
 	demicoloncompat = false,
+	attributes = { "scaling", },
 	loc_vars = function(self, info_queue, center)
 		local has_other_copy = #SMODS.find_card("j_mf_triangle") >= 2
 		return {

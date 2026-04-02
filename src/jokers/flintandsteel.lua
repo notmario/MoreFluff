@@ -13,7 +13,6 @@ SMODS.Joker({
 	blueprint_compat = true,
 	eternal_compat = false,
 	perishable_compat = true,
-	pools = { ["Meme"] = true },
 	attributes = { "enhancements", "hand_type", },
 	loc_vars = function(self, info_queue, center)
 		info_queue[#info_queue + 1] = G.P_CENTERS.m_stone

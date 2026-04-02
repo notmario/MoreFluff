@@ -12,6 +12,7 @@ SMODS.Joker({
 	eternal_compat = true,
 	perishable_compat = true,
 	mf_rotate_by = math.pi / 4,
+	attributes = { "rotarot", "generation", },
 	loc_vars = function(self, info_queue, center)
 		return {
 			vars = {},

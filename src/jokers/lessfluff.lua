@@ -17,6 +17,7 @@ SMODS.Joker({
 	eternal_compat = true,
 	perishable_compat = true,
 	demicoloncompat = true,
+	attributes = { "xmult", "scaling", "destroy_card", },
 	loc_vars = function(self, info_queue, center)
 		return {
 			vars = { center.ability.extra.x_mult, center.ability.extra.x_mult_per },

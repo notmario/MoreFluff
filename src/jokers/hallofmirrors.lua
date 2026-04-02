@@ -16,6 +16,7 @@ SMODS.Joker({
 	blueprint_compat = false,
 	eternal_compat = true,
 	perishable_compat = false,
+	attributes = { "hand_size", "rank", "six", "reset", },
 	loc_vars = function(self, info_queue, center)
 		return {
 			vars = { center.ability.h_size, center.ability.extra },
@@ -39,6 +40,10 @@ SMODS.Joker({
 		if context.end_of_round and not context.blueprint and not context.repetition and not context.individual then
 			G.hand:change_size(-card.ability.h_size)
 			card.ability.h_size = 0
+			return {
+				message = localize("k_reset"),
+				colour = G.C.RED,
+			}
 		end
 	end,
 })

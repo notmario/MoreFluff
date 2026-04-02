@@ -14,6 +14,7 @@ SMODS.Joker({
 	cost = 3 * 2,
 	pos = { x = 6, y = 4 },
 	config = { extra = { per_ante = 0.9 } },
+	attributes = { },
 	loc_vars = function(self, info_queue, card)
 		return { vars = { card.ability.extra.per_ante, card.ability.extra.per_ante ^ G.GAME.round_resets.ante } }
 	end,

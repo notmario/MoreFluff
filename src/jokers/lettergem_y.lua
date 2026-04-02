@@ -14,6 +14,7 @@ SMODS.Joker({
 	cost = 4 * 2,
 	pos = { x = 5, y = 5 },
 	config = { extra = { dollars = 10, card_total = 13, cards_scored = 0 } },
+	attributes = { "economy", },
 	loc_vars = function(self, info_queue, card)
 		return { vars = { card.ability.extra.dollars, card.ability.extra.card_total, card.ability.extra.cards_scored } }
 	end,

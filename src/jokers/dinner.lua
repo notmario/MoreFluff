@@ -15,7 +15,6 @@ SMODS.Joker({
 	blueprint_compat = true,
 	eternal_compat = true,
 	perishable_compat = false,
-	pools = {},
 	attributes = { "retrigger", "joker", "food", },
 	loc_vars = function(self, info_queue, center)
 		return {

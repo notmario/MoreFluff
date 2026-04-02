@@ -18,6 +18,7 @@ SMODS.Joker({
 	eternal_compat = true,
 	perishable_compat = true,
 	enhancement_gate = "m_mf_marigold",
+	attributes = { "enhancements", "retrigger", },
 	loc_vars = function(self, info_queue, center)
 		info_queue[#info_queue + 1] = G.P_CENTERS.m_mf_marigold
 

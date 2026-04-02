@@ -14,6 +14,7 @@ SMODS.Joker({
 	cost = 3 * 2,
 	pos = { x = 3, y = 4 },
 	config = { extra = { price = 3 } },
+	attributes = { "generation", "joker", "sell_value", },
 	loc_vars = function(self, info_queue, card)
 		return { vars = { card.ability.extra.price } }
 	end,

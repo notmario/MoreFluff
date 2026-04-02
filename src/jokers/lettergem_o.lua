@@ -14,6 +14,7 @@ SMODS.Joker({
 	cost = 1 * 2,
 	pos = { x = 5, y = 4 },
 	config = { extra = {} },
+	attributes = { "mod_chance", },
 	loc_vars = function(self, info_queue, card)
 		return { vars = {} }
 	end,

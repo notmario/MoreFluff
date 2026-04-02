@@ -14,6 +14,7 @@ SMODS.Joker({
 	eternal_compat = true,
 	perishable_compat = false,
 	enhancement_gate = "m_mf_teal",
+	attributes = { "xchips", "full_deck", "enhancements", },
 	update = function(self, card, dt)
 		if G.STAGE == G.STAGES.RUN then
 			card.ability.extra.teal_tally = 0

@@ -16,7 +16,7 @@ SMODS.Joker({
 	eternal_compat = true,
 	perishable_compat = true,
 	immutable = true, -- pretty important
-	pools = { ["Meme"] = true }, -- fuck it. jimball 2 goes in the meme packs
+	attributes = { },
 	loc_vars = function(self, info_queue, center)
 		return { vars = { center.ability.val } }
 	end,

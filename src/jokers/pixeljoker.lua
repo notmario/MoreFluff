@@ -15,6 +15,7 @@ SMODS.Joker({
 	perishable_compat = true,
 	display_size = { w = 16, h = 16 },
 	pixel_size = { w = 16, h = 16 },
+	attributes = { "xmult", "rank", "ace", "four", "nine", },
 	loc_vars = function(self, info_queue, center)
 		return {
 			vars = { center.ability.extra.x_mult },

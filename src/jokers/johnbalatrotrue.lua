@@ -20,6 +20,7 @@ SMODS.Joker({
 	planeswalker_costs = {},
 	pronouns = "she_her",
 	loc_txt = {},
+	attributes = { },
 	loc_vars = function(self, info_queue, center) end,
 	calculate = function(self, card, context)
 		if context.initial_scoring_step then

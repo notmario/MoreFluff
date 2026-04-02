@@ -14,6 +14,7 @@ SMODS.Joker({
 	cost = 4 * 2,
 	pos = { x = 6, y = 3 },
 	config = { extra = {} },
+	attributes = { "generation", "joker", },
 	loc_vars = function(self, info_queue, card)
 		return { vars = { colours = { HEX("a9683b") } } }
 	end,

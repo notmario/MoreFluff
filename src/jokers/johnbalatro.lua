@@ -25,6 +25,7 @@ SMODS.Joker({
 
 	pronouns = "she_her",
 
+	attributes = { "mult", "modify_card", },
 	loc_vars = function(self, info_queue, center)
 		info_queue[#info_queue + 1] = { key = "planeswalker_explainer", set = "Other", specific_vars = { 1 } }
 	end,

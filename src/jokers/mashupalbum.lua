@@ -20,6 +20,7 @@ SMODS.Joker({
 	blueprint_compat = true,
 	eternal_compat = true,
 	perishable_compat = false,
+	attributes = { "mult", "chips", "scaling", "hand_type", "suit", "hearts", "diamonds", "clubs", "spades", },
 	loc_vars = function(self, info_queue, center)
 		return {
 			vars = {

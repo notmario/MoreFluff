@@ -13,7 +13,7 @@ SMODS.Joker({
 	blueprint_compat = true,
 	eternal_compat = true,
 	perishable_compat = true,
-	pools = { ["Meme"] = true },
+	attributes = { "xchips", "joker", },
 	loc_vars = function(self, info_queue, center)
 		return {
 			vars = { center.ability.extra.x_chips },
@@ -23,7 +23,7 @@ SMODS.Joker({
 		if context.other_joker and context.other_joker.ability.set == "Joker" then
 			local real = true
 			for i, k in pairs(FLUFF.vanilla_jokers) do
-				if k == context.other_joker.config.center.key then
+				if k == context.other_joker.config.center.key and k ~= "j_jolly" then
 					real = false
 					break
 				end

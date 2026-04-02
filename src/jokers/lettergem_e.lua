@@ -14,6 +14,7 @@ SMODS.Joker({
 	cost = 1 * 2,
 	pos = { x = 5, y = 3 },
 	config = { extra = { emult = 1.4 } },
+	attributes = { },
 	loc_vars = function(self, info_queue, card)
 		return { vars = { card.ability.extra.emult } }
 	end,
