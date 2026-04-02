@@ -15,4 +15,5 @@ SMODS.Joker({
 	demicoloncompat = false,
 	loc_vars = function(self, info_queue, center) end,
 	calculate = function(self, card, context) end,
+	attributes = { },
 })

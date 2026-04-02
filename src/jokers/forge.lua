@@ -22,6 +22,7 @@ SMODS.Joker({
 	blueprint_compat = false,
 	eternal_compat = true,
 	perishable_compat = true,
+	attributes = { "generation", "joker", "on_sell", },
 	loc_vars = function(self, info_queue, center)
 		local val, max = progressbar(center.ability.partial_rounds, center.ability.upgrade_rounds)
 		return { vars = { val, max, center.ability.upgrade_rounds } }
