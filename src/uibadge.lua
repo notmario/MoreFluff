@@ -9,7 +9,7 @@ function SMODS.create_mod_badges(obj, badges)
 	if obj then
 		local add_lettergem_badge = false
 		for i = 1, #badges do
-			if badges[i].nodes[1].nodes[2].config.object.string == FLUFF.display_name then
+			if badges[i].nodes[1].nodes[2].config.object.content and badges[i].nodes[1].nodes[2].config.object.content.string == FLUFF.display_name then
 				if obj.lettergem_badge then
 					add_lettergem_badge = true
 				end
