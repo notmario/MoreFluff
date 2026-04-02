@@ -11,7 +11,7 @@ SMODS.Joker {
 	blueprint_compat = true,
 	eternal_compat = true,
 	perishable_compat = true,
-	attributes = { "generation", "joker", },
+	attributes = { "joker", },
 	loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.odds }}
 	end,
