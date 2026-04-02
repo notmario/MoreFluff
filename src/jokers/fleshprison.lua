@@ -25,22 +25,9 @@ SMODS.Joker({
 	calculate = function(self, card, context)
 		if context.setting_blind and not context.blueprint and context.blind.boss and not card.getting_sliced then
 			card.gone = false
-			G.GAME.blind.chips = G.GAME.blind.chips * card.ability.extra.boss_size
-			G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
-			G.HUD_blind:recalculate(true)
-			G.E_MANAGER:add_event(Event({
-				func = function()
-					G.E_MANAGER:add_event(Event({
-						func = function()
-							play_sound("timpani")
-							delay(0.4)
-							return true
-						end,
-					}))
-					card_eval_status_text(card, "extra", nil, nil, nil, { message = "Good luck!" })
-					return true
-				end,
-			}))
+			return {
+				xblindsize = 5
+			}
 		end
 		if
 			context.end_of_round
