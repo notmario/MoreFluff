@@ -37,9 +37,11 @@ SMODS.Joker({
         if context.drawing_cards and G.GAME.blind then
             local cards_drawn = math.min(context.amount, card.ability.extra.current_cards)
             card.ability.extra.current_cards = card.ability.extra.current_cards - cards_drawn
-            return {
-                cards_to_draw = cards_drawn
-            }
+			if cards_drawn ~= context.amount then
+				return {
+					cards_to_draw = cards_drawn
+				}
+			end
         end
 		if context.retrigger_joker_check and not context.retrigger_joker and context.other_card ~= card then
 			if context.other_card.edition and context.other_card.edition.polychrome then

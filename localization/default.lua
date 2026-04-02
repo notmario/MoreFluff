@@ -692,7 +692,8 @@ return {
 				},
 			},
 			j_mf_aheartofcold = {
-				name = "A Heart of Cold",
+				-- name = "A Heart of Cold",
+				name = {},
 				text = {
 					{
 						"{C:dark_edition}Polychrome{} {C:attention}Jokers are {X:spectral,C:white}X#1#{}",
