@@ -37,40 +37,8 @@ SMODS.Joker({
 			and G.GAME.blind.boss
 			and not card.gone
 		then
-			G.E_MANAGER:add_event(Event({
-				trigger = "before",
-				delay = 0.0,
-				func = function()
-					local card = create_card(nil, G.consumeables, nil, nil, nil, nil, "c_soul", "sup")
-					card:set_edition({ negative = true }, true)
-					card:add_to_deck()
-					G.consumeables:emplace(card)
-					return true
-				end,
-			}))
-			if not card.ability.eternal then
-				G.E_MANAGER:add_event(Event({
-					func = function()
-						play_sound("tarot1")
-						card.T.r = -0.2
-						card:juice_up(0.3, 0.4)
-						card.states.drag.is = true
-						card.children.center.pinch.x = true
-						G.E_MANAGER:add_event(Event({
-							trigger = "after",
-							delay = 0.3,
-							blockable = false,
-							func = function()
-								G.jokers:remove_card(card)
-								card:remove()
-								card = nil
-								return true
-							end,
-						}))
-						return true
-					end,
-				}))
-			end
+			SMODS.add_card { key = "c_soul", edition = "e_negative" }
+			SMODS.destroy_cards { card }
 			card.gone = true
 		end
 	end,
