@@ -15,7 +15,7 @@ SMODS.Joker({
 	eternal_compat = true,
 	perishable_compat = true,
 	display_size = { w = 71.0 / 1.5, h = 95 * 1.5 },
-	attributes = { "mult", },
+	attributes = { "mult", "joker", },
 	loc_vars = function(self, info_queue, center)
 		return {
 			vars = { center.ability.extra.mult },
