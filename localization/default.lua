@@ -387,6 +387,13 @@ return {
 					"at the end of each Shop",
 				},
 			},
+			j_mf_talljoker = {
+				name = "Tall Joker",
+				text = {
+					"{C:mult}+#1#{} Mult if you have",
+					"no other {C:mult}Mult{} or {X:mult,C:white}XMult{} {C:attention}Jokers"
+				},
+			},
 			j_mf_teacup = {
 				name = "Teacup",
 				text = {
@@ -966,12 +973,6 @@ return {
 					"has been {C:attention}scored{}, resets when",
 					"a {C:attention}Boss Blind{} is {C:red}defeated",
 					"{C:inactive}(Currently {V:1}A{C:inactive}, {V:2}2{C:inactive}, {V:3}3{C:inactive}, {V:4}4{C:inactive}, {V:5}5{C:inactive}, {V:6}6{C:inactive}, {V:7}7{C:inactive}, {V:8}8{C:inactive}, {V:9}9{C:inactive})",
-				},
-			},
-			j_mf_talljoker = {
-				name = "Tall Joker",
-				text = {
-					"{C:mult,s:1.1}+#1#{} Mult",
 				},
 			},
 			j_mf_tonersoup = {

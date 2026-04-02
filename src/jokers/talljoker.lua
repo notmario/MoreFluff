@@ -6,11 +6,8 @@ SMODS.Joker({
 			mult = 44,
 		},
 	},
-	pos = { x = 5, y = 2 },
-	atlas = "mf_oldfluff",
-	rarity = "mf_oldfluff",
-	no_shader_on_modbadge = true,
-	no_collection = true,
+	pos = { x = 0, y = 0 },
+	rarity = 2,
 	cost = 9,
 	unlocked = true,
 	discovered = true,
@@ -25,10 +22,20 @@ SMODS.Joker({
 		}
 	end,
 	calculate = function(self, card, context)
-		if context.cardarea == G.jokers and context.joker_main then
-			return {
-				mult = card.ability.extra.mult,
-			}
-		end
+        if context.joker_main then
+            local give_mult = true
+            
+            for _, other_card in pairs(G.jokers.cards) do
+                if other_card ~= card then
+                    if FLUFF.has_attribute(other_card, "mult") or FLUFF.has_attribute(other_card, "xmult") or FLUFF.has_attribute(other_card, "emult") or FLUFF.has_attribute(other_card, "hypermult") then give_mult = false end
+                end
+            end
+            
+            if give_mult then
+                return {
+                    mult = card.ability.extra.mult
+                }
+            end
+        end
 	end,
 })

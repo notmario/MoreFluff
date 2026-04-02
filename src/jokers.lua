@@ -28,40 +28,40 @@ FLUFF.joker_pool = {
 	"blasphemy",
 
 	"dramaticentrance",
-	"bonussheet",
 	"blunder",
 	"brilliant",
 	"broomcloset",
-
 	"rot_cartomancer",
+
 	"clipart",
 	"css",
 	"cueball",
 	"dinner",
+	"forge",
 
 	-- uncommon page 2
-	"forge",
 	"gemstonejoker",
 	"globe",
 	"goldencarrot",
 	"farmmerge",
-
 	"friendinsideme",
+
 	"junkmail",
 	"onesliptoolate",
 	"unpleasantcard",
 	"loadeddisk",
-
 	"missingjoker",
+	
 	"paintcan",
 	"passando",
 	"sapling",
 	"snake",
+	"slotmachine",
 
 	-- uncommon page 3
-	"slotmachine",
 	"stylemeter",
 	"stonejokerjoker",
+	"talljoker",
 	"teacup",
 	"tealjoker",
 
@@ -102,6 +102,7 @@ FLUFF.joker_pool = {
 
 	-- new update jokers
 	"lonewolf",
+	"bonussheet",
 	"refrigerator",
 	"retrigger_joker",
 	"aheartofcold",
@@ -150,7 +151,6 @@ FLUFF.hidden_joker_pool = {
 	"mashupalbum",
 	"flintandsteel",
 	"sudoku",
-	"talljoker",
 
 	"tonersoup",
 	"hallofmirrors",
