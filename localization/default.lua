@@ -660,9 +660,8 @@ return {
 				name = "Refrigerator",
 				text = {
 					{
-						"When {C:attention}Boss Blind{} is selected,",
-						"create {C:attention}#1# {C:green}Food{} {C:attention}Joker",
-						"{C:inactive}(Must have room)",
+						"{C:green}Food{} {C:attention}Jokers are {X:spectral,C:white}X#1#{}",
+						"more likely to appear"
 					},
 					{
 						"If a {C:green}Food{} {C:attention}Joker{} would",

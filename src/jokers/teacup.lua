@@ -42,7 +42,14 @@ SMODS.Joker({
 				)
 				level_up_hand(context.blueprint_card or card, text, nil, 1)
 				if not context.blueprint and not context.retrigger_joker then
-					if card.ability.extra - 1 <= 0 then
+					card.ability.one = 1
+					SMODS.scale_card(card, {
+						ref_table = card.ability,
+						ref_value = "extra",
+						scalar_value = "one",
+						operation = "-",
+					})
+					if card.ability.extra <= 0 then
 						G.E_MANAGER:add_event(Event({
 							func = function()
 								play_sound("tarot1")
@@ -68,14 +75,9 @@ SMODS.Joker({
 							message = localize("k_drank_ex"),
 							colour = G.C.FILTER,
 						}
-					else
-						card.ability.extra = card.ability.extra - 1
-						return {
-							message = card.ability.extra .. "",
-							colour = G.C.FILTER,
-						}
 					end
 				end
+				return nil, true
 			end
 		end
 	end,

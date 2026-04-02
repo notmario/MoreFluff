@@ -2,7 +2,7 @@ SMODS.Joker {
     key = "refrigerator",
     name = "Refrigerator",
 	atlas = "mf_jokers",
-	config = { extra = 1 },
+	config = { extra = { odds = 3 } },
 	pos = { x = 8, y = 10 },
 	rarity = 2,
 	cost = 8,
@@ -13,27 +13,19 @@ SMODS.Joker {
 	perishable_compat = true,
 	attributes = { "generation", "joker", },
 	loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.extra }}
+        return { vars = { card.ability.extra.odds }}
 	end,
     calculate = function(self, card, context)
-		if
-			(context.setting_blind and not card.getting_sliced)
-			and not (context.blueprint_card or card).getting_sliced
-			and #G.jokers.cards + G.GAME.joker_buffer < G.jokers.config.card_limit
-            and G.GAME.blind.boss
-		then
-			local jokers_to_create = math.floor(
-				math.min(card.ability.extra, G.jokers.config.card_limit - (#G.jokers.cards + G.GAME.joker_buffer))
-			)
-            for i = 1, jokers_to_create do
-                local key = SMODS.poll_object { type = "Joker", attributes = { "food" } }
-                SMODS.add_card { key = key, type = "Joker", }
-            end
-			return { message = localize("k_plus_joker"), colour = G.C.BLUE }
-		end
         if context.check_eternal and FLUFF.has_attribute(context.other_card, "food") and context.trigger.destroy_cards then
             return { no_destroy = { override_compat = true } }
         end
+		if context.modify_weights and context.pool_types.Joker then
+			for _, c in pairs(context.pool) do
+				if FLUFF.has_attribute(c.key, "food") then
+					c.weight = c.weight * card.ability.extra.odds
+				end
+			end
+		end
     end,
 }
 

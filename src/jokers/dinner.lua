@@ -39,16 +39,17 @@ SMODS.Joker({
 			end
 		end
 		if context.end_of_round and context.cardarea == G.jokers and not context.blueprint then
-			if card.ability.extra.rounds_left - 1 <= 0 then
+			card.ability.extra.one = 1
+			SMODS.scale_card(card, {
+				ref_table = card.ability.extra,
+				ref_value = "rounds_left",
+				scalar_value = "one",
+				operation = "-",
+			})
+			if card.ability.extra.rounds_left <= 0 then
 				SMODS.destroy_cards(card, nil, nil, true)
 				return {
 					message = localize("k_eaten_ex"),
-					colour = G.C.FILTER,
-				}
-			else
-				card.ability.extra.rounds_left = card.ability.extra.rounds_left - 1
-				return {
-					message = card.ability.extra.rounds_left .. "",
 					colour = G.C.FILTER,
 				}
 			end
