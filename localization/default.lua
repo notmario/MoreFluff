@@ -487,7 +487,7 @@ return {
 			j_mf_doubledscale = {
 				name = "Doubled Scale",
 				text = {
-					"{C:attention}Scaling Jokers{} {C:green,E:1}scale",
+					"{C:attention}Scaling Jokers{} {C:spectral,E:1}scale",
 					"{C:attention}twice{} as fast",
 				},
 			},
@@ -565,7 +565,7 @@ return {
 			j_mf_triangle = {
 				name = "Triangle",
 				text = {
-					"Other {C:attention}Scaling Jokers{} scale at a",
+					"Other {C:attention}Scaling Jokers{} {C:spectral,E:1}scale{} at a",
 					"{X:purple,C:white}X#1#{} rate, increases by {X:purple,C:white}X#2#{} if",
 					"played hand is a {C:attention}Three of a Kind",
 				},
@@ -573,7 +573,7 @@ return {
 			j_mf_triangle_lame = {
 				name = "Triangle",
 				text = {
-					"Other {C:attention}Scaling Jokers{} scale at a",
+					"Other {C:attention}Scaling Jokers{} {C:spectral,E:1}scale{} at a",
 					"{X:purple,C:white}X#1#{} rate, increases by {X:purple,C:white}X#2#{} if",
 					"played hand is a {C:attention}Three of a Kind",
 					"{C:inactive,s:0.8}(Does not modify other copies of Triangle)",
@@ -643,6 +643,22 @@ return {
 			},
 
 			-- new update
+			j_mf_refrigerator = {
+				name = "Refrigerator",
+				text = {
+					{
+						"When {C:attention}Boss Blind{} is selected,",
+						"create {C:attention}#1# {C:green}Food{} {C:attention}Joker",
+						"{C:inactive}(Must have room)",
+					},
+					{
+						"If a {C:green}Food{} {C:attention}Joker{} would",
+						"{C:spectral,E:1}scale{} or be {C:red}destroyed{},",
+						"{C:red}prevent it",
+						"{C:inactive}(They may still be sold)"
+					}
+				},
+			},
 			j_mf_aheartofcold = {
 				name = "A Heart of Cold",
 				text = {

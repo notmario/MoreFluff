@@ -3,6 +3,7 @@ FLUFF.optional_features = {
 	retrigger_joker = true,
 	post_trigger = true,
 	quantum_enhancements = true,
+	-- object_weights = true,
 }
 
 -- sts mana value
@@ -291,4 +292,12 @@ end
 
 FLUFF.should_talisman_key = function(key)
 	return FLUFF.has_calc_key(key) and not not (SMODS.Mods.Talisman or SMODS.Mods.cdataman or {}).can_load
+end
+
+FLUFF.has_attribute = function (card, key)
+	if not card.config or not card.config.center or not card.config.center.attributes then return false end
+	for _, attr in pairs(card.config.center.attributes or {}) do
+		if attr == key then return true end
+	end
+	return false
 end

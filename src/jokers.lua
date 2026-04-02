@@ -101,6 +101,7 @@ FLUFF.joker_pool = {
 	"trianglewalker",
 
 	-- new update jokers
+	"refrigerator",
 	"aheartofcold",
 
 	-- rot legendary
