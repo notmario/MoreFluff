@@ -672,6 +672,19 @@ return {
 					}
 				},
 			},
+			j_mf_retrigger_joker = {
+				name = "Retrigger Joker",
+				text = {
+					{
+						"{C:attention}Retrigger{} each other",
+						"{C:attention}Joker{} that {C:attention}retriggers"
+					},
+					{
+						"{C:attention}Retrigger{} the {C:attention}fifth",
+						"scoring card",
+					}
+				},
+			},
 			j_mf_aheartofcold = {
 				name = "A Heart of Cold",
 				text = {
