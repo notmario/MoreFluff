@@ -643,6 +643,19 @@ return {
 			},
 
 			-- new update
+			j_mf_lonewolf = {
+				name = "tempname001",
+				text = {
+					{
+						"{C:mult}+#1#{} Mult if you have",
+						"no other {C:mult}Mult{} or {X:mult,C:white}XMult{} {C:attention}Jokers"
+					},
+					{
+						"{C:chips}+#2#{} Chips if you have",
+						"no other {C:chips}Chips{} or {X:chips,C:white}XChips{} {C:attention}Jokers"
+					},
+				},
+			},
 			j_mf_refrigerator = {
 				name = "Refrigerator",
 				text = {
