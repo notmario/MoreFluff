@@ -16,7 +16,7 @@ SMODS.Joker({
 	eternal_compat = true,
 	perishable_compat = true,
 	immutable = true, -- pretty important
-	attributes = { },
+	attributes = { "eechips", },
 	loc_vars = function(self, info_queue, center)
 		return { vars = { center.ability.val } }
 	end,

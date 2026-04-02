@@ -14,7 +14,7 @@ SMODS.Joker({
 	eternal_compat = true,
 	perishable_compat = true,
 	immutable = true,
-	attributes = { },
+	attributes = { "eemult",},
 	loc_vars = function(self, info_queue, center)
 		return { vars = { center.ability.val } }
 	end,

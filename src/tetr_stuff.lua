@@ -44,3 +44,7 @@ function loc_colour(_c, _default, ...)
 	end
 	return lc(_c, _default, ...)
 end
+
+SMODS.Attribute { key = "emult" }
+SMODS.Attribute { key = "eemult" }
+SMODS.Attribute { key = "eechips" }
