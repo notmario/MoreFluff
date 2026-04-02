@@ -46,5 +46,5 @@ function loc_colour(_c, _default, ...)
 end
 
 SMODS.Attribute { key = "emult" }
-SMODS.Attribute { key = "eemult" }
-SMODS.Attribute { key = "eechips" }
+SMODS.Attribute { key = "hypermult" }
+SMODS.Attribute { key = "hyperchips" }
