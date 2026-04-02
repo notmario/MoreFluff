@@ -698,7 +698,10 @@ return {
 				},
 			},
 			j_mf_deadheatpulse = {
-				name = "THIS HEAT, AN EVIL HEAT",
+				name = {
+					"{s:0.5}JOKER // ENCORE",
+					"THIS HEAT, AN EVIL HEAT",
+				},
 				text = {
 					{
 						"{C:attention}Retrigger{} all {C:dark_edition}Polychrome{}",
