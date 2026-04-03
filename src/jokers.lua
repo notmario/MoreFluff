@@ -103,6 +103,7 @@ FLUFF.joker_pool = {
 	-- new update jokers
 	"lonewolf",
 	"bonussheet",
+	"icecube",
 	"refrigerator",
 	"retrigger_joker",
 	"aheartofcold",

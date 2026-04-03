@@ -663,6 +663,16 @@ return {
 					},
 				},
 			},
+			j_mf_icecube = {
+				name = "Ice Cube",
+				text = {
+                    "{X:green,C:white}X#1#{} to all {C:attention}listed",
+                    "{C:green,E:1,S:1.1}probabilities",
+					"Reduce this by {X:green,C:white}X#2#{}",
+					"at end of round",
+                    "{C:inactive}(ex: {C:green}1 in 3{C:inactive} -> {C:green}#1# in 3{C:inactive})",
+				},
+			},
 			j_mf_refrigerator = {
 				name = "Refrigerator",
 				text = {
@@ -1914,6 +1924,7 @@ return {
 			a_plus_rounds = { "+#1# Rounds" },
 			a_minus_dollars = { "-$#1#" },
 			a_searched = { "Found #1#" },
+			a_xprob_minus = { "-X#1#" },
 		},
 	},
 }
