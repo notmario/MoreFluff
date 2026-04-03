@@ -24,7 +24,7 @@ SMODS.Joker({
 	eternal_compat = false,
 	perishable_compat = false,
 	demicoloncompat = true,
-	attributes = { "on_sell", },
+	attributes = { "on_sell", "score", },
 	loc_vars = function(self, info_queue, center)
 		local val, max = progressbar(center.ability.extra.c_rounds, center.ability.extra.rounds)
 		return { vars = { val, max, center.ability.extra.rounds, center.ability.extra.c_rounds } }
