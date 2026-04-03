@@ -29,7 +29,7 @@ SMODS.Joker({
 
 local old_g_funcs_check_for_buy_space = G.FUNCS.check_for_buy_space
 G.FUNCS.check_for_buy_space = function(card)
-	if card.ability.name == "Philosophical Joker" and card.ability.card_limit >= 1 then
+	if card.ability.name == "Philosophical Joker" and card.ability.extra.slots >= 1 then
 		return true
 	end
 	return old_g_funcs_check_for_buy_space(card)
@@ -37,7 +37,7 @@ end
 
 local old_g_funcs_can_select_card = G.FUNCS.can_select_card
 G.FUNCS.can_select_card = function(e)
-	if e.config.ref_table.ability.name == "Philosophical Joker" and e.config.ref_table.ability.card_limit >= 1 then
+	if e.config.ref_table.ability.name == "Philosophical Joker" and e.config.ref_table.extra.slots >= 1 then
 		e.config.colour = G.C.GREEN
 		e.config.button = "use_card"
 	else
