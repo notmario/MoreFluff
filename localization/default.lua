@@ -668,9 +668,9 @@ return {
 				text = {
                     "{X:green,C:white}X#1#{} to all {C:attention}listed",
                     "{C:green,E:1,S:1.1}probabilities",
+                    "{C:inactive}(ex: {C:green}1 in 3{C:inactive} -> {C:green}#1# in 3{C:inactive})",
 					"Reduce this by {X:green,C:white}X#2#{}",
 					"at end of round",
-                    "{C:inactive}(ex: {C:green}1 in 3{C:inactive} -> {C:green}#1# in 3{C:inactive})",
 				},
 			},
 			j_mf_refrigerator = {
