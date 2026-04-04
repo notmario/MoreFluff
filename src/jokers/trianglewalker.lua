@@ -24,7 +24,7 @@ SMODS.Joker({
 	default_loyalty_effects = true,
 
 	pronouns = "she_they",
-	attributes = { "destroy_card", "modify_card", },
+	attributes = { "destroy_card", "modify_card", "editions", },
 	loc_vars = function(self, info_queue, center)
 		info_queue[#info_queue + 1] = { key = "planeswalker_explainer", set = "Other", specific_vars = { 3 } }
 	end,

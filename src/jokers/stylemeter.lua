@@ -13,7 +13,7 @@ SMODS.Joker({
 	blueprint_compat = false,
 	eternal_compat = true,
 	perishable_compat = true,
-	attributes = { "economy", "scaling", },
+	attributes = { "economy", "scaling", "skip", },
 	loc_vars = function(self, info_queue, center)
 		return {
 			vars = { center.ability.extra.per, center.ability.extra.per * G.GAME.skips },

@@ -13,7 +13,7 @@ SMODS.Joker({
 	blueprint_compat = false,
 	eternal_compat = true,
 	perishable_compat = true,
-	attributes = { "generation", "rank", "two", "destroy_card", },
+	attributes = { "generation", "rank", "two", "destroy_card", "tag", },
 	calculate = function(self, card, context)
 		if
 			context.destroying_card

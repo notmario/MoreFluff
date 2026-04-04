@@ -11,7 +11,7 @@ SMODS.Joker({
 	blueprint_compat = true,
 	eternal_compat = true,
 	perishable_compat = true,
-	attributes = { },
+	attributes = { "swap", },
 	calculate = function(self, card, context)
 		if context.cardarea == G.jokers and context.joker_main then
 			return {

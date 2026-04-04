@@ -20,7 +20,7 @@ SMODS.Joker({
 	eternal_compat = true,
 	perishable_compat = false,
 	no_collection = true,
-	attributes = { "retrigger", "joker", },
+	attributes = { "retrigger", "joker", "editions", },
 	loc_vars = function(self, info_queue, center)
 		return {
 			vars = { center.ability.extra.cards_total, center.ability.extra.current_cards },
