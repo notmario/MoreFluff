@@ -869,6 +869,7 @@ FLUFF.Colour({
 		upgrade_rounds = 4,
 		create_key = "c_soul",
 	},
+	select_card = "consumeables",
 
 	mf_art_credit = "Multi",
 })
