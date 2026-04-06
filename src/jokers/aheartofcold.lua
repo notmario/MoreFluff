@@ -16,7 +16,7 @@ SMODS.Joker({
 	blueprint_compat = true,
 	eternal_compat = true,
 	perishable_compat = false,
-	attributes = { "passive", "editions", },
+	attributes = { "passive", "editions", "boss_blind", },
 	loc_vars = function(self, info_queue, center)
 		return {
 			vars = { center.ability.extra.polychrome_mod, center.ability.extra.bosses_left },

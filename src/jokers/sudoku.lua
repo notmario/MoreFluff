@@ -26,7 +26,7 @@ SMODS.Joker({
 	blueprint_compat = true,
 	eternal_compat = true,
 	perishable_compat = true,
-	attributes = { "xmult", "reset", "rank", "ace", "two", "three", "four", "five", "six", "seven", "eight", "nine", "hands", },
+	attributes = { "xmult", "reset", "rank", "ace", "two", "three", "four", "five", "six", "seven", "eight", "nine", "hands", "boss_blind", },
 	loc_vars = function(self, info_queue, center)
 		local funny = function(val)
 			return (val > 0) and G.C.FILTER or G.C.UI.TEXT_INACTIVE
