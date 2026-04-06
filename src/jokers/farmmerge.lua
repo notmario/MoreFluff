@@ -33,6 +33,32 @@ SMODS.Joker({
 
 				perma_p_dollars = 0,
 				perma_h_dollars = 0,
+				
+				perma_repetitions = 0,
+				perma_score = 0,
+				perma_h_score = 0,
+				perma_x_score = 0,
+				perma_h_x_score = 0,
+				perma_blind_size = 0,
+				perma_h_blind_size = 0,
+				perma_x_blind_size = 0,
+				perma_h_x_blind_size = 0,
+
+				-- slib compat
+				slib_perma_xlog_chips = 0,
+				slib_perma_h_xlog_chips = 0,
+				slib_perma_xlog_mult = 0,
+				slib_perma_h_xlog_mult = 0,
+				slib_perma_plus_asc = 0,
+				slib_perma_h_plus_asc = 0,
+				slib_perma_x_asc = 0,
+				slib_perma_h_x_asc = 0,
+				slib_perma_exp_asc = 0,
+				slib_perma_h_exp_asc = 0,
+				slib_perma_e_chips = 0,
+				slib_perma_h_e_chips = 0,
+				slib_perma_e_mult = 0,
+				slib_perma_h_e_mult = 0,
 			}
 
 			local enhancement = nil
@@ -45,7 +71,7 @@ SMODS.Joker({
 				end
 
 				for k, _ in pairs(new_stats) do -- the devious reverse iterator?
-					new_stats[k] = new_stats[k] + v.ability[k]
+					new_stats[k] = new_stats[k] + (v.ability[k] or 0)
 				end
 
 				if v ~= last_card then
