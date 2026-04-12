@@ -673,11 +673,27 @@ return {
 					"at end of round",
 				},
 			},
+			j_mf_jokerreacts = {
+				name = "Joker Reacts To Broccoli",
+				text = {
+					{
+						"{C:green}Food{} {C:attention}Jokers{} are {X:spectral,C:white}X#1#{}",
+						"more likely to appear, and",
+						"are face down in the shop"
+					},
+					{
+						"When you buy a {C:green}Food{} {C:attention}Joker{},",
+						"earn {C:gold}$#2#{} and this {C:attention}Joker{}",
+						"gains {C:mult}+#3#{} Mult",
+						"{C:inactive}(Currently {C:mult}+#4#{C:inactive} Mult)"
+					}
+				},
+			},
 			j_mf_refrigerator = {
 				name = "Refrigerator",
 				text = {
 					{
-						"{C:green}Food{} {C:attention}Jokers are {X:spectral,C:white}X#1#{}",
+						"{C:green}Food{} {C:attention}Jokers{} are {X:spectral,C:white}X#1#{}",
 						"more likely to appear"
 					},
 					{

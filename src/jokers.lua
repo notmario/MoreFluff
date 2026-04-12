@@ -104,6 +104,7 @@ FLUFF.joker_pool = {
 	"lonewolf",
 	"bonussheet",
 	"icecube",
+	"jokerreacts",
 	"refrigerator",
 	"retrigger_joker",
 	"aheartofcold",
