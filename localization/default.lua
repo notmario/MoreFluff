@@ -663,6 +663,24 @@ return {
 					},
 				},
 			},
+			j_mf_gentlemelon = {
+				name = "Gentlemelon",
+				text = {
+					{
+						"{C:attention}Joker{}, {C:tarot}Tarot{}, {C:planet}Planet{},",
+						"and {C:spectral}Spectral{} cards may",
+						"appear multiple times",
+					},
+					{
+						"{C:attention}Duplicate{} cards are {X:spectral,C:white}X#1#{}",
+						"more likely to appear",
+					},
+					{
+						"Destroyed after {C:red}#2#{}",
+						"cards are bought",
+					}
+				},
+			},
 			j_mf_icecube = {
 				name = "Ice Cube",
 				text = {
@@ -1923,6 +1941,7 @@ return {
 			k_equals_tree_three = "=TREE(3)",
 			k_again_ex_ex = "Again!!",
 			k_correct_ex = "Correct!",
+			k_dead_ex = "Dead!",
 			k_timetravel_ex = "Time travel!",
 			k_plus_ankh = "+Ankh",
 			k_rankless = "rankless",

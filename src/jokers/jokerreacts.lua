@@ -3,7 +3,7 @@ SMODS.Joker({
 	name = "Joker Reacts To Broccoli",
 	atlas = "mf_jokers",
 	config = {
-		extra = { odds = 3, dollars = 3, mult_gain = 2, mult = 0 },
+		extra = { odds = 3, dollars = 2, mult_gain = 1, mult = 0 },
 	},
 	pos = { x = 7, y = 11 },
 	rarity = 2,
