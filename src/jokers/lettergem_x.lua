@@ -34,6 +34,12 @@ SMODS.calculate_individual_effect = function(effect, scored_card, key, amount, f
 			bonus = bonus + card.ability.extra.current_increase
 		end
 		amount = amount + bonus
+        if key == "x_mult_mod" or key == "Xmult_mod" then
+            key = "xmult"
+            effect["x_mult_mod"] = nil
+            effect["Xmult_mod"] = nil
+            effect["message"] = nil
+        end
 	end
 	return scalcieff(effect, scored_card, key, amount, from_edition)
 end

@@ -663,21 +663,33 @@ return {
 					},
 				},
 			},
+			j_mf_applefriends = {
+				name = "\"Apple Friends \"",
+				text = {
+					{
+						"Whenever you add {C:chips}Chips{} or {C:mult}Mult{},",
+						"add twice as much instead"
+					},
+					{
+						"When you sell a {C:attention}Joker{},",
+						"{C:red}self destructs"
+					}
+				},
+			},
 			j_mf_gentlemelon = {
 				name = "Gentlemelon",
 				text = {
 					{
 						"{C:attention}Joker{}, {C:tarot}Tarot{}, {C:planet}Planet{},",
 						"and {C:spectral}Spectral{} cards may",
-						"appear multiple times",
-					},
-					{
+						"appear multiple times,",
 						"{C:attention}Duplicate{} cards are {X:spectral,C:white}X#1#{}",
 						"more likely to appear",
 					},
 					{
-						"Destroyed after {C:red}#2#{}",
-						"cards are bought",
+						"{C:red}Destroyed{} after {C:red}#2#{}",
+						"cards are bought or",
+						"packs are opened"
 					}
 				},
 			},

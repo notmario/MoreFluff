@@ -3,7 +3,7 @@ SMODS.Joker({
 	name = "Gentlemelon",
 	atlas = "mf_jokers",
 	config = {
-		extra = { odds = 100, purchases = 3 },
+		extra = { odds = 100, purchases = 4 },
 	},
 	pos = { x = 8, y = 11 },
 	rarity = 2,
@@ -11,7 +11,7 @@ SMODS.Joker({
 	unlocked = true,
 	discovered = true,
 	blueprint_compat = true,
-	eternal_compat = true,
+	eternal_compat = false,
 	perishable_compat = false,
 	attributes = { "passive", "food", },
 	loc_vars = function(self, info_queue, card)
@@ -25,7 +25,7 @@ SMODS.Joker({
                 c.weight = c.weight * (card.ability.extra.odds ^ (#SMODS.find_card(c.key)))
 			end
 		end
-        if context.buying_card and not context.buying_self and (card ~= context.card) and not context.blueprint then
+        if ((context.buying_card and not context.buying_self and (card ~= context.card)) or (context.open_booster)) and not context.blueprint then
             card.ability.extra.one = 1
             SMODS.scale_card(card, {
                 ref_table = card.ability.extra,

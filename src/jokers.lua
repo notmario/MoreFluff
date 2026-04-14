@@ -102,6 +102,7 @@ FLUFF.joker_pool = {
 
 	-- new update jokers
 	"lonewolf",
+	"applefriends",
 	"bonussheet",
 	"gentlemelon",
 	"icecube",
