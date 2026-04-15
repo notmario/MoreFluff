@@ -683,8 +683,8 @@ return {
 						"{C:attention}Joker{}, {C:tarot}Tarot{}, {C:planet}Planet{},",
 						"and {C:spectral}Spectral{} cards may",
 						"appear multiple times,",
-						"{C:attention}Duplicate{} cards are {X:spectral,C:white}X#1#{}",
-						"more likely to appear",
+						"other {C:attention}duplicate{} cards are",
+						"{X:spectral,C:white}X#1#{} more likely to appear",
 					},
 					{
 						"{C:red}Destroyed{} after {C:red}#2#{}",

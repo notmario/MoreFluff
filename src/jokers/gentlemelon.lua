@@ -22,7 +22,9 @@ SMODS.Joker({
 	calculate = function(self, card, context)
 		if context.modify_weights then
 			for _, c in pairs(context.pool) do
-                c.weight = c.weight * (card.ability.extra.odds ^ (#SMODS.find_card(c.key)))
+                local count = #SMODS.find_card(c.key)
+                if c.key == "j_mf_gentlemelon" then count = count - 1 end
+                c.weight = c.weight * (card.ability.extra.odds ^ count)
 			end
 		end
         if ((context.buying_card and not context.buying_self and (card ~= context.card)) or (context.open_booster)) and not context.blueprint then
