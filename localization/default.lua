@@ -779,6 +779,15 @@ return {
 				},
 			},
 
+			-- rot legendaries
+			j_mf_rot_marigold = {
+				name = "{E:mf_rotarot_title}Marigold!",
+				text = {
+					"{C:attention}Marigold Cards{} are also considered",
+					"{C:attention}Gold{}, {C:attention}Steel{}, and {C:attention}Glass Cards{}"
+				},
+			},
+
 			-- john
 			j_mf_johnbalatrotrue = {
 				name = "John Balatro",

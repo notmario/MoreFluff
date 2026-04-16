@@ -112,6 +112,7 @@ FLUFF.joker_pool = {
 	"aheartofcold",
 
 	-- rot legendary
+	"rot_marigold",
 }
 
 for _, path in ipairs(FLUFF.joker_pool) do
