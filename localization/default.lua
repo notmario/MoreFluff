@@ -676,6 +676,13 @@ return {
 					}
 				},
 			},
+			j_mf_crypticmod = {
+				name = "Cryptic Mod (Working 2026)",
+				text = {
+					"A random editionless {C:attention}Joker{} becomes",
+					"{C:attention}Cryptic{} when {C:attention}Boss Blind{} is defeated"
+				},
+			},
 			j_mf_gentlemelon = {
 				name = "Gentlemelon",
 				text = {
@@ -1931,6 +1938,14 @@ return {
 				},
 			},
 		},
+		Edition = {
+			e_mf_cryptic = {
+				name = "Cryptic",
+				text = {
+					"Draw {C:attention}3{} cards"
+				}
+			}
+		},
 	},
 	misc = {
 		labels = {
@@ -1939,6 +1954,7 @@ return {
 			mf_oldfluff = "Scrapped",
 			mf_superlegendary = "Superlegendary",
 			mf_rot_legendary = "45 Degree Rotated Legendary",
+			mf_cryptic = "Cryptic",
 		},
 		dictionary = {
 			k_mf_token = "Token",

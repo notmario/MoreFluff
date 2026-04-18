@@ -104,6 +104,7 @@ FLUFF.joker_pool = {
 	"lonewolf",
 	"applefriends",
 	"bonussheet",
+	"crypticmod",
 	"gentlemelon",
 	"icecube",
 	"jokerreacts",
