@@ -1942,9 +1942,16 @@ return {
 			e_mf_cryptic = {
 				name = "Cryptic",
 				text = {
+					"When you would draw cards,",
+					"draw {C:attention}3{} more cards"
+				}
+			},
+			e_mf_cryptic_playing_card = {
+				name = "Cryptic",
+				text = {
 					"Draw {C:attention}3{} cards"
 				}
-			}
+			},
 		},
 	},
 	misc = {

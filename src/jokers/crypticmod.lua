@@ -55,13 +55,21 @@ SMODS.Edition {
     shader = "cryptic",
 	atlas = "mf_jokers",
 	pos = { x = 6, y = 7 },
+	loc_vars = function(self, info_queue, card)
+        return { key = card.playing_card and "e_mf_cryptic_playing_card" or nil }
+	end,
     calculate = function(self, card, context)
-        if context.pre_joker or (context.main_scoring and context.cardarea == G.play) then
+        if context.main_scoring and context.cardarea == G.play then
             return {
                 pre_func = function()
                     SMODS.draw_cards(3)
                 end,
                 message = "??"
+            }
+        end
+        if context.drawing_cards and context.amount > 0 then
+            return {
+                modify = context.amount + 3
             }
         end
     end
