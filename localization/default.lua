@@ -677,7 +677,7 @@ return {
 				},
 			},
 			j_mf_crypticmod = {
-				name = "Cryptic Mod (Working 2026)",
+				name = {"Cryptic Modifier","{s:0.5}(Working 2026)"},
 				text = {
 					"A random editionless {C:attention}Joker{} becomes",
 					"{C:attention}Cryptic{} when {C:attention}Boss Blind{} is defeated"
