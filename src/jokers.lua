@@ -111,6 +111,7 @@ FLUFF.joker_pool = {
 	"refrigerator",
 	"retrigger_joker",
 	"aheartofcold",
+	"mathemagics",
 
 	-- rot legendary
 	"rot_marigold",

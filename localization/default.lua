@@ -785,6 +785,15 @@ return {
 					}
 				},
 			},
+			j_mf_mathemagics = {
+				name = "Mathemagics",
+				text = {
+                    "When {C:attention}Blind{} is selected,",
+					"draw {C:attention}#1#{} card#2#. Double this",
+					"when you sell {C:attention}2 Jokers{}",
+					"resets when triggered"
+				},
+			},
 
 			-- rot legendaries
 			j_mf_rot_marigold = {
