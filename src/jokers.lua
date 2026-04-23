@@ -102,6 +102,7 @@ FLUFF.joker_pool = {
 
 	-- new update jokers
 	"lonewolf",
+	"bouncer",
 	"applefriends",
 	"bonussheet",
 	"crypticmod",
@@ -127,6 +128,7 @@ FLUFF.hidden_joker_pool = {
 
 	-- tokens
 	"oopsallfives",
+	"fish",
 	"forgeslop",
 
 	-- scrapped

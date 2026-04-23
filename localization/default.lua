@@ -663,6 +663,18 @@ return {
 					},
 				},
 			},
+			j_mf_bouncer = {
+				name = "Bouncer",
+				text = {
+					"When you enter the {C:attention}Shop{},",
+					"return the {C:attention}Joker{} or {C:attention}consumable",
+					"to the right to the {C:attention}Shop{}.",
+					"This Joker gains {C:chips}+#1#{} Chips for every",
+					"{C:gold}$1{} of sell value that card had.",
+					"If it was a {C:attention}Joker{}, create a {C:attention}Fish{}",
+					"{C:inactive}(Currently {C:chips}#2#{} {C:inactive}Chips)"
+				},
+			},
 			j_mf_applefriends = {
 				name = "\"Apple Friends \"",
 				text = {
@@ -835,6 +847,13 @@ return {
 				text = {
 					"Does not trigger {C:attention}Joker{}",
 					"{C:attention}Forge{} when sold",
+				},
+			},
+			j_mf_fish = {
+				name = "Fish",
+				text = {
+					"{C:chips}+#1#{} Chips",
+					"{C:mult}+#2#{} Mult",
 				},
 			},
 
@@ -1995,6 +2014,7 @@ return {
 			k_again_ex_ex = "Again!!",
 			k_correct_ex = "Correct!",
 			k_dead_ex = "Dead!",
+			k_gift_ex = "Gift!",
 			k_timetravel_ex = "Time travel!",
 			k_plus_ankh = "+Ankh",
 			k_rankless = "rankless",
