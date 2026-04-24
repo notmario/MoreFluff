@@ -112,6 +112,7 @@ FLUFF.joker_pool = {
 	"refrigerator",
 	"retrigger_joker",
 	"aheartofcold",
+	"emeritus_eventuality",
 	"mathemagics",
 
 	-- rot legendary

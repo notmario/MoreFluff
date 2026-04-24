@@ -797,6 +797,20 @@ return {
 					}
 				},
 			},
+			j_mf_emeritus_eventuality = {
+				name = "Emeritus of Eventuality",
+				text = {
+					"This Joker starts {C:spectral}prepared{}",
+					"{C:inactive,s:0.8}(While it's prepared, you may",
+					"{C:inactive,s:0.8}use a copy of its consumable,",
+					"{C:inactive,s:0.8}doing so unprepares it)",
+					"Whenever you play your {C:attention}third{}",
+					"unique hand with {C:attention}three",
+					"{C:attention}or more{} cards in a round,",
+					"{C:spectral}prepare{} this Joker",
+					"{C:inactive}(Currently #1#)"
+				},
+			},
 			j_mf_mathemagics = {
 				name = "Mathemagics",
 				text = {
@@ -2015,6 +2029,10 @@ return {
 			k_correct_ex = "Correct!",
 			k_dead_ex = "Dead!",
 			k_gift_ex = "Gift!",
+			k_prepared = "prepared",
+			k_unprepared = "unprepared",
+			k_prepared_ex = "Prepared!",
+
 			k_timetravel_ex = "Time travel!",
 			k_plus_ankh = "+Ankh",
 			k_rankless = "rankless",
