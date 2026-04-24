@@ -1035,7 +1035,7 @@ SMODS.Consumable({
 	discovered = true,
 	mf_rotate_by = math.pi / 4,
 	can_use = function(self, card)
-		return true
+		return #G.hand.cards >= 1
 	end,
 	use = function(self, card, area, copier)
 		do_suit_shit(card, copier)
@@ -1061,7 +1061,7 @@ SMODS.Consumable({
 	discovered = true,
 	mf_rotate_by = math.pi / 4,
 	can_use = function(self, card)
-		return true
+		return #G.hand.cards >= 1
 	end,
 	use = function(self, card, area, copier)
 		do_suit_shit(card, copier)
@@ -1087,7 +1087,7 @@ SMODS.Consumable({
 	discovered = true,
 	mf_rotate_by = math.pi / 4,
 	can_use = function(self, card)
-		return true
+		return #G.hand.cards >= 1
 	end,
 	use = function(self, card, area, copier)
 		do_suit_shit(card, copier)
@@ -1177,7 +1177,7 @@ SMODS.Consumable({
 	discovered = true,
 	mf_rotate_by = math.pi / 4,
 	can_use = function(self, card)
-		return true
+		return #G.hand.cards >= 1
 	end,
 	use = function(self, card, area, copier)
 		do_suit_shit(card, copier)
