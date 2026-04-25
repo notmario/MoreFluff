@@ -800,14 +800,14 @@ return {
 			j_mf_emeritus_eventuality = {
 				name = "Emeritus of Eventuality",
 				text = {
-					"This Joker starts {C:spectral}prepared{}",
-					"{C:inactive,s:0.8}(While it's prepared, you may",
-					"{C:inactive,s:0.8}use a copy of its consumable,",
-					"{C:inactive,s:0.8}doing so unprepares it)",
+					-- "This Joker starts {C:spectral}prepared{}",
 					"Whenever you play your {C:attention}third{}",
 					"unique hand with {C:attention}three",
 					"{C:attention}or more{} cards in a round,",
 					"{C:spectral}prepare{} this Joker",
+					"{C:inactive,s:0.8}(While it's prepared, you may",
+					"{C:inactive,s:0.8}use a copy of its consumable,",
+					"{C:inactive,s:0.8}doing so unprepares it)",
 					"{C:inactive}(Currently #1#)"
 				},
 			},
