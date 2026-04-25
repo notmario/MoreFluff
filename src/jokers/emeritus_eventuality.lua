@@ -1,6 +1,6 @@
 SMODS.Joker {
 	key = "emeritus_eventuality",
-	name = "Emeritus of Eventuality",
+	name = "Emeritus of Inevitability",
 	atlas = "mf_jokers",
 	config = {
 		extra = {

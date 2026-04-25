@@ -819,7 +819,7 @@ return {
 				},
 			},
 			j_mf_emeritus_eventuality = {
-				name = "Emeritus of Eventuality",
+				name = "Emeritus of Inevitability",
 				text = {
 					-- "This Joker starts {C:spectral}prepared{}",
 					"Whenever you play your {C:attention}third{}",
