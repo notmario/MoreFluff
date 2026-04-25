@@ -41,7 +41,7 @@ SMODS.Joker {
 					card.ability.extra.is_prepared = true
 					return {
 						message = localize "k_prepared_ex",
-						colour = G.C.SPECTRAL,
+						colour = G.C.SECONDARY_SET.Spectral,
 					}
 				else
 					return {
