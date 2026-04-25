@@ -40,7 +40,8 @@ SMODS.Joker {
 				if (#card.ability.extra.round_hands == 3) and not card.ability.extra.is_prepared then
 					card.ability.extra.is_prepared = true
 					return {
-						message = localize "k_prepared_ex"
+						message = localize "k_prepared_ex",
+						colour = G.C.SPECTRAL,
 					}
 				else
 					return {
