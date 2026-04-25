@@ -11,7 +11,7 @@ SMODS.Joker {
 		},
 	},
 	prepared_card = "c_black_hole",
-	pos = { x = 0, y = 0 },
+	pos = { x = 4, y = 12 },
 	rarity = 3,
 	cost = 10,
 	unlocked = true,
