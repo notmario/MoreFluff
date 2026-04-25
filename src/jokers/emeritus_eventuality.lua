@@ -21,9 +21,7 @@ SMODS.Joker {
 	perishable_compat = true,
 	attributes = { "spectral", "generation", "reset", },
 	loc_vars = function(self, info_queue, center)
-		return {
-			vars = { center and center.ability and center.ability.extra and localize(center.ability.extra.is_prepared and "k_prepared" or "k_unprepared") },
-		}
+		return {}
 	end,
 	calculate = function(self, card, context)
 		if context.setting_blind and (#card.ability.extra.round_hands > 0) then

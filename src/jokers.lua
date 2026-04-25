@@ -107,6 +107,7 @@ FLUFF.joker_pool = {
 	"bonussheet",
 	"crypticmod",
 	"emeritus_lore",
+	"emeritus_rebirth",
 	"gentlemelon",
 	"icecube",
 	"jokerreacts",

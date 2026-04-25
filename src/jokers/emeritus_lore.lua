@@ -38,7 +38,6 @@ SMODS.Joker {
 		end
 		return {
 			vars = {
-				center and center.ability and center.ability.extra and localize(center.ability.extra.is_prepared and "k_prepared" or "k_unprepared"),
 				colours = {
 					funny(center.ability.extra.buy_values[1]),
 					funny(center.ability.extra.buy_values[2]),
