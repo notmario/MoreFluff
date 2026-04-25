@@ -472,16 +472,48 @@ function G.UIDEF.card_h_popup(card)
 		nodes = {
 			{
 				n = G.UIT.C,
-				config={align = "cm", padding = 0.07,},
+				config={align = "cm", padding = 0.07, },
 				nodes = targets
 			},
 			{
 				n = G.UIT.C,
-				config={align = "cm", padding = 0.07,},
+				config={align = "cm", padding = 0.07, emboss = 0.05, r = 0.1, colour = darken(card.ability.extra.is_prepared and card_type_colour or G.C.BLACK, card.ability.extra.is_prepared and 0.3 or 0.),},
 				nodes = {
+					-- {
+					-- 	n = G.UIT.R,
+					-- 	config={align = "cm",},
+					-- 	nodes = {{
+					-- 		n = G.UIT.T,
+					-- 		config = {
+					-- 			text = "Prepared:",
+					-- 			colour = G.C.UI.TEXT_LIGHT,
+					-- 			minw = 1,
+					-- 			minh = 0.1,
+					-- 			scale = 0.4,
+					-- 			shadow = true,
+					-- 			filler = true,
+					-- 		},
+					-- 	},}
+					-- },
 					name_from_rows(prepared_card.name),
 					desc_from_rows(prepared_card.main),
-					prep_badge
+					prep_badge,
+					{
+						n = G.UIT.R,
+						config={align = "cm",},
+						nodes = {{
+							n = G.UIT.T,
+							config = {
+								text = localize(card.ability.extra.is_prepared and "k_prepared" or "k_not_prepared"),
+								colour = G.C.UI.TEXT_LIGHT,
+								minw = 1,
+								minh = 0.1,
+								scale = 0.3,
+								shadow = true,
+								filler = true,
+							},
+						},}
+					},
 				}
 			},
 		}

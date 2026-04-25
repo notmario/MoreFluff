@@ -706,12 +706,13 @@ return {
 						"{C:inactive,s:0.8}(While it's prepared, you may",
 						"{C:inactive,s:0.8}use a copy of its consumable,",
 						"{C:inactive,s:0.8}doing so unprepares it)",
-						"{C:inactive}(Currently {V:1}1{C:inactive}, {V:2}2{C:inactive}, {V:3}3{C:inactive}, {V:4}4{C:inactive}, {V:5}5{C:inactive}, {V:6}6{C:inactive},",
-						"{V:7}7{C:inactive}, {V:8}8{C:inactive}, {V:9}9{C:inactive}, {V:10}10{C:inactive}, and #1#)",
+						-- "{C:inactive}(Currently {V:1}1{C:inactive}, {V:2}2{C:inactive}, {V:3}3{C:inactive}, {V:4}4{C:inactive}, {V:5}5{C:inactive}, {V:6}6{C:inactive},",
+						-- "{V:7}7{C:inactive}, {V:8}8{C:inactive}, {V:9}9{C:inactive}, {V:10}10{C:inactive}, and #1#)",
+						"{C:inactive}({V:1}1{C:inactive}, {V:2}2{C:inactive}, {V:3}3{C:inactive}, {V:4}4{C:inactive}, {V:5}5{C:inactive}, {V:6}6{C:inactive}, {V:7}7{C:inactive}, {V:8}8{C:inactive}, {V:9}9{C:inactive}, {V:10}10{C:inactive})",
 					},
 					{
 						"At end of round, {C:attention}rotate",
-						"this {C:attention}Joker{}'s {C:spectral}prepared{} consumable"
+						"this {C:attention}Joker{}'s consumable"
 					},
 				},
 			},
@@ -828,7 +829,7 @@ return {
 					"{C:inactive,s:0.8}(While it's prepared, you may",
 					"{C:inactive,s:0.8}use a copy of its consumable,",
 					"{C:inactive,s:0.8}doing so unprepares it)",
-					"{C:inactive}(Currently #1#)"
+					-- "{C:inactive}(Currently #1#)"
 				},
 			},
 			j_mf_mathemagics = {
@@ -2051,6 +2052,7 @@ return {
 			k_gift_ex = "Gift!",
 			k_prepared = "prepared",
 			k_unprepared = "unprepared",
+			k_not_prepared = "not prepared",
 			k_prepared_ex = "Prepared!",
 			k_rotated_ex = "Rotated!",
 
