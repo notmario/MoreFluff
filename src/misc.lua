@@ -434,7 +434,7 @@ end
 local guidefcardhpopup = G.UIDEF.card_h_popup
 function G.UIDEF.card_h_popup(card)
 	local ret_val = guidefcardhpopup(card)
-	if not card.config.center.prepared_card then return ret_val end
+	if not card.config.center or not card.config.center.prepared_card then return ret_val end
 	local dummy_card = get_dummy(G.P_CENTERS[card.config.center.prepared_card], G.consumeables, card)
 	local prepared_card = Card.generate_UIBox_ability_table(dummy_card)
 	local target = ret_val.nodes[1].nodes[1].nodes[1].nodes[2]
