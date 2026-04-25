@@ -695,6 +695,26 @@ return {
 					"{C:attention}Cryptic{} when {C:attention}Boss Blind{} is defeated"
 				},
 			},
+			j_mf_emeritus_lore = {
+				name = "Emeritus of Lore",
+				text = {
+					-- "This Joker starts {C:spectral}prepared{}",
+					{
+						"Whenever you buy a {C:attention}Joker{} of",
+						"{C:attention}seven{} unique {C:gold}buy values{} from",
+						"{C:gold}$1{} to {C:gold}$10{}, {C:spectral}prepare{} this Joker",
+						"{C:inactive,s:0.8}(While it's prepared, you may",
+						"{C:inactive,s:0.8}use a copy of its consumable,",
+						"{C:inactive,s:0.8}doing so unprepares it)",
+						"{C:inactive}(Currently {V:1}1{C:inactive}, {V:2}2{C:inactive}, {V:3}3{C:inactive}, {V:4}4{C:inactive}, {V:5}5{C:inactive}, {V:6}6{C:inactive},",
+						"{V:7}7{C:inactive}, {V:8}8{C:inactive}, {V:9}9{C:inactive}, {V:10}10{C:inactive}, and #1#)",
+					},
+					{
+						"At end of round, {C:attention}rotate",
+						"this {C:attention}Joker{}'s {C:spectral}prepared{} consumable"
+					},
+				},
+			},
 			j_mf_gentlemelon = {
 				name = "Gentlemelon",
 				text = {
@@ -2032,6 +2052,7 @@ return {
 			k_prepared = "prepared",
 			k_unprepared = "unprepared",
 			k_prepared_ex = "Prepared!",
+			k_rotated_ex = "Rotated!",
 
 			k_timetravel_ex = "Time travel!",
 			k_plus_ankh = "+Ankh",

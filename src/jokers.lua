@@ -106,6 +106,7 @@ FLUFF.joker_pool = {
 	"applefriends",
 	"bonussheet",
 	"crypticmod",
+	"emeritus_lore",
 	"gentlemelon",
 	"icecube",
 	"jokerreacts",

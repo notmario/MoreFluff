@@ -325,6 +325,14 @@ end
 
 -- prepared
 
+function FLUFF.get_prepared_card(card)
+	if not card.config.center.prepared_card then return "c_death" end
+	if type(card.config.center.prepared_card) == "function" then
+		return card.config.center.prepared_card(card)
+	end
+	return card.config.center.prepared_card
+end
+
 -- kms but whatever
 -- heavily stripped down slib function
 local function get_dummy(center, area, self, silent)
@@ -435,9 +443,8 @@ local guidefcardhpopup = G.UIDEF.card_h_popup
 function G.UIDEF.card_h_popup(card)
 	local ret_val = guidefcardhpopup(card)
 	if not card.config.center or not card.config.center.prepared_card then return ret_val end
-	local dummy_card = get_dummy(G.P_CENTERS[card.config.center.prepared_card], G.consumeables, card)
+	local dummy_card = get_dummy(G.P_CENTERS[FLUFF.get_prepared_card(card)], G.consumeables, card)
 	local prepared_card = Card.generate_UIBox_ability_table(dummy_card)
-	local target = ret_val.nodes[1].nodes[1].nodes[1].nodes[2]
 
 	local card_type = localize('k_'..string.lower(dummy_card.ability.set))
 	local card_type_colour = get_type_colour(dummy_card.config.center or dummy_card.config, dummy_card)
@@ -448,6 +455,17 @@ function G.UIDEF.card_h_popup(card)
 
 	local prep_badge = create_badge(card_type, card_type_colour, card_type_text_colour, 1.2)
 
+	local targets = {}
+	local last_node = nil
+	for i, node in ipairs(ret_val.nodes[1].nodes[1].nodes[1].nodes) do
+		if i == #ret_val.nodes[1].nodes[1].nodes[1].nodes then
+			last_node = node
+		elseif i > 1 then
+			targets[#targets+1] = node
+		end
+	end
+	-- ret_val.nodes[1].nodes[1].nodes[1].nodes[2]
+
 	-- ui by sleepy
 	local new_nodes = {
 		n = G.UIT.R,
@@ -455,9 +473,7 @@ function G.UIDEF.card_h_popup(card)
 			{
 				n = G.UIT.C,
 				config={align = "cm", padding = 0.07,},
-				nodes = {
-					target -- jonkler
-				}
+				nodes = targets
 			},
 			{
 				n = G.UIT.C,
@@ -471,6 +487,11 @@ function G.UIDEF.card_h_popup(card)
 		}
 	}
 	ret_val.nodes[1].nodes[1].nodes[1].nodes[2] = new_nodes
+	local len = #ret_val.nodes[1].nodes[1].nodes[1].nodes
+	for i = 3,len do
+		ret_val.nodes[1].nodes[1].nodes[1].nodes[i] = nil
+	end
+	ret_val.nodes[1].nodes[1].nodes[1].nodes[3] = last_node
     -- table.insert(target, #target+1, name_from_rows(prepared_card.name))
     -- table.insert(target, #target+1, desc_from_rows(prepared_card.main))
 	return ret_val
@@ -478,7 +499,7 @@ end
 
 G.FUNCS["mf_can_use_prepared"] = function(e)
 	local card = e.config.ref_table
-	local dummy_card = get_dummy(G.P_CENTERS[card.config.center.prepared_card], G.consumeables, card)
+	local dummy_card = get_dummy(G.P_CENTERS[FLUFF.get_prepared_card(card)], G.consumeables, card)
 	if card.ability.extra.is_prepared and Card.can_use_consumeable(dummy_card) then
 		e.config.colour = G.C.PURPLE
 		e.config.button = "mf_use_prepared"
@@ -496,7 +517,7 @@ G.FUNCS["mf_use_prepared"] = function(e)
 		delay = 0.15,
 		func = function()
 			SMODS.add_card {
-				key = card.config.center.prepared_card,
+				key = FLUFF.get_prepared_card(card),
 				area = G.play
 			}
 			return true
