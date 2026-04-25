@@ -29,12 +29,12 @@ SMODS.Joker {
 		if context.setting_blind and (#card.ability.extra.round_hands > 0) then
 			card.ability.extra.round_hands = {}
 			return {
-				message = "k_reset",
+				message = localize "k_reset",
 				colour = G.C.RED,
 			}
 		end
         if context.before then
-            if (#context.scoring_hand > 3) and not card.ability.extra.round_hands[context.scoring_name] then
+            if (#context.scoring_hand >= 3) and not card.ability.extra.round_hands[context.scoring_name] then
 				card.ability.extra.round_hands[context.scoring_name] = "asdf"
 				card.ability.extra.round_hands[#card.ability.extra.round_hands + 1] = "asdf"
 				if (#card.ability.extra.round_hands == 3) and not card.ability.extra.is_prepared then
