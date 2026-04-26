@@ -18,5 +18,6 @@ assert(SMODS.load_file("src/superboss.lua"))()
 assert(SMODS.load_file("src/uibadge.lua"))()
 assert(SMODS.load_file("src/modpageui.lua"))()
 assert(SMODS.load_file("src/misc.lua"))()
+assert(SMODS.load_file("src/prepared.lua"))()
 
 assert(SMODS.load_file("src/mod_calculate.lua"))()

@@ -848,6 +848,22 @@ return {
 					-- "{C:inactive}(Currently #1#)"
 				},
 			},
+			j_mf_emeritus_growth = {
+				name = "Emeritus of Growth",
+				text = {
+					{
+						"gurt",
+					},
+					{
+						"When you use this {C:attention}Joker{}'s",
+						"consumable, permanently gain",
+						"{C:attention}+1{} hand size"
+					}
+					-- "This Joker starts {C:spectral}prepared{}",
+					
+					-- "{C:inactive}(Currently #1#)"
+				},
+			},
 			j_mf_mathemagics = {
 				name = "Mathemagics",
 				text = {
