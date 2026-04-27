@@ -9,7 +9,7 @@ SMODS.Joker {
 		},
 	},
 	prepared_card = "c_emperor",
-	pos = { x = 0, y = 0 },
+	pos = { x = 7, y = 12 },
 	rarity = 2,
 	cost = 8,
 	unlocked = true,
