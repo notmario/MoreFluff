@@ -116,6 +116,7 @@ FLUFF.joker_pool = {
 	"retrigger_joker",
 	"aheartofcold",
 	-- "emeritus_growth",
+	-- "emeritus_eternity",
 	"emeritus_eventuality",
 	"mathemagics",
 

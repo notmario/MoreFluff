@@ -846,6 +846,16 @@ return {
 					}
 				},
 			},
+			-- j_mf_emeritus_eternity = {
+			-- 	name = "Emeritus of Eternity",
+			-- 	text = {
+			-- 		"This Joker starts {C:spectral}prepared{}",
+			-- 		"{C:inactive,s:0.8}(While it's prepared, you may",
+			-- 		"{C:inactive,s:0.8}use a copy of its consumable,",
+			-- 		"{C:inactive,s:0.8}doing so unprepares it)",
+			-- 		-- "{C:inactive}(Currently #1#)"
+			-- 	},
+			-- },
 			j_mf_emeritus_eventuality = {
 				name = "Emeritus of Inevitability",
 				text = {
