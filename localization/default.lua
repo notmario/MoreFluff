@@ -732,6 +732,18 @@ return {
 					}
 				},
 			},
+			j_mf_emeritus_variety = {
+				name = "Emeritus of Variety",
+				text = {
+					-- "This Joker starts {C:spectral}prepared{}",
+					"Each time you sell {C:attention}four{}",
+					"cards, {C:spectral}prepare{} this Joker",
+					"{C:inactive,s:0.8}(While it's prepared, you may",
+					"{C:inactive,s:0.8}use a copy of its consumable,",
+					"{C:inactive,s:0.8}doing so unprepares it)",
+					"{C:inactive}(Currently #1#/4)"
+				},
+			},
 			j_mf_gentlemelon = {
 				name = "Gentlemelon",
 				text = {

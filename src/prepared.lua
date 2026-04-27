@@ -207,7 +207,7 @@ end
 
 G.FUNCS["mf_can_use_prepared"] = function(e)
 	local card = e.config.ref_table
-	local dummy_card = get_dummy(G.P_CENTERS[FLUFF.get_prepared_card(card)], G.consumeables, card)
+	local dummy_card = get_dummy(G.P_CENTERS[FLUFF.get_prepared_card(card)], nil, card)
 	if card.ability.extra.is_prepared and Card.can_use_consumeable(dummy_card) then
 		e.config.colour = G.C.PURPLE
 		e.config.button = "mf_use_prepared"
