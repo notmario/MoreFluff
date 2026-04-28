@@ -106,6 +106,7 @@ FLUFF.joker_pool = {
 	"applefriends",
 	"bonussheet",
 	"crypticmod",
+	"emeritus_decay",
 	"emeritus_lore",
 	"emeritus_rebirth",
 	"emeritus_variety",

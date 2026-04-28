@@ -695,6 +695,20 @@ return {
 					"{C:attention}Cryptic{} when {C:attention}Boss Blind{} is defeated"
 				},
 			},
+			j_mf_emeritus_decay = {
+				name = "Emeritus of Decay",
+				text = {
+					-- "This Joker starts {C:spectral}prepared{}",
+					{
+						"Whenever you add a {C:attention}playing",
+						"{C:attention}card{} to your deck,",
+						"{C:spectral}prepare{} this Joker",
+						"{C:inactive,s:0.8}(While it's prepared, you may",
+						"{C:inactive,s:0.8}use a copy of its consumable,",
+						"{C:inactive,s:0.8}doing so unprepares it)",
+					},
+				},
+			},
 			j_mf_emeritus_lore = {
 				name = "Emeritus of Lore",
 				text = {
