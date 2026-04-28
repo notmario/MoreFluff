@@ -116,8 +116,6 @@ FLUFF.joker_pool = {
 	"refrigerator",
 	"retrigger_joker",
 	"aheartofcold",
-	-- "emeritus_growth",
-	-- "emeritus_eternity",
 	"emeritus_eventuality",
 	"mathemagics",
 
@@ -173,6 +171,10 @@ FLUFF.hidden_joker_pool = {
 	"virtual",
 	"impostor",
 	"coupon_catalogue",
+
+	-- scrapped during rewrite
+	"emeritus_growth",
+	"emeritus_eternity",
 
 	-- lettergem mentioned
 	"lettergem_a",

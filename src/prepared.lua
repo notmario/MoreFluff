@@ -122,8 +122,14 @@ function G.UIDEF.card_h_popup(card)
 	local prepared_card = Card.generate_UIBox_ability_table(dummy_card)
 
 	local card_type = localize('k_'..string.lower(dummy_card.ability.set))
+	if card.config.center.force_prep_card_type then
+		card_type = localize('k_'..string.lower(card.config.center.force_prep_card_type))
+	end
 	local card_type_colour = get_type_colour(dummy_card.config.center or dummy_card.config, dummy_card)
 	local card_type_text_colour = SMODS.get_card_type_text_colour(prepared_card.card_type, dummy_card.config.center or dummy_card.config, dummy_card)
+	if card.config.center.force_prep_card_type then
+		card_type_colour = G.C.SECONDARY_SET[card.config.center.force_prep_card_type]
+	end
 	local card_type_background = 
 		(card_type_colour and darken(G.C.BLACK, 0.1)) or
 		G.C.SET[prepared_card.card_type]
@@ -246,6 +252,15 @@ G.FUNCS["mf_use_prepared"] = function(e)
 	}))
 
 	card.ability.extra.is_prepared = false
+
+	G.E_MANAGER:add_event(Event({
+		trigger = "after",
+		delay = 0.15,
+		func = function()
+			SMODS.calculate_context { mf_used_prepared = true, card = card }
+			return true
+		end,
+	}))
 end
 
 -- modified from entropy

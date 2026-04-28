@@ -860,16 +860,6 @@ return {
 					}
 				},
 			},
-			-- j_mf_emeritus_eternity = {
-			-- 	name = "Emeritus of Eternity",
-			-- 	text = {
-			-- 		"This Joker starts {C:spectral}prepared{}",
-			-- 		"{C:inactive,s:0.8}(While it's prepared, you may",
-			-- 		"{C:inactive,s:0.8}use a copy of its consumable,",
-			-- 		"{C:inactive,s:0.8}doing so unprepares it)",
-			-- 		-- "{C:inactive}(Currently #1#)"
-			-- 	},
-			-- },
 			j_mf_emeritus_eventuality = {
 				name = "Emeritus of Inevitability",
 				text = {
@@ -881,22 +871,6 @@ return {
 					"{C:inactive,s:0.8}(While it's prepared, you may",
 					"{C:inactive,s:0.8}use a copy of its consumable,",
 					"{C:inactive,s:0.8}doing so unprepares it)",
-					-- "{C:inactive}(Currently #1#)"
-				},
-			},
-			j_mf_emeritus_growth = {
-				name = "Emeritus of Growth",
-				text = {
-					{
-						"gurt",
-					},
-					{
-						"When you use this {C:attention}Joker{}'s",
-						"consumable, permanently gain",
-						"{C:attention}+1{} hand size"
-					}
-					-- "This Joker starts {C:spectral}prepared{}",
-					
 					-- "{C:inactive}(Currently #1#)"
 				},
 			},
@@ -1222,6 +1196,50 @@ return {
 					"{C:attention}Voucher{} purchased",
 					"this run",
 					"{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)",
+				},
+			},
+
+			-- new scrapped
+			j_mf_emeritus_eternity = {
+				name = "Emeritus of Eternity",
+				text = {
+					{
+						"This Joker starts {C:spectral}prepared{}",
+						"{C:inactive,s:0.8}(While it's prepared, you may",
+						"{C:inactive,s:0.8}use a copy of its voucher,",
+						"{C:inactive,s:0.8}doing so unprepares it. This",
+						"{C:inactive,s:0.8}doesn't redeem the voucher)",
+					},
+					{
+						"When you use this {C:attention}Joker{}'s",
+						"voucher, gain {C:blue}+1{} hand each round",
+					},
+					{
+						"When you select {C:attention}five{} blinds,",
+						"{C:spectral}prepare{} this {C:attention}Joker{}",
+						"{C:inactive}(Currently #1#/5)"
+					}
+				},
+			},
+			j_mf_emeritus_growth = {
+				name = "Emeritus of Growth",
+				text = {
+					{
+						"When a {C:attention}Blind{} is defeated,",
+						"this {C:attention}Joker{} gains {C:attention}1{} count",
+						"for each empty Joker Slot.",
+						"When it reaches {C:attention}20{}, reset",
+						"and {C:spectral}prepare{} this {C:attention}Joker{}",
+						"{C:inactive,s:0.8}(While it's prepared, you may",
+						"{C:inactive,s:0.8}use a copy of its consumable,",
+						"{C:inactive,s:0.8}doing so unprepares it)",
+						"{C:inactive}(Currently #1#/20)"
+					},
+					{
+						"When you use this {C:attention}Joker{}'s",
+						"consumable, revert the",
+						"hand size penalty"
+					},
 				},
 			},
 
@@ -1780,6 +1798,14 @@ return {
 					"{C:inactive}(Currently {C:attention}#1#{C:inactive}, {}[{C:attention,f:mf_emoji}#2#{C:inactive,f:mf_emoji}#3#{}]{C:inactive})",
 				},
 			},
+            c_mf_fake_ass_hieroglyph = {
+                name = "Hieroglyph",
+                text = {
+                    "{C:attention}-1{} Ante,",
+                    "{C:blue}-1{} hand",
+                    "each round",
+                },
+            },
 		},
 		Enhanced = {
 			m_mf_yucky = {
