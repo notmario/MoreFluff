@@ -8,7 +8,7 @@ SMODS.Joker {
 		},
 	},
 	prepared_card = "c_hanged_man",
-	pos = { x = 0, y = 0 },
+	pos = { x = 8, y = 12 },
 	rarity = 2,
 	cost = 8,
 	unlocked = true,
