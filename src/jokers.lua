@@ -120,6 +120,7 @@ FLUFF.joker_pool = {
 	"mathemagics",
 
 	-- rot legendary
+	"rot_triangle",
 	"rot_marigold",
 }
 
