@@ -888,9 +888,18 @@ return {
 			j_mf_rot_triangle = {
 				name = "{E:mf_rotarot_title}Triangle!",
 				text = {
-					"Each time a {C:attention}Joker{} would {C:green,E:1}scale{},",
-					"{C:red}prevent it{}, and level up",
-					"{C:attention}Three of a Kind{} instead",
+					{
+						"Each time a {C:attention}Joker{} {C:green,E:1}scales{},",
+						"{C:red}prevent it{}, and level up",
+						"{C:attention}Three of a Kind{} instead",
+					},
+					{
+						"If it was the first time",
+						"this ability triggered",
+						"this round, level it up",
+						"{C:attention}three times{} instead",
+						"{C:inactive}(Currently #1#)"
+					}
 				},
 			},
 			j_mf_rot_marigold = {
@@ -2155,6 +2164,7 @@ return {
 			k_prepared = "prepared",
 			k_unprepared = "unprepared",
 			k_not_prepared = "not prepared",
+			k_inactive = "inactive",
 			k_prepared_ex = "Prepared!",
 			k_rotated_ex = "Rotated!",
 
