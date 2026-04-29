@@ -889,7 +889,7 @@ return {
 				name = "{E:mf_rotarot_title}Triangle!",
 				text = {
 					"Each time a {C:attention}Joker{} would {C:green,E:1}scale{},",
-					"prevent it, and level up",
+					"{C:red}prevent it{}, and level up",
 					"{C:attention}Three of a Kind{} instead",
 				},
 			},
