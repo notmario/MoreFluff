@@ -26,7 +26,7 @@ SMODS.Joker({
 local ssc = SMODS.scale_card
 function SMODS.scale_card(card, ...)
     if next(SMODS.find_card("j_mf_rot_triangle")) then
-        for _, card in pairs(SMODS.find_card("j_mf_rot_triangle")) do
+        for _, other_card in pairs(SMODS.find_card("j_mf_rot_triangle")) do
             SMODS.smart_level_up_hand(card, "Three of a Kind", false, 1, nil)
         end
         return nil
