@@ -885,6 +885,24 @@ return {
 			},
 
 			-- rot legendaries
+			j_mf_rot_triboulet = {
+				name = "{E:mf_rotarot_title}Triboulet!",
+				text = {
+					{
+						"Non-{C:attention}King{} or {C:attention}Queen{} cards",
+						"{C:spectral,E:1}score{} held {C:attention}Kings{} and {C:attention}Queens{}",
+						"when played and scored",
+						"{C:inactive,s:0.8}(They trigger all effects",
+						"{C:inactive,s:0.8}as if they were played)",
+					},
+					{
+						"Held {C:attention}Kings{} and {C:attention}Queens{} give",
+						"{X:mult,C:white}X1.5{} Mult when scored for",
+						"each played {C:attention}King{} or {C:attention}Queen{},",
+						"and then once more"
+					}
+				},
+			},
 			j_mf_rot_triangle = {
 				name = "{E:mf_rotarot_title}Triangle!",
 				text = {
