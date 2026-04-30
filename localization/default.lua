@@ -903,6 +903,11 @@ return {
 					}
 				},
 			},
+			j_mf_rot_perkeo = {
+				name = "{E:mf_rotarot_title}Perkeo!",
+				text = {
+				},
+			},
 			j_mf_rot_triangle = {
 				name = "{E:mf_rotarot_title}Triangle!",
 				text = {
@@ -915,7 +920,9 @@ return {
 						"If it was the first time",
 						"this ability triggered",
 						"this round, level it up",
-						"{C:attention}three times{} instead",
+						"{C:attention}#2#{} times instead, then",
+						"by one more level for",
+						"every {C:attention}#3#{} levels it had",
 						"{C:inactive}(Currently #1#)"
 					}
 				},

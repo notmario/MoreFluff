@@ -5,6 +5,8 @@ SMODS.Joker({
 	config = {
 		extra = {
 			first_proc = true,
+			last_ability = 3,
+			last_ability_per = 7,
 		}
 	},
 	pos = { x = 5, y = 10 },
@@ -20,7 +22,7 @@ SMODS.Joker({
 	attributes = { "hand_type", },
 	loc_vars = function(self, info_queue, center)
 	    return {
-	        vars = { center.ability.extra.first_proc and (localize "k_active") or (localize "k_inactive") }
+	        vars = { center.ability.extra.first_proc and (localize "k_active") or (localize "k_inactive"), center.ability.extra.last_ability, center.ability.extra.last_ability_per }
 	    }
 	end,
 	calculate = function(self, card, context)
@@ -40,10 +42,18 @@ local ssc = SMODS.scale_card
 function SMODS.scale_card(card, ...)
     if card.ability and card.ability.set == "Joker" and next(SMODS.find_card("j_mf_rot_triangle")) then
         for _, other_card in pairs(SMODS.find_card("j_mf_rot_triangle")) do
+			G.E_MANAGER:add_event(Event({
+				func = function()
+					other_card:juice_up()
+					return true
+				end
+			}))
 			if other_card.ability.extra.first_proc then
 				other_card.ability.extra.first_proc = false
 				-- lol ?
-				SMODS.smart_level_up_hand(card, "Three of a Kind", false, 3, nil)
+				local levels = other_card.ability.extra.last_ability
+				levels = levels + math.floor(G.GAME.hands["Three of a Kind"].level / other_card.ability.extra.last_ability_per)
+				SMODS.smart_level_up_hand(card, "Three of a Kind", false, levels, nil)
 			else
             	SMODS.smart_level_up_hand(card, "Three of a Kind", false, 1, nil)
 			end
