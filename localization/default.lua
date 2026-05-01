@@ -903,6 +903,15 @@ return {
 					}
 				},
 			},
+			j_mf_rot_chicot = {
+				name = "{E:mf_rotarot_title}Chicot!",
+				text = {
+					"Disable the {C:attention}Boss Blind",
+					"and reduce the blind",
+					"size by {X:purple,C:white}X#1#{} each time",
+					"a {C:attention}Two Pair{} is discarded",
+				},
+			},
 			j_mf_rot_perkeo = {
 				name = "{E:mf_rotarot_title}Perkeo!",
 				text = {
