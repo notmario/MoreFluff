@@ -2113,6 +2113,18 @@ return {
 					"{C:dark_edition}Loyalty{} cannot go below 0.",
 				},
 			},
+			mf_heavy = {
+				name = "Heavy",
+				text = {
+				  	"-1 {C:red}Discard{} selection limit"
+				},
+			},
+			mf_potato = {
+				name = "Potato",
+				text = {
+				  	"Must be sold first"
+				},
+			},
 		},
 		Voucher = {
 			v_mf_paintroller = {
@@ -2144,6 +2156,79 @@ return {
 						"skipping until ante end",
 					},
 				},
+			},
+		},
+		Stake = {
+			stake_mf_pink = {
+				name = "Pink Stake",
+				text = {
+					"The second {C:attention}Booster Pack{}",
+					"will always be a {C:attention}Standard Pack{}",
+					"{s:0.8}Applies all previous Stakes",
+				}
+			},
+			stake_mf_lime = {
+				name = "Lime Stake",
+				text = {
+					"Required score scales",
+					"faster for each {C:attention}Ante",
+					"{s:0.8}Applies all previous Stakes",
+				}
+			},
+			stake_mf_steel = {
+				name = "Steel Stake",
+				text = {
+					"Shop can have {C:attention}Heavy{} Jokers",
+					"{C:inactive,s:0.8}(-1 Discard selection limit)",
+					"{s:0.8}Applies all previous Stakes",
+				}
+			},
+			stake_mf_zodiac = {
+				name = "Zodiac Stake",
+				text = {
+					"Start run with {C:attention}Planet Merchant{},",
+					"{C:attention}Tarot Merchant{}, and {C:attention}Magic Trick",
+					"{s:0.8}Applies all previous Stakes",
+				}
+			},
+			stake_mf_hot = {
+				name = "Hot Stake",
+				text = {
+					"Shop can have {C:attention}Potato{} Jokers",
+					"{C:inactive,s:0.8}(Must be sold first)",
+					"{s:0.8}Applies all previous Stakes",
+				}
+			},
+			stake_mf_accelerated = {
+				name = "Accelerated Stake",
+				text = {
+					"Required score scales much",
+					"faster for each {C:attention}Ante",
+					"{s:0.8}Applies all previous Stakes",
+					"{s:0.8}art by Aikoyori",
+				}
+			},
+			stake_mf_cardboard = {
+				name = "Cardboard Stake",
+				text = {
+					"{C:uncommon}Uncommon{} and {C:rare}Rare{} jokers",
+					"are {C:attention}2x{} less likely to spawn",
+					"{s:0.8}Applies all previous Stakes",
+				}
+			},
+			stake_mf_violet = {
+				name = "Violet Stake",
+				text = {
+					"Ante 4 has a {C:dark_edition}Showdown",
+					"{s:0.8}Applies all previous Stakes",
+				}
+			},
+			stake_mf_jimbo = {
+				name = "Jimbo Stake",
+				text = {
+					"+1 Win {C:attention}Ante",
+					"{s:0.8}Applies all previous Stakes",
+				}
 			},
 		},
 		Tag = {
@@ -2186,6 +2271,8 @@ return {
 			mf_superlegendary = "Superlegendary",
 			mf_rot_legendary = "Legendary!",
 			mf_cryptic = "Cryptic",
+			mf_heavy = "Heavy",
+			mf_potato = "Potato",
 		},
 		dictionary = {
 			k_mf_token = "Token",

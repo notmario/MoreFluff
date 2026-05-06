@@ -118,3 +118,17 @@ SMODS.Font({
 	key = "emoji",
 	path = "NotoEmoji-Bold.ttf",
 })
+
+SMODS.Atlas { 
+	key = "mf_stake_stickers", 
+	atlas_table = "ASSET_ATLAS", 
+	path = "mf_stake_stickers.png", 
+	px = 71, 
+	py = 95 
+}
+SMODS.Atlas {
+	key = "mf_stakes",
+	path = "mf_stakes.png",
+	px = 29,
+	py = 29
+}
