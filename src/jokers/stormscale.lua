@@ -29,13 +29,13 @@ SMODS.Joker {
 	calculate = function(self, card, context)
         if (context.buying_card and context.card ~= card) or (context.open_booster) and not context.blueprint then
             card.ability.extra.purchases = card.ability.extra.purchases + 1
-            if math.fmod(card.ability.extra.purchases, center.ability.extra.purchases_required) < 0.01 then
+            if math.fmod(card.ability.extra.purchases, card.ability.extra.purchases_required) < 0.01 then
                 return {
                     message = localize "k_upgrade_ex"
                 }
             else
                 return {
-                    message = math.fmod(card.ability.extra.purchases, center.ability.extra.purchases_required) .. "/" .. center.ability.extra.purchases_required
+                    message = math.fmod(card.ability.extra.purchases, card.ability.extra.purchases_required) .. "/" .. card.ability.extra.purchases_required
                 }
             end
         end
