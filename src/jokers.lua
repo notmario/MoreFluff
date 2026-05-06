@@ -118,6 +118,7 @@ FLUFF.joker_pool = {
 	"aheartofcold",
 	"emeritus_eventuality",
 	"mathemagics",
+	"stormscale",
 
 	-- rot legendary
 	"rot_triboulet",

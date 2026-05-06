@@ -883,6 +883,22 @@ return {
 					"resets when triggered"
 				},
 			},
+			j_mf_stormscale = {
+				name = "Stormscale Scion",
+				text = {
+					{
+						"{X:mult,C:white}X#1#{} Mult",
+					},
+					{
+						"At end of shop, create a {C:dark_edition}Negative{}",
+						"copy of this {C:attention}Joker{} for every {C:attention}#3#{}",
+						"purchases, rerolls or packs",
+						"opened in the shop",
+						"{C:red}Destroy{} them at end of round",
+						"{C:inactive}(Currently #4# copies)"
+					}
+				},
+			},
 
 			-- rot legendaries
 			j_mf_rot_triboulet = {
