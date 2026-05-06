@@ -5,11 +5,11 @@ SMODS.Joker {
 	config = {
         extra = {
             xmult = 1.5,
-            purchases_required = 3,
+            purchases_required = 2,
             purchases = 0,
         }
     },
-	pos = { x = 0, y = 0 },
+	pos = { x = 9, y = 12 },
 	rarity = 3,
 	cost = 10,
 	unlocked = true,
