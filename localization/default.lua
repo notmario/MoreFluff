@@ -892,8 +892,7 @@ return {
 					{
 						"At end of shop, create a {C:dark_edition}Negative{}",
 						"copy of this {C:attention}Joker{} for every {C:attention}#3#{}",
-						"purchases, rerolls or packs",
-						"opened in the shop",
+						"purchases or packs opened in the shop",
 						"{C:red}Destroy{} them at end of round",
 						"{C:inactive}(Currently #4# copies)"
 					}
