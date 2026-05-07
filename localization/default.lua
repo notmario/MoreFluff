@@ -675,6 +675,20 @@ return {
 					"{C:inactive}(Currently {C:chips}#2#{} {C:inactive}Chips)"
 				},
 			},
+			j_mf_gemalert = {
+				name = "Gem Alert",
+				text = {
+					{
+						"{C:rare}Rare{} Jokers are {X:spectral,C:white}X#3#{} as common"
+					},
+					{
+						"This Joker gains {X:mult,C:white}X#1#{} Mult",
+						"when a {C:rare}Rare{} or {C:dark_edition}Editioned{}",
+						"Joker appears in the Shop",
+						"{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive} Mult)"
+					}
+				},
+			},
 			j_mf_applefriends = {
 				name = "\"Apple Friends \"",
 				text = {

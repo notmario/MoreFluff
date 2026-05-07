@@ -103,6 +103,7 @@ FLUFF.joker_pool = {
 	-- new update jokers
 	"lonewolf",
 	"bouncer",
+
 	"applefriends",
 	"bonussheet",
 	"crypticmod",
@@ -110,11 +111,13 @@ FLUFF.joker_pool = {
 	"emeritus_lore",
 	"emeritus_rebirth",
 	"emeritus_variety",
+	"gemalert",
 	"gentlemelon",
 	"icecube",
 	"jokerreacts",
 	"refrigerator",
 	"retrigger_joker",
+
 	"aheartofcold",
 	"emeritus_eventuality",
 	"mathemagics",

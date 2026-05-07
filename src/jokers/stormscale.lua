@@ -39,7 +39,7 @@ SMODS.Joker {
                 }
             end
         end
-        if context.ending_shop and not context.blueprint then
+        if context.ending_shop and not context.blueprint and card.ability.extra.purchases >= card.ability.extra.purchases_required then
             for i = 1, math.floor(card.ability.extra.purchases / card.ability.extra.purchases_required) do
                 G.E_MANAGER:add_event(Event({
                     func = function()
