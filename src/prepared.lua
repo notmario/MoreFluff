@@ -119,7 +119,10 @@ function G.UIDEF.card_h_popup(card)
 	local ret_val = guidefcardhpopup(card)
 	if not card.config.center or not card.config.center.prepared_card then return ret_val end
 	local dummy_card = get_dummy(G.P_CENTERS[FLUFF.get_prepared_card(card)], G.consumeables, card)
+
+	FLUFF.force_no_info_queue = true
 	local prepared_card = Card.generate_UIBox_ability_table(dummy_card)
+	FLUFF.force_no_info_queue = nil
 
 	local card_type = localize('k_'..string.lower(dummy_card.ability.set))
 	if card.config.center.force_prep_card_type then
