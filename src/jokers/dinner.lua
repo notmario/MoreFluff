@@ -13,7 +13,7 @@ SMODS.Joker({
 	unlocked = true,
 	discovered = true,
 	blueprint_compat = true,
-	eternal_compat = true,
+	eternal_compat = false,
 	perishable_compat = false,
 	attributes = { "retrigger", "joker", "food", },
 	loc_vars = function(self, info_queue, center)
