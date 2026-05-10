@@ -2,24 +2,25 @@ local is_k_or_q = function(card)
 	return (card:get_id() == 12) or (card:get_id() == 13)
 end
 SMODS.Joker({
-	key = "rot_triboulet",
-	name = "Triboulet!",
-	atlas = "mf_jokers",
+	key = "old_rot_triboulet",
+	name = "Triboulet!?",
 	config = {
 		extra = {
 			xmult = 1.5
 		}
 	},
-	pos = { x = 1, y = 10 },
-	soul_pos = { x = 1, y = 11 },
+	pos = { x = 0, y = 6 },
+	-- soul_pos = { x = 1, y = 11 },
 	mf_rotate_by = math.pi / 4,
-	rarity = "mf_rot_legendary",
+	atlas = "mf_oldfluff",
+	rarity = "mf_oldfluff",
 	cost = 20,
 	unlocked = true,
 	discovered = true,
 	blueprint_compat = true,
 	eternal_compat = true,
 	perishable_compat = true,
+	no_collection = true,
 	attributes = { "xmult", "rank", "king", "queen", },
 	loc_vars = function(self, info_queue, center)
 	    return {

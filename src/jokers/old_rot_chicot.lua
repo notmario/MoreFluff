@@ -1,22 +1,23 @@
 SMODS.Joker({
-	key = "rot_chicot",
-	name = "Chicot!",
-	atlas = "mf_jokers",
+	key = "old_rot_chicot",
+	name = "Chicot!?",
 	config = {
 		extra = {
 			xblindsize = 0.5,
 		}
 	},
-	pos = { x = 3, y = 10 },
-	soul_pos = { x = 3, y = 11 },
+	pos = { x = 1, y = 6 },
+	-- soul_pos = { x = 3, y = 11 },
 	mf_rotate_by = math.pi / 4,
-	rarity = "mf_rot_legendary",
+	atlas = "mf_oldfluff",
+	rarity = "mf_oldfluff",
 	cost = 20,
 	unlocked = true,
 	discovered = true,
 	blueprint_compat = true,
 	eternal_compat = true,
 	perishable_compat = true,
+	no_collection = true,
 	attributes = { "xblindsize", "boss_blind" },
 	loc_vars = function(self, info_queue, center)
 	    return {

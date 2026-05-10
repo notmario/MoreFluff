@@ -124,11 +124,11 @@ FLUFF.joker_pool = {
 	"stormscale",
 
 	-- rot legendary
-	"rot_triboulet",
-	"rot_chicot",
+	-- "rot_triboulet",
+	-- "rot_chicot",
 	-- "rot_perkeo",
-	"rot_triangle",
-	"rot_marigold",
+	-- "rot_triangle",
+	-- "rot_marigold",
 }
 
 for _, path in ipairs(FLUFF.joker_pool) do
@@ -183,6 +183,12 @@ FLUFF.hidden_joker_pool = {
 	-- scrapped during rewrite
 	"emeritus_growth",
 	"emeritus_eternity",
+
+	"old_rot_triboulet",
+	"old_rot_chicot",
+	-- "rot_perkeo",
+	"old_rot_triangle",
+	"old_rot_marigold",
 
 	-- lettergem mentioned
 	"lettergem_a",

@@ -914,64 +914,6 @@ return {
 			},
 
 			-- rot legendaries
-			j_mf_rot_triboulet = {
-				name = "{E:mf_rotarot_title}Triboulet!",
-				text = {
-					{
-						"Non-{C:attention}King{} or {C:attention}Queen{} cards",
-						"{C:spectral,E:1}score{} held {C:attention}Kings{} and {C:attention}Queens{}",
-						"when played and scored",
-						"{C:inactive,s:0.8}(They trigger all effects",
-						"{C:inactive,s:0.8}as if they were played)",
-					},
-					{
-						"Held {C:attention}Kings{} and {C:attention}Queens{} give",
-						"{X:mult,C:white}X1.5{} Mult when scored for",
-						"each played {C:attention}King{} or {C:attention}Queen{},",
-						"and then once more"
-					}
-				},
-			},
-			j_mf_rot_chicot = {
-				name = "{E:mf_rotarot_title}Chicot!",
-				text = {
-					"Disable the {C:attention}Boss Blind",
-					"and reduce the blind",
-					"size by {X:purple,C:white}X#1#{} each time",
-					"a {C:attention}Two Pair{} is discarded",
-				},
-			},
-			j_mf_rot_perkeo = {
-				name = "{E:mf_rotarot_title}Perkeo!",
-				text = {
-				},
-			},
-			j_mf_rot_triangle = {
-				name = "{E:mf_rotarot_title}Triangle!",
-				text = {
-					{
-						"Each time a {C:attention}Joker{} {C:green,E:1}scales{},",
-						"{C:red}prevent it{}, and level up",
-						"{C:attention}Three of a Kind{} instead",
-					},
-					{
-						"If it was the first time",
-						"this ability triggered",
-						"this round, level it up",
-						"{C:attention}#2#{} times instead, then",
-						"by one more level for",
-						"every {C:attention}#3#{} levels it had",
-						"{C:inactive}(Currently #1#)"
-					}
-				},
-			},
-			j_mf_rot_marigold = {
-				name = "{E:mf_rotarot_title}Marigold!",
-				text = {
-					"{C:attention}Marigold Cards{} are also considered",
-					"{C:attention}Gold{}, {C:attention}Steel{}, and {C:attention}Glass Cards{}"
-				},
-			},
 
 			-- john
 			j_mf_johnbalatrotrue = {
@@ -1320,6 +1262,65 @@ return {
 						"consumable, revert the",
 						"hand size penalty"
 					},
+				},
+			},
+
+			j_mf_old_rot_triboulet = {
+				name = "{E:mf_rotarot_title}Triboulet!?",
+				text = {
+					{
+						"Non-{C:attention}King{} or {C:attention}Queen{} cards",
+						"{C:spectral,E:1}score{} held {C:attention}Kings{} and {C:attention}Queens{}",
+						"when played and scored",
+						"{C:inactive,s:0.8}(They trigger all effects",
+						"{C:inactive,s:0.8}as if they were played)",
+					},
+					{
+						"Held {C:attention}Kings{} and {C:attention}Queens{} give",
+						"{X:mult,C:white}X1.5{} Mult when scored for",
+						"each played {C:attention}King{} or {C:attention}Queen{},",
+						"and then once more"
+					}
+				},
+			},
+			j_mf_old_rot_chicot = {
+				name = "{E:mf_rotarot_title}Chicot!?",
+				text = {
+					"Disable the {C:attention}Boss Blind",
+					"and reduce the blind",
+					"size by {X:purple,C:white}X#1#{} each time",
+					"a {C:attention}Two Pair{} is discarded",
+				},
+			},
+			j_mf_rot_perkeo = {
+				name = "{E:mf_rotarot_title}Perkeo!",
+				text = {
+				},
+			},
+			j_mf_old_rot_triangle = {
+				name = "{E:mf_rotarot_title}Triangle!?",
+				text = {
+					{
+						"Each time a {C:attention}Joker{} {C:green,E:1}scales{},",
+						"{C:red}prevent it{}, and level up",
+						"{C:attention}Three of a Kind{} instead",
+					},
+					{
+						"If it was the first time",
+						"this ability triggered",
+						"this round, level it up",
+						"{C:attention}#2#{} times instead, then",
+						"by one more level for",
+						"every {C:attention}#3#{} levels it had",
+						"{C:inactive}(Currently #1#)"
+					}
+				},
+			},
+			j_mf_old_rot_marigold = {
+				name = "{E:mf_rotarot_title}Marigold!?",
+				text = {
+					"{C:attention}Marigold Cards{} are also considered",
+					"{C:attention}Gold{}, {C:attention}Steel{}, and {C:attention}Glass Cards{}"
 				},
 			},
 

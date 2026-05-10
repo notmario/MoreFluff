@@ -1,7 +1,6 @@
 SMODS.Joker({
-	key = "rot_triangle",
-	name = "Triangle!",
-	atlas = "mf_jokers",
+	key = "old_rot_triangle",
+	name = "Triangle!?",
 	config = {
 		extra = {
 			first_proc = true,
@@ -9,16 +8,18 @@ SMODS.Joker({
 			last_ability_per = 7,
 		}
 	},
-	pos = { x = 5, y = 10 },
-	soul_pos = { x = 9, y = 5 },
+	pos = { x = 2, y = 6 },
+	-- soul_pos = { x = 9, y = 5 },
 	mf_rotate_by = math.pi / 4,
-	rarity = "mf_rot_legendary",
+	atlas = "mf_oldfluff",
+	rarity = "mf_oldfluff",
 	cost = 20,
 	unlocked = true,
 	discovered = true,
 	blueprint_compat = true,
 	eternal_compat = true,
 	perishable_compat = true,
+	no_collection = true,
 	attributes = { "hand_type", },
 	loc_vars = function(self, info_queue, center)
 	    return {
