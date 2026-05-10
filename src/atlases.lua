@@ -132,3 +132,11 @@ SMODS.Atlas {
 	px = 29,
 	py = 29
 }
+
+SMODS.Atlas { 
+	key = "mf_rot_legendary_consumables", 
+	atlas_table = "ASSET_ATLAS", 
+	path = "mf_rot_legendary_consumables.png", 
+	px = 71, 
+	py = 95 
+}

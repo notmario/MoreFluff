@@ -914,6 +914,18 @@ return {
 			},
 
 			-- rot legendaries
+			j_mf_rot_triangle = {
+				name = "{E:mf_rotarot_title}Triangle!",
+				text = {
+					"This Joker starts {C:spectral}prepared{}",
+					"{C:inactive,s:0.8}(While it's prepared, you may",
+					"{C:inactive,s:0.8}use a copy of its consumable,",
+					"{C:inactive,s:0.8}doing so unprepares it.",
+					"{C:spectral}Prepare{} this Joker at",
+					"end of round if a {C:attention}Three{}",
+					"{C:attention}of a Kind{} was played"
+				},
+			},
 
 			-- john
 			j_mf_johnbalatrotrue = {
@@ -1887,6 +1899,13 @@ return {
                     "each round",
                 },
             },
+            c_mf_refraction = {
+                name = "Refraction",
+                text = {
+                    "Use {C:attention}five{} random {C:colourcard}Colour{}",
+					"cards with one trigger",
+                },
+            },
 		},
 		Enhanced = {
 			m_mf_yucky = {
@@ -2318,6 +2337,7 @@ return {
 			k_inactive = "inactive",
 			k_prepared_ex = "Prepared!",
 			k_rotated_ex = "Rotated!",
+			k_ready_ex = "Ready!",
 
 			k_timetravel_ex = "Time travel!",
 			k_plus_ankh = "+Ankh",

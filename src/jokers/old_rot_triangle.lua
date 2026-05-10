@@ -41,8 +41,8 @@ SMODS.Joker({
 
 local ssc = SMODS.scale_card
 function SMODS.scale_card(card, ...)
-    if card.ability and card.ability.set == "Joker" and next(SMODS.find_card("j_mf_rot_triangle")) then
-        for _, other_card in pairs(SMODS.find_card("j_mf_rot_triangle")) do
+    if card.ability and card.ability.set == "Joker" and next(SMODS.find_card("j_mf_old_rot_triangle")) then
+        for _, other_card in pairs(SMODS.find_card("j_mf_old_rot_triangle")) do
 			G.E_MANAGER:add_event(Event({
 				func = function()
 					other_card:juice_up()

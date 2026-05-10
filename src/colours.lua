@@ -50,6 +50,7 @@ FLUFF.Colour = SMODS.Consumable:extend({
 					break
 				end
 				local eligible_card = pseudorandom_element(temp_pool, rng_seed)
+				if not eligible_card then return nil end
 				blacklist[eligible_card] = true
 				G.E_MANAGER:add_event(Event({
 					trigger = "after",
@@ -495,6 +496,7 @@ FLUFF.Colour({
 
 	colour_effect = function(self, card, area)
 		local eligible_card = pseudorandom_element(G.hand.cards, rng_seed)
+		if not eligible_card then return nil end
 		eligible_card.ability.perma_bonus = (eligible_card.ability.perma_bonus or 0) + card.ability.chips_per
 		G.E_MANAGER:add_event(Event({
 			trigger = "after",
@@ -561,6 +563,7 @@ FLUFF.Colour({
 				break
 			end
 			local eligible_card = pseudorandom_element(temp_pool, rng_seed)
+			if not eligible_card then return nil end
 			blacklist[eligible_card] = true
 			local enh = SMODS.poll_enhancement({ key = "mf_seaweed", guaranteed = true, no_replace = true })
 			G.E_MANAGER:add_event(Event({
@@ -619,6 +622,7 @@ FLUFF.Colour({
 		for _, v in ipairs(G.hand.cards) do
 			temp_hand[#temp_hand + 1] = v
 		end
+		if not temp_hand then return nil end
 		table.sort(temp_hand, function(a, b)
 			return not a.playing_card or not b.playing_card or a.playing_card < b.playing_card
 		end)
@@ -705,6 +709,7 @@ FLUFF.Colour({
 
 	colour_effect = function(self, card, area)
 		local eligible_card = pseudorandom_element(G.hand.cards, rng_seed)
+		if not eligible_card then return nil end
 		eligible_card.ability.perma_mult = (eligible_card.ability.perma_mult or 0) + card.ability.mult_per
 		G.E_MANAGER:add_event(Event({
 			trigger = "after",
@@ -741,6 +746,7 @@ FLUFF.Colour({
 
 	colour_effect = function(self, card, area)
 		local eligible_card = pseudorandom_element(G.hand.cards, rng_seed)
+		if not eligible_card then return nil end
 		eligible_card.ability.perma_repetitions = (eligible_card.ability.perma_repetitions or 0) + 1
 		G.E_MANAGER:add_event(Event({
 			trigger = "after",
