@@ -4,7 +4,7 @@ SMODS.Joker {
 	atlas = "mf_jokers",
 	config = {
 		extra = {
-			is_prepared = false,
+			is_prepared = true,
         },
 	},
 	pos = { x = 4, y = 10 },

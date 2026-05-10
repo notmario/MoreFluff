@@ -917,12 +917,13 @@ return {
 			j_mf_rot_perkeo = {
 				name = "{E:mf_rotarot_title}Perkeo!",
 				text = {
-					"Whenever you play a hand",
-					"with {C:attention}four or more{} suits,",
-					"{C:spectral}prepare{} this Joker",
+					"This Joker starts {C:spectral}prepared{}",
 					"{C:inactive,s:0.8}(While it's prepared, you may",
 					"{C:inactive,s:0.8}use a copy of its consumable,",
 					"{C:inactive,s:0.8}doing so unprepares it.)",
+					"Whenever you play a hand",
+					"with {C:attention}four or more{} suits,",
+					"{C:spectral}prepare{} this Joker",
 				},
 			},
 			j_mf_rot_triangle = {
