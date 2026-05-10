@@ -49,17 +49,17 @@ function Game:draw()
 	end
 end
 
--- SMODS.ScreenShader {
--- 	key = "hypercam_jpeg_kinda",
--- 	path = "hypercam_jpeg_kinda.fs",
--- 	send_vars = function(self)
--- 		local w,h = love.graphics.getDimensions()
--- 		return {
--- 			wquant = 4 / w,
--- 			hquant = 4 / h,
--- 		}
--- 	end,
---     should_apply = function(self)
---         return next(SMODS.find_card("j_mf_unregisteredhypercam"))
---     end,
--- }
+SMODS.ScreenShader {
+	key = "hypercam_jpeg_kinda",
+	path = "hypercam_jpeg_kinda.fs",
+	send_vars = function(self)
+		local w,h = love.graphics.getDimensions()
+		return {
+			wquant = 2 / w,
+			hquant = 2 / h,
+		}
+	end,
+    should_apply = function(self)
+        return next(SMODS.find_card("j_mf_unregisteredhypercam"))
+    end,
+}
