@@ -80,6 +80,7 @@ for _, booster_type in ipairs({
 			weight = booster_type[8],
 			unlocked = true,
 			discovered = true,
+			no_collection = (i == 2) or (i == 4),
 			create_card = function(self, card)
 				local n_card = create_card("Rotarot", G.pack_cards, nil, nil, true, true, nil, "mf_rotarot")
 				return n_card
