@@ -914,6 +914,17 @@ return {
 			},
 
 			-- rot legendaries
+			j_mf_rot_chicot = {
+				name = "{E:mf_rotarot_title}Chicot!",
+				text = {
+					"This Joker starts {C:spectral}prepared{}",
+					"{C:inactive,s:0.8}(While it's prepared, you may",
+					"{C:inactive,s:0.8}use a copy of its consumable,",
+					"{C:inactive,s:0.8}doing so unprepares it.)",
+					"Whenever you skip a Blind,",
+					"{C:spectral}prepare{} this Joker",
+				},
+			},
 			j_mf_rot_perkeo = {
 				name = "{E:mf_rotarot_title}Perkeo!",
 				text = {
@@ -1906,6 +1917,15 @@ return {
                     "each round",
                 },
             },
+            c_mf_negate = {
+                name = "Negate",
+                text = {
+                    "Disable the {C:attention}Boss Blind{}",
+					"{X:purple,C:white}^0.8{} the Blind size",
+					"{C:inactive,s:0.8}(It does not need",
+					"{C:inactive,s:0.8}to be a Boss)"
+                },
+            },
             c_mf_mirror = {
                 name = "Mirror",
                 text = {
@@ -2173,6 +2193,39 @@ return {
 				  	"Must be sold first"
 				},
 			},
+
+            mf_pink_sticker = {
+                name = "Pink Sticker",
+                text = {
+                    "Used this Joker",
+                    "to win on {C:attention}Pink",
+                    "{C:attention}Stake{} difficulty",
+                },
+            },
+            mf_steel_sticker = {
+                name = "Steel Sticker",
+                text = {
+                    "Used this Joker",
+                    "to win on {C:attention}Steel",
+                    "{C:attention}Stake{} difficulty",
+                },
+            },
+            mf_zodiac_sticker = {
+                name = "Zodiac Sticker",
+                text = {
+                    "Used this Joker",
+                    "to win on {C:attention}Zodiac",
+                    "{C:attention}Stake{} difficulty",
+                },
+            },
+            mf_hot_sticker = {
+                name = "Hot Sticker",
+                text = {
+                    "Used this Joker",
+                    "to win on {C:attention}Hot",
+                    "{C:attention}Stake{} difficulty",
+                },
+            },
 		},
 		Voucher = {
 			v_mf_paintroller = {
