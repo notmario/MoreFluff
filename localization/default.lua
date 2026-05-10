@@ -914,13 +914,24 @@ return {
 			},
 
 			-- rot legendaries
+			j_mf_rot_perkeo = {
+				name = "{E:mf_rotarot_title}Perkeo!",
+				text = {
+					"Whenever you play a hand",
+					"with {C:attention}four or more{} suits,",
+					"{C:spectral}prepare{} this Joker",
+					"{C:inactive,s:0.8}(While it's prepared, you may",
+					"{C:inactive,s:0.8}use a copy of its consumable,",
+					"{C:inactive,s:0.8}doing so unprepares it.)",
+				},
+			},
 			j_mf_rot_triangle = {
 				name = "{E:mf_rotarot_title}Triangle!",
 				text = {
 					"This Joker starts {C:spectral}prepared{}",
 					"{C:inactive,s:0.8}(While it's prepared, you may",
 					"{C:inactive,s:0.8}use a copy of its consumable,",
-					"{C:inactive,s:0.8}doing so unprepares it.",
+					"{C:inactive,s:0.8}doing so unprepares it.)",
 					"{C:spectral}Prepare{} this Joker at",
 					"end of round if a {C:attention}Three{}",
 					"{C:attention}of a Kind{} was played"
@@ -1302,11 +1313,6 @@ return {
 					"and reduce the blind",
 					"size by {X:purple,C:white}X#1#{} each time",
 					"a {C:attention}Two Pair{} is discarded",
-				},
-			},
-			j_mf_rot_perkeo = {
-				name = "{E:mf_rotarot_title}Perkeo!",
-				text = {
 				},
 			},
 			j_mf_old_rot_triangle = {
@@ -1897,6 +1903,14 @@ return {
                     "{C:attention}-1{} Ante,",
                     "{C:blue}-1{} hand",
                     "each round",
+                },
+            },
+            c_mf_mirror = {
+                name = "Mirror",
+                text = {
+                    "Create a {C:dark_edition}Negative{} copy of",
+                    "{C:attention}1{} random {C:attention}consumable{}",
+                    "card in your possession",
                 },
             },
             c_mf_refraction = {
