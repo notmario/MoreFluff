@@ -5,6 +5,7 @@ SMODS.Joker {
 	config = {
 		extra = {
 			is_prepared = true,
+            should_prep = false,
         },
 	},
 	pos = { x = 4, y = 10 },
@@ -56,13 +57,27 @@ SMODS.Joker {
                 if count > 0 then suit_count = suit_count + 1 end
             end
 
-			if suit_count >= 3 and not card.ability.extra.is_prepared then
-				card.ability.extra.is_prepared = true
-				return {
-					message = localize "k_prepared_ex",
-					colour = G.C.SECONDARY_SET.Spectral,
-				}
+			if suit_count >= 4 and not card.ability.extra.should_prep then
+                card.ability.extra.should_prep = true
+                return {
+                    message = localize "k_ready_ex"
+                }
 			end
+        end
+        if context.end_of_round and card.ability.extra.should_prep and context.cardarea == G.jokers then
+            card.ability.extra.should_prep = false
+            if not card.ability.extra.is_prepared then
+                card.ability.extra.is_prepared = true
+                return {
+                    message = localize "k_prepared_ex",
+                    colour = G.C.SECONDARY_SET.Spectral,
+                }
+            else
+                return {
+                    message = localize "k_reset",
+                    colour = G.C.RED,
+                }
+            end
         end
 	end,
 }
@@ -80,6 +95,16 @@ SMODS.Consumable {
     end,
 	use = function(self, card, area, copier)
         if G.consumeables.cards[1] then
+            G.E_MANAGER:add_event(Event({
+                func = function()
+                    local card_to_copy, _ = pseudorandom_element(G.consumeables.cards, 'vremade_perkeo')
+                    local copied_card = copy_card(card_to_copy)
+                    copied_card:set_edition("e_negative", true)
+                    copied_card:add_to_deck()
+                    G.consumeables:emplace(copied_card)
+                    return true
+                end
+            }))
             G.E_MANAGER:add_event(Event({
                 func = function()
                     local card_to_copy, _ = pseudorandom_element(G.consumeables.cards, 'vremade_perkeo')

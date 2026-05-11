@@ -927,9 +927,9 @@ return {
 					"{C:inactive,s:0.8}(While it's prepared, you may",
 					"{C:inactive,s:0.8}use a copy of its consumable,",
 					"{C:inactive,s:0.8}doing so unprepares it.)",
-					"Whenever you play a hand",
-					"with {C:attention}four or more{} suits,",
-					"{C:spectral}prepare{} this Joker",
+					"{C:spectral}Prepare{} this Joker at",
+					"end of round if a hand with",
+					"{C:attention}four or more{} suits was played",
 				},
 			},
 			j_mf_rot_triangle = {
@@ -1925,8 +1925,9 @@ return {
                 name = "Mirror",
                 text = {
                     "Create a {C:dark_edition}Negative{} copy of",
-                    "{C:attention}1{} random {C:attention}consumable{}",
-                    "card in your possession",
+                    "{C:attention}1{} random {C:attention}consumable{} card",
+                    "in your possession, then",
+					"do it again"
                 },
             },
             c_mf_refraction = {
