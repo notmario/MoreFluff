@@ -133,17 +133,17 @@ SMODS.Stake {
 }
 
 SMODS.Stake {
-  key = "hot",
-  above_stake = "zodiac",
-  applied_stakes = { "zodiac" },
-  atlas = 'mf_stakes',
-  pos = { x = 2, y = 1 },
-  sticker_atlas = "mf_stake_stickers",
-  sticker_pos = { x = 2, y = 1 },
-  modifiers = function()
+    key = "hot",
+    above_stake = "zodiac",
+    applied_stakes = { "zodiac" },
+    atlas = 'mf_stakes',
+    pos = { x = 2, y = 1 },
+    sticker_atlas = "mf_stake_stickers",
+    sticker_pos = { x = 2, y = 1 },
+    modifiers = function()
         G.GAME.modifiers.enable_potato_in_shop = true
-  end,
-  colour = HEX("fb4f20"),
+    end,
+    colour = HEX("fb4f20"),
 }
 
 SMODS.Sticker {
@@ -239,19 +239,20 @@ end
 --     return ret
 -- end
 
--- SMODS.Stake {
---     key = "jimbo",
---     above_stake = "violet",
---     applied_stakes = { "violet" },
---     atlas = 'mf_stakes',
---     pos = { x = 3, y = 0 },
---     sticker_atlas = "mf_stake_stickers",
---     sticker_pos = { x = 3, y = 0 },
---     modifiers = function()
---         G.GAME.win_ante = G.GAME.win_ante + 1
---     end,
---     colour = G.C.RED,
--- }
+SMODS.Stake {
+    key = "jimbo",
+    above_stake = "hot",
+    applied_stakes = { "hot" },
+    atlas = 'mf_stakes',
+    pos = { x = 3, y = 0 },
+    sticker_atlas = "mf_stake_stickers",
+    sticker_pos = { x = 3, y = 0 },
+    modifiers = function()
+        G.GAME.win_ante = G.GAME.win_ante + 1
+        G.GAME.modifiers.jimbostake_force_antenine = true
+    end,
+    colour = G.C.RED,
+}
 
 local cc = create_card
 function create_card(_type, area, legendary, _rarity, skip_materialize, soulable, forced_key, key_append)
@@ -269,4 +270,12 @@ function create_card(_type, area, legendary, _rarity, skip_materialize, soulable
     end
 
     return card
+end
+
+local gfb = get_blind_amount
+function get_blind_amount(ante, ...)
+    if G.GAME.modifiers.scaling == 3 and G.GAME.modifiers.jimbostake_force_antenine and ante == 9 then
+        return 500000
+    end
+    return gfb(ante, ...)
 end

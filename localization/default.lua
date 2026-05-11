@@ -2221,6 +2221,14 @@ return {
                     "{C:attention}Stake{} difficulty",
                 },
             },
+            mf_jimbo_sticker = {
+                name = "Jimbo Sticker",
+                text = {
+                    "Used this Joker",
+                    "to win on {C:attention}Jimbo",
+                    "{C:attention}Stake{} difficulty",
+                },
+            },
 		},
 		Voucher = {
 			v_mf_paintroller = {
