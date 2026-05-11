@@ -43,10 +43,10 @@ SMODS.calculate_individual_effect = function(effect, scored_card, key, amount, f
 			bonus = bonus * 2
 		end
 		amount = amount * bonus
-        if key == "mult_mod" or key == "chips_mod" then
+        if key == "mult_mod" or key == "chip_mod" then
             key = (key == "mult_mod") and "mult" or "chips"
             effect["mult_mod"] = nil
-            effect["chips_mod"] = nil
+            effect["chip_mod"] = nil
             effect["message"] = nil
         end
 	end
