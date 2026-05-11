@@ -749,7 +749,7 @@ return {
 				text = {
 					"Whenever you play a hand with",
 					"{C:attention}three or more{} scoring ranks or",
-					"suits, {C:spectral}prepare{} this Joker"
+					"suits, {C:spectral}prepare{} this Joker",
 					"{C:inactive,s:0.8}(While it's prepared, you may",
 					"{C:inactive,s:0.8}use a copy of its consumable,",
 					"{C:inactive,s:0.8}doing so unprepares it)",
