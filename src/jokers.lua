@@ -91,14 +91,14 @@ FLUFF.joker_pool = {
 	"widejoker",
 	"lessfluff",
 
-	-- powerful
-	"triangle",
-	"marigold",
-
 	-- walkers
 	"mindsculptor",
 	"johnbalatro",
 	"trianglewalker",
+
+	-- legendary
+	"triangle",
+	"marigold",
 
 	-- new update jokers
 	"lonewolf",
