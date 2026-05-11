@@ -37,7 +37,7 @@ SMODS.Joker({
 local scalcieff = SMODS.calculate_individual_effect
 SMODS.calculate_individual_effect = function(effect, scored_card, key, amount, from_edition)
 	if key == "mult" or key == "mult_mod" or key == "h_mult" or
-        key == "chips" or key == "chips_mod" or key == "h_chips" then
+        key == "chips" or key == "chip_mod" or key == "h_chips" then
 		local bonus = 1
 		for _, card in ipairs(SMODS.find_card("j_mf_applefriends")) do
 			bonus = bonus * 2
