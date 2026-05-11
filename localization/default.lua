@@ -747,17 +747,12 @@ return {
 			j_mf_emeritus_rebirth = {
 				name = "Emeritus of Rebirth",
 				text = {
-					{
-						"This Joker starts {C:spectral}prepared{}",
-						"{C:inactive,s:0.8}(While it's prepared, you may",
-						"{C:inactive,s:0.8}use a copy of its consumable,",
-						"{C:inactive,s:0.8}doing so unprepares it)",
-					},
-					{
-						"Whenever you play a hand with",
-						"{C:attention}three or more{} scoring ranks or",
-						"suits, {C:spectral}prepare{} this Joker"
-					}
+					"Whenever you play a hand with",
+					"{C:attention}three or more{} scoring ranks or",
+					"suits, {C:spectral}prepare{} this Joker"
+					"{C:inactive,s:0.8}(While it's prepared, you may",
+					"{C:inactive,s:0.8}use a copy of its consumable,",
+					"{C:inactive,s:0.8}doing so unprepares it)",
 				},
 			},
 			j_mf_emeritus_variety = {

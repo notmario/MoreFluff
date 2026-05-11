@@ -4,7 +4,7 @@ SMODS.Joker {
 	atlas = "mf_jokers",
 	config = {
 		extra = {
-			is_prepared = true,
+			is_prepared = false,
 		},
 	},
 	prepared_card = "c_death",
