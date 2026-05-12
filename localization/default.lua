@@ -675,6 +675,20 @@ return {
 					"{C:inactive}(Currently {C:chips}#2#{} {C:inactive}Chips)"
 				},
 			},
+			j_mf_saturnburger = {
+				name = "Saturn Burger",
+				text = {
+					{
+						"{C:attention}Straights{} can be formed",
+						"with {C:attention}two{} fewer cards",
+					},
+					{
+						"When you discard a hand with",
+						"{C:attention}4{} or more cards, level it up",
+						"Eaten after {C:attention}#1#{} level ups",
+					},
+				},
+			},
 			j_mf_gemalert = {
 				name = "Gem Alert",
 				text = {
