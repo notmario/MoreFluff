@@ -118,6 +118,7 @@ FLUFF.joker_pool = {
 	"jokerreacts",
 	"refrigerator",
 	"retrigger_joker",
+	"junkyard",
 
 	"aheartofcold",
 	"emeritus_eventuality",

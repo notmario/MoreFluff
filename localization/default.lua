@@ -852,6 +852,13 @@ return {
 					}
 				},
 			},
+			j_mf_junkyard = {
+				name = "Junkyard",
+				text = {
+					"Before scoring, played {C:attention}rankless",
+					"cards give {X:mult,C:white}X#1#{} Mult and {X:chips,C:white}X#2#{} Chips",
+				},
+			},
 			j_mf_aheartofcold = {
 				-- name = "A Heart of Cold",
 				name = {},
