@@ -890,6 +890,97 @@ return {
 					}
 				},
 			},
+			-- Disintegration Loop
+			j_mf_fraud_fakeout_1 = {
+				name = {
+					"{s:0.5}JOKER // SECOND",
+					"THE MEATGRINDER",
+				},
+				text = {
+					"Scoring {C:attention}rankless{} cards and {C:attention}2s{}",
+					"destroy a random card held",
+					"in hand, and create a {C:attention}Meat Card{}",
+					"which is scored after",
+					"{C:inactive}(It doesn't trigger this effect)",
+				},
+			},
+			j_mf_fraud_fakeout_2 = {
+				name = {
+					"{s:0.5}JOKER // FOURTH",
+					"A ONE-MACHINE ARMY",
+				},
+				text = {
+					"Scoring {C:attention}rankless{} cards and {C:attention}4s{}",
+					"are retriggered once for each",
+					"played card which isn't {C:attention}rankless{} or a {C:attention}4{}"
+				},
+			},
+			j_mf_fraud_fakeout_3 = {
+				name = {
+					"{s:0.5}JOKER // FIRST",
+					"HEART OF THE SUNRISE",
+				},
+				text = {
+					"For every {C:attention}30{} scored {C:attention}Aces{},",
+					"{C:attention}+1{} Ante and make a held",
+					"Joker {C:dark_edition}Negative{}",
+					"{C:inactive}(Currently 0/30)",
+				},
+			},
+			j_mf_fraud_fakeout_4 = {
+				name = {
+					"{s:0.5}JOKER // THIRD",
+					"SHIP OF FOOLS",
+				},
+				text = {
+					{
+						"Scoring {C:attention}5s{} and {C:attention}3s{} give",
+						"{X:mult,C:white}X2{} Mult"
+					},
+					{
+						"At the end of the Ante,",
+						"flip this Joker upside down"
+					}
+				},
+			},
+			j_mf_crimsonglassdecomposition = {
+				name = {
+					"{s:0.5}JOKER // THIRD",
+					"DISINTEGRATION LOOP",
+					"{s:0.7}Crimson Glass deComposition",
+				},
+				text = {
+				},
+			},
+			j_mf_halt = {
+				name = {
+					"{s:0.5}JOKER // THIRD",
+					"DISINTEGRATION LOOP",
+					"{E:1,s:0.7}\"Halt!\"",
+				},
+				text = {
+				},
+			},
+			j_mf_theshatteringcircle = {
+				name = {
+					"{s:0.5}JOKER // THIRD",
+					"DISINTEGRATION LOOP",
+					"{s:0.5}The Shattering Circle, Or: A Charade Of",
+					"{s:0.5}Shadeless Ones And Aeroes Rearranged Ad Nihilum",
+				},
+				text = {
+				},
+			},
+			j_mf_eventhorizon = {
+				name = {
+					"{s:0.5}JOKER // THIRD",
+					"DISINTEGRATION LOOP",
+					"{s:0.7}Event Horizon",
+					"{s:0.5}(Reach for the Sun and Burn! Burn! Burn!)",
+				},
+				text = {
+				},
+			},
 			j_mf_emeritus_eventuality = {
 				name = "Emeritus of Inevitability",
 				text = {

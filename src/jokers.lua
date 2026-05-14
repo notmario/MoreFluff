@@ -121,6 +121,7 @@ FLUFF.joker_pool = {
 	"junkyard",
 
 	"aheartofcold",
+	"crimsonglassdecomposition",
 	"emeritus_eventuality",
 	"mathemagics",
 	"stormscale",
