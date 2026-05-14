@@ -25,7 +25,7 @@ SMODS.Joker({
     in_pool = function(self, args)
         return false
     end,
-    -- no_collection = true,
+    no_collection = true,
 	attributes = { "chips", "mult", "rank", "eight", "three", },
 	loc_vars = function(self, info_queue, card)
         local chips = math.floor(card.ability.extra.chips * math.abs(math.cos(card.ability.extra.rotations * math.pi * 1 / 4)))

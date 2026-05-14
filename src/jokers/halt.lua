@@ -20,6 +20,7 @@ SMODS.Joker({
 	eternal_compat = true,
 	perishable_compat = true,
 	attributes = { "enhancements" },
+    no_collection = true,
 	loc_vars = function(self, info_queue, card)
 		info_queue[#info_queue + 1] = G.P_CENTERS.m_mf_power
 		return {
@@ -92,6 +93,7 @@ SMODS.Enhancement({
 	no_rank = true,
     any_suit = true,
 	always_scores = true,
+    no_collection = true,
     in_pool = function(self, args)
         return false
     end,

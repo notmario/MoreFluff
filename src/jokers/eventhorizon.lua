@@ -23,7 +23,7 @@ SMODS.Joker({
     in_pool = function(self, args)
         return false
     end,
-    -- no_collection = true,
+    no_collection = true,
 	attributes = { "rank", "eight", "three", },
 	loc_vars = function(self, info_queue, card)
         return {
