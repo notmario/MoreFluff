@@ -144,6 +144,10 @@ FLUFF.hidden_joker_pool = {
 	"johnbalatrotrue",
 	"deadheatpulse",
 
+	"halt",
+	"theshatteringcircle",
+	"eventhorizon",
+
 	-- tokens
 	"oopsallfives",
 	"fish",

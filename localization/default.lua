@@ -947,9 +947,26 @@ return {
 				name = {
 					"{s:0.5}JOKER // THIRD",
 					"DISINTEGRATION LOOP",
-					"{s:0.7}Crimson Glass deComposition",
+					"{s:0.6}The Break (Crimson Glass deComposition)",
 				},
 				text = {
+					{
+						"Non-{C:attention}8{} or {C:attention}3{} cards",
+						"{C:spectral,E:1}score{} held {C:attention}8s{} and {C:attention}3s{}",
+						"when played and scored",
+						"{C:inactive,s:0.8}(They trigger all effects",
+						"{C:inactive,s:0.8}as if they were played)",
+					},
+					{
+						"Held {C:attention}8s{} and {C:attention}3s{} give",
+						"{X:mult,C:white}X#1#{} Mult when scored for",
+						"each played {C:attention}8{} or {C:attention}3{},",
+						"and then once more"
+					},
+					{
+						"{C:attention}Transforms{} after {C:attention}#2#{}",
+						"{C:attention}Boss Blind{} is defeated"
+					}
 				},
 			},
 			j_mf_halt = {
@@ -959,26 +976,94 @@ return {
 					"{E:1,s:0.7}\"Halt!\"",
 				},
 				text = {
+					{
+						"When this Joker is transformed",
+						"into, shuffle {C:attention}#1#{} {C:attention}Powers{} into your deck",
+					},
+					{
+						"{C:attention}Transforms{} after {C:attention}#2#{}",
+						"{C:attention}Boss Blind{} is defeated"
+					}
 				},
 			},
 			j_mf_theshatteringcircle = {
 				name = {
 					"{s:0.5}JOKER // THIRD",
 					"DISINTEGRATION LOOP",
-					"{s:0.5}The Shattering Circle, Or: A Charade Of",
-					"{s:0.5}Shadeless Ones And Aeroes Rearranged Ad Nihilum",
+					"{s:0.7}The Shattering Circle, Or: A Charade Of",
+					"{s:0.6}Shadeless Ones And Aeroes Rearranged Ad Nihilum",
 				},
 				text = {
+					{
+						"Scored {C:attention}8s{} and {C:attention}3s{} give",
+						"{C:chips}+#1#{} Chips and {C:mult}+#2#{} Mult",
+						"Rotate this effect by {C:attention}45{} degrees",
+						"when a {C:attention}Blind{} is selected",
+						"or {C:attention}five{} cards are discarded"
+					},
+					{
+						"{C:attention}Transforms{} after {C:attention}#3#{}",
+						"{C:attention}Boss Blind{} is defeated"
+					}
+				},
+			},
+			j_mf_theshatteringcircle_chips = {
+				name = {
+					"{s:0.5}JOKER // THIRD",
+					"DISINTEGRATION LOOP",
+					"{s:0.7}The Shattering Circle, Or: A Charade Of",
+					"{s:0.6}Shadeless Ones And Aeroes Rearranged Ad Nihilum",
+				},
+				text = {
+					{
+						"Scored {C:attention}8s{} and {C:attention}3s{} give {C:chips}+#1#{} Chips",
+						"Rotate this effect by {C:attention}45{} degrees",
+						"when a {C:attention}Blind{} is selected",
+						"or {C:attention}five{} cards are discarded"
+					},
+					{
+						"{C:attention}Transforms{} after {C:attention}#3#{}",
+						"{C:attention}Boss Blind{} is defeated"
+					}
+				},
+			},
+			j_mf_theshatteringcircle_mult = {
+				name = {
+					"{s:0.5}JOKER // THIRD",
+					"DISINTEGRATION LOOP",
+					"{s:0.7}The Shattering Circle, Or: A Charade Of",
+					"{s:0.6}Shadeless Ones And Aeroes Rearranged Ad Nihilum",
+				},
+				text = {
+					{
+						"Scored {C:attention}8s{} and {C:attention}3s{} give {C:mult}+#2#{} Mult",
+						"Rotate this effect by {C:attention}45{} degrees",
+						"when a {C:attention}Blind{} is selected",
+						"or {C:attention}five{} cards are discarded"
+					},
+					{
+						"{C:attention}Transforms{} after {C:attention}#3#{}",
+						"{C:attention}Boss Blind{} is defeated"
+					}
 				},
 			},
 			j_mf_eventhorizon = {
 				name = {
 					"{s:0.5}JOKER // THIRD",
 					"DISINTEGRATION LOOP",
-					"{s:0.7}Event Horizon",
+					"{s:0.6}Event Horizon",
 					"{s:0.5}(Reach for the Sun and Burn! Burn! Burn!)",
 				},
 				text = {
+					{
+						"For every {C:attention}#1#{} scored {C:attention}8s{} and {C:attention}3s{},",
+						"level up a random poker hand",
+						"{C:inactive}(Currently #2#/#1#)",
+					},
+					{
+						"{C:attention}Transforms{} after {C:attention}#3#{}",
+						"{C:attention}Boss Blind{} is defeated"
+					}
 				},
 			},
 			j_mf_emeritus_eventuality = {
@@ -2111,6 +2196,19 @@ return {
 				text = {
 					"{C:attention}+$#1#{} when scored",
 					"no rank or suit",
+					"Always scores",
+				},
+			},
+
+			m_mf_power = {
+				name = "Power",
+				text = {
+					"{X:mult,C:white}X#1#{} Mult when scored",
+					"no rank, every suit",
+					"Shuffle this card into",
+					"your deck when it is",
+					"discarded or played",
+					"Always scores",
 				},
 			},
 		},

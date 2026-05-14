@@ -50,3 +50,16 @@ SMODS.Sound({
 	path = "buzzer.ogg",
 	pitch = 1.0,
 })
+
+
+SMODS.Sound({
+	key = "halt-alt",
+	path = "halt-alt.ogg",
+	pitch = 1.0,
+})
+
+SMODS.Sound({
+	key = "jokerrotate",
+	path = "jokerrotate.ogg",
+	pitch = 1.0,
+})
