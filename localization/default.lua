@@ -897,11 +897,17 @@ return {
 					"THE MEATGRINDER",
 				},
 				text = {
-					"Scoring {C:attention}rankless{} cards and {C:attention}2s{}",
-					"destroy a random card held",
-					"in hand, and create a {C:attention}Meat Card{}",
-					"which is scored after",
-					"{C:inactive}(It doesn't trigger this effect)",
+					{
+						"Scoring {C:attention}rankless{} cards and {C:attention}2s{}",
+						"destroy a random card held",
+						"in hand, and create a {C:attention}Meat Card{}",
+						"which is scored after",
+						"{C:inactive}(It doesn't trigger this effect)",
+					},
+					{
+						"{C:inactive}?????????? ???? ??????",
+						"{C:inactive}????? when purchased",
+					}
 				},
 			},
 			j_mf_fraud_fakeout_2 = {
@@ -910,9 +916,15 @@ return {
 					"A ONE-MACHINE ARMY",
 				},
 				text = {
-					"Scoring {C:attention}rankless{} cards and {C:attention}4s{}",
-					"are retriggered once for each",
-					"played card which isn't {C:attention}rankless{} or a {C:attention}4{}"
+					{
+						"Scoring {C:attention}rankless{} cards and {C:attention}4s{}",
+						"are retriggered once for each",
+						"played card which isn't {C:attention}rankless{} or a {C:attention}4{}"
+					},
+					{
+						"{C:inactive}?????????? ???? ??????",
+						"{C:inactive}????? when purchased",
+					}
 				},
 			},
 			j_mf_fraud_fakeout_3 = {
@@ -921,10 +933,16 @@ return {
 					"HEART OF THE SUNRISE",
 				},
 				text = {
-					"For every {C:attention}30{} scored {C:attention}Aces{},",
-					"{C:attention}+1{} Ante and make a held",
-					"Joker {C:dark_edition}Negative{}",
-					"{C:inactive}(Currently 0/30)",
+					{
+						"For every {C:attention}30{} scored {C:attention}Aces{},",
+						"{C:attention}+1{} Ante and make a held",
+						"Joker {C:dark_edition}Negative{}",
+						"{C:inactive}(Currently 0/30)",
+					},
+					{
+						"{C:inactive}?????????? ???? ??????",
+						"{C:inactive}????? when purchased",
+					}
 				},
 			},
 			j_mf_fraud_fakeout_4 = {
@@ -940,6 +958,10 @@ return {
 					{
 						"At the end of the Ante,",
 						"flip this Joker upside down"
+					},
+					{
+						"{C:inactive}?????????? ???? ??????",
+						"{C:inactive}????? when purchased",
 					}
 				},
 			},
