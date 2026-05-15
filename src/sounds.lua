@@ -33,11 +33,27 @@ SMODS.Sound({
 	path = "music_duelzone.ogg",
 	sync = false,
 	pitch = 1.0,
-	volume = 1.0,
+	volume = 1.3,
 	select_music_track = function()
 		return G.GAME.mf_superboss_active and 6 -- notably lower than jimball (Funny)
 	end,
 })
+
+-- is this a leak?   i dont really care
+if (SMODS.Mods.Cryptid or SMODS.Mods.Decryptid or {}).can_load then
+	local key = "j_cry_jimball"
+	if (SMODS.Mods.Decryptid or {}).can_load then key = "j_dcry_jimball" end
+	SMODS.Sound({
+		key = "music_duelzone_jimball",
+		path = "music_duelzone_jimball.ogg",
+		sync = false,
+		pitch = 1.0,
+		volume = 1.3,
+		select_music_track = function()
+			return G.GAME.mf_superboss_active and next(SMODS.find_card(key)) and 9999
+		end,
+	})
+end
 
 SMODS.Sound({
 	key = "treethree",
