@@ -39,6 +39,7 @@ SMODS.Joker({
                 card:set_ability(G.P_CENTERS["j_mf_crimsonglassdecomposition"])
                 card:juice_up()
                 G.jokers:unhighlight_all()
+				play_sound("mf_disintegrationreset")
 
                 return {
                     message = localize "k_transformed_ex"

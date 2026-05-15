@@ -52,6 +52,7 @@ SMODS.Joker({
                 card:set_ability(G.P_CENTERS["j_mf_eventhorizon"])
                 card:juice_up()
                 G.jokers:unhighlight_all()
+				FLUFF.disintegration_loop_jumpscare()
 
                 return {
                     message = localize "k_transformed_ex"
@@ -107,5 +108,37 @@ function Card:draw(layer, ...)
 		for k, v in pairs(self.children) do
 			v.VT.r = v.VT.r - self.ability.extra.rotation
 		end
+	end
+end
+
+function FLUFF.disintegration_loop_jumpscare()
+	love.graphics.captureScreenshot( function ( data )
+		FLUFF.door_image = love.graphics.newImage( data )
+		FLUFF.door_timer = 4.3
+		play_sound("mf_spacejumpscare")
+	end )
+end
+
+local ld = love.draw
+function love.draw()
+	ld()
+	if FLUFF and FLUFF.door_image and FLUFF.door_timer > 0.0 then
+		love.graphics.push()
+		love.graphics.setShader()
+		love.graphics.setColor( 1, 1, 1, 1 )
+		local _, h = love.graphics.getDimensions()
+		local y_scale = 1 - (1 - (FLUFF.door_timer / 4.3)) ^ 4
+		love.graphics.translate(0, h * (1 - y_scale))
+		love.graphics.scale(1.0, y_scale)
+		love.graphics.draw(FLUFF.door_image, 0, 0)
+		love.graphics.pop()
+	end
+end
+
+local lu = love.update
+function love.update(dt)
+	lu(dt)
+	if FLUFF and FLUFF.door_timer and FLUFF.door_timer > 0.0 then
+		FLUFF.door_timer = FLUFF.door_timer - dt
 	end
 end

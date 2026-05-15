@@ -79,3 +79,16 @@ SMODS.Sound({
 	path = "jokerrotate.ogg",
 	pitch = 1.0,
 })
+
+SMODS.Sound({
+	key = "spacejumpscare",
+	path = "spacejumpscare.ogg",
+	pitch = 1.0,
+})
+
+SMODS.Sound({
+	key = "disintegrationreset",
+	path = "disintegrationreset.ogg",
+	volume = 0.4,
+	pitch = 1.0,
+})
