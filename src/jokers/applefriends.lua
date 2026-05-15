@@ -42,7 +42,7 @@ SMODS.calculate_individual_effect = function(effect, scored_card, key, amount, f
 		for _, card in ipairs(SMODS.find_card("j_mf_applefriends")) do
 			bonus = bonus * 2
 		end
-		amount = amount * bonus
+		if amount then amount = amount * bonus end
         if key == "mult_mod" or key == "chip_mod" then
             key = (key == "mult_mod") and "mult" or "chips"
             effect["mult_mod"] = nil
