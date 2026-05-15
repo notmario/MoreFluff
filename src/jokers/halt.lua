@@ -45,6 +45,26 @@ SMODS.Joker({
 				message = ""..card.ability.extra.bosses_left
 			}
 		end
+		if context.setting_blind then
+			local power_card = nil
+			for _, other_card in pairs(G.deck.cards) do
+				if SMODS.has_enhancement(other_card, "m_mf_power") and not other_card.mf_drawn_to_hand then
+					power_card = other_card
+					power_card.mf_drawn_to_hand = true
+					break
+				end
+			end
+			if power_card then
+				G.E_MANAGER:add_event(Event({
+					func = function()
+            			G.deck:remove_card(power_card)
+						G.hand:emplace(power_card)
+						power_card.mf_drawn_to_hand = nil
+						return true
+					end
+				}))
+			end
+		end
 	end,
 })
 

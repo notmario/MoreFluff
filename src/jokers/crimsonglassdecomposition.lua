@@ -48,7 +48,8 @@ SMODS.Joker({
 				end
 
                 return {
-                    message = localize "k_transformed_ex"
+                    message = localize "k_transformed_ex",
+					colour = HEX "ffff1f"
                 }
 			end
 			return {

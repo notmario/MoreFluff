@@ -1001,6 +1001,8 @@ return {
 					{
 						"When this Joker is transformed",
 						"into, shuffle {C:attention}#1#{} {C:attention}Powers{} into your deck",
+						"Draw one to hand at the start",
+						"of each {C:attention}Blind"
 					},
 					{
 						"{C:attention}Transforms{} after {C:attention}#2#{}",
@@ -1073,7 +1075,7 @@ return {
 				name = {
 					"{s:0.5}JOKER // THIRD",
 					"DISINTEGRATION LOOP",
-					"{s:0.6}Event Horizon",
+					"{s:0.7}Event Horizon",
 					"{s:0.5}(Reach for the Sun and Burn! Burn! Burn!)",
 				},
 				text = {
