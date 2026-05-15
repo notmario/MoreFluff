@@ -49,7 +49,14 @@ SMODS.Joker({
 			if
 				card.ability.extra.bosses_left <= 0
 			then
-                card:set_ability(G.P_CENTERS["j_mf_eventhorizon"])
+				G.E_MANAGER:add_event(Event({
+					trigger = "after",
+					delay = 0.01,
+					func = function()
+                		card:set_ability(G.P_CENTERS["j_mf_eventhorizon"])
+						return true
+					end,
+				}))
                 card:juice_up()
                 G.jokers:unhighlight_all()
 				FLUFF.disintegration_loop_jumpscare()
