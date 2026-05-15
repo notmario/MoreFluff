@@ -84,7 +84,8 @@ SMODS.Joker({
     update = function(self, card, dt)
         if card.ability and card.ability.extra and card.ability.extra.rotations then
             local mix_fac = 0.27 ^ dt
-            card.ability.extra.rotation = mix_fac * (card.ability.extra.rotation or 0) + (1 - mix_fac) * card.ability.extra.rotations * math.pi * 9 / 4
+			local target_rotation = math.pi * (card.ability.extra.rotations * 9 / 4 + 2)
+            card.ability.extra.rotation = mix_fac * (card.ability.extra.rotation or 0) + (1 - mix_fac) * target_rotation
         end
     end,
 })

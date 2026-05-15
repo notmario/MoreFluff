@@ -36,6 +36,7 @@ SMODS.Joker({
                 card:set_ability(G.P_CENTERS["j_mf_theshatteringcircle"])
                 card:juice_up()
                 G.jokers:unhighlight_all()
+				play_sound("mf_jokerrotate")
 
                 return {
                     message = localize "k_transformed_ex"
