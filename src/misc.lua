@@ -169,3 +169,33 @@ G.FUNCS.use_card = function(e, mute, nosave)
 		end
     })
 end
+
+-- title screen ace
+SMODS.Shader {
+    key = "titlescreenace",
+    path = "titlescreenace.fs",
+}
+
+SMODS.Edition {
+    key = "titlescreenace",
+    shader = "titlescreenace",
+	atlas = "mf_jokers",
+	pos = { x = 9, y = 4 },
+	soul_pos = { x = 9, y = 5 },
+	in_pool = function (...) return false end,
+	no_collection = true,
+	loc_vars = function(self, info_queue, card)
+        return { }
+	end,
+    calculate = function(self, card, context)
+    end
+}
+
+FLUFF.menu_cards = function()
+	return {
+		func = function()
+			if #G.title_top.cards < 1 then return nil end
+			G.title_top.cards[1]:set_edition("e_mf_titlescreenace", true)
+		end
+	}
+end

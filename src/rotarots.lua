@@ -532,6 +532,7 @@ SMODS.Consumable({
 
 FLUFF.blacklisted_editions = {
 	"e_base", -- oops
+	"e_mf_titlescreenace",
 }
 
 -- wheel of fortune
