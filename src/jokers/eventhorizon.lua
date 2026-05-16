@@ -11,7 +11,7 @@ SMODS.Joker({
 			bosses_left = 1,
 		},
 	},
-	pos = { x = 0, y = 14 },
+	pos = { x = 6, y = 5 },
 	atlas = "mf_jokers",
 	rarity = 3,
 	cost = 10,

@@ -29,6 +29,18 @@ SMODS.Sound({
 })
 
 SMODS.Sound({
+	key = "music_modded",
+	path = "music_modded.ogg",
+	select_music_track = function()
+		return (
+			((SMODS.OPENED_BOOSTER or {}).ability or {}).modded_pack
+			and G.booster_pack
+			and not G.booster_pack.REMOVED
+		)
+	end,
+})
+
+SMODS.Sound({
 	key = "music_duelzone",
 	path = "music_duelzone.ogg",
 	sync = false,

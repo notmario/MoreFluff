@@ -19,6 +19,7 @@ SMODS.Joker {
 	eternal_compat = true,
 	perishable_compat = true,
 	attributes = { "hand_type", "generation", "spectral", },
+	pronouns = "she_they",
 	loc_vars = function(self, info_queue, center)
 		return {
 			vars = {},

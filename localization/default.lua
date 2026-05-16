@@ -675,6 +675,14 @@ return {
 					"{C:inactive}(Currently {C:chips}#2#{} {C:inactive}Chips)"
 				},
 			},
+			j_mf_repack = {
+				name = "Repack",
+				text = {
+					"Shops contain an",
+					"additional {C:attention}two {C:gold}$8",
+					"{C:dark_edition}Modded Packs",
+				},
+			},
 			j_mf_saturnburger = {
 				name = "Saturn Burger",
 				text = {
@@ -2402,6 +2410,14 @@ return {
 					"cards to be used immediately",
 				},
 			},
+			p_mf_modded_normal = {
+				name = "Modded Pack",
+				text = {
+					"Choose {C:attention}#1#{} of up to",
+					"{C:attention}#2#{C:dark_edition} Modded{} {C:attention}Joker",
+					"or {C:attention}Consumable{} cards",
+				}
+			},
 			planeswalker_explainer = {
 				name = "Planeswalker",
 				text = {
@@ -2644,6 +2660,7 @@ return {
 			k_prepared_ex = "Prepared!",
 			k_rotated_ex = "Rotated!",
 			k_ready_ex = "Ready!",
+      		k_modded_pack = "Modded Pack",
 
 			k_timetravel_ex = "Time travel!",
 			k_plus_ankh = "+Ankh",
