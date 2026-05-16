@@ -181,7 +181,7 @@ SMODS.Edition {
     shader = "titlescreenace",
 	atlas = "mf_jokers",
 	pos = { x = 9, y = 4 },
-	soul_pos = { x = 9, y = 5 },
+	-- soul_pos = { x = 9, y = 5 },
 	in_pool = function (...) return false end,
 	no_collection = true,
 	loc_vars = function(self, info_queue, card)
