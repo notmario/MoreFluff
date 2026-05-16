@@ -29,44 +29,23 @@ SMODS.Joker({
 				math.min(card.ability.extra, G.jokers.config.card_limit - (#G.jokers.cards + G.GAME.joker_buffer))
 			)
 			G.GAME.joker_buffer = G.GAME.joker_buffer + jokers_to_create
-			-- ah shit.
-			function temp_ban_joker(key)
-				if type(G.GAME.banned_keys[key]) ~= "number" and G.GAME.banned_keys[key] ~= nil then
-					return nil
-				end
-				if G.GAME.banned_keys[key] == true then
-					G.GAME.banned_keys[key] = 214389
-				end
-				if not G.GAME.banned_keys[key] then
-					G.GAME.banned_keys[key] = 214389
-				elseif G.GAME.banned_keys[key] % 214389 == 0 then
-					G.GAME.banned_keys[key] = G.GAME.banned_keys[key] + 214389
-				end
-			end
-			for i = 1, #FLUFF.vanilla_jokers do
-				temp_ban_joker(FLUFF.vanilla_jokers[i])
-			end
 			G.E_MANAGER:add_event(Event({
 				func = function()
 					for i = 1, jokers_to_create do
-						local n_card = create_card("Joker", G.jokers, nil, nil, nil, nil, nil, "exp")
-						n_card:add_to_deck()
-						G.jokers:emplace(n_card)
-						n_card:start_materialize()
+						SMODS.add_card {
+							set = "Joker",
+							attributes = { "Joker" },
+							filter = function ( pool )
+								local new_pool = {}
+								for k, v in pairs(pool) do
+									if G.P_CENTERS[v.key].original_mod then
+										table.insert(new_pool, v)
+									end
+								end
+								return new_pool
+							end,
+						}
 						G.GAME.joker_buffer = 0
-					end
-					function temp_unban_joker(key)
-						if type(G.GAME.banned_keys[key]) ~= "number" and G.GAME.banned_keys[key] ~= nil then
-							return nil
-						end
-						if G.GAME.banned_keys[key] == 214389 then
-							G.GAME.banned_keys[key] = nil
-						elseif G.GAME.banned_keys[key] % 214389 == 0 then
-							G.GAME.banned_keys[key] = G.GAME.banned_keys[key] - 214389
-						end
-					end
-					for i = 1, #FLUFF.vanilla_jokers do
-						temp_unban_joker(FLUFF.vanilla_jokers[i])
 					end
 					return true
 				end,

@@ -21,13 +21,7 @@ SMODS.Joker({
 	end,
 	calculate = function(self, card, context)
 		if context.other_joker and context.other_joker.ability.set == "Joker" then
-			local real = true
-			for i, k in pairs(FLUFF.vanilla_jokers) do
-				if k == context.other_joker.config.center.key and k ~= "j_jolly" then
-					real = false
-					break
-				end
-			end
+			local real = context.other_joker.config.center.original_mod
 			if real then
 				G.E_MANAGER:add_event(Event({
 					func = function()

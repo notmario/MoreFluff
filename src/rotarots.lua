@@ -1115,44 +1115,23 @@ SMODS.Consumable({
 	end,
 	use = function(self, card, area, copier)
 		local used_tarot = copier or card
-		-- ah shit.
-		function temp_ban_joker(key)
-			if type(G.GAME.banned_keys[key]) ~= "number" and G.GAME.banned_keys[key] ~= nil then
-				return nil
-			end
-			if G.GAME.banned_keys[key] == true then
-				G.GAME.banned_keys[key] = 214389
-			end
-			if not G.GAME.banned_keys[key] then
-				G.GAME.banned_keys[key] = 214389
-			elseif G.GAME.banned_keys[key] % 214389 == 0 then
-				G.GAME.banned_keys[key] = G.GAME.banned_keys[key] + 214389
-			end
-		end
-		for i = 1, #FLUFF.vanilla_jokers do
-			temp_ban_joker(FLUFF.vanilla_jokers[i])
-		end
 		G.E_MANAGER:add_event(Event({
 			func = function()
-				local n_card = create_card("Joker", G.jokers, nil, nil, nil, nil, nil, "exp")
-				n_card:add_to_deck()
-				G.jokers:emplace(n_card)
-				n_card:start_materialize()
+				SMODS.add_card {
+					set = "Joker",
+					attributes = { "Joker" },
+					filter = function ( pool )
+						local new_pool = {}
+						for k, v in pairs(pool) do
+							if G.P_CENTERS[v.key].original_mod then
+								table.insert(new_pool, v)
+							end
+						end
+						return new_pool
+					end,
+				}
 				used_tarot:juice_up(0.3, 0.5)
 				G.GAME.joker_buffer = 0
-				function temp_unban_joker(key)
-					if type(G.GAME.banned_keys[key]) ~= "number" and G.GAME.banned_keys[key] ~= nil then
-						return nil
-					end
-					if G.GAME.banned_keys[key] == 214389 then
-						G.GAME.banned_keys[key] = nil
-					elseif G.GAME.banned_keys[key] % 214389 == 0 then
-						G.GAME.banned_keys[key] = G.GAME.banned_keys[key] - 214389
-					end
-				end
-				for i = 1, #FLUFF.vanilla_jokers do
-					temp_unban_joker(FLUFF.vanilla_jokers[i])
-				end
 				return true
 			end,
 		}))
