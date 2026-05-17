@@ -103,6 +103,7 @@ FLUFF.joker_pool = {
 	-- new update jokers
 	"lonewolf",
 	"bouncer",
+	"jokesforminecrafters",
 	"repack",
 	"saturnburger",
 
@@ -125,7 +126,6 @@ FLUFF.joker_pool = {
 	"crimsonglassdecomposition",
 	"emeritus_eventuality",
 	"mathemagics",
-	"stormscale",
 
 	-- rot legendary
 	-- "rot_canio",
@@ -193,6 +193,7 @@ FLUFF.hidden_joker_pool = {
 	-- scrapped during rewrite
 	"emeritus_growth",
 	"emeritus_eternity",
+	"stormscale",
 
 	"old_rot_triboulet",
 	"old_rot_chicot",

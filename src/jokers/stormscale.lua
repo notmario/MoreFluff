@@ -1,7 +1,7 @@
 SMODS.Joker {
 	key = "stormscale",
 	name = "Stormscale",
-	atlas = "mf_jokers",
+	atlas = "mf_oldfluff",
 	config = {
         extra = {
             xmult = 1.5,
@@ -9,8 +9,9 @@ SMODS.Joker {
             purchases = 0,
         }
     },
-	pos = { x = 9, y = 12 },
-	rarity = 3,
+	pos = { x = 4, y = 6 },
+	rarity = "mf_oldfluff",
+	no_collection = true,
 	cost = 10,
 	unlocked = true,
 	discovered = true,

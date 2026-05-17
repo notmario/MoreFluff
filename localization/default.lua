@@ -675,6 +675,104 @@ return {
 					"{C:inactive}(Currently {C:chips}#2#{} {C:inactive}Chips)"
 				},
 			},
+			j_mf_jokesforminecrafters = {
+				name = "Jokes for Balatro Players",
+				text = {
+					"Did you hear about the playing cards?",
+					"They were destroyed!",
+					"{C:inactive}(Turns page at end of round...)",
+				},
+			},
+			j_mf_jokesforminecrafters_none = {
+				name = "Jokes for Balatro Players",
+				text = {
+					"Did you hear about the first",
+					"discarded {C:attention}playing card{}?",
+					"It was destroyed!",
+					"{C:inactive}(Turns page at end of round...)",
+				},
+			},
+			j_mf_jokesforminecrafters_hearts = {
+				name = "Jokes for Balatro Players",
+				text = {
+					"Did you hear about the first",
+					"discarded {C:hearts}Hearts{} {C:attention}card{}?",
+					"It was destroyed!",
+					"{C:inactive}(Turns page at end of round...)",
+				},
+			},
+			j_mf_jokesforminecrafters_spades = {
+				name = "Jokes for Balatro Players",
+				text = {
+					"Did you hear about the first",
+					"discarded {C:spades}Spades{} {C:attention}card{}?",
+					"It was destroyed!",
+					"{C:inactive}(Turns page at end of round...)",
+				},
+			},
+			j_mf_jokesforminecrafters_diamonds = {
+				name = "Jokes for Balatro Players",
+				text = {
+					"Did you hear about the first",
+					"discarded {C:diamonds}Diamonds{} {C:attention}card{}?",
+					"It was destroyed!",
+					"{C:inactive}(Turns page at end of round...)",
+				},
+			},
+			j_mf_jokesforminecrafters_clubs = {
+				name = "Jokes for Balatro Players",
+				text = {
+					"Did you hear about the first",
+					"discarded {C:clubs}Clubs{} {C:attention}card{}?",
+					"It was destroyed!",
+					"{C:inactive}(Turns page at end of round...)",
+				},
+			},
+			j_mf_jokesforminecrafters_face = {
+				name = "Jokes for Balatro Players",
+				text = {
+					"Did you hear about the first",
+					"discarded {C:attention}face card{}?",
+					"It was destroyed!",
+					"{C:inactive}(Turns page at end of round...)",
+				},
+			},
+			j_mf_jokesforminecrafters_hack = {
+				name = "Jokes for Balatro Players",
+				text = {
+					"Did you hear about the first",
+					"discarded {C:attention}2{}, {C:attention}3{}, {C:attention}4{}, or {C:attention}5{}?",
+					"It was destroyed!",
+					"{C:inactive}(Turns page at end of round...)",
+				},
+			},
+			j_mf_jokesforminecrafters_odd = {
+				name = "Jokes for Balatro Players",
+				text = {
+					"Did you hear about the first",
+					"discarded {C:attention}Ace{}, {C:attention}3{}, {C:attention}5{}, {C:attention}7{}, or {C:attention}9{}?",
+					"It was destroyed!",
+					"{C:inactive}(Turns page at end of round...)",
+				},
+			},
+			j_mf_jokesforminecrafters_even = {
+				name = "Jokes for Balatro Players",
+				text = {
+					"Did you hear about the first",
+					"discarded {C:attention}2{}, {C:attention}4{}, {C:attention}6{}, {C:attention}8{}, or {C:attention}10{}?",
+					"It was destroyed!",
+					"{C:inactive}(Turns page at end of round...)",
+				},
+			},
+			j_mf_jokesforminecrafters_fib = {
+				name = "Jokes for Balatro Players",
+				text = {
+					"Did you hear about the first",
+					"discarded {C:attention}Ace{}, {C:attention}2{}, {C:attention}3{}, {C:attention}5{}, or {C:attention}8{}?",
+					"It was destroyed!",
+					"{C:inactive}(Turns page at end of round...)",
+				},
+			},
 			j_mf_repack = {
 				name = "Repack",
 				text = {
@@ -2661,6 +2759,7 @@ return {
 			k_rotated_ex = "Rotated!",
 			k_ready_ex = "Ready!",
       		k_modded_pack = "Modded Pack",
+			k_page_turn = "Page turn",
 
 			k_timetravel_ex = "Time travel!",
 			k_plus_ankh = "+Ankh",
