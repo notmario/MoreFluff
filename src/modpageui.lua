@@ -346,6 +346,17 @@ FLUFF.credits_ui = function()
 					},
 					{
 						n = G.UIT.R,
+						config = { align = "cm", minw = .05 },
+						nodes = {
+							{ n = G.UIT.R, config = {}, nodes = { { n = G.UIT.T, config = { text = "Other Art", scale = .5, shadow = true, align = "tm" } } } },
+						}
+					},
+					{
+						n = G.UIT.R,
+						config = { minw = .05 }, 
+					},
+					{
+						n = G.UIT.R,
 						config = { align = "cm" },
 						nodes = {
 							{
