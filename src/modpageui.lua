@@ -22,6 +22,7 @@ end
 local card_pool = FLUFF.joker_pool
 
 local times_spawned = 0
+local has_toggled = false
 
 SMODS.Shader({
 	key = "triangle_badge_alt",
@@ -33,8 +34,13 @@ FLUFF.custom_ui = function(mod_nodes)
 
 	if times_spawned >= 10 then
 		if times_spawned % 2 == 1 then
-			for _, card in pairs(FLUFF.hidden_joker_pool) do
-				G.P_CENTERS["j_mf_" .. card].no_collection = false
+			if not has_toggled then
+				has_toggled = true
+				for _, center in pairs(G.P_CENTERS) do
+					if center.original_mod == FLUFF then
+						center.no_collection = false
+					end
+				end
 			end
 			card_pool = FLUFF.hidden_joker_pool
 		else
@@ -268,3 +274,193 @@ FLUFF.custom_ui = function(mod_nodes)
 		},
 	}
 end
+
+FLUFF.extra_tabs = function() 
+	return {
+		{
+			label = localize("mf_credits"),
+			chosen = false,
+			tab_definition_function = FLUFF.credits_ui,
+		},
+	}
+end
+
+G.FUNCS.duelzone_ver2_link = function(e)
+  	love.system.openURL( "https://www.youtube.com/watch?v=F-Dm3ayqwkI" )
+end
+
+FLUFF.credits_ui = function()
+    local ui = {
+        n = G.UIT.ROOT,
+        config = { align = "cm", minh = G.ROOM.T.h * .5, minw = G.ROOM.T.w * .5, padding = 0.0, r = 0.1, colour = G.C.BLACK, emboss = 0.05, },
+        nodes = {
+			{
+				n = G.UIT.C,
+				config = { align = "cl", padding = 0.1, minw = 4 },
+				nodes = {
+					{
+						n = G.UIT.R,
+							config = { align = "cm", minw = 2.5, minh = 2.5, padding = 0.05, r = 0.1, colour = G.C.L_BLACK },
+						nodes = {
+							{
+								n = G.UIT.C,
+                        		config = { align = "cl", minw = 1.9, minh = 1, padding = 0.05, },
+								nodes = {
+                            		{ n = G.UIT.R, config = {}, nodes = { { n = G.UIT.T, config = { text = "Programming", scale = .4, shadow = true, align = "tm" } } } },
+                            		{ n = G.UIT.R, config = {}, nodes = { { n = G.UIT.T, config = { text = "Booster Music", scale = .4, shadow = true, align = "tm" } } } },
+                            		{ n = G.UIT.R, config = {}, nodes = { { n = G.UIT.T, config = { text = "Most Art", scale = .4, shadow = true, align = "tm" } } } },
+								},
+							},
+							{
+								n = G.UIT.C,
+                        		config = { align = "cm", minw = 2.1, minh = 1, padding = 0.05, },
+								nodes = {
+                            		{ n = G.UIT.R, config = {}, nodes = { { n = G.UIT.T, config = { text = "by notmario", scale = .4, shadow = true, align = "tm" } } } },
+								},
+							},
+							{
+								n = G.UIT.C,
+								nodes = {
+									{
+										n = G.UIT.O,
+										config = {
+											object = create_display_card("j_mf_triangle", 1.0, true),
+											juice_up = true,
+										},
+									},
+								},
+							},
+						},
+					},
+					{
+						n = G.UIT.R,
+						config = { minw = .05 }, 
+					},
+					{
+						n = G.UIT.R,
+						config = { minw = 3.5, minh = 0.03, colour = G.C.L_BLACK, emboss = 0. }, 
+					},
+					{
+						n = G.UIT.R,
+						config = { minw = .05 }, 
+					},
+					{
+						n = G.UIT.R,
+						config = { align = "cm" },
+						nodes = {
+							{
+								n = G.UIT.C,
+								config = { align = "cm", minw = 2.5, minh = 2.5, padding = 0.05, r = 0.1, colour = G.C.L_BLACK },
+								nodes = {
+
+                            		{ n = G.UIT.R, config = { align = "cm", }, nodes = { {
+										n = G.UIT.O,
+										config = {
+											object = create_display_card("c_mf_lilac", 1.0, true),
+											juice_up = true,
+										},
+									} } },
+									
+                            		{ n = G.UIT.R, config = { align = "cm", }, nodes = { { n = G.UIT.T, config = { text = "Colour Cards", scale = .4, shadow = true, align = "bm" } } } },
+                            		{ n = G.UIT.R, config = { align = "cm", }, nodes = { { n = G.UIT.T, config = { text = "by Multi", scale = .3, shadow = true, align = "bm" } } } },
+								},
+							},
+							{
+								n = G.UIT.C,
+								config = { align = "cm", minw = .05 },
+							},
+							{
+								n = G.UIT.C,
+								config = { align = "cm", minw = 2.5, minh = 2.5, padding = 0.05, r = 0.1, colour = G.C.L_BLACK },
+								nodes = {
+                            		{ n = G.UIT.R, config = { align = "cm", }, nodes = { { n = G.UIT.T, config = { text = "Misc. Jokers", scale = .4, shadow = true, align = "bm" } } } },
+                            		{ n = G.UIT.R, config = { align = "cm", }, nodes = { { n = G.UIT.T, config = { text = "marigold", scale = .3, shadow = true, align = "bm" } } } },
+                            		{ n = G.UIT.R, config = { align = "cm", }, nodes = { { n = G.UIT.T, config = { text = "footlongdingledong", scale = .3, shadow = true, align = "bm" } } } },
+                            		{ n = G.UIT.R, config = { align = "cm", }, nodes = { { n = G.UIT.T, config = { text = "Ice", scale = .3, shadow = true, align = "bm" } } } },
+                            		{ n = G.UIT.R, config = { align = "cm", }, nodes = { { n = G.UIT.T, config = { text = "LFMoth", scale = .3, shadow = true, align = "bm" } } } },
+								},
+							},
+							{
+								n = G.UIT.C,
+								config = { align = "cm", minw = .05 },
+							},
+							{
+								n = G.UIT.C,
+								config = { align = "cm", minw = 2.5, minh = 2.5, padding = 0.05, r = 0.1, colour = G.C.L_BLACK },
+								nodes = {
+                            		{ n = G.UIT.R, config = { align = "cm", }, nodes = { { n = G.UIT.T, config = { text = "Superboss Theme", scale = .4, shadow = true, align = "bm" } } } },
+                            		{ n = G.UIT.R, config = { align = "cm", }, nodes = { { n = G.UIT.T, config = { text = "DUEL ZONE (VER. 2)", scale = .3, shadow = true, align = "bm" } } } },
+                            		{ n = G.UIT.R, config = { align = "cm", }, nodes = { { n = G.UIT.T, config = { text = "by dante, Geshtro", scale = .3, shadow = true, align = "bm" } } } },
+                            		G.F_EXTERNAL_LINKS and { n = G.UIT.R, config = { align = "cm", }, nodes = { { n=G.UIT.C, config={padding = 0.05}, nodes={
+										UIBox_button({label = {'Youtube'}, button = 'duelzone_ver2_link', scale = .3, padding = .1})
+									}} } } or nil,
+								},
+							},
+						},
+					},
+					{
+						n = G.UIT.R,
+						config = { minw = .05 }, 
+					},
+					{
+						n = G.UIT.R,
+						config = { minw = 3.5, minh = 0.03, colour = G.C.L_BLACK, emboss = 0. }, 
+					},
+					{
+						n = G.UIT.R,
+						config = { minw = .05 }, 
+					},
+					{
+						n = G.UIT.R,
+						config = { align = "cm", minw = .05 },
+						nodes = {
+							{ n = G.UIT.R, config = {}, nodes = { { n = G.UIT.T, config = { text = "thank you for playing! <3", scale = .3, shadow = true, align = "tm" } } } },
+						}
+					},
+				},
+			},
+        }
+    }
+
+    return ui
+end
+
+-- function vallkarri.artist_credit_ui()
+--     local built = {
+--         { n = G.UIT.R, config = {}, nodes = { { n = G.UIT.T, config = { text = "Artists", colour = colours.art, scale = text_scale * 2, shadow = true, align = "tm" } } } },
+--     }
+--     vallkarri.refresh_artist_credit_buttons()
+--     for artist, _ in pairs(vallkarri.credited_artists) do
+--         table.insert(built,
+--             {
+--                 n = G.UIT.R,
+--                 config = {},
+--                 nodes = { {
+--                     n = G.UIT.C,
+--                     config = { button = "vallkarri_artist_" .. artist, colour = G.C.UI.OUTLINE_DARK, minh = 0.3, minw = 2, r = 0.05, align = "tm" },
+--                     nodes = {
+--                         { n = G.UIT.T, config = { text = artist, colour = G.C.UI.TEXT_LIGHT, scale = text_scale * 0.85, shadow = true } }
+--                     }
+--                 } }
+--             }
+--         )
+--     end
+
+--     return built
+-- end
+
+-- function vallkarri.refresh_artist_credit_buttons()
+--     for artist, credited_cards in pairs(vallkarri.credited_artists) do
+--         G.FUNCS["vallkarri_artist_" .. artist] = function(e)
+                
+--             local cards_with_art = {}
+--             for _, card in pairs(credited_cards) do
+--                 table.insert(cards_with_art, SMODS.Center.obj_table[card])
+--             end
+--             G.SETTINGS.paused = true
+--             G.FUNCS.overlay_menu {
+--                 definition = SMODS.card_collection_UIBox(cards_with_art, { 5, 5, 5 }),
+--             }
+--         end
+--     end
+-- end

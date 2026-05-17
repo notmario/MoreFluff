@@ -2771,6 +2771,8 @@ return {
 			k_noted_ex = "Noted!",
 			k_reduced_ex = "Reduced!",
 			k_zenith = "Saved by Z",
+
+			mf_credits = "Credits",
 		},
 		v_dictionary = {
 			a_plus_hand = { "+#1# Hand " },
