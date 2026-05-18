@@ -1236,6 +1236,17 @@ return {
 			},
 
 			-- rot legendaries
+			j_mf_rot_yorick = {
+				name = "{E:mf_rotarot_title}Yorick!",
+				text = {
+					"This Joker starts {C:spectral}prepared{}",
+					"{C:inactive,s:0.8}(While it's prepared, you may",
+					"{C:inactive,s:0.8}use a copy of its consumable,",
+					"{C:inactive,s:0.8}doing so unprepares it.)",
+					"Whenever you discard {C:attention}#1#{}{C:inactive} [#2#]{}",
+					"cards, {C:spectral}prepare{} this Joker",
+				},
+			},
 			j_mf_rot_chicot = {
 				name = "{E:mf_rotarot_title}Chicot!",
 				text = {
@@ -2239,6 +2250,14 @@ return {
                     "each round",
                 },
             },
+            c_mf_windfall = {
+                name = "Windfall",
+                text = {
+                    "Discard your hand",
+					"Each card discarded this",
+					"way gains {X:mult,C:white}X#1#{} Mult"
+                },
+            },
             c_mf_negate = {
                 name = "Negate",
                 text = {
@@ -2249,7 +2268,7 @@ return {
                 },
             },
             c_mf_mirror = {
-                name = "Mirror",
+                name = "Mirrorform",
                 text = {
                     "Create a {C:dark_edition}Negative{} copy of",
                     "{C:attention}1{} random {C:attention}consumable{} card",

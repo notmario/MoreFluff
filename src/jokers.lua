@@ -130,7 +130,7 @@ FLUFF.joker_pool = {
 	-- rot legendary
 	-- "rot_canio",
 	-- "rot_triboulet",
-	-- "rot_yorick",
+	"rot_yorick",
 	"rot_chicot",
 	"rot_perkeo",
 	"rot_triangle",
