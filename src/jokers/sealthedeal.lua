@@ -21,7 +21,7 @@ SMODS.Joker({
 	calculate = function(self, card, context)
 		if
 			context.after
-			and G.GAME.chips + SMODS.calculate_round_score() > G.GAME.blind.chips
+			and G.GAME.chips + SMODS.calculate_round_score() >= G.GAME.blind.chips
 			and context.cardarea == G.jokers
 		then
 			local unsealed = {}

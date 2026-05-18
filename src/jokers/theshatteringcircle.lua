@@ -44,30 +44,56 @@ SMODS.Joker({
         }
 	end,
 	calculate = function(self, card, context)
-		if context.end_of_round and not context.individual and not context.repetition and not context.blueprint and G.GAME.blind.boss then
-			card.ability.extra.bosses_left = card.ability.extra.bosses_left - 1
-			if
-				card.ability.extra.bosses_left <= 0
-			then
-				G.E_MANAGER:add_event(Event({
-					trigger = "after",
-					delay = 0.01,
-					func = function()
-                		card:set_ability(G.P_CENTERS["j_mf_eventhorizon"])
-						return true
-					end,
-				}))
-                card:juice_up()
-                G.jokers:unhighlight_all()
-				FLUFF.disintegration_loop_jumpscare()
+		if context.after and G.GAME.chips + SMODS.calculate_round_score() > G.GAME.blind.chips and not context.repetition and not context.blueprint and G.GAME.blind.boss then	
+			G.E_MANAGER:add_event(Event{
+				trigger = "after",
+				delay = 0.,
+        		func = function()
+					G.GAME.mf_fake_score = number_format(G.GAME.chips)
+					G.GAME.chips = 0
+					-- G.GAME.round_resets.lost = true
+					-- G.STATE = 1
+					-- G.STATE_COMPLETE = false
+					card.ability.extra.bosses_left = card.ability.extra.bosses_left - 1
+					if
+						card.ability.extra.bosses_left <= 0
+					then
+						G.E_MANAGER:add_event(Event({
+							trigger = "after",
+							delay = 0.01,
+							func = function()
+								card:set_ability(G.P_CENTERS["j_mf_eventhorizon"])
+								ease_background_colour{new_colour = HEX "282848", contrast = 1}
+								if not G.GAME.blind.disabled then
+									G.GAME.blind:disable()
+								end
+								local was_superboss = (G.GAME.blind.debuff or {}).superboss
+								G.GAME.blind:set_blind(G.P_BLINDS["bl_mf_space"])
+								if was_superboss then
+									G.GAME.blind.debuff = G.GAME.blind.debuff or {}
+									G.GAME.blind.debuff.superboss = true
+								end
+								G.GAME.mf_fake_score = nil
+								return true
+							end,
+						}))
+						card:juice_up()
+						G.jokers:unhighlight_all()
+						FLUFF.disintegration_loop_jumpscare()
+						G.GAME.blind:juice_up()
+						ease_hands_played(G.GAME.round_resets.hands-G.GAME.current_round.hands_left)
+						ease_discard(
+							math.max(0, G.GAME.round_resets.discards + G.GAME.round_bonus.discards) - G.GAME.current_round.discards_left
+						)
+						G.FUNCS.draw_from_discard_to_deck()
 
-                return {
-                    message = localize "k_transformed_ex"
-                }
-			end
-			return {
-				message = ""..card.ability.extra.bosses_left
-			}
+						-- return {
+						-- 	message = localize "k_transformed_ex"
+						-- }
+					end
+					return true
+				end
+			})
 		end
         if (context.setting_blind or (context.pre_discard and context.cardarea == G.jokers and #context.full_hand == 5)) and not context.blueprint then
             play_sound("mf_jokerrotate")
@@ -149,3 +175,30 @@ function love.update(dt)
 		FLUFF.door_timer = FLUFF.door_timer - dt
 	end
 end
+
+SMODS.Blind({
+	key = "space",
+	name = "The Event Horizon",
+
+	atlas = "mf_blinds",
+	pos = { x = 0, y = 16 },
+
+	dollars = 10,
+	mult = 4,
+
+	boss = {
+		event_horizon = true
+	},
+	boss_colour = HEX("282848"),
+
+	no_collection = true,
+
+	in_pool = function(self)
+		return false
+	end,
+
+	disable = function(self)
+		G.GAME.blind.chips = G.GAME.blind.chips / 2
+		G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
+	end,
+})

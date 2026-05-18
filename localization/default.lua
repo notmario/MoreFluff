@@ -1133,7 +1133,7 @@ return {
 					},
 					{
 						"{C:attention}Transforms{} after {C:attention}#3#{}",
-						"{C:attention}Boss Blind{} is defeated"
+						"{C:attention}Boss Blind{} is defeated{C:inactive}..?"
 					}
 				},
 			},
@@ -1153,7 +1153,7 @@ return {
 					},
 					{
 						"{C:attention}Transforms{} after {C:attention}#3#{}",
-						"{C:attention}Boss Blind{} is defeated"
+						"{C:attention}Boss Blind{} is defeated{C:inactive}..?"
 					}
 				},
 			},
@@ -1173,7 +1173,7 @@ return {
 					},
 					{
 						"{C:attention}Transforms{} after {C:attention}#3#{}",
-						"{C:attention}Boss Blind{} is defeated"
+						"{C:attention}Boss Blind{} is defeated{C:inactive}..?"
 					}
 				},
 			},
@@ -2475,6 +2475,12 @@ return {
 				text = {
 					"After hand is played,",
 					"discard hand after draw",
+				},
+			},
+			bl_mf_space = {
+				name = "The Event Horizon",
+				text = {
+					"Very large blind",
 				},
 			},
 		},

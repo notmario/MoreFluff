@@ -31,7 +31,7 @@ SMODS.Joker({
         }
 	end,
 	calculate = function(self, card, context)
-		if context.end_of_round and not context.individual and not context.repetition and not context.blueprint and G.GAME.blind.boss then
+		if context.end_of_round and not context.individual and not context.repetition and not context.blueprint and G.GAME.blind.boss and G.GAME.blind.name ~= "The Event Horizon" then
 			card.ability.extra.bosses_left = card.ability.extra.bosses_left - 1
 			if
 				card.ability.extra.bosses_left <= 0
