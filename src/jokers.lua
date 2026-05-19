@@ -134,7 +134,7 @@ FLUFF.joker_pool = {
 	"rot_chicot",
 	"rot_perkeo",
 	"rot_triangle",
-	-- "rot_marigold",
+	"rot_marigold",
 }
 
 for _, path in ipairs(FLUFF.joker_pool) do

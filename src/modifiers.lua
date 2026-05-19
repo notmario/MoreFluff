@@ -185,17 +185,23 @@ SMODS.Enhancement({
 			for _, other_card in pairs(G.hand.cards) do
 				if other_card ~= card and other_card.config.center_key == card.config.center_key then
 					c = c + 1
-					G.E_MANAGER:add_event(Event({
-						trigger = "before",
-						delay = 0.25,
-						func = function()
-							other_card:juice_up()
-							card:juice_up()
-							play_sound("chips1", 0.8 + (0.9 + 0.2 * math.random()) * 0.2, 1)
-							-- ease_dollars(card.ability.cash)
-							return true
-						end,
-					}))
+				end
+			end
+			if c < 10 then
+				for _, other_card in pairs(G.hand.cards) do
+					if other_card ~= card and other_card.config.center_key == card.config.center_key then
+						G.E_MANAGER:add_event(Event({
+							trigger = "before",
+							delay = 0.25,
+							func = function()
+								other_card:juice_up()
+								card:juice_up()
+								play_sound("chips1", 0.8 + (0.9 + 0.2 * math.random()) * 0.2, 1)
+								-- ease_dollars(card.ability.cash)
+								return true
+							end,
+						}))
+					end
 				end
 			end
 			-- ease_dollars(card.ability.cash)

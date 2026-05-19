@@ -1293,6 +1293,19 @@ return {
 					"{C:attention}of a Kind{} was played"
 				},
 			},
+			j_mf_rot_marigold = {
+				name = "{E:mf_rotarot_title}Marigold!",
+				text = {
+					"This Joker starts {C:spectral}prepared{}",
+					"{C:inactive,s:0.8}(While it's prepared, you may",
+					"{C:inactive,s:0.8}use a copy of its consumable,",
+					"{C:inactive,s:0.8}doing so unprepares it.)",
+					"When you convert a card",
+					"to an {C:attention}Enhancement{} that",
+					"is not a {C:attention}Marigold Card{},",
+					"{C:spectral}prepare{} this Joker",
+				},
+			},
 
 			-- john
 			j_mf_johnbalatrotrue = {
@@ -2303,6 +2316,15 @@ return {
                 text = {
                     "Use {C:attention}five{} random {C:colourcard}Colour{}",
 					"cards with one trigger",
+                },
+            },
+            c_mf_lotusbloom = {
+                name = "Lotus Bloom",
+                text = {
+					"Enhances up to {C:attention}1{}",
+					"selected card to a",
+					"{C:attention}#2#{}, then draw",
+					"every {C:attention}#2#{} to hand"
                 },
             },
 		},
