@@ -93,8 +93,14 @@ SMODS.Joker {
 
                     if valid then
                         card.ability.extra.has_triggered = true
-                        SMODS.destroy_cards { other_card }
-                        delay(0.5)
+                        G.E_MANAGER:add_event(Event({
+                            trigger = "after",
+                            delay = 0.1,
+                            func = function()
+                                SMODS.destroy_cards { other_card }
+                                return true
+                            end,
+                        }))
                     end
                 end
             end
