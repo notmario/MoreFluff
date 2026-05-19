@@ -1236,6 +1236,17 @@ return {
 			},
 
 			-- rot legendaries
+			j_mf_rot_canio = {
+				name = "{E:mf_rotarot_title}Canio!",
+				text = {
+					"This Joker starts {C:spectral}prepared{}",
+					"{C:inactive,s:0.8}(While it's prepared, you may",
+					"{C:inactive,s:0.8}use a copy of its consumable,",
+					"{C:inactive,s:0.8}doing so unprepares it.)",
+					"Whenever you destroy a non-{C:attention}face",
+					"card, {C:spectral}prepare{} this Joker",
+				},
+			},
 			j_mf_rot_yorick = {
 				name = "{E:mf_rotarot_title}Yorick!",
 				text = {
@@ -2250,6 +2261,16 @@ return {
                     "each round",
                 },
             },
+            c_mf_doomblade = {
+                name = "Doom Blade",
+                text = {
+                    "Destroy up to {C:attention}#1#{}",
+					"selected {C:attention}face{} cards",
+					"Each non-{C:attention}face{} card held",
+					"in hand gains {X:mult,C:white}X#2#{} Mult",
+					"for each card destroyed"
+                },
+            },
             c_mf_windfall = {
                 name = "Windfall",
                 text = {
@@ -2277,7 +2298,7 @@ return {
                 },
             },
             c_mf_refraction = {
-                name = "Refraction",
+                name = "Manamorphose",
                 text = {
                     "Use {C:attention}five{} random {C:colourcard}Colour{}",
 					"cards with one trigger",
