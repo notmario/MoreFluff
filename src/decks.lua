@@ -30,3 +30,20 @@ function Card:set_cost(...)
 		G.GAME.inflation = (G.GAME.inflation or 0) - G.GAME.modifiers.mf_pack_tax
 	end
 end
+
+SMODS.Back {
+	key = "philosophical",
+	config = { jokers = { "j_mf_philosophical", "j_mf_philosophical", "j_mf_philosophical", "j_mf_philosophical", "j_mf_philosophical" } },
+	pos = { x = 1, y = 0 },
+	atlas = "mf_enhancers",
+	unlocked = true,
+}
+
+SMODS.Back {
+    name = "Rainbow Deck",
+    key = "rainbow",
+    config = { voucher = 'v_mf_paintroller', consumables = {'c_mf_white'} },
+    pos = { x = 2, y = 0 },
+    atlas = "mf_enhancers",
+    unlocked = true,
+}

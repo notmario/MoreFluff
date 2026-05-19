@@ -2414,6 +2414,21 @@ return {
 					"Booster Packs cost {C:gold}$1{} more",
 				},
 			},
+			b_mf_philosophical = {
+				name = "Philosophical Deck",
+				text = {
+					"Start run with 5",
+					"{C:attention}Philosophical Jokers"
+				}
+			},
+			b_mf_rainbow = {
+				name = "Rainbow Deck",
+				text = {
+					"Start run with a {C:colourcard}White",
+					"{C:colourcard}Colour{} card and the",
+					"{C:tarot,T:v_mf_paintroller}Paint Roller{} Voucher",
+				}
+			},
 		},
 		Blind = {
 			bl_mf_bigger_blind = {
