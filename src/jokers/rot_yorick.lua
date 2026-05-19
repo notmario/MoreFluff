@@ -54,7 +54,7 @@ SMODS.Consumable {
     key = 'windfall',
 	set = "Spectral",
     pos = { x = 3, y = 0 },
-    config = { extra = { xmult_given = 0.2 } },
+    config = { extra = { xchips_given = 0.2 } },
     atlas = "mf_rot_legendary_consumables",
 	unlocked = true,
 	discovered = true,
@@ -64,13 +64,13 @@ SMODS.Consumable {
     end,
 	loc_vars = function(self, info_queue, card)
 		return {
-			vars = { card.ability.extra.xmult_given },
+			vars = { card.ability.extra.xchips_given },
 		}
 	end,
 	use = function(self, card, area, copier)
         for _, v in ipairs(G.hand.cards) do
-            v.ability.perma_x_mult = v.ability.perma_x_mult or 0
-            v.ability.perma_x_mult = v.ability.perma_x_mult + card.ability.extra.xmult_given
+            v.ability.perma_x_chips = v.ability.perma_x_chips or 0
+            v.ability.perma_x_chips = v.ability.perma_x_chips + card.ability.extra.xchips_given
             G.hand.highlighted[#G.hand.highlighted + 1] = v
             G.E_MANAGER:add_event(Event({
                 trigger = "after",

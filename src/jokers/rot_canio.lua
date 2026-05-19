@@ -39,10 +39,10 @@ SMODS.Consumable {
 	in_pool = function(...)
         return next(SMODS.find_card("j_mf_rot_canio"))
     end,
-    config = { extra = { can_destroy = 3, xmult_given = 0.25 } },
+    config = { extra = { can_destroy = 3, xblindsize_given = 0.05 } },
 	loc_vars = function(self, info_queue, card)
 		return {
-			vars = { card.ability.extra.can_destroy, card.ability.extra.xmult_given },
+			vars = { card.ability.extra.can_destroy, card.ability.extra.xblindsize_given },
 		}
 	end,
 	use = function(self, card, area, copier)
@@ -70,13 +70,24 @@ SMODS.Consumable {
             func = function()
                 for _, v in ipairs(G.hand.cards) do
                     if not v:is_face() then
-                        v.ability.perma_x_mult = v.ability.perma_x_mult or 0
-                        v.ability.perma_x_mult = v.ability.perma_x_mult + card.ability.extra.xmult_given * destroy_count
-                        card_eval_status_text(v, "extra", nil, nil, nil, {
-                            message = localize("k_upgrade_ex"),
-                            colour = G.C.MULT,
-                            card = card,
-                        })
+                        local did_upgrade = false
+                        for i = 1, destroy_count do
+                            v.ability.perma_x_blind_size = v.ability.perma_x_blind_size or 0
+                            if v.ability.perma_x_blind_size > -1 + card.ability.extra.xblindsize_given then
+                                v.ability.perma_x_blind_size = v.ability.perma_x_blind_size - card.ability.extra.xblindsize_given
+                                did_upgrade = true
+                                if v.ability.perma_x_blind_size <= -1 + card.ability.extra.xblindsize_given then
+                                    v.ability.perma_x_blind_size = -1 + card.ability.extra.xblindsize_given
+                                end
+                            end
+                        end
+                        if did_upgrade then
+                            card_eval_status_text(v, "extra", nil, nil, nil, {
+                                message = localize("k_upgrade_ex"),
+                                colour = G.C.PURPLE,
+                                card = card,
+                            })
+                        end
                     end
                 end
                 return true

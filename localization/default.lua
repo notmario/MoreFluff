@@ -2266,9 +2266,10 @@ return {
                 text = {
                     "Destroy up to {C:attention}#1#{}",
 					"selected {C:attention}face{} cards",
-					"Each non-{C:attention}face{} card held",
-					"in hand gains {X:mult,C:white}X#2#{} Mult",
-					"for each card destroyed"
+					"Each non-{C:attention}face{} card held in hand",
+					"gains {X:purple,C:white}-X#2#{} Blind size for",
+					"each card destroyed this way",
+					"{C:inactive}(Minimum of {X:purple,C:white}X#2#{C:inactive})"
                 },
             },
             c_mf_windfall = {
@@ -2276,7 +2277,7 @@ return {
                 text = {
                     "Discard your hand",
 					"Each card discarded this",
-					"way gains {X:mult,C:white}X#1#{} Mult"
+					"way gains {X:chips,C:white}X#1#{} Chips"
                 },
             },
             c_mf_negate = {
