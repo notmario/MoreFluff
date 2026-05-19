@@ -5,7 +5,6 @@ SMODS.Joker({
 	discovered = true,
 	blueprint_compat = true,
 	no_collection = true,
-	no_shader_on_modbadge = true,
 	lettergem_badge = true,
 	pools = {
 		letterjoker = true,

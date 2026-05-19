@@ -16,15 +16,15 @@ SMODS.Joker({
 	perishable_compat = true,
 	attributes = { "passive", "full_deck", },
 	loc_vars = function(self, info_queue, center)
-		if not G.deck or not G.deck.cards or #G.deck.cards == 0 then
+		if not next(SMODS.find_card("j_mf_burnerphone")) then
 			return {
 				vars = {
-					"no ",
-					"cards ",
-					"left,",
-					"the deck ",
 					"is ",
-					"empty",
+					"not ",
+					"owned,",
+					"you ",
+					"get ",
+					"nothing",
 					colours = {
 						G.C.UI.TEXT_INACTIVE,
 						G.C.UI.TEXT_INACTIVE,
@@ -36,15 +36,15 @@ SMODS.Joker({
 				},
 			}
 		end
-		if not next(SMODS.find_card("j_mf_burnerphone")) then
+		if not G.deck or not G.deck.cards or #G.deck.cards == 0 then
 			return {
 				vars = {
+					"no ",
+					"cards ",
+					"left,",
+					"the deck ",
 					"is ",
-					"not ",
-					"owned,",
-					"you ",
-					"get ",
-					"nothing",
+					"empty",
 					colours = {
 						G.C.UI.TEXT_INACTIVE,
 						G.C.UI.TEXT_INACTIVE,
