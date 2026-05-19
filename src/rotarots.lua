@@ -1186,7 +1186,7 @@ SMODS.Consumable({
 			delay = 0.4,
 			func = function()
 				play_sound("timpani")
-				SMODS.add_card({ set = "Joker", rarity = "rot_legendary" })
+				SMODS.add_card({ set = "Joker", rarity = "mf_rot_legendary" })
 				check_for_unlock({ type = "spawn_legendary" })
 				card:juice_up(0.3, 0.5)
 				return true
