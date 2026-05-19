@@ -1247,6 +1247,17 @@ return {
 					"card, {C:spectral}prepare{} this Joker",
 				},
 			},
+			j_mf_rot_triboulet = {
+				name = "{E:mf_rotarot_title}Triboulet!",
+				text = {
+					"This Joker starts {C:spectral}prepared{}",
+					"{C:inactive,s:0.8}(While it's prepared, you may",
+					"{C:inactive,s:0.8}use a copy of its consumable,",
+					"{C:inactive,s:0.8}doing so unprepares it.)",
+					"Whenever you discard a",
+					"{C:attention}Pair{}, {C:spectral}prepare{} this Joker",
+				},
+			},
 			j_mf_rot_yorick = {
 				name = "{E:mf_rotarot_title}Yorick!",
 				text = {
@@ -2283,6 +2294,17 @@ return {
 					"gains {X:purple,C:white}-X#2#{} Blind size for",
 					"each card destroyed this way",
 					"{C:inactive}(Minimum of {X:purple,C:white}X#2#{C:inactive})"
+                },
+            },
+            c_mf_reinforcements = {
+                name = "Royal Decree",
+                text = {
+					"Until end of round, playing a",
+					"hand creates a {C:attention}King{} and a {C:attention}Queen{}",
+					"and adds them to the scoring hand.",
+					"They give {X:mult,C:white}X3{} Mult for this",
+					"hand then {C:red}self destruct",
+					"{C:inactive}(Currently #1# triggers)"
                 },
             },
             c_mf_windfall = {

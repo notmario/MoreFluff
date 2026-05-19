@@ -1,5 +1,5 @@
 FLUFF.calculate = function(self, context)
-	local res = nil
+	local res = {}
 
 	if context.end_of_round and context.main_eval then
 		colour_end_of_round_effects()
@@ -34,10 +34,10 @@ FLUFF.calculate = function(self, context)
 					return true
 				end,
 			}))
-			res = SMODS.merge_effects({
+			res[#res + 1] = {
 				message = localize("k_added_ex"),
 				colour = HEX("000000"),
-			}, res)
+			}
 		end
 	end
 
@@ -51,7 +51,21 @@ FLUFF.calculate = function(self, context)
 		end
 	end
 
-	if res then
-		return res
+	if context.individual and context.cardarea == G.play then
+		if context.other_card.mf_royal_decreed then
+			res[#res + 1] = {
+				xmult = 3,
+				card = context.other_card
+			}
+		end
 	end
+	if context.destroy_card and context.cardarea == G.play then
+		if context.destroy_card.mf_royal_decreed then
+			res[#res + 1] = {
+				remove = true
+			}
+		end
+	end
+
+	return SMODS.merge_effects(res)
 end
