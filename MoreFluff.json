@@ -6,7 +6,7 @@
 	"prefix": "mf",
 	"main_file": "main.lua",
 	"badge_colour": "814BA8",
-	"version": "1.7.0",
+	"version": "1.9.999",
 	"dependencies": [
 		"Steamodded(>=1.0.0~BETA-1606b)"
 	],
