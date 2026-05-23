@@ -144,6 +144,21 @@ function Card:draw(layer, ...)
 	end
 end
 
+local ncwp = Node.collides_with_point
+function Node:collides_with_point(point, ...)
+	if self.config and self.config.center and self.config.center.key == "j_mf_theshatteringcircle" then
+		self.VT.r = self.VT.r + self.ability.extra.rotation
+	end
+
+	local res = ncwp(self, point, ...)
+
+	if self.config and self.config.center and self.config.center.key == "j_mf_theshatteringcircle" then
+		self.VT.r = self.VT.r - self.ability.extra.rotation
+	end
+
+	return res
+end
+
 function FLUFF.disintegration_loop_jumpscare()
 	love.graphics.captureScreenshot( function ( data )
 		FLUFF.door_image = love.graphics.newImage( data )
