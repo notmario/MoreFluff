@@ -110,7 +110,14 @@ SMODS.Joker({
 				end
 			end
 
-			SMODS.destroy_cards(destroyed_cards)
+			G.E_MANAGER:add_event(Event({
+				trigger = "after",
+				delay = 0.1,
+				func = function()
+					SMODS.destroy_cards ( destroyed_cards )
+					return true
+				end,
+			}))
 
 			return {
 				message = localize("k_merged_ex"),
