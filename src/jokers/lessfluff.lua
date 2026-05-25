@@ -36,7 +36,7 @@ SMODS.Joker({
 				if other_jkr.getting_sliced then
 					goto continue
 				end
-				if other_jkr.config.center.original_mod then
+				if not other_jkr.config.center.original_mod then
 					goto continue
 				end
 
