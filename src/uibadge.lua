@@ -35,7 +35,7 @@ function SMODS.create_mod_badges(obj, badges)
 			local scale_fac = 1
 			-- calced_text_width > max_text_width and max_text_width/calced_text_width
 			-- or 1
-			badges[#badges + 1] = {
+			badges[#badges] = {
 				n = G.UIT.R,
 				config = { align = "cm" },
 				nodes = {
