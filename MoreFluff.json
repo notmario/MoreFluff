@@ -7,6 +7,7 @@
 	"main_file": "main.lua",
 	"badge_colour": "814BA8",
 	"version": "1.9.999",
+	"icon_path": "mf_icon.png",
 	"dependencies": [
 		"Steamodded(>=1.0.0~BETA-1606b)"
 	],
