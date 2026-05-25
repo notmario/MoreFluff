@@ -21,6 +21,7 @@ SMODS.Joker({
 	calculate = function(self, card, context)
 		if context.open_booster then
 			if context.booster and context.booster.kind == "Buffoon" then
+				local rarity = pseudorandom_element({"mf_oldfluff", "mf_letter"}, pseudoseed("bonussheet_rarity"))
 				G.E_MANAGER:add_event(Event({
 					trigger = "after",
 					delay = 0.7,
@@ -29,7 +30,7 @@ SMODS.Joker({
 						SMODS.add_card({
 							set = "Joker",
 							area = G.pack_cards,
-							rarity = "mf_oldfluff",
+							rarity = rarity,
 						})
 						return true
 					end,

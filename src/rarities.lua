@@ -3,8 +3,9 @@ SMODS.Rarity({
 	badge_colour = HEX("000000"),
 })
 
-SMODS.ObjectType({
-	key = "letterjoker",
+SMODS.Rarity({
+	key = "letter",
+	badge_colour = HEX("a9683b"),
 })
 
 SMODS.Rarity({

@@ -1,6 +1,7 @@
 SMODS.Joker({
 	key = "lettergem_y",
-	atlas = "mf_oldfluff",
+	atlas = "mf_letterjokers",
+    display_size = { h = 78 },
 	unlocked = true,
 	discovered = true,
 	blueprint_compat = true,
@@ -9,9 +10,9 @@ SMODS.Joker({
 	pools = {
 		letterjoker = true,
 	},
-	rarity = "mf_oldfluff",
+	rarity = "mf_letter",
 	cost = 4 * 2,
-	pos = { x = 5, y = 5 },
+	pos = { x = 6, y = 2 },
 	config = { extra = { dollars = 10, card_total = 13, cards_scored = 0 } },
 	attributes = { "economy", },
 	loc_vars = function(self, info_queue, card)

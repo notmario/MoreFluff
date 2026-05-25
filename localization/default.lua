@@ -165,7 +165,7 @@ return {
 				name = "Bonus Sheet",
 				text = {
 					"{C:attention}Buffoon Packs{} contain an",
-					"additional {V:1}Scrapped{} {C:attention}Joker{}",
+					"additional {V:1}Hidden{} {C:attention}Joker{}",
 				},
 			},
 			j_mf_blunder = {
@@ -1640,9 +1640,9 @@ return {
 						"voucher, gain {C:blue}+1{} hand each round",
 					},
 					{
-						"When you select {C:attention}five{} blinds,",
+						"When you select {C:attention}six{} blinds,",
 						"{C:spectral}prepare{} this {C:attention}Joker{}",
-						"{C:inactive}(Currently #1#/5)"
+						"{C:inactive}(Currently #1#/6)"
 					}
 				},
 			},
@@ -2432,7 +2432,7 @@ return {
 				name = "Old Deck",
 				text = {
 					"Buffoon Packs contain an",
-					"additional {V:1}Scrapped{} Joker",
+					"additional {V:1}Hidden{} Joker",
 					"Booster Packs cost {C:gold}$1{} more",
 				},
 			},
@@ -2827,6 +2827,7 @@ return {
 			colour = "Colour",
 			mf_token = "Token",
 			mf_oldfluff = "Scrapped",
+			mf_letter = "Letter",
 			mf_superlegendary = "Superlegendary",
 			mf_rot_legendary = "Legendary!",
 			mf_cryptic = "Cryptic",
@@ -2836,6 +2837,7 @@ return {
 		dictionary = {
 			k_mf_token = "Token",
 			k_mf_oldfluff = "Scrapped",
+			k_mf_letter = "Letter",
 			k_mf_superlegendary = "Superlegendary",
 			k_mf_rot_legendary = "Legendary!",
 			k_colour = "Colour",

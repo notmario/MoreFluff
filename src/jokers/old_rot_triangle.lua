@@ -11,6 +11,7 @@ SMODS.Joker({
 	pos = { x = 2, y = 6 },
 	-- soul_pos = { x = 9, y = 5 },
 	mf_rotate_by = math.pi / 4,
+	weight = 0.1,
 	atlas = "mf_oldfluff",
 	rarity = "mf_oldfluff",
 	cost = 20,
