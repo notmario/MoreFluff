@@ -28,6 +28,7 @@ SMODS.Joker({
 				return {
 					message = "^" .. card.ability.extra.emult .. " Mult",
 					colour = G.C.DARK_EDITION,
+					sound = "mf_emult",
 					pre_func = function()
 						mult = mod_mult(mult ^ card.ability.extra.emult)
 					end,

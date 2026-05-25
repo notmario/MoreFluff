@@ -30,7 +30,7 @@ SMODS.Joker({
 					pre_func = function()
 						mult = mod_mult(mult ^ (mult ^ 0.04))
 					end,
-					sound = "multhit2",
+					sound = "mf_emult",
 					colour = G.C.DARK_EDITION,
 				}
 			end

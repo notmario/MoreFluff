@@ -74,6 +74,18 @@ SMODS.Sound({
 })
 
 SMODS.Sound({
+	key = "emult",
+	path = "emult.ogg",
+	pitch = 1.0,
+})
+
+SMODS.Sound({
+	key = "echips",
+	path = "echips.ogg",
+	pitch = 1.0,
+})
+
+SMODS.Sound({
 	key = "buzzer",
 	path = "buzzer.ogg",
 	pitch = 1.0,

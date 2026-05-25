@@ -32,7 +32,7 @@ SMODS.Joker({
 						hand_chips = mod_chips(hand_chips ^ (hand_chips ^ 0.04))
 					end,
 					message = "^^1.04 Chips",
-					sound = "multhit2",
+					sound = "mf_echips",
 					colour = G.C.DARK_EDITION,
 				}
 			end
