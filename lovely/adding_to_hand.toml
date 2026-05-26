@@ -1,0 +1,38 @@
+[manifest]
+version = "1.0.0"
+dump_lua = true
+priority = -1
+
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = '-- TARGET: adding to hand effects'
+position = 'before'
+payload = '''
+FLUFF.add_to_hand = {}
+
+SMODS.calculate_context { mf_add_to_hand = true }
+
+if G.GAME.rot_trib_count then
+    for i = 1, G.GAME.rot_trib_count do
+        for _, rank in ipairs({"K", "Q"}) do
+            local other_card = SMODS.add_card {
+                area = G.discard,
+                set = "Base",
+                rank = "K",
+            }
+            other_card.mf_royal_decreed = true
+            FLUFF.add_to_hand[#FLUFF.add_to_hand + 1] = other_card
+        end
+    end
+end
+
+for i,v in ipairs(FLUFF.add_to_hand) do
+    table.insert(final_scoring_hand,v)
+    v.area:remove_card(v)
+    G.play:emplace(v)
+
+    v.mf_added_to_hand = false
+end
+'''
+match_indent = true

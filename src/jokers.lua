@@ -104,6 +104,7 @@ FLUFF.joker_pool = {
 	"lonewolf",
 	"bouncer",
 	"jokesforminecrafters",
+	"nemesis",
 	"repack",
 	"saturnburger",
 
@@ -118,6 +119,7 @@ FLUFF.joker_pool = {
 	"gentlemelon",
 	"icecube",
 	"jokerreacts",
+	"knuckleblaster",
 	"refrigerator",
 	"retrigger_joker",
 	"junkyard",
@@ -126,6 +128,7 @@ FLUFF.joker_pool = {
 	"crimsonglassdecomposition",
 	"emeritus_eventuality",
 	"mathemagics",
+	"whiplash",
 
 	-- rot legendary
 	"rot_canio",

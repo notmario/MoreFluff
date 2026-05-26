@@ -773,6 +773,23 @@ return {
 					"{C:inactive}(Turns page at end of round...)",
 				},
 			},
+			j_mf_nemesis = {
+				name = "Nemesis",
+				text = {
+					{
+						"When a {C:attention}Boss Blind{} is defeated, if",
+						"score exceeded {X:purple,C:white}^#1#{} Blind Size,",
+						"create a {C:attention}Buffoon Pack{} which",
+						"contains this {C:attention}Joker{}'s rewards",
+						"{C:inactive}(Requirement: #2#)",
+					},
+					{
+						"The first time this ability triggers,",
+						"this {C:attention}Joker{} {E:1}becomes stronger",
+						"The second trigger {C:red}self destructs{}"
+					},
+				},
+			},
 			j_mf_repack = {
 				name = "Repack",
 				text = {
@@ -928,6 +945,13 @@ return {
 						"gains {C:mult}+#3#{} Mult",
 						"{C:inactive}(Currently {C:mult}+#4#{C:inactive} Mult)"
 					}
+				},
+			},
+			j_mf_knuckleblaster = {
+				name = "Knuckleblaster",
+				text = {
+					"{X:mult,C:white}X#1#{} Mult",
+					"{C:blue}-1{} Play selection limit",
 				},
 			},
 			j_mf_refrigerator = {
@@ -1219,20 +1243,13 @@ return {
 					"resets when triggered"
 				},
 			},
-			j_mf_stormscale = {
-				name = "Stormscale Scion",
+			j_mf_whiplash = {
+				name = "Whiplash",
 				text = {
-					{
-						"{X:mult,C:white}X#1#{} Mult",
-					},
-					{
-						"At end of shop, create a {C:dark_edition}Negative{}",
-						"copy of this {C:attention}Joker{} for every {C:attention}#3#{}",
-						"purchases or packs opened in the shop",
-						"{C:red}Destroy{} them at end of round",
-						"{C:inactive}(Currently #4# copies)"
-					}
-				},
+					"When a hand is played, add",
+					"the first {C:attention}#1#{} cards held in",
+					"hand to the scored hand",
+				}
 			},
 
 			-- rot legendaries
@@ -1719,6 +1736,21 @@ return {
 				text = {
 					"{C:attention}Marigold Cards{} are also considered",
 					"{C:attention}Gold{}, {C:attention}Steel{}, and {C:attention}Glass Cards{}"
+				},
+			},
+			j_mf_stormscale = {
+				name = "Stormscale Scion",
+				text = {
+					{
+						"{X:mult,C:white}X#1#{} Mult",
+					},
+					{
+						"At end of shop, create a {C:dark_edition}Negative{}",
+						"copy of this {C:attention}Joker{} for every {C:attention}#3#{}",
+						"purchases or packs opened in the shop",
+						"{C:red}Destroy{} them at end of round",
+						"{C:inactive}(Currently #4# copies)"
+					}
 				},
 			},
 
@@ -2622,6 +2654,12 @@ return {
 					"or {C:attention}Consumable{} cards",
 				}
 			},
+			p_mf_nemesis_normal = {
+				name = "Rewards",
+				text = {
+					"is this readable in game lol"
+				}
+			},
 			planeswalker_explainer = {
 				name = "Planeswalker",
 				text = {
@@ -2805,6 +2843,12 @@ return {
 					"{C:rotarot}45 Degree Rotated Mega Arcana Pack",
 				},
 			},
+			tag_mf_nemesis = {
+				name = "Nemesis Tag",
+				text = {
+					"Claim your rewards"
+				},
+			},
 		},
 		Edition = {
 			e_mf_cryptic = {
@@ -2868,6 +2912,7 @@ return {
 			k_ready_ex = "Ready!",
       		k_modded_pack = "Modded Pack",
 			k_page_turn = "Page turn",
+      		k_nemesis_pack = "Rewards",
 
 			k_timetravel_ex = "Time travel!",
 			k_plus_ankh = "+Ankh",
