@@ -34,7 +34,7 @@ SMODS.Joker({
                 message = localize "k_reset"
             }
         end
-        if context.drawing_cards and G.GAME.blind then
+        if context.drawing_cards and G.GAME.blind and G.GAME.blind.in_blind then
             local cards_drawn = math.min(context.amount, card.ability.extra.current_cards)
             card.ability.extra.current_cards = card.ability.extra.current_cards - cards_drawn
 			if cards_drawn ~= context.amount then
