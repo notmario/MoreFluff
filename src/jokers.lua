@@ -106,7 +106,6 @@ FLUFF.joker_pool = {
 	"jokesforminecrafters",
 	"nemesis",
 	"repack",
-	"saturnburger",
 
 	"applefriends",
 	"bonussheet",
@@ -122,6 +121,7 @@ FLUFF.joker_pool = {
 	"knuckleblaster",
 	"refrigerator",
 	"retrigger_joker",
+	"saturnburger",
 	"junkyard",
 
 	"aheartofcold",
