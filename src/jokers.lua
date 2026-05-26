@@ -21,13 +21,13 @@ FLUFF.joker_pool = {
 	"unregisteredhypercam",
 
 	-- uncommon page 1
-	"badlegaldefence",
 	"dropkick",
 	"bladedance",
 	"hyperbeam",
 	"blasphemy",
-
 	"dramaticentrance",
+
+	"badlegaldefence",
 	"blunder",
 	"brilliant",
 	"broomcloset",
