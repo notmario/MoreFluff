@@ -787,3 +787,28 @@ SMODS.ScreenShader({
 		return G.GAME.mf_superboss_active
 	end,
 })
+
+if BCATS and BCATS.BLIND_ATTRIBUTES then
+	local blind_attrs = {
+		["bl_mf_bigger_blind"] = { "none" },
+
+		["bl_mf_violet_vessel_dx"] = { "floating", "metal" },
+		["bl_mf_cerulean_bell_dx"] = { "floating", "angel" },
+		["bl_mf_needle_dx"] = { "floating", "metal" },
+		["bl_mf_pillar_dx"] = { "floating", "relic" },
+		["bl_mf_serpent_dx"] = { "floating", "zombie" },
+		["bl_mf_club_dx"] = { "floating", "aku" },
+		["bl_mf_goad_dx"] = { "floating", "aku" },
+		["bl_mf_window_dx"] = { "floating", "angel" },
+		["bl_mf_head_dx"] = { "floating", "dark" },
+		["bl_mf_arm_dx"] = { "floating", "aku" },
+		["bl_mf_wheel_dx"] = { "floating", "metal" },
+		["bl_mf_house_dx"] = { "floating", "relic" },
+		["bl_mf_psychic_dx"] = { "floating", "relic" },
+		["bl_mf_hook_dx"] = { "floating", "red" },
+	}
+
+	for k, v in pairs(blind_attrs) do
+		BCATS.BLIND_ATTRIBUTES[k] = v
+	end
+end
