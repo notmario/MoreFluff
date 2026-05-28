@@ -1,0 +1,21 @@
+[manifest]
+version = "1.0.0"
+dump_lua = true
+priority = -1
+
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = "for i = 1, _size do"
+position = "before"
+payload = "FLUFF.opening_pack = true"
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = """pack_cards[i] = card
+end"""
+position = "after"
+payload = "FLUFF.opening_pack = nil"
+match_indent = true

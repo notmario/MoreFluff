@@ -147,7 +147,8 @@ SMODS.Consumable {
 local sah = Card.set_ability
 function Card:set_ability(center, ...)
     sah(self, center, ...)
-    if self.ability.set == "Enhanced" then
+    if self.ability.set == "Enhanced" and not FLUFF.opening_pack then
         SMODS.calculate_context { mf_card_converted = true, card = self }
     end
+    self.mf_just_opened = nil
 end
