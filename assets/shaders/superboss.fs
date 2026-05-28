@@ -59,7 +59,7 @@ vec4 effect( vec4 colour, Image texture, vec2 texture_coords, vec2 screen_coords
     vec4 tex2 = RGB(hsl);
 
 
-    float mix_fac = (1.-(1./(iTime+1.))) / 2.;
+    float mix_fac = (1.-(1./(iTime+1.))) / 3.;
     tex = tex * (1-mix_fac) + tex2 * mix_fac;
     
     return tex;

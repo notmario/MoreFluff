@@ -112,6 +112,14 @@ SMODS.Atlas({
 })
 
 SMODS.Atlas({
+	key = "mf_chain",
+	atlas_table = "ASSET_ATLAS",
+	path = "chain.png",
+	px = 192,
+	py = 96,
+})
+
+SMODS.Atlas({
 	key = "mf_loyalty",
 	atlas_table = "ASSET_ATLAS",
 	path = "mf_loyalty.png",

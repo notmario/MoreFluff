@@ -93,3 +93,15 @@ position = "at"
 payload = '''G.FUNCS.draw_from_hand_to_discard()
 if G.GAME.blind:get_type() == 'Boss' and ((not G.GAME.mf_superboss_active) or G.GAME.blind.debuff.superboss) then'''
 match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = 'game.lua'
+pattern = '''if not G.debug_UI_toggle then '''
+position = 'before'
+payload = '''
+if FLUFF and FLUFF.superboss_background then
+  FLUFF.superboss_background()
+end
+'''
+match_indent = true

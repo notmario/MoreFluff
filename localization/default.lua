@@ -2597,6 +2597,113 @@ return {
 				},
 			},
 		},
+		SuperbossToken = {
+			c_mf_violet_vessel_dx = {
+				name = "#1#",
+				text = {
+					"The {C:attention}Superboss{} becomes",
+					"{C:attention}#1#",
+				},
+			},
+			c_mf_cerulean_bell_dx = {
+				name = "#1#",
+				text = {
+					"The {C:attention}Superboss{} becomes",
+					"{C:attention}#1#",
+				},
+			},
+			c_mf_needle_dx = {
+				name = "#1#",
+				text = {
+					"The {C:attention}Superboss{} becomes",
+					"{C:attention}#1#",
+				},
+			},
+			c_mf_manacle_dx = {
+				name = "#1#",
+				text = {
+					"The {C:attention}Superboss{} becomes",
+					"{C:attention}#1#",
+				},
+			},
+			c_mf_pillar_dx = {
+				name = "#1#",
+				text = {
+					"The {C:attention}Superboss{} becomes",
+					"{C:attention}#1#",
+				},
+			},
+			c_mf_serpent_dx = {
+				name = "#1#",
+				text = {
+					"The {C:attention}Superboss{} becomes",
+					"{C:attention}#1#",
+				},
+			},
+			c_mf_club_dx = {
+				name = "#1#",
+				text = {
+					"The {C:attention}Superboss{} becomes",
+					"{C:attention}#1#",
+				},
+			},
+			c_mf_goad_dx = {
+				name = "#1#",
+				text = {
+					"The {C:attention}Superboss{} becomes",
+					"{C:attention}#1#",
+				},
+			},
+			c_mf_window_dx = {
+				name = "#1#",
+				text = {
+					"The {C:attention}Superboss{} becomes",
+					"{C:attention}#1#",
+				},
+			},
+			c_mf_head_dx = {
+				name = "#1#",
+				text = {
+					"The {C:attention}Superboss{} becomes",
+					"{C:attention}#1#",
+				},
+			},
+			c_mf_arm_dx = {
+				name = "#1#",
+				text = {
+					"The {C:attention}Superboss{} becomes",
+					"{C:attention}#1#",
+				},
+			},
+			c_mf_wheel_dx = {
+				name = "#1#",
+				text = {
+					"The {C:attention}Superboss{} becomes",
+					"{C:attention}#1#",
+				},
+			},
+			c_mf_house_dx = {
+				name = "#1#",
+				text = {
+					"The {C:attention}Superboss{} becomes",
+					"{C:attention}#1#",
+				},
+			},
+			c_mf_psychic_dx = {
+				name = "#1#",
+				text = {
+					"The {C:attention}Superboss{} becomes",
+					"{C:attention}#1#",
+				},
+			},
+			c_mf_hook_dx = {
+				name = "#1#",
+				text = {
+					"The {C:attention}Superboss{} becomes",
+					"{C:attention}#1#",
+				},
+			},
+		},
 		Other = {
 			p_mf_colour_normal = {
 				name = "{E:mf_colour_title}Colour Pack",
@@ -2892,6 +2999,8 @@ return {
 			k_rotarot_pack = "45 Degree Rotated Arcana Pack",
 			k_plus_colour = "+1 Colour",
 			k_plus_rotarot = "+1 45 Degree Rotated Tarot Card",
+			k_superbosstoken = "Superboss",
+			k_superboss_pack = "Choose your Fate",
 			k_swap_ex = "Swap!",
 			k_sealed_ex = "Sealed!",
 			k_merged_ex = "Merged!",
