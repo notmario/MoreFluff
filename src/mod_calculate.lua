@@ -11,6 +11,10 @@ FLUFF.calculate = function(self, context)
 			end
 			G.mf_missingjoker_revert = {}
 		end
+
+		if G.GAME.round_resets.ante < (G.GAME.win_ante or 8) then
+			G.GAME.mf_missed_superboss = nil
+		end
 	end
 
 	if context.starting_shop and G.GAME.round_resets.ante == G.GAME.win_ante and not G.GAME.mf_missed_superboss then
