@@ -105,3 +105,15 @@ if FLUFF and FLUFF.superboss_background then
 end
 '''
 match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = 'card.lua'
+pattern = '''G.GAME.round_resets.blind_ante = G.GAME.round_resets.blind_ante-center_table.extra'''
+position = 'at'
+payload = '''
+if not G.GAME.mf_superboss_active then
+  G.GAME.round_resets.blind_ante = G.GAME.round_resets.blind_ante-center_table.extra
+end
+'''
+match_indent = true

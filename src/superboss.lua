@@ -94,6 +94,7 @@ local ea = ease_ante
 function ease_ante(mod, ...)
 	if G.GAME.mf_superboss_active then
 		play_sound("mf_buzzer")
+		G.ROOM.jiggle = (G.ROOM.jiggle or 0) + 100
 		ea(0, ...)
 	else
 		ea(mod, ...)
@@ -104,6 +105,7 @@ local gfrb = G.FUNCS.reroll_boss
 function G.FUNCS.reroll_boss(e, ...)
 	if G.GAME.mf_superboss_active then
 		play_sound("mf_buzzer")
+		G.ROOM.jiggle = (G.ROOM.jiggle or 0) + 100
 	else
 		gfrb(e, ...)
 	end
@@ -892,6 +894,7 @@ end
 
 G.FUNCS.skip_booster_fakeout = function(e)
 	play_sound("mf_buzzer")
+	G.ROOM.jiggle = (G.ROOM.jiggle or 0) + 100
 	G.GAME.mf_superboss_tried_to_skip = true
 end
 
