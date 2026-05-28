@@ -962,6 +962,11 @@ FLUFF.superboss_background = function()
 	if not (G.GAME and G.GAME.mf_superboss_active) then return nil end
 
 	local funny_offset_amount = 1 / ((G.GAME.mf_superboss_shader_timer - G.TIMERS.REAL) * 8. + 0.02)
+	local mx, my = love.mouse.getPosition()
+	local w,h = love.graphics.getDimensions()
+
+	love.graphics.push()
+	love.graphics.scale(1920 / w, 1080 / h)
 
 	local function draw_chain( x, y, scale, rot, offset )
 		love.graphics.push()
@@ -969,8 +974,6 @@ FLUFF.superboss_background = function()
 		love.graphics.scale(scale, scale)
 		love.graphics.translate(x, y)
 
-		local mx, my = love.mouse.getPosition()
-		local w,h = love.graphics.getDimensions()
 		local btx = ((mx - w/2) / w) * 16. * scale
 		local bty = ((my - h/2) / h) * 16. * scale
 		love.graphics.translate(btx, bty)
@@ -983,11 +986,14 @@ FLUFF.superboss_background = function()
 		love.graphics.pop()
 	end
 
+	love.graphics.pop()
+
 	love.graphics.setColor( 0.106, 0.149, 0.161, 0.6 )
 
 	draw_chain ( -200, 0, 1., math.pi/16, G.TIMERS.REAL / 8. )
 	draw_chain ( -200, 550, 1.05, -math.pi/32, -G.TIMERS.REAL / 6. )
 	draw_chain ( -200, 650, 0.94, math.pi/46, G.TIMERS.REAL / 7. )
+	draw_chain ( -200, 920, 1.1, -math.pi/64, -G.TIMERS.REAL / 5.6 )
 
 	love.graphics.setColor( 0.106, 0.149, 0.161, 0.3 )
 
@@ -997,11 +1003,13 @@ FLUFF.superboss_background = function()
 	draw_chain ( 1050, -200, .55, math.pi / 2 + math.pi/36, -G.TIMERS.REAL / 11.7 )
 	draw_chain ( 1150, -200, .47, math.pi / 2 - math.pi/20, G.TIMERS.REAL / 12.1 )
 	draw_chain ( 1500, -200, .52, math.pi / 2 + math.pi/40, -G.TIMERS.REAL / 11.9 )
-	draw_chain ( 1600, -200, .48, math.pi / 2 - math.pi/37, -G.TIMERS.REAL / 10.4 )
+	draw_chain ( 1600, -200, .48, math.pi / 2 - math.pi/37, G.TIMERS.REAL / 10.4 )
 	draw_chain ( 2050, -200, .49, math.pi / 2 + math.pi/35, -G.TIMERS.REAL / 11.4 )
-	draw_chain ( 1980, -200, .54, math.pi / 2 - math.pi/28, -G.TIMERS.REAL / 12.5 )
+	draw_chain ( 1980, -200, .54, math.pi / 2 - math.pi/28, G.TIMERS.REAL / 12.5 )
 	draw_chain ( 2600, -200, .50, math.pi / 2 + math.pi/41, -G.TIMERS.REAL / 10.9 )
-	draw_chain ( 2700, -200, .49, math.pi / 2 - math.pi/39, -G.TIMERS.REAL / 9.9 )
+	draw_chain ( 2700, -200, .49, math.pi / 2 - math.pi/39, G.TIMERS.REAL / 9.9 )
 	draw_chain ( 3000, -200, .51, math.pi / 2 + math.pi/38, -G.TIMERS.REAL / 12.9 )
+	draw_chain ( 3300, -200, .48, math.pi / 2 - math.pi/42, G.TIMERS.REAL / 11.8 )
+	draw_chain ( 3600, -200, .53, math.pi / 2 + math.pi/35, -G.TIMERS.REAL / 9.8 )
 
 end
