@@ -2851,14 +2851,18 @@ return {
 				text = {
 					{
 						"Upgrades {C:attention}Ante #1#{}",
-						"{C:inactive,s:0.8}Good luck!{}",
 					},
 					{
-						"There is no escape.",
+						"{C:red,E:1}There is no escape.",
 						"{C:inactive,s:0.8}Sets ante to #1#,",
 						"{C:inactive,s:0.8}prevents ante change,",
 						"{C:inactive,s:0.8}boss blind reroll, and",
 						"{C:inactive,s:0.8}skipping until ante end",
+					},
+					{
+						"This is an optional",
+						"challenge with no rewards",
+						"{C:inactive,s:0.8}Good luck!{}",
 					},
 				},
 			},
