@@ -862,7 +862,9 @@ SMODS.Booster({
 	no_collection = true,
 	in_pool = function (...) return false end,
 	create_card = function(self, card)
+		_G.generating_superboss_pack = true
 		local n_card = create_card("SuperbossToken", G.pack_cards, nil, nil, true, true, nil, "mf_superbosstoken")
+		_G.generating_superboss_pack = nil
 		return n_card
 	end,
 	loc_vars = function(self, info_queue, card)
@@ -951,6 +953,9 @@ for i, k in ipairs(my_superbosses) do
 			return {
 				vars = { localize({ type = "name_text", set = "Blind", key = self.config.blind }), }
 			}
+		end,
+		in_pool = function(self, args)
+			return _G.generating_superboss_pack
 		end,
 		use = function(self, card, area, copier)
 			G.GAME.round_resets.blind_choices.Boss = self.config.blind
