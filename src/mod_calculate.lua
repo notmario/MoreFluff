@@ -22,6 +22,12 @@ FLUFF.calculate = function(self, context)
 		local other_card = SMODS.add_voucher_to_shop("v_mf_superboss_ticket")
 		other_card.base_cost = 0
 		other_card:set_cost()
+
+		if G.GAME.modifiers and G.GAME.modifiers.mf_final_stake then
+			G.FUNCS.use_card({
+				config = { ref_table = other_card }
+			}, nil, nil)
+		end
 	end
 
 	if context.open_booster and G.GAME.modifiers.mf_bonus_scrapped then

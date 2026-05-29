@@ -853,7 +853,7 @@ SMODS.Booster({
 	kind = "Superboss",
 	atlas = "mf_packs",
 	pos = { x = 0, y = 4 },
-	config = { extra = 15, choose = 1, superboss_pack = true },
+	config = { extra = 3, choose = 1, superboss_pack = true },
 	cost = 0,
 	weight = 0.,
 	unlocked = true,

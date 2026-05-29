@@ -2876,14 +2876,6 @@ return {
 					"{s:0.8}Applies all previous Stakes",
 				}
 			},
-			stake_mf_lime = {
-				name = "Lime Stake",
-				text = {
-					"Required score scales",
-					"faster for each {C:attention}Ante",
-					"{s:0.8}Applies all previous Stakes",
-				}
-			},
 			stake_mf_steel = {
 				name = "Steel Stake",
 				text = {
@@ -2908,34 +2900,17 @@ return {
 					"{s:0.8}Applies all previous Stakes",
 				}
 			},
-			stake_mf_accelerated = {
-				name = "Accelerated Stake",
-				text = {
-					"Required score scales much",
-					"faster for each {C:attention}Ante",
-					"{s:0.8}Applies all previous Stakes",
-					"{s:0.8}art by Aikoyori",
-				}
-			},
-			stake_mf_cardboard = {
-				name = "Cardboard Stake",
-				text = {
-					"{C:uncommon}Uncommon{} and {C:rare}Rare{} jokers",
-					"are {C:attention}2x{} less likely to spawn",
-					"{s:0.8}Applies all previous Stakes",
-				}
-			},
-			stake_mf_violet = {
-				name = "Violet Stake",
-				text = {
-					"Ante 4 has a {C:dark_edition}Showdown",
-					"{s:0.8}Applies all previous Stakes",
-				}
-			},
 			stake_mf_jimbo = {
 				name = "Jimbo Stake",
 				text = {
 					"+1 Win {C:attention}Ante",
+					"{s:0.8}Applies all previous Stakes",
+				}
+			},
+			stake_mf_final = {
+				name = "Final Stake",
+				text = {
+					"{E:1,C:red}Your fate is sealed.",
 					"{s:0.8}Applies all previous Stakes",
 				}
 			},

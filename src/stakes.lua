@@ -272,10 +272,31 @@ function create_card(_type, area, legendary, _rarity, skip_materialize, soulable
     return card
 end
 
+SMODS.Stake {
+    key = "final",
+    above_stake = "jimbo",
+    applied_stakes = { "jimbo" },
+    atlas = 'mf_stakes',
+    pos = { x = 1, y = 2 },
+    sticker_atlas = "mf_stake_stickers",
+    sticker_pos = { x = 1, y = 2 },
+    shiny = true,
+    modifiers = function()
+        G.GAME.modifiers.mf_final_stake = true
+    end,
+    colour = G.C.RED,
+}
+
 local gfb = get_blind_amount
 function get_blind_amount(ante, ...)
     if G.GAME.modifiers.scaling == 3 and G.GAME.modifiers.jimbostake_force_antenine and ante == 9 then
         return 500000
+    end
+    if G.GAME.modifiers.scaling == 6 and G.GAME.modifiers.jimbostake_force_antenine and ante == 9 then
+        if G.GAME.modifiers.mf_final_stake then
+            return 33333333
+        end
+        return 10000000
     end
     return gfb(ante, ...)
 end
