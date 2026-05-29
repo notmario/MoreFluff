@@ -88,9 +88,6 @@ SMODS.DrawStep {
             )
 
             love.graphics.pop()
-			self.children.center:set_sprite_pos({x = 1, y = 14})
-            self.children.center:draw_shader('dissolve')
-			self.children.center:set_sprite_pos({x = 8, y = 13})
         end
     end,
     conditions = { vortex = false, facing = 'front' },
