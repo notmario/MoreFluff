@@ -23,11 +23,23 @@ FLUFF.calculate = function(self, context)
 		other_card.base_cost = 0
 		other_card:set_cost()
 
-		if G.GAME.modifiers and G.GAME.modifiers.mf_final_stake then
-			G.FUNCS.use_card({
-				config = { ref_table = other_card }
-			}, nil, nil)
+		if G.GAME.mf_final_stake then
+			G.E_MANAGER:add_event(Event({
+				trigger = "after",
+				delay = 0.,
+				func = function()
+					G.GAME.mf_forced_weird_route = G.TIMERS.REAL
+					G.GAME.mf_forced_weird_route_state = 0
+					return true
+				end,
+			}))
 		end
+
+		-- if G.GAME.modifiers and G.GAME.modifiers.mf_final_stake then
+		-- 	G.FUNCS.use_card({
+		-- 		config = { ref_table = other_card }
+		-- 	}, nil, nil)
+		-- end
 	end
 
 	if context.open_booster and G.GAME.modifiers.mf_bonus_scrapped then

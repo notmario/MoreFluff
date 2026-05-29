@@ -22,6 +22,7 @@ SMODS.Voucher({
 
 	loc_vars = function(self)
 		return {
+			key = G.GAME.mf_forced_weird_route and "v_mf_superboss_ticket_weirdroute" or nil,
 			vars = {
 				G.GAME.win_ante or 8,
 				(G.GAME.win_ante and G.GAME.round_resets.ante) and math.floor(
@@ -1016,5 +1017,198 @@ FLUFF.superboss_background = function()
 	draw_chain ( 3000, -200, .51, math.pi / 2 + math.pi/38, -G.TIMERS.REAL / 12.9 )
 	draw_chain ( 3300, -200, .48, math.pi / 2 - math.pi/42, G.TIMERS.REAL / 11.8 )
 	draw_chain ( 3600, -200, .53, math.pi / 2 + math.pi/35, -G.TIMERS.REAL / 9.8 )
+end
 
+FLUFF.fwr_tobj = nil
+local select_rad = 4.
+
+-- from aquilarri
+function FLUFF.get_card_pixel_pos(card)
+    return 
+        (G.ROOM.T.x + card.T.x + card.T.w * 0.5) * (G.TILESIZE * G.TILESCALE),
+        (G.ROOM.T.y + card.T.y + card.T.h * 0.5) * (G.TILESIZE * G.TILESCALE)
+
+end
+
+local old_lovemousepressed = love.mousepressed
+local old_lovemousereleased = love.mousereleased
+function love.mousepressed(...)
+	if G.GAME and G.GAME.mf_forced_weird_route then
+		if G.GAME.mf_forced_weird_route_state == 1 then
+			local tx, ty = FLUFF.get_card_pixel_pos(FLUFF.fwr_tobj)
+			local mx, my = love.mouse.getPosition()
+			local dx, dy = (mx - tx), (my - ty)
+			local dist_sq = dx * dx + dy * dy
+			local dist = (dist_sq) ^ 0.5
+
+			if dist < select_rad then
+				old_lovemousepressed(...)
+				old_lovemousereleased(...)
+				G.GAME.mf_forced_weird_route_state = 2
+				G.GAME.mf_forced_weird_route = G.TIMERS.REAL - 0.55
+			end
+		end
+		if G.GAME.mf_forced_weird_route_state == 2 then
+			local tx, ty = FLUFF.get_card_pixel_pos(FLUFF.fwr_tobj)
+			ty = ty + FLUFF.fwr_tobj.T.h * 0.55 * (G.TILESIZE * G.TILESCALE)
+			local mx, my = love.mouse.getPosition()
+			local dx, dy = (mx - tx), (my - ty)
+			local dist_sq = dx * dx + dy * dy
+			local dist = (dist_sq) ^ 0.5
+
+			if dist < select_rad then
+				old_lovemousepressed(...)
+				old_lovemousereleased(...)
+				G.GAME.mf_forced_weird_route_state = nil
+				G.GAME.mf_forced_weird_route = nil
+			end
+		end
+	else
+		old_lovemousepressed(...)
+	end
+end
+
+function love.mousereleased(...)
+	if G.GAME and G.GAME.mf_forced_weird_route then
+	else
+		old_lovemousereleased(...)
+	end
+end
+
+local old_lovekeypressed = love.keypressed
+function love.keypressed(...)
+	if G.GAME and G.GAME.mf_forced_weird_route then
+	else
+		old_lovekeypressed(...)
+	end
+end
+
+local last_mx, last_my = 0, 0
+
+local function inOutQuad(t)
+	t = t * 2
+	if t < 1 then
+		return 1 / 2 * t * t
+	else
+		return -1 / 2 * ((t - 1) * (t - 3) - 1)
+	end
+end
+
+local old_loveupdate = love.update
+function love.update( dt )
+	if G.GAME and G.GAME.mf_forced_weird_route then
+		local mx, my = love.mouse.getPosition()
+		local w,h = love.graphics.getDimensions()
+
+		local tx, ty = w/2, h/2
+		local old_tx, old_ty = w/2, h/2
+
+		if G.GAME.mf_forced_weird_route_state == 0 and (G.TIMERS.REAL - G.GAME.mf_forced_weird_route > 3.7) then
+			for _, card in pairs(G.shop_vouchers.cards) do
+				if card.config.center_key == "v_mf_superboss_ticket" then
+					FLUFF.fwr_tobj = card
+					break
+				end
+			end
+			G.GAME.mf_forced_weird_route_state = 1
+		end
+		if G.GAME.mf_forced_weird_route_state == 0 and (G.TIMERS.REAL - G.GAME.mf_forced_weird_route > .5) and (G.TIMERS.REAL - G.GAME.mf_forced_weird_route < 3.7) then
+			tx, ty = last_mx, last_my
+		end
+		if G.GAME.mf_forced_weird_route_state == 1 then
+			old_tx, old_ty = last_mx, last_my
+			tx, ty = FLUFF.get_card_pixel_pos(FLUFF.fwr_tobj)
+
+			tx = old_tx + (tx - old_tx) * inOutQuad(math.min(G.TIMERS.REAL - G.GAME.mf_forced_weird_route - 3.7, 1.))
+			ty = old_ty + (ty - old_ty) * inOutQuad(math.min(G.TIMERS.REAL - G.GAME.mf_forced_weird_route - 3.7, 1.))
+		end
+		if G.GAME.mf_forced_weird_route_state == 2 then
+			tx, ty = FLUFF.get_card_pixel_pos(FLUFF.fwr_tobj)
+			old_tx, old_ty = tx, ty
+			if (G.TIMERS.REAL - G.GAME.mf_forced_weird_route > 0.8) then
+				ty = ty + FLUFF.fwr_tobj.T.h * 0.55 * (G.TILESIZE * G.TILESCALE)
+				ty = old_ty + (ty - old_ty) * inOutQuad(math.min(G.TIMERS.REAL - G.GAME.mf_forced_weird_route - 0.8, 1.))
+			end
+
+		end
+
+		if G.GAME.mf_forced_weird_route_state == 0 and (G.TIMERS.REAL - G.GAME.mf_forced_weird_route < 0.5) then
+			last_mx, last_my = mx, my
+			return old_loveupdate( dt )
+		end
+
+		local dx, dy = (mx - tx), (my - ty)
+
+		local dist_sq = dx * dx + dy * dy
+		local dist = (dist_sq) ^ 0.5
+
+		if dist > select_rad then
+			dx = 0
+			dy = 0
+
+			love.mouse.setPosition(tx + dx, ty + dy)
+		end
+	end
+
+	return old_loveupdate( dt )
+end
+
+local game_start_run = Game.start_run
+function Game:start_run(args)
+    game_start_run(self, args)
+    if self.GAME.mf_forced_weird_route then
+		self.GAME.mf_forced_weird_route = self.TIMERS.REAL
+		self.GAME.mf_forced_weird_route_state = 0
+    end
+end
+
+local ld = love.draw
+function love.draw(...)
+	ld(...)
+	if G.GAME and G.GAME.mf_forced_weird_route then
+		local mx, my = love.mouse.getPosition()
+		local w,h = love.graphics.getDimensions()
+
+		local tx, ty = w/2, h/2
+		local funnyoff = 0.
+		tx, ty = mx, my
+
+		if G.GAME.mf_forced_weird_route_state == 0 and (G.TIMERS.REAL - G.GAME.mf_forced_weird_route < .5) then
+			funnyoff = 25. * (1 / ((G.TIMERS.REAL - G.GAME.mf_forced_weird_route) * 4.) - 0.5)
+		end
+		-- if G.GAME.mf_forced_weird_route_state == 1 then
+		-- 	tx, ty = FLUFF.get_card_pixel_pos(FLUFF.fwr_tobj)
+		-- end
+		-- if G.GAME.mf_forced_weird_route_state == 2 then
+		-- 	tx, ty = FLUFF.get_card_pixel_pos(FLUFF.fwr_tobj)
+		-- 	if (G.TIMERS.REAL - G.GAME.mf_forced_weird_route > 0.8) then
+		-- 		ty = ty + FLUFF.fwr_tobj.T.h * 0.55 * (G.TILESIZE * G.TILESCALE)
+		-- 	end
+		-- end
+
+		local function draw_chain( x, y, scale, rot, offset )
+			love.graphics.push()
+
+			love.graphics.translate(x, y)
+			love.graphics.scale(scale, scale)
+			love.graphics.rotate(rot)
+			for i = 1, 52 do
+				love.graphics.draw(G.ASSET_ATLAS["mf_chain"].image, -32. + (i + funnyoff) * -144, -48)
+			end
+
+			love.graphics.pop()
+		end
+
+		love.graphics.setColor( 0.106, 0.149, 0.161, 0.3 )
+
+		for i = 0,11 do
+			draw_chain ( tx, ty, .2, G.TIMERS.REAL / 3. + math.pi / 6 * i + math.pi/16, 0. )
+		end
+
+		love.graphics.setColor( 0.106, 0.149, 0.161, 0.9 )
+
+		for i = 0,3 do
+			draw_chain ( tx, ty, .25, G.TIMERS.REAL / 4. + math.pi / 2 * i + math.pi/16, 0. )
+		end
+	end
 end

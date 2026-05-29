@@ -2866,6 +2866,26 @@ return {
 					},
 				},
 			},
+			v_mf_superboss_ticket_weirdroute = {
+				name = "The Ticket",
+				text = {
+					{
+						"Upgrades {C:attention}Ante #1#{}",
+					},
+					{
+						"{C:red,E:1}There is no escape.",
+						"{C:inactive,s:0.8}Sets ante to #1#,",
+						"{C:inactive,s:0.8}prevents ante change,",
+						"{C:inactive,s:0.8}boss blind reroll, and",
+						"{C:inactive,s:0.8}skipping until ante end",
+					},
+					{
+						"This is {C:red,E:1}not{} an optional",
+						"challenge",
+						"{C:inactive,s:0.8}Good luck!{}",
+					},
+				},
+			},
 		},
 		Stake = {
 			stake_mf_pink = {
