@@ -47,7 +47,7 @@ SMODS.Joker {
 				end
 			else
 				return {
-					message = card.ability.extra.select_count.."/5",
+					message = card.ability.extra.select_count.."/6",
 				}
 			end
 		end
