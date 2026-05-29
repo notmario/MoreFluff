@@ -117,3 +117,24 @@ if not G.GAME.mf_superboss_active then
 end
 '''
 match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = '''if G.GAME.blind.name == 'The Serpent' and'''
+position = "before"
+payload = '''if G.GAME.blind.name == 'The Serpent DX' and
+  not G.GAME.blind.disabled and
+  (G.GAME.current_round.hands_played > 0 or
+  G.GAME.current_round.discards_used > 0) then
+    if #G.hand.cards > 0 then hand_space = 0 end
+end'''
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = '''v.ability.played_this_ante = true'''
+position = "after"
+payload = '''v.ability.mf_played_this_game = true'''
+match_indent = true

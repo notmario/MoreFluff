@@ -131,7 +131,7 @@ SMODS.Blind({
 	dollars = 6,
 	mult = 1,
 
-	boss_colour = HEX("793aab"),
+	boss_colour = HEX("ac3232"),
 
 	no_collection = true,
 
@@ -853,7 +853,7 @@ SMODS.Booster({
 	kind = "Superboss",
 	atlas = "mf_packs",
 	pos = { x = 0, y = 4 },
-	config = { extra = 2, choose = 1, superboss_pack = true },
+	config = { extra = 15, choose = 1, superboss_pack = true },
 	cost = 0,
 	weight = 0.,
 	unlocked = true,
