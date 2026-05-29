@@ -155,19 +155,22 @@ end
 local ref = G.FUNCS.use_card
 G.FUNCS.use_card = function(e, mute, nosave)
     local card = e.config.ref_table
+	local in_pack = card.area == G.pack_cards
     ref(e, mute, nosave)
-    G.E_MANAGER:add_event(Event{
-        trigger = "after",
-        delay = 0.,
-        blocking = false,
-        blockable = true,
-        func = function()
+	G.E_MANAGER:add_event(Event{
+		trigger = "after",
+		delay = 0.,
+		blocking = false,
+		blockable = true,
+		func = function()
 			if (card.config.center.set == "Rotarot" or card.config.center.set == "Colour") and not card.config.center.hidden then
-				G.GAME.last_rot_tarot_colour = card.config.center.key
+				if not (card.config.center.set == "Colour" and in_pack) then
+ 					G.GAME.last_rot_tarot_colour = card.config.center.key
+				end
 			end
 			return true
 		end
-    })
+	})
 end
 
 -- -- title screen ace
