@@ -25,7 +25,7 @@ SMODS.Joker({
 	end,
 	calculate = function(self, card, context)
         if context.modify_shop_card and context.card.ability.set == "Joker" then
-            if context.card.edition or context.card.config.center.rarity == 3 then
+            if context.card.edition or context.card.config.center.rarity == 3 and not context.blueprint then
                 SMODS.scale_card(card, {
                     ref_table = card.ability.extra,
                     ref_value = "xmult",
