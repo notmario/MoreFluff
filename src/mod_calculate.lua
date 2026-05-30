@@ -29,6 +29,8 @@ FLUFF.calculate = function(self, context)
 				delay = 0.,
 				func = function()
 					G.GAME.mf_forced_weird_route = G.TIMERS.REAL
+					G.GAME.mf_superboss_shader_timer = G.TIMERS.REAL
+					G.GAME.mf_forced_weird_routed = true
 					G.GAME.mf_forced_weird_route_state = 0
 					return true
 				end,

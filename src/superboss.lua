@@ -40,7 +40,11 @@ SMODS.Voucher({
 			trigger = "after",
 			func = function()
 				G.GAME.mf_superboss_active = true
-				G.GAME.mf_superboss_shader_timer = G.TIMERS.REAL
+				if not G.GAME.mf_superboss_shader_timer then
+					G.GAME.mf_superboss_shader_timer = G.TIMERS.REAL
+				end
+				G.GAME.mf_forced_weird_route_state = nil
+				G.GAME.mf_forced_weird_route = nil
 				ease_background_colour{G.C.RED, special_colour = darken(G.C.BLACK, 0.2), contrast = 2}
 				ease_background_colour_blind(G.STATE, "Small Blind")
 				G.E_MANAGER:add_event(Event({
@@ -93,7 +97,13 @@ SMODS.Voucher({
 
 local ea = ease_ante
 function ease_ante(mod, ...)
-	if G.GAME.mf_superboss_active then
+	if G.GAME.modifiers.mf_final_stake and not G.GAME.mf_forced_weird_routed then
+		local final_ante = G.GAME.round_resets.ante + mod
+		if final_ante > 7 and not (G.GAME.round_resets.ante == 7 and SMODS.ante_end) then
+			mod = 7 - G.GAME.round_resets.ante
+		end
+		ea(mod, ...)
+	elseif G.GAME.mf_superboss_active then
 		play_sound("mf_buzzer")
 		G.ROOM.jiggle = (G.ROOM.jiggle or 0) + 100
 		ea(0, ...)
@@ -814,12 +824,14 @@ SMODS.ScreenShader({
 	key = "superboss",
 	path = "superboss.fs",
 	send_vars = function(self)
+		local timer = 0
+		if G.GAME.mf_superboss_shader_timer then timer = G.GAME.mf_superboss_shader_timer end
 		return {
-			iTime = G.TIMERS.REAL - (G.GAME.mf_superboss_shader_timer or 0),
+			iTime = G.TIMERS.REAL - (timer or 0),
 		}
 	end,
 	should_apply = function(self)
-		return G.GAME.mf_superboss_active
+		return G.GAME.mf_superboss_active or G.GAME.mf_forced_weird_route
 	end,
 })
 
@@ -1061,8 +1073,7 @@ function love.mousepressed(...)
 			if dist < select_rad then
 				old_lovemousepressed(...)
 				old_lovemousereleased(...)
-				G.GAME.mf_forced_weird_route_state = nil
-				G.GAME.mf_forced_weird_route = nil
+				G.GAME.mf_forced_weird_route_state = 3
 			end
 		end
 	else
@@ -1155,13 +1166,14 @@ function Game:start_run(args)
     if self.GAME.mf_forced_weird_route then
 		self.GAME.mf_forced_weird_route = self.TIMERS.REAL
 		self.GAME.mf_forced_weird_route_state = 0
+		self.GAME.mf_superboss_shader_timer = self.TIMERS.REAL
     end
 end
 
 local ld = love.draw
 function love.draw(...)
 	ld(...)
-	if G.GAME and G.GAME.mf_forced_weird_route and not G.SETTINGS.paused then
+	if G.GAME and G.GAME.mf_forced_weird_route and (G.GAME.mf_forced_weird_route_state ~= 3) and not G.SETTINGS.paused then
 		local mx, my = love.mouse.getPosition()
 		local w,h = love.graphics.getDimensions()
 
