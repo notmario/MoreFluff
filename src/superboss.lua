@@ -1033,7 +1033,9 @@ end
 local old_lovemousepressed = love.mousepressed
 local old_lovemousereleased = love.mousereleased
 function love.mousepressed(...)
-	if G.GAME and G.GAME.mf_forced_weird_route then
+	if G.SETTINGS.paused then
+		old_lovemousepressed(...)
+	elseif G.GAME and G.GAME.mf_forced_weird_route then
 		if G.GAME.mf_forced_weird_route_state == 1 then
 			local tx, ty = FLUFF.get_card_pixel_pos(FLUFF.fwr_tobj)
 			local mx, my = love.mouse.getPosition()
@@ -1069,17 +1071,11 @@ function love.mousepressed(...)
 end
 
 function love.mousereleased(...)
-	if G.GAME and G.GAME.mf_forced_weird_route then
+	if G.SETTINGS.paused then
+		old_lovemousereleased(...)
+	elseif G.GAME and G.GAME.mf_forced_weird_route then
 	else
 		old_lovemousereleased(...)
-	end
-end
-
-local old_lovekeypressed = love.keypressed
-function love.keypressed(...)
-	if G.GAME and G.GAME.mf_forced_weird_route then
-	else
-		old_lovekeypressed(...)
 	end
 end
 
@@ -1096,7 +1092,7 @@ end
 
 local old_loveupdate = love.update
 function love.update( dt )
-	if G.GAME and G.GAME.mf_forced_weird_route then
+	if G.GAME and G.GAME.mf_forced_weird_route and not G.SETTINGS.paused then
 		local mx, my = love.mouse.getPosition()
 		local w,h = love.graphics.getDimensions()
 
@@ -1165,7 +1161,7 @@ end
 local ld = love.draw
 function love.draw(...)
 	ld(...)
-	if G.GAME and G.GAME.mf_forced_weird_route then
+	if G.GAME and G.GAME.mf_forced_weird_route and not G.SETTINGS.paused then
 		local mx, my = love.mouse.getPosition()
 		local w,h = love.graphics.getDimensions()
 

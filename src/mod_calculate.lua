@@ -23,7 +23,7 @@ FLUFF.calculate = function(self, context)
 		other_card.base_cost = 0
 		other_card:set_cost()
 
-		if G.GAME.mf_final_stake then
+		if G.GAME.modifiers.mf_final_stake then
 			G.E_MANAGER:add_event(Event({
 				trigger = "after",
 				delay = 0.,
