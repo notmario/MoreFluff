@@ -39,6 +39,9 @@ SMODS.Joker({
 				if not other_jkr.config.center.original_mod then
 					goto continue
 				end
+				if other_jkr == card then
+					goto continue
+				end
 
 				gained_xmult_times = gained_xmult_times + 1
 				other_jkr.getting_sliced = true
@@ -63,7 +66,7 @@ SMODS.Joker({
 				end
 				play_sound("slice1", 0.96 + math.random() * 0.08)
 				return {
-					message = localize({ type = "variable", key = "x_mult", vars = { card.ability.extra.x_mult } }),
+					message = localize({ type = "variable", key = "a_xmult", vars = { card.ability.extra.x_mult } }),
 					colour = G.C.RED,
 				}
 			end
