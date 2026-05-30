@@ -2907,8 +2907,7 @@ return {
 			stake_mf_zodiac = {
 				name = "Zodiac Stake",
 				text = {
-					"Start run with {C:attention}Planet Merchant{},",
-					"{C:attention}Tarot Merchant{}, and {C:attention}Magic Trick",
+					"Start run with {C:attention}Magic Trick",
 					"{s:0.8}Applies all previous Stakes",
 				}
 			},

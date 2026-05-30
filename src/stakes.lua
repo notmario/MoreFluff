@@ -101,16 +101,16 @@ SMODS.Stake {
         delay = 0.1,
         func = function()
             local vouchers = {}
-            if G.GAME.used_vouchers["v_tarot_merchant"] then
-                vouchers[#vouchers + 1] = "v_tarot_tycoon"
-            else
-                vouchers[#vouchers + 1] = "v_tarot_merchant"
-            end
-            if G.GAME.used_vouchers["v_planet_merchant"] then
-                vouchers[#vouchers + 1] = "v_planet_tycoon"
-            else
-                vouchers[#vouchers + 1] = "v_planet_merchant"
-            end
+            -- if G.GAME.used_vouchers["v_tarot_merchant"] then
+            --     vouchers[#vouchers + 1] = "v_tarot_tycoon"
+            -- else
+            --     vouchers[#vouchers + 1] = "v_tarot_merchant"
+            -- end
+            -- if G.GAME.used_vouchers["v_planet_merchant"] then
+            --     vouchers[#vouchers + 1] = "v_planet_tycoon"
+            -- else
+            --     vouchers[#vouchers + 1] = "v_planet_merchant"
+            -- end
             if G.GAME.used_vouchers["v_magic_trick"] then
                 vouchers[#vouchers + 1] = "v_illusion"
             else
