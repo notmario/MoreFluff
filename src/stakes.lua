@@ -258,7 +258,7 @@ local cc = create_card
 function create_card(_type, area, legendary, _rarity, skip_materialize, soulable, forced_key, key_append)
     local card = cc(_type, area, legendary, _rarity, skip_materialize, soulable, forced_key, key_append)
 
-    if _type == "Joker" and (area == G.shop_jokers or area == G.pack_cards) then
+    if _type == "Joker" and (area == G.shop_jokers or (G.pack_cards and area == G.pack_cards)) then
         local heavypoll = pseudorandom((area == G.pack_cards and 'packheavy' or 'heavypoll')..G.GAME.round_resets.ante)
         if G.GAME.modifiers.enable_heavy_in_shop and heavypoll > 0.70 then
             card.ability["mf_heavy"] = true
