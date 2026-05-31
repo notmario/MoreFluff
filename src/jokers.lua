@@ -112,21 +112,25 @@ FLUFF.joker_pool = {
 	"crypticmod",
 	"emeritus_decay",
 	"emeritus_lore",
+
 	"emeritus_rebirth",
 	"emeritus_variety",
 	"gemalert",
 	"gentlemelon",
 	"icecube",
+
+	"junkyard",
 	"jokerreacts",
 	"knuckleblaster",
+	"marketable_plushie",
 	"refrigerator",
+
 	"retrigger_joker",
 	"saturnburger",
-	"junkyard",
-
 	"aheartofcold",
 	"crimsonglassdecomposition",
 	"emeritus_eventuality",
+
 	"mathemagics",
 	"whiplash",
 
@@ -134,6 +138,7 @@ FLUFF.joker_pool = {
 	"rot_canio",
 	"rot_triboulet",
 	"rot_yorick",
+
 	"rot_chicot",
 	"rot_perkeo",
 	"rot_triangle",

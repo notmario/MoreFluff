@@ -798,20 +798,6 @@ return {
 					"{C:dark_edition}Modded Packs",
 				},
 			},
-			j_mf_saturnburger = {
-				name = "Saturn Burger",
-				text = {
-					{
-						"{C:attention}Straights{} can be formed",
-						"with {C:attention}two{} fewer cards",
-					},
-					{
-						"When you discard a hand with",
-						"{C:attention}4{} or more cards, level it up",
-						"Eaten after {C:attention}#1#{} level ups",
-					},
-				},
-			},
 			j_mf_gemalert = {
 				name = "Gem Alert",
 				text = {
@@ -947,11 +933,28 @@ return {
 					}
 				},
 			},
+			j_mf_junkyard = {
+				name = "Junkyard",
+				text = {
+					"Before scoring, played {C:attention}rankless",
+					"cards give {X:mult,C:white}X#1#{} Mult and {X:chips,C:white}X#2#{} Chips",
+				},
+			},
 			j_mf_knuckleblaster = {
 				name = "Knuckleblaster",
 				text = {
 					"{X:mult,C:white}X#1#{} Mult",
 					"{C:blue}-1{} Play selection limit",
+				},
+			},
+			j_mf_marketable_plushie = {
+				name = "Marketable Plushie",
+				text = {
+					"All hands are considered",
+					"only {C:attention}Three of a Kind{} and",
+					"contain no other hands",
+					"{C:inactive,s:0.8}(This causes all played",
+					"{C:inactive,s:0.8}cards to score)",
 				},
 			},
 			j_mf_refrigerator = {
@@ -982,11 +985,18 @@ return {
 					}
 				},
 			},
-			j_mf_junkyard = {
-				name = "Junkyard",
+			j_mf_saturnburger = {
+				name = "Saturn Burger",
 				text = {
-					"Before scoring, played {C:attention}rankless",
-					"cards give {X:mult,C:white}X#1#{} Mult and {X:chips,C:white}X#2#{} Chips",
+					{
+						"{C:attention}Straights{} can be formed",
+						"with {C:attention}two{} fewer cards",
+					},
+					{
+						"When you discard a hand with",
+						"{C:attention}4{} or more cards, level it up",
+						"Eaten after {C:attention}#1#{} level ups",
+					},
 				},
 			},
 			j_mf_aheartofcold = {
