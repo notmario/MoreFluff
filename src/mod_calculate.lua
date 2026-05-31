@@ -15,6 +15,26 @@ FLUFF.calculate = function(self, context)
 		if G.GAME.round_resets.ante < (G.GAME.win_ante or 8) then
 			G.GAME.mf_missed_superboss = nil
 		end
+
+		local return_to_deck = {}
+		for _, card in ipairs(G.mf_exile.cards) do
+			if card.ability.mf_unexile_eor then
+				return_to_deck[#return_to_deck + 1] = card
+				card.ability.mf_unexile_eor = nil
+			end
+		end
+		for i, card in ipairs(return_to_deck) do
+			G.E_MANAGER:add_event(Event({
+				trigger = 'before',
+				delay = 0.1,
+				func = function()
+					card.area:remove_card(card)
+					G.deck:emplace(card)
+					play_sound('card1', 0.85 - (i / #return_to_deck)*0.2, 0.6)
+					return true
+				end
+			}))
+		end
 	end
 
 	if context.starting_shop and G.GAME.round_resets.ante == G.GAME.win_ante and not G.GAME.mf_missed_superboss then

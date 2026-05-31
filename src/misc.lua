@@ -202,3 +202,83 @@ end
 -- 		end
 -- 	}
 -- end
+
+-- exile zone
+
+FLUFF.custom_card_areas = function(game)
+	game.mf_exile = CardArea(
+		game.deck.T.x, game.deck.T.y - game.deck.T.h * 1.8,
+        game.deck.T.w, game.deck.T.h * 1.7,
+        { card_limit = 9999, type = 'joker', mf_exile = true, highlight_limit = 0, no_card_count = true, }
+	)
+	game.mf_exile.ARGS = game.mf_exile.ARGS or {}
+	game.mf_exile.ARGS.invisible_area_types = { joker = 1 }
+end
+
+local ca_rfh = CardArea.remove_from_highlighted
+function CardArea:remove_from_highlighted(card, force)
+    if card then
+        ca_rfh(self, card, force)
+    end
+end
+
+local ca_ath = CardArea.add_to_highlighted
+function CardArea:add_to_highlighted(card, silent)
+    if card and card.area ~= G.mf_exile then
+        ca_ath(self, card, silent)
+    end
+end
+
+local ca_align = CardArea.align_cards
+
+function CardArea:align_cards()
+    ca_align(self)
+    if self.config.type == 'joker' and self.config.mf_exile then
+        for k, card in ipairs(self.cards) do
+            if not card.states.drag.is then 
+				card.T.r = 0.
+                local max_cards = math.max(#self.cards, 1)
+                card.T.y = self.T.y + (self.T.h-G.CARD_H)*((k-1)/math.max(max_cards-1, 1) - 0.5*(#self.cards-max_cards)/math.max(max_cards-1, 1)) + 0.5*(G.CARD_H - card.T.h)
+                if #self.cards > 2 or (#self.cards > 1 and self == G.consumeables) or (#self.cards > 1 and self.config.spread) then
+                    card.T.y = self.T.y + (self.T.h-G.CARD_H)*((k-1)/(#self.cards-1)) + 0.5*(G.CARD_H - card.T.h)
+                elseif #self.cards > 1 and self ~= G.consumeables then
+                    card.T.y = self.T.y + (self.T.h-G.CARD_H)*((k - 0.5)/(#self.cards)) + 0.5*(G.CARD_H - card.T.h)
+                else
+                    card.T.y = self.T.y + self.T.h/2 - G.CARD_H/2 + 0.5*(G.CARD_H - card.T.h)
+                end
+				local mid_ind_thingy = k - (max_cards) / 2 - 0.5
+                card.T.x = self.T.x + self.T.w/2 - card.T.w/2 + G.CARD_W * mid_ind_thingy / 10
+            end
+        end
+    end
+end
+
+FLUFF.draw_to_exile = function(temp, percent, delay)
+	percent = percent or 0.5
+	delay = delay or 0.1
+	G.E_MANAGER:add_event(Event({
+		trigger = 'before',
+		delay = delay,
+		func = function()
+			local has_cards = {}
+			if temp then
+				for _, card in pairs(G.mf_exile.cards) do
+					has_cards[card.sort_id] = true
+				end
+			end
+			G.mf_exile:draw_card_from(G.deck, nil, nil)
+			if temp then
+				for i = 1, #G.mf_exile.cards do
+					local real_ind = #G.mf_exile.cards - i + 1
+					local card = G.mf_exile.cards[real_ind]
+					if not has_cards[card.sort_id] then
+						card.ability.mf_unexile_eor = true
+						break
+					end
+				end
+			end
+			play_sound('card1', 0.85 + percent*0.2, 0.6)
+			return true
+		end
+	}))
+end

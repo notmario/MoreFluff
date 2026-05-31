@@ -832,6 +832,22 @@ return {
 					"{C:attention}Cryptic{} when {C:attention}Boss Blind{} is defeated"
 				},
 			},
+			j_mf_diabolical = {
+				name = "Diabolical Joker",
+				text = {
+					{
+						"When a {C:attention}Blind{} is selected, {C:spectral}exile",
+						"the top {C:attention}#1#{} cards of your deck",
+						"until the end of the round"
+					},
+					{
+						"Scored cards give {C:mult}+#2#{} Mult for each",
+						"card with the same suit in {C:spectral}exile",
+						"and give {C:chips}+#3#{} Chips for each card",
+						"with the same rank in {C:spectral}exile"
+					}
+				},
+			},
 			j_mf_emeritus_decay = {
 				name = "Emeritus of Decay",
 				text = {

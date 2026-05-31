@@ -110,35 +110,36 @@ FLUFF.joker_pool = {
 	"applefriends",
 	"bonussheet",
 	"crypticmod",
+	"diabolical",
 	"emeritus_decay",
-	"emeritus_lore",
 
+	"emeritus_lore",
 	"emeritus_rebirth",
 	"emeritus_variety",
 	"gemalert",
 	"gentlemelon",
-	"icecube",
 
+	"icecube",
 	"junkyard",
 	"jokerreacts",
 	"knuckleblaster",
 	"marketable_plushie",
-	"refrigerator",
 
+	"refrigerator",
 	"retrigger_joker",
 	"saturnburger",
 	"aheartofcold",
 	"crimsonglassdecomposition",
-	"emeritus_eventuality",
 
+	"emeritus_eventuality",
 	"mathemagics",
 	"whiplash",
 
 	-- rot legendary
 	"rot_canio",
 	"rot_triboulet",
-	"rot_yorick",
 
+	"rot_yorick",
 	"rot_chicot",
 	"rot_perkeo",
 	"rot_triangle",
