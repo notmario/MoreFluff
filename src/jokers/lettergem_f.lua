@@ -26,7 +26,8 @@ SMODS.Joker({
 				func = function()
 					for _ = 1, jokers_to_create do
 						SMODS.add_card({
-							set = "letterjoker",
+							set = "Joker",
+							rarity = "mf_letter",
 						})
 						G.GAME.joker_buffer = 0
 					end
