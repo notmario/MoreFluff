@@ -273,21 +273,24 @@ FLUFF.draw_to_exile = function(temp, percent, delay, func)
 					has_cards[card.sort_id] = true
 				end
 			end
+			local bef_length = #G.mf_exile.cards
 			G.mf_exile:draw_card_from(G.deck, nil, nil)
-			for i = 1, #G.mf_exile.cards do
-				local real_ind = #G.mf_exile.cards - i + 1
-				local card = G.mf_exile.cards[real_ind]
-				if not has_cards[card.sort_id] then
-					card.T.w = card.T.w * FLUFF.exile_scale
-					card.T.h = card.T.h * FLUFF.exile_scale
-					if temp then
-						card.ability[temp] = true
+			if #G.mf_exile.cards > bef_length then
+				for i = 1, #G.mf_exile.cards do
+					local real_ind = #G.mf_exile.cards - i + 1
+					local card = G.mf_exile.cards[real_ind]
+					if not has_cards[card.sort_id] then
+						card.T.w = card.T.w * FLUFF.exile_scale
+						card.T.h = card.T.h * FLUFF.exile_scale
+						if temp then
+							card.ability[temp] = true
+						end
+						if func then func(card) end
+						break
 					end
-					if func then func(card) end
-					break
 				end
+				play_sound('card1', 0.85 + percent*0.2, 0.6)
 			end
-			play_sound('card1', 0.85 + percent*0.2, 0.6)
 			return true
 		end
 	}))
