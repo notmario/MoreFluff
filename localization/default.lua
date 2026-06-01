@@ -923,6 +923,21 @@ return {
 					}
 				},
 			},
+			j_mf_ghostly_reflection = {
+				name = "Ghostly Reflection",
+				text = {
+					{
+						"When a {C:attention}Blind{} is selected, {C:spectral}exile",
+						"the top {C:attention}#1#{} cards of your deck",
+						"until the end of the round"
+					},
+					{
+						"Whenever you discard an {C:attention}Enhanced",
+						"card, convert all cards in {C:spectral}exile",
+						"to that {C:attention}enhancement"
+					}
+				},
+			},
 			j_mf_icecube = {
 				name = "Ice Cube",
 				text = {

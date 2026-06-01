@@ -156,20 +156,20 @@ SMODS.Enhancement({
 			card and card.ability.p_dollars or self.config.p_dollars,
 		} }
 	end,
-	draw = function(self, card, layer)
-		local notilt = nil
-		if card.area and card.area.config.type == "deck" then
-			notilt = true
-		end
-		-- card.children.center:draw_shader(
-		--   "negative",
-		--   nil,
-		--   card.ARGS.send_to_shader,
-		--   notilt,
-		--   card.children.center
-		-- )
-		card.children.center:draw_shader("voucher", nil, card.ARGS.send_to_shader, notilt, card.children.center)
-	end,
+	-- draw = function(self, card, layer)
+	-- 	local notilt = nil
+	-- 	if card.area and card.area.config.type == "deck" then
+	-- 		notilt = true
+	-- 	end
+	-- 	-- card.children.center:draw_shader(
+	-- 	--   "negative",
+	-- 	--   nil,
+	-- 	--   card.ARGS.send_to_shader,
+	-- 	--   notilt,
+	-- 	--   card.children.center
+	-- 	-- )
+	-- 	card.children.center:draw_shader("voucher", nil, card.ARGS.send_to_shader, notilt, card.children.center)
+	-- end,
 })
 
 SMODS.Enhancement({
