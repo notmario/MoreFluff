@@ -24,8 +24,8 @@ SMODS.Joker({
 			if #context.full_hand == 1 then
 				SMODS.scale_card(card, {
 					ref_table = card.ability.extra,
-					ref_value = "xmult",
-					scalar_value = "xmult_gain",
+					ref_value = "x_mult",
+					scalar_value = "x_mult_gain",
 					message_key = "a_xmult",
 				})
 			end
