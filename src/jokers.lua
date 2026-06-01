@@ -107,29 +107,29 @@ FLUFF.joker_pool = {
 	"nemesis",
 	"repack",
 
+	"stasis_chamber",
 	"applefriends",
 	"bonussheet",
 	"crypticmod",
 	"diabolical",
-	"emeritus_decay",
 
+	"emeritus_decay",
 	"emeritus_lore",
 	"emeritus_rebirth",
 	"emeritus_variety",
 	"gemalert",
-	"gentlemelon",
 
+	"gentlemelon",
 	"ghostly_reflection",
 	"icecube",
 	"junkyard",
 	"jokerreacts",
-	"knuckleblaster",
 
+	"knuckleblaster",
 	"marketable_plushie",
 	"refrigerator",
 	"retrigger_joker",
 	"saturnburger",
-	"stasis_chamber",
 
 	"aheartofcold",
 	"crimsonglassdecomposition",
