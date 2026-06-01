@@ -48,9 +48,11 @@ SMODS.Joker {
                     delay = 0.15,
                     func = function()
                         play_sound("tarot2", percent)
-                        G.mf_exile.cards[i]:set_ability(context.other_card.config.center)
-						G.mf_exile.cards[i].T.w = G.mf_exile.cards[i].T.w * FLUFF.exile_scale
-						G.mf_exile.cards[i].T.h = G.mf_exile.cards[i].T.h * FLUFF.exile_scale
+						if G.mf_exile.cards[i].playing_card then
+							G.mf_exile.cards[i]:set_ability(context.other_card.config.center)
+							G.mf_exile.cards[i].T.w = G.mf_exile.cards[i].T.w * FLUFF.exile_scale
+							G.mf_exile.cards[i].T.h = G.mf_exile.cards[i].T.h * FLUFF.exile_scale
+						end
                         G.mf_exile.cards[i]:flip()
                         return true
                     end,

@@ -400,3 +400,13 @@ function Moveable:juice_up(amount, rot_amt, ...)
     end
     return ret
 end
+
+local game_start_run = Game.start_run
+function Game:start_run(args)
+    game_start_run(self, args)
+    if G.mf_exile then
+        for _, card in ipairs(G.mf_exile.cards) do
+			card.T.scale = card.T.scale * FLUFF.exile_scale
+        end
+    end
+end
