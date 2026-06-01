@@ -248,7 +248,7 @@ function CardArea:align_cards()
                 end
 				local mid_ind_thingy = (k-max_cards / 2 - 0.5) / 2
 				if #self.cards >= 8 then
-					mid_ind_thingy = math.fmod(k-1, 540 / 137) - (270 / 137)
+					mid_ind_thingy = math.fmod(k-1, 540 / 137) - (270 / 137) + 0.5
 				end
                 card.T.x = self.T.x + self.T.w/2 - card.T.w/2 + G.CARD_W * mid_ind_thingy / 4.2
             end
@@ -256,7 +256,73 @@ function CardArea:align_cards()
     end
 end
 
-FLUFF.exile_scale = 0.5
+-- from aquilarri
+function FLUFF.get_card_pixel_pos(card, real)
+    return 
+        (G.ROOM.T.x * (real or 1) + card.T.x + card.T.w * 0.5) * (G.TILESIZE * G.TILESCALE),
+        (G.ROOM.T.y * (real or 1) + card.T.y + card.T.h * 0.5) * (G.TILESIZE * G.TILESCALE)
+end
+
+local exile_alpha = 0
+
+local lu = love.update
+function love.update(dt)
+	lu(dt)
+
+	if G.mf_exile then
+		if #G.mf_exile.cards >= 1 then
+			exile_alpha = math.min(exile_alpha + 3 * dt, 1)
+		else
+			exile_alpha = math.max(exile_alpha - 3 * dt, 0)
+		end
+	end
+end
+
+local ca_draw = CardArea.draw
+function CardArea:draw(...)
+    if not self.states.visible then return end
+
+	if self == G.mf_exile then
+		love.graphics.push()
+
+		local x, y = FLUFF.get_card_pixel_pos(G.mf_exile, 0)
+		local w,h = love.graphics.getDimensions()
+		love.graphics.translate(x, y)
+
+		love.graphics.scale( h / 1080, h / 1080 )
+
+		love.graphics.setColor( 0.082, 0.082, 0.267, 0.1 * exile_alpha )
+
+		for i = 1, 25 do
+			love.graphics.push()
+			love.graphics.scale( 0.5 - i * 0.02, 0.5 - i * 0.02 )
+			love.graphics.rotate((G.TIMERS.REAL + i + 1000) / (11 - i / 3))
+			love.graphics.translate(-256., -256.)
+
+			love.graphics.draw(G.ASSET_ATLAS["mf_exile_spiral"].image, 0., 0.)
+
+			love.graphics.pop()
+		end
+
+		love.graphics.setColor( 0.106, 0.149, 0.161, 0.03 * exile_alpha )
+		for i = 1, 25 do
+			love.graphics.push()
+			love.graphics.scale( 0.5 - i * 0.02, 0.5 - i * 0.02 )
+			love.graphics.rotate((G.TIMERS.REAL + i + 1000) / (16 - i / 3))
+			love.graphics.translate(-256., -256.)
+
+			love.graphics.draw(G.ASSET_ATLAS["mf_exile_spiral"].image, 0., 0.)
+
+			love.graphics.pop()
+		end
+		
+		love.graphics.pop()
+	end
+
+	ca_draw(self, ...)
+end
+
+FLUFF.exile_scale = 0.4
 
 FLUFF.draw_to_exile = function(temp, percent, delay, func)
 	percent = percent or 0.5
@@ -280,8 +346,9 @@ FLUFF.draw_to_exile = function(temp, percent, delay, func)
 					local real_ind = #G.mf_exile.cards - i + 1
 					local card = G.mf_exile.cards[real_ind]
 					if not has_cards[card.sort_id] then
-						card.T.w = card.T.w * FLUFF.exile_scale
-						card.T.h = card.T.h * FLUFF.exile_scale
+						-- card.T.w = card.T.w * FLUFF.exile_scale
+						-- card.T.h = card.T.h * FLUFF.exile_scale
+						card.T.scale = card.T.scale * FLUFF.exile_scale
 						if temp then
 							card.ability[temp] = true
 						end
@@ -289,9 +356,47 @@ FLUFF.draw_to_exile = function(temp, percent, delay, func)
 						break
 					end
 				end
-				play_sound('card1', 0.85 + percent*0.2, 0.6)
+				play_sound('card1', 0.55 + percent*0.2, 0.6)
 			end
 			return true
 		end
 	}))
+end
+
+FLUFF.exile_card = function(card, percent, temp, func)
+	if temp == true then temp = "mf_unexile_eor" end
+	if temp == "ante" then temp = "mf_unexile_eoa" end
+	G.E_MANAGER:add_event(Event({
+		trigger = 'before',
+		delay = 0.1,
+		func = function()
+			if card.area then
+				card.area:remove_card(card)
+			end
+			G.mf_exile:emplace(card)
+			-- card.T.w = card.T.w * FLUFF.exile_scale
+			-- card.T.h = card.T.h * FLUFF.exile_scale
+			card.T.scale = card.T.scale * FLUFF.exile_scale
+			if temp then
+				card.ability[temp] = true
+			end
+			if func then func(card) end
+			if percent then
+				play_sound('card1', 0.55 + percent*0.2, 0.6)
+			end
+			return true
+		end
+	}))
+end
+
+-- lemniscate   ty alexi
+local mju = Moveable.juice_up
+function Moveable:juice_up(amount, rot_amt, ...)
+    local ret = mju(self, amount, rot_amt, ...)
+
+    if G.SETTINGS.reduced_motion then return end
+    if self.area and self.area == G.mf_exile then
+        self.VT.scale = self.VT.scale * self.T.scale
+    end
+    return ret
 end

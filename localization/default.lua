@@ -798,6 +798,16 @@ return {
 					"{C:dark_edition}Modded Packs",
 				},
 			},
+			j_mf_stasis_chamber = {
+				name = "Stasis Chamber",
+				text = {
+					"When you would {C:red}discard{} cards,",
+					"{C:spectral}exile{} them until the",
+					"end of the {C:attention}Ante{} instead",
+					"{C:inactive,s:0.8}(This doesn't trigger",
+					"{C:inactive,s:0.8}\"on discard\" effects)",
+				},
+			},
 			j_mf_gemalert = {
 				name = "Gem Alert",
 				text = {

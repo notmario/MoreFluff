@@ -129,8 +129,9 @@ FLUFF.joker_pool = {
 	"refrigerator",
 	"retrigger_joker",
 	"saturnburger",
-	"aheartofcold",
+	"stasis_chamber",
 
+	"aheartofcold",
 	"crimsonglassdecomposition",
 	"emeritus_eventuality",
 	"mathemagics",
@@ -138,13 +139,12 @@ FLUFF.joker_pool = {
 
 	-- rot legendary
 	"rot_canio",
-
 	"rot_triboulet",
 	"rot_yorick",
 	"rot_chicot",
 	"rot_perkeo",
+
 	"rot_triangle",
-	
 	"rot_marigold",
 }
 

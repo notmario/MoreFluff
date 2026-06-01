@@ -34,9 +34,10 @@ FLUFF.calculate = function(self, context)
 				func = function()
 					card.area:remove_card(card)
 					G.deck:emplace(card)
-					card.T.w = card.T.w / FLUFF.exile_scale
-					card.T.h = card.T.h / FLUFF.exile_scale
-					play_sound('card1', 0.85 - (i / #return_to_deck)*0.2, 0.6)
+					-- card.T.w = card.T.w / FLUFF.exile_scale
+					-- card.T.h = card.T.h / FLUFF.exile_scale
+					card.T.scale = card.T.scale / FLUFF.exile_scale
+					play_sound('card1', 0.65 - (i / #return_to_deck)*0.2, 0.6)
 					return true
 				end
 			}))

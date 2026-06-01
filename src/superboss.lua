@@ -1034,14 +1034,6 @@ end
 FLUFF.fwr_tobj = nil
 local select_rad = 4.
 
--- from aquilarri
-function FLUFF.get_card_pixel_pos(card)
-    return 
-        (G.ROOM.T.x + card.T.x + card.T.w * 0.5) * (G.TILESIZE * G.TILESCALE),
-        (G.ROOM.T.y + card.T.y + card.T.h * 0.5) * (G.TILESIZE * G.TILESCALE)
-
-end
-
 local old_lovemousepressed = love.mousepressed
 local old_lovemousereleased = love.mousereleased
 function love.mousepressed(...)
