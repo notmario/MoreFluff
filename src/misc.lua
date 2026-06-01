@@ -207,8 +207,8 @@ end
 
 FLUFF.custom_card_areas = function(game)
 	game.mf_exile = CardArea(
-		game.deck.T.x, game.deck.T.y - game.deck.T.h * 1.8,
-        game.deck.T.w, game.deck.T.h * 1.7,
+		game.deck.T.x, game.deck.T.y - game.deck.T.h * 2.1,
+        game.deck.T.w, game.deck.T.h * 2.,
         { card_limit = 9999, type = 'joker', mf_exile = true, highlight_limit = 0, no_card_count = true, }
 	)
 	game.mf_exile.ARGS = game.mf_exile.ARGS or {}
@@ -246,16 +246,23 @@ function CardArea:align_cards()
                 else
                     card.T.y = self.T.y + self.T.h/2 - G.CARD_H/2 + 0.5*(G.CARD_H - card.T.h)
                 end
-				local mid_ind_thingy = k - (max_cards) / 2 - 0.5
-                card.T.x = self.T.x + self.T.w/2 - card.T.w/2 + G.CARD_W * mid_ind_thingy / 10
+				local mid_ind_thingy = (k-max_cards / 2 - 0.5) / 2
+				if #self.cards >= 8 then
+					mid_ind_thingy = math.fmod(k-1, 540 / 137) - (270 / 137)
+				end
+                card.T.x = self.T.x + self.T.w/2 - card.T.w/2 + G.CARD_W * mid_ind_thingy / 4.2
             end
         end
     end
 end
 
-FLUFF.draw_to_exile = function(temp, percent, delay)
+FLUFF.exile_scale = 0.5
+
+FLUFF.draw_to_exile = function(temp, percent, delay, func)
 	percent = percent or 0.5
 	delay = delay or 0.1
+	if temp == true then temp = "mf_unexile_eor" end
+	if temp == "ante" then temp = "mf_unexile_eoa" end
 	G.E_MANAGER:add_event(Event({
 		trigger = 'before',
 		delay = delay,
@@ -267,14 +274,17 @@ FLUFF.draw_to_exile = function(temp, percent, delay)
 				end
 			end
 			G.mf_exile:draw_card_from(G.deck, nil, nil)
-			if temp then
-				for i = 1, #G.mf_exile.cards do
-					local real_ind = #G.mf_exile.cards - i + 1
-					local card = G.mf_exile.cards[real_ind]
-					if not has_cards[card.sort_id] then
-						card.ability.mf_unexile_eor = true
-						break
+			for i = 1, #G.mf_exile.cards do
+				local real_ind = #G.mf_exile.cards - i + 1
+				local card = G.mf_exile.cards[real_ind]
+				if not has_cards[card.sort_id] then
+					card.T.w = card.T.w * FLUFF.exile_scale
+					card.T.h = card.T.h * FLUFF.exile_scale
+					if temp then
+						card.ability[temp] = true
 					end
+					if func then func(card) end
+					break
 				end
 			end
 			play_sound('card1', 0.85 + percent*0.2, 0.6)

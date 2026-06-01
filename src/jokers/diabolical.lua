@@ -41,7 +41,7 @@ SMODS.Joker {
 						juice_card = context.other_card,
 					}
 				end
-				if context.other_card.base.nominal == other_card.base.nominal then
+				if context.other_card:get_id() == other_card:get_id() then
 					returns[#returns + 1] = {
 						chips = card.ability.extra.chips,
 						message_card = other_card,
