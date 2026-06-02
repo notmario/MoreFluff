@@ -1814,6 +1814,21 @@ return {
 					}
 				},
 			},
+			j_mf_steamflogger_boss = {
+				name = "Steamflogger Boss",
+				text = {
+					{
+						"{C:chips}+#1#{} Chips for every",
+						"{C:attention}Joker{} owned",
+						"{C:inactive}(Currently {C:chips}+#2# {C:inactive}Chips)"
+					},
+					{
+						"Whenever a {C:attention}Wrench{} would",
+						"{C:attention}crank{} a {C:attention}Contraption{},",
+						"it {C:attention}cranks{} it twice instead"
+					}
+				},
+			},
 
 			-- lettergem
 			j_mf_lettergem_a = {

@@ -206,6 +206,7 @@ FLUFF.hidden_joker_pool = {
 	"emeritus_growth",
 	"emeritus_eternity",
 	"stormscale",
+	"steamflogger_boss",
 
 	"old_rot_triboulet",
 	"old_rot_chicot",
