@@ -1297,7 +1297,8 @@ return {
 			j_mf_suspension = {
 				name = "Suspension of Disbelief",
 				text = {
-					"{C:attention}Copy{} the first {C:tarot}Tarot{} card used",
+					"{C:attention}Copy{} the first {C:tarot}Tarot{} or",
+					"{C:rotarot}45 Degree Rotated Tarot{} card used",
 					"each round, and {C:spectral}exile{} the copy",
 					"Use it on {C:green,E:1}random{} playing cards",
 					"at the start of the next {C:attention}Blind{}"

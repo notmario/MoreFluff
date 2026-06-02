@@ -22,7 +22,8 @@ SMODS.Joker {
 		}
 	end,
 	calculate = function(self, card, context)
-        if context.using_consumeable and card.ability.extra.active and context.consumeable.ability.set == "Tarot"
+        if context.using_consumeable and card.ability.extra.active 
+		and (context.consumeable.ability.set == "Tarot" or context.consumeable.ability.set == "Rotarot")
 		and not context.consumeable.ability.mf_suspended then
             card.ability.extra.active = false
 			G.E_MANAGER:add_event(Event({
