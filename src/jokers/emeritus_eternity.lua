@@ -31,8 +31,8 @@ SMODS.Joker {
 		end
 		if context.setting_blind and not (context.blueprint_card or self).getting_sliced then
 			card.ability.extra.select_count = card.ability.extra.select_count + 1
-			if card.ability.extra.select_count >= 6 then
-				card.ability.extra.select_count = card.ability.extra.select_count - 6
+			if card.ability.extra.select_count >= 8 then
+				card.ability.extra.select_count = card.ability.extra.select_count - 8
 				if not card.ability.extra.is_prepared then
 					card.ability.extra.is_prepared = true
 					return {
@@ -47,7 +47,7 @@ SMODS.Joker {
 				end
 			else
 				return {
-					message = card.ability.extra.select_count.."/6",
+					message = card.ability.extra.select_count.."/8",
 				}
 			end
 		end

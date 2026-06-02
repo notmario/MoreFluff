@@ -1718,9 +1718,9 @@ return {
 						"voucher, gain {C:blue}+1{} hand each round",
 					},
 					{
-						"When you select {C:attention}six{} blinds,",
+						"When you select {C:attention}eight{} blinds,",
 						"{C:spectral}prepare{} this {C:attention}Joker{}",
-						"{C:inactive}(Currently #1#/6)"
+						"{C:inactive}(Currently #1#/8)"
 					}
 				},
 			},
