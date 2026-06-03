@@ -9,7 +9,7 @@
 	"version": "1.9.999",
 	"icon_path": "mf_icon.png",
 	"dependencies": [
-		"Steamodded(>=1.0.0~BETA-1606b)"
+		"Steamodded(>=1.0.0~BETA-1620a)"
 	],
 	"allow_redistribution": true
 }
