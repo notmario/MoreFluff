@@ -410,3 +410,75 @@ function Game:start_run(args)
         end
     end
 end
+function FLUFF.can_cascade_obtain(card)
+    -- skip these for now
+	-- because it no space!s and thats annoying
+    if card.ability.set == 'elle_Resident' then
+        return #G.elle_resident_area.cards < 1
+    end
+
+    -- im sure theres some other unc mod that has another card area
+    -- reverie goes to consumeables first
+    -- so uhh
+    -- janky ass patch target ??
+
+    return true
+end
+
+function FLUFF.cascade_obtain(card)
+
+    if card.ability.consumeable then
+        G.consumeables:emplace(card)
+    else
+        G.jokers:emplace(card)
+    end
+end
+
+local gfcfbs = G.FUNCS.check_for_buy_space 
+G.FUNCS.check_for_buy_space = function(card)
+	if FLUFF.fuck_you_i_can_buy_this_shit then return true end
+	return gfcfbs(card)
+end
+
+function FLUFF.cascade(cost, times_left)
+    if times_left <= 0 then return nil end
+    G.E_MANAGER:add_event(Event({
+        trigger = "after",
+        delay = 0.15,
+        func = function()
+            G.GAME.current_round.free_rerolls = math.max(G.GAME.current_round.free_rerolls + 1, 0)
+            calculate_reroll_cost(true)
+            G.FUNCS.reroll_shop()
+            G.E_MANAGER:add_event(Event({
+                trigger = "after",
+                delay = 0.15,
+                func = function()
+                    if G.shop_jokers.cards[1].cost < cost then
+                        local c1 = G.shop_jokers.cards[1]
+
+                        local doit = FLUFF.can_cascade_obtain(c1)
+                        if doit then
+							c1.ability.couponed = true
+							c1:set_cost()
+
+							FLUFF.fuck_you_i_can_buy_this_shit = true
+							G.FUNCS.buy_from_shop {
+								config = { ref_table = c1 }
+							}
+							FLUFF.fuck_you_i_can_buy_this_shit = nil
+
+                            -- continue
+                            FLUFF.cascade(cost, times_left - 1)
+                        else
+                            FLUFF.cascade(cost, times_left)
+                        end
+                    else
+                        FLUFF.cascade(cost, times_left)
+                    end
+                    return true
+                end,
+            }))
+            return true
+        end,
+    }))
+end

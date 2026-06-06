@@ -132,18 +132,19 @@ FLUFF.joker_pool = {
 	"saturnburger",
 
 	"aheartofcold",
+	"apex_devastator",
 	"crimsonglassdecomposition",
 	"emeritus_eventuality",
 	"mathemagics",
-	"suspension",
 
+	"suspension",
 	"whiplash",
 	-- rot legendary
 	"rot_canio",
 	"rot_triboulet",
 	"rot_yorick",
-	"rot_chicot",
 
+	"rot_chicot",
 	"rot_perkeo",
 	"rot_triangle",
 	"rot_marigold",

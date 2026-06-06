@@ -1071,6 +1071,24 @@ return {
 					}
 				},
 			},
+			j_mf_apex_devastator = {
+				name = "Apex Devastator",
+				text = {
+					{
+						"{C:chips}+#2#{} Chips, {C:mult}+#1#{} Mult"
+					},
+					{
+						"{C:spectral}Cascade{}, {C:spectral}cascade{},",
+						"{C:spectral}cascade{}, {C:spectral}cascade{}",
+						"{C:inactive,s:0.8}(When you buy this Joker, reroll",
+						"{C:inactive,s:0.8}the Shop for free until the first",
+						"{C:inactive,s:0.8}item costs less than this does.",
+						"{C:inactive,s:0.8}Then buy it for free.",
+						"{C:inactive,s:0.8}Repeat this process",
+						"{C:inactive,s:0.8}three more times.)",
+					}
+				},
+			},
 			-- Disintegration Loop
 			j_mf_fraud_fakeout_1 = {
 				name = {
