@@ -96,6 +96,13 @@ SMODS.Atlas({
 })
 
 SMODS.Atlas({
+	key = "ransomnote",
+	path = "ransomnote.png",
+	px = 320,
+	py = 151,
+})
+
+SMODS.Atlas({
 	key = "mf_hyperjimbo",
 	atlas_table = "ASSET_ATLAS",
 	path = "mf_hyperjimbo.png",

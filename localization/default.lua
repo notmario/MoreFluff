@@ -790,6 +790,11 @@ return {
 					},
 				},
 			},
+			j_mf_ransom_note = {
+				name = "Ransom          Note",
+				text = {
+				},
+			},
 			j_mf_repack = {
 				name = "Repack",
 				text = {
@@ -2550,6 +2555,12 @@ return {
 					"your deck when it is",
 					"discarded or played",
 					"Always scores",
+				},
+			},
+
+			m_mf_ransom_note = {
+				name = "Ransom          Note",
+				text = {
 				},
 			},
 		},

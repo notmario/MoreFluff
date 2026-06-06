@@ -127,23 +127,24 @@ FLUFF.joker_pool = {
 
 	"knuckleblaster",
 	"marketable_plushie",
+	"ransom_note",
 	"refrigerator",
 	"retrigger_joker",
-	"saturnburger",
 
+	"saturnburger",
 	"aheartofcold",
 	"apex_devastator",
 	"crimsonglassdecomposition",
 	"emeritus_eventuality",
-	"mathemagics",
 
+	"mathemagics",
 	"suspension",
 	"whiplash",
 	-- rot legendary
 	"rot_canio",
 	"rot_triboulet",
-	"rot_yorick",
 
+	"rot_yorick",
 	"rot_chicot",
 	"rot_perkeo",
 	"rot_triangle",
