@@ -453,7 +453,7 @@ function FLUFF.cascade(cost, times_left)
                 trigger = "after",
                 delay = 0.15,
                 func = function()
-                    if G.shop_jokers.cards[1].cost < cost then
+                    if G.shop_jokers.cards[1].cost < cost or cost == 0 then
                         local c1 = G.shop_jokers.cards[1]
 
                         local doit = FLUFF.can_cascade_obtain(c1)
