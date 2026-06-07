@@ -1003,6 +1003,15 @@ return {
 					"{C:inactive,s:0.8}cards to score)",
 				},
 			},
+			j_mf_pact_of_negation = {
+				name = "Pact of Negation",
+				text = {
+					"When a {C:attention}Boss Blind{} is selected, {C:spectral}exile{}",
+					"the top {C:attention}#1#{} cards of your deck",
+					"until you sell this {C:attention}Joker{},",
+					"then disable the {C:attention}Boss Blind{}",
+				},
+			},
 			j_mf_refrigerator = {
 				name = "Refrigerator",
 				text = {
