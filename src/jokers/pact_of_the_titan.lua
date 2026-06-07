@@ -4,7 +4,7 @@ SMODS.Joker {
 	atlas = "mf_jokers",
 	config = {
 		extra = {
-            cards = 2,
+            cards = 3,
 			chips = 20,
 			mult = 20,
         },
