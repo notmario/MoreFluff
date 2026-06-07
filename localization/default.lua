@@ -1010,6 +1010,8 @@ return {
 					"the top {C:attention}#1#{} cards of your deck",
 					"until you sell this {C:attention}Joker{},",
 					"then disable the {C:attention}Boss Blind{}",
+					"{C:inactive,s:0.8}(The exiled cards don't return",
+					"{C:inactive,s:0.8}if this card is destroyed)",
 				},
 			},
 			j_mf_refrigerator = {
@@ -1052,6 +1054,17 @@ return {
 						"{C:attention}4{} or more cards, level it up",
 						"Eaten after {C:attention}#1#{} level ups",
 					},
+				},
+			},
+			j_mf_summoners_pact = {
+				name = "Summoner's Pact",
+				text = {
+					"When a {C:attention}Blind{} is selected, create",
+					"a {C:rare}Rare{} {C:attention}Joker{}, then {C:spectral}exile{} the",
+					"top {C:attention}#1#{} cards of your deck",
+					"until you sell that {C:attention}Joker{}",
+					"{C:inactive,s:0.8}(The exiled cards don't return",
+					"{C:inactive,s:0.8}if that card is destroyed)",
 				},
 			},
 			j_mf_aheartofcold = {
@@ -1332,7 +1345,9 @@ return {
 					{
 						"When a {C:attention}Blind{} is selected, {C:spectral}exile",
 						"the top card of your deck until",
-						"you sell this {C:attention}Joker{}"
+						"you sell this {C:attention}Joker{}",
+						"{C:inactive,s:0.8}(The exiled cards don't return",
+						"{C:inactive,s:0.8}if this card is destroyed)",
 					},
 					{
 						"As long as you have {C:attention}#1#{} or more",

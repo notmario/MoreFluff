@@ -482,3 +482,14 @@ function FLUFF.cascade(cost, times_left)
         end,
     }))
 end
+
+local cc = copy_card
+function copy_card(...)
+	local copy = cc(...)
+
+	if copy.ability.mf_exile_until_id then
+		copy.ability.mf_exile_until_id = math.random(1000000000000)
+	end
+
+	return copy
+end

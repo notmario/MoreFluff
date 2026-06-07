@@ -44,6 +44,31 @@ FLUFF.calculate = function(self, context)
 		end
 	end
 
+	if context.selling_card and context.card.ability.mf_exile_until_id then
+		local return_to_deck = {}
+		for _, other_card in ipairs(G.mf_exile.cards) do
+			if other_card.ability.mf_pact_id == context.card.ability.mf_exile_until_id then
+				return_to_deck[#return_to_deck + 1] = other_card
+				other_card.ability.mf_pact_id = nil
+			end
+		end
+		for i, card in ipairs(return_to_deck) do
+			G.E_MANAGER:add_event(Event({
+				trigger = 'before',
+				delay = 0.1,
+				func = function()
+					card.area:remove_card(card)
+					G.deck:emplace(card)
+					-- card.T.w = card.T.w / FLUFF.exile_scale
+					-- card.T.h = card.T.h / FLUFF.exile_scale
+					card.T.scale = card.T.scale / FLUFF.exile_scale
+					play_sound('card1', 0.65 - (i / #return_to_deck)*0.2, 0.6)
+					return true
+				end
+			}))
+		end
+	end
+
 	if context.starting_shop and G.GAME.round_resets.ante == G.GAME.win_ante and not G.GAME.mf_missed_superboss then
 		G.GAME.mf_missed_superboss = true
 		local other_card = SMODS.add_voucher_to_shop("v_mf_superboss_ticket")
