@@ -99,7 +99,7 @@ SMODS.Atlas({
 	key = "ransomnote",
 	path = "ransomnote.png",
 	px = 320,
-	py = 151,
+	py = 230,
 })
 
 SMODS.Atlas({

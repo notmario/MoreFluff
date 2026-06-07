@@ -37,7 +37,7 @@ SMODS.Joker {
 		SMODS.Center.generate_ui(self, info_queue, card, desc_nodes, specific_vars, full_UI_table)
 
 		local s = G.TILESCALE * G.TILESIZE
-		local destroy_sprite = SMODS.create_sprite(0, 0, 320 / s, 151 / s, "mf_ransomnote", { x = 0, y = 0 })
+		local destroy_sprite = SMODS.create_sprite(0, 0, 320 / s, 230 / s, "mf_ransomnote", { x = 0, y = 0 })
 
 		local destroy = {
 			{
@@ -81,7 +81,7 @@ SMODS.Enhancement {
 		SMODS.Center.generate_ui(self, info_queue, card, desc_nodes, specific_vars, full_UI_table)
 
 		local s = G.TILESCALE * G.TILESIZE
-		local destroy_sprite = SMODS.create_sprite(0, 0, 320 / s, 151 / s, "mf_ransomnote", { x = 0, y = 0 })
+		local destroy_sprite = SMODS.create_sprite(0, 0, 320 / s, 230 / s, "mf_ransomnote", { x = 0, y = 0 })
 
 		local destroy = {
 			{
