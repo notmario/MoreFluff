@@ -1083,11 +1083,11 @@ return {
 						"{C:chips}+#2#{} Chips, {C:mult}+#1#{} Mult"
 					},
 					{
-						"{C:spectral}Cascade{}, {C:spectral}cascade{},",
-						"{C:spectral}cascade{}, {C:spectral}cascade{}",
+						"{C:spectral}Cascade $10{}, {C:spectral}cascade $10{},",
+						"{C:spectral}cascade $10{}, {C:spectral}cascade $10{}",
 						"{C:inactive,s:0.8}(When you buy this Joker, reroll",
 						"{C:inactive,s:0.8}the Shop for free until the first",
-						"{C:inactive,s:0.8}item costs less than this does.",
+						"{C:inactive,s:0.8}item costs less than $10.",
 						"{C:inactive,s:0.8}Then buy it for free.",
 						"{C:inactive,s:0.8}Repeat this process",
 						"{C:inactive,s:0.8}three more times.)",

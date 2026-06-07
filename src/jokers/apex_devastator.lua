@@ -33,7 +33,7 @@ SMODS.Joker({
 			}
 		end
         if context.buying_self then
-            FLUFF.cascade(card.cost, 4)
+            FLUFF.cascade(10, 4)
         end
 	end,
 })
