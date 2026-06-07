@@ -126,31 +126,34 @@ FLUFF.joker_pool = {
 	"jokerreacts",
 
 	"knuckleblaster",
-	"marketable_plushie",
-	"pact_of_negation",
 	"ransom_note",
 	"refrigerator",
-
 	"retrigger_joker",
 	"saturnburger",
+	
+	"intervention_pact",
+	"pact_of_negation",
+	"pact_of_the_titan",
+	"slaughter_pact",
 	"summoners_pact",
+
 	"aheartofcold",
 	"apex_devastator",
-	
 	"crimsonglassdecomposition",
+
 	"emeritus_eventuality",
 	"mathemagics",
 	"space_elevator",
 	"suspension",
-
 	"whiplash",
+
 	-- rot legendary
 	"rot_canio",
 	"rot_triboulet",
 	"rot_yorick",
 	"rot_chicot",
-	
 	"rot_perkeo",
+	
 	"rot_triangle",
 	"rot_marigold",
 }
@@ -213,6 +216,7 @@ FLUFF.hidden_joker_pool = {
 	"emeritus_eternity",
 	"stormscale",
 	"steamflogger_boss",
+	"marketable_plushie",
 
 	"old_rot_triboulet",
 	"old_rot_chicot",

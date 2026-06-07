@@ -1,12 +1,13 @@
 SMODS.Joker({
 	key = "marketable_plushie",
 	name = "Marketable Plushie",
-	atlas = "mf_jokers",
 	config = {
 		extra = { },
 	},
-	pos = { x = 3, y = 14 },
-	rarity = 2,
+	pos = { x = 6, y = 6 },
+	atlas = "mf_oldfluff",
+	rarity = "mf_oldfluff",
+	no_collection = true,
 	cost = 5,
 	unlocked = true,
 	discovered = true,

@@ -993,27 +993,6 @@ return {
 					"You can {C:blue}play{} {C:attention}1{} fewer card",
 				},
 			},
-			j_mf_marketable_plushie = {
-				name = "Marketable Plushie",
-				text = {
-					"All hands are considered",
-					"only {C:attention}Three of a Kind{} and",
-					"contain no other hands",
-					"{C:inactive,s:0.8}(This causes all played",
-					"{C:inactive,s:0.8}cards to score)",
-				},
-			},
-			j_mf_pact_of_negation = {
-				name = "Pact of Negation",
-				text = {
-					"When a {C:attention}Boss Blind{} is selected, {C:spectral}exile{}",
-					"the top {C:attention}#1#{} cards of your deck",
-					"until you sell this {C:attention}Joker{},",
-					"then disable the {C:attention}Boss Blind{}",
-					"{C:inactive,s:0.8}(The exiled cards don't return",
-					"{C:inactive,s:0.8}if this card is destroyed)",
-				},
-			},
 			j_mf_refrigerator = {
 				name = "Refrigerator",
 				text = {
@@ -1054,6 +1033,58 @@ return {
 						"{C:attention}4{} or more cards, level it up",
 						"Eaten after {C:attention}#1#{} level ups",
 					},
+				},
+			},
+			j_mf_intervention_pact = {
+				name = "Intervention Pact",
+				text = {
+					"Prevents death if deck",
+					"has {C:attention}#1#{} or more cards",
+					"that aren't in exile",
+					"When this does, {C:spectral}exile{} the",
+					"top {C:attention}#1#{} cards of your deck",
+					"{C:inactive,s:0.8}(The exiled cards never return)",
+				},
+			},
+			j_mf_pact_of_negation = {
+				name = "Pact of Negation",
+				text = {
+					"When a {C:attention}Boss Blind{} is selected, {C:spectral}exile{}",
+					"the top {C:attention}#1#{} cards of your deck",
+					"until you sell this {C:attention}Joker{},",
+					"then disable the {C:attention}Boss Blind{}",
+					"{C:inactive,s:0.8}(The exiled cards don't return",
+					"{C:inactive,s:0.8}if this card is destroyed)",
+				},
+			},
+			j_mf_pact_of_the_titan = {
+				name = "Pact of the Titan",
+				text = {
+					{
+						"{C:chips}+#2#{} Chips, {C:mult}+#3#{} Mult"
+					},
+					{
+						"When a {C:attention}Blind{} is selected, {C:spectral}exile{}",
+						"the top {C:attention}#1#{} cards of your deck",
+						"until you sell this {C:attention}Joker{}",
+						"{C:inactive,s:0.8}(The exiled cards don't return",
+						"{C:inactive,s:0.8}if this card is destroyed)",
+					}
+				},
+			},
+			j_mf_slaughter_pact = {
+				name = "Slaughter Pact",
+				text = {
+					{
+						"{X:purple,C:white}^#2#{} Blind Size"
+					},
+					{
+						"When a {C:attention}Blind{} is selected, {C:spectral}exile{}",
+						"the top {C:attention}#1#{} cards of your deck",
+						"until you sell this {C:attention}Joker{}",
+						"{C:inactive,s:0.8}(The exiled cards don't return",
+						"{C:inactive,s:0.8}if this card is destroyed)",
+					}
 				},
 			},
 			j_mf_summoners_pact = {
@@ -1889,6 +1920,16 @@ return {
 						"{C:attention}crank{} a {C:attention}Contraption{},",
 						"it {C:attention}cranks{} it twice instead"
 					}
+				},
+			},
+			j_mf_marketable_plushie = {
+				name = "Marketable Plushie",
+				text = {
+					"All hands are considered",
+					"only {C:attention}Three of a Kind{} and",
+					"contain no other hands",
+					"{C:inactive,s:0.8}(This causes all played",
+					"{C:inactive,s:0.8}cards to score)",
 				},
 			},
 
@@ -3184,6 +3225,7 @@ return {
       		k_modded_pack = "Modded Pack",
 			k_page_turn = "Page turn",
       		k_nemesis_pack = "Rewards",
+			k_intervention_pact = "Saved by the Intervention Pact",
 
 			k_timetravel_ex = "Time travel!",
 			k_plus_ankh = "+Ankh",
