@@ -449,7 +449,7 @@ return {
 				},
 			},
 			j_mf_bloodpact = {
-				name = "Blood Pact",
+				name = "Contract from Below",
 				text = {
 					"{X:mult,C:white} X#1# {} Mult",
 					"{C:red}Self destructs{} if you play",
