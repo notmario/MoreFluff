@@ -138,16 +138,18 @@ FLUFF.joker_pool = {
 	"emeritus_eventuality",
 
 	"mathemagics",
+	"space_elevator",
 	"suspension",
 	"whiplash",
 	-- rot legendary
 	"rot_canio",
-	"rot_triboulet",
 
+	"rot_triboulet",
 	"rot_yorick",
 	"rot_chicot",
 	"rot_perkeo",
 	"rot_triangle",
+	
 	"rot_marigold",
 }
 

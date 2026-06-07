@@ -990,7 +990,7 @@ return {
 				name = "Knuckleblaster",
 				text = {
 					"{X:mult,C:white}X#1#{} Mult",
-					"{C:blue}-1{} Play selection limit",
+					"You can {C:blue}play{} {C:attention}1{} fewer card",
 				},
 			},
 			j_mf_marketable_plushie = {
@@ -1316,6 +1316,21 @@ return {
 					"when you sell {C:attention}2 Jokers{}",
 					"resets when triggered"
 				},
+			},
+			j_mf_space_elevator = {
+				name = "Space Elevator",
+				text = {
+					{
+						"When a {C:attention}Blind{} is selected, {C:spectral}exile",
+						"the top card of your deck until",
+						"you sell this {C:attention}Joker{}"
+					},
+					{
+						"As long as you have {C:attention}#1#{} or more",
+						"cards in exile, you may {C:blue}play{} or",
+						"{C:red}discard{} {C:attention}#2#{} additional cards",
+					}
+				}
 			},
 			j_mf_suspension = {
 				name = "Suspension of Disbelief",
@@ -2884,7 +2899,7 @@ return {
 			mf_heavy = {
 				name = "Heavy",
 				text = {
-				  	"-1 {C:red}Discard{} selection limit"
+				  	"You can {C:red}discard{} {C:attention}1{} fewer card"
 				},
 			},
 			mf_potato = {
@@ -3021,7 +3036,7 @@ return {
 				name = "Steel Stake",
 				text = {
 					"Shop can have {C:attention}Heavy{} Jokers",
-					"{C:inactive,s:0.8}(-1 Discard selection limit)",
+					"{C:inactive,s:0.8}(You can discard 1 fewer card)",
 					"{s:0.8}Applies all previous Stakes",
 				}
 			},
