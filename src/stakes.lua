@@ -254,28 +254,66 @@ end
 --     colour = G.C.RED,
 -- }
 
-local cc = create_card
-function create_card(_type, area, legendary, _rarity, skip_materialize, soulable, forced_key, key_append)
-    local card = cc(_type, area, legendary, _rarity, skip_materialize, soulable, forced_key, key_append)
+SMODS.Stake {
+    key = "ultramarine",
+    above_stake = "hot",
+    applied_stakes = { "hot" },
+    atlas = 'mf_stakes',
+    pos = { x = 1, y = 0 },
+    sticker_atlas = "mf_stake_stickers",
+    sticker_pos = { x = 1, y = 0 },
+    modifiers = function()
+        G.GAME.modifiers.enable_suspended_in_shop = true
+    end,
+    colour = HEX("5c42de"),
+}
 
-    if _type == "Joker" and (area == G.shop_jokers or (G.pack_cards and area == G.pack_cards)) then
-        local heavypoll = pseudorandom((area == G.pack_cards and 'packheavy' or 'heavypoll')..G.GAME.round_resets.ante)
-        if G.GAME.modifiers.enable_heavy_in_shop and heavypoll > 0.70 then
-            card.ability["mf_heavy"] = true
-        end
-        local potpoll = pseudorandom((area == G.pack_cards and 'packpot' or 'potpoll')..G.GAME.round_resets.ante)
-        if G.GAME.modifiers.enable_potato_in_shop and potpoll > 0.70 and not card.ability.eternal then
-            card.ability["mf_potato"] = true
-        end
+SMODS.Sticker {
+    key = "suspend_sticker",
+    badge_colour = HEX '5c42de',
+    pos = { x = 2, y = 0 },
+    atlas = "mf_stake_stickers",
+    sets = { ["Consumable"] = true },
+    should_apply = function (self, card, center, area, bypass_reroll)
+        return false
+    end,
+    calculate = function(self, card, context)
+        -- print(context)
     end
+}
 
-    return card
+local cuc = Card.use_consumeable
+function Card:use_consumeable(area, copier, ...)
+    if self.ability["mf_suspend_sticker"] then
+        self.ability["mf_suspend_sticker"] = false
+        FLUFF.exile_card(self)
+        local dont_dissolve_index = nil
+        local i = 1
+
+        while not dont_dissolve_index do
+            local local_name = debug.getlocal(2, i)
+            
+            if local_name == "dont_dissolve" then dont_dissolve_index = i end
+
+            i = i + 1
+            if not local_name then break end
+        end
+
+        if dont_dissolve_index then
+            debug.setlocal(2, dont_dissolve_index, true)
+        end
+        self.ability.mf_suspended = {
+            rounds = 2,
+        }
+    else
+        cuc(self, area, copier, ...)
+    end
 end
 
 SMODS.Stake {
     key = "final",
-    above_stake = "hot",
-    applied_stakes = { "hot" },
+    above_stake = "ultramarine",
+    applied_stakes = { "ultramarine" },
     atlas = 'mf_stakes',
     pos = { x = 1, y = 2 },
     sticker_atlas = "mf_stake_stickers",
@@ -293,4 +331,28 @@ function get_blind_amount(ante, ...)
         return 4000000
     end
     return gfb(ante, ...)
+end
+
+local cc = create_card
+function create_card(_type, area, legendary, _rarity, skip_materialize, soulable, forced_key, key_append)
+    local card = cc(_type, area, legendary, _rarity, skip_materialize, soulable, forced_key, key_append)
+
+    if _type == "Joker" and (area == G.shop_jokers or (G.pack_cards and area == G.pack_cards)) then
+        local heavypoll = pseudorandom((area == G.pack_cards and 'packheavy' or 'heavypoll')..G.GAME.round_resets.ante)
+        if G.GAME.modifiers.enable_heavy_in_shop and heavypoll > 0.70 then
+            card.ability["mf_heavy"] = true
+        end
+        local potpoll = pseudorandom((area == G.pack_cards and 'packpot' or 'potpoll')..G.GAME.round_resets.ante)
+        if G.GAME.modifiers.enable_potato_in_shop and potpoll > 0.70 and not card.ability.eternal then
+            card.ability["mf_potato"] = true
+        end
+    end
+    if card.ability.consumeable and (area == G.shop_jokers or (G.pack_cards and area == G.pack_cards)) then
+        local suspended_poll = pseudorandom((area == G.pack_cards and 'packsus' or 'suspoll')..G.GAME.round_resets.ante)
+        if G.GAME.modifiers.enable_suspended_in_shop and suspended_poll > 0.5 then
+            card.ability["mf_suspend_sticker"] = true
+        end
+    end
+
+    return card
 end

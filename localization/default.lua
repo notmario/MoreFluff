@@ -2893,6 +2893,14 @@ return {
 				  	"Must be sold first"
 				},
 			},
+			mf_suspend_sticker = {
+				name = "Suspended",
+				text = {
+				  	"When used, instead exiles for",
+					"{C:attention}2{} rounds, then tries to use on",
+					"random playing cards if possible"
+				},
+			},
 
             mf_pink_sticker = {
                 name = "Pink Sticker",
@@ -2923,6 +2931,14 @@ return {
                 text = {
                     "Used this Joker",
                     "to win on {C:attention}Hot",
+                    "{C:attention}Stake{} difficulty",
+                },
+            },
+            mf_ultramarine_sticker = {
+                name = "Ultramarine Sticker",
+                text = {
+                    "Used this Joker",
+                    "to win on {C:attention}Ultramarine",
                     "{C:attention}Stake{} difficulty",
                 },
             },
@@ -3024,10 +3040,12 @@ return {
 					"{s:0.8}Applies all previous Stakes",
 				}
 			},
-			stake_mf_jimbo = {
-				name = "Jimbo Stake",
+			stake_mf_ultramarine = {
+				name = "Ultramarine Stake",
 				text = {
-					"+1 Win {C:attention}Ante",
+					"Shop can have {C:attention}Suspended{} Consumables",
+					"{C:inactive,s:0.8}(When used, instead exiles for 2 rounds, then",
+					"{C:inactive,s:0.8}tries to use on random playing cards if possible)",
 					"{s:0.8}Applies all previous Stakes",
 				}
 			},
@@ -3088,6 +3106,7 @@ return {
 			mf_cryptic = "Cryptic",
 			mf_heavy = "Heavy",
 			mf_potato = "Potato",
+			mf_suspend_sticker = "Suspended",
 		},
 		dictionary = {
 			k_mf_token = "Token",

@@ -216,7 +216,7 @@ FLUFF.calculate = function(self, context)
 					suspend_in_depth(suspend_depth)
 					suspend_depth = suspend_depth + 3
 				else
-					card_eval_status_text(_card, "extra", nil, nil, nil, {
+					card_eval_status_text(card, "extra", nil, nil, nil, {
 						message = card.ability.mf_suspended.rounds .. "",
 						card = card,
 					})
