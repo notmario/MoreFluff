@@ -227,6 +227,7 @@ FLUFF.hidden_joker_pool = {
 	-- ourple
 	"aura_farm",
 	"crad_shuffler",
+	"purple_economy_joker",
 
 	-- lettergem mentioned
 	"lettergem_a",

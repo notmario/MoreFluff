@@ -493,3 +493,23 @@ function copy_card(...)
 
 	return copy
 end
+
+local cas = CardArea.shuffle
+function CardArea:shuffle(...)
+    if self == G.deck and G.deck then
+        SMODS.calculate_context { mf_deck_shuffled = true }
+    end
+
+    cas(self, ...)
+end
+
+FLUFF.shuffle_when_pack_opened = {
+	"j_mf_purple_economy_joker"
+}
+
+FLUFF.should_shuffle_on_pack = function()
+	for _, card in pairs(FLUFF.shuffle_when_pack_opened) do
+		if next(SMODS.find_card(card)) then return true end
+	end
+	return false
+end

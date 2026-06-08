@@ -2171,6 +2171,17 @@ return {
 					"{C:green}shuffle{} your {C:attention}deck{}",
 				},
 			},
+			j_mf_purple_economy_joker = {
+				name = "Purple Economy Joker",
+				text = {
+					"Earn {C:gold}$#1#{} whenever",
+					"the {C:attention}deck{} is {C:green}shuffled{}",
+					"{C:inactive,s:0.8}(It shuffles when a round",
+					"{C:inactive,s:0.8}starts or ends, or when a",
+					"{C:inactive,s:0.8}pack that requires a hand",
+					"{C:inactive,s:0.8}is opened.)",
+				},
+			},
 		},
 		Colour = {
 			c_mf_black = {
