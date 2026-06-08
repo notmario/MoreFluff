@@ -111,6 +111,18 @@ FLUFF.calculate = function(self, context)
 					return true
 				end,
 			}))
+			G.E_MANAGER:add_event(Event({
+				trigger = "after",
+				delay = 0.7,
+				func = function()
+					SMODS.add_card({
+						set = "Joker",
+						area = G.pack_cards,
+						rarity = rarity,
+					})
+					return true
+				end,
+			}))
 			res[#res + 1] = {
 				message = localize("k_added_ex"),
 				colour = HEX("000000"),

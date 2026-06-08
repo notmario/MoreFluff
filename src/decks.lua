@@ -8,7 +8,7 @@ SMODS.Back({
 	discovered = true,
 
 	apply = function(self, back)
-		G.GAME.modifiers.mf_pack_tax = (G.GAME.modifiers.mf_pack_tax or 0) + 1
+		G.GAME.modifiers.mf_buffoon_pack_tax = (G.GAME.modifiers.mf_buffoon_pack_tax or 0) + 2
 		G.GAME.modifiers.mf_bonus_scrapped = true
 	end,
 
@@ -22,12 +22,12 @@ SMODS.Back({
 local csc = Card.set_cost
 
 function Card:set_cost(...)
-	if G.GAME.modifiers.mf_pack_tax and self.ability.set == "Booster" then
-		G.GAME.inflation = (G.GAME.inflation or 0) + G.GAME.modifiers.mf_pack_tax
+	if G.GAME.modifiers.mf_buffoon_pack_tax and self.ability.set == "Booster" and self.config.center.kind == "Buffoon" then
+		G.GAME.inflation = (G.GAME.inflation or 0) + G.GAME.modifiers.mf_buffoon_pack_tax
 	end
 	csc(self, ...)
-	if G.GAME.modifiers.mf_pack_tax and self.ability.set == "Booster" then
-		G.GAME.inflation = (G.GAME.inflation or 0) - G.GAME.modifiers.mf_pack_tax
+	if G.GAME.modifiers.mf_buffoon_pack_tax and self.ability.set == "Booster" and self.config.center.kind == "Buffoon" then
+		G.GAME.inflation = (G.GAME.inflation or 0) - G.GAME.modifiers.mf_buffoon_pack_tax
 	end
 end
 

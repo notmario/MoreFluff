@@ -2648,9 +2648,9 @@ return {
 			b_mf_oldfluff = {
 				name = "Old Deck",
 				text = {
-					"Buffoon Packs contain an",
-					"additional {V:1}Hidden{} Joker",
-					"Booster Packs cost {C:gold}$1{} more",
+					"Buffoon Packs contain two",
+					"additional {V:1}Hidden{} Jokers",
+					"and cost {C:gold}$2{} more to purchase",
 				},
 			},
 			b_mf_philosophical = {
