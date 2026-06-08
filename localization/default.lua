@@ -2162,6 +2162,15 @@ return {
 					"{C:inactive,s:0.8}doing so unprepares it. It works.)",
 				},
 			},
+			j_mf_crad_shuffler = {
+				name = "crad shuffler",
+				text = {
+					"The bottom three cards of",
+					"your {C:attention}deck{} also {C:spectral}score",
+					"When you discard a card,",
+					"{C:green}shuffle{} your {C:attention}deck{}",
+				},
+			},
 		},
 		Colour = {
 			c_mf_black = {
@@ -3252,6 +3261,8 @@ return {
 			k_noted_ex = "Noted!",
 			k_reduced_ex = "Reduced!",
 			k_zenith = "Saved by Z",
+
+			k_shuffled_ex = "Shuffled!",
 
 			mf_credits = "Credits",
 		},

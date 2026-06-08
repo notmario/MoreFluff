@@ -27,12 +27,35 @@ if G.GAME.rot_trib_count then
     end
 end
 
+local mf_my_fucked_up_and_evil_hand = {}
+
 for i,v in ipairs(FLUFF.add_to_hand) do
     table.insert(final_scoring_hand,v)
-    v.area:remove_card(v)
-    G.play:emplace(v)
+
+    if v.mf_return_to_bottom_of_deck then
+        mf_my_fucked_up_and_evil_hand[#mf_my_fucked_up_and_evil_hand + 1] = v
+        v.mf_return_to_bottom_of_deck = nil
+    else
+        v.area:remove_card(v)
+        G.play:emplace(v)
+    end
 
     v.mf_added_to_hand = false
+end
+'''
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = """delay(0.3)
+--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++--
+--Joker Effects
+--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++--"""
+position = 'before'
+payload = '''
+if #mf_my_fucked_up_and_evil_hand >= 1 then
+    SMODS.calculate_main_scoring({cardarea = G.deck, full_hand = G.play.cards, scoring_hand = scoring_hand, scoring_name = text, poker_hands = poker_hands}, mf_my_fucked_up_and_evil_hand)
 end
 '''
 match_indent = true
