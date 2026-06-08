@@ -98,7 +98,6 @@ FLUFF.calculate = function(self, context)
 
 	if context.open_booster and G.GAME.modifiers.mf_bonus_scrapped then
 		if context.booster and context.booster.kind == "Buffoon" then
-			local rarity = pseudorandom_element({"mf_oldfluff", "mf_letter"}, pseudoseed("bonussheet_rarity"))
 			G.E_MANAGER:add_event(Event({
 				trigger = "after",
 				delay = 0.7,
@@ -106,7 +105,7 @@ FLUFF.calculate = function(self, context)
 					SMODS.add_card({
 						set = "Joker",
 						area = G.pack_cards,
-						rarity = rarity,
+						rarity = FLUFF.get_hidden_rarity(),
 					})
 					return true
 				end,
@@ -118,7 +117,7 @@ FLUFF.calculate = function(self, context)
 					SMODS.add_card({
 						set = "Joker",
 						area = G.pack_cards,
-						rarity = rarity,
+						rarity = FLUFF.get_hidden_rarity(),
 					})
 					return true
 				end,

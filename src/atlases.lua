@@ -34,6 +34,13 @@ SMODS.Atlas({
 })
 
 SMODS.Atlas({
+	key = "mf_purple",
+	path = "mf_purple.png",
+	px = 71,
+	py = 95,
+})
+
+SMODS.Atlas({
 	key = "mf_colours",
 	path = "mf_colours.png",
 	px = 71,

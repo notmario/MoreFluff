@@ -8,6 +8,9 @@ assert(SMODS.load_file("src/planeswalker.lua"))()
 assert(SMODS.load_file("src/rarities.lua"))()
 assert(SMODS.load_file("src/attributes.lua"))()
 
+-- load first so we can hook it
+assert(SMODS.load_file("src/prepared.lua"))()
+
 assert(SMODS.load_file("src/jokers.lua"))()
 assert(SMODS.load_file("src/colours.lua"))()
 assert(SMODS.load_file("src/modifiers.lua"))()
@@ -19,6 +22,5 @@ assert(SMODS.load_file("src/stakes.lua"))()
 assert(SMODS.load_file("src/uibadge.lua"))()
 assert(SMODS.load_file("src/modpageui.lua"))()
 assert(SMODS.load_file("src/misc.lua"))()
-assert(SMODS.load_file("src/prepared.lua"))()
 
 assert(SMODS.load_file("src/mod_calculate.lua"))()

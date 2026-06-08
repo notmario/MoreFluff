@@ -1,4 +1,11 @@
 -- prepared
+function FLUFF.has_prepared_card(card)
+	return not (not card.config.center or not card.config.center.prepared_card)
+end
+
+function FLUFF.is_prepared(card)
+	return (card.ability.extra or {}).is_prepared or false
+end
 
 function FLUFF.get_prepared_card(card)
 	if not card.config.center.prepared_card then return "c_death" end
@@ -117,7 +124,7 @@ end
 local guidefcardhpopup = G.UIDEF.card_h_popup
 function G.UIDEF.card_h_popup(card)
 	local ret_val = guidefcardhpopup(card)
-	if not card.config.center or not card.config.center.prepared_card then return ret_val end
+	if not FLUFF.has_prepared_card(card) then return ret_val end
 	local dummy_card = get_dummy(G.P_CENTERS[FLUFF.get_prepared_card(card)], G.consumeables, card)
 
 	FLUFF.force_no_info_queue = true
@@ -161,7 +168,7 @@ function G.UIDEF.card_h_popup(card)
 			},
 			{
 				n = G.UIT.C,
-				config={align = "cm", padding = 0.07, emboss = 0.05, r = 0.1, colour = darken(card.ability.extra.is_prepared and card_type_colour or G.C.BLACK, card.ability.extra.is_prepared and 0.3 or 0.),},
+				config={align = "cm", padding = 0.07, emboss = 0.05, r = 0.1, colour = darken(FLUFF.is_prepared(card) and card_type_colour or G.C.BLACK, FLUFF.is_prepared(card) and 0.3 or 0.),},
 				nodes = {
 					-- {
 					-- 	n = G.UIT.R,
@@ -188,7 +195,7 @@ function G.UIDEF.card_h_popup(card)
 						nodes = {{
 							n = G.UIT.T,
 							config = {
-								text = localize(card.ability.extra.is_prepared and "k_prepared" or "k_not_prepared"),
+								text = localize(FLUFF.is_prepared(card) and "k_prepared" or "k_not_prepared"),
 								colour = G.C.UI.TEXT_LIGHT,
 								minw = 1,
 								minh = 0.1,
@@ -217,7 +224,7 @@ end
 G.FUNCS["mf_can_use_prepared"] = function(e)
 	local card = e.config.ref_table
 	local dummy_card = get_dummy(G.P_CENTERS[FLUFF.get_prepared_card(card)], nil, card)
-	if card.ability.extra.is_prepared and Card.can_use_consumeable(dummy_card) then
+	if FLUFF.is_prepared(card) and Card.can_use_consumeable(dummy_card) then
 		e.config.colour = G.C.PURPLE
 		e.config.button = "mf_use_prepared"
 	else
@@ -254,6 +261,7 @@ G.FUNCS["mf_use_prepared"] = function(e)
 		end,
 	}))
 
+	card.ability.extra = card.ability.extra or {}
 	card.ability.extra.is_prepared = false
 
 	G.E_MANAGER:add_event(Event({
@@ -271,7 +279,7 @@ end
 local G_UIDEF_use_and_sell_buttons_ref = G.UIDEF.use_and_sell_buttons
 function G.UIDEF.use_and_sell_buttons(card)
 	local abc = G_UIDEF_use_and_sell_buttons_ref(card)
-	if (card.area == G.jokers and G.jokers and card.config.center.prepared_card) and not card.debuff then
+	if (card.area == G.jokers and G.jokers and FLUFF.has_prepared_card(card)) and not card.debuff then
 		sell = {
 			n = G.UIT.C,
 			config = { align = "cr" },
@@ -347,6 +355,141 @@ function G.UIDEF.use_and_sell_buttons(card)
 		nodesthing = {
 			{ n = G.UIT.R, config = { align = "cl" }, nodes = {
 				sell,
+			} },
+			{ n = G.UIT.R, config = { align = "cl" }, nodes = {
+				{
+					n = G.UIT.C,
+					config = { align = "cr" },
+					nodes = {
+						{
+							n = G.UIT.C,
+							config = {
+								ref_table = card,
+								align = "cr",
+								padding = 0.1,
+								r = 0.08,
+								minw = 1.25,
+								hover = true,
+								shadow = true,
+								colour = G.C.UI.BACKGROUND_INACTIVE,
+								button = "mf_use_prepared",
+								func = "mf_can_use_prepared",
+							},
+							nodes = {
+
+								{
+									n = G.UIT.R,
+									config = { align = "cm" },
+									nodes = {
+										{
+											n = G.UIT.T,
+											config = { text = localize "b_use", colour = G.C.WHITE, scale = 0.4, shadow = true },
+										},
+									},
+								},
+							},
+						},
+					},
+				}
+			} }
+		}
+
+		return {
+			n = G.UIT.ROOT,
+			config = { padding = 0, colour = G.C.CLEAR },
+			nodes = {
+				{ n = G.UIT.C, config = { padding = 0, align = "cl" }, nodes = nodesthing },
+			},
+		}
+	end
+	if (card.ability.consumeable and FLUFF.has_prepared_card(card)) and not card.debuff then
+		sell = {
+			n = G.UIT.C,
+			config = { align = "cr" },
+			nodes = {
+				{
+					n = G.UIT.C,
+					config = {
+						ref_table = card,
+						align = "cr",
+						padding = 0.1,
+						r = 0.08,
+						minw = 1.25,
+						hover = true,
+						shadow = true,
+						colour = G.C.UI.BACKGROUND_INACTIVE,
+						one_press = true,
+						button = "sell_card",
+						func = "can_sell_card",
+						handy_insta_action = "sell",
+					},
+					nodes = {
+						{ n = G.UIT.B, config = { w = 0.1, h = 0.6 } },
+						{
+							n = G.UIT.C,
+							config = { align = "tm" },
+							nodes = {
+								{
+									n = G.UIT.R,
+									config = { align = "cm", maxw = 1.25 },
+									nodes = {
+										{
+											n = G.UIT.T,
+											config = {
+												text = localize("b_sell"),
+												colour = G.C.UI.TEXT_LIGHT,
+												scale = 0.4,
+												shadow = true,
+											},
+										},
+									},
+								},
+								{
+									n = G.UIT.R,
+									config = { align = "cm" },
+									nodes = {
+										{
+											n = G.UIT.T,
+											config = {
+												text = localize("$"),
+												colour = G.C.WHITE,
+												scale = 0.4,
+												shadow = true,
+											},
+										},
+										{
+											n = G.UIT.T,
+											config = {
+												ref_table = card,
+												ref_value = "sell_cost_label",
+												colour = G.C.WHITE,
+												scale = 0.55,
+												shadow = true,
+											},
+										},
+									},
+								},
+							},
+						},
+					},
+				},
+			},
+		}
+
+		use = 
+			{n=G.UIT.C, config={align = "cr"}, nodes={
+			
+			{n=G.UIT.C, config={ref_table = card, align = "cr",maxw = 1.25, padding = 0.1, r=0.08, minw = 1.25, minh = (card.area and card.area.config.type == 'joker') and 0 or 1, hover = true, shadow = true, colour = G.C.UI.BACKGROUND_INACTIVE, one_press = true, button = 'use_card', func = 'can_use_consumeable'}, nodes={
+				{n=G.UIT.B, config = {w=0.1,h=0.6}},
+				{n=G.UIT.T, config={text = localize('b_use'),colour = G.C.UI.TEXT_LIGHT, scale = 0.55, shadow = true}}
+			}}
+		}}
+		nodesthing = {
+			{ n = G.UIT.R, config = { align = "cl" }, nodes = {
+				sell,
+			} },
+			{ n = G.UIT.R, config = { align = "cl" }, nodes = {
+				use,
 			} },
 			{ n = G.UIT.R, config = { align = "cl" }, nodes = {
 				{

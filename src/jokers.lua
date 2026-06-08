@@ -224,6 +224,9 @@ FLUFF.hidden_joker_pool = {
 	"old_rot_triangle",
 	"old_rot_marigold",
 
+	-- ourple
+	"aura_farm",
+
 	-- lettergem mentioned
 	"lettergem_a",
 	"lettergem_b",

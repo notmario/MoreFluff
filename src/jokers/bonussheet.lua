@@ -28,9 +28,9 @@ SMODS.Joker({
 					func = function()
 						card:juice_up(0.5, 0.5)
 						SMODS.add_card({
-							set = "Joker",
+            				type = "Joker",
 							area = G.pack_cards,
-							rarity = rarity,
+							rarities = FLUFF.get_hidden_rarity(),
 						})
 						return true
 					end,

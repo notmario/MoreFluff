@@ -2149,6 +2149,19 @@ return {
 					"{C:attention}13{} playing cards",
 				},
 			},
+
+			-- purple
+			j_mf_aura_farm = {
+				name = "Aura Farm",
+				text = {
+					"Held {C:tarot}Tarot{} cards also have",
+					"{C:spectral}Aura{} as a prepared consumable",
+					"and start {C:spectral}prepared{}",
+					"{C:inactive,s:0.8}(While they're prepared, you may",
+					"{C:inactive,s:0.8}use a copy of their consumable,",
+					"{C:inactive,s:0.8}doing so unprepares it. It works.)",
+				},
+			},
 		},
 		Colour = {
 			c_mf_black = {
@@ -3181,6 +3194,7 @@ return {
 			mf_token = "Token",
 			mf_oldfluff = "Scrapped",
 			mf_letter = "Letter",
+			mf_purple = "Purple",
 			mf_superlegendary = "Superlegendary",
 			mf_rot_legendary = "Legendary!",
 			mf_cryptic = "Cryptic",
@@ -3192,6 +3206,7 @@ return {
 			k_mf_token = "Token",
 			k_mf_oldfluff = "Scrapped",
 			k_mf_letter = "Letter",
+			k_mf_purple = "Purple",
 			k_mf_superlegendary = "Superlegendary",
 			k_mf_rot_legendary = "Legendary!",
 			k_colour = "Colour",
