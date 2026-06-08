@@ -282,6 +282,15 @@ SMODS.Sticker {
     end
 }
 
+local ccuc = Card.can_use_consumeable
+function Card:can_use_consumeable(...)
+    if self.ability["mf_suspend_sticker"] then
+        return true
+    else
+        return ccuc(self, ...)
+    end
+end
+
 local cuc = Card.use_consumeable
 function Card:use_consumeable(area, copier, ...)
     if self.ability["mf_suspend_sticker"] then
@@ -306,7 +315,7 @@ function Card:use_consumeable(area, copier, ...)
             rounds = 2,
         }
     else
-        cuc(self, area, copier, ...)
+        return cuc(self, area, copier, ...)
     end
 end
 
