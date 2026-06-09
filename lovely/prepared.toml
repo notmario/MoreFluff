@@ -1,0 +1,14 @@
+[manifest]
+version = "1.0.0"
+dump_lua = true
+priority = -1
+
+[[patches]]
+[patches.pattern]
+target = 'functions/common_events.lua'
+match_indent = true
+pattern = '''for _, v in ipairs(info_queue) do'''
+position = 'before'
+payload = '''
+if FLUFF and FLUFF.force_no_info_queue then info_queue = {} end
+'''

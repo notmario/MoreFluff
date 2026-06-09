@@ -1,0 +1,186 @@
+SMODS.Atlas {
+    key = "modicon",
+    path = "mf_icon.png",
+    px = 34,
+    py = 34,
+}
+
+SMODS.Atlas({
+	key = "mf_jokers",
+	path = "mf_jokers.png",
+	px = 71,
+	py = 95,
+})
+
+SMODS.Atlas({
+	key = "mf_mv",
+	path = "mf_mv.png",
+	px = 71,
+	py = 95,
+})
+
+SMODS.Atlas({
+	key = "mf_oldfluff",
+	path = "mf_oldfluff.png",
+	px = 71,
+	py = 95,
+})
+
+SMODS.Atlas({
+	key = "mf_letterjokers",
+	path = "mf_letterjokers.png",
+	px = 71,
+	py = 78,
+})
+
+SMODS.Atlas({
+	key = "mf_purple",
+	path = "mf_purple.png",
+	px = 71,
+	py = 95,
+})
+
+SMODS.Atlas({
+	key = "mf_colours",
+	path = "mf_colours.png",
+	px = 71,
+	py = 95,
+})
+
+SMODS.Atlas({
+	key = "mf_tags",
+	path = "mf_tags.png",
+	px = 34,
+	py = 34,
+})
+
+SMODS.Atlas({
+	key = "mf_packs",
+	path = "mf_packs.png",
+	px = 71,
+	py = 95,
+})
+
+SMODS.Atlas({
+	key = "mf_vouchers",
+	path = "mf_vouchers.png",
+	px = 71,
+	py = 95,
+})
+
+SMODS.Atlas({
+	key = "mf_rotarots",
+	path = "mf_rotarots.png",
+	px = 71,
+	py = 95,
+})
+
+SMODS.Atlas({
+	key = "mf_enhancers",
+	path = "mf_enhancers.png",
+	px = 71,
+	py = 95,
+})
+
+SMODS.Atlas({
+	key = "lettergem_destroy",
+	path = "lettergem_destroy.png",
+	px = 259,
+	py = 79,
+	atlas_table = "ANIMATION_ATLAS",
+	frames = 5,
+	fps = 20,
+})
+
+SMODS.Atlas({
+	key = "lettergem_g",
+	path = "lettergem_g.png",
+	px = 76,
+	py = 92,
+	atlas_table = "ANIMATION_ATLAS",
+	frames = 5,
+	fps = 20,
+})
+
+SMODS.Atlas({
+	key = "ransomnote",
+	path = "ransomnote.png",
+	px = 320,
+	py = 230,
+})
+
+SMODS.Atlas({
+	key = "mf_hyperjimbo",
+	atlas_table = "ASSET_ATLAS",
+	path = "mf_hyperjimbo.png",
+	px = 95,
+	py = 95,
+})
+
+SMODS.Atlas({
+	key = "mf_watermark",
+	atlas_table = "ASSET_ATLAS",
+	path = "watermark.png",
+	px = 336,
+	py = 32,
+})
+
+SMODS.Atlas({
+	key = "mf_chain",
+	atlas_table = "ASSET_ATLAS",
+	path = "chain.png",
+	px = 192,
+	py = 96,
+})
+
+SMODS.Atlas({
+	key = "mf_exile_spiral",
+	atlas_table = "ASSET_ATLAS",
+	path = "exile_spiral.png",
+	px = 256,
+	py = 256,
+})
+
+SMODS.Atlas({
+	key = "mf_loyalty",
+	atlas_table = "ASSET_ATLAS",
+	path = "mf_loyalty.png",
+	px = 71,
+	py = 95,
+})
+
+SMODS.Atlas({
+	key = "mf_blinds",
+	atlas_table = "ANIMATION_ATLAS",
+	path = "mf_blinds.png",
+	px = 34,
+	py = 34,
+	frames = 21,
+})
+
+SMODS.Font({
+	key = "emoji",
+	path = "NotoEmoji-Bold.ttf",
+})
+
+SMODS.Atlas { 
+	key = "mf_stake_stickers", 
+	atlas_table = "ASSET_ATLAS", 
+	path = "mf_stake_stickers.png", 
+	px = 71, 
+	py = 95 
+}
+SMODS.Atlas {
+	key = "mf_stakes",
+	path = "mf_stakes.png",
+	px = 29,
+	py = 29
+}
+
+SMODS.Atlas { 
+	key = "mf_rot_legendary_consumables", 
+	atlas_table = "ASSET_ATLAS", 
+	path = "mf_rot_legendary_consumables.png", 
+	px = 71, 
+	py = 95 
+}

@@ -1,0 +1,89 @@
+[manifest]
+version = "1.0.0"
+dump_lua = true
+priority = -1
+
+[[patches]]
+[patches.pattern]
+target = "cardarea.lua"
+pattern = "table.sort(self.cards, function (a, b) return a.T.x + a.T.w/2 - 100*((a.pinned and not a.ignore_pinned) and a.sort_id or 0) < b.T.x + b.T.w/2 - 100*((b.pinned and not b.ignore_pinned) and b.sort_id or 0) end)"
+position = "before"
+payload = "if self ~= G.mf_exile then"
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = "cardarea.lua"
+pattern = "table.sort(self.cards, function (a, b) return a.T.x + a.T.w/2 - 100*((a.pinned and not a.ignore_pinned) and a.sort_id or 0) < b.T.x + b.T.w/2 - 100*((b.pinned and not b.ignore_pinned) and b.sort_id or 0) end)"
+position = "after"
+payload = "end"
+match_indent = true
+
+# from lemniscate
+# ty alexi !!!
+
+# Scaling node collision
+# Node:collides_with_point
+[[patches]]
+[patches.pattern]
+target = 'engine/node.lua'
+pattern = '''if math.abs(T.r) < 0.1 then'''
+position = 'before'
+match_indent = true
+payload = '''
+-- If node collision needs to be scaled, do that
+if self.area and self.area == G.mf_exile then
+    local scale_fac = FLUFF.exile_scale
+
+    if math.abs(T.r) < 0.1 then
+        --If we can essentially disregard transform rotation, just treat it like a normal rectangle
+        local w_reduce = T.w * ((1-scale_fac) / 2)
+        local h_reduce = T.h * ((1-scale_fac) / 2)
+
+        if _p.x >= T.x + w_reduce - _b and _p.y >= T.y + h_reduce - _b and _p.x <= T.x + T.w - w_reduce + _b and _p.y <= T.y + T.h - h_reduce + _b then 
+            return true
+        end
+    else
+        --Otherwise we need to do some silly point rotation garbage to determine if the point intersects the rotated rectangle
+        _r.cos, _r.sin = math.cos(T.r+math.pi/2), math.sin(T.r+math.pi/2)
+        _p.x, _p.y = _p.x - (T.x + 0.5*(T.w)), _p.y - (T.y + 0.5*(T.h))
+        _t.x, _t.y = _p.y*_r.cos - _p.x*_r.sin, _p.y*_r.sin + _p.x*_r.cos
+        _p.x, _p.y = _t.x + (T.x + 0.5*(T.w)), _t.y + (T.y + 0.5*(T.h))
+
+        local w_reduce = T.w * ((1-scale_fac) / 2)
+        local h_reduce = T.h * ((1-scale_fac) / 2)
+
+        if _p.x >= T.x + w_reduce - _b and _p.y >= T.y + h_reduce - _b and _p.x <= T.x + T.w - w_reduce + _b and _p.y <= T.y + T.h - h_reduce + _b then 
+            return true
+        end
+    end
+
+    return false
+end
+'''
+
+# Scaled collision debug drawing
+# Node.draw_boundingrect
+[[patches]]
+[patches.pattern]
+target = 'engine/node.lua'
+pattern = '''love.graphics.rotate(transform.r)'''
+position = 'after'
+match_indent = true
+payload = '''
+if self.area and self.area == G.mf_exile then
+    love.graphics.scale(FLUFF.exile_scale, FLUFF.exile_scale)
+end
+'''
+
+[[patches]]
+[patches.pattern]
+target = 'engine/node.lua'
+pattern = '''love.graphics.rectangle('line', 0, 0, transform.w*G.TILESIZE,transform.h*G.TILESIZE, 3)'''
+position = 'before'
+match_indent = true
+payload = '''
+if self.area and self.area == G.mf_exile then
+    love.graphics.setLineWidth(love.graphics.getLineWidth() / FLUFF.exile_scale)
+end
+'''

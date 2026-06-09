@@ -1,0 +1,18 @@
+[manifest]
+version = "1.0.0"
+dump_lua = true
+priority = -1
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS _ "src/game_object.lua"]'
+pattern = 'if self.draw_hand == true then G.FUNCS.draw_from_deck_to_hand() end'
+position = 'before'
+payload = '''
+    if self.draw_hand == true and FLUFF.should_shuffle_on_pack() then
+        local cards = SMODS.shallow_copy(G.deck.cards)
+        G.deck:shuffle()
+        G.deck.cards = cards
+    end
+'''
+match_indent = true

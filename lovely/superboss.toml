@@ -5,48 +5,11 @@ priority = -1
 
 [[patches]]
 [patches.pattern]
-target = 'game.lua'
-match_indent = true
-pattern = '''for i = 1, #G.GAME.tags do
-  G.GAME.tags[i]:apply_to_run({type = 'voucher_add'})
-end'''
-position = 'before'
-payload = '''
-if G.GAME.round_resets.ante == G.GAME.win_ante and (Blind.get_type(G.GAME.round_resets.blind) ~= "Small" and Blind.get_type(G.GAME.round_resets.blind) ~= "Big") and not G.GAME.superboss_active and G.P_CENTERS["v_mf_superboss_ticket"] then
-  local voucher_key = "v_mf_superboss_ticket"
-  G.shop_vouchers.config.card_limit = G.shop_vouchers.config.card_limit + 1
-  local new_card = Card(G.shop_vouchers.T.x + G.shop_vouchers.T.w/2,
-  G.shop_vouchers.T.y, G.CARD_W, G.CARD_H, G.P_CARDS.empty, G.P_CENTERS[voucher_key],{bypass_discovery_center = true, bypass_discovery_ui = true})
-
-  new_card.forced_cost = -10
-  new_card:set_cost()
-
-  create_shop_card_ui(new_card, 'Voucher', G.shop_vouchers)
-  new_card:start_materialize()
-  G.shop_vouchers:emplace(new_card)
-end
-'''
-
-
-[[patches]]
-[patches.pattern]
-target = 'card.lua'
-match_indent = true
-pattern = '''if self.ability.rental then self.cost = 1 end'''
-position = 'after'
-payload = '''
-if self.forced_cost ~= nil then
-  self.cost = self.forced_cost
-end
-'''
-
-[[patches]]
-[patches.pattern]
 target = "functions/UI_definitions.lua"
 pattern = "extras = create_UIBox_blind_tag(type, run_info)"
 position = "at"
 payload = '''
-if not G.GAME.superboss_active then
+if not G.GAME.mf_superboss_active then
   extras = create_UIBox_blind_tag(type, run_info)
 end'''
 match_indent = true
@@ -68,7 +31,7 @@ target = "functions/common_events.lua"
 pattern = '''if state == G.STATES.TAROT_PACK then
         ease_background_colour{new_colour = G.C.PURPLE, special_colour = darken(G.C.BLACK, 0.2), contrast = 1.5}'''
 position = "before"
-payload = '''if G.GAME.superboss_active then
+payload = '''if G.GAME.mf_superboss_active then
   ease_background_colour{new_colour = G.C.RED, special_colour = darken(G.C.BLACK, 0.2), contrast = 1.5}
   return
 end'''
@@ -93,8 +56,8 @@ position = "after"
 payload = '''
 elseif G.GAME.round_resets.blind == G.P_BLINDS.bl_mf_bigger_blind then 
   G.GAME.round_resets.blind_states.Small = 'Defeated'
-elseif G.GAME.superboss_active and 
-  (G.GAME.blind:get_type() == 'Boss' and not G.GAME.blind.debuff.superboss and G.GAME.blind.debuff.akyrs_blind_difficulty ~= "expert") then
+elseif G.GAME.mf_superboss_active and 
+  (G.GAME.blind:get_type() == 'Boss' and not G.GAME.blind.debuff.superboss) then
     G.GAME.round_resets.blind_states.Big = 'Defeated'
 '''
 match_indent = true
@@ -102,54 +65,17 @@ match_indent = true
 [[patches]]
 [patches.pattern]
 target = "functions/state_events.lua"
-pattern = '''if G.GAME.round_resets.ante == G.GAME.win_ante and G.GAME.blind:get_type() == 'Boss' then
+pattern = '''
+if not G.GAME.won and G.GAME.round_resets.ante >= G.GAME.win_ante and G.GAME.blind_on_deck == 'Boss' then
   game_won = true
   G.GAME.won = true
 end'''
-position = "at"
+position = "after"
 payload = '''
-if G.GAME.round_resets.ante == G.GAME.win_ante and G.GAME.blind:get_type() == 'Boss' and not G.GAME.superboss_active then
-  game_won = true
-  G.GAME.won = true
-end
 if G.GAME.round_resets.ante == G.GAME.win_ante and (
-  G.GAME.blind.debuff.superboss or G.GAME.blind.debuff.akyrs_blind_difficulty == "expert"
-) and G.GAME.superboss_active then
-  game_won = true
-  G.GAME.won = true
-
-  if not G.GAME.no_superboss_reset then
-    G.GAME.superboss_active = false
-    G.GAME.modifiers.scaling = math.max((G.GAME.modifiers.scaling - G.GAME.modifiers.bonus_scaling), 1)
-    G.GAME.modifiers.bonus_scaling = 0
-
-    G.GAME.round_resets.blind_choices.Small = "bl_small"
-    G.GAME.round_resets.blind_choices.Big = "bl_big"
-  end
-end'''
-match_indent = true
-
-# Cryptid compat patch
-[[patches]]
-[patches.pattern]
-target = "functions/state_events.lua"
-pattern = '''if G.GAME.round_resets.ante >= G.GAME.win_ante and G.GAME.blind_on_deck == 'Boss' then
-  game_won = true
-  G.GAME.won = true
-end'''
-position = "at"
-payload = '''
-if G.GAME.round_resets.ante >= G.GAME.win_ante and G.GAME.blind_on_deck == 'Boss' and not G.GAME.superboss_active then
-  game_won = true
-  G.GAME.won = true
-end
-if G.GAME.round_resets.ante >= G.GAME.win_ante and (
-  G.GAME.blind.debuff.superboss or G.GAME.blind.debuff.akyrs_blind_difficulty == "expert"
-) and G.GAME.superboss_active then
-  game_won = true
-  G.GAME.won = true
-
-  G.GAME.superboss_active = false
+  G.GAME.blind.debuff.superboss
+) and G.GAME.mf_superboss_active and not G.GAME.no_superboss_reset then
+  G.GAME.mf_superboss_active = false
   G.GAME.modifiers.scaling = math.max((G.GAME.modifiers.scaling - G.GAME.modifiers.bonus_scaling), 1)
   G.GAME.modifiers.bonus_scaling = 0
 
@@ -165,18 +91,31 @@ pattern = '''G.FUNCS.draw_from_hand_to_discard()
 if G.GAME.blind:get_type() == 'Boss' then'''
 position = "at"
 payload = '''G.FUNCS.draw_from_hand_to_discard()
-if 
-  (not G.GAME.superboss_active and G.GAME.blind:get_type() == 'Boss') or
-  (G.GAME.superboss_active and (G.GAME.blind.debuff.superboss or G.GAME.blind.debuff.akyrs_blind_difficulty == "expert"))
-then'''
+if G.GAME.blind:get_type() == 'Boss' and ((not G.GAME.mf_superboss_active) or G.GAME.blind.debuff.superboss) then'''
 match_indent = true
 
 [[patches]]
 [patches.pattern]
-target = "functions/state_events.lua"
-pattern = '''G.hand.highlighted[i].ability.played_this_ante = true'''
-position = "after"
-payload = '''G.hand.highlighted[i].ability.mf_played_this_game = true'''
+target = 'game.lua'
+pattern = '''if not G.debug_UI_toggle then '''
+position = 'before'
+payload = '''
+if FLUFF and FLUFF.superboss_background then
+  FLUFF.superboss_background()
+end
+'''
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = 'card.lua'
+pattern = '''G.GAME.round_resets.blind_ante = G.GAME.round_resets.blind_ante-center_table.extra'''
+position = 'at'
+payload = '''
+if not G.GAME.mf_superboss_active then
+  G.GAME.round_resets.blind_ante = G.GAME.round_resets.blind_ante-center_table.extra
+end
+'''
 match_indent = true
 
 [[patches]]
@@ -194,48 +133,8 @@ match_indent = true
 
 [[patches]]
 [patches.pattern]
-target = "game.lua"
-pattern = '''self.GAME.round_resets.blind_choices.Boss = get_new_boss()'''
+target = "functions/state_events.lua"
+pattern = '''v.ability.played_this_ante = true'''
 position = "after"
-payload = '''if G.GAME.superboss_active then
-  G.GAME.round_resets.blind_choices.Small = "bl_mf_bigger_blind"
-  G.GAME.round_resets.blind_choices.Big = get_new_boss()
-  G.GAME.round_resets.blind_choices.Boss = G.get_new_superboss()
-end'''
-match_indent = true
-
-[[patches]]
-[patches.pattern]
-target = "functions/button_callbacks.lua"
-pattern = '''G.GAME.round_resets.blind_choices.Boss = get_new_boss()'''
-position = "after"
-payload = '''if G.GAME.superboss_active then
-  G.GAME.round_resets.blind_choices.Small = "bl_mf_bigger_blind"
-  G.GAME.round_resets.blind_choices.Big = get_new_boss()
-  G.GAME.round_resets.blind_choices.Boss = G.get_new_superboss()
-end'''
-match_indent = true
-
-[[patches]]
-[patches.pattern]
-target = "functions/common_events.lua"
-pattern = '''G.GAME.round_resets.blind_choices.Boss = get_new_boss()'''
-position = "after"
-payload = '''if G.GAME.superboss_active then
-  G.GAME.round_resets.blind_choices.Small = "bl_mf_bigger_blind"
-  G.GAME.round_resets.blind_choices.Big = get_new_boss()
-  G.GAME.round_resets.blind_choices.Boss = G.get_new_superboss()
-end'''
-match_indent = true
-
-[[patches]]
-[patches.pattern]
-target="game.lua"
-pattern = '''for k, v in ipairs(_ch.rules.custom) do'''
-position = "after"
-payload = '''
-if v.id == "mf_superboss_active" then
-  G.GAME.superboss_active = true
-  G.GAME.no_superboss_reset = true
-end'''
+payload = '''v.ability.mf_played_this_game = true'''
 match_indent = true

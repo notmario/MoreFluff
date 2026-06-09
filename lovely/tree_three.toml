@@ -15,6 +15,9 @@ payload = '''
 if G.GAME.mf_tree_three then
   G.GAME.chips_text = "TREE(3)"
 end
+if G.GAME.mf_fake_score then
+  G.GAME.chips_text = G.GAME.mf_fake_score
+end
 '''
 
 [[patches]]
