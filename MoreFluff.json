@@ -11,5 +11,6 @@
 	"dependencies": [
 		"Steamodded(>=1.0.0~BETA-1620a)"
 	],
+	"priority": -1,
 	"allow_redistribution": true
 }
