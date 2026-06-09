@@ -1,9 +1,9 @@
 SMODS.Joker({
 	key = "aura_farm",
-	name = "Big Shot",
+	name = "Aura Farm",
 
 	atlas = "mf_purple",
-	rarity = "mf_purple",
+	rarity = "mf_scrapped",
 	no_collection = true,
 	cost = 7,
 	pos = { x = 0, y = 0 },

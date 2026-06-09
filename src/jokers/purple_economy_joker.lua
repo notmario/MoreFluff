@@ -3,7 +3,7 @@ SMODS.Joker {
 	name = "Purple Economy Joker",
 
 	atlas = "mf_purple",
-	rarity = "mf_purple",
+	rarity = "mf_scrapped",
 	no_collection = true,
 	cost = 8,
 	pos = { x = 2, y = 0 },

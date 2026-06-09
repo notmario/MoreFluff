@@ -1,7 +1,7 @@
 FLUFF.get_hidden_rarity = function()
 	local decided_rarity = "Rare";
-	local rarities_possible = { "mf_oldfluff", "mf_letter", "mf_purple" }
-	local rarity_odds_mult = { ["mf_oldfluff"] = 10, ["mf_letter"] = 10, ["mf_purple"] = 40000, }
+	local rarities_possible = { "mf_oldfluff", "mf_letter" }
+	local rarity_odds_mult = { ["mf_oldfluff"] = 10, ["mf_letter"] = 10, }
 	local real_rarities = {};
 
 	for _, v in ipairs(rarities_possible) do

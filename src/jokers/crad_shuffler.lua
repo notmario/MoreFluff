@@ -3,7 +3,7 @@ SMODS.Joker {
 	name = "Crad Shuffler",
 
 	atlas = "mf_purple",
-	rarity = "mf_purple",
+	rarity = "mf_scrapped",
 	no_collection = true,
 	cost = 7,
 	pos = { x = 1, y = 0 },
