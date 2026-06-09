@@ -3,7 +3,7 @@ SMODS.Joker({
 	name = "Aura Farm",
 
 	atlas = "mf_purple",
-	rarity = "mf_scrapped",
+	rarity = "mf_oldfluff",
 	no_collection = true,
 	cost = 7,
 	pos = { x = 0, y = 0 },
