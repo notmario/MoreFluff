@@ -27,13 +27,13 @@ if G.GAME.rot_trib_count then
     end
 end
 
-local mf_my_fucked_up_and_evil_hand = {}
+FLUFF.deck_hand = {}
 
 for i,v in ipairs(FLUFF.add_to_hand) do
     table.insert(final_scoring_hand,v)
 
     if v.mf_return_to_bottom_of_deck then
-        mf_my_fucked_up_and_evil_hand[#mf_my_fucked_up_and_evil_hand + 1] = v
+        FLUFF.deck_hand[#FLUFF.deck_hand + 1] = v
         v.mf_return_to_bottom_of_deck = nil
     else
         v.area:remove_card(v)
@@ -54,8 +54,8 @@ pattern = """delay(0.3)
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++--"""
 position = 'before'
 payload = '''
-if #mf_my_fucked_up_and_evil_hand >= 1 then
-    SMODS.calculate_main_scoring({cardarea = G.deck, full_hand = G.play.cards, scoring_hand = scoring_hand, scoring_name = text, poker_hands = poker_hands}, mf_my_fucked_up_and_evil_hand)
+if #FLUFF.deck_hand >= 1 then
+    SMODS.calculate_main_scoring({cardarea = G.deck, full_hand = G.play.cards, scoring_hand = scoring_hand, scoring_name = text, poker_hands = poker_hands}, FLUFF.deck_hand)
 end
 '''
 match_indent = true
