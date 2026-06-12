@@ -356,9 +356,9 @@ function create_card(_type, area, legendary, _rarity, skip_materialize, soulable
             card.ability["mf_potato"] = true
         end
     end
-    if card.ability.consumeable and (area == G.shop_jokers or (G.pack_cards and area == G.pack_cards)) then
+    if card.ability.consumeable and (area == G.shop_jokers or (G.pack_cards and area == G.pack_cards)) and card.ability.set ~= "SuperbossToken" then
         local suspended_poll = pseudorandom((area == G.pack_cards and 'packsus' or 'suspoll')..G.GAME.round_resets.ante)
-        if G.GAME.modifiers.enable_suspended_in_shop and suspended_poll > 0.5 then
+        if G.GAME.modifiers.enable_suspended_in_shop and suspended_poll > 0.4 then
             card.ability["mf_suspend_sticker"] = true
         end
     end
