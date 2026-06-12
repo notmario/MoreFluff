@@ -68,17 +68,6 @@ if (SMODS.Mods.Cryptid or SMODS.Mods.Decryptid or {}).can_load then
 end
 
 SMODS.Sound({
-	key = "music_d",
-	path = "music_d.ogg",
-	sync = false,
-	pitch = 0.95,
-	volume = 0.9,
-	select_music_track = function()
-		return G.GAME.mf_forced_weird_route and (G.TIMERS.REAL - G.GAME.mf_forced_weird_route > 0.5) and 5
-	end,
-})
-
-SMODS.Sound({
 	key = "treethree",
 	path = "treethree.ogg",
 	pitch = 1.0,
