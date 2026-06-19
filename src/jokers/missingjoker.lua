@@ -13,7 +13,7 @@ SMODS.Joker({
 	blueprint_compat = false,
 	eternal_compat = true,
 	perishable_compat = false, -- just in case
-	attributes = { },
+	attributes = { "passive" },
 	calculate = function(self, card, context)
 		if context.setting_blind and not context.blueprint then
 			if not G.mf_missingjoker_revert then

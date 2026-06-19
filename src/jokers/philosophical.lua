@@ -13,7 +13,7 @@ SMODS.Joker({
 	blueprint_compat = true,
 	eternal_compat = true,
 	perishable_compat = false,
-	attributes = { "joker_slot", },
+	attributes = { "joker_slot", "passive", },
 	loc_vars = function(self, info_queue, center)
 		return {
 			vars = { center.ability.extra.slots },

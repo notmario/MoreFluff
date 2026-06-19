@@ -13,7 +13,7 @@ SMODS.Joker {
 	blueprint_compat = false,
 	eternal_compat = true,
 	perishable_compat = true,
-	attributes = { "generation", "spectral", "tarot", },
+	attributes = { "passive" },
 	calculate = function(self, card, context)
         if context.discard and not context.blueprint then
             G.E_MANAGER:add_event(Event({

@@ -14,7 +14,7 @@ SMODS.Joker({
 	blueprint_compat = false,
 	eternal_compat = true,
 	perishable_compat = true,
-	attributes = { },
+	attributes = { "passive" },
 	calculate = function(self, card, context)
 	end,
 })

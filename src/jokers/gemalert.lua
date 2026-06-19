@@ -17,7 +17,7 @@ SMODS.Joker({
 	blueprint_compat = true,
 	eternal_compat = true,
 	perishable_compat = true,
-    attributes = {},
+    attributes = { "xmult" },
 	loc_vars = function(self, info_queue, card)
 	    return {
 	        vars = { card.ability.extra.xmult_per, card.ability.extra.xmult, card.ability.extra.rate_mod }
