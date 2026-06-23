@@ -37,6 +37,7 @@ SMODS.Back {
 	pos = { x = 1, y = 0 },
 	atlas = "mf_enhancers",
 	unlocked = true,
+	discovered = true,
 }
 
 SMODS.Back {
@@ -46,4 +47,5 @@ SMODS.Back {
     pos = { x = 2, y = 0 },
     atlas = "mf_enhancers",
     unlocked = true,
+	discovered = true,
 }
