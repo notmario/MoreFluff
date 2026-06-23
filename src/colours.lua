@@ -27,7 +27,7 @@ FLUFF.Colour = SMODS.Consumable:extend({
 
 	can_use = function(self, card)
 		if card.ability.suit or card.ability.enhancement then
-			return #G.hand.cards > 1
+			return #G.hand.cards >= 1
 		end
 		if card.ability.tag or card.ability.create_set or card.ability.create_key then
 			return true
@@ -516,7 +516,7 @@ FLUFF.Colour({
 	end,
 
 	can_use = function(self, card)
-		return #G.hand.cards > 1
+		return #G.hand.cards >= 1
 	end,
 
 	mf_art_credit = "Multi",
@@ -545,7 +545,7 @@ FLUFF.Colour({
 	},
 
 	can_use = function(self, card)
-		return #G.hand.cards > 1
+		return #G.hand.cards >= 1
 	end,
 
 	use = function(self, card, area)
@@ -613,7 +613,7 @@ FLUFF.Colour({
 	end,
 
 	can_use = function(self, card)
-		return #G.hand.cards > 1
+		return #G.hand.cards >= 1
 	end,
 
 	use = function(self, card, area)
@@ -729,7 +729,7 @@ FLUFF.Colour({
 	end,
 
 	can_use = function(self, card)
-		return #G.hand.cards > 1
+		return #G.hand.cards >= 1
 	end,
 
 	mf_art_credit = "Multi",
@@ -760,7 +760,7 @@ FLUFF.Colour({
 	end,
 
 	can_use = function(self, card)
-		return #G.hand.cards > 1
+		return #G.hand.cards >= 1
 	end,
 
 	mf_art_credit = "Multi",
