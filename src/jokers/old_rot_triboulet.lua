@@ -22,7 +22,7 @@ SMODS.Joker({
 	eternal_compat = true,
 	perishable_compat = true,
 	no_collection = true,
-	attributes = { "xmult", "rank", "king", "queen", },
+	attributes = { "xmult", "rank", "king", "queen", "position", },
 	loc_vars = function(self, info_queue, center)
 	    return {
 	        vars = { center.ability.extra.xmult }

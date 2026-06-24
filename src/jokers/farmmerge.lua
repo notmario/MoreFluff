@@ -11,7 +11,7 @@ SMODS.Joker({
 	blueprint_compat = false,
 	eternal_compat = true,
 	perishable_compat = true,
-	attributes = { "destroy_card", "discard", "modify_card", },
+	attributes = { "destroy_card", "discard", "modify_card", "perma_bonus", "position", },
 	calculate = function(self, card, context)
 		if context.pre_discard and context.cardarea == G.jokers then
 			if #context.full_hand ~= 3 then

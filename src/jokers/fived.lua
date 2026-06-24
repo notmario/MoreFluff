@@ -14,7 +14,7 @@ SMODS.Joker({
 	blueprint_compat = true,
 	eternal_compat = false,
 	perishable_compat = true,
-	attributes = { },
+	attributes = { "ante", },
 	loc_vars = function(self, info_queue, card)
 		return { vars = { card.ability.extra.ante_mod, card.ability.extra.mult } }
 	end,

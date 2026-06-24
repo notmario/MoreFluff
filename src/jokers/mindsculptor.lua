@@ -24,7 +24,7 @@ SMODS.Joker({
 	planeswalker_costs = { 2, 0, -1, -12 },
 	default_loyalty_effects = true,
 
-	attributes = { "destroy_card", },
+	attributes = { "destroy_card", "position", },
 	loc_vars = function(self, info_queue, center)
 		info_queue[#info_queue + 1] = { key = "planeswalker_explainer", set = "Other", specific_vars = { 3 } }
 	end,

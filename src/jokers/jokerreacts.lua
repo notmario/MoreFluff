@@ -13,7 +13,7 @@ SMODS.Joker({
 	blueprint_compat = true,
 	eternal_compat = true,
 	perishable_compat = false,
-	attributes = { "joker", "scaling", "mult", "economy", },
+	attributes = { "joker", "scaling", "mult", "economy", "face_down", },
 	loc_vars = function(self, info_queue, card)
 		return {
 			vars = { card.ability.extra.odds, card.ability.extra.dollars, card.ability.extra.mult_gain, card.ability.extra.mult },

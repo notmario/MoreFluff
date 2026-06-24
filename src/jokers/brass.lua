@@ -24,7 +24,7 @@ SMODS.Joker({
 	eternal_compat = true,
 	perishable_compat = false,
 	enhancement_gate = "m_mf_brass",
-	attributes = { "retrigger", "joker", "enhancements", },
+	attributes = { "retrigger", "joker", "enhancements", "position", },
 	loc_vars = function(self, info_queue, center)
 		info_queue[#info_queue + 1] = G.P_CENTERS.m_mf_brass
 

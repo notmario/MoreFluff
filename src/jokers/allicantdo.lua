@@ -17,7 +17,7 @@ SMODS.Joker({
 	blueprint_compat = true,
 	eternal_compat = true,
 	perishable_compat = false,
-	attributes = { "xmult", "scaling", },
+	attributes = { "xmult", "scaling", "debuff", },
 	loc_vars = function(self, info_queue, center)
 		return {
 			vars = { center.ability.extra.x_mult_mod, center.ability.extra.x_mult },

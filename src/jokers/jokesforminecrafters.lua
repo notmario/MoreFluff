@@ -59,7 +59,7 @@ SMODS.Joker {
 	blueprint_compat = false,
 	eternal_compat = true,
 	perishable_compat = true,
-	attributes = { "destroy_card", "discard" },
+	attributes = { "destroy_card", "discard", "position", },
 	loc_vars = function(self, info_queue, card)
 		return {
             key = "j_mf_jokesforminecrafters_"..card.ability.extra.current_joke,
