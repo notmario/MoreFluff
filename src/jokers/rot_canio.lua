@@ -25,6 +25,20 @@ SMODS.Joker {
 	end,
 	prepared_card = "c_mf_doomblade",
 	calculate = function(self, card, context)
+        if context.remove_playing_cards and not card.ability.extra.is_prepared then
+			local should_prep = false
+			for _, other_card in pairs(context.removed) do
+				if not other_card:is_face() then
+                    if not card.ability.extra.is_prepared then
+                        card.ability.extra.is_prepared = true
+                        return {
+                            message = localize "k_prepared_ex",
+                            colour = G.C.SECONDARY_SET.Spectral,
+                        }
+                    end
+				end
+			end
+        end
 	end,
 }
 
