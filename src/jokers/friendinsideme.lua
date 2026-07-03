@@ -15,7 +15,7 @@ SMODS.Joker({
 	perishable_compat = true,
 	demicoloncompat = false,
 	pools = { ["Meme"] = true },
-	attributes = { "generation", "joker", "on_sell", "boss_blind", },
+	attributes = { "generation", "joker", "on_sell", "boss_blind", "rarity", },
 	loc_vars = function(self, info_queue, center)
 		return {
 			vars = {

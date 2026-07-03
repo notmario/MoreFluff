@@ -14,7 +14,7 @@ SMODS.Joker({
 	cost = 4 * 2,
 	pos = { x = 4, y = 2 },
 	config = { extra = { odds = 0.8 } },
-	attributes = { "generation", "tarot", "modify_card", },
+	attributes = { "generation", "tarot", "modify_card", "consumable", },
 	loc_vars = function(self, info_queue, card)
 		return { vars = { card.ability.extra.odds } }
 	end,

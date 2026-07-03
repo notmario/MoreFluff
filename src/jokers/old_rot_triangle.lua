@@ -21,7 +21,7 @@ SMODS.Joker({
 	eternal_compat = true,
 	perishable_compat = true,
 	no_collection = true,
-	attributes = { "hand_type", },
+	attributes = { "hand_type", "hand_level", },
 	loc_vars = function(self, info_queue, center)
 	    return {
 	        vars = { center.ability.extra.first_proc and (localize "k_active") or (localize "k_inactive"), center.ability.extra.last_ability, center.ability.extra.last_ability_per }

@@ -16,7 +16,7 @@ SMODS.Joker({
 	blueprint_compat = false,
 	eternal_compat = true,
 	perishable_compat = true,
-	attributes = { "generation", "economy", "reroll", "chips", "mult", },
+	attributes = { "generation", "economy", "reroll", "chips", "mult", "shop", },
 	loc_vars = function(self, info_queue, card)
 		return {
 			vars = {

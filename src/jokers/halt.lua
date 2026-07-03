@@ -107,6 +107,7 @@ SMODS.Enhancement({
 	config = {
 		Xmult = 2,
 	},
+	attributes = { "xmult", "suit", },
 	replace_base_card = true,
 	no_rank = true,
     any_suit = true,

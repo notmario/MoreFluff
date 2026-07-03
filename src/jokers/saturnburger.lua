@@ -15,7 +15,7 @@ SMODS.Joker {
 	blueprint_compat = true,
 	eternal_compat = false,
 	perishable_compat = true,
-	attributes = { "food", "hand_type", },
+	attributes = { "food", "hand_type", "hand_level", },
 	loc_vars = function(self, info_queue, center)
 		return {
 			vars = { center.ability.extra.remaining },

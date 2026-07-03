@@ -11,7 +11,7 @@ SMODS.Joker {
 	blueprint_compat = true,
 	eternal_compat = true,
 	perishable_compat = true,
-	attributes = { "xmult", "retrigger" },
+	attributes = { "xmult", "retrigger", "playing_card", },
 	calculate = function(self, card, context)
 	end,
 	add_to_deck = function(self, card, from_debuff)
@@ -60,6 +60,7 @@ SMODS.Enhancement {
     no_suit = true,
 	always_scores = true,
     no_collection = true,
+	attributes = { "xmult", "retrigger", },
     in_pool = function(self, args)
         return false
     end,

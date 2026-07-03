@@ -81,6 +81,7 @@ for _, booster_type in ipairs({
 			unlocked = true,
 			discovered = true,
 			no_collection = (i == 2) or (i == 4),
+			attributes = { "rotarot", "consumable", },
 			create_card = function(self, card)
 				local n_card = create_card("Rotarot", G.pack_cards, nil, nil, true, true, nil, "mf_rotarot")
 				return n_card
@@ -108,6 +109,7 @@ SMODS.Tag({
 	pos = { x = 1, y = 0 },
 	unlocked = true,
 	discovered = true,
+	attributes = { "booster", },
 	loc_vars = function(self, info_queue)
 		info_queue[#info_queue + 1] = { set = "Other", key = "p_mf_rotarot_mega", specific_vars = { 2, 5 } }
 		return { vars = {} }
@@ -156,6 +158,7 @@ SMODS.Consumable({
 	unlocked = true,
 	discovered = true,
 	mf_rotate_by = math.pi / 4,
+	attributes = { "generation", "rotarot", "colour", "consumable", },
 	can_use = function(self, card)
 		if
 			(#G.consumeables.cards < G.consumeables.config.card_limit or card.area == G.consumeables)
@@ -246,6 +249,7 @@ SMODS.Consumable({
 	unlocked = true,
 	discovered = true,
 	mf_rotate_by = math.pi / 4,
+	attributes = { "enhancements", "modify_card", },
 	can_use = function(self, card)
 		return #G.hand.highlighted >= 1 and #G.hand.highlighted <= card.ability.max_highlighted
 	end,
@@ -274,6 +278,7 @@ SMODS.Consumable({
 	unlocked = true,
 	discovered = true,
 	mf_rotate_by = math.pi / 4,
+	attributes = { "generation", "colour", "consumable", },
 	can_use = function(self, card)
 		return #G.consumeables.cards < G.consumeables.config.card_limit or card.area == G.consumeables
 	end,
@@ -317,6 +322,7 @@ SMODS.Consumable({
 	unlocked = true,
 	discovered = true,
 	mf_rotate_by = math.pi / 4,
+	attributes = { "enhancements", "modify_card", },
 	can_use = function(self, card)
 		return #G.hand.highlighted >= 1 and #G.hand.highlighted <= card.ability.max_highlighted
 	end,
@@ -346,6 +352,7 @@ SMODS.Consumable({
 	unlocked = true,
 	discovered = true,
 	mf_rotate_by = math.pi / 4,
+	attributes = { "generation", "rotarot", "consumable", },
 	can_use = function(self, card)
 		return #G.consumeables.cards < G.consumeables.config.card_limit or card.area == G.consumeables
 	end,
@@ -389,6 +396,7 @@ SMODS.Consumable({
 	unlocked = true,
 	discovered = true,
 	mf_rotate_by = math.pi / 4,
+	attributes = { "enhancements", "modify_card", },
 	can_use = function(self, card)
 		return #G.hand.highlighted >= 1 and #G.hand.highlighted <= card.ability.max_highlighted
 	end,
@@ -419,6 +427,7 @@ SMODS.Consumable({
 	unlocked = true,
 	discovered = true,
 	mf_rotate_by = math.pi / 4,
+	attributes = { "enhancements", "modify_card", },
 	can_use = function(self, card)
 		return #G.hand.highlighted >= 1 and #G.hand.highlighted <= card.ability.max_highlighted
 	end,
@@ -449,6 +458,7 @@ SMODS.Consumable({
 	unlocked = true,
 	discovered = true,
 	mf_rotate_by = math.pi / 4,
+	attributes = { "enhancements", "modify_card", },
 	can_use = function(self, card)
 		return #G.hand.highlighted >= 1 and #G.hand.highlighted <= card.ability.max_highlighted
 	end,
@@ -479,6 +489,7 @@ SMODS.Consumable({
 	unlocked = true,
 	discovered = true,
 	mf_rotate_by = math.pi / 4,
+	attributes = { "enhancements", "modify_card", },
 	can_use = function(self, card)
 		return #G.hand.highlighted >= 1 and #G.hand.highlighted <= card.ability.max_highlighted
 	end,
@@ -508,6 +519,7 @@ SMODS.Consumable({
 	unlocked = true,
 	discovered = true,
 	mf_rotate_by = math.pi / 4,
+	attributes = { "economy", },
 	can_use = function(self, card)
 		return true
 	end,
@@ -549,6 +561,7 @@ SMODS.Consumable({
 	unlocked = true,
 	discovered = true,
 	mf_rotate_by = math.pi / 4,
+	attributes = { "editions", "modify_card", "joker", },
 	can_use = function(self, card)
 		return #card.eligible_strength_jokers >= 1
 	end,
@@ -658,6 +671,7 @@ SMODS.Consumable({
 	unlocked = true,
 	discovered = true,
 	mf_rotate_by = math.pi / 4,
+	attributes = { "rank", "modify_card", },
 	can_use = function(self, card)
 		return #G.hand.highlighted >= 1 and #G.hand.highlighted <= card.ability.max_highlighted
 	end,
@@ -740,6 +754,7 @@ SMODS.Consumable({
 	unlocked = true,
 	discovered = true,
 	mf_rotate_by = math.pi / 4,
+	attributes = { "destroy_card", },
 	can_use = function(self, card)
 		return #G.hand.cards >= 1
 	end,
@@ -796,6 +811,7 @@ SMODS.Consumable({
 	unlocked = true,
 	discovered = true,
 	mf_rotate_by = math.pi / 4,
+	attributes = { "modify_card", },
 	can_use = function(self, card)
 		return #G.hand.highlighted >= 1 and #G.hand.highlighted <= card.ability.max_highlighted
 	end,
@@ -880,6 +896,7 @@ SMODS.Consumable({
 	unlocked = true,
 	discovered = true,
 	mf_rotate_by = math.pi / 4,
+	attributes = { "sell_value", "economy", "modify_card", },
 	can_use = function(self, card)
 		return #G.jokers.cards >= 1 or #G.consumeables.cards >= 1
 	end,
@@ -938,6 +955,7 @@ SMODS.Consumable({
 	unlocked = true,
 	discovered = true,
 	mf_rotate_by = math.pi / 4,
+	attributes = { "enhancements", "modify_card", },
 	can_use = function(self, card)
 		return #G.hand.highlighted >= 1 and #G.hand.highlighted <= card.ability.max_highlighted
 	end,
@@ -968,6 +986,7 @@ SMODS.Consumable({
 	unlocked = true,
 	discovered = true,
 	mf_rotate_by = math.pi / 4,
+	attributes = { "enhancements", "modify_card", },
 	can_use = function(self, card)
 		return #G.hand.highlighted >= 1 and #G.hand.highlighted <= card.ability.max_highlighted
 	end,
@@ -1036,6 +1055,7 @@ SMODS.Consumable({
 	unlocked = true,
 	discovered = true,
 	mf_rotate_by = math.pi / 4,
+	attributes = { "playing_card", "suit", "diamonds", "enhancements", },
 	can_use = function(self, card)
 		return #G.hand.cards >= 1
 	end,
@@ -1062,6 +1082,7 @@ SMODS.Consumable({
 	unlocked = true,
 	discovered = true,
 	mf_rotate_by = math.pi / 4,
+	attributes = { "playing_card", "suit", "clubs", "enhancements", },
 	can_use = function(self, card)
 		return #G.hand.cards >= 1
 	end,
@@ -1088,6 +1109,7 @@ SMODS.Consumable({
 	unlocked = true,
 	discovered = true,
 	mf_rotate_by = math.pi / 4,
+	attributes = { "playing_card", "suit", "hearts", "enhancements", },
 	can_use = function(self, card)
 		return #G.hand.cards >= 1
 	end,
@@ -1111,6 +1133,7 @@ SMODS.Consumable({
 	unlocked = true,
 	discovered = true,
 	mf_rotate_by = math.pi / 4,
+	attributes = { "generation", "joker", },
 	can_use = function(self, card)
 		return #G.jokers.cards < G.jokers.config.card_limit or self.area == G.jokers
 	end,
@@ -1160,6 +1183,7 @@ SMODS.Consumable({
 	unlocked = true,
 	discovered = true,
 	mf_rotate_by = math.pi / 4,
+	attributes = { "playing_card", "suit", "diamonds", "enhancements", },
 	can_use = function(self, card)
 		return #G.hand.cards >= 1
 	end,
@@ -1183,6 +1207,7 @@ SMODS.Consumable({
 	unlocked = true,
 	discovered = true,
 	mf_rotate_by = math.pi / 4,
+	attributes = { "generation", "joker" },
 	use = function(self, card, area, copier)
 		G.E_MANAGER:add_event(Event({
 			trigger = "after",

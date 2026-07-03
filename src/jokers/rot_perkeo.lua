@@ -18,7 +18,7 @@ SMODS.Joker {
 	blueprint_compat = true,
 	eternal_compat = true,
 	perishable_compat = true,
-	attributes = { "generation", "spectral", },
+	attributes = { "generation", "spectral", "consumable", },
 	loc_vars = function(self, info_queue, center)
 		return {
 			vars = {},

@@ -231,6 +231,7 @@ for _, booster_type in ipairs({
 			weight = booster_type[8],
 			unlocked = true,
 			discovered = true,
+			attributes = { "colour", "consumable", },
 			create_card = function(self, card)
 				local n_card = create_card("Colour", G.pack_cards, nil, nil, true, true, nil, "mf_colour")
 				local ed_roll = pseudorandom("colour_editionroll")
@@ -264,6 +265,7 @@ SMODS.Tag({
 	pos = { x = 0, y = 0 },
 	unlocked = true,
 	discovered = true,
+	attributes = { "booster" },
 	loc_vars = function(self, info_queue)
 		info_queue[#info_queue + 1] = { set = "Other", key = "p_mf_colour_jumbo", specific_vars = { 1, 4 } }
 		return { vars = {} }
@@ -437,6 +439,7 @@ FLUFF.Colour({
 		upgrade_rounds = 5,
 	},
 
+	attributes = { "modify_card", "editions", "joker", },
 	mf_art_credit = "Multi",
 
 	can_use = function(self, card)
@@ -494,6 +497,7 @@ FLUFF.Colour({
 		chips_per = 20,
 	},
 
+	attributes = { "modify_card", "chips", "perma_bonus", },
 	colour_effect = function(self, card, area)
 		local eligible_card = pseudorandom_element(G.hand.cards, rng_seed)
 		if not eligible_card then return nil end
@@ -532,6 +536,7 @@ FLUFF.Colour({
 		tag = "tag_rare",
 	},
 
+	attributes = { "generation", "tag", },
 	mf_art_credit = "Multi",
 })
 
@@ -548,6 +553,7 @@ FLUFF.Colour({
 		return #G.hand.cards >= 1
 	end,
 
+	attributes = { "modify_card", "enhancements", },
 	use = function(self, card, area)
 		local rng_seed = self.key
 		local blacklist = {}
@@ -612,6 +618,7 @@ FLUFF.Colour({
 		return tbl
 	end,
 
+	attributes = { "destroy_card", "economy", },
 	can_use = function(self, card)
 		return #G.hand.cards >= 1
 	end,
@@ -668,6 +675,7 @@ FLUFF.Colour({
 		tag = "tag_double",
 	},
 
+	attributes = { "generation", "tag", },
 	mf_art_credit = "Multi",
 })
 
@@ -681,6 +689,7 @@ FLUFF.Colour({
 		tag = "tag_polychrome",
 	},
 
+	attributes = { "generation", "tag", },
 	mf_art_credit = "Multi",
 })
 
@@ -694,6 +703,7 @@ FLUFF.Colour({
 		create_set = "Colour",
 	},
 
+	attributes = { "generation", "colour", "consumable" },
 	mf_art_credit = "Multi",
 })
 
@@ -707,6 +717,7 @@ FLUFF.Colour({
 		mult_per = 4,
 	},
 
+	attributes = { "modify_card", "mult", "perma_bonus", },
 	colour_effect = function(self, card, area)
 		local eligible_card = pseudorandom_element(G.hand.cards, rng_seed)
 		if not eligible_card then return nil end
@@ -744,6 +755,7 @@ FLUFF.Colour({
 		upgrade_rounds = 4,
 	},
 
+	attributes = { "modify_card", "retrigger", "perma_bonus", },
 	colour_effect = function(self, card, area)
 		local eligible_card = pseudorandom_element(G.hand.cards, rng_seed)
 		if not eligible_card then return nil end
@@ -778,6 +790,7 @@ FLUFF.Colour({
 
 	mf_art_credit = "Multi",
 
+	attributes = { "economy", "sell_value", },
 	loc_vars = function(self, info_queue, card)
 		local tbl = FLUFF.Colour.loc_vars(self, info_queue, card)
 		table.insert(tbl.vars, card.ability.value_per)
@@ -797,6 +810,7 @@ FLUFF.Colour({
 
 	mf_art_credit = "Multi",
 
+	attributes = { "generation", "joker", },
 	loc_vars = function(self, info_queue, card)
 		info_queue[#info_queue + 1] = G.P_CENTERS["j_mf_oopsallfives"]
 		return FLUFF.Colour.loc_vars(self, info_queue, card)
@@ -813,6 +827,7 @@ FLUFF.Colour({
 		create_set = "Planet",
 	},
 
+	attributes = { "generation", "planet", "consumable" },
 	mf_art_credit = "Multi",
 })
 
@@ -826,6 +841,7 @@ FLUFF.Colour({
 		create_set = "Tarot",
 	},
 
+	attributes = { "generation", "tarot", "consumable" },
 	mf_art_credit = "Multi",
 })
 
@@ -840,6 +856,7 @@ FLUFF.Colour({
 
 	mf_art_credit = "Multi",
 
+	attributes = { "colour", "consumable", },
 	can_use = function(self, card)
 		return true
 	end,
@@ -859,6 +876,7 @@ FLUFF.Colour({
 		create_set = "Rotarot",
 	},
 
+	attributes = { "generation", "rotarot", "consumable" },
 	mf_art_credit = "Multi",
 })
 
@@ -877,5 +895,6 @@ FLUFF.Colour({
 	},
 	select_card = "consumeables",
 
+	attributes = { "generation", "spectral", "consumable" },
 	mf_art_credit = "Multi",
 })

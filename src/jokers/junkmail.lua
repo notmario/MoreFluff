@@ -13,7 +13,7 @@ SMODS.Joker({
 	blueprint_compat = false,
 	eternal_compat = true,
 	perishable_compat = true,
-	attributes = { "generation", "voucher" },
+	attributes = { "generation", "voucher", "shop", },
 	loc_vars = function(self, info_queue, center)
 		return {
 			vars = { center.ability.extra.val_mult },

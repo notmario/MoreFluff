@@ -15,7 +15,7 @@ SMODS.Joker {
 	blueprint_compat = true,
 	eternal_compat = true,
 	perishable_compat = true,
-	attributes = { "joker", "reset", },
+	attributes = { "joker", "reset", "on_sell", },
 	loc_vars = function(self, info_queue, center)
 		return {
 			vars = { 2 ^ math.floor(center.ability.extra.current_sold / 2), (math.floor(center.ability.extra.current_sold / 2) == 0) and "" or "s"},

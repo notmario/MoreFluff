@@ -19,7 +19,7 @@ SMODS.Joker {
 	blueprint_compat = true,
 	eternal_compat = true,
 	perishable_compat = true,
-	attributes = { "generation", "spectral", "discard", },
+	attributes = { "generation", "spectral", "discard", "consumable", },
 	loc_vars = function(self, info_queue, card)
 		return {
 			vars = { card.ability.extra.discards, card.ability.extra.discards_remaining },

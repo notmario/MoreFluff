@@ -13,7 +13,7 @@ SMODS.Joker({
 	blueprint_compat = true,
 	eternal_compat = false,
 	perishable_compat = true,
-	attributes = { "hands", "food", "generation", "tarot", },
+	attributes = { "hands", "food", "generation", "tarot", "consumable", },
 	calculate = function(self, card, context)
 		if context.cardarea == G.jokers and context.before then
 			if #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then

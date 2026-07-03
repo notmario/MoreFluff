@@ -12,7 +12,7 @@ SMODS.Joker({
 	eternal_compat = false,
 	perishable_compat = true,
 	demicoloncompat = true,
-	attributes = { "on_sell", "generation", "colour", },
+	attributes = { "on_sell", "generation", "colour", "consumable", },
 	loc_vars = function(self, info_queue, center)
 		info_queue[#info_queue + 1] = G.P_CENTERS.c_mf_pink
 		info_queue[#info_queue + 1] = G.P_CENTERS.c_mf_yellow

@@ -24,7 +24,7 @@ SMODS.Joker({
         return false
     end,
     no_collection = true,
-	attributes = { "rank", "eight", "three", },
+	attributes = { "rank", "eight", "three", "space", "hand_level", },
 	loc_vars = function(self, info_queue, card)
         return {
             vars = { card.ability.extra.req, card.ability.extra.cur, card.ability.extra.bosses_left }

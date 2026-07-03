@@ -13,7 +13,7 @@ SMODS.Joker({
 	blueprint_compat = true,
 	eternal_compat = false,
 	perishable_compat = false,
-	attributes = { "passive", "food", },
+	attributes = { "passive", "food", "booster", },
 	loc_vars = function(self, info_queue, card)
 		return {
 			vars = { card.ability.extra.odds, card.ability.extra.purchases },

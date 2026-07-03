@@ -139,6 +139,7 @@ SMODS.Blind({
 	dollars = 6,
 	mult = 1,
 
+	-- notably not large_blind :trol
 	boss_colour = HEX("ac3232"),
 
 	no_collection = true,
@@ -160,6 +161,7 @@ SMODS.Blind({
 	dollars = 10,
 	mult = 24,
 
+	attributes = { "large_blind", },
 	boss_colour = HEX("ac3232"),
 
 	debuff = {
@@ -276,6 +278,7 @@ SMODS.Blind({
 
 	boss_colour = HEX("ac3232"),
 
+	attributes = { "hands", "discard", },
 	debuff = {
 		superboss = true,
 
@@ -328,6 +331,7 @@ SMODS.Blind({
 		akyrs_blind_difficulty = "dx",
 		akyrs_cannot_be_disabled = true,
 	},
+	attributes = { "hand_size", },
 
 	disable = function(self)
 		if not G.GAME.blind.disabled then
@@ -378,6 +382,7 @@ SMODS.Blind({
 		akyrs_blind_difficulty = "dx",
 		akyrs_cannot_be_disabled = true,
 	},
+	attributes = { "debuff", },
 
 	set_blind = function(self)
 		for _, card in pairs(G.playing_cards) do
@@ -459,6 +464,7 @@ SMODS.Blind({
 		akyrs_blind_difficulty = "dx",
 		akyrs_cannot_be_disabled = true,
 	},
+	attributes = { "debuff", "suit", "clubs", },
 
 	recalc_debuff = function(self, card, from_blind)
 		if not G.GAME.blind.disabled and card.area ~= G.jokers then
@@ -500,6 +506,7 @@ SMODS.Blind({
 		akyrs_blind_difficulty = "dx",
 		akyrs_cannot_be_disabled = true,
 	},
+	attributes = { "debuff", "suit", "spades", },
 
 	recalc_debuff = function(self, card, from_blind)
 		if not G.GAME.blind.disabled and card.area ~= G.jokers then
@@ -541,6 +548,7 @@ SMODS.Blind({
 		akyrs_blind_difficulty = "dx",
 		akyrs_cannot_be_disabled = true,
 	},
+	attributes = { "debuff", "suit", "diamonds", },
 
 	recalc_debuff = function(self, card, from_blind)
 		if not G.GAME.blind.disabled and card.area ~= G.jokers then
@@ -582,6 +590,7 @@ SMODS.Blind({
 		akyrs_blind_difficulty = "dx",
 		akyrs_cannot_be_disabled = true,
 	},
+	attributes = { "debuff", "suit", "hearts", },
 
 	recalc_debuff = function(self, card, from_blind)
 		if not G.GAME.blind.disabled and card.area ~= G.jokers then
@@ -623,6 +632,7 @@ SMODS.Blind({
 		akyrs_blind_difficulty = "dx",
 		akyrs_cannot_be_disabled = true,
 	},
+	attributes = { "hand_level", },
 
 	boss = {
 		min = 9,
@@ -668,6 +678,7 @@ SMODS.Blind({
 		akyrs_blind_difficulty = "dx",
 		akyrs_cannot_be_disabled = true,
 	},
+	attributes = { "face_down", },
 
 	boss = {
 		min = 9,
@@ -706,6 +717,7 @@ SMODS.Blind({
 	mult = 3,
 
 	boss_colour = HEX("ac3232"),
+	attributes = { "discard", },
 
 	debuff = {
 		superboss = true,
@@ -790,6 +802,7 @@ SMODS.Blind({
 		akyrs_blind_difficulty = "dx",
 		akyrs_cannot_be_disabled = true,
 	},
+	attributes = { "discard", },
 
 	boss = {
 		min = 9,
@@ -870,6 +883,7 @@ SMODS.Booster({
 	discovered = true,
 	draw_hand = false,
 	no_collection = true,
+	attributes = { "boss_blind", },
 	in_pool = function (...) return false end,
 	create_card = function(self, card)
 		_G.generating_superboss_pack = true
@@ -952,6 +966,7 @@ for i, k in ipairs(my_superbosses) do
 		config = {
 			blind = "bl_mf_"..k,
 		},
+		attributes = { "boss_blind" },
 		cost = 3,
 		unlocked = true,
 		discovered = true,

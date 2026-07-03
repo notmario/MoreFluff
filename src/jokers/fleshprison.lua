@@ -15,7 +15,7 @@ SMODS.Joker({
 	blueprint_compat = false,
 	eternal_compat = false,
 	perishable_compat = true,
-	attributes = { "xblindsize", "generation", "spectral", "boss_blind", },
+	attributes = { "xblindsize", "generation", "spectral", "boss_blind", "consumable", },
 	loc_vars = function(self, info_queue, center)
 		info_queue[#info_queue + 1] = G.P_CENTERS.c_soul
 		return {

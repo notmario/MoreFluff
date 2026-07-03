@@ -13,7 +13,7 @@ SMODS.Joker({
 	blueprint_compat = true,
 	eternal_compat = true,
 	perishable_compat = true,
-	attributes = { "joker_slot", "chips", "joker", },
+	attributes = { "joker_slot", "chips", "joker", "consumable", },
 	loc_vars = function(self, info_queue, card)
 		return { vars = { card.ability.extra.chips, card.ability.extra.chips * (G.jokers and #G.jokers.cards or 0) } }
 	end,
@@ -23,5 +23,10 @@ SMODS.Joker({
                 chips = card.ability.extra.chips * #G.jokers.cards
             }
         end
+		if context.contraption_cranked and context.cranking_card.ability.set == "Wrench" then
+			return {
+				additional_cranks = 1
+			}
+		end
 	end,
 })

@@ -18,7 +18,7 @@ SMODS.Joker {
 	blueprint_compat = true,
 	eternal_compat = true,
 	perishable_compat = true,
-	attributes = { "hand_type", "generation", "spectral", },
+	attributes = { "hand_type", "generation", "spectral", "consumable", },
 	pronouns = "she_they",
 	loc_vars = function(self, info_queue, center)
 		return {

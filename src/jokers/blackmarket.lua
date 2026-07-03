@@ -14,7 +14,7 @@ SMODS.Joker({
 	blueprint_compat = false,
 	eternal_compat = true,
 	perishable_compat = true,
-	attributes = { "generation", "spectral", "economy", "boss_blind", },
+	attributes = { "generation", "spectral", "lose_economy", "boss_blind", "consumable", },
 	loc_vars = function(self, info_queue, center)
 		return {
 			vars = { center.ability.extra.cost },

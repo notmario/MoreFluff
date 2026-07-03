@@ -48,7 +48,7 @@ SMODS.Joker({
 	blueprint_compat = false,
 	eternal_compat = false,
 	perishable_compat = false,
-	attributes = { "generation", "joker", "boss_blind", },
+	attributes = { "generation", "joker", "boss_blind", "booster", },
 	loc_vars = function(self, info_queue, card)
         local msg = "N/A"
         if G.GAME.blind and G.GAME.blind.boss then

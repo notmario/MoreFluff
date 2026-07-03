@@ -5,6 +5,7 @@ SMODS.Enhancement({
 	config = {
 		per_level = 10,
 	},
+	attributes = { "chips", "hand_level", },
 	calculate = function(self, card, context)
 		if context.main_scoring and context.cardarea == G.play then
 			local text, disp_text, poker_hands, scoring_hand, non_loc_disp_text =
@@ -32,6 +33,7 @@ SMODS.Enhancement({
 	config = {
 		per_level = 1,
 	},
+	attributes = { "mult", "hand_level", },
 	calculate = function(self, card, context)
 		if context.main_scoring and context.cardarea == G.play then
 			local text, disp_text, poker_hands, scoring_hand, non_loc_disp_text =
@@ -57,6 +59,7 @@ SMODS.Enhancement({
 	atlas = "mf_enhancers",
 	pos = { x = 2, y = 1 },
 	config = {},
+	attributes = { "seals", "modify_card", },
 	calculate = function(self, card, context)
 		if context.hand_drawn then
 			local doit = false
@@ -91,6 +94,7 @@ SMODS.Enhancement({
 		retriggers = 2,
 		chance = 3,
 	},
+	attributes = { "retrigger", "chance", "destroy_card", },
 	calculate = function(self, card, context)
 		if context.repetition and context.cardarea == G.play then
 			return {
@@ -132,6 +136,7 @@ SMODS.Enhancement({
 	config = {
 		h_x_chips = 1.5,
 	},
+	attributes = { "xchips", },
 	loc_vars = function(self, info_queue, card)
 		return { vars = {
 			card and card.ability.h_x_chips or self.config.h_x_chips,
@@ -150,7 +155,7 @@ SMODS.Enhancement({
 	no_rank = true,
 	no_suit = true,
 	always_scores = true,
-	weight = 4, -- make it slightly rarer (??)
+	attributes = { "economy", },
 	loc_vars = function(self, info_queue, card)
 		return { vars = {
 			card and card.ability.p_dollars or self.config.p_dollars,
@@ -179,6 +184,7 @@ SMODS.Enhancement({
 	config = {
 		cash = 1,
 	},
+	attributes = { "economy", },
 	calculate = function(self, card, context)
 		if context.playing_card_end_of_round and context.cardarea == G.hand then
 			local c = 1
@@ -226,6 +232,7 @@ SMODS.Enhancement({
 	config = {
 		chance = 2,
 	},
+	attributes = { "destroy_card", "chance", },
 	calculate = function(self, card, context)
 		if
 			context.destroy_card
