@@ -46,7 +46,7 @@ SMODS.Stake {
     sticker_pos = { x = 0, y = 1 },
     shiny = true,
     modifiers = function()
-        G.GAME.modifiers.enable_heavy_in_shop = true
+        G.GAME.modifiers.enable_mf_heavy = true
     end,
     colour = HEX("dee7f6"),
 }
@@ -57,9 +57,8 @@ SMODS.Sticker {
     pos = { x = 1, y = 2 },
     atlas = "mf_stake_stickers",
     sets = { ["Joker"] = true },
-    should_apply = function (self, card, center, area, bypass_reroll)
-        return false
-    end,
+    rate = 0.3,
+    needs_enable_flag = true,
     calculate = function(self, card, context)
         -- print(context)
     end
@@ -141,7 +140,7 @@ SMODS.Stake {
     sticker_atlas = "mf_stake_stickers",
     sticker_pos = { x = 2, y = 1 },
     modifiers = function()
-        G.GAME.modifiers.enable_potato_in_shop = true
+        G.GAME.modifiers.enable_mf_potato = true
     end,
     colour = HEX("fb4f20"),
 }
@@ -152,13 +151,32 @@ SMODS.Sticker {
     pos = { x = 2, y = 2 },
     atlas = "mf_stake_stickers",
     sets = { ["Joker"] = true },
-    should_apply = function (self, card, center, area, bypass_reroll)
-        return false
-    end,
+    rate = 0.3,
+    needs_enable_flag = true,
     calculate = function(self, card, context)
         -- print(context)
     end
 }
+
+-- Jank but whatever i guess ..
+local old_apply_eternal = SMODS.Stickers.eternal.apply
+SMODS.Stickers.eternal.apply = function(self, card, val, ...)
+    SMODS.Stickers.eternal.apply(self, card, val, ...)
+    if card.ability.mf_potato then
+        card.ability.mf_potato = nil
+    end
+end
+-- Janker still but who fucking cares
+local old_card_set_eternal = Card.set_eternal
+function Card:set_eternal(_eternal, ...)
+    old_card_set_eternal(self, _eternal, ...)
+    if _eternal then
+        if self.ability.mf_potato then
+            self.ability.mf_potato = nil
+        end
+    end
+end
+
 
 local ccsc = Card.can_sell_card
 function Card:can_sell_card(context)
@@ -263,7 +281,7 @@ SMODS.Stake {
     sticker_atlas = "mf_stake_stickers",
     sticker_pos = { x = 1, y = 0 },
     modifiers = function()
-        G.GAME.modifiers.enable_suspended_in_shop = true
+        G.GAME.modifiers.enable_mf_suspend_sticker = true
     end,
     colour = HEX("5c42de"),
 }
@@ -273,9 +291,17 @@ SMODS.Sticker {
     badge_colour = HEX '5c42de',
     pos = { x = 2, y = 0 },
     atlas = "mf_stake_stickers",
-    sets = { ["Consumable"] = true },
-    should_apply = function (self, card, center, area, bypass_reroll)
-        return false
+    -- sets = { ["Consumable"] = true },
+    rate = 0.4,
+    needs_enable_flag = true,
+    should_apply = function(self, card, center, area, bypass_roll)
+        if 
+            (card.ability.consumeable and (area == G.shop_jokers or (G.pack_cards and area == G.pack_cards)) and card.ability.set ~= "SuperbossToken") and 
+            G.GAME.modifiers.enable_mf_suspend_sticker
+        then
+            self.last_roll = pseudorandom((area == G.pack_cards and 'packssj' or 'shopssj')..self.key..G.GAME.round_resets.ante)
+            return (bypass_roll ~= nil) and bypass_roll or self.last_roll > (1-self.rate)
+        end
     end,
     calculate = function(self, card, context)
         -- print(context)
@@ -342,26 +368,26 @@ function get_blind_amount(ante, ...)
     return gfb(ante, ...)
 end
 
-local cc = create_card
-function create_card(_type, area, legendary, _rarity, skip_materialize, soulable, forced_key, key_append)
-    local card = cc(_type, area, legendary, _rarity, skip_materialize, soulable, forced_key, key_append)
+-- local cc = create_card
+-- function create_card(_type, area, legendary, _rarity, skip_materialize, soulable, forced_key, key_append)
+--     local card = cc(_type, area, legendary, _rarity, skip_materialize, soulable, forced_key, key_append)
 
-    if _type == "Joker" and (area == G.shop_jokers or (G.pack_cards and area == G.pack_cards)) then
-        local heavypoll = pseudorandom((area == G.pack_cards and 'packheavy' or 'heavypoll')..G.GAME.round_resets.ante)
-        if G.GAME.modifiers.enable_heavy_in_shop and heavypoll > 0.70 then
-            card.ability["mf_heavy"] = true
-        end
-        local potpoll = pseudorandom((area == G.pack_cards and 'packpot' or 'potpoll')..G.GAME.round_resets.ante)
-        if G.GAME.modifiers.enable_potato_in_shop and potpoll > 0.70 and not card.ability.eternal then
-            card.ability["mf_potato"] = true
-        end
-    end
-    if card.ability.consumeable and (area == G.shop_jokers or (G.pack_cards and area == G.pack_cards)) and card.ability.set ~= "SuperbossToken" then
-        local suspended_poll = pseudorandom((area == G.pack_cards and 'packsus' or 'suspoll')..G.GAME.round_resets.ante)
-        if G.GAME.modifiers.enable_suspended_in_shop and suspended_poll > 0.4 then
-            card.ability["mf_suspend_sticker"] = true
-        end
-    end
+--     if _type == "Joker" and (area == G.shop_jokers or (G.pack_cards and area == G.pack_cards)) then
+--         local heavypoll = pseudorandom((area == G.pack_cards and 'packheavy' or 'heavypoll')..G.GAME.round_resets.ante)
+--         if G.GAME.modifiers.enable_heavy_in_shop and heavypoll > 0.70 then
+--             card.ability["mf_heavy"] = true
+--         end
+--         local potpoll = pseudorandom((area == G.pack_cards and 'packpot' or 'potpoll')..G.GAME.round_resets.ante)
+--         if G.GAME.modifiers.enable_potato_in_shop and potpoll > 0.70 and not card.ability.eternal then
+--             card.ability["mf_potato"] = true
+--         end
+--     end
+--     if card.ability.consumeable and (area == G.shop_jokers or (G.pack_cards and area == G.pack_cards)) and card.ability.set ~= "SuperbossToken" then
+--         local suspended_poll = pseudorandom((area == G.pack_cards and 'packsus' or 'suspoll')..G.GAME.round_resets.ante)
+--         if G.GAME.modifiers.enable_suspended_in_shop and suspended_poll > 0.4 then
+--             card.ability["mf_suspend_sticker"] = true
+--         end
+--     end
 
-    return card
-end
+--     return card
+-- end
