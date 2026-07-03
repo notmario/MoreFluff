@@ -6,6 +6,17 @@ priority = -1
 [[patches]]
 [patches.pattern]
 target = "functions/UI_definitions.lua"
+pattern = "extras = create_UIBox_blind_tag(type, run_info)"
+position = "at"
+payload = '''
+if not G.GAME.mf_superboss_active then
+  extras = create_UIBox_blind_tag(type, run_info)
+end'''
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = "functions/UI_definitions.lua"
 pattern = "if not blind_choice.config.unskippable then extras = create_UIBox_blind_tag(type, run_info) end"
 position = "at"
 payload = '''
