@@ -28,14 +28,10 @@ SMODS.Joker {
             card.ability.extra.active = false
 			G.E_MANAGER:add_event(Event({
 				func = function()
-                    local copied_card = SMODS.add_card {
+                    FLUFF.create_and_suspend_card( {
                         key = context.consumeable.config.center_key,
                         area = G.play
-                    }
-                    FLUFF.exile_card(copied_card)
-                    copied_card.ability.mf_suspended = {
-                        rounds = 1,
-                    }
+                    }, 1)
 					return true
 				end,
 			}))

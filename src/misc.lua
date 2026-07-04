@@ -392,6 +392,18 @@ FLUFF.exile_card = function(card, percent, temp, func)
 	}))
 end
 
+FLUFF.suspend_card = function(card, rounds)
+	FLUFF.exile_card(card)
+	card.ability.mf_suspended = {
+		rounds = rounds,
+	}
+end
+
+FLUFF.create_and_suspend_card = function(parameters, rounds)
+	local card = SMODS.add_card(parameters)
+	FLUFF.suspend_card(card, rounds)
+end
+
 -- lemniscate   ty alexi
 local mju = Moveable.juice_up
 function Moveable:juice_up(amount, rot_amt, ...)
