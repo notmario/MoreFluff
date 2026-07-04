@@ -148,96 +148,112 @@ FLUFF.calculate = function(self, context)
 			if card.ability.mf_suspended then
 				card.ability.mf_suspended.rounds = card.ability.mf_suspended.rounds - 1
 				if card.ability.mf_suspended.rounds <= 0 then
-					local function suspend_in_depth (d)
-						if d <= 0 then
-							G.E_MANAGER:add_event(Event({
-								func = function()
-									local old_su = G.GAME.STOP_USE
-									G.GAME.STOP_USE = 0
+					if card.ability.consumeable then
+						local function suspend_in_depth (d)
+							if d <= 0 then
+								G.E_MANAGER:add_event(Event({
+									func = function()
+										local old_su = G.GAME.STOP_USE
+										G.GAME.STOP_USE = 0
 
-									local old_state = G.STATE
+										local old_state = G.STATE
 
-									local function check_and_use()
-										if Card.can_use_consumeable(card, true) then
-											local hand_ids = {}
-											G.E_MANAGER:add_event(Event({
-												trigger = "after",
-												delay = 0.15,
-												func = function()
-													-- G.E_MANAGER:add_event(Event({
-													-- 	func = function()
-													-- 		return G.STATE ~= G.STATES.PLAY_TAROT
-													-- 	end,
-													-- }))
-													G.E_MANAGER:add_event(Event({
-														func = function()
-															card.T.scale = card.T.scale / FLUFF.exile_scale
-															return true
-														end,
-													}))
-													G.STATE = G.STATES.SELECTING_HAND
-													G.FUNCS.use_card({
-														config = { ref_table = card }
-													}, nil, nil)
-													G.STATE = old_state
-													return true
-												end,
-											}))
+										local function check_and_use()
+											if Card.can_use_consumeable(card, true) then
+												local hand_ids = {}
+												G.E_MANAGER:add_event(Event({
+													trigger = "after",
+													delay = 0.15,
+													func = function()
+														-- G.E_MANAGER:add_event(Event({
+														-- 	func = function()
+														-- 		return G.STATE ~= G.STATES.PLAY_TAROT
+														-- 	end,
+														-- }))
+														G.E_MANAGER:add_event(Event({
+															func = function()
+																card.T.scale = card.T.scale / FLUFF.exile_scale
+																return true
+															end,
+														}))
+														G.STATE = G.STATES.SELECTING_HAND
+														G.FUNCS.use_card({
+															config = { ref_table = card }
+														}, nil, nil)
+														G.STATE = old_state
+														return true
+													end,
+												}))
 
-											return true
-										end
-									end
-
-									local has_used = check_and_use()
-
-									if not has_used then
-										local max_h = card.ability.max_highlighted or 5
-										if max_h > #G.hand.cards then max_h = #G.hand.cards end
-
-										while max_h > 1 and not has_used do
-											for i = 1, 25 do
-												-- pick that many random cards
-												local temp_hand = {}
-												for _, v in ipairs(G.hand.cards) do
-													temp_hand[#temp_hand + 1] = v
-												end
-												pseudoshuffle(temp_hand, pseudoseed("mf_use_suspend"))
-												
-												for i = 1, max_h do
-													G.hand.highlighted[#G.hand.highlighted + 1] = temp_hand[i]
-													temp_hand[i]:highlight(true)
-												end
-
-												has_used = check_and_use()
-												if has_used then
-													break
-												end
-												G.hand:unhighlight_all()
+												return true
 											end
-											max_h = max_h - 1
 										end
-									end
 
-									if not has_used then
-										SMODS.destroy_cards { card }
-									end
+										local has_used = check_and_use()
 
-									G.GAME.STOP_USE = old_su
+										if not has_used then
+											local max_h = card.ability.max_highlighted or 5
+											if max_h > #G.hand.cards then max_h = #G.hand.cards end
 
-									return true
-								end,
-							}))
-						else
-							G.E_MANAGER:add_event(Event({
-								func = function()
-									suspend_in_depth(d-1)
-									return true
-								end,
-							}))
+											while max_h > 1 and not has_used do
+												for i = 1, 25 do
+													-- pick that many random cards
+													local temp_hand = {}
+													for _, v in ipairs(G.hand.cards) do
+														temp_hand[#temp_hand + 1] = v
+													end
+													pseudoshuffle(temp_hand, pseudoseed("mf_use_suspend"))
+													
+													for i = 1, max_h do
+														G.hand.highlighted[#G.hand.highlighted + 1] = temp_hand[i]
+														temp_hand[i]:highlight(true)
+													end
+
+													has_used = check_and_use()
+													if has_used then
+														break
+													end
+													G.hand:unhighlight_all()
+												end
+												max_h = max_h - 1
+											end
+										end
+
+										if not has_used then
+											SMODS.destroy_cards { card }
+										end
+
+										G.GAME.STOP_USE = old_su
+
+										return true
+									end,
+								}))
+							else
+								G.E_MANAGER:add_event(Event({
+									func = function()
+										suspend_in_depth(d-1)
+										return true
+									end,
+								}))
+							end
 						end
+						suspend_in_depth(suspend_depth)
+						suspend_depth = suspend_depth + 3
+					elseif card.config.center.set == "Default" or card.config.center.set == "Enhanced" then
+						card.area:remove_card(card)
+						G.hand:emplace(card)
+						card.T.scale = card.T.scale / FLUFF.exile_scale
+						play_sound('card1', 0.45, 0.6)
+					else
+						-- New Joker (i thinkj .)
+						card.area:remove_card(card)
+						G.jokers:emplace(card)
+						if not card.added_to_deck then
+							card:add_to_deck(false)
+						end
+						card.T.scale = card.T.scale / FLUFF.exile_scale
+						play_sound('card1', 0.45, 0.6)
 					end
-					suspend_in_depth(suspend_depth)
-					suspend_depth = suspend_depth + 3
 				else
 					card_eval_status_text(card, "extra", nil, nil, nil, {
 						message = card.ability.mf_suspended.rounds .. "",

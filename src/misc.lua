@@ -373,6 +373,9 @@ FLUFF.exile_card = function(card, percent, temp, func)
 			if card.area then
 				card.area:remove_card(card)
 			end
+			if card.added_to_deck then
+				card:remove_from_deck(false)
+			end
 			G.mf_exile:emplace(card)
 			-- card.T.w = card.T.w * FLUFF.exile_scale
 			-- card.T.h = card.T.h * FLUFF.exile_scale
