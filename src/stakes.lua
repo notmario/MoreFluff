@@ -161,7 +161,7 @@ SMODS.Sticker {
 -- Jank but whatever i guess ..
 local old_apply_eternal = SMODS.Stickers.eternal.apply
 SMODS.Stickers.eternal.apply = function(self, card, val, ...)
-    SMODS.Stickers.eternal.apply(self, card, val, ...)
+    old_apply_eternal(self, card, val, ...)
     if card.ability.mf_potato then
         card.ability.mf_potato = nil
     end
