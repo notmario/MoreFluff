@@ -137,12 +137,14 @@ FLUFF.joker_pool = {
 	"slaughter_pact",
 	"summoners_pact",
 
+	"shopping_spree",
+	
 	"aheartofcold",
 	"apex_devastator",
 	"crimsonglassdecomposition",
-
 	"emeritus_eventuality",
 	"mathemagics",
+
 	"space_elevator",
 	"suspension",
 	"whiplash",
@@ -150,10 +152,10 @@ FLUFF.joker_pool = {
 	-- rot legendary
 	"rot_canio",
 	"rot_triboulet",
+
 	"rot_yorick",
 	"rot_chicot",
 	"rot_perkeo",
-	
 	"rot_triangle",
 	"rot_marigold",
 }

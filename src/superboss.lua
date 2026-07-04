@@ -976,6 +976,7 @@ for i, k in ipairs(my_superbosses) do
 		loc_vars = function(self, info_queue, card)
 			info_queue[#info_queue + 1] = G.P_BLINDS[self.config.blind]
 			return {
+				key = "c_mf_superboss_token",
 				vars = { localize({ type = "name_text", set = "Blind", key = self.config.blind }), }
 			}
 		end,

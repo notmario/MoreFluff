@@ -1098,6 +1098,24 @@ return {
 					"{C:inactive,s:0.8}if that card is destroyed)",
 				},
 			},
+			j_mf_shopping_spree = {
+				name = "Shopping Spree",
+				text = {
+					{
+						"{C:spectral}Spree",
+						"{C:inactive,s:0.8}(This Joker gains extra abilities",
+						"{C:inactive,s:0.8}once certain conditions are met)",
+					},
+					{
+						"Reroll {C:attention}ten{} times {C:inactive}(#1#/10) {f:6}—{} Shop",
+						"{C:green}rerolls{} are {C:money}$#2#{} cheaper"
+					},
+					{
+						"Skip {C:attention}two{} blinds {C:inactive}(#3#/2) {f:6}—{} The",
+						"shop has an {C:attention}extra slot"
+					},
+				},
+			},
 			j_mf_aheartofcold = {
 				-- name = "A Heart of Cold",
 				name = {},
@@ -2816,105 +2834,7 @@ return {
 			},
 		},
 		SuperbossToken = {
-			c_mf_violet_vessel_dx = {
-				name = "#1#",
-				text = {
-					"The {C:attention}Superboss{} becomes",
-					"{C:attention}#1#",
-				},
-			},
-			c_mf_cerulean_bell_dx = {
-				name = "#1#",
-				text = {
-					"The {C:attention}Superboss{} becomes",
-					"{C:attention}#1#",
-				},
-			},
-			c_mf_needle_dx = {
-				name = "#1#",
-				text = {
-					"The {C:attention}Superboss{} becomes",
-					"{C:attention}#1#",
-				},
-			},
-			c_mf_manacle_dx = {
-				name = "#1#",
-				text = {
-					"The {C:attention}Superboss{} becomes",
-					"{C:attention}#1#",
-				},
-			},
-			c_mf_pillar_dx = {
-				name = "#1#",
-				text = {
-					"The {C:attention}Superboss{} becomes",
-					"{C:attention}#1#",
-				},
-			},
-			c_mf_serpent_dx = {
-				name = "#1#",
-				text = {
-					"The {C:attention}Superboss{} becomes",
-					"{C:attention}#1#",
-				},
-			},
-			c_mf_club_dx = {
-				name = "#1#",
-				text = {
-					"The {C:attention}Superboss{} becomes",
-					"{C:attention}#1#",
-				},
-			},
-			c_mf_goad_dx = {
-				name = "#1#",
-				text = {
-					"The {C:attention}Superboss{} becomes",
-					"{C:attention}#1#",
-				},
-			},
-			c_mf_window_dx = {
-				name = "#1#",
-				text = {
-					"The {C:attention}Superboss{} becomes",
-					"{C:attention}#1#",
-				},
-			},
-			c_mf_head_dx = {
-				name = "#1#",
-				text = {
-					"The {C:attention}Superboss{} becomes",
-					"{C:attention}#1#",
-				},
-			},
-			c_mf_arm_dx = {
-				name = "#1#",
-				text = {
-					"The {C:attention}Superboss{} becomes",
-					"{C:attention}#1#",
-				},
-			},
-			c_mf_wheel_dx = {
-				name = "#1#",
-				text = {
-					"The {C:attention}Superboss{} becomes",
-					"{C:attention}#1#",
-				},
-			},
-			c_mf_house_dx = {
-				name = "#1#",
-				text = {
-					"The {C:attention}Superboss{} becomes",
-					"{C:attention}#1#",
-				},
-			},
-			c_mf_psychic_dx = {
-				name = "#1#",
-				text = {
-					"The {C:attention}Superboss{} becomes",
-					"{C:attention}#1#",
-				},
-			},
-			c_mf_hook_dx = {
+			c_mf_superboss_token = {
 				name = "#1#",
 				text = {
 					"The {C:attention}Superboss{} becomes",
