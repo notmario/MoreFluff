@@ -1415,6 +1415,30 @@ return {
 					"at the start of the next {C:attention}Blind{}"
 				}
 			},
+			j_mf_three_steps_ahead = {
+				name = "Three Steps Ahead",
+				text = {
+					{
+						"{C:spectral}Spree",
+						"{C:inactive,s:0.8}(This Joker gains extra abilities",
+						"{C:inactive,s:0.8}once certain conditions are met)",
+					},
+					{
+						"Defeat {C:attention}four{} Boss Blinds {C:inactive}(#1#/4) {f:6}—{} When",
+						"a {C:attention}Boss Blind{} is selected, disable it"
+					},
+					{
+						"Sell {C:attention}eight{} Jokers {C:inactive}(#2#/8) {f:6}—{} At the end",
+						"of the Shop, if no {C:dark_edition}Negative{} {C:attention}Jokers",
+						"are owned, create a {C:dark_edition}Negative{} copy",
+						"of another random owned {C:attention}Joker"
+					},
+					{
+						"Discard {C:attention}fifty{} cards {C:inactive}(#3#/50) {f:6}—{} You",
+						"may discard {C:red}#4#{} additional cards"
+					},
+				},
+			},
 			j_mf_whiplash = {
 				name = "Whiplash",
 				text = {

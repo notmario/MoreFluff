@@ -147,6 +147,7 @@ FLUFF.joker_pool = {
 
 	"space_elevator",
 	"suspension",
+	"three_steps_ahead",
 	"whiplash",
 
 	-- rot legendary
