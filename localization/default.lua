@@ -3121,6 +3121,7 @@ return {
 					"{C:spectral}Exile{} the copy until the end of {C:attention}Ante{}.",
 					"This {C:attention}Joker{} gives {X:mult,C:white}X0.25{} Mult for each",
 					"card in {C:spectral}exile{}",
+					"{C:inactive}(Currently {X:mult,C:white}X#1#{C:inactive} Mult)"
 				}
 			}
 		},

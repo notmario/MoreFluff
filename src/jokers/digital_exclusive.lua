@@ -43,7 +43,12 @@ function FLUFF.add_extra_multiboxes(_c, info_queue, card, desc_nodes, specific_v
         local desc_text = G.localization.descriptions.Other.mf_alchemy_hit_the_road_perpetual.text
         for i = 1, ability.mf_alchemy_hit_the_road do
             FLUFF.generate_ui_multiboxes({
-                {localized_text = desc_text}
+                {
+					localized_text = desc_text,
+					loc_vars = function(self, card, center)
+						return { vars = { 1 + #G.mf_exile.cards * 0.25 } }
+					end
+				}
             })(_c, info_queue, card, desc_nodes, specific_vars, full_UI_table)
         end
     end
