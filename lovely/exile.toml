@@ -87,3 +87,13 @@ if self.area and self.area == G.mf_exile then
     love.graphics.setLineWidth(love.graphics.getLineWidth() / FLUFF.exile_scale)
 end
 '''
+
+[[patches]]
+[patches.pattern]
+target = 'functions/common_events.lua'
+match_indent = true
+pattern = '''for _, v in ipairs(info_queue) do'''
+position = 'before'
+payload = '''
+if card and card.ability and card.ability.mf_suspended and card.area == G.mf_exile then info_queue[#info_queue+1] = {key = 'mf_suspended_info', set = 'Other', vars = {card.ability.mf_suspended.rounds or 1}} end
+'''

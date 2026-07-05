@@ -1404,6 +1404,22 @@ return {
 					"resets when triggered"
 				},
 			},
+			j_mf_overlord = {
+				name = "Overlord of the Plasmadeck",
+				text = {
+					{
+						"When this {C:attention}Joker{} is bought",
+						"or created, {C:spectral}suspend{} it",
+						"for {C:attention}seven{} rounds",
+						"{C:inactive,s:0.8}(Exile it. Return it to the Joker",
+						"{C:inactive,s:0.8}slots after seven rounds)",
+					},
+					{
+						"Balances {C:chips}Chips{} and {C:mult}Mult",
+						"before scoring",
+					}
+				},
+			},
 			j_mf_space_elevator = {
 				name = "Space Elevator",
 				text = {
@@ -1426,9 +1442,10 @@ return {
 				text = {
 					"{C:attention}Copy{} the first {C:tarot}Tarot{} or",
 					"{C:rotarot}45 Degree Rotated Tarot{} card used",
-					"each round, and {C:spectral}exile{} the copy",
-					"Use it on {C:green,E:1}random{} playing cards",
-					"at the start of the next {C:attention}Blind{}"
+					"each round, and {C:spectral}suspend{} the",
+					"copy for {C:attention}one{} round",
+					"{C:inactive,s:0.8}(Use it on random playing cards",
+					"{C:inactive,s:0.8}at the start of the next Blind)"
 				}
 			},
 			j_mf_three_steps_ahead = {
@@ -2972,6 +2989,13 @@ return {
 				  	"When used, instead exiles for",
 					"{C:attention}2{} rounds, then tries to use on",
 					"random playing cards if possible"
+				},
+			},
+			mf_suspended_info = {
+				name = "Suspended",
+				text = {
+				  	"Will become unsuspended",
+					"in {C:attention}#1#{} rounds"
 				},
 			},
 
