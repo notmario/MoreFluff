@@ -393,7 +393,8 @@ FLUFF.exile_card = function(card, percent, temp, func)
 end
 
 FLUFF.suspend_card = function(card, rounds)
-	FLUFF.exile_card(card)
+	card.suspending = true
+	FLUFF.exile_card(card, nil, false, function (_card) _card.suspending = false end )
 	card.ability.mf_suspended = {
 		rounds = rounds,
 	}

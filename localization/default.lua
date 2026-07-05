@@ -953,6 +953,22 @@ return {
 					}
 				},
 			},
+			j_mf_hold_music = {
+				name = "Hold Music",
+				text = {
+					{
+						"After a hand is played, {C:spectral}suspend{}",
+						"{C:attention}two{} random cards held in hand",
+						"for {C:attention}one{} round",
+						"{C:inactive,s:0.8}(Exile them. Return them to hand",
+						"{C:inactive,s:0.8}at the start of the next round)",
+					},
+					{
+						"{C:chips}+#1#{} Chips for each",
+						"card in exile"
+					}
+				},
+			},
 			j_mf_icecube = {
 				name = "Ice Cube",
 				text = {
@@ -1021,20 +1037,6 @@ return {
 					}
 				},
 			},
-			j_mf_saturnburger = {
-				name = "Saturn Burger",
-				text = {
-					{
-						"{C:attention}Straights{} can be formed",
-						"with {C:attention}two{} fewer cards",
-					},
-					{
-						"When you discard a hand with",
-						"{C:attention}4{} or more cards, level it up",
-						"Eaten after {C:attention}#1#{} level ups",
-					},
-				},
-			},
 			j_mf_intervention_pact = {
 				name = "Intervention Pact",
 				text = {
@@ -1096,6 +1098,20 @@ return {
 					"until you sell that {C:attention}Joker{}",
 					"{C:inactive,s:0.8}(The exiled cards don't return",
 					"{C:inactive,s:0.8}if that card is destroyed)",
+				},
+			},
+			j_mf_saturnburger = {
+				name = "Saturn Burger",
+				text = {
+					{
+						"{C:attention}Straights{} can be formed",
+						"with {C:attention}two{} fewer cards",
+					},
+					{
+						"When you discard a hand with",
+						"{C:attention}4{} or more cards, level it up",
+						"Eaten after {C:attention}#1#{} level ups",
+					},
 				},
 			},
 			j_mf_shopping_spree = {

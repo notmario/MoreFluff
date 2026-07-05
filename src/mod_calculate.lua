@@ -144,6 +144,7 @@ FLUFF.calculate = function(self, context)
 
 	local suspend_depth = 0
 	if context.first_hand_drawn then
+		local to_return = {}
 		for _, card in ipairs(G.mf_exile.cards) do
 			if card.ability.mf_suspended then
 				card.ability.mf_suspended.rounds = card.ability.mf_suspended.rounds - 1
@@ -239,20 +240,9 @@ FLUFF.calculate = function(self, context)
 						end
 						suspend_in_depth(suspend_depth)
 						suspend_depth = suspend_depth + 3
-					elseif card.config.center.set == "Default" or card.config.center.set == "Enhanced" then
-						card.area:remove_card(card)
-						G.hand:emplace(card)
-						card.T.scale = card.T.scale / FLUFF.exile_scale
-						play_sound('card1', 0.45, 0.6)
 					else
 						-- New Joker (i thinkj .)
-						card.area:remove_card(card)
-						G.jokers:emplace(card)
-						if not card.added_to_deck then
-							card:add_to_deck(false)
-						end
-						card.T.scale = card.T.scale / FLUFF.exile_scale
-						play_sound('card1', 0.45, 0.6)
+						to_return[#to_return + 1] = card
 					end
 				else
 					card_eval_status_text(card, "extra", nil, nil, nil, {
@@ -260,6 +250,36 @@ FLUFF.calculate = function(self, context)
 						card = card,
 					})
 				end
+			end
+		end
+		for _, card in ipairs(to_return) do
+			if card.config.center.set == "Default" or card.config.center.set == "Enhanced" then
+				G.E_MANAGER:add_event(Event({
+					trigger = "after",
+					delay = 0.15,
+					func = function()
+						card.area:remove_card(card)
+						G.hand:emplace(card)
+						card.T.scale = card.T.scale / FLUFF.exile_scale
+						play_sound('card1', 0.45, 0.6)
+						return true
+					end,
+				}))
+			else
+				G.E_MANAGER:add_event(Event({
+					trigger = "after",
+					delay = 0.15,
+					func = function()
+						card.area:remove_card(card)
+						G.jokers:emplace(card)
+						if not card.added_to_deck then
+							card:add_to_deck(false)
+						end
+						card.T.scale = card.T.scale / FLUFF.exile_scale
+						play_sound('card1', 0.45, 0.6)
+						return true
+					end,
+				}))
 			end
 		end
 	end

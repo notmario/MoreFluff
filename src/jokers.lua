@@ -121,15 +121,15 @@ FLUFF.joker_pool = {
 
 	"gentlemelon",
 	"ghostly_reflection",
+	"hold_music",
 	"icecube",
 	"junkyard",
-	"jokerreacts",
 
+	"jokerreacts",
 	"knuckleblaster",
 	"ransom_note",
 	"refrigerator",
 	"retrigger_joker",
-	"saturnburger",
 	
 	"intervention_pact",
 	"pact_of_negation",
@@ -137,6 +137,7 @@ FLUFF.joker_pool = {
 	"slaughter_pact",
 	"summoners_pact",
 
+	"saturnburger",
 	"shopping_spree",
 	
 	"aheartofcold",
