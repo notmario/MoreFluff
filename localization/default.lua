@@ -1189,6 +1189,23 @@ return {
 					}
 				},
 			},
+			j_mf_digital_exclusive = {
+				name = "{X:gold,C:white}A{}-Hit the Road",
+				text = {
+					{
+						"When you sell this {C:attention}Joker{},",
+						"create a random {C:green}passive{} {C:attention}Joker{}",
+						"{C:inactive}(Must have room)",
+						"That {C:attention}Joker{} {C:spectral,E:1}perpetually{} gains",
+					},
+					{
+						"{C:inactive,s:0.8}\"Whenever you discard a Jack, copy it.",
+						"{C:inactive,s:0.8}Exile the copy until the end of Ante.",
+						"{C:inactive,s:0.8}This Joker gives {X:inactive,C:white,s:0.8}X0.25{C:inactive,s:0.8} Mult for each",
+						"{C:inactive,s:0.8}card in exile\"",
+					}
+				},
+			},
 			j_mf_apex_devastator = {
 				name = "Apex Devastator",
 				text = {
@@ -2063,7 +2080,7 @@ return {
 			j_mf_lettergem_d = {
 				name = "D",
 				text = {
-					"{C:red,E:1}Destroy",
+					"Destroy",
 				},
 			},
 			j_mf_lettergem_e = {
@@ -2080,7 +2097,12 @@ return {
 					"{C:inactive}(must have room)",
 				},
 			},
-			-- g doesnt need one because funny idk
+			j_mf_lettergem_g = {
+				name = "G",
+				text = {
+					"",
+				},
+			},
 			j_mf_lettergem_h = {
 				name = "H",
 				text = {
@@ -3092,6 +3114,15 @@ return {
                     "{C:attention}Stake{} difficulty",
                 },
             },
+			mf_alchemy_hit_the_road_perpetual = {
+				name = "whatever",
+				text = {
+					"Whenever you discard a {C:attention}Jack{}, copy it.",
+					"{C:spectral}Exile{} the copy until the end of {C:attention}Ante{}.",
+					"This {C:attention}Joker{} gives {X:mult,C:white}X0.25{} Mult for each",
+					"card in {C:spectral}exile{}",
+				}
+			}
 		},
 		Voucher = {
 			v_mf_paintroller = {

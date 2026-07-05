@@ -457,10 +457,10 @@ G.FUNCS.check_for_buy_space = function(card)
 end
 
 FLUFF.cascade_queue = {}
-function FLUFF.cascade(cost, times_left)
+function FLUFF.cascade(cost, times_left, funcs)
 	local actually_cascade = #FLUFF.cascade_queue == 0
 	for _ = 1, times_left do
-		FLUFF.cascade_queue[#FLUFF.cascade_queue + 1] = cost
+		FLUFF.cascade_queue[#FLUFF.cascade_queue + 1] = { cost, funcs }
 	end
 	if actually_cascade then
 		FLUFF.cascade_real()
@@ -481,8 +481,9 @@ function FLUFF.cascade_real(times_triggered)
                 trigger = "after",
                 delay = 1.5 / (times_triggered + 10),
                 func = function()
-					local cost = FLUFF.cascade_queue[1]
-                    if G.shop_jokers.cards[1].cost < cost or cost == 0 then
+					local next_cascade = FLUFF.cascade_queue[1]
+					local cost = next_cascade[1]
+                    if G.shop_jokers.cards[1].cost < cost or cost == 0 and (not next_cascade[2].filter or next_cascade[2].filter(G.shop_jokers.cards[1])) then
                         local c1 = G.shop_jokers.cards[1]
 
                         local doit = FLUFF.can_cascade_obtain(c1)
@@ -538,4 +539,78 @@ FLUFF.should_shuffle_on_pack = function()
 		if next(SMODS.find_card(card)) then return true end
 	end
 	return false
+end
+-- technically bft shit but i think it might get put into slib anyways ?? so who knows
+-- it appears in book of shadows too so :shrug:
+function FLUFF.parse_string(text)
+    for i, v in pairs(text) do
+        if type(v) == "table" then
+            FLUFF.parse_string(v)
+        else
+            text[i] = loc_parse_string(v)
+        end
+    end
+end
+
+function FLUFF.create_vtext(vtext, AUT, nodes, vars, lines, num)
+    local localize_args = {
+        AUT = AUT,
+        nodes = nodes,
+
+        vars = vars
+    }
+    -- taken from localize; adds the multibox
+    localize_args.AUT.multi_box = localize_args.AUT.multi_box or {}
+    local i = num + 1 -- fucking janky ass method
+    G.AUT = AUT
+    for j, line in ipairs(lines) do
+        local final_line = SMODS.localize_box(line, localize_args)
+        if i == 1 or next(AUT.info) then
+            nodes[#nodes+1] = final_line -- Sends main box to AUT.main
+            if not next(AUT.info) then nodes.main_box_flag = true end
+        elseif not next(AUT.info) then 
+            nodes.main_box_flag = true
+            AUT.multi_box[i-1] = AUT.multi_box[i-1] or {}
+            AUT.multi_box[i-1][#AUT.multi_box[i-1]+1] = final_line
+        end
+        if not next(AUT.info) and vars.box_colours then AUT.box_colours[i] = vars.box_colours and vars.box_colours[i] or G.C.UI.BACKGROUND_WHITE end
+    end
+end
+
+function FLUFF.generate_ui_multiboxes(args2)
+    return function(center, info_queue, card, desc_nodes, specific_vars, full_UI_table)
+        -- if not full_UI_table.box_colours then return end
+        local num = full_UI_table.multi_box and #full_UI_table.multi_box + 1 or 1
+        for i, args in pairs(args2) do
+            if not args.func or args:func(card) then
+                local keys = type(args.key) == "table" and args.key or {args.key}
+                for _, k in pairs(keys) do
+                    local vars = args.loc_vars and (args:loc_vars({}, card) or {}).vars or {}
+                    local lines = SMODS.shallow_copy(G.localization.misc.v_dictionary_parsed[k] or {})
+                    local vtext = localize{ type = "variable", key = k, vars = vars } -- the var doesn't matter here
+                    FLUFF.create_vtext(vtext, full_UI_table, desc_nodes, vars, lines, num)
+                    if args.seperate_boxes then
+                        num = num + 1
+                    end
+                end
+                local texts = type(args.localized_text) == "table" and args.localized_text or {args.localized_text}
+                for _, k in pairs(texts) do
+                    local vars = args.loc_vars and (args:loc_vars({}, card) or {}).vars or {}
+                    local vtext = type(k) == "string" and {k} or k or {}
+                    FLUFF.parse_string(vtext)
+                    FLUFF.create_vtext(nil, full_UI_table, desc_nodes, vars, vtext, num)
+                    if args.seperate_boxes then
+                        num = num + 1
+                    end
+                end
+                if not args.seperate_boxes then
+                    num = num + 1
+                end
+            end
+        end
+    end
+end
+
+function FLUFF.add_extra_multiboxes(_c, info_queue, card, desc_nodes, specific_vars, full_UI_table, ability)
+	-- hookable and shii
 end

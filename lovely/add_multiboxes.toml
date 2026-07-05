@@ -1,0 +1,25 @@
+[manifest]
+version = "1.0.0"
+dump_lua = true
+priority = -1
+
+# based on Secret Book Of Shadows Stuff :shhhhhh
+[[patches]]
+[patches.pattern]
+target = '''functions/common_events.lua'''
+pattern = '''_c:generate_ui(info_queue, card, desc_nodes, specific_vars, full_UI_table)'''
+position = "after"
+payload = '''
+FLUFF.add_extra_multiboxes(_c, card, info_queue, desc_nodes, specific_vars, full_UI_table, cfg)
+'''
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = '''functions/common_events.lua'''
+pattern = '''localize{type = 'descriptions', key = _c.key, set = _c.set, nodes = desc_nodes, vars = specific_vars or {}}'''
+position = "after"
+payload = '''
+FLUFF.add_extra_multiboxes(_c, card, info_queue, desc_nodes, specific_vars, full_UI_table, cfg)
+'''
+match_indent = true

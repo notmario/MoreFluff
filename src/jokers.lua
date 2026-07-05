@@ -130,7 +130,7 @@ FLUFF.joker_pool = {
 	"knuckleblaster",
 	"ransom_note",
 	"refrigerator",
-	
+
 	"intervention_pact",
 	"pact_of_negation",
 	"pact_of_the_titan",
@@ -143,12 +143,13 @@ FLUFF.joker_pool = {
 	"violent_outburst",
 	"aheartofcold",
 
+	"digital_exclusive",
 	"apex_devastator",
 	"crimsonglassdecomposition",
 	"emeritus_eventuality",
 	"mathemagics",
-	"overlord",
 
+	"overlord",
 	"space_elevator",
 	"suspension",
 	"three_steps_ahead",
