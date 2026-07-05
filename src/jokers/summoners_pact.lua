@@ -17,7 +17,7 @@ SMODS.Joker {
 	eternal_compat = true,
 	perishable_compat = true,
 
-	attributes = { "generation", "joker", "rarity", },
+	attributes = { "generation", "joker", "rarity", "exile", },
 	loc_vars = function(self, info_queue, card)
 		return {
 			vars = { card.ability.extra.cards },

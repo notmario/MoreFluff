@@ -1146,6 +1146,18 @@ return {
 					},
 				},
 			},
+			j_mf_violent_outburst = {
+				name = "Violent Outburst",
+				text = {
+					{
+						"When you enter the",
+						"{C:attention}Shop{}, {C:spectral}cascade $4{}",
+						"{C:inactive,s:0.8}(Reroll the Shop for free until",
+						"{C:inactive,s:0.8}the first item costs less than $4.",
+						"{C:inactive,s:0.8}Then buy it for free.)",
+					}
+				},
+			},
 			j_mf_aheartofcold = {
 				-- name = "A Heart of Cold",
 				name = {},
@@ -1184,11 +1196,11 @@ return {
 						"{C:chips}+#2#{} Chips, {C:mult}+#1#{} Mult"
 					},
 					{
+						"When you buy this {C:attention}Joker{},",
 						"{C:spectral}Cascade $10{}, {C:spectral}cascade $10{},",
 						"{C:spectral}cascade $10{}, {C:spectral}cascade $10{}",
-						"{C:inactive,s:0.8}(When you buy this Joker, reroll",
-						"{C:inactive,s:0.8}the Shop for free until the first",
-						"{C:inactive,s:0.8}item costs less than $10.",
+						"{C:inactive,s:0.8}(Reroll the Shop for free until",
+						"{C:inactive,s:0.8}the first item costs less than $10.",
 						"{C:inactive,s:0.8}Then buy it for free.",
 						"{C:inactive,s:0.8}Repeat this process",
 						"{C:inactive,s:0.8}three more times.)",

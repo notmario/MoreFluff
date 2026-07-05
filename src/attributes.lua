@@ -5,3 +5,7 @@ SMODS.Attribute {
 SMODS.Attribute {
     key = "rotarot",
 }
+
+SMODS.Attribute {
+    key = "exile",
+}

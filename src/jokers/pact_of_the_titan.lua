@@ -19,7 +19,7 @@ SMODS.Joker {
 	eternal_compat = true,
 	perishable_compat = true,
 
-	attributes = { "chips", "mult", },
+	attributes = { "chips", "mult", "exile", },
 	loc_vars = function(self, info_queue, card)
 		return {
 			vars = { card.ability.extra.cards, card.ability.extra.chips, card.ability.extra.mult },

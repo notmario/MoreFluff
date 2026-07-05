@@ -15,7 +15,7 @@ SMODS.Joker({
 	blueprint_compat = true,
 	eternal_compat = true,
 	perishable_compat = true,
-	attributes = { "hands", "chips", },
+	attributes = { "hands", "chips", "exile", },
 	loc_vars = function(self, info_queue, card)
 		return { vars = { card.ability.extra.chips } }
 	end,

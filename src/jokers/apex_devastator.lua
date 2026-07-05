@@ -13,7 +13,7 @@ SMODS.Joker({
 	cost = 10,
 	unlocked = true,
 	discovered = true,
-	blueprint_compat = false,
+	blueprint_compat = true,
 	eternal_compat = true,
 	perishable_compat = true,
 	attributes = { "generation", "economy", "reroll", "chips", "mult", "shop", },
@@ -34,6 +34,7 @@ SMODS.Joker({
 		end
         if context.buying_self then
             FLUFF.cascade(10, 4)
+			return nil, true
         end
 	end,
 })

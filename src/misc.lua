@@ -456,19 +456,32 @@ G.FUNCS.check_for_buy_space = function(card)
 	return gfcfbs(card)
 end
 
+FLUFF.cascade_queue = {}
 function FLUFF.cascade(cost, times_left)
-    if times_left <= 0 then return nil end
-    G.E_MANAGER:add_event(Event({
+	local actually_cascade = #FLUFF.cascade_queue == 0
+	for _ = 1, times_left do
+		FLUFF.cascade_queue[#FLUFF.cascade_queue + 1] = cost
+	end
+	if actually_cascade then
+		FLUFF.cascade_real()
+	end
+end
+
+function FLUFF.cascade_real(times_triggered)
+	if #FLUFF.cascade_queue == 0 then return nil end
+	times_triggered = times_triggered or 0
+	G.E_MANAGER:add_event(Event({
         trigger = "after",
-        delay = 0.15,
+        delay = 1.5 / (times_triggered + 10),
         func = function()
             G.GAME.current_round.free_rerolls = math.max(G.GAME.current_round.free_rerolls + 1, 0)
             calculate_reroll_cost(true)
             G.FUNCS.reroll_shop()
             G.E_MANAGER:add_event(Event({
                 trigger = "after",
-                delay = 0.15,
+                delay = 1.5 / (times_triggered + 10),
                 func = function()
+					local cost = FLUFF.cascade_queue[1]
                     if G.shop_jokers.cards[1].cost < cost or cost == 0 then
                         local c1 = G.shop_jokers.cards[1]
 
@@ -483,14 +496,11 @@ function FLUFF.cascade(cost, times_left)
 							}
 							FLUFF.fuck_you_i_can_buy_this_shit = nil
 
-                            -- continue
-                            FLUFF.cascade(cost, times_left - 1)
-                        else
-                            FLUFF.cascade(cost, times_left)
+							-- remove start of cascade queue
+							table.remove(FLUFF.cascade_queue, 1)
                         end
-                    else
-                        FLUFF.cascade(cost, times_left)
                     end
+					FLUFF.cascade_real(times_triggered + 1)
                     return true
                 end,
             }))

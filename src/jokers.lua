@@ -140,15 +140,16 @@ FLUFF.joker_pool = {
 	"retrigger_joker",
 	"saturnburger",
 	"shopping_spree",
+	"violent_outburst",
 	"aheartofcold",
-	"apex_devastator",
 
+	"apex_devastator",
 	"crimsonglassdecomposition",
 	"emeritus_eventuality",
 	"mathemagics",
 	"overlord",
-	"space_elevator",
 
+	"space_elevator",
 	"suspension",
 	"three_steps_ahead",
 	"whiplash",
