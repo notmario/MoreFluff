@@ -163,8 +163,16 @@ FLUFF.joker_pool = {
 	"rot_marigold",
 }
 
+if SMODS.Mods["aikoyorisshenanigans"] and SMODS.Mods["aikoyorisshenanigans"].can_load then
+	FLUFF.joker_pool[#FLUFF.joker_pool + 1] = "crossmod/name_sticker_goblin"
+end
+
 for _, path in ipairs(FLUFF.joker_pool) do
 	assert(SMODS.load_file("src/jokers/" .. path .. ".lua"))()
+end
+
+for i, jkr in ipairs(FLUFF.joker_pool) do
+	FLUFF.joker_pool[i] = jkr:gsub("crossmod/", "")
 end
 
 FLUFF.hidden_joker_pool = {

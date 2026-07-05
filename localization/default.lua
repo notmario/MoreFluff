@@ -2257,6 +2257,25 @@ return {
 					"{C:inactive,s:0.8}is opened.)",
 				},
 			},
+
+			-- crossmod
+			j_mf_name_sticker_goblin = {
+				name = "#1# Goblin",
+				text = {
+					{
+						"{C:spectral}Name sticker",
+						"{C:inactive,s:0.8}(If this Joker's name has a blank,",
+						"{C:inactive,s:0.8}spelling a word replaces the first",
+						"{C:inactive,s:0.8}blank with that word.)",
+					},
+					{
+						"{X:mult,C:white}X#2#{} Mult for every",
+						"vowel in this {C:attention}Joker{}'s name",
+						"{C:inactive}(Currently {X:mult,C:white}X#3#{C:inactive} Mult)",
+						"{C:inactive,s:0.8}(The vowels are A, E, I, O, U, and Y.)",
+					}
+				},
+			},
 		},
 		Colour = {
 			c_mf_black = {
@@ -3258,6 +3277,7 @@ return {
 			k_zenith = "Saved by Z",
 
 			k_shuffled_ex = "Shuffled!",
+			k_stickered_ex = "Stickered!",
 
 			mf_credits = "Credits",
 		},

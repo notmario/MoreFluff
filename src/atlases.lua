@@ -184,3 +184,10 @@ SMODS.Atlas {
 	px = 71, 
 	py = 95 
 }
+
+SMODS.Atlas({
+	key = "mf_crossmod",
+	path = "mf_crossmod.png",
+	px = 71,
+	py = 95,
+})
