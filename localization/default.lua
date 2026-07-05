@@ -1132,6 +1132,20 @@ return {
 					},
 				},
 			},
+			j_mf_stifle = {
+				name = "Stifle",
+				text = {
+					{
+						"The {C:attention}Joker{} to the right",
+						"{C:red}doesn't trigger",
+						"{C:inactive,s:0.8}(On sell effects still trigger)"
+					},
+					{
+						"{C:chips}+#1#{} Chips if there is",
+						"a {C:attention}Joker{} to the right"
+					},
+				},
+			},
 			j_mf_aheartofcold = {
 				-- name = "A Heart of Cold",
 				name = {},
