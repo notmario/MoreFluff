@@ -38,7 +38,7 @@ SMODS.Joker {
 
 local old_add_multiboxes = FLUFF.add_extra_multiboxes
 function FLUFF.add_extra_multiboxes(_c, info_queue, card, desc_nodes, specific_vars, full_UI_table, ability, ...)
-    old_add_multiboxes(_c, info_queue, card, desc_nodes, specific_vars, full_UI_table, ...)
+    old_add_multiboxes(_c, info_queue, card, desc_nodes, specific_vars, full_UI_table, ability, ...)
     if ability and ability.mf_alchemy_hit_the_road then
         local desc_text = G.localization.descriptions.Other.mf_alchemy_hit_the_road_perpetual.text
         for i = 1, ability.mf_alchemy_hit_the_road do
@@ -58,25 +58,27 @@ local ec = eval_card
 function eval_card(card, context, ...)
     local ret, post = ec(card, context)
 
-    if context.discard and context.other_card:get_id() == 11 then
-        if not ret.jokers then ret.jokers = {} end
-        for i = 1, (card.ability.mf_alchemy_hit_the_road or 0) do
-			G.E_MANAGER:add_event(Event({
-				func = function()
-                    local copied_card = SMODS.copy_card(context.other_card)
-                    FLUFF.exile_card(copied_card, nil, "ante")
-					return true
-				end,
-			}))
-        end
-    end
+	if card.ability.mf_alchemy_hit_the_road then
+		if context.discard and context.other_card:get_id() == 11 then
+			if not ret.jokers then ret.jokers = {} end
+			for i = 1, card.ability.mf_alchemy_hit_the_road do
+				G.E_MANAGER:add_event(Event({
+					func = function()
+						local copied_card = SMODS.copy_card(context.other_card)
+						FLUFF.exile_card(copied_card, nil, "ante")
+						return true
+					end,
+				}))
+			end
+		end
 
-    if context.joker_main then
-        if not ret.jokers then ret.jokers = {} end
-        for i = 1, (card.ability.mf_alchemy_hit_the_road or 0) do
-            ret.jokers = SMODS.merge_effects({ ret.jokers, { xmult = 1 + #G.mf_exile.cards * 0.25 }})
-        end
-    end
+		if context.joker_main then
+			if not ret.jokers then ret.jokers = {} end
+			for i = 1, card.ability.mf_alchemy_hit_the_road do
+				ret.jokers = SMODS.merge_effects({ ret.jokers, { xmult = 1 + #G.mf_exile.cards * 0.25 }})
+			end
+		end
+	end
 
     return ret, post
 end

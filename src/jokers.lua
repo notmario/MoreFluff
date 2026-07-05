@@ -150,9 +150,11 @@ FLUFF.joker_pool = {
 	"mathemagics",
 
 	"overlord",
+	"riding_the_dilu_horse",
 	"space_elevator",
 	"suspension",
 	"three_steps_ahead",
+
 	"whiplash",
 
 	-- rot legendary

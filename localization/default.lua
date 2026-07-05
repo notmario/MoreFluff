@@ -1214,7 +1214,7 @@ return {
 					},
 					{
 						"When you buy this {C:attention}Joker{},",
-						"{C:spectral}Cascade $10{}, {C:spectral}cascade $10{},",
+						"{C:spectral}cascade $10{}, {C:spectral}cascade $10{},",
 						"{C:spectral}cascade $10{}, {C:spectral}cascade $10{}",
 						"{C:inactive,s:0.8}(Reroll the Shop for free until",
 						"{C:inactive,s:0.8}the first item costs less than $10.",
@@ -1460,6 +1460,24 @@ return {
 					{
 						"Balances {C:chips}Chips{} and {C:mult}Mult",
 						"before scoring",
+					}
+				},
+			},
+			j_mf_riding_the_dilu_horse = {
+				name = "Riding the Dilu Horse",
+				text = {
+					{
+						"{C:green}Horsemanship",
+						"{C:inactive,s:0.8}(Retrigger the playing card",
+						"{C:inactive,s:0.8}with the same position",
+						"{C:inactive,s:0.8}as this Joker once)",
+					},
+					{
+						"When a {C:attention}Boss Blind{} is defeated,",
+						"the {C:attention}Joker{} to the right",
+						"gains {C:green}horsemanship",
+						"{C:inactive,s:0.8}(Forever. Multiple instances",
+						"{C:inactive,s:0.8}trigger separately)",
 					}
 				},
 			},
@@ -3123,7 +3141,31 @@ return {
 					"card in {C:spectral}exile{}",
 					"{C:inactive}(Currently {X:mult,C:white}X#1#{C:inactive} Mult)"
 				}
-			}
+			},
+			mf_dilu_horse = {
+				name = "whatever",
+				text = {
+					"{C:green}Horsemanship",
+					"{C:inactive,s:0.8}(Retrigger the playing card",
+					"{C:inactive,s:0.8}with the same position",
+					"{C:inactive,s:0.8}as this Joker once)",
+				}
+			},
+			mf_dilu_horse_second = {
+				name = "whatever",
+				text = {
+					"{C:green}Horsemanship",
+				}
+			},
+			mf_dilu_horse_bigstack = {
+				name = "whatever",
+				text = {
+					"{C:green}Horsemanship{} (x#1#)",
+					"{C:inactive,s:0.8}(Retrigger the playing card",
+					"{C:inactive,s:0.8}with the same position",
+					"{C:inactive,s:0.8}as this Joker #1# times)",
+				}
+			},
 		},
 		Voucher = {
 			v_mf_paintroller = {
@@ -3322,6 +3364,7 @@ return {
 			k_page_turn = "Page turn",
       		k_nemesis_pack = "Rewards",
 			k_intervention_pact = "Saved by the Intervention Pact",
+			k_horsed_ex = "Horsed!",
 
 			k_timetravel_ex = "Time travel!",
 			k_plus_ankh = "+Ankh",
