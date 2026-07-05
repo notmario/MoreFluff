@@ -2270,7 +2270,7 @@ return {
 					},
 					{
 						"{X:mult,C:white}X#2#{} Mult for every",
-						"vowel in this {C:attention}Joker{}'s name",
+						"vowel in stickered word",
 						"{C:inactive}(Currently {X:mult,C:white}X#3#{C:inactive} Mult)",
 						"{C:inactive,s:0.8}(The vowels are A, E, I, O, U, and Y.)",
 					}

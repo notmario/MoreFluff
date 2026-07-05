@@ -4,7 +4,7 @@ SMODS.Joker({
 	config = {
         extra = {
             name_sticker = "______",
-			vowel_xmult = 0.25,
+			vowel_xmult = 0.5,
         }
     },
 	atlas = "mf_crossmod",
@@ -18,7 +18,7 @@ SMODS.Joker({
 	perishable_compat = true,
 	attributes = { "xmult", },
 	loc_vars = function(self, info_queue, card)
-		local vowel_count = 2
+		local vowel_count = 0
 		for i = 1, #card.ability.extra.name_sticker do
 			local c = string.lower(card.ability.extra.name_sticker:sub(i,i))
 			if c == "a" or c == "e" or c == "i" or c == "o" or c == "u" or c == "y" then
@@ -41,7 +41,7 @@ SMODS.Joker({
 			}
 		end
 		if context.joker_main then
-			local vowel_count = 2
+			local vowel_count = 0
 			for i = 1, #card.ability.extra.name_sticker do
 				local c = string.lower(card.ability.extra.name_sticker:sub(i,i))
 				if c == "a" or c == "e" or c == "i" or c == "o" or c == "u" or c == "y" then
