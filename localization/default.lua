@@ -773,6 +773,20 @@ return {
 					"{C:inactive}(Turns page at end of round...)",
 				},
 			},
+			j_mf_joker_with_sets_mechanic = {
+				name = "Joker With Set's Mechanic",
+				text = {
+					{
+						"{C:mult}+#1#{} Mult"
+					},
+					{
+						"{V:1}Poisonous #2#{}",
+						"{C:inactive,s:0.8}(After this Joker triggers,",
+						"{C:inactive,s:0.8}add #2#% of the Blind's size",
+						"{C:inactive,s:0.8}to your score)",
+					}
+				},
+			},
 			j_mf_nemesis = {
 				name = "Nemesis",
 				text = {
