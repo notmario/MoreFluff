@@ -463,7 +463,7 @@ FLUFF.cascade_acceleration = 1
 
 FLUFF.cascade_queue = {}
 function FLUFF.cascade(source, cost, times_left, funcs)
-	if not G.shop_jokers then
+	if not (G.shop_jokers and G.shop_jokers.cards) then
 		if source then
 			card_eval_status_text(source, "extra", nil, nil, nil, {
 				message = localize("k_no_shop"),
@@ -474,7 +474,7 @@ function FLUFF.cascade(source, cost, times_left, funcs)
 		return nil
 	end
 	local actually_cascade = #FLUFF.cascade_queue == 0
-	for _ = 1, times_left do
+	for _ = 1, (times_left or 1) do
 		FLUFF.cascade_queue[#FLUFF.cascade_queue + 1] = { source = source, cost = cost, funcs = (funcs or {}), times_triggered = 0 }
 	end
 	if actually_cascade then

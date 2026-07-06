@@ -156,6 +156,7 @@ FLUFF.joker_pool = {
 	"three_steps_ahead",
 
 	"whiplash",
+	"zhulodok",
 
 	-- rot legendary
 	"rot_canio",

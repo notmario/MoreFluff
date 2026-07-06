@@ -1137,8 +1137,7 @@ return {
 				text = {
 					{
 						"The {C:attention}Joker{} to the right",
-						"{C:red}doesn't trigger",
-						"{C:inactive,s:0.8}(On sell effects still trigger)"
+						"{C:red}doesn't trigger"
 					},
 					{
 						"{C:chips}+#1#{} Chips if there is",
@@ -1538,6 +1537,16 @@ return {
 					"When a hand is played, add",
 					"the first {C:attention}#1#{} cards held in",
 					"hand to the scored hand",
+				}
+			},
+			j_mf_zhulodok = {
+				name = "Zhulodok, Void Gorger",
+				text = {
+					"The first time a non-{C:common}Common{} {C:attention}Joker{} is",
+					"sold each {C:attention}Shop{}, {C:spectral}cascade $10{} twice",
+					"{C:inactive,s:0.8}(Reroll the Shop for free until the",
+					"{C:inactive,s:0.8}first item costs less than $10.",
+					"{C:inactive,s:0.8}Then buy it for free and repeat.)",
 				}
 			},
 
