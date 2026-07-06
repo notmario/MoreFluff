@@ -3363,6 +3363,8 @@ return {
       		k_nemesis_pack = "Rewards",
 			k_intervention_pact = "Saved by the Intervention Pact",
 			k_horsed_ex = "Horsed!",
+			k_failed_to_find = "Failed to find",
+			k_no_shop = "No shop",
 
 			k_timetravel_ex = "Time travel!",
 			k_plus_ankh = "+Ankh",

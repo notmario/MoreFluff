@@ -17,7 +17,7 @@ SMODS.Joker({
 	end,
 	calculate = function(self, card, context)
         if context.starting_shop then
-            FLUFF.cascade(4, 1)
+            FLUFF.cascade(card, 4, 1)
 			return nil, true
         end
 	end,

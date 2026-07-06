@@ -459,11 +459,23 @@ G.FUNCS.check_for_buy_space = function(card)
 	return gfcfbs(card)
 end
 
+FLUFF.cascade_acceleration = 1
+
 FLUFF.cascade_queue = {}
-function FLUFF.cascade(cost, times_left, funcs)
+function FLUFF.cascade(source, cost, times_left, funcs)
+	if not G.shop_jokers then
+		if source then
+			card_eval_status_text(source, "extra", nil, nil, nil, {
+				message = localize("k_no_shop"),
+				colour = G.C.RED,
+				card = source,
+			})
+		end
+		return nil
+	end
 	local actually_cascade = #FLUFF.cascade_queue == 0
 	for _ = 1, times_left do
-		FLUFF.cascade_queue[#FLUFF.cascade_queue + 1] = { cost, funcs }
+		FLUFF.cascade_queue[#FLUFF.cascade_queue + 1] = { source = source, cost = cost, funcs = (funcs or {}), times_triggered = 0 }
 	end
 	if actually_cascade then
 		FLUFF.cascade_real()
@@ -471,22 +483,28 @@ function FLUFF.cascade(cost, times_left, funcs)
 end
 
 function FLUFF.cascade_real(times_triggered)
-	if #FLUFF.cascade_queue == 0 then return nil end
+	if #FLUFF.cascade_queue == 0 then
+		FLUFF.cascade_acceleration = 1
+		return nil
+	end
 	times_triggered = times_triggered or 0
+	FLUFF.cascade_acceleration = 1.04 ^ times_triggered
 	G.E_MANAGER:add_event(Event({
         trigger = "after",
-        delay = 1.5 / (times_triggered + 10),
+        delay = 0.15,
         func = function()
             G.GAME.current_round.free_rerolls = math.max(G.GAME.current_round.free_rerolls + 1, 0)
             calculate_reroll_cost(true)
             G.FUNCS.reroll_shop()
             G.E_MANAGER:add_event(Event({
                 trigger = "after",
-                delay = 1.5 / (times_triggered + 10),
+                delay = 0.15,
                 func = function()
 					local next_cascade = FLUFF.cascade_queue[1]
-					local cost = next_cascade[1]
-                    if G.shop_jokers.cards[1].cost < cost or cost == 0 and (not next_cascade[2].filter or next_cascade[2].filter(G.shop_jokers.cards[1])) then
+					if next_cascade.source then next_cascade.source:juice_up(0.3, 0.4) end
+					local cost = next_cascade.cost
+					next_cascade.times_triggered = next_cascade.times_triggered + 1
+                    if G.shop_jokers.cards[1].cost < cost or cost == 0 and (not next_cascade.funcs.filter or next_cascade.funcs.filter(G.shop_jokers.cards[1])) then
                         local c1 = G.shop_jokers.cards[1]
 
                         local doit = FLUFF.can_cascade_obtain(c1)
@@ -502,8 +520,20 @@ function FLUFF.cascade_real(times_triggered)
 
 							-- remove start of cascade queue
 							table.remove(FLUFF.cascade_queue, 1)
+							times_triggered = 0
                         end
-                    end
+                    elseif next_cascade.times_triggered >= 100 then
+						-- failed to find
+						table.remove(FLUFF.cascade_queue, 1)
+						if next_cascade.source then
+							card_eval_status_text(next_cascade.source, "extra", nil, nil, nil, {
+								message = localize("k_failed_to_find"),
+								colour = G.C.RED,
+								card = next_cascade.source,
+							})
+						end
+						times_triggered = 0
+					end
 					FLUFF.cascade_real(times_triggered + 1)
                     return true
                 end,
@@ -511,6 +541,15 @@ function FLUFF.cascade_real(times_triggered)
             return true
         end,
     }))
+end
+
+local lu = love.update
+function love.update(dt, ...)
+	local acc = 1
+	if FLUFF and FLUFF.cascade_acceleration then
+		acc = FLUFF.cascade_acceleration
+	end
+	lu(dt * acc, ...)
 end
 
 local cc = copy_card
