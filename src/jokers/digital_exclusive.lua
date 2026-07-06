@@ -46,7 +46,7 @@ function FLUFF.add_extra_multiboxes(_c, info_queue, card, desc_nodes, specific_v
                 {
 					localized_text = desc_text,
 					loc_vars = function(self, card, center)
-						return { vars = { 1 + #G.mf_exile.cards * 0.5 } }
+						return { vars = { 1 + #((G.mf_exile or {}).cards or {}) * 0.5 } }
 					end
 				}
             })(_c, info_queue, card, desc_nodes, specific_vars, full_UI_table)
