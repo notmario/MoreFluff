@@ -10,7 +10,7 @@ SMODS.Joker({
 	cost = 7,
 	unlocked = true,
 	discovered = true,
-	blueprint_compat = true,
+	blueprint_compat = false,
 	eternal_compat = true,
 	perishable_compat = false,
 	attributes = { "joker", "score", },
