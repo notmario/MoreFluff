@@ -142,20 +142,20 @@ FLUFF.joker_pool = {
 	"saturnburger",
 	"shopping_spree",
 	"violent_outburst",
-	"aheartofcold",
 
+	"aheartofcold",
 	"digital_exclusive",
 	"apex_devastator",
 	"crimsonglassdecomposition",
 	"emeritus_eventuality",
-	"mathemagics",
 
+	"mathemagics",
 	"overlord",
 	"riding_the_dilu_horse",
 	"space_elevator",
 	"suspension",
-	"three_steps_ahead",
 
+	"three_steps_ahead",
 	"whiplash",
 	"zhulodok",
 
