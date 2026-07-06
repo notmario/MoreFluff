@@ -1199,9 +1199,8 @@ return {
 						"That {C:attention}Joker{} {C:spectral,E:1}perpetually{} gains",
 					},
 					{
-						"{C:inactive,s:0.8}\"Whenever you discard a Jack, copy it.",
-						"{C:inactive,s:0.8}Exile the copy until the end of Ante.",
-						"{C:inactive,s:0.8}This Joker gives {X:inactive,C:white,s:0.8}X0.25{C:inactive,s:0.8} Mult for each",
+						"{C:inactive,s:0.8}\"Whenever you discard a Jack, exile it.",
+						"{C:inactive,s:0.8}This Joker gives {X:inactive,C:white,s:0.8}X0.5{C:inactive,s:0.8} Mult for each",
 						"{C:inactive,s:0.8}card in exile\"",
 					}
 				},
@@ -3135,9 +3134,8 @@ return {
 			mf_alchemy_hit_the_road_perpetual = {
 				name = "whatever",
 				text = {
-					"Whenever you discard a {C:attention}Jack{}, copy it.",
-					"{C:spectral}Exile{} the copy until the end of {C:attention}Ante{}.",
-					"This {C:attention}Joker{} gives {X:mult,C:white}X0.25{} Mult for each",
+					"Whenever you discard a {C:attention}Jack{}, {C:spectral}exile{} it.",
+					"This {C:attention}Joker{} gives {X:mult,C:white}X0.5{} Mult for each",
 					"card in {C:spectral}exile{}",
 					"{C:inactive}(Currently {X:mult,C:white}X#1#{C:inactive} Mult)"
 				}

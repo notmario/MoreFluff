@@ -364,6 +364,8 @@ FLUFF.draw_to_exile = function(temp, percent, delay, func)
 end
 
 FLUFF.exile_card = function(card, percent, temp, func)
+	if card.mf_being_exiled then return nil end
+	card.mf_being_exiled = true
 	if temp == true then temp = "mf_unexile_eor" end
 	if temp == "ante" then temp = "mf_unexile_eoa" end
 	G.E_MANAGER:add_event(Event({
@@ -380,6 +382,7 @@ FLUFF.exile_card = function(card, percent, temp, func)
 			-- card.T.w = card.T.w * FLUFF.exile_scale
 			-- card.T.h = card.T.h * FLUFF.exile_scale
 			card.T.scale = card.T.scale * FLUFF.exile_scale
+			mf_being_exiled = false
 			if temp then
 				card.ability[temp] = true
 			end

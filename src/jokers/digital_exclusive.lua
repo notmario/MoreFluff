@@ -46,7 +46,7 @@ function FLUFF.add_extra_multiboxes(_c, info_queue, card, desc_nodes, specific_v
                 {
 					localized_text = desc_text,
 					loc_vars = function(self, card, center)
-						return { vars = { 1 + #G.mf_exile.cards * 0.25 } }
+						return { vars = { 1 + #G.mf_exile.cards * 0.5 } }
 					end
 				}
             })(_c, info_queue, card, desc_nodes, specific_vars, full_UI_table)
@@ -61,21 +61,18 @@ function eval_card(card, context, ...)
 	if card.ability.mf_alchemy_hit_the_road then
 		if context.discard and context.other_card:get_id() == 11 then
 			if not ret.jokers then ret.jokers = {} end
-			for i = 1, card.ability.mf_alchemy_hit_the_road do
-				G.E_MANAGER:add_event(Event({
-					func = function()
-						local copied_card = SMODS.copy_card(context.other_card)
-						FLUFF.exile_card(copied_card, nil, "ante")
-						return true
-					end,
-				}))
-			end
+			G.E_MANAGER:add_event(Event({
+				func = function()
+					FLUFF.exile_card(context.other_card, nil, "ante")
+					return true
+				end,
+			}))
 		end
 
 		if context.joker_main then
 			if not ret.jokers then ret.jokers = {} end
 			for i = 1, card.ability.mf_alchemy_hit_the_road do
-				ret.jokers = SMODS.merge_effects({ ret.jokers, { xmult = 1 + #G.mf_exile.cards * 0.25 }})
+				ret.jokers = SMODS.merge_effects({ ret.jokers, { xmult = 1 + #G.mf_exile.cards * 0.5 }})
 			end
 		end
 	end
