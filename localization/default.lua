@@ -1489,6 +1489,22 @@ return {
 					}
 				},
 			},
+			j_mf_phyrexian_banner = {
+				name = "Phyrexian Battle Standard",
+				text = {
+					{
+						"{V:1}Poisonous #1#{}",
+						"{C:inactive,s:0.8}(After this Joker triggers,",
+						"{C:inactive,s:0.8}add #1#% of the Blind's size",
+						"{C:inactive,s:0.8}to your score)",
+					},
+					{
+						"Other {C:attention}Jokers{} have",
+						"{V:1}poisonous #1#{}",
+						"{C:inactive,s:0.8}(Multiple instances trigger separately)",
+					}
+				},
+			},
 			j_mf_riding_the_dilu_horse = {
 				name = "Riding the Dilu Horse",
 				text = {
@@ -3195,10 +3211,22 @@ return {
 			mf_dilu_horse_bigstack = {
 				name = "whatever",
 				text = {
-					"{C:green}Horsemanship{} (x#1#)",
+					"{C:green}Horsemanship{} {C:inactive}(x#1#)",
 					"{C:inactive,s:0.8}(Retrigger the playing card",
 					"{C:inactive,s:0.8}with the same position",
 					"{C:inactive,s:0.8}as this Joker #1# times)",
+				}
+			},
+			mf_phyrexian_poison = {
+				name = "whatever",
+				text = {
+					"{V:1}Poisonous #1#",
+				}
+			},
+			mf_phyrexian_poison_bigstack = {
+				name = "whatever",
+				text = {
+					"{V:1}Poisonous #1#{} {C:inactive}(x#2#)",
 				}
 			},
 		},

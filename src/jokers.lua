@@ -152,9 +152,10 @@ FLUFF.joker_pool = {
 	"emeritus_eventuality",
 	"mathemagics",
 	"overlord",
+	"phyrexian_banner",
 	"riding_the_dilu_horse",
-	"space_elevator",
 
+	"space_elevator",
 	"suspension",
 	"three_steps_ahead",
 	"whiplash",
