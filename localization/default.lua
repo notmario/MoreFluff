@@ -813,6 +813,19 @@ return {
 					"{C:inactive,s:0.8}\"on discard\" effects)",
 				},
 			},
+			j_mf_stifle = {
+				name = "Stifle",
+				text = {
+					{
+						"The {C:attention}Joker{} to the right",
+						"{C:red}doesn't trigger"
+					},
+					{
+						"{C:chips}+#1#{} Chips if there is",
+						"a {C:attention}Joker{} to the right"
+					},
+				},
+			},
 			j_mf_gemalert = {
 				name = "Gem Alert",
 				text = {
@@ -838,6 +851,20 @@ return {
 						"When you sell a {C:attention}Joker{},",
 						"{C:red}self destructs"
 					}
+				},
+			},
+			j_mf_cosmogoyf = {
+				name = "Cosmogoyf",
+				text = {
+					{
+						"At the end of each Shop",
+						"{C:spectral}exile{} all cards left there",
+						"{C:inactive,s:0.8}(They won't reappear.)"
+					},
+					{
+						"{C:mult}+#1#{} Mult for each card in {C:spectral}exile{}",
+						"{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)"
+					},
 				},
 			},
 			j_mf_crypticmod = {
@@ -1129,19 +1156,6 @@ return {
 					{
 						"Skip {C:attention}two{} blinds {C:inactive}(#3#/2) {f:6}—{} The",
 						"shop has an {C:attention}extra slot"
-					},
-				},
-			},
-			j_mf_stifle = {
-				name = "Stifle",
-				text = {
-					{
-						"The {C:attention}Joker{} to the right",
-						"{C:red}doesn't trigger"
-					},
-					{
-						"{C:chips}+#1#{} Chips if there is",
-						"a {C:attention}Joker{} to the right"
 					},
 				},
 			},

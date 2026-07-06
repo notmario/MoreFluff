@@ -111,25 +111,25 @@ FLUFF.joker_pool = {
 	"stasis_chamber",
 	"applefriends",
 	"bonussheet",
-	"crypticmod",
+	"cosmogoyf",
 
+	"crypticmod",
 	"diabolical",
 	"emeritus_decay",
 	"emeritus_lore",
 	"emeritus_rebirth",
-	"emeritus_variety",
 
+	"emeritus_variety",
 	"gemalert",
 	"gentlemelon",
 	"ghostly_reflection",
 	"hold_music",
-	"icecube",
 
+	"icecube",
 	"junkyard",
 	"jokerreacts",
 	"knuckleblaster",
 	"ransom_note",
-	"refrigerator",
 
 	"intervention_pact",
 	"pact_of_negation",
@@ -137,6 +137,7 @@ FLUFF.joker_pool = {
 	"slaughter_pact",
 	"summoners_pact",
 
+	"refrigerator",
 	"retrigger_joker",
 	"saturnburger",
 	"shopping_spree",
