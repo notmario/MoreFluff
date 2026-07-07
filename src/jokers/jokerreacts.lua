@@ -53,7 +53,7 @@ SMODS.Joker({
 local cae = CardArea.emplace
 function CardArea:emplace(card, location, stay_flipped, ...)
     cae(self, card, location, stay_flipped, ...)
-    if card.mf_force_face_down and self == G.shop_jokers then
+    if card.mf_force_face_down and (not next(SMODS.find_card("j_mf_sword_of_steven_and_todd"))) and self == G.shop_jokers then
         card.facing = 'back'
         card.sprite_facing = 'back'
         card.flipping = 'f2b'

@@ -157,8 +157,10 @@ FLUFF.joker_pool = {
 
 	"space_elevator",
 	"suspension",
+	"sword_of_steven_and_todd",
 	"three_steps_ahead",
 	"whiplash",
+
 	"zhulodok",
 
 	-- rot legendary

@@ -1551,6 +1551,20 @@ return {
 					"{C:inactive,s:0.8}at the start of the next Blind)"
 				}
 			},
+			j_mf_sword_of_steven_and_todd = {
+				name = "Sword of Steven and Todd",
+				text = {
+					{
+						"{C:attention}Jokers{} cannot be debuffed",
+						"or flipped face down"
+					},
+					{
+						"{C:mult}+#1#{} Mult for each {C:attention}even{} card and",
+						"{C:chips}+#2#{} Chips for each {C:attention}odd{} card",
+						"{C:attention}held in hand{}"
+					},
+				},
+			},
 			j_mf_three_steps_ahead = {
 				name = "Three Steps Ahead",
 				text = {

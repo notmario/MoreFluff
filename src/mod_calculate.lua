@@ -286,3 +286,10 @@ FLUFF.calculate = function(self, context)
 
 	return SMODS.merge_effects(res)
 end
+
+-- this is close enough :p
+FLUFF.set_debuff = function(card)
+	if next(SMODS.find_card("j_mf_sword_of_steven_and_todd")) then
+		return "prevent_debuff"
+	end
+end
