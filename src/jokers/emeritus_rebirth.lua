@@ -9,7 +9,7 @@ SMODS.Joker {
 	},
 	prepared_card = "c_death",
 	pos = { x = 6, y = 12 },
-	rarity = 2,
+	rarity = 3,
 	cost = 8,
 	unlocked = true,
 	discovered = true,

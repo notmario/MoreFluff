@@ -119,17 +119,17 @@ FLUFF.joker_pool = {
 	"emeritus_decay",
 	"emeritus_lore",
 
-	"emeritus_rebirth",
 	"emeritus_variety",
 	"gemalert",
 	"gentlemelon",
 	"ghostly_reflection",
-
 	"hold_music",
+
 	"icecube",
 	"junkyard",
 	"jokerreacts",
 	"knuckleblaster",
+	"ransom_note",
 
 	"intervention_pact",
 	"pact_of_negation",
@@ -137,20 +137,20 @@ FLUFF.joker_pool = {
 	"slaughter_pact",
 	"summoners_pact",
 
-	"ransom_note",
 	"refrigerator",
 	"retrigger_joker",
 	"saturnburger",
 	"shopping_spree",
-	
 	"violent_outburst",
+	
 	"aheartofcold",
 	"digital_exclusive",
 	"apex_devastator",
 	"baseball_stream",
-
 	"crimsonglassdecomposition",
+
 	"emeritus_eventuality",
+	"emeritus_rebirth",
 	"mathemagics",
 	"overlord",
 	"phyrexian_banner",
