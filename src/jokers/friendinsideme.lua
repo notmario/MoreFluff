@@ -27,12 +27,12 @@ SMODS.Joker({
 		if context.selling_card and card.ability.active then
 			if
 				context.card.ability.set == "Joker"
-				and (context.card.config.center.rarity == 1 or context.card.config.center.rarity == 2)
+				and (context.card:is_rarity("Common") or context.card:is_rarity("Uncommon"))
 			then
 				card.ability.active = false
 
 				rarity = "Uncommon"
-				if context.card.config.center.rarity == 2 then
+				if context.card:is_rarity("Uncommon") then
 					rarity = "Rare"
 				end
 				SMODS.add_card({

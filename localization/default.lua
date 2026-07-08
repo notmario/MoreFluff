@@ -1250,6 +1250,19 @@ return {
 					}
 				},
 			},
+			j_mf_baseball_stream = {
+				name = "The Baseball Stream",
+				text = {
+					{
+						"{C:uncommon}Uncommon{} {C:attention}Jokers",
+						"give {X:mult,C:white} X#1# {} Mult",
+					},
+					{
+						"Other {C:rare}Rare{} {C:attention}Jokers{} have",
+						"{C:inactive,s:0.8}\"Uncommon{C:inactive,s:0.8} Jokers give {X:inactive,C:white,s:0.8} X1.25 {C:inactive,s:0.8} Mult\"",
+					}
+				},
+			},
 			-- Disintegration Loop
 			j_mf_fraud_fakeout_1 = {
 				name = {
@@ -3241,6 +3254,20 @@ return {
 				name = "whatever",
 				text = {
 					"{V:1}Poisonous #1#{} {C:inactive}(x#2#)",
+				}
+			},
+			mf_baseball_stream = {
+				name = "whatever",
+				text = {
+					"{C:uncommon}Uncommon{} {C:attention}Jokers",
+					"give {X:mult,C:white} X#1# {} Mult",
+				}
+			},
+			mf_baseball_stream_bigstack = {
+				name = "whatever",
+				text = {
+					"{C:uncommon}Uncommon{} {C:attention}Jokers",
+					"give {X:mult,C:white} X#1# {} Mult {C:inactive}(x#2#)",
 				}
 			},
 		},

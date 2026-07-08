@@ -22,7 +22,7 @@ SMODS.Joker({
 	calculate = function(self, card, context)
 		if
 			context.other_joker
-			and context.other_joker.config.center.rarity == 1
+			and context.other_joker:is_rarity("Common")
 			and context.other_joker.ability.set == "Joker"
 		then
 			G.E_MANAGER:add_event(Event({

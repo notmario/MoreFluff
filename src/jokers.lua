@@ -147,20 +147,21 @@ FLUFF.joker_pool = {
 	"aheartofcold",
 	"digital_exclusive",
 	"apex_devastator",
-	"crimsonglassdecomposition",
+	"baseball_stream",
 
+	"crimsonglassdecomposition",
 	"emeritus_eventuality",
 	"mathemagics",
 	"overlord",
 	"phyrexian_banner",
-	"riding_the_dilu_horse",
 
+	"riding_the_dilu_horse",
 	"space_elevator",
 	"suspension",
 	"sword_of_steven_and_todd",
 	"three_steps_ahead",
-	"whiplash",
 
+	"whiplash",
 	"zhulodok",
 
 	-- rot legendary
