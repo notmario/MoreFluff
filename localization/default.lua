@@ -1263,6 +1263,26 @@ return {
 					}
 				},
 			},
+			j_mf_bridge_from_below = {
+				name = "Bridge from Below",
+				text = {
+					{
+						"If you would sell this",
+						"{C:attention}Joker{}, {C:spectral}exile{} it instead",
+						"{C:inactive,s:0.8}(You don't get the money and",
+						"{C:inactive,s:0.8}\"on sell\" effects don't trigger)",
+					},
+					{
+						"When you {C:red}discard{} a hand",
+						"while this is in {C:spectral}exile{},",
+						"create a {C:spectral}Spectral{} card",
+						"if it was a {C:attention}Straight{},",
+						"otherwise this",
+						"{C:red}self destructs",
+						"{C:inactive}(Must have room)",
+					},
+				},
+			},
 			-- Disintegration Loop
 			j_mf_fraud_fakeout_1 = {
 				name = {

@@ -113,23 +113,23 @@ FLUFF.joker_pool = {
 	"applefriends",
 	"bonussheet",
 
+	"bridge_from_below",
 	"cosmogoyf",
 	"crypticmod",
 	"diabolical",
 	"emeritus_decay",
-	"emeritus_lore",
 
+	"emeritus_lore",
 	"emeritus_variety",
 	"gemalert",
 	"gentlemelon",
 	"ghostly_reflection",
-	"hold_music",
 
+	"hold_music",
 	"icecube",
 	"junkyard",
 	"jokerreacts",
 	"knuckleblaster",
-	"ransom_note",
 
 	"intervention_pact",
 	"pact_of_negation",
@@ -137,30 +137,31 @@ FLUFF.joker_pool = {
 	"slaughter_pact",
 	"summoners_pact",
 
+	"ransom_note",
 	"refrigerator",
 	"retrigger_joker",
 	"saturnburger",
 	"shopping_spree",
-	"violent_outburst",
 	
+	"violent_outburst",
 	"aheartofcold",
 	"digital_exclusive",
 	"apex_devastator",
 	"baseball_stream",
-	"crimsonglassdecomposition",
 
+	"crimsonglassdecomposition",
 	"emeritus_eventuality",
 	"emeritus_rebirth",
 	"mathemagics",
 	"overlord",
-	"phyrexian_banner",
 
+	"phyrexian_banner",
 	"riding_the_dilu_horse",
 	"space_elevator",
 	"suspension",
 	"sword_of_steven_and_todd",
-	"three_steps_ahead",
 
+	"three_steps_ahead",
 	"whiplash",
 	"zhulodok",
 

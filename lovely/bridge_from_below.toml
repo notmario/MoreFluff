@@ -1,0 +1,16 @@
+[manifest]
+version = "1.0.0"
+dump_lua = true
+priority = -1
+
+[[patches]]
+[patches.pattern]
+target = 'functions/state_events.lua'
+match_indent = true
+pattern = '''-- TARGET: pre_discard'''
+position = 'after'
+payload = '''
+FLUFF.joker_areas_is_exile = true
+SMODS.calculate_context({mf_bridge_from_below_pre_discard = true, full_hand = G.hand.highlighted, hook = hook})
+FLUFF.joker_areas_is_exile = nil
+'''
