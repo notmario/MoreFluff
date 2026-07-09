@@ -31,7 +31,6 @@ SMODS.Joker {
 					real_count = real_count - 1
 				end
 			end
-			print(real_count)
 			if real_count >= card.ability.extra.cards then
 				G.E_MANAGER:add_event(Event({
 					func = function()
