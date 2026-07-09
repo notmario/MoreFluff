@@ -11,7 +11,6 @@ assert(SMODS.load_file("src/attributes.lua"))()
 -- load first so we can hook it
 assert(SMODS.load_file("src/prepared.lua"))()
 assert(SMODS.load_file("src/misc.lua"))()
-assert(SMODS.load_file("src/sliver_abilities.lua"))() -- We do this one here so they can be ordered correctly in game
 
 assert(SMODS.load_file("src/jokers.lua"))()
 assert(SMODS.load_file("src/colours.lua"))()
