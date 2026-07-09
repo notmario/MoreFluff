@@ -9,3 +9,7 @@ SMODS.Attribute {
 SMODS.Attribute {
     key = "exile",
 }
+
+SMODS.Attribute {
+    key = "sliver",
+}

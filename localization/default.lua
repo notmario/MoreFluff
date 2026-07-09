@@ -648,8 +648,33 @@ return {
 					"{C:inactive}(Currently {X:red,C:white} X#1# {C:inactive})",
 				},
 			},
+			-- new update slivers
+			j_mf_muscle_sliver = {
+				name = "Muscle Sliver",
+				text = {
+					"{C:spectral}Sliver{} {C:attention}Jokers{} are {X:spectral,C:white}X#1#{}",
+					"more likely to appear",
+					"and have {C:inactive,s:0.8}\"+#2# Mult\""
+				},
+			},
+			j_mf_sinew_sliver = {
+				name = "Sinew Sliver",
+				text = {
+					"{C:spectral}Sliver{} {C:attention}Jokers{} are {X:spectral,C:white}X#1#{}",
+					"more likely to appear",
+					"and have {C:inactive,s:0.8}\"+#2# Chips\""
+				},
+			},
+			j_mf_might_sliver = {
+				name = "Might Sliver",
+				text = {
+					"{C:spectral}Sliver{} {C:attention}Jokers{} are {X:spectral,C:white}X#1#{}",
+					"more likely to appear",
+					"and have {C:inactive,s:0.8}\"{X:inactive,C:white,s:0.8}X#2#{C:inactive,s:0.8} Mult\""
+				},
+			},
 
-			-- new update
+			-- other new update
 			j_mf_lonewolf = {
 				name = "tempname001",
 				text = {
@@ -3288,6 +3313,24 @@ return {
 				text = {
 					"{C:uncommon}Uncommon{} {C:attention}Jokers",
 					"give {X:mult,C:white} X#1# {} Mult {C:inactive}(x#2#)",
+				}
+			},
+			mf_muscle_sliver = {
+				name = "whatever",
+				text = {
+					"{C:mult}+#1#{} Mult"
+				}
+			},
+			mf_sinew_sliver = {
+				name = "whatever",
+				text = {
+					"{C:chips}+#1#{} Chips"
+				}
+			},
+			mf_might_sliver = {
+				name = "whatever",
+				text = {
+					"{X:mult,C:white}X#1#{} Mult"
 				}
 			},
 		},
