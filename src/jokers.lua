@@ -123,15 +123,17 @@ FLUFF.joker_pool = {
 	"muscle_sliver",
 	"sinew_sliver",
 	"homing_sliver",
+	"astral_sliver",
 	"fortunate_sliver",
-	"gemhide_sliver",
 
+	"gemhide_sliver",
 	"might_sliver",
 	"mindlash_sliver",
+	"plasma_sliver",
 	"sliver_jockey",
+
 	"virulent_sliver",
 	"quantum_sliver",
-
 	"the_first_sliver",
 	"fury_sliver",
 	"megantic_sliver",

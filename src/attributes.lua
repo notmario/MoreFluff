@@ -13,3 +13,7 @@ SMODS.Attribute {
 SMODS.Attribute {
     key = "sliver",
 }
+
+SMODS.Attribute {
+    key = "freaky", -- when the light fades, freaky pizza smiles
+}

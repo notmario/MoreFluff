@@ -672,6 +672,16 @@ return {
 					"more likely to appear",
 				},
 			},
+			j_mf_astral_sliver = {
+				name = "Astral Sliver",
+				text = {
+					"{C:spectral}Sliver{} {C:attention}Jokers{} are {X:spectral,C:white}X#1#{}",
+					"more likely to appear",
+					"and have {C:inactive,s:0.8}\"1 in #2# chance",
+					"{C:inactive,s:0.8}to upgrade level of",
+					"{C:inactive,s:0.8}played poker hand\"",
+				},
+			},
 			j_mf_fortunate_sliver = {
 				name = "Fortunate Sliver",
 				text = {
@@ -705,6 +715,15 @@ return {
 					"more likely to appear",
 					"and have {C:inactive,s:0.8}\"Sell this card to",
                     "{C:inactive,s:0.8}disable the current Boss Blind\"",
+				},
+			},
+			j_mf_plasma_sliver = {
+				name = "Plasma Sliver",
+				text = {
+					"{C:spectral}Sliver{} {C:attention}Jokers{} are {X:spectral,C:white}X#1#{}",
+					"more likely to appear",
+					"and have {C:inactive,s:0.8}\"Swaps #2#% of",
+					"{C:inactive,s:0.8}Chips and Mult\"",
 				},
 			},
 			j_mf_sliver_jockey = {
@@ -3498,6 +3517,21 @@ return {
 					"create a random consumeable",
 					"when a {C:attention}Blind{} is selected",
 				}
+			},
+			mf_astral_sliver = {
+				name = "whatever",
+				text = {
+					"{C:green}#1# in #2#{} chance to",
+                    "upgrade level of",
+                    "played {C:attention}poker hand{}",
+				}
+			},
+			mf_plasma_sliver = {
+				name = "whatever",
+				text = {
+					"Swaps {X:purple,C:white}#1#%{} of",
+					"{C:chips}Chips{} and {C:mult}Mult{}"
+				}
 			}
 		},
 		Voucher = {
@@ -3701,6 +3735,7 @@ return {
 			k_failed_to_find = "Failed to find",
 			k_no_shop = "No shop",
 			k_plus_consumable = "+1 Consumable",
+			k_balanced_qu = "Balanced?",
 
 			k_timetravel_ex = "Time travel!",
 			k_plus_ankh = "+Ankh",
