@@ -260,6 +260,7 @@ FLUFF.hidden_joker_pool = {
 	"stormscale",
 	"steamflogger_boss",
 	"marketable_plushie",
+	"freaky_pizza",
 
 	"old_rot_triboulet",
 	"old_rot_chicot",

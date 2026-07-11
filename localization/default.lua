@@ -2287,6 +2287,14 @@ return {
 					"{C:inactive,s:0.8}cards to score)",
 				},
 			},
+			j_mf_freaky_pizza = {
+				name = "Freaky Pizza",
+				text = {
+					"{X:mf_eemult,C:white}Xlog_#1#(Chips){} Chips",
+					"{C:mf_eemult}+#2#{} Freakiness",
+					"at end of round"
+				},
+			},
 
 			-- lettergem
 			j_mf_lettergem_a = {
@@ -3717,6 +3725,7 @@ return {
 			a_minus_dollars = { "-$#1#" },
 			a_searched = { "Found #1#" },
 			a_xprob_minus = { "-X#1#" },
+			a_freak = { "+#1# Freak" },
 		},
 	},
 }
