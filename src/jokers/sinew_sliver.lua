@@ -1,6 +1,6 @@
 SMODS.Joker {
 	key = "sinew_sliver",
-	name = "Muscle Sliver",
+	name = "Sinew Sliver",
 	atlas = "mf_jokers",
 	config = {
         extra = {
