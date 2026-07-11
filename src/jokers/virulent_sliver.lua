@@ -5,7 +5,7 @@ SMODS.Joker {
 	config = {
         extra = {
             odds = 2,
-            poisonous = 1,
+            poisonous = 0.5,
         }
     },
 	pos = { x = 5, y = 17 },
@@ -53,11 +53,7 @@ FLUFF.sliver_effects.virulent_sliver = {
     calculate = function(jokers, triggered, context, card, extra)
 		if context.post_trigger and card == context.other_card then
             if not jokers then jokers = {} end
-            jokers = SMODS.merge_effects({ jokers, {
-                score = G.GAME.blind.chips / 100 * extra.poisonous,
-                colour = darken(G.C.GREEN, 0.2),
-				sound = "mf_poison"..math.random(2),
-            }})
+            jokers = SMODS.merge_effects({ jokers, FLUFF.poisonous(context.other_ret.jokers, extra.poisonous) })
 		end
         return jokers, triggered
     end,

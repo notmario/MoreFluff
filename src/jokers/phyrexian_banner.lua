@@ -28,11 +28,7 @@ SMODS.Joker({
 	calculate = function(self, card, context)
         -- does this ever trigger ? lol :p
 		if context.post_trigger and card == context.other_card then
-			return {
-                score = G.GAME.blind.chips / 100 * card.ability.extra.poisonous,
-                colour = darken(G.C.GREEN, 0.2),
-				sound = "mf_poison"..math.random(2),
-            }
+			return FLUFF.poisonous(context.other_ret.jokers, card.ability.extra.poisonous)
 		end
 	end,
 })
@@ -88,12 +84,7 @@ function FLUFF.calculate_extra_effects(card, context, jokers, triggered, ...)
         end
         for i = 1, phyrexian_poison_count do
             if not jokers then jokers = {} end
-            jokers = SMODS.merge_effects({ jokers, {
-                score = G.GAME.blind.chips / 100,
-                colour = darken(G.C.GREEN, 0.2),
-				sound = "mf_poison"..math.random(2),
-                message_card = card,
-            }})
+			return FLUFF.poisonous(context.other_ret.jokers, 1)
         end
     end
 

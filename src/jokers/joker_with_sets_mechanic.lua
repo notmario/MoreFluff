@@ -35,12 +35,8 @@ SMODS.Joker({
 				mult = card.ability.extra.mult
 			}
 		end
-		if context.post_trigger and card == context.other_card then
-			return {
-                score = G.GAME.blind.chips / 100 * card.ability.extra.poisonous,
-                colour = darken(G.C.GREEN, 0.2),
-				sound = "mf_poison"..math.random(2),
-            }
+		if context.post_trigger and card == context.other_card and G.GAME.blind and G.GAME.blind.in_blind then
+			return FLUFF.poisonous(context.other_ret.jokers, card.ability.extra.poisonous)
 		end
 	end,
 })
