@@ -669,15 +669,20 @@ function Card:calculate_joker(context, ...)
 end
 
 function FLUFF.poisonous(other_ret, poisonous_value)
-	local new_poisons = {}
-	local ret = other_ret
-	while ret do
-		new_poisons[#new_poisons + 1] = {
-			score = G.GAME.blind.chips / 100 * poisonous_value,
-			colour = darken(G.C.GREEN, 0.2),
-			sound = "mf_poison"..math.random(2),
-		}
-		ret = ret.extra
-	end
-	return SMODS.merge_effects(new_poisons)
+	-- local new_poisons = {}
+	-- local ret = other_ret
+	-- while ret do
+	-- 	new_poisons[#new_poisons + 1] = {
+	-- 		score = G.GAME.blind.chips / 100 * poisonous_value,
+	-- 		colour = darken(G.C.GREEN, 0.2),
+	-- 		sound = "mf_poison"..math.random(2),
+	-- 	}
+	-- 	ret = ret.extra
+	-- end
+	-- return SMODS.merge_effects(new_poisons)
+	return {
+		score = G.GAME.blind.chips / 100 * poisonous_value,
+		colour = darken(G.C.GREEN, 0.2),
+		sound = "mf_poison"..math.random(2),
+	}
 end
