@@ -100,21 +100,6 @@ FLUFF.joker_pool = {
 	"triangle",
 	"marigold",
 
-	-- sliver page
-	"muscle_sliver",
-	"sinew_sliver",
-	"homing_sliver",
-	"gemhide_sliver",
-	"might_sliver",
-
-	"mindlash_sliver",
-	"sliver_jockey",
-	"virulent_sliver",
-	"the_first_sliver",
-	"fury_sliver",
-	
-	"megantic_sliver",
-
 	-- other new update jokers
 	"lonewolf",
 	"bouncer",
@@ -133,6 +118,23 @@ FLUFF.joker_pool = {
 	"crypticmod",
 	"diabolical",
 	"emeritus_decay",
+
+	-- sliver page
+	"muscle_sliver",
+	"sinew_sliver",
+	"homing_sliver",
+	"fortunate_sliver",
+	"gemhide_sliver",
+
+	"might_sliver",
+	"mindlash_sliver",
+	"sliver_jockey",
+	"virulent_sliver",
+	"quantum_sliver",
+
+	"the_first_sliver",
+	"fury_sliver",
+	"megantic_sliver",
 
 	"emeritus_lore",
 	"emeritus_variety",

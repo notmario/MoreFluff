@@ -672,6 +672,15 @@ return {
 					"more likely to appear",
 				},
 			},
+			j_mf_fortunate_sliver = {
+				name = "Fortunate Sliver",
+				text = {
+					"{C:spectral}Sliver{} {C:attention}Jokers{} are {X:spectral,C:white}X#1#{}",
+					"more likely to appear",
+					"and have {C:inactive,s:0.8}\"Reduces all listed",
+					"{C:inactive,s:0.8}denominators by #2#\"",
+				},
+			},
 			j_mf_gemhide_sliver = {
 				name = "Gemhide Sliver",
 				text = {
@@ -718,6 +727,16 @@ return {
 					"{C:inactive,s:0.8}(After that Joker triggers,",
 					"{C:inactive,s:0.8}add #2#% of the Blind's size",
 					"{C:inactive,s:0.8}to your score)",
+				},
+			},
+			j_mf_quantum_sliver = {
+				name = "Quantum Sliver",
+				text = {
+					"{C:spectral}Sliver{} {C:attention}Jokers{} are {X:spectral,C:white}X#1#{}",
+					"more likely to appear",
+					"and have {C:inactive,s:0.8}\"1 in #2# chance to",
+					"{C:inactive,s:0.8}create a random consumeable",
+					"{C:inactive,s:0.8}when a Blind is selected\"",
 				},
 			},
 			j_mf_the_first_sliver = {
@@ -3457,6 +3476,21 @@ return {
 					"{C:green}Horsemanship"
 				}
 			},
+			mf_fortunate_sliver = {
+				name = "whatever",
+				text = {
+					"Reduces all {C:attention}listed",
+					"{C:green,E:1,S:1.1}denominators{} by {C:green}#1#",
+				}
+			},
+			mf_quantum_sliver = {
+				name = "whatever",
+				text = {
+					"{C:green}#1# in #2#{} chance to",
+					"create a random consumeable",
+					"when a {C:attention}Blind{} is selected",
+				}
+			}
 		},
 		Voucher = {
 			v_mf_paintroller = {
@@ -3658,6 +3692,7 @@ return {
 			k_horsed_ex = "Horsed!",
 			k_failed_to_find = "Failed to find",
 			k_no_shop = "No shop",
+			k_plus_consumable = "+1 Consumable",
 
 			k_timetravel_ex = "Time travel!",
 			k_plus_ankh = "+Ankh",
