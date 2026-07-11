@@ -100,6 +100,13 @@ FLUFF.joker_pool = {
 	"triangle",
 	"marigold",
 
+	-- sliver page
+	"muscle_sliver",
+	"sinew_sliver",
+	"might_sliver",
+	"virulent_sliver",
+	"fury_sliver",
+
 	-- other new update jokers
 	"lonewolf",
 	"bouncer",

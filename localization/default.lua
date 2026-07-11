@@ -673,6 +673,26 @@ return {
 					"and have {C:inactive,s:0.8}\"{X:inactive,C:white,s:0.8}X#2#{C:inactive,s:0.8} Mult\""
 				},
 			},
+			j_mf_fury_sliver = {
+				name = "Fury Sliver",
+				text = {
+					"{C:spectral}Sliver{} {C:attention}Jokers{} are {X:spectral,C:white}X#1#{}",
+					"more likely to appear",
+					"and have {C:inactive,s:0.8}\"Retrigger this",
+					"{C:inactive,s:0.8}Joker one time\""
+				},
+			},
+			j_mf_virulent_sliver = {
+				name = "Virulent Sliver",
+				text = {
+					"{C:spectral}Sliver{} {C:attention}Jokers{} are {X:spectral,C:white}X#1#{}",
+					"more likely to appear",
+					"and have {V:1}Poisonous #2#{}",
+					"{C:inactive,s:0.8}(After that Joker triggers,",
+					"{C:inactive,s:0.8}add #2#% of the Blind's size",
+					"{C:inactive,s:0.8}to your score)",
+				},
+			},
 
 			-- other new update
 			j_mf_lonewolf = {
@@ -3331,6 +3351,19 @@ return {
 				name = "whatever",
 				text = {
 					"{X:mult,C:white}X#1#{} Mult"
+				}
+			},
+			mf_fury_sliver = {
+				name = "whatever",
+				text = {
+					"{C:attention}Retrigger{} this {C:attention}Joker{}",
+					"one time"
+				}
+			},
+			mf_virulent_sliver = {
+				name = "whatever",
+				text = {
+					"{V:1}Poisonous #1#{}",
 				}
 			},
 		},
