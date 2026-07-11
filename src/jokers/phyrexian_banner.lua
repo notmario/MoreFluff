@@ -76,19 +76,19 @@ function FLUFF.add_extra_multiboxes(_c, info_queue, card, desc_nodes, specific_v
     end
 end
 
-local ec = eval_card
-function eval_card(card, context, ...)
-    local ret, post = ec(card, context)
+local old_add_effects = FLUFF.calculate_extra_effects
+function FLUFF.calculate_extra_effects(card, context, jokers, triggered, ...)
+    jokers, triggered = old_add_effects(card, context, jokers, triggered, ...)
 
     if context.post_trigger and card == context.other_card and G.GAME.blind and G.GAME.blind.in_blind then
-        if not ret.jokers then ret.jokers = {} end
         local phyrexian_poison_count = #SMODS.find_card("j_mf_phyrexian_banner")
         if card.config.center_key == "j_mf_phyrexian_banner" then
             -- Hate.
             phyrexian_poison_count = phyrexian_poison_count - 1
         end
         for i = 1, phyrexian_poison_count do
-            ret.jokers = SMODS.merge_effects({ ret.jokers, {
+            if not jokers then jokers = {} end
+            jokers = SMODS.merge_effects({ jokers, {
                 score = G.GAME.blind.chips / 100,
                 colour = darken(G.C.GREEN, 0.2),
 				sound = "mf_poison"..math.random(2),
@@ -97,5 +97,5 @@ function eval_card(card, context, ...)
         end
     end
 
-    return ret, post
+    return jokers, triggered
 end

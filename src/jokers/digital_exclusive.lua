@@ -54,13 +54,12 @@ function FLUFF.add_extra_multiboxes(_c, info_queue, card, desc_nodes, specific_v
     end
 end
 
-local ec = eval_card
-function eval_card(card, context, ...)
-    local ret, post = ec(card, context)
-
+local old_add_effects = FLUFF.calculate_extra_effects
+function FLUFF.calculate_extra_effects(card, context, jokers, triggered, ...)
+    jokers, triggered = old_add_effects(card, context, jokers, triggered, ...)
 	if card.ability.mf_alchemy_hit_the_road then
 		if context.discard and context.other_card:get_id() == 11 then
-			if not ret.jokers then ret.jokers = {} end
+			-- if not jokers then jokers = {} end
 			G.E_MANAGER:add_event(Event({
 				func = function()
 					FLUFF.exile_card(context.other_card, nil, "ante")
@@ -70,12 +69,13 @@ function eval_card(card, context, ...)
 		end
 
 		if context.joker_main then
-			if not ret.jokers then ret.jokers = {} end
 			for i = 1, card.ability.mf_alchemy_hit_the_road do
-				ret.jokers = SMODS.merge_effects({ ret.jokers, { xmult = 1 + #G.mf_exile.cards * 0.5 }})
+				if not jokers then jokers = {} end
+				print("triggering")
+				jokers = SMODS.merge_effects({ jokers, { xmult = 1 + #G.mf_exile.cards * 0.5 }})
 			end
 		end
 	end
 
-    return ret, post
+    return jokers, triggered
 end

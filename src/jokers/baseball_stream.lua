@@ -66,23 +66,22 @@ function FLUFF.add_extra_multiboxes(_c, info_queue, card, desc_nodes, specific_v
     end
 end
 
-local ec = eval_card
-function eval_card(card, context, ...)
-    local ret, post = ec(card, context)
-
+local old_add_effects = FLUFF.calculate_extra_effects
+function FLUFF.calculate_extra_effects(card, context, jokers, triggered, ...)
+    jokers, triggered = old_add_effects(card, context, jokers, triggered, ...)
+    
     if context.other_joker and card:is_rarity("Rare") and context.other_joker:is_rarity("Uncommon") then
-        if not ret.jokers then ret.jokers = {} end
+        if not jokers then jokers = {} end
         local baseball_stream_count = #SMODS.find_card("j_mf_baseball_stream")
         if card.config.center_key == "j_mf_baseball_stream" then
             -- Hate.
             baseball_stream_count = baseball_stream_count - 1
         end
         for i = 1, baseball_stream_count do
-            ret.jokers = SMODS.merge_effects({ ret.jokers, {
+            jokers = SMODS.merge_effects({ jokers, {
                 xmult = 1.25
             }})
         end
     end
-
-    return ret, post
+    return jokers, triggered
 end

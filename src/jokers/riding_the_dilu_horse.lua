@@ -83,9 +83,9 @@ function FLUFF.add_extra_multiboxes(_c, info_queue, card, desc_nodes, specific_v
     end
 end
 
-local ec = eval_card
-function eval_card(card, context, ...)
-    local ret, post = ec(card, context)
+local old_add_effects = FLUFF.calculate_extra_effects
+function FLUFF.calculate_extra_effects(card, context, jokers, triggered, ...)
+    jokers, triggered = old_add_effects(card, context, jokers, triggered, ...)
 
     if context.repetition and context.cardarea == G.play and card.ability.mf_dilu_horse ~= 0 then
         local my_ind = 0
@@ -101,10 +101,10 @@ function eval_card(card, context, ...)
             end
         end
         if my_ind == their_ind then
-            if not ret.jokers then ret.jokers = {} end
-            ret.jokers = SMODS.merge_effects({ ret.jokers, { repetitions = card.ability.mf_dilu_horse }})
+            if not jokers then jokers = {} end
+            jokers = SMODS.merge_effects({ jokers, { repetitions = card.ability.mf_dilu_horse }})
         end
     end
 
-    return ret, post
+    return jokers, triggered
 end

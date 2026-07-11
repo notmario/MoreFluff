@@ -656,3 +656,8 @@ end
 function FLUFF.add_extra_multiboxes(_c, info_queue, card, desc_nodes, specific_vars, full_UI_table, ability)
 	-- hookable and shii
 end
+
+function FLUFF.calculate_extra_effects(card, context, jokers, triggered)
+	-- hookable and shii 2
+	return jokers, triggered
+end
