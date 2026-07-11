@@ -665,12 +665,60 @@ return {
 					"and have {C:inactive,s:0.8}\"+#2# Chips\""
 				},
 			},
+			j_mf_homing_sliver = {
+				name = "Homing Sliver",
+				text = {
+					"{C:spectral}Sliver{} {C:attention}Jokers{} are {X:spectral,C:white}X#1#{}",
+					"more likely to appear",
+				},
+			},
+			j_mf_gemhide_sliver = {
+				name = "Gemhide Sliver",
+				text = {
+					"{C:spectral}Sliver{} {C:attention}Jokers{} are {X:spectral,C:white}X#1#{}",
+					"more likely to appear",
+					"and have {C:inactive,s:0.8}\"Earn $#2# at",
+					"{C:inactive,s:0.8}end of round\""
+				},
+			},
 			j_mf_might_sliver = {
 				name = "Might Sliver",
 				text = {
 					"{C:spectral}Sliver{} {C:attention}Jokers{} are {X:spectral,C:white}X#1#{}",
 					"more likely to appear",
 					"and have {C:inactive,s:0.8}\"{X:inactive,C:white,s:0.8}X#2#{C:inactive,s:0.8} Mult\""
+				},
+			},
+			j_mf_mindlash_sliver = {
+				name = "Mindlash Sliver",
+				text = {
+					"{C:spectral}Sliver{} {C:attention}Jokers{} are {X:spectral,C:white}X#1#{}",
+					"more likely to appear",
+					"and have {C:inactive,s:0.8}\"Sell this card to",
+                    "{C:inactive,s:0.8}disable the current Boss Blind\"",
+				},
+			},
+			j_mf_virulent_sliver = {
+				name = "Virulent Sliver",
+				text = {
+					"{C:spectral}Sliver{} {C:attention}Jokers{} are {X:spectral,C:white}X#1#{}",
+					"more likely to appear",
+					"and have {V:1}poisonous #2#{}",
+					"{C:inactive,s:0.8}(After that Joker triggers,",
+					"{C:inactive,s:0.8}add #2#% of the Blind's size",
+					"{C:inactive,s:0.8}to your score)",
+				},
+			},
+			j_mf_the_first_sliver = {
+				name = "The First Sliver",
+				text = {
+					"{C:spectral}Sliver{} {C:attention}Jokers{} are {X:spectral,C:white}X#1#{}",
+					"more likely to appear",
+					"and have {C:inactive,s:0.8}\"When you buy",
+					"{C:inactive,s:0.8}this Joker, cascade $7\"",
+					"{C:inactive,s:0.7}(Reroll the Shop for free until",
+					"{C:inactive,s:0.7}the first item costs less than $7.",
+					"{C:inactive,s:0.7}Then buy it for free.)",
 				},
 			},
 			j_mf_fury_sliver = {
@@ -682,15 +730,12 @@ return {
 					"{C:inactive,s:0.8}Joker one time\""
 				},
 			},
-			j_mf_virulent_sliver = {
-				name = "Virulent Sliver",
+			j_mf_megantic_sliver = {
+				name = "Megantic Sliver",
 				text = {
 					"{C:spectral}Sliver{} {C:attention}Jokers{} are {X:spectral,C:white}X#1#{}",
 					"more likely to appear",
-					"and have {V:1}Poisonous #2#{}",
-					"{C:inactive,s:0.8}(After that Joker triggers,",
-					"{C:inactive,s:0.8}add #2#% of the Blind's size",
-					"{C:inactive,s:0.8}to your score)",
+					"and have {C:inactive,s:0.8}\"{X:inactive,C:white,s:0.8}^#2#{C:inactive,s:0.8} Mult\""
 				},
 			},
 
@@ -3364,6 +3409,35 @@ return {
 				name = "whatever",
 				text = {
 					"{V:1}Poisonous #1#{}",
+				}
+			},
+			-- homing sliver doesnt get one :p
+			mf_gemhide_sliver = {
+				name = "whatever",
+				text = {
+					"Earn {C:gold}$#1#{} at",
+					"end of round",
+				}
+			},
+			mf_mindlash_sliver = {
+				name = "whatever",
+				text = {
+                    "Sell this card to",
+                    "disable the current",
+                    "{C:attention}Boss Blind{}",
+				}
+			},
+			mf_megantic_sliver = {
+				name = "whatever",
+				text = {
+					"{X:mf_eemult,C:white}^#1#{} Mult"
+				}
+			},
+			mf_the_first_sliver = {
+				name = "whatever",
+				text = {
+					"When you buy this",
+					"{C:attention}Joker{}, {C:spectral}cascade $7{}",
 				}
 			},
 		},

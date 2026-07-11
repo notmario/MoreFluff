@@ -23,13 +23,3 @@ payload = '''
 FLUFF.add_extra_multiboxes(_c, card, info_queue, desc_nodes, specific_vars, full_UI_table, cfg)
 '''
 match_indent = true
-
-[[patches]]
-[patches.pattern]
-target = '''functions/common_events.lua'''
-pattern = '''if jokers or triggered then'''
-position = "before"
-payload = '''
-jokers, triggered = FLUFF.calculate_extra_effects(card, context, jokers, triggered)
-'''
-match_indent = true

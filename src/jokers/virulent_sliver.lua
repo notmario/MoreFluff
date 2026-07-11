@@ -4,8 +4,8 @@ SMODS.Joker {
 	atlas = "mf_jokers",
 	config = {
         extra = {
-            odds = 3,
-            poisonous = 0.5,
+            odds = 2,
+            poisonous = 1,
         }
     },
 	pos = { x = 5, y = 17 },
@@ -15,7 +15,7 @@ SMODS.Joker {
 	discovered = true,
 	blueprint_compat = true,
 	eternal_compat = true,
-	perishable_compat = false,
+	perishable_compat = true,
     attributes = { "score", "joker", "sliver", }, 
     mf_sliver_ability = "virulent_sliver",
 	loc_vars = function(self, info_queue, card)

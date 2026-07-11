@@ -1,25 +1,24 @@
 SMODS.Joker {
-	key = "sinew_sliver",
-	name = "Muscle Sliver",
+	key = "mindlash_sliver",
+	name = "Mindlash Sliver",
 	atlas = "mf_jokers",
 	config = {
         extra = {
             odds = 2,
-            chips = 40,
         }
     },
-	pos = { x = 2, y = 17 },
-	rarity = 1,
-	cost = 7,
+	pos = { x = 8, y = 17 },
+	rarity = 2,
+	cost = 6,
 	unlocked = true,
 	discovered = true,
 	blueprint_compat = true,
 	eternal_compat = true,
 	perishable_compat = true,
-    attributes = { "chips", "joker", "sliver", }, 
-    mf_sliver_ability = "sinew_sliver",
+    attributes = { "on_sell", "joker", "sliver", "boss_blind" }, 
+    mf_sliver_ability = "mindlash_sliver",
 	loc_vars = function(self, info_queue, card)
-	    return { vars = { card.ability.extra.odds, card.ability.extra.chips, }}
+	    return { vars = { card.ability.extra.odds, card.ability.extra.dollars }}
 	end,
 	calculate = function(self, card, context)
 		if context.modify_weights and context.pool_types.Joker then
@@ -32,21 +31,28 @@ SMODS.Joker {
     end,
 }
 
-FLUFF.sliver_effects.sinew_sliver = {
+FLUFF.sliver_effects.mindlash_sliver = {
     add_box = function(extra, default_text)
         return FLUFF.generate_ui_multiboxes {
             {
                 localized_text = default_text,
                 loc_vars = function(self, card, center)
-                    return { vars = { extra.chips } }
+                    return { vars = { } }
                 end
             }
         }
     end,
     calculate = function(jokers, triggered, context, card, extra)
-        if context.joker_main then
-            if not jokers then jokers = {} end
-            jokers = SMODS.merge_effects({ jokers, { chips = extra.chips }})
+        if context.selling_self then
+            if G.GAME.blind and not G.GAME.blind.disabled and G.GAME.blind.boss then
+                if not jokers then jokers = {} end
+                jokers = SMODS.merge_effects({ jokers, {
+                    message = localize('ph_boss_disabled'),
+                    func = function() -- This is for timing purposes, it runs after the message
+                        G.GAME.blind:disable()
+                    end
+                }})
+            end
         end
         return jokers, triggered
     end,

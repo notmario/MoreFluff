@@ -1,25 +1,25 @@
 SMODS.Joker {
-	key = "sinew_sliver",
-	name = "Muscle Sliver",
+	key = "megantic_sliver",
+	name = "Megantic Sliver",
 	atlas = "mf_jokers",
 	config = {
         extra = {
             odds = 2,
-            chips = 40,
+            emult = 1.08,
         }
     },
-	pos = { x = 2, y = 17 },
-	rarity = 1,
-	cost = 7,
+	pos = { x = 9, y = 17 },
+	rarity = 3,
+	cost = 10,
 	unlocked = true,
 	discovered = true,
 	blueprint_compat = true,
 	eternal_compat = true,
 	perishable_compat = true,
-    attributes = { "chips", "joker", "sliver", }, 
-    mf_sliver_ability = "sinew_sliver",
+    attributes = { "emult", "joker", "sliver", }, 
+    mf_sliver_ability = "megantic_sliver",
 	loc_vars = function(self, info_queue, card)
-	    return { vars = { card.ability.extra.odds, card.ability.extra.chips, }}
+	    return { vars = { card.ability.extra.odds, card.ability.extra.emult, }}
 	end,
 	calculate = function(self, card, context)
 		if context.modify_weights and context.pool_types.Joker then
@@ -32,13 +32,13 @@ SMODS.Joker {
     end,
 }
 
-FLUFF.sliver_effects.sinew_sliver = {
+FLUFF.sliver_effects.megantic_sliver = {
     add_box = function(extra, default_text)
         return FLUFF.generate_ui_multiboxes {
             {
                 localized_text = default_text,
                 loc_vars = function(self, card, center)
-                    return { vars = { extra.chips } }
+                    return { vars = { extra.emult } }
                 end
             }
         }
@@ -46,7 +46,20 @@ FLUFF.sliver_effects.sinew_sliver = {
     calculate = function(jokers, triggered, context, card, extra)
         if context.joker_main then
             if not jokers then jokers = {} end
-            jokers = SMODS.merge_effects({ jokers, { chips = extra.chips }})
+			if FLUFF.should_talisman_key("emult") then
+				jokers = SMODS.merge_effects({ jokers, {
+					emult = extra.emult,
+				}})
+			else
+				jokers = SMODS.merge_effects({ jokers, {
+					message = "^" .. extra.emult .. " Mult",
+					colour = G.C.DARK_EDITION,
+					sound = "mf_emult",
+					pre_func = function()
+						mult = mod_mult(mult ^ extra.emult)
+					end,
+				}})
+			end
         end
         return jokers, triggered
     end,

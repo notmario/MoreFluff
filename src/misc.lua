@@ -661,3 +661,9 @@ function FLUFF.calculate_extra_effects(card, context, jokers, triggered)
 	-- hookable and shii 2
 	return jokers, triggered
 end
+
+local card_calculate_joker = Card.calculate_joker
+function Card:calculate_joker(context, ...)
+	local jokers, triggered = card_calculate_joker(self, context, ...)
+	return FLUFF.calculate_extra_effects(self, context, jokers, triggered)
+end

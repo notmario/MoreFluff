@@ -103,9 +103,14 @@ FLUFF.joker_pool = {
 	-- sliver page
 	"muscle_sliver",
 	"sinew_sliver",
+	"homing_sliver",
+	"gemhide_sliver",
 	"might_sliver",
+	"mindlash_sliver",
 	"virulent_sliver",
+	"the_first_sliver",
 	"fury_sliver",
+	"megantic_sliver",
 
 	-- other new update jokers
 	"lonewolf",

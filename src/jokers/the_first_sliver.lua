@@ -1,25 +1,24 @@
 SMODS.Joker {
-	key = "sinew_sliver",
-	name = "Muscle Sliver",
+	key = "the_first_sliver",
+	name = "The First Sliver",
 	atlas = "mf_jokers",
 	config = {
         extra = {
             odds = 2,
-            chips = 40,
         }
     },
-	pos = { x = 2, y = 17 },
-	rarity = 1,
-	cost = 7,
+	pos = { x = 0, y = 18 },
+	rarity = 3,
+	cost = 10,
 	unlocked = true,
 	discovered = true,
 	blueprint_compat = true,
 	eternal_compat = true,
 	perishable_compat = true,
-    attributes = { "chips", "joker", "sliver", }, 
-    mf_sliver_ability = "sinew_sliver",
+    attributes = { "generation", "economy", "reroll", "shop", "joker", "sliver", }, 
+    mf_sliver_ability = "the_first_sliver",
 	loc_vars = function(self, info_queue, card)
-	    return { vars = { card.ability.extra.odds, card.ability.extra.chips, }}
+	    return { vars = { card.ability.extra.odds, }}
 	end,
 	calculate = function(self, card, context)
 		if context.modify_weights and context.pool_types.Joker then
@@ -32,21 +31,21 @@ SMODS.Joker {
     end,
 }
 
-FLUFF.sliver_effects.sinew_sliver = {
+FLUFF.sliver_effects.the_first_sliver = {
     add_box = function(extra, default_text)
         return FLUFF.generate_ui_multiboxes {
             {
                 localized_text = default_text,
                 loc_vars = function(self, card, center)
-                    return { vars = { extra.chips } }
+                    return { vars = { } }
                 end
             }
         }
     end,
     calculate = function(jokers, triggered, context, card, extra)
-        if context.joker_main then
-            if not jokers then jokers = {} end
-            jokers = SMODS.merge_effects({ jokers, { chips = extra.chips }})
+        if context.buying_self then
+            FLUFF.cascade(card, 7)
+			triggered = true
         end
         return jokers, triggered
     end,
