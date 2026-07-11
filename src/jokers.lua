@@ -106,10 +106,13 @@ FLUFF.joker_pool = {
 	"homing_sliver",
 	"gemhide_sliver",
 	"might_sliver",
+
 	"mindlash_sliver",
+	"sliver_jockey",
 	"virulent_sliver",
 	"the_first_sliver",
 	"fury_sliver",
+	
 	"megantic_sliver",
 
 	-- other new update jokers

@@ -698,6 +698,17 @@ return {
                     "{C:inactive,s:0.8}disable the current Boss Blind\"",
 				},
 			},
+			j_mf_sliver_jockey = {
+				name = "Sliver Jockey",
+				text = {
+					"{C:spectral}Sliver{} {C:attention}Jokers{} are {X:spectral,C:white}X#1#{}",
+					"more likely to appear",
+					"and have {C:green}horsemanship",
+					"{C:inactive,s:0.8}(Retrigger the playing card",
+					"{C:inactive,s:0.8}with the same position",
+					"{C:inactive,s:0.8}as that Joker once)",
+				},
+			},
 			j_mf_virulent_sliver = {
 				name = "Virulent Sliver",
 				text = {
@@ -3438,6 +3449,12 @@ return {
 				text = {
 					"When you buy this",
 					"{C:attention}Joker{}, {C:spectral}cascade $7{}",
+				}
+			},
+			mf_sliver_jockey = {
+				name = "whatever",
+				text = {
+					"{C:green}Horsemanship"
 				}
 			},
 		},
