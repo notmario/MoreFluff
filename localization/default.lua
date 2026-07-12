@@ -3550,6 +3550,22 @@ return {
 					"packs are {C:dark_edition}Polychrome{}",
 				},
 			},
+			v_mf_rotarot_merchant = {
+				name = "{E:mf_rotarot_title}Tarot! Merchant",
+				text = {
+					"{C:rotarot}45 Degree Rotated Arcana Packs{}",
+					"are {X:spectral,C:white}X#1#{} more common and",
+					"contain an additional card"
+				},
+			},
+			v_mf_rotarot_tycoon = {
+				name = "{E:mf_rotarot_title}Tarot! Tycoon",
+				text = {
+					"{C:rotarot}45 Degree Rotated Arcana Packs{}",
+					"are {X:spectral,C:white}X#1#{} more common and",
+					"contain another additional card",
+				},
+			},
 			v_mf_superboss_ticket = {
 				name = "The Ticket",
 				text = {

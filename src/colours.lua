@@ -410,6 +410,7 @@ SMODS.Voucher({
 	key = "paintroller",
 	atlas = "mf_vouchers",
 	pos = { x = 0, y = 0 },
+	attributes = { "colour", "consumable", "chance" },
 	unlocked = true,
 	discovered = true,
 	loc_vars = function(self, info_queue)
@@ -422,6 +423,7 @@ SMODS.Voucher({
 	key = "colourtheory",
 	atlas = "mf_vouchers",
 	pos = { x = 1, y = 0 },
+	attributes = { "colour", "consumable", "booster", "editions" },
 	unlocked = true,
 	discovered = true,
 	loc_vars = function(self, info_queue)

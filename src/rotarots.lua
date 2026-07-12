@@ -1265,3 +1265,66 @@ SMODS.DrawStep({
 	end,
 	conditions = { vortex = false, facing = "front" },
 })
+
+
+SMODS.Voucher({
+	object_type = "Voucher",
+	key = "rotarot_merchant",
+	atlas = "mf_vouchers",
+	pos = { x = 0, y = 1 },
+	mf_rotate_by = math.pi / 4,
+	config = {
+		extra = { odds_mult = 3, },
+	},
+	attributes = { "rotarot", "consumable", "booster", "shop" },
+	unlocked = true,
+	discovered = true,
+	loc_vars = function(self, info_queue)
+		return { vars = {
+			self.config.extra.odds_mult
+		} }
+	end,
+	calculate = function(self, card, context)
+		if context.modify_weights and context.pool_types.Booster then
+			for _, c in pairs(context.pool) do
+				if G.P_CENTERS[c.key] and G.P_CENTERS[c.key].kind == "Rotarot" then
+					c.weight = c.weight * card.ability.extra.odds_mult
+				end
+			end
+		end
+		if context.open_booster and context.card.config.center.kind == "Rotarot" then
+			context.card.ability.extra = context.card.ability.extra + 1
+		end
+    end,
+})
+SMODS.Voucher({
+	object_type = "Voucher",
+	key = "rotarot_tycoon",
+	atlas = "mf_vouchers",
+	pos = { x = 1, y = 1 },
+	mf_rotate_by = math.pi / 4,
+	config = {
+		extra = { odds_mult = 3, },
+	},
+	attributes = { "rotarot", "consumable", "booster", "shop" },
+	unlocked = true,
+	discovered = true,
+	loc_vars = function(self, info_queue)
+		return { vars = {
+			self.config.extra.odds_mult * G.P_CENTERS["v_mf_rotarot_merchant"].config.extra.odds_mult
+		} }
+	end,
+	calculate = function(self, card, context)
+		if context.modify_weights and context.pool_types.Booster then
+			for _, c in pairs(context.pool) do
+				if G.P_CENTERS[c.key] and G.P_CENTERS[c.key].kind == "Rotarot" then
+					c.weight = c.weight * card.ability.extra.odds_mult
+				end
+			end
+		end
+		if context.open_booster and context.card.config.center.kind == "Rotarot" then
+			context.card.ability.extra = context.card.ability.extra + 1
+		end
+    end,
+	requires = { "v_mf_rotarot_merchant" },
+})
