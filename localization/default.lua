@@ -1303,11 +1303,11 @@ return {
 						"{C:inactive,s:0.8}once certain conditions are met)",
 					},
 					{
-						"Reroll {C:attention}ten{} times {C:inactive}(#1#/10) {f:6}—{} Shop",
+						"Reroll {C:attention}fifteen{} times {C:inactive}(#1#/15) {f:6}—{} Shop",
 						"{C:green}rerolls{} are {C:money}$#2#{} cheaper"
 					},
 					{
-						"Skip {C:attention}two{} blinds {C:inactive}(#3#/2) {f:6}—{} The",
+						"Skip {C:attention}four{} blinds {C:inactive}(#3#/4) {f:6}—{} The",
 						"shop has an {C:attention}extra slot"
 					},
 				},

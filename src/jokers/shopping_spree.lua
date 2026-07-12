@@ -30,9 +30,9 @@ SMODS.Joker {
         }
 	end,
 	calculate = function(self, card, context)
-		if context.reroll_shop and not context.blueprint and card.ability.extra.rerolls < 10 then
+		if context.reroll_shop and not context.blueprint and card.ability.extra.rerolls < 15 then
             card.ability.extra.rerolls = card.ability.extra.rerolls + 1
-            if card.ability.extra.rerolls >= 10 then
+            if card.ability.extra.rerolls >= 15 then
                 G.E_MANAGER:add_event(Event({
                     func = function()
                         G.GAME.round_resets.reroll_cost = G.GAME.round_resets.reroll_cost - card.ability.extra.reroll_cost
@@ -46,12 +46,12 @@ SMODS.Joker {
                 }
             end
             return {
-                message = card.ability.extra.rerolls .. "/10"
+                message = card.ability.extra.rerolls .. "/15"
             }
         end
-		if context.skip_blind and not context.blueprint and card.ability.extra.skips < 2 then
+		if context.skip_blind and not context.blueprint and card.ability.extra.skips < 4 then
             card.ability.extra.skips = card.ability.extra.skips + 1
-            if card.ability.extra.skips >= 2 then
+            if card.ability.extra.skips >= 4 then
                 G.E_MANAGER:add_event(Event({
                     func = function()
                         change_shop_size(1)
@@ -63,12 +63,12 @@ SMODS.Joker {
                 }
             end
             return {
-                message = card.ability.extra.skips .. "/2"
+                message = card.ability.extra.skips .. "/4"
             }
         end
 	end,
 	add_to_deck = function(self, card, from_debuff)
-		if card.ability.extra.rerolls >= 10 then
+		if card.ability.extra.rerolls >= 15 then
             G.E_MANAGER:add_event(Event({
                 func = function()
                     G.GAME.round_resets.reroll_cost = G.GAME.round_resets.reroll_cost - card.ability.extra.reroll_cost
@@ -78,7 +78,7 @@ SMODS.Joker {
                 end
             }))
         end
-        if card.ability.extra.skips >= 2 then
+        if card.ability.extra.skips >= 4 then
             G.E_MANAGER:add_event(Event({
                 func = function()
                     change_shop_size(1)
@@ -88,7 +88,7 @@ SMODS.Joker {
         end
 	end,
 	remove_from_deck = function(self, card, from_debuff)
-		if card.ability.extra.rerolls >= 10 then
+		if card.ability.extra.rerolls >= 15 then
             G.E_MANAGER:add_event(Event({
                 func = function()
                     G.GAME.round_resets.reroll_cost = G.GAME.round_resets.reroll_cost + card.ability.extra.reroll_cost
@@ -98,7 +98,7 @@ SMODS.Joker {
                 end
             }))
         end
-        if card.ability.extra.rerolls >= 2 then
+        if card.ability.extra.rerolls >= 4 then
             G.E_MANAGER:add_event(Event({
                 func = function()
                     change_shop_size(-1)
