@@ -26,7 +26,7 @@ SMODS.Joker {
 	end,
 	prepared_card = "c_mf_lotusbloom",
 	calculate = function(self, card, context)
-		if context.mf_card_converted and not SMODS.has_enhancement(context.card, "m_mf_marigold") then
+		if context.setting_ability and context.old ~= "m_mf_marigold" and context.other_card.ability.set == "Enhanced" then
             if not card.ability.extra.is_prepared then
 				card.ability.extra.is_prepared = true
 				return {
@@ -143,12 +143,3 @@ SMODS.Consumable {
         return G.hand and #G.hand.highlighted <= 1
 	end,
 }
-
-local sah = Card.set_ability
-function Card:set_ability(center, ...)
-    sah(self, center, ...)
-    if self.ability.set == "Enhanced" and not FLUFF.opening_pack then
-        SMODS.calculate_context { mf_card_converted = true, card = self }
-    end
-    self.mf_just_opened = nil
-end

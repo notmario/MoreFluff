@@ -49,3 +49,59 @@ SMODS.Back {
     unlocked = true,
 	discovered = true,
 }
+
+SMODS.Back {
+    name = "Spellchaser's Deck",
+    key = "spellchaser",
+    config = { },
+    pos = { x = 4, y = 2 },
+    atlas = "mf_enhancers",
+    unlocked = true,
+	discovered = true,
+
+	apply = function(self, back)
+		G.GAME.modifiers.no_middle_changes = true
+		G.E_MANAGER:add_event(Event({
+			func = function()
+				local blueprint = SMODS.add_card {
+					key = "j_blueprint",
+					no_edition = true,
+				}
+				FLUFF.exile_card(blueprint, nil, nil)
+				blueprint.T.x = 49
+				blueprint.VT.x = 49
+				blueprint.T.y = 7
+				blueprint.VT.y = 7
+				blueprint.base_cost = 30
+				blueprint:set_cost()
+				blueprint.ability.mf_purchase_from_exile = true
+				blueprint.ability.spellchase_reset_cost_lol = true
+				return true
+			end
+		}))
+	end,
+	calculate = function(self, back, context)
+		if context.buying_card and context.card.ability.spellchase_reset_cost_lol then
+			G.E_MANAGER:add_event(Event({
+				func = function()
+					context.card.base_cost = G.P_CENTERS["j_blueprint"].cost
+					context.card:set_cost()
+					context.card.ability.spellchase_reset_cost_lol = nil
+					return true
+				end
+			}))
+		end
+	end
+}
+
+local card_set_base = Card.set_base
+function Card:set_base(card, initial, manual_sprites, ...)
+	if not initial and G.GAME.modifiers and G.GAME.modifiers.no_middle_changes and not G.VIEWING_DECK then
+		SMODS.calculate_effect(
+			{ message = localize("k_prevented"), colour = G.C.RED },
+			self
+		)
+		return nil
+	end
+	card_set_base(self, card, initial, manual_sprites, ...)
+end

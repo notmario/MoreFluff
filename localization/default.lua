@@ -3107,6 +3107,16 @@ return {
 					"{C:tarot,T:v_mf_paintroller}Paint Roller{} Voucher",
 				}
 			},
+			b_mf_spellchaser = {
+				name = "Spellchaser's Deck",
+				text = {
+					"If a {C:attention}playing card{} would",
+					"have its {C:attention}rank or suit{}",
+					"changed, {C:red}prevent it{}",
+					"Once per game, you may buy a",
+					"{C:attention}Blueprint{} from {C:spectral}exile{} for {C:gold}$30",
+				}
+			},
 		},
 		Blind = {
 			bl_mf_bigger_blind = {
@@ -3752,6 +3762,7 @@ return {
 			k_no_shop = "No shop",
 			k_plus_consumable = "+1 Consumable",
 			k_balanced_qu = "Balanced?",
+			k_prevented = "Prevented",
 
 			k_timetravel_ex = "Time travel!",
 			k_plus_ankh = "+Ankh",
