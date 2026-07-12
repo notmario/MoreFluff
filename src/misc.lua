@@ -382,7 +382,7 @@ FLUFF.exile_card = function(card, percent, temp, func)
 			-- card.T.w = card.T.w * FLUFF.exile_scale
 			-- card.T.h = card.T.h * FLUFF.exile_scale
 			card.T.scale = card.T.scale * FLUFF.exile_scale
-			mf_being_exiled = false
+			card.mf_being_exiled = false
 			if temp then
 				card.ability[temp] = true
 			end
