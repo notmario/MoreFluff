@@ -16,6 +16,10 @@ FLUFF.calculate = function(self, context)
 			G.GAME.mf_missed_superboss = nil
 		end
 
+		if G.GAME.rot_trib_count then
+			G.GAME.rot_trib_count = nil
+		end
+
 		local return_to_deck = {}
 		for _, card in ipairs(G.mf_exile.cards) do
 			if card.ability.mf_unexile_eor then
