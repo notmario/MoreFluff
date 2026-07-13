@@ -19,7 +19,7 @@ if G.GAME.rot_trib_count then
             local other_card = SMODS.add_card {
                 area = G.discard,
                 set = "Base",
-                rank = "K",
+                rank = rank,
             }
             other_card.mf_royal_decreed = true
             FLUFF.add_to_hand[#FLUFF.add_to_hand + 1] = other_card
