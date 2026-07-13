@@ -72,7 +72,7 @@ SMODS.Back {
 				blueprint.VT.x = 49
 				blueprint.T.y = 7
 				blueprint.VT.y = 7
-				blueprint.base_cost = 30
+				blueprint.base_cost = 45
 				blueprint:set_cost()
 				blueprint.ability.mf_purchase_from_exile = true
 				blueprint.ability.spellchase_reset_cost_lol = true

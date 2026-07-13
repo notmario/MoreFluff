@@ -3114,7 +3114,7 @@ return {
 					"have its {C:attention}rank or suit{}",
 					"changed, {C:red}prevent it{}",
 					"Once per game, you may buy a",
-					"{C:attention}Blueprint{} from {C:spectral}exile{} for {C:gold}$30",
+					"{C:attention}Blueprint{} from {C:spectral}exile{} for {C:gold}$45",
 				}
 			},
 		},
