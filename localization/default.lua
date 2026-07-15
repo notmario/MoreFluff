@@ -2311,7 +2311,8 @@ return {
 				text = {
 					"{X:mf_eemult,C:white}Xlog_#1#(Chips){} Chips",
 					"{C:mf_eemult}+#2#{} Freakiness",
-					"at end of round"
+					"at end of round",
+					"{C:inactive,s:0.8}just pure crazy!"
 				},
 			},
 
