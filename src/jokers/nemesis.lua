@@ -18,6 +18,7 @@ local function reset_choices(card, rarities, forced_choice)
                         table.insert(new_pool, v)
                     end
                 end
+                if #new_pool == 0 then return pool end
                 return new_pool
             end,
         }

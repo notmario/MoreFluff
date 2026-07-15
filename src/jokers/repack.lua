@@ -62,6 +62,7 @@ for i = 1,2 do
                             table.insert(new_pool, v)
                         end
                     end
+                    if #new_pool == 0 then return pool end
                     return new_pool
                 end,
             }
