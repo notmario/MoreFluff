@@ -2315,6 +2315,16 @@ return {
 					"{C:inactive,s:0.8}just pure crazy!"
 				},
 			},
+			j_mf_fourd_sanctuary = {
+				name = "4rd Sanctuary",
+				text = {
+					"If no {C:rotarot}45 Degree Rotated Tarots{}",
+					"are suspended, {C:attention}copy{} the first one",
+					"used {C:attention}eleven{} times, then {C:spectral}suspend{} them",
+					"each for {C:attention}one round{} plus {C:attention}one{} for",
+					"each copy suspended before them",
+				},
+			},
 
 			-- lettergem
 			j_mf_lettergem_a = {
