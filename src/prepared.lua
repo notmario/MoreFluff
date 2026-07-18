@@ -157,14 +157,26 @@ function G.UIDEF.card_h_popup(card)
 	end
 	-- ret_val.nodes[1].nodes[1].nodes[1].nodes[2]
 
+	local main_desc_nodes = nil
+	if #targets == 1 then
+		main_desc_nodes = targets[1]
+		main_desc_nodes.n = G.UIT.C
+	else
+		main_desc_nodes = {
+			n = G.UIT.C,
+			config={align = "cm", padding = 0.07, },
+			nodes = targets
+		}
+	end
+
 	-- ui by sleepy
 	local new_nodes = {
 		n = G.UIT.R,
 		nodes = {
+			main_desc_nodes,
 			{
 				n = G.UIT.C,
-				config={align = "cm", padding = 0.07, },
-				nodes = targets
+				config={align = "cm", minw = 0.07 },
 			},
 			{
 				n = G.UIT.C,
