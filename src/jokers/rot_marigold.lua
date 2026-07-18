@@ -7,6 +7,7 @@ SMODS.Joker {
 			is_prepared = true,
         },
 	},
+	mf_art_credit = "marigold",
 	pos = { x = 6, y = 10 },
 	soul_pos = { x = 0, y = 5 },
 	mf_rotate_by = math.pi / 4,

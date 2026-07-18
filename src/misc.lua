@@ -88,39 +88,69 @@ function end_round()
 	end
 end
 
+FLUFF.artists = {}
+
+FLUFF.artists["footlongdingledong"] = { colour = HEX "7ae047", name_scale = 0.22 } -- :p
+FLUFF.artists["Multi"] = { colour = HEX "cc66ff" }
+FLUFF.artists["marigold"] = { colour = HEX "e8a71c" }
+FLUFF.artists["LFMoth"] = { colour = HEX "ec98f2" }
+FLUFF.artists["Ice"] = { }
+
 local mf_art_credit_thingy = G.UIDEF.card_h_popup
 function G.UIDEF.card_h_popup(card)
 	local ret_val = mf_art_credit_thingy(card)
 	local obj = card.config.center
-	local target = ret_val.nodes[1].nodes[1].nodes[1].nodes
+	local target = ret_val.nodes[1].nodes
+
+	if not FLUFF.artist_sprite then
+		FLUFF.artist_sprite = SMODS.create_sprite(0, 0, 0.5, 0.5, "mf_artist", { x = 0, y = 0 })
+	end
+
 	if obj and obj.mf_art_credit then
+		local dev = FLUFF.artists[obj.mf_art_credit]
 		local str = {
 			n = G.UIT.R,
-			config = { align = "cm" },
+			config = { colour = G.C.CLEAR, align = "cm", w = 0, padding = 0.05 },
 			nodes = {
-				{
-					n = G.UIT.R,
-					config = { align = "cm" },
-					nodes = {
+				{n=G.UIT.R, config={align = "cm", minh = 0.3, r = 0.12, padding = 0.05, colour = HEX "f24f4f", emboss = 0.07}, nodes={
+					{n=G.UIT.R, config={align = "cm", minh = 0.3, r = 0.1, minw = 2.5, padding = 0.04, colour = HEX "563737"}, nodes={
 						{
-							n = G.UIT.T,
-							config = { text = "art by ", shadow = true, colour = G.C.UI.BACKGROUND_WHITE, scale = 0.27 },
+							n = G.UIT.R,
+							config = { colour = G.C.CLEAR, align = "cm", w = 0, padding = 0.08 },
+							nodes = {
+								{
+									n = G.UIT.O,
+									config = {
+										object = FLUFF.artist_sprite,
+									},
+								},
+								{
+									n = G.UIT.C,
+									config = { align = "cl" },
+									nodes = {
+										{n=G.UIT.R, config={align = "cl"}, nodes={{
+											n = G.UIT.T,
+											config = { text = "art by ", shadow = true, colour = G.C.UI.BACKGROUND_WHITE, scale = 0.27 },
+										}}},
+										{n=G.UIT.R, config={align = "cl"}, nodes={{
+											n = G.UIT.O,
+											config = {
+												object = DynaText({
+													string = obj.mf_art_credit,
+													colours = { dev and dev.colour or G.C.UI.BACKGROUND_WHITE },
+													scale = dev and dev.name_scale or 0.27,
+													silent = true,
+													shadow = true,
+												}),
+											},
+										}}},
+									}
+								},
+							}
 						},
-						{
-							n = G.UIT.O,
-							config = {
-								object = DynaText({
-									string = obj.mf_art_credit,
-									colours = { dev and dev.colour or G.C.UI.BACKGROUND_WHITE },
-									scale = 0.27,
-									silent = true,
-									shadow = true,
-								}),
-							},
-						},
-					},
-				},
-			},
+					}},
+				}}
+			}
 		}
 		if str then
 			table.insert(target, str)
