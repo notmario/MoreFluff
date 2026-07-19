@@ -3246,7 +3246,7 @@ return {
 			c_mf_superboss_token = {
 				name = "#1#",
 				text = {
-					"The {C:attention}Superboss{} becomes",
+					"The {C:attention}#2#{} becomes",
 					"{C:attention}#1#",
 				},
 			},

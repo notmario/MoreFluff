@@ -86,12 +86,21 @@ payload = '''
 if G.GAME.round_resets.ante == G.GAME.win_ante and (
   G.GAME.blind.debuff.superboss
 ) and G.GAME.mf_superboss_active and not G.GAME.no_superboss_reset then
-  G.GAME.mf_superboss_active = false
-  G.GAME.modifiers.scaling = math.max((G.GAME.modifiers.scaling - G.GAME.modifiers.bonus_scaling), 1)
-  G.GAME.modifiers.bonus_scaling = 0
-
-  G.GAME.round_resets.blind_choices.Small = "bl_small"
-  G.GAME.round_resets.blind_choices.Big = "bl_big"
+  local should_reset = not G.GAME.modifiers.mf_final_stake
+  if G.GAME.modifiers.mf_final_stake then
+    G.GAME.mf_superbosses_defeated = (G.GAME.mf_superbosses_defeated or 0) + 1
+    if G.GAME.mf_superbosses_defeated >= 3 then
+      should_reset = true
+      G.GAME.mf_superbosses_defeated = 0
+    end
+  end
+  if should_reset then
+    G.GAME.mf_superboss_active = false
+    G.GAME.modifiers.scaling = math.max((G.GAME.modifiers.scaling - G.GAME.modifiers.bonus_scaling), 1)
+    G.GAME.modifiers.bonus_scaling = 0    
+    G.GAME.round_resets.blind_choices.Small = "bl_small"
+    G.GAME.round_resets.blind_choices.Big = "bl_big"
+  end
 end'''
 match_indent = true
 

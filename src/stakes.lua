@@ -352,7 +352,7 @@ SMODS.Stake {
     atlas = 'mf_stakes',
     pos = { x = 1, y = 2 },
     sticker_atlas = "mf_stake_stickers",
-    sticker_pos = { x = 1, y = 2 },
+    sticker_pos = { x = 2, y = 1 },
     shiny = true,
     modifiers = function()
         G.GAME.modifiers.mf_final_stake = true
@@ -363,7 +363,7 @@ SMODS.Stake {
 local gfb = get_blind_amount
 function get_blind_amount(ante, ...)
     if G.GAME.modifiers.scaling == 6 and G.GAME.modifiers.mf_final_stake then
-        return 4000000
+        return 3333333
     end
     return gfb(ante, ...)
 end

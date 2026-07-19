@@ -52,7 +52,7 @@ SMODS.Voucher({
 							delay = 0.15,
 							func = function()
 								SMODS.add_card {
-									key = "p_mf_superboss_normal_1",
+									key = G.GAME.modifiers.mf_final_stake and "p_mf_superboss_mega_1" or "p_mf_superboss_normal_1",
 									area = G.play
 								}
 								return true
@@ -124,7 +124,8 @@ local csc = Card.set_cost
 function Card:set_cost(...)
 	csc(self, ...)
 	if self.config.center.key == "v_mf_superboss_ticket" or
-		self.config.center.key == "p_mf_superboss_normal_1" then
+		self.config.center.key == "p_mf_superboss_normal_1" or
+		self.config.center.key == "p_mf_superboss_mega_1" then
 		self.cost = 0
 	end
 end
@@ -902,6 +903,37 @@ SMODS.Booster({
 	group_key = "k_superboss_pack",
 })
 
+SMODS.Booster({
+	key = "superboss_mega_1",
+	kind = "Superboss",
+	atlas = "mf_packs",
+	pos = { x = 0, y = 4 },
+	config = { extra = 7, choose = 3, superboss_pack = true },
+	cost = 0,
+	weight = 0.,
+	unlocked = true,
+	discovered = true,
+	draw_hand = false,
+	no_collection = true,
+	attributes = { "boss_blind", },
+	in_pool = function (...) return false end,
+	create_card = function(self, card)
+		_G.generating_superboss_pack = true
+		local n_card = create_card("SuperbossToken", G.pack_cards, nil, nil, true, true, nil, "mf_superbosstoken")
+		_G.generating_superboss_pack = nil
+		return n_card
+	end,
+	loc_vars = function(self, info_queue, card)
+		local cfg = (card and card.ability) or self.config
+		return { vars = { cfg.choose, cfg.extra }, key = self.key:sub(1, -3) }
+	end,
+	ease_background_colour = function(self)
+		ease_colour(G.C.DYN_UI.MAIN, G.C.RED)
+		ease_background_colour{G.C.RED, special_colour = darken(G.C.BLACK, 0.2), contrast = 2}
+	end,
+	group_key = "k_superboss_pack",
+})
+
 local ref = G.FUNCS.can_skip_booster
 G.FUNCS.can_skip_booster = function(e, ...)
 	-- ???????
@@ -936,6 +968,33 @@ SMODS.ConsumableType({
 	can_divide = true,
 	no_collection = true
 })
+
+FLUFF.use_superboss_token = function(key)
+	if G.GAME.modifiers.mf_final_stake then
+		G.GAME.mf_finalstake_used = (G.GAME.mf_finalstake_used or 0) + 1
+		local slots = {"Small", "Big", "Boss"}
+		local slot = slots[G.GAME.mf_finalstake_used or 0]
+		G.GAME.round_resets.blind_choices[slot] = key
+	else
+		G.GAME.round_resets.blind_choices.Boss = key
+	end
+end
+
+FLUFF.superboss_token_locvars = function(self, q, card)
+	q[#q + 1] = G.P_BLINDS[self.config.blind]
+	local slot_name = "Superboss"
+	if G.GAME.modifiers.mf_final_stake then
+		local slots = {"Small Blind", "Big Blind", "Boss Blind"}
+		slot_name = slots[G.GAME.mf_finalstake_used or 0 + 1]
+	end
+	return {
+		key = "c_mf_superboss_token",
+		vars = {
+			localize({ type = "name_text", set = "Blind", key = self.config.blind }),
+			slot_name
+		}
+	}
+end
 
 local my_superbosses = {
 	"violet_vessel_dx",
@@ -974,17 +1033,13 @@ for i, k in ipairs(my_superbosses) do
 			return true
 		end,
 		loc_vars = function(self, info_queue, card)
-			info_queue[#info_queue + 1] = G.P_BLINDS[self.config.blind]
-			return {
-				key = "c_mf_superboss_token",
-				vars = { localize({ type = "name_text", set = "Blind", key = self.config.blind }), }
-			}
+			return FLUFF.superboss_token_locvars(self, info_queue, card)
 		end,
 		in_pool = function(self, args)
 			return _G.generating_superboss_pack
 		end,
 		use = function(self, card, area, copier)
-			G.GAME.round_resets.blind_choices.Boss = self.config.blind
+			FLUFF.use_superboss_token(self.config.blind)
 		end,
 	})
 end

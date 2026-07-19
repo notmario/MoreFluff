@@ -416,9 +416,10 @@ FLUFF.credits_ui = function()
                             		{ n = G.UIT.R, config = { align = "cm", }, nodes = { { n = G.UIT.T, config = { text = "Superboss Theme", scale = .4, shadow = true, align = "bm" } } } },
                             		{ n = G.UIT.R, config = { align = "cm", }, nodes = { { n = G.UIT.T, config = { text = "DUEL ZONE (VER. 2)", scale = .3, shadow = true, align = "bm" } } } },
                             		{ n = G.UIT.R, config = { align = "cm", }, nodes = { { n = G.UIT.T, config = { text = "by dante, Geshtro", scale = .3, shadow = true, align = "bm" } } } },
-                            		G.F_EXTERNAL_LINKS and { n = G.UIT.R, config = { align = "cm", }, nodes = { { n=G.UIT.C, config={padding = 0.05}, nodes={
-										UIBox_button({label = {'Youtube'}, button = 'duelzone_ver2_link', scale = .3, padding = .1})
+                            		G.F_EXTERNAL_LINKS and { n = G.UIT.R, config = { align = "cm", }, nodes = { { n=G.UIT.C, config={padding = 0.}, nodes={
+										UIBox_button({label = {'Youtube'}, button = 'duelzone_ver2_link', scale = .5, padding = 0.02})
 									}} } } or nil,
+                            		
 								},
 							},
 						},
