@@ -8,6 +8,7 @@ SMODS.Joker {
             chips = 0,
 		},
 	},
+	mf_art_credit = "Incognito",
 	pos = { x = 2, y = 12 },
 	rarity = 1,
 	cost = 7,

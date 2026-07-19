@@ -95,6 +95,7 @@ FLUFF.artists["Multi"] = { colour = HEX "cc66ff" }
 FLUFF.artists["marigold"] = { colour = HEX "e8a71c" }
 FLUFF.artists["LFMoth"] = { colour = HEX "ec98f2" }
 FLUFF.artists["Ice"] = { }
+FLUFF.artists["Incognito"] = { colour = HEX "d0d0d0" }
 
 local mf_art_credit_thingy = G.UIDEF.card_h_popup
 function G.UIDEF.card_h_popup(card)

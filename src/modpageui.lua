@@ -290,6 +290,26 @@ G.FUNCS.duelzone_ver2_link = function(e)
 end
 
 FLUFF.credits_ui = function()
+	local artists_nodes = {
+		{ n = G.UIT.R, config = { align = "cm", }, nodes = { { n = G.UIT.T, config = { text = "Misc. Jokers", scale = .4, shadow = true, align = "bm" } } } },
+	}
+
+	local artist_keys = {}
+
+	for key, _ in pairs(FLUFF.artists) do
+		if key ~= "Multi" then artist_keys[#artist_keys + 1] = key end -- colour card
+	end
+
+	table.sort(artist_keys, function (a, b) return string.lower(a) < string.lower(b) end)
+
+	for _, artist_key in ipairs(artist_keys) do
+		local dev = FLUFF.artists[artist_key]
+		artists_nodes[#artists_nodes + 1] = { 
+			n = G.UIT.R, config = { align = "cm", }, 
+			nodes = { { n = G.UIT.T, config = { text = artist_key, scale = 0.25, shadow = true, align = "bm", colour = dev.colour } } }
+		}
+	end
+
     local ui = {
         n = G.UIT.ROOT,
         config = { align = "cm", minh = G.ROOM.T.h * .5, minw = G.ROOM.T.w * .5, padding = 0.0, r = 0.1, colour = G.C.BLACK, emboss = 0.05, },
@@ -383,13 +403,7 @@ FLUFF.credits_ui = function()
 							{
 								n = G.UIT.C,
 								config = { align = "cm", minw = 2.5, minh = 2.5, padding = 0.05, r = 0.1, colour = G.C.L_BLACK },
-								nodes = {
-                            		{ n = G.UIT.R, config = { align = "cm", }, nodes = { { n = G.UIT.T, config = { text = "Misc. Jokers", scale = .4, shadow = true, align = "bm" } } } },
-                            		{ n = G.UIT.R, config = { align = "cm", }, nodes = { { n = G.UIT.T, config = { text = "marigold", scale = .3, shadow = true, align = "bm" } } } },
-                            		{ n = G.UIT.R, config = { align = "cm", }, nodes = { { n = G.UIT.T, config = { text = "footlongdingledong", scale = .3, shadow = true, align = "bm" } } } },
-                            		{ n = G.UIT.R, config = { align = "cm", }, nodes = { { n = G.UIT.T, config = { text = "Ice", scale = .3, shadow = true, align = "bm" } } } },
-                            		{ n = G.UIT.R, config = { align = "cm", }, nodes = { { n = G.UIT.T, config = { text = "LFMoth", scale = .3, shadow = true, align = "bm" } } } },
-								},
+								nodes = artists_nodes,
 							},
 							{
 								n = G.UIT.C,
