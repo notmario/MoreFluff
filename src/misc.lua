@@ -94,7 +94,7 @@ FLUFF.artists["footlongdingledong"] = { colour = HEX "7ae047", name_scale = 0.22
 FLUFF.artists["Multi"] = { colour = HEX "cc66ff" }
 FLUFF.artists["marigold"] = { colour = HEX "e8a71c" }
 FLUFF.artists["LFMoth"] = { colour = HEX "ec98f2" }
-FLUFF.artists["Ice"] = { }
+FLUFF.artists["Ice"] = { colour = HEX "9aede7" }
 FLUFF.artists["Incognito"] = { colour = HEX "d0d0d0" }
 
 local mf_art_credit_thingy = G.UIDEF.card_h_popup
