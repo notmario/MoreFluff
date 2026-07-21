@@ -118,7 +118,7 @@ SMODS.Back {
 		if context.setting_blind then
 			FLUFF.create_and_suspend_card( {
 				key = "c_mf_rot_wheel",
-				area = G.play
+				area = G.mf_exile
 			}, 1)
 		end
 	end
