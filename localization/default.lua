@@ -3107,7 +3107,7 @@ return {
 				name = "Philosophical Deck",
 				text = {
 					"Start run with 5",
-					"{C:attention}Philosophical Jokers"
+					"{C:attention,T:j_mf_philosophical}Philosophical Jokers"
 				}
 			},
 			b_mf_rainbow = {
@@ -3125,7 +3125,14 @@ return {
 					"have its {C:attention}rank or suit{}",
 					"changed, {C:red}prevent it{}",
 					"Once per game, you may buy a",
-					"{C:attention}Blueprint{} from {C:spectral}exile{} for {C:gold}$45",
+					"{C:attention,T:j_blueprint}Blueprint{} from {C:spectral}exile{} for {C:gold}$45",
+				}
+			},
+			b_mf_purple = {
+				name = "Purple Deck",
+				text = {
+					"When a {C:attention}Blind{} is selected,",
+					"use a {C:rotarot,E:mf_rotarot_title,T:c_mf_rot_wheel}The Wheel of Fortune!{}"
 				}
 			},
 		},

@@ -105,3 +105,21 @@ function Card:set_base(card, initial, manual_sprites, ...)
 	end
 	card_set_base(self, card, initial, manual_sprites, ...)
 end
+
+SMODS.Back {
+    name = "Purple Deck",
+    key = "purple",
+    config = { },
+    pos = { x = 3, y = 0 },
+    atlas = "mf_enhancers",
+    unlocked = true,
+	discovered = true,
+	calculate = function(self, back, context)
+		if context.setting_blind then
+			FLUFF.create_and_suspend_card( {
+				key = "c_mf_rot_wheel",
+				area = G.play
+			}, 1)
+		end
+	end
+}
