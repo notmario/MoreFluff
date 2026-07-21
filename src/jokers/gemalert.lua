@@ -9,6 +9,7 @@ SMODS.Joker({
             rate_mod = 6.7,
         }
     },
+	mf_art_credit = "Incognito",
 	pos = { x = 0, y = 13 },
 	rarity = 2,
 	cost = 6,
@@ -45,5 +46,14 @@ SMODS.Joker({
 	end,
 	remove_from_deck = function(self, card, from_debuff)
 		G.GAME.rare_mod = G.GAME.rare_mod / card.ability.extra.rate_mod
+	end,
+	draw = function(self, card, layer)
+		local notilt = nil
+		if card.area and card.area.config.type == "deck" then
+			notilt = true
+		end
+		card.children.center:set_sprite_pos({x = 6, y = 18})
+		card.children.center:draw_shader("polychrome", nil, card.ARGS.send_to_shader, notilt, card.children.center)
+		card.children.center:set_sprite_pos({x = 0, y = 13})
 	end,
 })
