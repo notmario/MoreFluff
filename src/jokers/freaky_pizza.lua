@@ -32,7 +32,9 @@ SMODS.Joker({
 					pre_func = function()
                         local param = SMODS.Scoring_Parameters["chips"]
 						local log = math.log(param.current < 0 and 1 or param.current, card.ability.extra.freakiness)
-                        param:modify(param.current*log - param.current)
+						if log >= 1 then
+                        	param:modify(param.current*log - param.current)
+						end
 					end,
 					sound = "mf_echips",
 					colour = G.C.DARK_EDITION,
