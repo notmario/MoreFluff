@@ -39,11 +39,11 @@ SMODS.Joker({
 			end
 		end
 		if context.end_of_round and context.cardarea == G.jokers and not context.blueprint then
-			card.ability.extra.one = 1
+			-- card.ability.extra.one = 1
 			SMODS.scale_card(card, {
 				ref_table = card.ability.extra,
 				ref_value = "rounds_left",
-				scalar_value = "one",
+				-- scalar_value = "one",
 				operation = "-",
 			})
 			if card.ability.extra.rounds_left <= 0 then

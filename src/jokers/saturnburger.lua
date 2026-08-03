@@ -43,11 +43,11 @@ SMODS.Joker {
             )
             level_up_hand(context.blueprint_card or card, text, nil, 1)
             if not context.blueprint and not context.retrigger_joker then
-                card.ability.extra.one = 1
+                -- card.ability.extra.one = 1
                 SMODS.scale_card(card, {
                     ref_table = card.ability.extra,
                     ref_value = "remaining",
-                    scalar_value = "one",
+                    -- scalar_value = "one",
                     operation = "-",
                 })
                 if card.ability.extra.remaining <= 0 then

@@ -28,11 +28,11 @@ SMODS.Joker({
 			end
 		end
         if ((context.buying_card and not context.buying_self and (card ~= context.card)) or (context.open_booster)) and not context.blueprint then
-            card.ability.extra.one = 1
+            -- card.ability.extra.one = 1
             SMODS.scale_card(card, {
                 ref_table = card.ability.extra,
                 ref_value = "purchases",
-                scalar_value = "one",
+                -- scalar_value = "one",
                 operation = "-",
                 no_message = true,
             })

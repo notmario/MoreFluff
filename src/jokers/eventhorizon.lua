@@ -51,11 +51,11 @@ SMODS.Joker({
 		end
 		if context.individual and context.cardarea == G.play then
 			if is_8_or_3(context.other_card) then
-                card.ability.extra.one = 1
+                -- card.ability.extra.one = 1
                 SMODS.scale_card(card, {
                     ref_table = card.ability.extra,
                     ref_value = "cur",
-                    scalar_value = "one",
+                    -- scalar_value = "one",
                     no_message = true,
                 })
                 if card.ability.extra.cur >= card.ability.extra.req then
