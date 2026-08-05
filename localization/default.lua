@@ -2422,7 +2422,7 @@ return {
 			j_mf_lettergem_l = {
 				name = "L",
 				text = {
-					"The {C:attention}first scoring card{}",
+					"The {C:attention}first played card{}",
 					"each hand is considered {C:attention}Lucky",
 					"with a {X:green,C:white}X#1#{} chance to trigger",
 				},
