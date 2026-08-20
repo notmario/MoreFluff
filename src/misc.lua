@@ -103,9 +103,12 @@ function G.UIDEF.card_h_popup(card)
 	local obj = card.config.center
 	local target = ret_val.nodes[1].nodes
 
-	if not FLUFF.artist_sprite then
-		FLUFF.artist_sprite = SMODS.create_sprite(0, 0, 0.5, 0.5, "mf_artist", { x = 0, y = 0 })
-	end
+	local wrapper = {
+        n = G.UIT.R,
+        config = { align = "cm", },
+        nodes = { ret_val.nodes[1].nodes[1] }
+    }
+    ret_val.nodes[1].nodes[1] = wrapper
 
 	if obj and obj.mf_art_credit then
 		local dev = FLUFF.artists[obj.mf_art_credit]
@@ -122,7 +125,7 @@ function G.UIDEF.card_h_popup(card)
 								{
 									n = G.UIT.O,
 									config = {
-										object = FLUFF.artist_sprite,
+										object = SMODS.create_sprite(0, 0, 0.5, 0.5, "mf_artist", { x = 0, y = 0 }),
 									},
 								},
 								{
@@ -266,7 +269,7 @@ function CardArea:align_cards()
     ca_align(self)
     if self.config.type == 'joker' and self.config.mf_exile then
         for k, card in ipairs(self.cards) do
-            if not card.states.drag.is then 
+            if not card.states.drag.is then
 				card.T.r = 0.
                 local max_cards = math.max(#self.cards, 1)
                 card.T.y = self.T.y + (self.T.h-G.CARD_H)*((k-1)/math.max(max_cards-1, 1) - 0.5*(#self.cards-max_cards)/math.max(max_cards-1, 1)) + 0.5*(G.CARD_H - card.T.h)
@@ -444,7 +447,7 @@ G.FUNCS.buy_from_exile = function(e)
 
 			SMODS.calculate_context({buying_card = true, card = c1})
 
-			if G.GAME.modifiers.inflation then 
+			if G.GAME.modifiers.inflation then
 				G.GAME.inflation = G.GAME.inflation + 1
 				G.E_MANAGER:add_event(Event({func = function()
 				for k, v in pairs(G.I.CARD) do
@@ -461,7 +464,7 @@ G.FUNCS.buy_from_exile = function(e)
 			G.CONTROLLER:save_cardarea_focus('jokers')
 			G.CONTROLLER:recall_cardarea_focus('jokers')
 
-			if e.config.id == 'buy_and_use' then 
+			if e.config.id == 'buy_and_use' then
 				G.FUNCS.use_card(e, true)
 			end
 			return true
@@ -472,7 +475,7 @@ end
 
 -- from aquilarri
 function FLUFF.get_card_pixel_pos(card, real)
-    return 
+    return
         (G.ROOM.T.x * (real or 1) + card.T.x + card.T.w * 0.5) * (G.TILESIZE * G.TILESCALE),
         (G.ROOM.T.y * (real or 1) + card.T.y + card.T.h * 0.5) * (G.TILESIZE * G.TILESCALE)
 end
@@ -529,7 +532,7 @@ function CardArea:draw(...)
 
 			love.graphics.pop()
 		end
-		
+
 		love.graphics.pop()
 	end
 
@@ -667,7 +670,7 @@ function FLUFF.cascade_obtain(card)
     end
 end
 
-local gfcfbs = G.FUNCS.check_for_buy_space 
+local gfcfbs = G.FUNCS.check_for_buy_space
 G.FUNCS.check_for_buy_space = function(card)
 	if FLUFF.fuck_you_i_can_buy_this_shit then return true end
 	return gfcfbs(card)
@@ -824,7 +827,7 @@ function FLUFF.create_vtext(vtext, AUT, nodes, vars, lines, num)
         if i == 1 or next(AUT.info) then
             nodes[#nodes+1] = final_line -- Sends main box to AUT.main
             if not next(AUT.info) then nodes.main_box_flag = true end
-        elseif not next(AUT.info) then 
+        elseif not next(AUT.info) then
             nodes.main_box_flag = true
             AUT.multi_box[i-1] = AUT.multi_box[i-1] or {}
             AUT.multi_box[i-1][#AUT.multi_box[i-1]+1] = final_line
