@@ -33,7 +33,7 @@ SMODS.Joker({
 
 				perma_p_dollars = 0,
 				perma_h_dollars = 0,
-				
+
 				perma_repetitions = 0,
 				perma_score = 0,
 				perma_h_score = 0,
@@ -66,7 +66,7 @@ SMODS.Joker({
 			local seal = nil
 
 			for _, v in pairs(context.full_hand) do
-				if v.base.value ~= last_card.base.value then
+				if v.base.value ~= last_card.base.value or SMODS.has_no_rank(v) then
 					return nil
 				end
 
