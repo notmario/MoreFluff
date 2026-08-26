@@ -35,18 +35,19 @@ SMODS.Joker {
 	-- tech from ellejokers  ty elle
 	generate_ui = function(self, info_queue, card, desc_nodes, specific_vars, full_UI_table)
 		SMODS.Center.generate_ui(self, info_queue, card, desc_nodes, specific_vars, full_UI_table)
+		if #full_UI_table.main <= 1 then
+    		local s = G.TILESCALE * G.TILESIZE
+    		local destroy_sprite = SMODS.create_sprite(0, 0, 320 / s, 230 / s, "mf_ransomnote", { x = 0, y = 0 })
 
-		local s = G.TILESCALE * G.TILESIZE
-		local destroy_sprite = SMODS.create_sprite(0, 0, 320 / s, 230 / s, "mf_ransomnote", { x = 0, y = 0 })
+    		local destroy = {
+    			{
+    				n = G.UIT.O,
+    				config = { align = "cm", object = destroy_sprite },
+    			},
+    		}
 
-		local destroy = {
-			{
-				n = G.UIT.O,
-				config = { align = "cm", object = destroy_sprite },
-			},
-		}
-
-		full_UI_table.main[1] = destroy
+    		full_UI_table.main[1] = destroy
+		end
 	end,
 }
 
@@ -80,17 +81,18 @@ SMODS.Enhancement {
     end,
 	generate_ui = function(self, info_queue, card, desc_nodes, specific_vars, full_UI_table)
 		SMODS.Center.generate_ui(self, info_queue, card, desc_nodes, specific_vars, full_UI_table)
+		if #full_UI_table.main <= 1 then
+    		local s = G.TILESCALE * G.TILESIZE
+    		local destroy_sprite = SMODS.create_sprite(0, 0, 320 / s, 230 / s, "mf_ransomnote", { x = 0, y = 0 })
 
-		local s = G.TILESCALE * G.TILESIZE
-		local destroy_sprite = SMODS.create_sprite(0, 0, 320 / s, 230 / s, "mf_ransomnote", { x = 0, y = 0 })
+    		local destroy = {
+    			{
+    				n = G.UIT.O,
+    				config = { align = "cm", object = destroy_sprite },
+    			},
+    		}
 
-		local destroy = {
-			{
-				n = G.UIT.O,
-				config = { align = "cm", object = destroy_sprite },
-			},
-		}
-
-		full_UI_table.main[1] = destroy
+    		full_UI_table.main[1] = destroy
+		end
 	end,
 }
