@@ -193,7 +193,7 @@ function Card:can_sell_card(context)
             return false
         end
     end
-    
+
     return result
 end
 
@@ -295,8 +295,8 @@ SMODS.Sticker {
     rate = 0.4,
     needs_enable_flag = true,
     should_apply = function(self, card, center, area, bypass_roll)
-        if 
-            (card.ability.consumeable and (area == G.shop_jokers or (G.pack_cards and area == G.pack_cards)) and card.ability.set ~= "SuperbossToken") and 
+        if
+            (card.ability.consumeable and (area == G.shop_jokers or (G.pack_cards and area == G.pack_cards)) and card.ability.set ~= "SuperbossToken") and
             G.GAME.modifiers.enable_mf_suspend_sticker
         then
             self.last_roll = pseudorandom((area == G.pack_cards and 'packssj' or 'shopssj')..self.key..G.GAME.round_resets.ante)
@@ -327,7 +327,7 @@ function Card:use_consumeable(area, copier, ...)
 
         while not dont_dissolve_index do
             local local_name = debug.getlocal(2, i)
-            
+
             if local_name == "dont_dissolve" then dont_dissolve_index = i end
 
             i = i + 1
@@ -360,13 +360,13 @@ SMODS.Stake {
     colour = G.C.RED,
 }
 
-local gfb = get_blind_amount
-function get_blind_amount(ante, ...)
-    if G.GAME.modifiers.scaling == 6 and G.GAME.modifiers.mf_final_stake then
-        return 3333333
-    end
-    return gfb(ante, ...)
-end
+-- local gfb = get_blind_amount
+-- function get_blind_amount(ante, ...)
+--     if G.GAME.modifiers.scaling == 6 and G.GAME.modifiers.mf_final_stake and ante == 8 then
+--         return 3333333
+--     end
+--     return gfb(ante, ...)
+-- end
 
 -- local cc = create_card
 -- function create_card(_type, area, legendary, _rarity, skip_materialize, soulable, forced_key, key_append)

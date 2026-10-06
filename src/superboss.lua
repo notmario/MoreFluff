@@ -1,14 +1,36 @@
-G.get_new_superboss = function()
-	local superboss_pool = {}
-	for k, v in pairs(G.P_BLINDS) do
-		if v.debuff.superboss then
-			superboss_pool[k] = true
-		end
-	end
+local smods_reset_blind_choices = SMODS.reset_blind_choices
+function SMODS.reset_blind_choices(choices, ...)
+    if G.GAME.mf_superboss_active then
+        G.GAME.round_resets.blind_order = {'Small', 'Big', 'Boss'} -- prepared for custom antes
+        for _, k in ipairs(G.GAME.round_resets.blind_order) do
+            choices[k] = nil
+        end
+        for _, k in ipairs(G.GAME.round_resets.blind_order) do
+            if k == 'Small' then choices[k] = "bl_mf_bigger_blind"
+            else
+                FLUFF.mf_superboss_type = k == 'Big' and 'boss' or 'superboss'
+                choices[k] = SMODS.get_new_blind('boss')
+                FLUFF.mf_superboss_type = nil
+            end
+        end
+    else
+        smods_reset_blind_choices(choices, ...)
+    end
+end
 
-	local _, boss = pseudorandom_element(superboss_pool, pseudoseed("boss"))
+local smods_add_to_pool = SMODS.add_to_pool
+function SMODS.add_to_pool(prototype_obj, args, ...)
+    local ret_val = smods_add_to_pool
 
-	return boss
+    if prototype_obj.debuff or prototype_obj.boss then
+        if prototype_obj.debuff.superboss then
+            ret_val = ret_val and FLUFF.mf_superboss_type == 'superboss'
+        else
+            ret_val = ret_val and FLUFF.mf_superboss_type ~= 'superboss'
+        end
+    end
+
+    return ret_val
 end
 
 SMODS.Voucher({
@@ -32,7 +54,7 @@ SMODS.Voucher({
 	end,
 
 	redeem = function(self, card)
-		if G.GAME.round_resets.ante ~= (G.GAME.win_ante or 8) then
+		if G.GAME.round_resets.ante ~= (G.GAME.win_ante or 8) and not G.GAME.modifiers.mf_final_stake then
 			ease_ante((G.GAME.win_ante or 8) - G.GAME.round_resets.ante)
 		end
 		G.E_MANAGER:add_event(Event({
@@ -44,36 +66,41 @@ SMODS.Voucher({
 				end
 				ease_background_colour{G.C.RED, special_colour = darken(G.C.BLACK, 0.2), contrast = 2}
 				ease_background_colour_blind(G.STATE, "Small Blind")
-				G.E_MANAGER:add_event(Event({
-					trigger = "after",
-					func = function()
-						G.E_MANAGER:add_event(Event({
-							trigger = "after",
-							delay = 0.15,
-							func = function()
-								SMODS.add_card {
-									key = G.GAME.modifiers.mf_final_stake and "p_mf_superboss_mega_1" or "p_mf_superboss_normal_1",
-									area = G.play
-								}
-								return true
-							end,
-						}))
+				if G.GAME.modifiers.mf_final_stake then
+				else
+				    G.GAME.gurt = true
+    				G.E_MANAGER:add_event(Event({
+    					trigger = "after",
+    					func = function()
+    						G.E_MANAGER:add_event(Event({
+    							trigger = "after",
+    							delay = 0.15,
+    							func = function()
+    								SMODS.add_card {
+    									key = "p_mf_superboss_normal_1",
+    									area = G.play
+    								}
+    								return true
+    							end,
+    						}))
 
-						delay(0.5)
+    						delay(0.5)
 
-						G.E_MANAGER:add_event(Event({
-							trigger = "after",
-							delay = 0.15,
-							func = function()
-								G.FUNCS.use_card({
-									config = { ref_table = G.play.cards[1] }
-								}, nil, nil)
-								return true
-							end,
-						}))
-						return true
-					end,
-				}))
+    						G.E_MANAGER:add_event(Event({
+    							trigger = "after",
+    							delay = 0.15,
+    							func = function()
+    								G.FUNCS.use_card({
+    									config = { ref_table = G.play.cards[1] }
+    								}, nil, nil)
+    								return true
+    							end,
+    						}))
+    						return true
+    					end,
+    				}))
+				end
+				SMODS.reset_blind_choices(G.GAME.round_resets.blind_choices)
 				return true
 			end,
 		}))
@@ -84,9 +111,9 @@ SMODS.Voucher({
 
 		G.GAME.modifiers.scaling = G.GAME.modifiers.scaling + G.GAME.modifiers.bonus_scaling
 
-		G.GAME.round_resets.blind_choices.Small = "bl_mf_bigger_blind"
-		G.GAME.round_resets.blind_choices.Big = get_new_boss()
-		G.GAME.round_resets.blind_choices.Boss = "bl_mf_violet_vessel_dx"
+		-- G.GAME.round_resets.blind_choices.Small = "bl_mf_bigger_blind"
+		-- G.GAME.round_resets.blind_choices.Big = get_new_boss()
+		-- G.GAME.round_resets.blind_choices.Boss = "bl_mf_violet_vessel_dx"
 	end,
 
 	requires = { "v_mf_impossiblevoucher" },
@@ -144,6 +171,7 @@ SMODS.Blind({
 	boss_colour = HEX("ac3232"),
 
 	no_collection = true,
+	no_mod_badges = true,
 
 	in_pool = function(self)
 		return false
@@ -184,7 +212,7 @@ SMODS.Blind({
 	end,
 
 	in_pool = function(self)
-		return G.GAME.round_resets.ante > G.GAME.win_ante
+		return true
 	end,
 })
 
@@ -255,13 +283,13 @@ SMODS.Blind({
 	end,
 
 	boss = {
-		min = 9,
-		max = 10,
-		showdown = true,
+    	min = 9,
+    	max = 10,
+    	showdown = true,
 	},
 
 	in_pool = function(self)
-		return G.GAME.round_resets.ante > G.GAME.win_ante
+		return true
 	end,
 })
 
@@ -302,13 +330,11 @@ SMODS.Blind({
 	end,
 
 	boss = {
-		min = 9,
-		max = 10,
-		showdown = true,
+        min = 2,
 	},
 
 	in_pool = function(self)
-		return G.GAME.round_resets.ante > G.GAME.win_ante
+		return true
 	end,
 })
 
@@ -353,13 +379,11 @@ SMODS.Blind({
 	end,
 
 	boss = {
-		min = 9,
-		max = 10,
-		showdown = true,
+        min = 2,
 	},
 
 	in_pool = function(self)
-		return G.GAME.round_resets.ante > G.GAME.win_ante
+		return true
 	end,
 })
 
@@ -403,13 +427,11 @@ SMODS.Blind({
 	end,
 
 	boss = {
-		min = 9,
-		max = 10,
-		showdown = true,
+        min = 2,
 	},
 
 	in_pool = function(self)
-		return G.GAME.round_resets.ante > G.GAME.win_ante
+		return true
 	end,
 })
 
@@ -435,13 +457,11 @@ SMODS.Blind({
 	},
 
 	boss = {
-		min = 9,
-		max = 10,
-		showdown = true,
+        min = 2,
 	},
 
 	in_pool = function(self)
-		return G.GAME.round_resets.ante > G.GAME.win_ante
+		return true
 	end,
 })
 
@@ -477,13 +497,11 @@ SMODS.Blind({
 	end,
 
 	boss = {
-		min = 9,
-		max = 10,
-		showdown = true,
+        min = 2,
 	},
 
 	in_pool = function(self)
-		return G.GAME.round_resets.ante > G.GAME.win_ante
+		return true
 	end,
 })
 
@@ -519,13 +537,11 @@ SMODS.Blind({
 	end,
 
 	boss = {
-		min = 9,
-		max = 10,
-		showdown = true,
+        min = 2,
 	},
 
 	in_pool = function(self)
-		return G.GAME.round_resets.ante > G.GAME.win_ante
+		return true
 	end,
 })
 
@@ -561,13 +577,11 @@ SMODS.Blind({
 	end,
 
 	boss = {
-		min = 9,
-		max = 10,
-		showdown = true,
+        min = 2,
 	},
 
 	in_pool = function(self)
-		return G.GAME.round_resets.ante > G.GAME.win_ante
+		return true
 	end,
 })
 
@@ -603,13 +617,11 @@ SMODS.Blind({
 	end,
 
 	boss = {
-		min = 9,
-		max = 10,
-		showdown = true,
+        min = 2,
 	},
 
 	in_pool = function(self)
-		return G.GAME.round_resets.ante > G.GAME.win_ante
+		return true
 	end,
 })
 
@@ -636,9 +648,7 @@ SMODS.Blind({
 	attributes = { "hand_level", },
 
 	boss = {
-		min = 9,
-		max = 10,
-		showdown = true,
+	    min = 2,
 	},
 
 	debuff_hand = function(self, cards, hand, handname, check)
@@ -655,7 +665,7 @@ SMODS.Blind({
 	end,
 
 	in_pool = function(self)
-		return G.GAME.round_resets.ante > G.GAME.win_ante
+		return true
 	end,
 })
 
@@ -682,9 +692,7 @@ SMODS.Blind({
 	attributes = { "face_down", },
 
 	boss = {
-		min = 9,
-		max = 10,
-		showdown = true,
+	    min = 2,
 	},
 
 	stay_flipped = function(self, area, card)
@@ -701,7 +709,7 @@ SMODS.Blind({
 	end,
 
 	in_pool = function(self)
-		return G.GAME.round_resets.ante > G.GAME.win_ante
+		return true
 	end,
 })
 
@@ -728,9 +736,7 @@ SMODS.Blind({
 	},
 
 	boss = {
-		min = 9,
-		max = 10,
-		showdown = true,
+	    min = 2,
 	},
 
 	drawn_to_hand = function(self)
@@ -745,7 +751,7 @@ SMODS.Blind({
 	end,
 
 	in_pool = function(self)
-		return G.GAME.round_resets.ante > G.GAME.win_ante
+		return true
 	end,
 })
 
@@ -773,13 +779,11 @@ SMODS.Blind({
 	},
 
 	boss = {
-		min = 9,
-		max = 10,
-		showdown = true,
+	    min = 2,
 	},
 
 	in_pool = function(self)
-		return G.GAME.round_resets.ante > G.GAME.win_ante
+		return true
 	end,
 })
 
@@ -806,9 +810,7 @@ SMODS.Blind({
 	attributes = { "discard", },
 
 	boss = {
-		min = 9,
-		max = 10,
-		showdown = true,
+	    min = 2,
 	},
 
 	drawn_to_hand = function(self)
@@ -827,7 +829,7 @@ SMODS.Blind({
 	end,
 
 	in_pool = function(self)
-		return G.GAME.round_resets.ante > G.GAME.win_ante
+		return true
 	end,
 })
 
@@ -903,36 +905,36 @@ SMODS.Booster({
 	group_key = "k_superboss_pack",
 })
 
-SMODS.Booster({
-	key = "superboss_mega_1",
-	kind = "Superboss",
-	atlas = "mf_packs",
-	pos = { x = 0, y = 4 },
-	config = { extra = 7, choose = 3, superboss_pack = true },
-	cost = 0,
-	weight = 0.,
-	unlocked = true,
-	discovered = true,
-	draw_hand = false,
-	no_collection = true,
-	attributes = { "boss_blind", },
-	in_pool = function (...) return false end,
-	create_card = function(self, card)
-		_G.generating_superboss_pack = true
-		local n_card = create_card("SuperbossToken", G.pack_cards, nil, nil, true, true, nil, "mf_superbosstoken")
-		_G.generating_superboss_pack = nil
-		return n_card
-	end,
-	loc_vars = function(self, info_queue, card)
-		local cfg = (card and card.ability) or self.config
-		return { vars = { cfg.choose, cfg.extra }, key = self.key:sub(1, -3) }
-	end,
-	ease_background_colour = function(self)
-		ease_colour(G.C.DYN_UI.MAIN, G.C.RED)
-		ease_background_colour{G.C.RED, special_colour = darken(G.C.BLACK, 0.2), contrast = 2}
-	end,
-	group_key = "k_superboss_pack",
-})
+-- SMODS.Booster({
+-- 	key = "superboss_mega_1",
+-- 	kind = "Superboss",
+-- 	atlas = "mf_packs",
+-- 	pos = { x = 0, y = 4 },
+-- 	config = { extra = 7, choose = 3, superboss_pack = true },
+-- 	cost = 0,
+-- 	weight = 0.,
+-- 	unlocked = true,
+-- 	discovered = true,
+-- 	draw_hand = false,
+-- 	no_collection = true,
+-- 	attributes = { "boss_blind", },
+-- 	in_pool = function (...) return false end,
+-- 	create_card = function(self, card)
+-- 		_G.generating_superboss_pack = true
+-- 		local n_card = create_card("SuperbossToken", G.pack_cards, nil, nil, true, true, nil, "mf_superbosstoken")
+-- 		_G.generating_superboss_pack = nil
+-- 		return n_card
+-- 	end,
+-- 	loc_vars = function(self, info_queue, card)
+-- 		local cfg = (card and card.ability) or self.config
+-- 		return { vars = { cfg.choose, cfg.extra }, key = self.key:sub(1, -3) }
+-- 	end,
+-- 	ease_background_colour = function(self)
+-- 		ease_colour(G.C.DYN_UI.MAIN, G.C.RED)
+-- 		ease_background_colour{G.C.RED, special_colour = darken(G.C.BLACK, 0.2), contrast = 2}
+-- 	end,
+-- 	group_key = "k_superboss_pack",
+-- })
 
 local ref = G.FUNCS.can_skip_booster
 G.FUNCS.can_skip_booster = function(e, ...)
@@ -970,22 +972,14 @@ SMODS.ConsumableType({
 })
 
 FLUFF.use_superboss_token = function(key)
-	if G.GAME.modifiers.mf_final_stake then
-		G.GAME.mf_finalstake_used = (G.GAME.mf_finalstake_used or 0) + 1
-		local slots = {"Small", "Big", "Boss"}
-		local slot = slots[G.GAME.mf_finalstake_used or 0]
-		G.GAME.round_resets.blind_choices[slot] = key
-	else
-		G.GAME.round_resets.blind_choices.Boss = key
-	end
+    G.GAME.round_resets.blind_choices.Boss = key
 end
 
 FLUFF.superboss_token_locvars = function(self, q, card)
 	q[#q + 1] = G.P_BLINDS[self.config.blind]
 	local slot_name = "Superboss"
 	if G.GAME.modifiers.mf_final_stake then
-		local slots = {"Small Blind", "Big Blind", "Boss Blind"}
-		slot_name = slots[G.GAME.mf_finalstake_used or 0 + 1]
+		slot_name = "Boss Blind"
 	end
 	return {
 		key = "c_mf_superboss_token",
@@ -1039,6 +1033,7 @@ for i, k in ipairs(my_superbosses) do
 			return _G.generating_superboss_pack
 		end,
 		use = function(self, card, area, copier)
+		    G.GAME.gurt = nil
 			FLUFF.use_superboss_token(self.config.blind)
 		end,
 	})

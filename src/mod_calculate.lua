@@ -73,18 +73,24 @@ FLUFF.calculate = function(self, context)
 		end
 	end
 
-	if context.starting_shop and G.GAME.round_resets.ante == G.GAME.win_ante and not G.GAME.mf_missed_superboss then
-		G.GAME.mf_missed_superboss = true
-		local other_card = SMODS.add_voucher_to_shop("v_mf_superboss_ticket")
-		other_card.base_cost = 0
-		other_card:set_cost()
-
-		if G.GAME.modifiers and G.GAME.modifiers.mf_final_stake then
-			G.GAME.mf_forced_weird_routed = true
-			G.FUNCS.use_card({
+	if G.GAME.modifiers and G.GAME.modifiers.mf_final_stake then
+    	if context.starting_shop and (G.GAME.round_resets.ante ~= 1) and (not G.GAME.mf_forced_weird_routed) then
+    	    G.GAME.mf_missed_superboss = true
+      		local other_card = SMODS.add_voucher_to_shop("v_mf_superboss_ticket")
+      		other_card.base_cost = 0
+      		other_card:set_cost()
+ 			G.GAME.mf_forced_weird_routed = true
+ 			G.FUNCS.use_card({
 				config = { ref_table = other_card }
-			}, nil, nil)
-		end
+ 			}, nil, nil)
+        end
+	else
+    	if context.starting_shop and G.GAME.round_resets.ante == G.GAME.win_ante and not G.GAME.mf_missed_superboss then
+    		G.GAME.mf_missed_superboss = true
+    		local other_card = SMODS.add_voucher_to_shop("v_mf_superboss_ticket")
+    		other_card.base_cost = 0
+    		other_card:set_cost()
+    	end
 	end
 
 	if context.open_booster and G.GAME.modifiers.mf_bonus_scrapped then
@@ -208,7 +214,7 @@ FLUFF.calculate = function(self, context)
 														temp_hand[#temp_hand + 1] = v
 													end
 													pseudoshuffle(temp_hand, pseudoseed("mf_use_suspend"))
-													
+
 													for i = 1, max_h do
 														G.hand.highlighted[#G.hand.highlighted + 1] = temp_hand[i]
 														temp_hand[i]:highlight(true)
