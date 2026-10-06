@@ -121,13 +121,7 @@ SMODS.Voucher({
 
 local ea = ease_ante
 function ease_ante(mod, ...)
-	if G.GAME.modifiers.mf_final_stake and not G.GAME.mf_forced_weird_routed then
-		local final_ante = G.GAME.round_resets.ante + mod
-		if final_ante > (G.GAME.win_ante - 1) and not (G.GAME.round_resets.ante == (G.GAME.win_ante - 1) and SMODS.ante_end) then
-			mod = (G.GAME.win_ante - 1) - G.GAME.round_resets.ante
-		end
-		ea(mod, ...)
-	elseif G.GAME.mf_superboss_active then
+	if G.GAME.mf_superboss_active and not G.GAME.modifiers.mf_final_stake then
 		play_sound("mf_buzzer")
 		G.ROOM.jiggle = (G.ROOM.jiggle or 0) + 100
 		ea(0, ...)
