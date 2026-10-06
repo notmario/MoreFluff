@@ -62,7 +62,8 @@ SMODS.Sound({
 	pitch = 1.0,
 	volume = 1.3,
 	select_music_track = function()
-        if G.GAME and G.GAME.gurt then return nil end
+    	if G.GAME and G.GAME.gurt then return nil end
+    	if not (G.GAME.modifiers and G.GAME.modifiers.mf_final_stake) then return nil end
         if ((SMODS.OPENED_BOOSTER or {}).ability or {}).superboss_pack and G.booster_pack and not G.booster_pack.REMOVED then return nil end
 		return (G.GAME.mf_superboss_active and ((G.shop and not G.shop.REMOVED) or (G.booster_pack and not G.booster_pack.REMOVED))) and 1000
 	end,
