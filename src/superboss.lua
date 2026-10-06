@@ -20,13 +20,13 @@ end
 
 local smods_add_to_pool = SMODS.add_to_pool
 function SMODS.add_to_pool(prototype_obj, args, ...)
-    local ret_val = smods_add_to_pool
+    local ret_val = smods_add_to_pool(prototype_obj, args, ...)
 
     if prototype_obj.debuff or prototype_obj.boss then
         if prototype_obj.debuff.superboss then
-            ret_val = ret_val and FLUFF.mf_superboss_type == 'superboss'
+            ret_val = ret_val and (FLUFF.mf_superboss_type == 'superboss')
         else
-            ret_val = ret_val and FLUFF.mf_superboss_type ~= 'superboss'
+            ret_val = ret_val and (FLUFF.mf_superboss_type ~= 'superboss')
         end
     end
 
