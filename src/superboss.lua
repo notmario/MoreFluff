@@ -107,9 +107,12 @@ SMODS.Voucher({
 
 		-- Increase ante scaling
 		G.GAME.modifiers.scaling = G.GAME.modifiers.scaling or 1
-		G.GAME.modifiers.bonus_scaling = (G.GAME.modifiers.bonus_scaling or 0 + 3)
 
-		G.GAME.modifiers.scaling = G.GAME.modifiers.scaling + G.GAME.modifiers.bonus_scaling
+		local increase_scaling = 3
+		if G.GAME.modifiers.mf_final_stake then increase_scaling = 2 end
+		G.GAME.modifiers.bonus_scaling = (G.GAME.modifiers.bonus_scaling or 0 + increase_scaling)
+
+		G.GAME.modifiers.scaling = G.GAME.modifiers.scaling + increase_scaling
 
 		-- G.GAME.round_resets.blind_choices.Small = "bl_mf_bigger_blind"
 		-- G.GAME.round_resets.blind_choices.Big = get_new_boss()
