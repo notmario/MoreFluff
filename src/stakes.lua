@@ -59,6 +59,9 @@ SMODS.Sticker {
     sets = { ["Joker"] = true },
     rate = 0.3,
     needs_enable_flag = true,
+    should_apply = function(self, card, center, area, bypass_roll)
+        return (area == G.shop_jokers or (G.pack_cards and area == G.pack_cards)) and SMODS.Sticker.should_apply(self, card, center, area, bypass_roll)
+    end,
     calculate = function(self, card, context)
         -- print(context)
     end
@@ -153,6 +156,9 @@ SMODS.Sticker {
     sets = { ["Joker"] = true },
     rate = 0.3,
     needs_enable_flag = true,
+    should_apply = function(self, card, center, area, bypass_roll)
+        return (area == G.shop_jokers or (G.pack_cards and area == G.pack_cards)) and SMODS.Sticker.should_apply(self, card, center, area, bypass_roll)
+    end,
     calculate = function(self, card, context)
         -- print(context)
     end
