@@ -689,7 +689,7 @@ SMODS.Blind({
 	attributes = { "face_down", },
 
 	boss = {
-	    min = 2,
+	    min = 7,
 	},
 
 	stay_flipped = function(self, area, card)
